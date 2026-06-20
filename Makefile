@@ -1,4 +1,4 @@
-.PHONY: help install list generate smoke test examples clean
+.PHONY: help install list generate fill smoke test examples clean
 
 help:
 	@echo "Mock Legal Matter Generator"
@@ -25,6 +25,11 @@ generate:
 
 smoke:
 	python3 tools/smoke.py --count 5
+
+# Usage: make fill FORM=FM-004
+FORM ?= FM-004
+fill:
+	python3 tools/fill.py $(FORM) --seed 1
 
 examples:
 	python3 tools/build_examples.py

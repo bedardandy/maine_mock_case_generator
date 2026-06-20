@@ -74,6 +74,9 @@ def project_to_canonical(matter: dict) -> dict:
             break
     if signer_source is not None:
         case["party"] = _reduce_party(signer_source)
+        # A filer signs their own name; provide it for forms with a signature field.
+        if case["party"].get("full_name") and not case["party"].get("signature"):
+            case["party"]["signature"] = case["party"]["full_name"]
 
     if matter.get("facts"):
         case["facts"] = dict(matter["facts"])

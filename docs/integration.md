@@ -44,6 +44,25 @@ case = project_to_canonical(matter)          # validates against the canonical s
 # feed `case` (matter / parties / party / facts) into the downstream filler
 ```
 
+## Concrete fills wired in this repo
+
+Two forms are wired end-to-end under `integration/` (real vendored `mapping.json`):
+
+- **FM-004 — Complaint for Divorce** (`maine-court-forms`, `canonical` profile): fills
+  natively from a projected canonical case.
+- **IRS-SS-4 — EIN application** (`transactional-tax-forms`, `tax` profile): fills via
+  `generator/adapters.py::to_tax_case`, which translates the canonical case into the
+  tax namespace (`entity.*`, `responsible_party.*`, `facts.*`).
+
+```bash
+python tools/fill.py --list
+python tools/fill.py FM-004 --scenario family-divorce-cumberland --seed 1
+python tools/fill.py IRS-SS-4 --seed 1 --out out/    # writes the fill plan + case JSON
+```
+
+See [`integration/README.md`](../integration/README.md) for the coverage model and how to
+wire additional forms.
+
 ## Matching `facts` to a specific form
 
 Downstream forms read flat keys from `facts` via their `mapping.json`. When you add a

@@ -1,0 +1,21 @@
+{
+  "description": "Registry of downstream forms wired for concrete fills. Each entry vendors the real mapping.json (field-id -> canonical fact-key) from the downstream repo and declares which namespace profile bridges a projected canonical case into that form's expected fact-keys. 'canonical' forms consume the court-forms namespace directly (matter/parties/party/facts); 'tax' forms need the tax adapter (entity/responsible_party/executor/facts).",
+  "forms": {
+    "FM-004": {
+      "title": "Complaint for Divorce",
+      "repo": "maine-court-forms",
+      "dir": "integration/maine-court-forms/FM-004",
+      "profile": "canonical",
+      "practice_areas": ["family"],
+      "best_scenario": "family-divorce-cumberland"
+    },
+    "IRS-SS-4": {
+      "title": "Application for Employer Identification Number (EIN)",
+      "repo": "transactional-tax-forms",
+      "dir": "integration/transactional-tax-forms/IRS-SS-4",
+      "profile": "tax",
+      "practice_areas": ["business", "tax"],
+      "best_scenario": "business-formation-scorp"
+    }
+  }
+}

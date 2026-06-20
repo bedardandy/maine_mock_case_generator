@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2026-674351",
+    "matter_id": "MMC-2026-749078",
     "practice_area": "probate",
     "title": "Petition for Guardianship of a Minor by Olivia B. Ellsworth",
     "jurisdiction": {
@@ -21,8 +21,8 @@
     "case_type": "guardianship",
     "filing_date": "2026-05-31",
     "status": "pre_filing",
-    "summary": "Olivia B. Ellsworth, the adult sibling of one minor child(ren) (Marcus B. Kingsley), petitions the Bath Probate Court for full guardianship of a minor because of a parent's substance use treatment, and asks the court to authorize the petitioner to make day-to-day, school, and medical decisions for the child(ren).",
-    "docket_number": "SAG-GC-2026-829"
+    "summary": "Olivia B. Ellsworth, the uncle of one minor child(ren) (Rosa P. Kingsley), petitions the Bath Probate Court for full guardianship of a minor because of a parent's substance use treatment, and asks the court to authorize the petitioner to make day-to-day, school, and medical decisions for the child(ren).",
+    "docket_number": "SAG-GC-2026-310"
   },
   "parties": {
     "petitioner": {
@@ -38,47 +38,50 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "olivia.ellsworth@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
     },
     "respondent": {
       "entity_type": "person",
-      "first_name": "John",
+      "first_name": "Maria",
       "middle_name": "Q",
-      "last_name": "Poe",
-      "full_name": "John Q. Poe",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
       "role": "Respondent parent",
-      "address": "216 Maple Court",
-      "city": "Orono",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
       "state": "ME",
-      "zip": "04012",
-      "phone": "(207) 555-0170",
-      "email": "john.poe@example.org",
-      "date_of_birth": "1998-10-17"
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
     },
     "child_1": {
       "entity_type": "person",
-      "first_name": "Marcus",
-      "middle_name": "B",
+      "first_name": "Rosa",
+      "middle_name": "P",
       "last_name": "Kingsley",
-      "full_name": "Marcus B. Kingsley",
+      "full_name": "Rosa P. Kingsley",
       "role": "Minor child",
-      "date_of_birth": "2013-01-26"
+      "date_of_birth": "2024-04-23"
     },
     "attorney": {
       "entity_type": "person",
-      "first_name": "Marcus",
-      "middle_name": "W",
-      "last_name": "Roe",
-      "full_name": "Marcus W. Roe",
+      "first_name": "John",
+      "middle_name": "E",
+      "last_name": "Jessup",
+      "full_name": "John E. Jessup",
       "role": "Attorney for the client",
-      "address": "441 Birch Street",
-      "city": "Waterville",
+      "address": "150 Lighthouse Drive",
+      "city": "Gorham",
       "state": "ME",
-      "zip": "04054",
-      "phone": "(207) 555-0118",
-      "email": "marcus.roe@example.net",
-      "date_of_birth": "1994-10-20",
-      "bar_number": "6054",
+      "zip": "04070",
+      "phone": "(207) 555-0115",
+      "email": "john.jessup@example.net",
+      "date_of_birth": "1982-10-14",
+      "ssn_last4": "2961",
+      "bar_number": "2688",
       "organization_name": "Ellsworth Advocates PC"
     },
     "client": {
@@ -94,14 +97,15 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "olivia.ellsworth@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
     }
   },
   "fact_pattern": {
-    "summary": "Olivia B. Ellsworth, the adult sibling of one minor child(ren) (Marcus B. Kingsley), petitions the Bath Probate Court for full guardianship of a minor because of a parent's substance use treatment, and asks the court to authorize the petitioner to make day-to-day, school, and medical decisions for the child(ren).",
-    "narrative": "Olivia B. Ellsworth is the adult sibling of one minor child(ren): Marcus B. Kingsley. Because of a parent's substance use treatment, the child(ren)'s parent or parents are temporarily unable to provide full-time care, and Olivia has stepped in to ensure the child(ren) are safe, supported, and able to stay in their routine.\n\nAt present, the child splits time between relatives. Without a guardianship order, Olivia lacks clear legal authority to enroll the child(ren) in school activities, consent to medical care, and handle the ordinary decisions of daily life. Olivia seeks full guardianship of a minor to provide that authority and a stable home.\n\nOlivia now petitions the Bath Probate Court under the Maine Probate Code for appointment as guardian of the minor child(ren), to remain in effect until the minor reaches 18 or further court order. The petition will be served on the child(ren)'s parents and other interested persons as the statute requires, and Olivia asks the court to find that the appointment is in the child(ren)'s best interests.",
+    "summary": "Olivia B. Ellsworth, the uncle of one minor child(ren) (Rosa P. Kingsley), petitions the Bath Probate Court for full guardianship of a minor because of a parent's substance use treatment, and asks the court to authorize the petitioner to make day-to-day, school, and medical decisions for the child(ren).",
+    "narrative": "Olivia B. Ellsworth is the uncle of one minor child(ren): Rosa P. Kingsley. Because of a parent's substance use treatment, the child(ren)'s parent or parents are temporarily unable to provide full-time care, and Olivia has stepped in to ensure the child(ren) are safe, supported, and able to stay in their routine.\n\nAt present, the child already lives with the petitioner. Without a guardianship order, Olivia lacks clear legal authority to enroll the child(ren) in school activities, consent to medical care, and handle the ordinary decisions of daily life. Olivia seeks full guardianship of a minor to provide that authority and a stable home.\n\nOlivia now petitions the Bath Probate Court under the Maine Probate Code for appointment as guardian of the minor child(ren), to remain in effect until the minor reaches 18 or further court order. The petition will be served on the child(ren)'s parents and other interested persons as the statute requires, and Olivia asks the court to find that the appointment is in the child(ren)'s best interests.",
     "undisputed_facts": [
-      "Olivia B. Ellsworth is the adult sibling of one minor child(ren).",
+      "Olivia B. Ellsworth is the uncle of one minor child(ren).",
       "The child(ren)'s parent or parents are, for the time being, unable to provide full-time care because of a parent's substance use treatment.",
       "Olivia B. Ellsworth is seeking appointment as guardian of the minor child(ren) in Sagadahoc County Probate Court."
     ],
@@ -120,29 +124,42 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Desmond S. Noe",
+      "name": "Lillian R. Kingsley",
       "type": "healthcare_provider",
       "role": "Child's pediatrician",
       "relevance": "Oversees the child's routine medical care and can speak to ongoing health needs and the authority required to address them.",
       "contact": {
-        "phone": "(207) 555-0187",
-        "city": "Lewiston",
+        "phone": "(207) 555-0146",
+        "city": "Windham",
         "state": "ME",
-        "email": "desmond.noe@example.net"
+        "email": "lillian.kingsley@example.com"
       }
     },
     {
       "id": "tp2",
-      "name": "Lillian K. Danforth",
-      "type": "family_member",
-      "role": "Biological mother",
-      "relationship": "Mother of the minor",
-      "relevance": "Holds parental rights; her consent to or objection to the guardianship is central, and she is entitled to notice.",
+      "name": "Maria K. Kingsley",
+      "type": "witness",
+      "role": "Child's school counselor",
+      "relevance": "Knows the child's day-to-day functioning and adjustment at school and can speak to stability and continuity.",
       "contact": {
-        "phone": "(207) 555-0131",
-        "city": "Orono",
+        "phone": "(207) 555-0167",
+        "city": "Bath",
         "state": "ME",
-        "email": "lillian.danforth@example.net"
+        "email": "maria.kingsley@example.net"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Maria T. Coe",
+      "type": "family_member",
+      "role": "Biological father",
+      "relationship": "Father of the minor",
+      "relevance": "Holds parental rights; his consent to or objection to the guardianship is central, and he is entitled to notice.",
+      "contact": {
+        "phone": "(207) 555-0153",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "maria.coe@example.org"
       }
     }
   ],
@@ -154,7 +171,7 @@
       {
         "topic": "Relationship to the child",
         "question": "How are you related to the child or children, and how long have you been involved in their lives?",
-        "answer": "I am the adult sibling. I have been closely involved with the child(ren) for a long time, and lately I have been the one making sure they are cared for day to day."
+        "answer": "I am the uncle. I have been closely involved with the child(ren) for a long time, and lately I have been the one making sure they are cared for day to day."
       },
       {
         "topic": "Why now",
@@ -169,7 +186,7 @@
       {
         "topic": "Current situation",
         "question": "Where are the children living now, and how are they doing?",
-        "answer": "Right now, the child splits time between relatives. They are doing as well as can be expected, and my goal is to keep their home, school, and routine as steady as possible."
+        "answer": "Right now, the child already lives with the petitioner. They are doing as well as can be expected, and my goal is to keep their home, school, and routine as steady as possible."
       },
       {
         "topic": "Authority needed",
@@ -204,15 +221,15 @@
   },
   "issues": [
     {
-      "issue": "Hearing and findings required for appointment",
+      "issue": "Statutory basis for appointing a guardian of a minor",
       "category": "probate",
-      "governing_law": "18-C M.R.S. § 5-207",
+      "governing_law": "18-C M.R.S. § 5-204",
       "sub_questions": [
-        "What findings must the court make to appoint a guardian?",
-        "What scope and limits should the letters of guardianship include?"
+        "Are the parents unable or unavailable to provide care so that a guardian is needed?",
+        "Do the facts support appointment of the petitioner as guardian?"
       ],
       "strength": "moderate",
-      "client_position": "The record supports the findings needed for appointment with authority over the child(ren)'s care, schooling, and medical decisions.",
+      "client_position": "The petitioner is an appropriate guardian and the statutory grounds for appointment are met.",
       "id": "iss1"
     },
     {
@@ -228,18 +245,6 @@
       "id": "iss2"
     },
     {
-      "issue": "Best interests of the child as the governing standard",
-      "category": "probate",
-      "governing_law": "18-C M.R.S. § 5-204",
-      "sub_questions": [
-        "How does the proposed guardianship serve the child(ren)'s best interests?",
-        "Does it preserve stability and continuity for the child(ren)?"
-      ],
-      "strength": "moderate",
-      "client_position": "Appointing the petitioner as guardian is in the child(ren)'s best interests and keeps them safe and settled.",
-      "id": "iss3"
-    },
-    {
       "issue": "Parental consent versus the clear-and-convincing showing required without it",
       "category": "probate",
       "governing_law": "18-C M.R.S. § 5-204(2)",
@@ -249,27 +254,29 @@
       ],
       "strength": "unknown",
       "client_position": "Where the parents consent, the petitioner relies on that consent; where they do not, the petitioner is prepared to make the heightened showing the statute requires.",
-      "id": "iss4"
-    },
+      "id": "iss3"
+    }
+  ],
+  "expert_opinions": [
     {
-      "issue": "Statutory basis for appointing a guardian of a minor",
-      "category": "probate",
-      "governing_law": "18-C M.R.S. § 5-204",
-      "sub_questions": [
-        "Are the parents unable or unavailable to provide care so that a guardian is needed?",
-        "Do the facts support appointment of the petitioner as guardian?"
-      ],
-      "strength": "moderate",
-      "client_position": "The petitioner is an appropriate guardian and the statutory grounds for appointment are met.",
-      "id": "iss5"
+      "id": "exp1",
+      "expert": {
+        "name": "Rosa C. Greenhill",
+        "field": "Child psychology / best interests",
+        "credentials": "Ph.D.",
+        "retained_by": "court"
+      },
+      "topic": "Best interests, stability, and the child's needs",
+      "opinion": "Continuity of caregiving with the proposed guardian supports the child's stability and best interests.",
+      "basis": "Clinical interviews, review of records, and collateral contacts."
     }
   ],
   "evidence": [
     {
-      "title": "Proposed guardian's background-check results",
+      "title": "Child's school records",
       "type": "document",
       "party": "petitioner",
-      "description": "Background screening of the proposed guardian relevant to suitability.",
+      "description": "Enrollment and progress records showing the child's schooling and the need for decision-making authority.",
       "id": "ev1"
     },
     {
@@ -280,10 +287,10 @@
       "id": "ev2"
     },
     {
-      "title": "Signed parental consent / affidavit",
-      "type": "affidavit",
+      "title": "Certified birth certificate of the minor",
+      "type": "public_record",
       "party": "petitioner",
-      "description": "Sworn consent of a parent to the guardianship, where consent is given.",
+      "description": "Certified record establishing the child's identity, date of birth, and parentage.",
       "id": "ev3"
     }
   ],
@@ -291,23 +298,18 @@
     "currency": "USD",
     "amounts": [
       {
-        "label": "Child's estimated monthly expenses",
-        "amount": 1463,
-        "basis": "Estimated monthly cost of the child's food, clothing, school, and activities."
-      },
-      {
-        "label": "Survivor / Social Security benefits received for the child",
-        "amount": 80,
-        "basis": "Monthly benefits, if any, received on the child's behalf."
+        "label": "Proposed guardian's monthly household income",
+        "amount": 5036,
+        "basis": "Monthly income available to support the household."
       }
     ]
   },
   "facts": {
-    "petitioner_relationship": "adult sibling",
+    "petitioner_relationship": "uncle",
     "reason_for_guardianship": "a parent's substance use treatment",
-    "parental_consent": true,
+    "parental_consent": false,
     "guardianship_type": "full guardianship of a minor",
-    "current_living_arrangement": "the child splits time between relatives",
+    "current_living_arrangement": "the child already lives with the petitioner",
     "duration": "until the minor reaches 18 or further court order",
     "minor_count": "1"
   }

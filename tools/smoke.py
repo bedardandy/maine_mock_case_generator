@@ -26,8 +26,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from generator import (  # noqa: E402
+    fill_form,
     generate_matter,
+    list_forms,
     list_scenarios,
+    load_form,
     project_to_canonical,
     validate_canonical,
     validate_matter,
@@ -110,7 +113,32 @@ def main() -> int:
     print("-" * 72)
     print(f"{len(rows)} scenarios, {total_runs} runs, {total_fail} failure(s).")
 
-    return 0 if total_fail == 0 else 1
+    # Concrete fills: pour a matter into each wired downstream form mapping.
+    fill_fail = 0
+    forms = list_forms()
+    if forms:
+        print()
+        print(f"{'form':<10} {'repo':<26} {'profile':<10} {'coverage':>10}  required")
+        print("-" * 72)
+        for fid in forms:
+            meta = load_form(fid)["meta"]
+            scenario = meta.get("best_scenario")
+            try:
+                plan = fill_form(generate_matter(scenario, args.seed_base), fid)
+            except Exception as exc:
+                fill_fail += 1
+                print(f"{fid:<10} ERROR: {exc}")
+                continue
+            cov = plan["coverage"]
+            req = "OK" if plan["required"]["ok"] else f"MISSING {plan['required']['missing']}"
+            if not plan["required"]["ok"]:
+                fill_fail += 1
+            print(f"{fid:<10} {meta['repo']:<26} {meta['profile']:<10} "
+                  f"{cov['filled_fields']:>3}/{cov['total_fields']:<3} ({cov['percent']:>4}%)  {req}")
+        print("-" * 72)
+        print(f"{len(forms)} wired form(s), {fill_fail} fill failure(s).")
+
+    return 0 if (total_fail == 0 and fill_fail == 0) else 1
 
 
 if __name__ == "__main__":

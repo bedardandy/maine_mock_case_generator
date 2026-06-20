@@ -11,7 +11,7 @@
   "matter": {
     "matter_id": "MMC-2026-202163",
     "practice_area": "tax",
-    "title": "Estate of Olivia B. Ellsworth: federal estate tax return (Form 706) and Maine estate tax return (706ME), with Samuel B. Danforth as executor",
+    "title": "Estate of Olivia B. Ellsworth: federal estate tax return (Form 706) and Maine estate tax return (706ME), with Theodore B. Kingsley as executor",
     "jurisdiction": {
       "state": "ME",
       "county": "Sagadahoc",
@@ -21,7 +21,7 @@
     "case_type": "estate_tax",
     "filing_date": "2026-05-31",
     "status": "intake",
-    "summary": "Samuel B. Danforth is the executor of the estate of Olivia B. Ellsworth, who died on 2025-04-24 domiciled in Sagadahoc County, Maine, leaving a gross estate of roughly $8563055; counsel and the executor must prepare a timely, accurate federal estate tax return (Form 706) and Maine estate tax return (706ME), file Form 56 fiduciary notice, and handle fiduciary income tax (Forms 1041 and 1041ME) during administration.",
+    "summary": "Theodore B. Kingsley is the executor of the estate of Olivia B. Ellsworth, who died on 2025-04-24 domiciled in Sagadahoc County, Maine, leaving a gross estate of roughly $8563055; counsel and the executor must prepare a timely, accurate federal estate tax return (Form 706) and Maine estate tax return (706ME), file Form 56 fiduciary notice, and handle fiduciary income tax (Forms 1041 and 1041ME) during administration.",
     "event_date": "2025-04-24"
   },
   "parties": {
@@ -32,62 +32,66 @@
       "last_name": "Ellsworth",
       "full_name": "Olivia B. Ellsworth",
       "role": "Decedent",
-      "date_of_birth": "1997-10-02"
+      "date_of_birth": "1997-10-02",
+      "ssn_last4": "1542"
     },
     "personal_representative": {
       "entity_type": "person",
-      "first_name": "Samuel",
+      "first_name": "Theodore",
       "middle_name": "B",
-      "last_name": "Danforth",
-      "full_name": "Samuel B. Danforth",
+      "last_name": "Kingsley",
+      "full_name": "Theodore B. Kingsley",
       "role": "Executor / personal representative (fiduciary)",
       "address": "467 Spruce Avenue",
       "city": "Bangor",
       "state": "ME",
       "zip": "04005",
       "phone": "(207) 555-0111",
-      "email": "samuel.danforth@example.org",
-      "date_of_birth": "1975-02-05"
+      "email": "theodore.kingsley@example.org",
+      "date_of_birth": "1975-02-05",
+      "ssn_last4": "3943"
     },
     "attorney": {
       "entity_type": "person",
-      "first_name": "Marcus",
-      "middle_name": "W",
-      "last_name": "Poe",
-      "full_name": "Marcus W. Poe",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Jessup",
+      "full_name": "Maria Q. Jessup",
       "role": "Attorney for the client",
-      "address": "219 Pine Lane",
+      "address": "32 Meadowbrook Drive",
       "city": "Yarmouth",
       "state": "ME",
       "zip": "04029",
       "phone": "(207) 555-0180",
-      "email": "marcus.poe@example.net",
+      "email": "maria.jessup@example.net",
       "date_of_birth": "1964-02-01",
+      "ssn_last4": "9455",
       "bar_number": "7499",
       "organization_name": "Birchwood & Calloway LLP"
     },
     "client": {
       "entity_type": "person",
-      "first_name": "Samuel",
+      "first_name": "Theodore",
       "middle_name": "B",
-      "last_name": "Danforth",
-      "full_name": "Samuel B. Danforth",
+      "last_name": "Kingsley",
+      "full_name": "Theodore B. Kingsley",
       "role": "Executor / personal representative (fiduciary)",
       "address": "467 Spruce Avenue",
       "city": "Bangor",
       "state": "ME",
       "zip": "04005",
       "phone": "(207) 555-0111",
-      "email": "samuel.danforth@example.org",
-      "date_of_birth": "1975-02-05"
+      "email": "theodore.kingsley@example.org",
+      "date_of_birth": "1975-02-05",
+      "ssn_last4": "3943"
     }
   },
   "fact_pattern": {
-    "summary": "Samuel B. Danforth is the executor of the estate of Olivia B. Ellsworth, who died on 2025-04-24 domiciled in Sagadahoc County, Maine, leaving a gross estate of roughly $8563055; counsel and the executor must prepare a timely, accurate federal estate tax return (Form 706) and Maine estate tax return (706ME), file Form 56 fiduciary notice, and handle fiduciary income tax (Forms 1041 and 1041ME) during administration.",
-    "narrative": "Olivia B. Ellsworth died on 2025-04-24 while domiciled in Sagadahoc County, Maine. Samuel B. Danforth has been appointed executor and personal representative of the estate and, as fiduciary, is responsible for filing the decedent's final returns and the estate's transfer- and income-tax returns. Because the gross estate is valued at approximately $8563055, it exceeds the federal basic exclusion amount, so a federal estate tax return (Form 706) is required under IRC § 6018, and a Maine estate tax return (Form 706ME) is required under 36 M.R.S. § 4062 et seq.\n\nThe gross estate is composed of several asset classes that must be valued as of the date of death (or, if the executor elects, the alternate valuation date six months later under IRC § 2032): real property of roughly $5269643, a closely-held business interest of roughly $2234302, marketable securities of roughly $2929418, and life insurance proceeds of roughly $1757996 that are includible under IRC § 2042. Debts of the decedent, funeral expenses, and administration expenses totaling about $402524 are deductible under IRC § 2053. The estate names approximately 5 beneficiary(ies), which may include a surviving spouse (marital deduction under IRC § 2056), a charity (charitable deduction under IRC § 2055), and one or more children.\n\nSamuel must file Form 56 to notify the IRS of the fiduciary relationship, prepare and file the Form 706 and Form 706ME by the return due date of 2026-07-10 (nine months after death, extendable six months under IRC § 6075), claim every available deduction, and decide whether to elect portability of the decedent's unused exclusion (the DSUE amount) under IRC § 2010(c). During administration the estate will also earn income, requiring fiduciary income tax returns on Form 1041 and Form 1041ME under IRC § 641. Counsel will engage qualified appraisers to support the reported values and minimize audit exposure.",
+    "summary": "Theodore B. Kingsley is the executor of the estate of Olivia B. Ellsworth, who died on 2025-04-24 domiciled in Sagadahoc County, Maine, leaving a gross estate of roughly $8563055; counsel and the executor must prepare a timely, accurate federal estate tax return (Form 706) and Maine estate tax return (706ME), file Form 56 fiduciary notice, and handle fiduciary income tax (Forms 1041 and 1041ME) during administration.",
+    "narrative": "Olivia B. Ellsworth died on 2025-04-24 while domiciled in Sagadahoc County, Maine. Theodore B. Kingsley has been appointed executor and personal representative of the estate and, as fiduciary, is responsible for filing the decedent's final returns and the estate's transfer- and income-tax returns. Because the gross estate is valued at approximately $8563055, it exceeds the federal basic exclusion amount, so a federal estate tax return (Form 706) is required under IRC § 6018, and a Maine estate tax return (Form 706ME) is required under 36 M.R.S. § 4062 et seq.\n\nThe gross estate is composed of several asset classes that must be valued as of the date of death (or, if the executor elects, the alternate valuation date six months later under IRC § 2032): real property of roughly $5269643, a closely-held business interest of roughly $2234302, marketable securities of roughly $2929418, and life insurance proceeds of roughly $1757996 that are includible under IRC § 2042. Debts of the decedent, funeral expenses, and administration expenses totaling about $402524 are deductible under IRC § 2053. The estate names approximately 5 beneficiary(ies), which may include a surviving spouse (marital deduction under IRC § 2056), a charity (charitable deduction under IRC § 2055), and one or more children.\n\nTheodore must file Form 56 to notify the IRS of the fiduciary relationship, prepare and file the Form 706 and Form 706ME by the return due date of 2026-07-10 (nine months after death, extendable six months under IRC § 6075), claim every available deduction, and decide whether to elect portability of the decedent's unused exclusion (the DSUE amount) under IRC § 2010(c). During administration the estate will also earn income, requiring fiduciary income tax returns on Form 1041 and Form 1041ME under IRC § 641. Counsel will engage qualified appraisers to support the reported values and minimize audit exposure.",
     "undisputed_facts": [
       "Olivia B. Ellsworth died on 2025-04-24 domiciled in Sagadahoc County, Maine.",
-      "Samuel B. Danforth is the duly appointed executor and fiduciary of the estate.",
+      "Theodore B. Kingsley is the duly appointed executor and fiduciary of the estate.",
       "The gross estate is valued at approximately $8563055, exceeding the federal filing threshold and requiring a Form 706 and a Form 706ME.",
       "The estate's federal estate tax return is due approximately nine months after death, on 2026-07-10, subject to a six-month extension."
     ],
@@ -103,7 +107,7 @@
       },
       {
         "date": "2026-05-31",
-        "event": "Samuel B. Danforth engages counsel to prepare the Form 706, Form 706ME, Form 56, and the fiduciary income tax returns."
+        "event": "Theodore B. Kingsley engages counsel to prepare the Form 706, Form 706ME, Form 56, and the fiduciary income tax returns."
       },
       {
         "date": "2026-07-10",
@@ -359,7 +363,7 @@
     "portability_election": true,
     "num_beneficiaries": 5,
     "prior_taxable_gifts": true,
-    "executor_name": "Samuel B. Danforth",
+    "executor_name": "Theodore B. Kingsley",
     "return_due_date": "2026-07-10"
   }
 }

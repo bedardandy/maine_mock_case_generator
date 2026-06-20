@@ -49,6 +49,23 @@ python -m pytest -q                      # test suite
 
 Or via `make`: `make list`, `make generate SCENARIO=estate-tax-706 SEED=2`, `make smoke`, `make test`.
 
+## Concrete fills (end-to-end proof)
+
+The generator doesn't stop at a canonical case — it pours matters into **real downstream
+form mappings** so you can see exactly which PDF fields get populated:
+
+```bash
+python tools/fill.py --list
+python tools/fill.py FM-004 --scenario family-divorce-cumberland --seed 1   # court form, native
+python tools/fill.py IRS-SS-4 --seed 1 --show-empty                          # tax form, via adapter
+```
+
+`integration/` vendors the real `mapping.json` from your form repos. Court forms consume
+our canonical namespace directly; tax forms (different namespace) go through
+`generator/adapters.py`. Each fill prints a coverage report and required-key check; the
+form-namespace case JSON it emits is the input the downstream repo's PDF engine renders.
+See [`integration/README.md`](integration/README.md).
+
 ## Seed scenarios
 
 Seven archetypes spanning the three downstream repos. Add more by dropping a new
@@ -79,8 +96,9 @@ form-specific bridge). Full reference: [`docs/data-model.md`](docs/data-model.md
 ```
 catalog/      mock_matter.schema.json, canonical_case.schema.json, practice_areas.json, faker_pools.json
 scenarios/    one folder per archetype (scenario.yaml + README.md)
-generator/    the engine: pools, dsl, scenarios, engine, project, schema
-tools/        generate.py, validate.py, project_canonical.py, smoke.py, build_examples.py, mcp_server.py
+generator/    the engine: pools, dsl, scenarios, engine, project, schema, adapters, formfill
+tools/        generate, validate, project_canonical, fill, smoke, build_examples, mcp_server
+integration/  vendored real downstream form mappings + registry (concrete fills)
 skills/       mock-case-generator/ (LLM-guided generation protocol + prompts)
 examples/     a generated matter + canonical projection per scenario
 docs/         architecture, data-model, integration, smoke-testing

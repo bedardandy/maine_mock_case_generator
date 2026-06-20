@@ -13,8 +13,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from generator import (  # noqa: E402
+    fill_form,
     generate_matter,
+    list_forms,
     list_scenarios,
+    load_form,
     project_to_canonical,
     validate_canonical,
     validate_matter,
@@ -46,6 +49,18 @@ def main() -> int:
             json.dumps(case, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
         )
         print(f"wrote examples/{sid}.matter.json and examples/{sid}.canonical.json")
+
+    # Concrete fill plans against the real vendored form mappings.
+    fills_dir = examples_dir / "fills"
+    fills_dir.mkdir(exist_ok=True)
+    for fid in list_forms():
+        scenario = load_form(fid)["meta"]["best_scenario"]
+        plan = fill_form(generate_matter(scenario, EXAMPLE_SEED), fid, today="2026-06-20")
+        (fills_dir / f"{fid}.fillplan.json").write_text(
+            json.dumps(plan, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        )
+        cov = plan["coverage"]
+        print(f"wrote examples/fills/{fid}.fillplan.json ({cov['filled_fields']}/{cov['total_fields']})")
 
     return 1 if failures else 0
 

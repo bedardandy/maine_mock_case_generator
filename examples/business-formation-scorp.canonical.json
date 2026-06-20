@@ -1,35 +1,35 @@
 {
   "matter": {
-    "case_id": "MMC-2025-691783",
+    "case_id": "MMC-2025-620528",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Maine Secretary of State / IRS (filing offices)",
     "case_type": "entity_formation",
     "filing_date": "2025-12-09",
-    "event_date": "2026-01-07"
+    "event_date": "2025-12-19"
   },
   "parties": {
     "company": {
-      "full_name": "Coastal Logistics Co.",
-      "address": "216 Maple Court",
-      "city": "Orono",
+      "full_name": "Summit Outfitters Co.",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
       "state": "ME",
-      "zip": "04012",
-      "phone": "(207) 555-0170"
+      "zip": "04071",
+      "phone": "(207) 555-0154"
     },
     "attorney": {
-      "full_name": "Omar D. Roe",
-      "first_name": "Omar",
+      "full_name": "John D. Kingsley",
+      "first_name": "John",
       "middle_name": "D",
-      "last_name": "Roe",
+      "last_name": "Kingsley",
       "address": "116 Granite Ridge Road",
       "city": "Brunswick",
       "state": "ME",
       "zip": "04074",
       "phone": "(207) 555-0174",
-      "email": "omar.roe@example.org",
+      "email": "john.kingsley@example.org",
       "date_of_birth": "1998-04-24",
-      "bar_number": "1763"
+      "bar_number": "3181"
     }
   },
   "party": {
@@ -43,26 +43,27 @@
     "zip": "04047",
     "phone": "(207) 555-0174",
     "email": "grace.roe@example.com",
-    "date_of_birth": "1969-04-20"
+    "date_of_birth": "1969-04-20",
+    "signature": "Grace C. Roe"
   },
   "facts": {
-    "entity_name": "Coastal Logistics Co.",
-    "entity_type": "C corporation electing S status",
+    "entity_name": "Summit Outfitters Co.",
+    "entity_type": "corporation",
     "state_of_incorporation": "Maine",
-    "incorporation_date": "2026-01-07",
-    "ein_applied": false,
+    "incorporation_date": "2025-12-19",
+    "ein_applied": true,
     "s_corp_election": true,
-    "election_effective_date": "2026-02-08",
+    "election_effective_date": "2026-02-10",
     "tax_year": "calendar year",
     "fiscal_year_end": "December 31",
     "num_shareholders": 2,
-    "num_employees": 1,
-    "first_payroll_date": "2026-03-30",
+    "num_employees": 5,
+    "first_payroll_date": "2026-01-27",
     "accounting_method": "cash",
-    "naics_code": "722511",
+    "naics_code": "453998",
     "principal_activity": "software development",
-    "expected_first_year_revenue": 654351,
+    "expected_first_year_revenue": 729078,
     "responsible_party_name": "Grace C. Roe",
-    "reasonable_compensation": 43229
+    "reasonable_compensation": 61995
   }
 }

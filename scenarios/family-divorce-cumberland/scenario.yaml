@@ -28,7 +28,9 @@ parties:
 
 facts:
   marriage_date: {date_between: ["2006-01-01", "2019-12-31"]}
-  marriage_place: {pick: ["Portland, Maine", "Brunswick, Maine", "Bar Harbor, Maine", "Camden, Maine"]}
+  marriage_city: {pick: ["Portland", "Brunswick", "Bar Harbor", "Camden", "Bath", "Bangor"]}
+  marriage_county: {pick: ["Cumberland", "Sagadahoc", "Hancock", "Knox", "Penobscot"]}
+  marriage_state: "Maine"
   separation_date: {date_between: ["2025-01-01", "2025-08-31"]}
   grounds: {pick: ["Irreconcilable differences", "Irreconcilable marital differences"]}
   residency_months: {int_between: [7, 60]}
@@ -49,11 +51,11 @@ third_parties:
 fact_pattern:
   summary: "{plaintiff_full_name} petitions to divorce {defendant_full_name} in {county} County District Court, citing {grounds_lower}, and asks the court to resolve parental rights for {num_children_words} minor child(ren), child support, and division of marital property."
   narrative:
-    - "{plaintiff_full_name} and {defendant_full_name} were married on {marriage_date} in {marriage_place}. The parties have {num_children_words} minor child(ren) together: {children_names}. After several years of growing conflict and a period of unsuccessful counseling, the parties separated on {separation_date}."
+    - "{plaintiff_full_name} and {defendant_full_name} were married on {marriage_date} in {marriage_city}, {marriage_state}. The parties have {num_children_words} minor child(ren) together: {children_names}. After several years of growing conflict and a period of unsuccessful counseling, the parties separated on {separation_date}."
     - "Since separation, the children have lived primarily with {primary_residence_parent}, while the other parent has exercised weekend contact. The parties jointly own or rent a {marital_home} and share several financial accounts. They disagree about a long-term parenting schedule and about how to divide retirement savings accumulated during the marriage."
     - "{plaintiff_first} has resided in {county} County, Maine for approximately {residency_months} months, satisfying the residency requirement to file. {plaintiff_first} now seeks a divorce on the ground of {grounds_lower}, a workable parental rights and responsibilities order, child support consistent with the Maine guidelines, and an equitable division of marital property and debt."
   undisputed:
-    - "The parties were married on {marriage_date} in {marriage_place}."
+    - "The parties were married on {marriage_date} in {marriage_city}, {marriage_state}."
     - "The parties have {num_children_words} minor child(ren) of the marriage."
     - "The parties separated on {separation_date} and have lived apart since."
   disputed:
@@ -61,7 +63,7 @@ fact_pattern:
     - "The characterization and division of retirement accounts and the equity in the {marital_home}."
     - "Whether spousal support is appropriate and, if so, in what amount and for how long."
   timeline:
-    - {date: "{marriage_date}", event: "{plaintiff_first} and {defendant_first} married in {marriage_place}."}
+    - {date: "{marriage_date}", event: "{plaintiff_first} and {defendant_first} married in {marriage_city}, {marriage_state}."}
     - {date: "{separation_date}", event: "The parties separated."}
     - {date: "{filing_date}", event: "Complaint for divorce prepared for filing in {court_location} District Court."}
 
