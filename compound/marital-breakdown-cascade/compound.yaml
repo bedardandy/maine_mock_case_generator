@@ -1,0 +1,35 @@
+id: marital-breakdown-cascade
+title: "Marital breakdown of {spouse_a_full_name} and {spouse_b_full_name}"
+theme: "The breakdown of the marriage of {spouse_a_full_name} and {spouse_b_full_name} spawns a divorce, a protection-from-abuse matter, and a dispute over the value of the marital business."
+narrative: >
+  {spouse_a_full_name} filed for divorce from {spouse_b_full_name} and separately sought a
+  protection order; both matters concern the same spouses and their children,
+  {child_one_full_name} and {child_two_full_name}. The marital business,
+  {family_business_name}, formed and run by {spouse_b_full_name}, is a contested marital
+  asset whose value must be determined and divided in the divorce. The protective order, if
+  granted, also shapes the parenting schedule litigated in the divorce.
+
+cast:
+  - {cast_id: spouse_a, kind: person, label: "Spouse A (the client)"}
+  - {cast_id: spouse_b, kind: person, label: "Spouse B and business owner"}
+  - {cast_id: child_one, kind: person, child: true, label: "Minor child of the marriage"}
+  - {cast_id: child_two, kind: person, child: true, label: "Minor child of the marriage"}
+  - {cast_id: family_business, kind: organization, label: "The marital business"}
+
+matters:
+  - id: divorce
+    scenario: family-divorce-cumberland
+    roles: {plaintiff: spouse_a, defendant: spouse_b, child_1: child_one, child_2: child_two}
+    relates:
+      - {to: protection_order, type: relates_to, description: "The protection order concerns the same spouses and affects custody decided here."}
+      - {to: business_matter, type: values, description: "The marital business is an asset that must be valued and divided in the divorce."}
+  - id: protection_order
+    scenario: protection-from-abuse
+    roles: {plaintiff: spouse_a, defendant: spouse_b, child_1: child_one, child_2: child_two}
+    relates:
+      - {to: divorce, type: relates_to, description: "Arises between the same spouses; a protective order can shape the parenting schedule in the divorce."}
+  - id: business_matter
+    scenario: business-formation-scorp
+    roles: {applicant: spouse_b, company: family_business}
+    relates:
+      - {to: divorce, type: marital_asset_of, description: "The business is a marital asset whose value is contested in the divorce."}

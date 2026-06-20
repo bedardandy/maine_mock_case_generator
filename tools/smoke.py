@@ -27,12 +27,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from generator import (  # noqa: E402
     fill_form,
+    generate_compound,
     generate_matter,
+    list_compounds,
     list_forms,
     list_scenarios,
     load_form,
     project_to_canonical,
     validate_canonical,
+    validate_compound,
     validate_matter,
 )
 
@@ -138,7 +141,35 @@ def main() -> int:
         print("-" * 72)
         print(f"{len(forms)} wired form(s), {fill_fail} fill failure(s).")
 
-    return 0 if (total_fail == 0 and fill_fail == 0) else 1
+    # Compound (intertwined) matter universes.
+    compound_fail = 0
+    compounds = list_compounds()
+    if compounds:
+        print()
+        print(f"{'compound':<30} {'matters':>7} {'cast':>5} {'links':>6}  status")
+        print("-" * 72)
+        for cid in compounds:
+            ok = True
+            matters = cast = links = 0
+            for i in range(min(args.count, 3)):
+                try:
+                    compound = generate_compound(cid, args.seed_base + i)
+                except Exception as exc:
+                    ok = False
+                    print(f"{cid:<30} ERROR: {exc}")
+                    break
+                if validate_compound(compound):
+                    ok = False
+                matters = len(compound["matters"])
+                cast = len(compound["cast"])
+                links = len(compound["relationships"])
+            if not ok:
+                compound_fail += 1
+            print(f"{cid:<30} {matters:>7} {cast:>5} {links:>6}  {'PASS' if ok else 'FAIL'}")
+        print("-" * 72)
+        print(f"{len(compounds)} compound universe(s), {compound_fail} failure(s).")
+
+    return 0 if (total_fail == 0 and fill_fail == 0 and compound_fail == 0) else 1
 
 
 if __name__ == "__main__":

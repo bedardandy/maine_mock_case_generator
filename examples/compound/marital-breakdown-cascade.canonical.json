@@ -1,0 +1,309 @@
+[
+  {
+    "universe_id": "UNIV-marital-breakdown-cascade-0007",
+    "matter_id": "MMC-2025-237630",
+    "scenario_id": "family-divorce-cumberland",
+    "canonical": {
+      "matter": {
+        "docket_number": "CUM-FM-2025-810",
+        "case_id": "MMC-2025-237630",
+        "court_county": "Cumberland",
+        "court_location": "Portland",
+        "court_type": "District Court",
+        "case_type": "family_matters",
+        "filing_date": "2025-10-31",
+        "event_date": "2025-03-19"
+      },
+      "parties": {
+        "plaintiff": {
+          "full_name": "Nadia P. Loe",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "address": "335 Pine Lane",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04069",
+          "phone": "(207) 555-0112",
+          "email": "nadia.loe@example.org",
+          "date_of_birth": "1964-01-30"
+        },
+        "defendant": {
+          "full_name": "Priya C. Roe",
+          "first_name": "Priya",
+          "middle_name": "C",
+          "last_name": "Roe",
+          "address": "224 Lighthouse Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04031",
+          "phone": "(207) 555-0111",
+          "email": "priya.roe@example.net",
+          "date_of_birth": "1974-01-31"
+        },
+        "child_1": {
+          "full_name": "Samuel B. Boe",
+          "first_name": "Samuel",
+          "middle_name": "B",
+          "last_name": "Boe",
+          "address": "297 Tidewater Lane",
+          "city": "Ellsworth",
+          "state": "ME",
+          "zip": "04007",
+          "phone": "(207) 555-0128",
+          "email": "samuel.boe@example.com",
+          "date_of_birth": "2021-05-29"
+        },
+        "child_2": {
+          "full_name": "Omar W. Loe",
+          "first_name": "Omar",
+          "middle_name": "W",
+          "last_name": "Loe",
+          "address": "62 Tidewater Lane",
+          "city": "Waterville",
+          "state": "ME",
+          "zip": "04072",
+          "phone": "(207) 555-0187",
+          "email": "omar.loe@example.com",
+          "date_of_birth": "2022-10-25"
+        },
+        "attorney": {
+          "full_name": "Beatrice M. Calloway",
+          "first_name": "Beatrice",
+          "middle_name": "M",
+          "last_name": "Calloway",
+          "address": "357 Granite Ridge Road",
+          "city": "Gorham",
+          "state": "ME",
+          "zip": "04085",
+          "phone": "(207) 555-0147",
+          "email": "beatrice.calloway@example.net",
+          "date_of_birth": "1994-07-02",
+          "bar_number": "9018"
+        }
+      },
+      "party": {
+        "full_name": "Nadia P. Loe",
+        "first_name": "Nadia",
+        "middle_name": "P",
+        "last_name": "Loe",
+        "address": "335 Pine Lane",
+        "city": "Falmouth",
+        "state": "ME",
+        "zip": "04069",
+        "phone": "(207) 555-0112",
+        "email": "nadia.loe@example.org",
+        "date_of_birth": "1964-01-30",
+        "signature": "Nadia P. Loe"
+      },
+      "facts": {
+        "marriage_date": "2009-04-30",
+        "marriage_city": "Bar Harbor",
+        "marriage_county": "Sagadahoc",
+        "marriage_state": "Maine",
+        "separation_date": "2025-03-19",
+        "grounds": "Irreconcilable marital differences",
+        "residency_months": 52,
+        "spousal_support_requested": true,
+        "marital_home": "jointly owned single-family home",
+        "num_minor_children": "2",
+        "primary_residence_parent": "Nadia P. Loe"
+      }
+    }
+  },
+  {
+    "universe_id": "UNIV-marital-breakdown-cascade-0007",
+    "matter_id": "MMC-2026-877762",
+    "scenario_id": "protection-from-abuse",
+    "canonical": {
+      "matter": {
+        "docket_number": "CUM-PA-2026-454",
+        "case_id": "MMC-2026-877762",
+        "court_county": "Cumberland",
+        "court_location": "Portland",
+        "court_type": "District Court",
+        "case_type": "protection_from_abuse",
+        "filing_date": "2026-05-24",
+        "event_date": "2026-04-06"
+      },
+      "parties": {
+        "plaintiff": {
+          "full_name": "Nadia P. Loe",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "address": "335 Pine Lane",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04069",
+          "phone": "(207) 555-0112",
+          "email": "nadia.loe@example.org",
+          "date_of_birth": "1964-01-30"
+        },
+        "defendant": {
+          "full_name": "Priya C. Roe",
+          "first_name": "Priya",
+          "middle_name": "C",
+          "last_name": "Roe",
+          "address": "224 Lighthouse Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04031",
+          "phone": "(207) 555-0111",
+          "email": "priya.roe@example.net",
+          "date_of_birth": "1974-01-31"
+        },
+        "child_1": {
+          "full_name": "Samuel B. Boe",
+          "first_name": "Samuel",
+          "middle_name": "B",
+          "last_name": "Boe",
+          "address": "297 Tidewater Lane",
+          "city": "Ellsworth",
+          "state": "ME",
+          "zip": "04007",
+          "phone": "(207) 555-0128",
+          "email": "samuel.boe@example.com",
+          "date_of_birth": "2021-05-29"
+        },
+        "child_2": {
+          "full_name": "Omar W. Loe",
+          "first_name": "Omar",
+          "middle_name": "W",
+          "last_name": "Loe",
+          "address": "62 Tidewater Lane",
+          "city": "Waterville",
+          "state": "ME",
+          "zip": "04072",
+          "phone": "(207) 555-0187",
+          "email": "omar.loe@example.com",
+          "date_of_birth": "2022-10-25"
+        },
+        "attorney": {
+          "full_name": "Jane K. Poe",
+          "first_name": "Jane",
+          "middle_name": "K",
+          "last_name": "Poe",
+          "address": "231 Meadowbrook Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04002",
+          "phone": "(207) 555-0135",
+          "email": "jane.poe@example.com",
+          "date_of_birth": "1981-12-22",
+          "bar_number": "6473"
+        }
+      },
+      "party": {
+        "full_name": "Nadia P. Loe",
+        "first_name": "Nadia",
+        "middle_name": "P",
+        "last_name": "Loe",
+        "address": "335 Pine Lane",
+        "city": "Falmouth",
+        "state": "ME",
+        "zip": "04069",
+        "phone": "(207) 555-0112",
+        "email": "nadia.loe@example.org",
+        "date_of_birth": "1964-01-30",
+        "signature": "Nadia P. Loe"
+      },
+      "facts": {
+        "relationship": "dating partner",
+        "most_recent_incident_date": "2026-04-06",
+        "incident_location": "the plaintiff's workplace",
+        "prior_incidents": 7,
+        "firearms_present": false,
+        "requested_relief": "no contact and stay-away order",
+        "police_called": true
+      }
+    }
+  },
+  {
+    "universe_id": "UNIV-marital-breakdown-cascade-0007",
+    "matter_id": "MMC-2026-771146",
+    "scenario_id": "business-formation-scorp",
+    "canonical": {
+      "matter": {
+        "case_id": "MMC-2026-771146",
+        "court_county": "Kennebec",
+        "court_location": "Augusta",
+        "court_type": "Maine Secretary of State / IRS (filing offices)",
+        "case_type": "entity_formation",
+        "filing_date": "2026-04-27",
+        "event_date": "2026-02-19"
+      },
+      "parties": {
+        "applicant": {
+          "full_name": "Priya C. Roe",
+          "first_name": "Priya",
+          "middle_name": "C",
+          "last_name": "Roe",
+          "address": "224 Lighthouse Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04031",
+          "phone": "(207) 555-0111",
+          "email": "priya.roe@example.net",
+          "date_of_birth": "1974-01-31"
+        },
+        "company": {
+          "full_name": "Evergreen Studios LLC",
+          "address": "282 Willow Bend",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04073",
+          "phone": "(207) 555-0107"
+        },
+        "attorney": {
+          "full_name": "Wesley J. Poe",
+          "first_name": "Wesley",
+          "middle_name": "J",
+          "last_name": "Poe",
+          "address": "200 Willow Bend",
+          "city": "Waterville",
+          "state": "ME",
+          "zip": "04017",
+          "phone": "(207) 555-0175",
+          "email": "wesley.poe@example.com",
+          "date_of_birth": "1980-11-18",
+          "bar_number": "5106"
+        }
+      },
+      "party": {
+        "full_name": "Priya C. Roe",
+        "first_name": "Priya",
+        "middle_name": "C",
+        "last_name": "Roe",
+        "address": "224 Lighthouse Drive",
+        "city": "Falmouth",
+        "state": "ME",
+        "zip": "04031",
+        "phone": "(207) 555-0111",
+        "email": "priya.roe@example.net",
+        "date_of_birth": "1974-01-31",
+        "signature": "Priya C. Roe"
+      },
+      "facts": {
+        "entity_name": "Evergreen Studios LLC",
+        "entity_type": "corporation",
+        "state_of_incorporation": "Maine",
+        "incorporation_date": "2026-02-19",
+        "ein_applied": true,
+        "s_corp_election": true,
+        "election_effective_date": "2026-03-29",
+        "tax_year": "calendar year",
+        "fiscal_year_end": "December 31",
+        "num_shareholders": 2,
+        "num_employees": 2,
+        "first_payroll_date": "2026-03-16",
+        "accounting_method": "accrual",
+        "naics_code": "238220",
+        "principal_activity": "software development",
+        "expected_first_year_revenue": 105512,
+        "responsible_party_name": "Priya C. Roe",
+        "reasonable_compensation": 43327
+      }
+    }
+  }
+]

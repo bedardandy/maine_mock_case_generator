@@ -66,6 +66,33 @@ our canonical namespace directly; tax forms (different namespace) go through
 form-namespace case JSON it emits is the input the downstream repo's PDF engine renders.
 See [`integration/README.md`](integration/README.md).
 
+## Compound (intertwined) matters
+
+Real problems cascade across practice areas. A **compound matter** is a universe of linked
+matters that **share one cast** and cross-reference each other:
+
+```bash
+python tools/compound.py --list
+python tools/compound.py death-cascade --seed 1 --summary             # probate + estate tax + guardianship
+python tools/compound.py business-dispute-cascade --seed 1 --summary  # formation + complex litigation
+```
+
+| Compound | Matters | Through-line |
+|----------|---------|--------------|
+| `death-cascade` | probate + estate-tax + guardianship | one decedent; estate value feeds the 706; the minor heir is the ward |
+| `marital-breakdown-cascade` | divorce + protection-from-abuse + business | same spouses & children; the marital business is contested |
+| `business-dispute-cascade` | formation + complex civil litigation | the company formed in one matter is the defendant in the other |
+
+The same party objects appear across matters, so identities stay consistent everywhere.
+Each constituent is an independently-valid Mock Matter and projects to its own canonical
+case. See [`docs/compound.md`](docs/compound.md).
+
+## Deep litigation
+
+The `complex-civil-litigation` scenario exercises the schema's `litigation` section: a
+multi-party suit with multiple counts, affirmative defenses, counterclaims, cross-claims,
+a third-party complaint, discovery, motions, a chronological docket, and trial details.
+
 ## Seed scenarios
 
 Seven archetypes spanning the three downstream repos. Add more by dropping a new
@@ -80,6 +107,7 @@ Seven archetypes spanning the three downstream repos. Add more by dropping a new
 | `minor-guardianship` | probate (guardian of a minor) | maine-probate-forms |
 | `business-formation-scorp` | business (incorporate + S-elect) | transactional-tax-forms |
 | `estate-tax-706` | tax (Form 706 / 706ME + 1041) | transactional-tax-forms |
+| `complex-civil-litigation` | civil (deep, multi-party litigation) | maine-court-forms |
 
 Browse a worked sample of each under [`examples/`](examples/) (`*.matter.json` and the
 projected `*.canonical.json`).
@@ -94,14 +122,15 @@ form-specific bridge). Full reference: [`docs/data-model.md`](docs/data-model.md
 ## Repository layout
 
 ```
-catalog/      mock_matter.schema.json, canonical_case.schema.json, practice_areas.json, faker_pools.json
+catalog/      schemas (mock_matter, canonical_case, compound_matter), practice_areas, faker_pools
 scenarios/    one folder per archetype (scenario.yaml + README.md)
-generator/    the engine: pools, dsl, scenarios, engine, project, schema, adapters, formfill
-tools/        generate, validate, project_canonical, fill, smoke, build_examples, mcp_server
+compound/     intertwined matter universes (compound.yaml + README.md)
+generator/    the engine: pools, dsl, scenarios, engine, project, schema, adapters, formfill, compound
+tools/        generate, validate, project_canonical, fill, compound, smoke, build_examples, mcp_server
 integration/  vendored real downstream form mappings + registry (concrete fills)
 skills/       mock-case-generator/ (LLM-guided generation protocol + prompts)
-examples/     a generated matter + canonical projection per scenario
-docs/         architecture, data-model, integration, smoke-testing
+examples/     generated matters, canonical projections, fill plans, and compound universes
+docs/         architecture, data-model, integration, compound, smoke-testing
 tests/        pytest suite
 ```
 
@@ -116,7 +145,8 @@ tests/        pytest suite
 ## Documentation
 
 - [Architecture](docs/architecture.md) — data flow, modules, design choices
-- [Data model](docs/data-model.md) — both schemas + the projection mapping
-- [Integration](docs/integration.md) — feeding the downstream form repos
+- [Data model](docs/data-model.md) — the schemas + the projection mapping
+- [Integration](docs/integration.md) — feeding the downstream form repos + concrete fills
+- [Compound matters](docs/compound.md) — intertwined matter universes
 - [Smoke testing](docs/smoke-testing.md) — CI and volume/fuzz testing
 - [Disclaimer](DISCLAIMER.md) — fictional-data guarantees and responsible use

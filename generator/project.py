@@ -12,12 +12,11 @@ _CANONICAL_PARTY_FIELDS = (
     "date_of_birth", "signature", "bar_number",
 )
 
-# Roles carried into the canonical object. "client" is intentionally excluded
-# because it aliases another role and becomes the signing `party` instead.
-_PROJECTED_ROLES = (
-    "plaintiff", "defendant", "petitioner", "respondent",
-    "decedent", "personal_representative", "attorney", "other_party", "company",
-)
+# "client" is intentionally not projected as a party because it aliases another
+# role and becomes the signing `party` instead. Every other party role carries
+# through (including multi-party rosters like plaintiff_2 / third_party_defendant),
+# since the canonical schema allows additional party keys.
+_SKIP_ROLES = ("client",)
 
 # When a strict downstream filler expects plaintiff/defendant, supply them from
 # the equivalent role without dropping the original.
@@ -57,8 +56,9 @@ def project_to_canonical(matter: dict) -> dict:
     src_parties = matter.get("parties", {})
     canonical_parties: dict = {}
     for key, party in src_parties.items():
-        if key in _PROJECTED_ROLES or key.startswith("child_"):
-            canonical_parties[key] = _reduce_party(party)
+        if key in _SKIP_ROLES:
+            continue
+        canonical_parties[key] = _reduce_party(party)
     # Aliases so plaintiff/defendant exist for strict downstream fillers.
     for target, source in _ALIASES.items():
         if target not in canonical_parties and source in canonical_parties:

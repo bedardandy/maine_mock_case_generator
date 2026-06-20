@@ -9,6 +9,19 @@
     "event_date": "2025-12-19"
   },
   "parties": {
+    "applicant": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
     "company": {
       "full_name": "Summit Outfitters Co.",
       "address": "37 Cedar Way",

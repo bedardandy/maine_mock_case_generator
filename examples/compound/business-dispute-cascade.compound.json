@@ -1,0 +1,1131 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "compound-engine",
+    "generator_version": "0.1.0",
+    "compound_id": "business-dispute-cascade",
+    "seed": 7
+  },
+  "universe_id": "UNIV-business-dispute-cascade-0007",
+  "title": "Rise and dispute of Evergreen Analytics LLC",
+  "theme": "Evergreen Analytics LLC, founded by Nadia P. Loe, incorporates and raises capital, and is then sued by its investors for misrepresentations in the offering.",
+  "narrative": "Nadia P. Loe formed Evergreen Analytics LLC and elected S-corporation status. The company later raised money from Felix B. Fairbanks and Rosa B. Ellsworth, who now sue the company, its CEO Nadia P. Loe, and the outside auditor Northstar Builders LLC over alleged misrepresentations in the offering. The same company and founder appear as the applicant in the formation matter and as defendants in the litigation, tying the transactional and litigation matters into one story.\n",
+  "cast": [
+    {
+      "cast_id": "founder",
+      "kind": "person",
+      "name": "Nadia P. Loe",
+      "description": "Founder and CEO",
+      "appears_as": [
+        {
+          "matter_id": "formation",
+          "role": "applicant"
+        },
+        {
+          "matter_id": "litigation",
+          "role": "defendant_2"
+        }
+      ]
+    },
+    {
+      "cast_id": "company",
+      "kind": "organization",
+      "name": "Evergreen Analytics LLC",
+      "description": "The company",
+      "appears_as": [
+        {
+          "matter_id": "formation",
+          "role": "company"
+        },
+        {
+          "matter_id": "litigation",
+          "role": "defendant"
+        }
+      ]
+    },
+    {
+      "cast_id": "investor",
+      "kind": "person",
+      "name": "Felix B. Fairbanks",
+      "description": "Lead investor (the litigation client)",
+      "appears_as": [
+        {
+          "matter_id": "litigation",
+          "role": "plaintiff"
+        }
+      ]
+    },
+    {
+      "cast_id": "co_investor",
+      "kind": "person",
+      "name": "Rosa B. Ellsworth",
+      "description": "Co-investor",
+      "appears_as": [
+        {
+          "matter_id": "litigation",
+          "role": "plaintiff_2"
+        }
+      ]
+    },
+    {
+      "cast_id": "auditor",
+      "kind": "organization",
+      "name": "Northstar Builders LLC",
+      "description": "Outside auditor",
+      "appears_as": [
+        {
+          "matter_id": "litigation",
+          "role": "third_party_defendant"
+        }
+      ]
+    }
+  ],
+  "matters": [
+    {
+      "schema_version": "1.0",
+      "provenance": {
+        "mock": true,
+        "fictional": true,
+        "generator": "deterministic-engine",
+        "generator_version": "0.1.0",
+        "scenario_id": "business-formation-scorp",
+        "seed": 7001
+      },
+      "matter": {
+        "matter_id": "MMC-2026-560900",
+        "practice_area": "business",
+        "title": "Formation of Evergreen Analytics LLC and S-Corporation Election by Nadia P. Loe",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Kennebec",
+          "court_location": "Augusta",
+          "court_type": "Maine Secretary of State / IRS (filing offices)"
+        },
+        "case_type": "entity_formation",
+        "filing_date": "2026-04-30",
+        "status": "intake",
+        "summary": "Nadia P. Loe is forming Evergreen Analytics LLC, a Maine corporation engaged in retail of specialty goods, and electing S-corporation status effective 2026-03-16; the engagement covers the Articles of Incorporation, the EIN application (Form SS-4), the timely S-election (Form 2553), and Maine corporate and payroll-withholding registration.",
+        "event_date": "2026-03-16",
+        "universe_id": "UNIV-business-dispute-cascade-0007"
+      },
+      "parties": {
+        "applicant": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "full_name": "Nadia P. Loe",
+          "address": "335 Pine Lane",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04069",
+          "phone": "(207) 555-0112",
+          "email": "nadia.loe@example.org",
+          "date_of_birth": "1964-01-30",
+          "ssn_last4": "8313",
+          "role": "Founder / responsible party"
+        },
+        "company": {
+          "entity_type": "organization",
+          "organization_name": "Evergreen Analytics LLC",
+          "full_name": "Evergreen Analytics LLC",
+          "address": "224 Lighthouse Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04031",
+          "phone": "(207) 555-0111",
+          "role": "Newly formed Maine corporation"
+        },
+        "attorney": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "E",
+          "last_name": "Danforth",
+          "full_name": "Nadia E. Danforth",
+          "role": "Attorney for the client",
+          "address": "341 Harbor Road",
+          "city": "Yarmouth",
+          "state": "ME",
+          "zip": "04046",
+          "phone": "(207) 555-0124",
+          "email": "nadia.danforth@example.net",
+          "date_of_birth": "1970-04-29",
+          "ssn_last4": "2431",
+          "bar_number": "5753",
+          "organization_name": "Hawthorne Legal Group"
+        },
+        "client": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "full_name": "Nadia P. Loe",
+          "address": "335 Pine Lane",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04069",
+          "phone": "(207) 555-0112",
+          "email": "nadia.loe@example.org",
+          "date_of_birth": "1964-01-30",
+          "ssn_last4": "8313",
+          "role": "Founder / responsible party"
+        }
+      },
+      "fact_pattern": {
+        "summary": "Nadia P. Loe is forming Evergreen Analytics LLC, a Maine corporation engaged in retail of specialty goods, and electing S-corporation status effective 2026-03-16; the engagement covers the Articles of Incorporation, the EIN application (Form SS-4), the timely S-election (Form 2553), and Maine corporate and payroll-withholding registration.",
+        "narrative": "Nadia P. Loe is the founder and IRS responsible party for Evergreen Analytics LLC, a new corporation being organized in Maine to carry on retail of specialty goods. Articles of Incorporation were filed with the Maine Secretary of State with an incorporation date of 2026-03-16, and the corporation will have 3 shareholder(s) at formation.\n\nThe founder intends to elect S-corporation treatment under Subchapter S so that the corporation's income passes through to the shareholders, electing on a calendar year basis with a fiscal year end of December 31 and effective on 2026-03-16. The corporation expects 0 employee(s) and plans to begin payroll on or about 2026-01-18, using the accrual method of accounting and reporting under NAICS code 561730.\n\nBecause S-corporation owner-employees must be paid reasonable wages, the founder plans owner compensation of approximately $39970 per year and projects first-year revenue near $162577. The remaining work is to obtain an EIN on Form SS-4, file Form 2553 within the statutory window so the election is timely, register with Maine Revenue Services for corporate income tax and employer withholding, and set up payroll so the first Maine wage filings are correct.",
+        "undisputed_facts": [
+          "Evergreen Analytics LLC is being organized as a corporation in Maine with an incorporation date of 2026-03-16.",
+          "Nadia P. Loe is the founder and the IRS responsible party for the corporation.",
+          "The corporation intends to elect S-corporation status effective 2026-03-16.",
+          "The corporation expects 3 shareholder(s) and approximately 0 employee(s) in its first year."
+        ],
+        "disputed_facts": [
+          "Whether owner compensation of approximately $39970 satisfies the reasonable-compensation standard for an S-corporation owner-employee given the activity and revenue.",
+          "Whether the Form 2553 election will be filed within the statutory window so that S status is effective on 2026-03-16 without needing late-election relief.",
+          "Whether the accrual method of accounting is the appropriate choice for the corporation's first tax year."
+        ],
+        "timeline": [
+          {
+            "date": "2026-01-18",
+            "event": "Corporation begins payroll for its owner-employee and any staff, triggering Maine withholding obligations."
+          },
+          {
+            "date": "2026-03-16",
+            "event": "Articles of Incorporation for Evergreen Analytics LLC filed with the Maine Secretary of State."
+          },
+          {
+            "date": "2026-04-30",
+            "event": "EIN application (Form SS-4) and S-election (Form 2553) prepared for filing with the IRS for Evergreen Analytics LLC."
+          }
+        ]
+      },
+      "third_parties": [
+        {
+          "id": "tp1",
+          "name": "Diego T. Ashford",
+          "type": "witness",
+          "role": "Co-founder and shareholder",
+          "relationship": "Fellow shareholder of the corporation",
+          "relevance": "A second shareholder whose eligibility affects the S-corporation election and who must consent on Form 2553.",
+          "contact": {
+            "phone": "(207) 555-0151",
+            "city": "Augusta",
+            "state": "ME",
+            "email": "diego.ashford@example.net"
+          }
+        },
+        {
+          "id": "tp2",
+          "name": "Internal Revenue Service",
+          "type": "government_agency",
+          "role": "Federal tax authority",
+          "relevance": "Issues the EIN on Form SS-4 and processes the Form 2553 S-corporation election.",
+          "contact": {
+            "phone": "(207) 555-0198",
+            "city": "Waterville",
+            "state": "ME"
+          }
+        }
+      ],
+      "intake_interview": {
+        "interviewer": "Intake Attorney",
+        "interviewee_role": "applicant",
+        "date": "2026-04-30",
+        "exchanges": [
+          {
+            "topic": "The business",
+            "question": "Tell me about the business and why you want a corporation with an S-election.",
+            "answer": "I'm starting Evergreen Analytics LLC to do retail of specialty goods. I want the liability protection of a corporation, but I'd rather have the profits pass through to me instead of being taxed at the corporate level, so an S-election makes sense."
+          },
+          {
+            "topic": "Owners",
+            "question": "Who owns the company, and is everyone eligible to hold S-corporation stock?",
+            "answer": "There are 3 of us on the cap table. We're all individuals and U.S. persons, so I believe we all qualify, and everyone is on board with making the S-election."
+          },
+          {
+            "topic": "Employees and payroll",
+            "question": "Will the company have employees, and what are your payroll plans?",
+            "answer": "We expect about 0 employee(s) to start, and I plan to put myself on payroll as an owner-employee. I'd like to run the first payroll around 2026-01-18, and I want to make sure we withhold Maine taxes correctly."
+          },
+          {
+            "topic": "Banking and EIN",
+            "question": "Where do things stand on the EIN and the business bank account?",
+            "answer": "I still need the EIN before I can open the company's bank account, so getting Form SS-4 done is my first priority. Once the EIN comes through I'll open the operating account at the business bank."
+          },
+          {
+            "topic": "Goals",
+            "question": "What does a successful setup look like for you?",
+            "answer": "Limited liability, pass-through taxation with a reasonable salary for myself, a clean EIN and payroll setup, and being fully registered in Maine. Above all, I cannot afford to miss the S-election deadline."
+          }
+        ]
+      },
+      "client_objectives": {
+        "goals": [
+          "Form Evergreen Analytics LLC as a Maine corporation with limited liability for its shareholders.",
+          "Make a timely and effective S-corporation election so income passes through to the shareholders.",
+          "Obtain the EIN and set up compliant federal and Maine payroll, including owner reasonable compensation.",
+          "Complete Maine registration for corporate income tax and employer withholding."
+        ],
+        "priorities": [
+          "Filing Form 2553 within the statutory window so the S-election is effective on 2026-03-16.",
+          "Paying the owner-employee reasonable compensation that withstands IRS scrutiny.",
+          "Proper EIN, payroll, and Maine withholding setup from the first payroll."
+        ],
+        "risk_tolerance": "moderate",
+        "desired_outcomes": [
+          "An approved Maine corporation with an effective S-election as of 2026-03-16.",
+          "An issued EIN, a funded operating account, and correct first-year federal and Maine payroll filings."
+        ],
+        "non_starters": [
+          "Blowing the S-election deadline and losing pass-through treatment for the first year."
+        ],
+        "constraints": {
+          "budget": "Limited; prefers to handle routine filings in-house with counsel reviewing the elections.",
+          "timeline": "Needs the EIN and Form 2553 filed in time for the election to be effective on the incorporation date."
+        }
+      },
+      "issues": [
+        {
+          "issue": "Maine corporate registration and employer withholding obligations",
+          "category": "business",
+          "governing_law": "13-C M.R.S. (formation); 36 M.R.S. § 5102 et seq. and § 5250 (income tax and withholding)",
+          "sub_questions": [
+            "Are the Articles of Incorporation compliant with the Maine Business Corporation Act?",
+            "When must the corporation register for and begin Maine income-tax withholding on wages?"
+          ],
+          "strength": "strong",
+          "client_position": "The corporation will file compliant Articles and register with Maine Revenue Services for corporate income tax and employer withholding before the first payroll.",
+          "id": "iss1"
+        },
+        {
+          "issue": "Making a timely and valid S-corporation election on Form 2553",
+          "category": "business",
+          "governing_law": "IRC § 1362",
+          "sub_questions": [
+            "Will Form 2553 be filed within 2 months and 15 days of the effective date?",
+            "Have all shareholders consented to the election?"
+          ],
+          "strength": "moderate",
+          "client_position": "The founder intends to file Form 2553 within the statutory window with all shareholder consents so the election is effective on 2026-03-16.",
+          "id": "iss2"
+        },
+        {
+          "issue": "Obtaining an Employer Identification Number on Form SS-4",
+          "category": "business",
+          "governing_law": "IRC § 6109; Form SS-4 instructions",
+          "sub_questions": [
+            "Who is the responsible party for the EIN application?",
+            "What entity classification and principal activity should be reported?"
+          ],
+          "strength": "strong",
+          "client_position": "Nadia P. Loe is the responsible party and will apply for the EIN reporting the corporation's principal activity of retail of specialty goods.",
+          "id": "iss3"
+        }
+      ],
+      "expert_opinions": [
+        {
+          "id": "exp1",
+          "expert": {
+            "name": "Olivia R. Noe",
+            "field": "Business valuation",
+            "credentials": "CVA",
+            "retained_by": "applicant"
+          },
+          "topic": "Valuation support for owner compensation and initial capitalization",
+          "opinion": "The planned owner salary falls within a defensible range for the services rendered and the corporation's projected operations.",
+          "basis": "Market compensation data, the business plan, and the initial capitalization."
+        }
+      ],
+      "evidence": [
+        {
+          "title": "IRS Form 2553 S-election",
+          "type": "document",
+          "party": "company",
+          "description": "The Election by a Small Business Corporation, with shareholder consents, electing S status effective 2026-03-16.",
+          "id": "ev1"
+        },
+        {
+          "title": "Shareholder agreement",
+          "type": "contract",
+          "party": "company",
+          "description": "The agreement among the shareholders covering ownership, transfer restrictions, and the S-election.",
+          "id": "ev2"
+        },
+        {
+          "title": "Initial capitalization / cap table",
+          "type": "financial_record",
+          "party": "company",
+          "description": "The cap table showing the 3 shareholder(s) and their initial capital contributions.",
+          "id": "ev3"
+        }
+      ],
+      "financials": {
+        "currency": "USD",
+        "amounts": [
+          {
+            "label": "Expected first-year revenue",
+            "amount": 178920,
+            "basis": "Projected gross receipts for the corporation's first tax year."
+          },
+          {
+            "label": "Planned owner reasonable compensation",
+            "amount": 78221,
+            "basis": "Annual W-2 wages planned for the owner-employee."
+          },
+          {
+            "label": "Estimated first-year payroll",
+            "amount": 7279,
+            "basis": "Total projected wages for all employees in the first year."
+          },
+          {
+            "label": "Initial capital contributed",
+            "amount": 101850,
+            "basis": "Total cash and property contributed by the shareholders at formation."
+          }
+        ]
+      },
+      "facts": {
+        "entity_name": "Evergreen Analytics LLC",
+        "entity_type": "corporation",
+        "state_of_incorporation": "Maine",
+        "incorporation_date": "2026-03-16",
+        "ein_applied": false,
+        "s_corp_election": true,
+        "election_effective_date": "2025-12-27",
+        "tax_year": "calendar year",
+        "fiscal_year_end": "December 31",
+        "num_shareholders": 3,
+        "num_employees": 0,
+        "first_payroll_date": "2026-01-18",
+        "accounting_method": "accrual",
+        "naics_code": "561730",
+        "principal_activity": "retail of specialty goods",
+        "expected_first_year_revenue": 162577,
+        "responsible_party_name": "Nadia P. Loe",
+        "reasonable_compensation": 39970
+      },
+      "related_matters": [
+        {
+          "universe_id": "UNIV-business-dispute-cascade-0007",
+          "matter_id": "MMC-2025-462859",
+          "scenario_id": "complex-civil-litigation",
+          "relationship": "precedes",
+          "description": "The company and its S-election set up the entity later sued by its investors."
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "provenance": {
+        "mock": true,
+        "fictional": true,
+        "generator": "deterministic-engine",
+        "generator_version": "0.1.0",
+        "scenario_id": "complex-civil-litigation",
+        "seed": 7002
+      },
+      "matter": {
+        "matter_id": "MMC-2025-462859",
+        "practice_area": "civil",
+        "title": "Fairbanks et al. v. Evergreen Analytics LLC et al.",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Cumberland",
+          "court_location": "Portland",
+          "court_type": "Superior Court"
+        },
+        "case_type": "civil",
+        "filing_date": "2025-01-14",
+        "status": "active",
+        "summary": "Felix B. Fairbanks and Rosa B. Ellsworth invested in a purchase of LLC membership interests of Evergreen Analytics LLC and now sue the company, its CEO Nadia P. Loe, and (by third-party complaint) its outside auditor, alleging the offering misrepresented undisclosed contingent liabilities.",
+        "event_date": "2022-11-18",
+        "docket_number": "CUM-CV-2025-528",
+        "universe_id": "UNIV-business-dispute-cascade-0007"
+      },
+      "parties": {
+        "plaintiff": {
+          "entity_type": "person",
+          "first_name": "Felix",
+          "middle_name": "B",
+          "last_name": "Fairbanks",
+          "full_name": "Felix B. Fairbanks",
+          "address": "425 Tidewater Lane",
+          "city": "Yarmouth",
+          "state": "ME",
+          "zip": "04029",
+          "phone": "(207) 555-0180",
+          "email": "felix.fairbanks@example.net",
+          "date_of_birth": "1964-02-01",
+          "ssn_last4": "9455",
+          "role": "Lead plaintiff (investor)"
+        },
+        "plaintiff_2": {
+          "entity_type": "person",
+          "first_name": "Rosa",
+          "middle_name": "B",
+          "last_name": "Ellsworth",
+          "full_name": "Rosa B. Ellsworth",
+          "address": "115 Pine Lane",
+          "city": "Gorham",
+          "state": "ME",
+          "zip": "04038",
+          "phone": "(207) 555-0153",
+          "email": "rosa.ellsworth@example.com",
+          "date_of_birth": "1967-03-02",
+          "ssn_last4": "9353",
+          "role": "Co-plaintiff (investor)"
+        },
+        "defendant": {
+          "entity_type": "organization",
+          "organization_name": "Evergreen Analytics LLC",
+          "full_name": "Evergreen Analytics LLC",
+          "address": "224 Lighthouse Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04031",
+          "phone": "(207) 555-0111",
+          "role": "Defendant company"
+        },
+        "defendant_2": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "full_name": "Nadia P. Loe",
+          "address": "335 Pine Lane",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04069",
+          "phone": "(207) 555-0112",
+          "email": "nadia.loe@example.org",
+          "date_of_birth": "1964-01-30",
+          "ssn_last4": "8313",
+          "role": "Defendant officer (CEO)"
+        },
+        "third_party_defendant": {
+          "entity_type": "organization",
+          "organization_name": "Northstar Builders LLC",
+          "full_name": "Northstar Builders LLC",
+          "address": "299 Tidewater Lane",
+          "city": "Bangor",
+          "state": "ME",
+          "zip": "04048",
+          "phone": "(207) 555-0112",
+          "role": "Third-party defendant (outside auditor)"
+        },
+        "attorney": {
+          "entity_type": "person",
+          "first_name": "Malik",
+          "middle_name": "K",
+          "last_name": "Kingsley",
+          "full_name": "Malik K. Kingsley",
+          "role": "Attorney for the client",
+          "address": "231 Meadowbrook Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04002",
+          "phone": "(207) 555-0135",
+          "email": "malik.kingsley@example.com",
+          "date_of_birth": "1981-12-22",
+          "ssn_last4": "8373",
+          "bar_number": "6473",
+          "organization_name": "Kingsley & Associates"
+        },
+        "client": {
+          "entity_type": "person",
+          "first_name": "Felix",
+          "middle_name": "B",
+          "last_name": "Fairbanks",
+          "full_name": "Felix B. Fairbanks",
+          "address": "425 Tidewater Lane",
+          "city": "Yarmouth",
+          "state": "ME",
+          "zip": "04029",
+          "phone": "(207) 555-0180",
+          "email": "felix.fairbanks@example.net",
+          "date_of_birth": "1964-02-01",
+          "ssn_last4": "9455",
+          "role": "Lead plaintiff (investor)"
+        }
+      },
+      "fact_pattern": {
+        "summary": "Felix B. Fairbanks and Rosa B. Ellsworth invested in a purchase of LLC membership interests of Evergreen Analytics LLC and now sue the company, its CEO Nadia P. Loe, and (by third-party complaint) its outside auditor, alleging the offering misrepresented undisclosed contingent liabilities.",
+        "narrative": "On or about 2022-11-18, Felix B. Fairbanks and Rosa B. Ellsworth together committed roughly $3387890 to a purchase of LLC membership interests of Evergreen Analytics LLC, a closely-held Maine company led by its chief executive, Nadia P. Loe. The investment was solicited on the strength of an offering package and audited financial statements.\n\nThe plaintiffs allege that the offering materials materially misrepresented undisclosed contingent liabilities, that Nadia P. Loe knew or recklessly disregarded the true facts, and that the audited statements prepared by Northstar Builders LLC masked the problem. The plaintiffs say they discovered the misstatements around 2024-09-18, after which the investment lost most of its value.\n\nThe plaintiffs filed suit in Cumberland County Superior Court seeking damages of approximately $1921386. The company answered and counterclaimed, asserted cross-claims against its CEO, and filed a third-party complaint impleading Northstar Builders LLC, which issued the audited financial statements relied upon in the offering. The matter is now in active, contested discovery.",
+        "undisputed_facts": [
+          "The plaintiffs invested in Evergreen Analytics LLC on or about 2022-11-18.",
+          "Northstar Builders LLC audited the financial statements used in the offering.",
+          "The investment's value declined materially after 2024-09-18."
+        ],
+        "disputed_facts": [
+          "Whether the offering materials misrepresented undisclosed contingent liabilities.",
+          "Whether Nadia P. Loe acted with scienter or merely made an honest business judgment.",
+          "Whether the auditor's work fell below professional standards and caused the loss.",
+          "The amount of recoverable damages and whether punitive damages are available."
+        ]
+      },
+      "third_parties": [
+        {
+          "id": "tp1",
+          "name": "Lighthouse Trust Company",
+          "type": "financial_institution",
+          "role": "Escrow agent",
+          "relevance": "Held the investment proceeds at closing; records trace the use of funds.",
+          "contact": {
+            "phone": "(207) 555-0169",
+            "city": "Lewiston",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp2",
+          "name": "Northstar Outfitters Inc.",
+          "type": "business_entity",
+          "role": "Placement agent",
+          "relevance": "Marketed the securities to the plaintiffs.",
+          "contact": {
+            "phone": "(207) 555-0168",
+            "city": "Bangor",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp3",
+          "name": "Omar Q. Doe",
+          "type": "witness",
+          "role": "Former board member",
+          "relevance": "Attended the board meetings where the projections were approved.",
+          "contact": {
+            "phone": "(207) 555-0152",
+            "city": "Bangor",
+            "state": "ME",
+            "email": "omar.doe@example.com"
+          }
+        },
+        {
+          "id": "tp4",
+          "name": "Rosa Q. Fairbanks",
+          "type": "expert",
+          "role": "Industry analyst",
+          "relevance": "Covered the company and can speak to market expectations.",
+          "contact": {
+            "phone": "(207) 555-0159",
+            "city": "Falmouth",
+            "state": "ME",
+            "email": "rosa.fairbanks@example.net"
+          }
+        },
+        {
+          "id": "tp5",
+          "name": "Maine Office of Securities",
+          "type": "government_agency",
+          "role": "State securities regulator",
+          "relevance": "Opened a parallel inquiry into the offering.",
+          "contact": {
+            "phone": "(207) 555-0135",
+            "city": "Falmouth",
+            "state": "ME"
+          }
+        }
+      ],
+      "intake_interview": {
+        "interviewer": "Litigation Partner",
+        "interviewee_role": "plaintiff",
+        "date": "2025-01-14",
+        "exchanges": [
+          {
+            "topic": "The deal",
+            "question": "How did you come to invest, and how much?",
+            "answer": "We put in about $3387890 into a purchase of LLC membership interests. We relied on their offering deck and the audited financials. Rosa and I went in together."
+          },
+          {
+            "topic": "The problem",
+            "question": "When did you realize something was wrong?",
+            "answer": "Around 2024-09-18. The story they told about undisclosed contingent liabilities turned out to be false, and a former finance executive confirmed it."
+          },
+          {
+            "topic": "The auditor",
+            "question": "What is your view of the auditor's role?",
+            "answer": "Their name was on the financials we relied on. If they had done their job, this would have been caught."
+          },
+          {
+            "topic": "Goal",
+            "question": "What outcome do you want?",
+            "answer": "Recover what we lost, hold Nadia accountable, and get there efficiently. We will go to trial if we must, but a sensible settlement is fine."
+          },
+          {
+            "topic": "Risk",
+            "question": "How do you feel about the cost and exposure of litigation?",
+            "answer": "We know it is expensive and they are fighting hard with counterclaims. We are committed but cost-conscious."
+          }
+        ]
+      },
+      "client_objectives": {
+        "goals": [
+          "Recover the plaintiffs' investment losses, approximately $1921386.",
+          "Establish liability of the CEO for breach of fiduciary duty and fraud.",
+          "Preserve the third-party claim against the auditor as an additional source of recovery."
+        ],
+        "priorities": [
+          "Efficient, well-sequenced discovery.",
+          "Defeating the company's counterclaims.",
+          "Maximizing leverage for a favorable settlement."
+        ],
+        "risk_tolerance": "high",
+        "desired_outcomes": [
+          "A judgment or settlement compensating the plaintiffs' losses plus costs.",
+          "A finding (or strong settlement posture) on fiduciary breach and misrepresentation."
+        ],
+        "non_starters": [
+          "A walk-away that leaves the misrepresentation unaddressed."
+        ],
+        "constraints": {
+          "budget": "Substantial but monitored; the plaintiffs want staged budgets per phase.",
+          "timeline": "Wants the case trial-ready within roughly eighteen months of filing."
+        }
+      },
+      "issues": [
+        {
+          "issue": "Whether any claims are time-barred",
+          "category": "procedure",
+          "governing_law": "14 M.R.S. § 752",
+          "strength": "weak",
+          "id": "iss1"
+        },
+        {
+          "issue": "Whether the auditor is liable for negligent misrepresentation to non-client investors",
+          "category": "professional_liability",
+          "governing_law": "Restatement (Second) of Torts § 552",
+          "strength": "weak",
+          "id": "iss2"
+        },
+        {
+          "issue": "The measure and availability of damages, including punitive damages",
+          "category": "remedies",
+          "governing_law": "14 M.R.S. § 1604-A",
+          "strength": "moderate",
+          "id": "iss3"
+        },
+        {
+          "issue": "Whether the CEO breached fiduciary duties owed to investors",
+          "category": "corporate",
+          "governing_law": "13-C M.R.S. § 831; common law",
+          "strength": "moderate",
+          "id": "iss4"
+        }
+      ],
+      "expert_opinions": [
+        {
+          "id": "exp1",
+          "expert": {
+            "name": "John G. Ashford",
+            "field": "Forensic accounting",
+            "credentials": "CPA, CFF",
+            "retained_by": "plaintiff"
+          },
+          "topic": "Tracing of proceeds and restatement analysis",
+          "opinion": "The audited statements overstated reported results for the relevant periods.",
+          "basis": "General ledger, bank records, and audit workpapers."
+        },
+        {
+          "id": "exp2",
+          "expert": {
+            "name": "Jane A. Calloway",
+            "field": "Business valuation",
+            "credentials": "ASA",
+            "retained_by": "plaintiff"
+          },
+          "topic": "But-for value of the investment",
+          "opinion": "The securities were worth materially less than the price paid at closing.",
+          "basis": "Market and income approaches applied to corrected financials."
+        }
+      ],
+      "evidence": [
+        {
+          "title": "Whistleblower memorandum",
+          "type": "document",
+          "party": "plaintiff",
+          "description": "The former VP of Finance's internal memo flagging the issue.",
+          "id": "ev1"
+        },
+        {
+          "title": "Email thread on revenue recognition",
+          "type": "correspondence",
+          "party": "defendant",
+          "description": "Internal emails discussing the accounting treatment.",
+          "id": "ev2"
+        },
+        {
+          "title": "Private offering memorandum",
+          "type": "document",
+          "party": "plaintiff",
+          "description": "The offering deck and PPM relied upon by the plaintiffs.",
+          "id": "ev3"
+        },
+        {
+          "title": "Escrow account statements",
+          "type": "financial_record",
+          "party": "plaintiff",
+          "description": "Records tracing the use of the investment proceeds.",
+          "id": "ev4"
+        },
+        {
+          "title": "Plaintiffs' expert report",
+          "type": "affidavit",
+          "party": "plaintiff",
+          "description": "Forensic accounting and damages report.",
+          "id": "ev5"
+        },
+        {
+          "title": "Board meeting minutes",
+          "type": "document",
+          "party": "defendant",
+          "description": "Minutes approving the projections and offering.",
+          "id": "ev6"
+        },
+        {
+          "title": "Securities purchase agreement",
+          "type": "contract",
+          "party": "plaintiff",
+          "description": "The executed agreement governing the investment.",
+          "id": "ev7"
+        }
+      ],
+      "financials": {
+        "currency": "USD",
+        "amounts": [
+          {
+            "label": "Compensatory damages sought",
+            "amount": 7859167,
+            "basis": "Out-of-pocket and benefit-of-the-bargain loss."
+          },
+          {
+            "label": "Estimated plaintiff-side fees and costs through trial",
+            "amount": 1387054,
+            "basis": "Litigation budget."
+          },
+          {
+            "label": "Plaintiffs' investment at risk",
+            "amount": 429008,
+            "basis": "Capital committed at closing."
+          },
+          {
+            "label": "Expert witness fees",
+            "amount": 265994,
+            "basis": "Retained experts."
+          },
+          {
+            "label": "Punitive damages sought",
+            "amount": 597857,
+            "basis": "Alleged knowing misrepresentation."
+          }
+        ]
+      },
+      "litigation": {
+        "posture": "discovery",
+        "causes_of_action": [
+          {
+            "count": 1,
+            "claim": "Breach of contract",
+            "by": "Felix B. Fairbanks",
+            "against": "Evergreen Analytics LLC",
+            "governing_law": "14 M.R.S. § 752; common law",
+            "elements": [
+              "A valid contract",
+              "Performance by the plaintiffs",
+              "Breach by the defendant",
+              "Resulting damages"
+            ],
+            "relief_sought": "Compensatory damages of approximately $1921386",
+            "strength": "strong"
+          },
+          {
+            "count": 2,
+            "claim": "Breach of fiduciary duty",
+            "by": "Felix B. Fairbanks",
+            "against": "Nadia P. Loe",
+            "governing_law": "13-C M.R.S. § 831; common law",
+            "elements": [
+              "A fiduciary relationship",
+              "Breach of the duty of loyalty or care",
+              "Causation",
+              "Damages"
+            ],
+            "relief_sought": "Disgorgement and compensatory damages",
+            "strength": "moderate"
+          },
+          {
+            "count": 3,
+            "claim": "Fraudulent misrepresentation",
+            "by": "Felix B. Fairbanks",
+            "against": "Nadia P. Loe",
+            "governing_law": "Common law fraud",
+            "elements": [
+              "A material misrepresentation of fact",
+              "Knowledge of falsity (scienter)",
+              "Justifiable reliance",
+              "Damages"
+            ],
+            "relief_sought": "Compensatory and punitive damages",
+            "strength": "moderate"
+          },
+          {
+            "count": 4,
+            "claim": "Negligent misrepresentation",
+            "by": "Felix B. Fairbanks",
+            "against": "Evergreen Analytics LLC",
+            "governing_law": "Restatement (Second) of Torts § 552",
+            "elements": [
+              "A false statement in the course of business",
+              "Failure to exercise reasonable care",
+              "Justifiable reliance",
+              "Pecuniary loss"
+            ],
+            "relief_sought": "Compensatory damages",
+            "strength": "moderate"
+          },
+          {
+            "count": 5,
+            "claim": "Violation of the Maine Unfair Trade Practices Act",
+            "by": "Felix B. Fairbanks",
+            "against": "Evergreen Analytics LLC",
+            "governing_law": "5 M.R.S. § 207",
+            "elements": [
+              "An unfair or deceptive act",
+              "In the conduct of trade or commerce",
+              "Loss of money or property"
+            ],
+            "relief_sought": "Actual damages, attorney fees, and costs",
+            "strength": "weak"
+          },
+          {
+            "count": 6,
+            "claim": "Unjust enrichment",
+            "by": "Felix B. Fairbanks",
+            "against": "Evergreen Analytics LLC",
+            "governing_law": "Common law",
+            "elements": [
+              "A benefit conferred",
+              "Appreciation of the benefit",
+              "Inequitable retention"
+            ],
+            "relief_sought": "Restitution",
+            "strength": "weak"
+          }
+        ],
+        "affirmative_defenses": [
+          {
+            "defense": "Statute of frauds",
+            "by": "Evergreen Analytics LLC",
+            "basis": "Any oral representations are unenforceable."
+          },
+          {
+            "defense": "Business judgment rule",
+            "by": "Nadia P. Loe",
+            "basis": "The challenged decisions were informed, good-faith business judgments."
+          },
+          {
+            "defense": "Failure to state a claim",
+            "by": "Evergreen Analytics LLC",
+            "basis": "The complaint does not plead fraud with particularity. M.R. Civ. P. 9(b)."
+          }
+        ],
+        "counterclaims": [
+          {
+            "count": 1,
+            "claim": "Breach of the non-disclosure agreement",
+            "by": "Evergreen Analytics LLC",
+            "against": "Felix B. Fairbanks",
+            "relief": "Damages and injunctive relief for disclosure of confidential information."
+          },
+          {
+            "count": 2,
+            "claim": "Defamation",
+            "by": "Nadia P. Loe",
+            "against": "Felix B. Fairbanks",
+            "relief": "Damages for allegedly false public statements about the company."
+          }
+        ],
+        "cross_claims": [
+          {
+            "claim": "Indemnification and contribution",
+            "by": "Evergreen Analytics LLC",
+            "against": "Nadia P. Loe",
+            "basis": "If the company is liable, the CEO must indemnify it for his own misconduct."
+          }
+        ],
+        "third_party_claims": [
+          {
+            "claim": "Contribution and professional negligence",
+            "by": "Evergreen Analytics LLC",
+            "against": "Northstar Builders LLC",
+            "basis": "The auditor's negligent audit caused or contributed to any loss."
+          }
+        ],
+        "discovery": [
+          {
+            "type": "request_for_production",
+            "propounding_party": "Felix B. Fairbanks",
+            "responding_party": "Northstar Builders LLC",
+            "served_date": "2025-05-09",
+            "status": "compelled",
+            "description": "Requests for the audit workpapers."
+          },
+          {
+            "type": "deposition",
+            "propounding_party": "Felix B. Fairbanks",
+            "responding_party": "Nadia P. Loe",
+            "served_date": "2025-06-30",
+            "status": "outstanding",
+            "description": "Deposition of the CEO."
+          },
+          {
+            "type": "deposition",
+            "propounding_party": "Evergreen Analytics LLC",
+            "responding_party": "Felix B. Fairbanks",
+            "served_date": "2025-06-02",
+            "status": "served",
+            "description": "Deposition of the lead plaintiff."
+          },
+          {
+            "type": "expert_disclosure",
+            "propounding_party": "Felix B. Fairbanks",
+            "responding_party": "Evergreen Analytics LLC",
+            "served_date": "2025-09-05",
+            "status": "served",
+            "description": "Plaintiffs' expert designations and reports."
+          },
+          {
+            "type": "request_for_production",
+            "propounding_party": "Felix B. Fairbanks",
+            "responding_party": "Evergreen Analytics LLC",
+            "served_date": "2025-04-10",
+            "status": "objected",
+            "description": "Requests for financial records, board materials, and emails."
+          }
+        ],
+        "motions": [
+          {
+            "title": "Motion for partial summary judgment",
+            "type": "dispositive",
+            "movant": "Evergreen Analytics LLC",
+            "filed_date": "2025-10-28",
+            "status": "under_advisement",
+            "relief": "Judgment on the negligent-misrepresentation count."
+          },
+          {
+            "title": "Motion to amend to add a punitive damages claim",
+            "type": "pleading",
+            "movant": "Felix B. Fairbanks",
+            "filed_date": "2025-09-07",
+            "status": "opposed",
+            "relief": "Leave to add a punitive damages demand."
+          },
+          {
+            "title": "Motion in limine to exclude the damages expert",
+            "type": "evidentiary",
+            "movant": "Evergreen Analytics LLC",
+            "filed_date": "2026-02-04",
+            "status": "filed",
+            "relief": "Exclusion of the plaintiffs' damages model."
+          },
+          {
+            "title": "Motion to dismiss for failure to state a claim",
+            "type": "dispositive",
+            "movant": "Evergreen Analytics LLC",
+            "filed_date": "2025-03-15",
+            "status": "denied",
+            "relief": "Dismissal of the fraud and UTPA counts."
+          },
+          {
+            "title": "Motion for a protective order",
+            "type": "discovery",
+            "movant": "Evergreen Analytics LLC",
+            "filed_date": "2025-05-19",
+            "status": "granted_in_part",
+            "relief": "Protection of trade-secret financial information."
+          }
+        ],
+        "docket": [
+          {
+            "date": "2025-01-12",
+            "entry": "Complaint and demand for jury trial filed.",
+            "party": "Felix B. Fairbanks"
+          },
+          {
+            "date": "2025-02-15",
+            "entry": "Defendants' answer, counterclaims, and cross-claim filed.",
+            "party": "Evergreen Analytics LLC"
+          },
+          {
+            "date": "2025-02-24",
+            "entry": "Third-party complaint against the auditor filed.",
+            "party": "Evergreen Analytics LLC"
+          },
+          {
+            "date": "2025-03-15",
+            "entry": "Scheduling order entered; discovery deadline set.",
+            "party": "the court"
+          },
+          {
+            "date": "2025-04-07",
+            "entry": "Order denying the motion to dismiss.",
+            "party": "the court"
+          },
+          {
+            "date": "2025-06-06",
+            "entry": "Order compelling production of the audit workpapers.",
+            "party": "the court"
+          },
+          {
+            "date": "2025-09-20",
+            "entry": "Plaintiffs' expert reports served; discovery continues.",
+            "party": "Felix B. Fairbanks"
+          }
+        ],
+        "trial": {
+          "jury": true,
+          "estimated_days": 9,
+          "scheduled_date": "2026-09-13"
+        }
+      },
+      "facts": {
+        "company_name": "Evergreen Analytics LLC",
+        "deal_type": "a purchase of LLC membership interests",
+        "investment_amount": 3387890,
+        "investment_date": "2022-11-18",
+        "misrepresentation_topic": "undisclosed contingent liabilities",
+        "discovery_of_breach_date": "2024-09-18",
+        "amount_in_controversy": 1921386,
+        "demand_made": true,
+        "class_action": true,
+        "auditor_role": "issued the audited financial statements relied upon in the offering"
+      },
+      "related_matters": [
+        {
+          "universe_id": "UNIV-business-dispute-cascade-0007",
+          "matter_id": "MMC-2026-560900",
+          "scenario_id": "business-formation-scorp",
+          "relationship": "arises_from",
+          "description": "The investors sue the very company formed in the formation matter, along with its founder and auditor."
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "formation",
+      "to": "litigation",
+      "type": "precedes",
+      "description": "The company and its S-election set up the entity later sued by its investors."
+    },
+    {
+      "from": "litigation",
+      "to": "formation",
+      "type": "arises_from",
+      "description": "The investors sue the very company formed in the formation matter, along with its founder and auditor."
+    }
+  ]
+}

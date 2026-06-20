@@ -51,6 +51,7 @@
           }
         },
         "case_type": { "type": "string", "description": "Routing classification, e.g. 'family_matters', 'decedent_estate'." },
+        "universe_id": { "type": "string", "description": "Set when this matter belongs to a compound matter universe (see related_matters)." },
         "docket_number": { "type": ["string", "null"] },
         "filing_date": { "type": ["string", "null"], "description": "ISO yyyy-mm-dd or null if unfiled." },
         "event_date": { "type": ["string", "null"], "description": "Key precipitating event date (ISO yyyy-mm-dd)." },
@@ -261,10 +262,130 @@
         "total_claimed": { "type": ["number", "null"] }
       }
     },
+    "litigation": {
+      "type": "object",
+      "description": "Deep-litigation detail for contested matters: claims, defenses, discovery, motions, and docket. All optional.",
+      "additionalProperties": true,
+      "properties": {
+        "posture": {
+          "type": "string",
+          "description": "Current procedural posture.",
+          "enum": ["pre_suit", "pleadings", "discovery", "motion_practice", "pretrial", "trial", "post_trial", "appeal", "settlement"]
+        },
+        "causes_of_action": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["count", "claim"],
+            "additionalProperties": true,
+            "properties": {
+              "count": { "type": ["integer", "string"], "description": "Count number, e.g. 1 or 'I'." },
+              "claim": { "type": "string" },
+              "by": { "type": "string", "description": "Claimant role." },
+              "against": { "type": "string", "description": "Defending role." },
+              "governing_law": { "type": "string" },
+              "elements": { "type": "array", "items": { "type": "string" } },
+              "relief_sought": { "type": "string" },
+              "strength": { "type": "string", "enum": ["strong", "moderate", "weak", "unknown"] }
+            }
+          }
+        },
+        "affirmative_defenses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["defense"],
+            "additionalProperties": true,
+            "properties": {
+              "defense": { "type": "string" },
+              "by": { "type": "string" },
+              "basis": { "type": "string" }
+            }
+          }
+        },
+        "counterclaims": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "cross_claims": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "third_party_claims": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "discovery": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type"],
+            "additionalProperties": true,
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["interrogatories", "request_for_production", "request_for_admission", "deposition", "subpoena", "expert_disclosure", "independent_examination"]
+              },
+              "propounding_party": { "type": "string" },
+              "responding_party": { "type": "string" },
+              "served_date": { "type": "string" },
+              "due_date": { "type": "string" },
+              "status": { "type": "string", "enum": ["served", "responded", "objected", "compelled", "outstanding"] },
+              "description": { "type": "string" }
+            }
+          }
+        },
+        "motions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title"],
+            "additionalProperties": true,
+            "properties": {
+              "title": { "type": "string" },
+              "type": { "type": "string" },
+              "movant": { "type": "string" },
+              "filed_date": { "type": "string" },
+              "status": { "type": "string", "enum": ["filed", "opposed", "under_advisement", "granted", "denied", "granted_in_part", "withdrawn"] },
+              "relief": { "type": "string" }
+            }
+          }
+        },
+        "docket": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["date", "entry"],
+            "additionalProperties": true,
+            "properties": {
+              "date": { "type": "string" },
+              "entry": { "type": "string" },
+              "party": { "type": "string" }
+            }
+          }
+        },
+        "trial": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "jury": { "type": "boolean" },
+            "estimated_days": { "type": ["integer", "number", "string"] },
+            "scheduled_date": { "type": "string" }
+          }
+        }
+      }
+    },
     "facts": {
       "type": "object",
       "description": "Flat, form-specific canonical fact keys consumed by downstream form-fillers (passed through to canonical_case.facts unchanged). Values are scalars, arrays, or null.",
       "additionalProperties": true
+    },
+    "related_matters": {
+      "type": "array",
+      "description": "Links to sibling matters in the same compound matter universe.",
+      "items": {
+        "type": "object",
+        "required": ["matter_id", "relationship"],
+        "additionalProperties": true,
+        "properties": {
+          "universe_id": { "type": "string" },
+          "matter_id": { "type": "string" },
+          "scenario_id": { "type": "string" },
+          "relationship": { "type": "string", "description": "How this matter relates to the linked one." },
+          "description": { "type": "string" }
+        }
+      }
     },
     "notes": { "type": "string", "description": "Free-text generator or reviewer notes." }
   },

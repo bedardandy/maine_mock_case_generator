@@ -1,0 +1,1206 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "compound-engine",
+    "generator_version": "0.1.0",
+    "compound_id": "marital-breakdown-cascade",
+    "seed": 7
+  },
+  "universe_id": "UNIV-marital-breakdown-cascade-0007",
+  "title": "Marital breakdown of Nadia P. Loe and Priya C. Roe",
+  "theme": "The breakdown of the marriage of Nadia P. Loe and Priya C. Roe spawns a divorce, a protection-from-abuse matter, and a dispute over the value of the marital business.",
+  "narrative": "Nadia P. Loe filed for divorce from Priya C. Roe and separately sought a protection order; both matters concern the same spouses and their children, Samuel B. Boe and Omar W. Loe. The marital business, Evergreen Studios LLC, formed and run by Priya C. Roe, is a contested marital asset whose value must be determined and divided in the divorce. The protective order, if granted, also shapes the parenting schedule litigated in the divorce.\n",
+  "cast": [
+    {
+      "cast_id": "spouse_a",
+      "kind": "person",
+      "name": "Nadia P. Loe",
+      "description": "Spouse A (the client)",
+      "appears_as": [
+        {
+          "matter_id": "divorce",
+          "role": "plaintiff"
+        },
+        {
+          "matter_id": "protection_order",
+          "role": "plaintiff"
+        }
+      ]
+    },
+    {
+      "cast_id": "spouse_b",
+      "kind": "person",
+      "name": "Priya C. Roe",
+      "description": "Spouse B and business owner",
+      "appears_as": [
+        {
+          "matter_id": "divorce",
+          "role": "defendant"
+        },
+        {
+          "matter_id": "protection_order",
+          "role": "defendant"
+        },
+        {
+          "matter_id": "business_matter",
+          "role": "applicant"
+        }
+      ]
+    },
+    {
+      "cast_id": "child_one",
+      "kind": "person",
+      "name": "Samuel B. Boe",
+      "description": "Minor child of the marriage",
+      "appears_as": [
+        {
+          "matter_id": "divorce",
+          "role": "child_1"
+        },
+        {
+          "matter_id": "protection_order",
+          "role": "child_1"
+        }
+      ]
+    },
+    {
+      "cast_id": "child_two",
+      "kind": "person",
+      "name": "Omar W. Loe",
+      "description": "Minor child of the marriage",
+      "appears_as": [
+        {
+          "matter_id": "divorce",
+          "role": "child_2"
+        },
+        {
+          "matter_id": "protection_order",
+          "role": "child_2"
+        }
+      ]
+    },
+    {
+      "cast_id": "family_business",
+      "kind": "organization",
+      "name": "Evergreen Studios LLC",
+      "description": "The marital business",
+      "appears_as": [
+        {
+          "matter_id": "business_matter",
+          "role": "company"
+        }
+      ]
+    }
+  ],
+  "matters": [
+    {
+      "schema_version": "1.0",
+      "provenance": {
+        "mock": true,
+        "fictional": true,
+        "generator": "deterministic-engine",
+        "generator_version": "0.1.0",
+        "scenario_id": "family-divorce-cumberland",
+        "seed": 7001
+      },
+      "matter": {
+        "matter_id": "MMC-2025-237630",
+        "practice_area": "family",
+        "title": "Divorce of Nadia P. Loe and Priya C. Roe",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Cumberland",
+          "court_location": "Portland",
+          "court_type": "District Court"
+        },
+        "case_type": "family_matters",
+        "filing_date": "2025-10-31",
+        "status": "pre_filing",
+        "summary": "Nadia P. Loe petitions to divorce Priya C. Roe in Cumberland County District Court, citing irreconcilable marital differences, and asks the court to resolve parental rights for two minor child(ren), child support, and division of marital property.",
+        "event_date": "2025-03-19",
+        "docket_number": "CUM-FM-2025-810",
+        "universe_id": "UNIV-marital-breakdown-cascade-0007"
+      },
+      "parties": {
+        "plaintiff": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "full_name": "Nadia P. Loe",
+          "address": "335 Pine Lane",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04069",
+          "phone": "(207) 555-0112",
+          "email": "nadia.loe@example.org",
+          "date_of_birth": "1964-01-30",
+          "ssn_last4": "8313",
+          "role": "Plaintiff (filing spouse)"
+        },
+        "defendant": {
+          "entity_type": "person",
+          "first_name": "Priya",
+          "middle_name": "C",
+          "last_name": "Roe",
+          "full_name": "Priya C. Roe",
+          "address": "224 Lighthouse Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04031",
+          "phone": "(207) 555-0111",
+          "email": "priya.roe@example.net",
+          "date_of_birth": "1974-01-31",
+          "ssn_last4": "9264",
+          "role": "Defendant (responding spouse)"
+        },
+        "child_1": {
+          "entity_type": "person",
+          "first_name": "Samuel",
+          "middle_name": "B",
+          "last_name": "Boe",
+          "full_name": "Samuel B. Boe",
+          "address": "297 Tidewater Lane",
+          "city": "Ellsworth",
+          "state": "ME",
+          "zip": "04007",
+          "phone": "(207) 555-0128",
+          "email": "samuel.boe@example.com",
+          "date_of_birth": "2021-05-29",
+          "role": "Minor child"
+        },
+        "child_2": {
+          "entity_type": "person",
+          "first_name": "Omar",
+          "middle_name": "W",
+          "last_name": "Loe",
+          "full_name": "Omar W. Loe",
+          "address": "62 Tidewater Lane",
+          "city": "Waterville",
+          "state": "ME",
+          "zip": "04072",
+          "phone": "(207) 555-0187",
+          "email": "omar.loe@example.com",
+          "date_of_birth": "2022-10-25",
+          "role": "Minor child"
+        },
+        "attorney": {
+          "entity_type": "person",
+          "first_name": "Beatrice",
+          "middle_name": "M",
+          "last_name": "Calloway",
+          "full_name": "Beatrice M. Calloway",
+          "role": "Attorney for the client",
+          "address": "357 Granite Ridge Road",
+          "city": "Gorham",
+          "state": "ME",
+          "zip": "04085",
+          "phone": "(207) 555-0147",
+          "email": "beatrice.calloway@example.net",
+          "date_of_birth": "1994-07-02",
+          "ssn_last4": "3118",
+          "bar_number": "9018",
+          "organization_name": "Hawthorne Legal Group"
+        },
+        "client": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "full_name": "Nadia P. Loe",
+          "address": "335 Pine Lane",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04069",
+          "phone": "(207) 555-0112",
+          "email": "nadia.loe@example.org",
+          "date_of_birth": "1964-01-30",
+          "ssn_last4": "8313",
+          "role": "Plaintiff (filing spouse)"
+        }
+      },
+      "fact_pattern": {
+        "summary": "Nadia P. Loe petitions to divorce Priya C. Roe in Cumberland County District Court, citing irreconcilable marital differences, and asks the court to resolve parental rights for two minor child(ren), child support, and division of marital property.",
+        "narrative": "Nadia P. Loe and Priya C. Roe were married on 2009-04-30 in Bar Harbor, Maine. The parties have two minor child(ren) together: Samuel B. Boe and Omar W. Loe. After several years of growing conflict and a period of unsuccessful counseling, the parties separated on 2025-03-19.\n\nSince separation, the children have lived primarily with Nadia P. Loe, while the other parent has exercised weekend contact. The parties jointly own or rent a jointly owned single-family home and share several financial accounts. They disagree about a long-term parenting schedule and about how to divide retirement savings accumulated during the marriage.\n\nNadia has resided in Cumberland County, Maine for approximately 52 months, satisfying the residency requirement to file. Nadia now seeks a divorce on the ground of irreconcilable marital differences, a workable parental rights and responsibilities order, child support consistent with the Maine guidelines, and an equitable division of marital property and debt.",
+        "undisputed_facts": [
+          "The parties were married on 2009-04-30 in Bar Harbor, Maine.",
+          "The parties have two minor child(ren) of the marriage.",
+          "The parties separated on 2025-03-19 and have lived apart since."
+        ],
+        "disputed_facts": [
+          "The long-term allocation of parental rights and responsibilities and the primary residence of the children.",
+          "The characterization and division of retirement accounts and the equity in the jointly owned single-family home.",
+          "Whether spousal support is appropriate and, if so, in what amount and for how long."
+        ],
+        "timeline": [
+          {
+            "date": "2009-04-30",
+            "event": "Nadia and Priya married in Bar Harbor, Maine."
+          },
+          {
+            "date": "2025-03-19",
+            "event": "The parties separated."
+          },
+          {
+            "date": "2025-10-31",
+            "event": "Complaint for divorce prepared for filing in Portland District Court."
+          }
+        ]
+      },
+      "third_parties": [
+        {
+          "id": "tp1",
+          "name": "Lighthouse Trust Company",
+          "type": "financial_institution",
+          "role": "Joint account holder bank",
+          "relevance": "Holds the marital checking, savings, and mortgage accounts.",
+          "contact": {
+            "phone": "(207) 555-0187",
+            "city": "Falmouth",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp2",
+          "name": "Lillian E. Roe",
+          "type": "guardian_ad_litem",
+          "role": "Guardian ad litem",
+          "relevance": "May be appointed to represent the best interests of the minor children.",
+          "contact": {
+            "phone": "(207) 555-0172",
+            "city": "Farmington",
+            "state": "ME",
+            "email": "lillian.roe@example.net"
+          }
+        },
+        {
+          "id": "tp3",
+          "name": "Eleanor T. Roe",
+          "type": "family_member",
+          "role": "Plaintiff's mother",
+          "relationship": "Maternal grandmother",
+          "relevance": "Provides child care and may testify to parenting history.",
+          "contact": {
+            "phone": "(207) 555-0198",
+            "city": "Waterville",
+            "state": "ME",
+            "email": "eleanor.roe@example.net"
+          }
+        }
+      ],
+      "intake_interview": {
+        "interviewer": "Intake Attorney",
+        "interviewee_role": "plaintiff",
+        "date": "2025-10-31",
+        "exchanges": [
+          {
+            "topic": "Goal",
+            "question": "What outcome are you hoping for?",
+            "answer": "I want a fair parenting schedule where our children are primarily with me, reasonable child support, and a clean split of what we built together. I am not trying to punish Priya."
+          },
+          {
+            "topic": "Children",
+            "question": "How are the children doing, and what is the current schedule?",
+            "answer": "They are doing okay given everything. They are mostly with Nadia P. Loe during the week and see the other parent on weekends. I want to keep their school and routine stable."
+          },
+          {
+            "topic": "Finances",
+            "question": "Tell me about the marital finances.",
+            "answer": "We have a jointly owned single-family home, two retirement accounts, a joint checking and savings, and some credit card debt. I do not have full visibility into Priya's retirement balances."
+          },
+          {
+            "topic": "Safety",
+            "question": "Are there any safety concerns or history of abuse?",
+            "answer": "No physical abuse. There were some heated arguments, but nothing that needed police involvement."
+          },
+          {
+            "topic": "Timeline",
+            "question": "Is there any urgency to filing?",
+            "answer": "I would like to get this moving this season so we have orders in place before the next school year."
+          }
+        ]
+      },
+      "client_objectives": {
+        "goals": [
+          "Obtain a parental rights and responsibilities order with the children's primary residence with Nadia P. Loe.",
+          "Establish child support consistent with the Maine child support guidelines.",
+          "Achieve an equitable division of marital property and debt."
+        ],
+        "priorities": [
+          "Stability and routine for the minor children.",
+          "A predictable, enforceable parenting schedule.",
+          "Financial independence after the divorce."
+        ],
+        "risk_tolerance": "moderate",
+        "desired_outcomes": [
+          "Primary residence of the children with Nadia P. Loe and shared parental rights.",
+          "Retention of a fair share of retirement savings and home equity."
+        ],
+        "non_starters": [
+          "Any arrangement that destabilizes the children's schooling."
+        ],
+        "constraints": {
+          "budget": "Limited; prefers settlement over a prolonged trial.",
+          "timeline": "Wants temporary orders before the next school year."
+        }
+      },
+      "issues": [
+        {
+          "issue": "Child support under the Maine guidelines",
+          "category": "family",
+          "governing_law": "19-A M.R.S. § 2006",
+          "sub_questions": [
+            "What are each party's gross incomes?",
+            "Who pays for health insurance and child care?"
+          ],
+          "strength": "strong",
+          "client_position": "Seeks guideline child support based on accurate income figures.",
+          "id": "iss1"
+        },
+        {
+          "issue": "Entitlement to and amount of spousal support",
+          "category": "family",
+          "governing_law": "19-A M.R.S. § 951-A",
+          "sub_questions": [
+            "Is spousal support appropriate given the marriage length and incomes?"
+          ],
+          "strength": "weak",
+          "id": "iss2"
+        },
+        {
+          "issue": "Responsibility for attorney fees",
+          "category": "family",
+          "governing_law": "19-A M.R.S. § 105",
+          "sub_questions": [
+            "Is a fee contribution warranted by the parties' relative resources?"
+          ],
+          "strength": "weak",
+          "id": "iss3"
+        },
+        {
+          "issue": "Division of marital property and debt",
+          "category": "family",
+          "governing_law": "19-A M.R.S. § 953",
+          "sub_questions": [
+            "Which assets are marital versus non-marital?",
+            "How should retirement accounts and home equity be divided?"
+          ],
+          "strength": "moderate",
+          "id": "iss4"
+        },
+        {
+          "issue": "Allocation of parental rights and responsibilities for the minor children",
+          "category": "family",
+          "governing_law": "19-A M.R.S. § 1653",
+          "sub_questions": [
+            "Should parental rights be shared, allocated, or sole?",
+            "What primary residence and contact schedule serves the children's best interests?"
+          ],
+          "strength": "moderate",
+          "client_position": "Seeks shared parental rights with primary residence with Nadia P. Loe.",
+          "id": "iss5"
+        }
+      ],
+      "evidence": [
+        {
+          "title": "Marriage certificate",
+          "type": "public_record",
+          "party": "plaintiff",
+          "description": "Certified copy establishing the date and place of marriage.",
+          "id": "ev1"
+        },
+        {
+          "title": "Retirement account statements",
+          "type": "financial_record",
+          "party": "defendant",
+          "description": "Quarterly statements for both parties' retirement accounts.",
+          "id": "ev2"
+        },
+        {
+          "title": "Deed to the marital home",
+          "type": "public_record",
+          "party": "plaintiff",
+          "description": "Recorded deed showing joint ownership.",
+          "id": "ev3"
+        },
+        {
+          "title": "Children's school records",
+          "type": "document",
+          "party": "plaintiff",
+          "description": "Enrollment and report cards showing the children's stable schooling.",
+          "id": "ev4"
+        },
+        {
+          "title": "Recent pay stubs",
+          "type": "financial_record",
+          "party": "plaintiff",
+          "description": "Three months of pay stubs for income verification.",
+          "id": "ev5"
+        },
+        {
+          "title": "Text message log",
+          "type": "correspondence",
+          "party": "plaintiff",
+          "description": "Co-parenting communications relevant to the schedule dispute.",
+          "id": "ev6"
+        }
+      ],
+      "financials": {
+        "currency": "USD",
+        "amounts": [
+          {
+            "label": "Plaintiff retirement account balance",
+            "amount": 22279,
+            "basis": "Most recent statement."
+          },
+          {
+            "label": "Plaintiff annual gross income",
+            "amount": 86425,
+            "basis": "W-2 wages."
+          },
+          {
+            "label": "Estimated marital home equity",
+            "amount": 231383,
+            "basis": "Estimated fair market value less mortgage."
+          },
+          {
+            "label": "Joint credit card debt",
+            "amount": 10862,
+            "basis": "Combined balances."
+          }
+        ]
+      },
+      "facts": {
+        "marriage_date": "2009-04-30",
+        "marriage_city": "Bar Harbor",
+        "marriage_county": "Sagadahoc",
+        "marriage_state": "Maine",
+        "separation_date": "2025-03-19",
+        "grounds": "Irreconcilable marital differences",
+        "residency_months": 52,
+        "spousal_support_requested": true,
+        "marital_home": "jointly owned single-family home",
+        "num_minor_children": "2",
+        "primary_residence_parent": "Nadia P. Loe"
+      },
+      "related_matters": [
+        {
+          "universe_id": "UNIV-marital-breakdown-cascade-0007",
+          "matter_id": "MMC-2026-877762",
+          "scenario_id": "protection-from-abuse",
+          "relationship": "relates_to",
+          "description": "The protection order concerns the same spouses and affects custody decided here."
+        },
+        {
+          "universe_id": "UNIV-marital-breakdown-cascade-0007",
+          "matter_id": "MMC-2026-771146",
+          "scenario_id": "business-formation-scorp",
+          "relationship": "values",
+          "description": "The marital business is an asset that must be valued and divided in the divorce."
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "provenance": {
+        "mock": true,
+        "fictional": true,
+        "generator": "deterministic-engine",
+        "generator_version": "0.1.0",
+        "scenario_id": "protection-from-abuse",
+        "seed": 7002
+      },
+      "matter": {
+        "matter_id": "MMC-2026-877762",
+        "practice_area": "family",
+        "title": "Protection From Abuse: Nadia P. Loe v. Priya C. Roe",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Cumberland",
+          "court_location": "Portland",
+          "court_type": "District Court"
+        },
+        "case_type": "protection_from_abuse",
+        "filing_date": "2026-05-24",
+        "status": "pre_filing",
+        "summary": "Nadia P. Loe petitions the Portland District Court for a protection from abuse order against Priya C. Roe, a dating partner, seeking no contact and stay-away order following a course of conduct that includes a most recent incident on 2026-04-06 at the plaintiff's workplace.",
+        "event_date": "2026-04-06",
+        "docket_number": "CUM-PA-2026-454",
+        "universe_id": "UNIV-marital-breakdown-cascade-0007"
+      },
+      "parties": {
+        "plaintiff": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "full_name": "Nadia P. Loe",
+          "address": "335 Pine Lane",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04069",
+          "phone": "(207) 555-0112",
+          "email": "nadia.loe@example.org",
+          "date_of_birth": "1964-01-30",
+          "ssn_last4": "8313",
+          "role": "Plaintiff (person seeking protection)"
+        },
+        "defendant": {
+          "entity_type": "person",
+          "first_name": "Priya",
+          "middle_name": "C",
+          "last_name": "Roe",
+          "full_name": "Priya C. Roe",
+          "address": "224 Lighthouse Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04031",
+          "phone": "(207) 555-0111",
+          "email": "priya.roe@example.net",
+          "date_of_birth": "1974-01-31",
+          "ssn_last4": "9264",
+          "role": "Defendant (person to be restrained)"
+        },
+        "child_1": {
+          "entity_type": "person",
+          "first_name": "Samuel",
+          "middle_name": "B",
+          "last_name": "Boe",
+          "full_name": "Samuel B. Boe",
+          "address": "297 Tidewater Lane",
+          "city": "Ellsworth",
+          "state": "ME",
+          "zip": "04007",
+          "phone": "(207) 555-0128",
+          "email": "samuel.boe@example.com",
+          "date_of_birth": "2021-05-29",
+          "role": "Minor child"
+        },
+        "child_2": {
+          "entity_type": "person",
+          "first_name": "Omar",
+          "middle_name": "W",
+          "last_name": "Loe",
+          "full_name": "Omar W. Loe",
+          "address": "62 Tidewater Lane",
+          "city": "Waterville",
+          "state": "ME",
+          "zip": "04072",
+          "phone": "(207) 555-0187",
+          "email": "omar.loe@example.com",
+          "date_of_birth": "2022-10-25",
+          "role": "Minor child"
+        },
+        "attorney": {
+          "entity_type": "person",
+          "first_name": "Jane",
+          "middle_name": "K",
+          "last_name": "Poe",
+          "full_name": "Jane K. Poe",
+          "role": "Attorney for the client",
+          "address": "231 Meadowbrook Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04002",
+          "phone": "(207) 555-0135",
+          "email": "jane.poe@example.com",
+          "date_of_birth": "1981-12-22",
+          "ssn_last4": "8373",
+          "bar_number": "6473",
+          "organization_name": "Kingsley & Associates"
+        },
+        "client": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "full_name": "Nadia P. Loe",
+          "address": "335 Pine Lane",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04069",
+          "phone": "(207) 555-0112",
+          "email": "nadia.loe@example.org",
+          "date_of_birth": "1964-01-30",
+          "ssn_last4": "8313",
+          "role": "Plaintiff (person seeking protection)"
+        }
+      },
+      "fact_pattern": {
+        "summary": "Nadia P. Loe petitions the Portland District Court for a protection from abuse order against Priya C. Roe, a dating partner, seeking no contact and stay-away order following a course of conduct that includes a most recent incident on 2026-04-06 at the plaintiff's workplace.",
+        "narrative": "Nadia P. Loe and Priya C. Roe are connected as a dating partner. Over time, the plaintiff reports an escalating pattern of conduct by the defendant that has caused the plaintiff to fear for safety. The most recent incident occurred on 2026-04-06 at the plaintiff's workplace.\n\nThe plaintiff describes prior incidents over the relationship, estimated at 7 in number, ranging from threatening statements to attempts to control the plaintiff's movements and contacts. The plaintiff seeks the court's intervention to stop the contact and establish clear, enforceable boundaries.\n\nNadia now asks the court for no contact and stay-away order under the Maine protection from abuse statute. The plaintiff is prepared to request temporary relief on an expedited basis given the recency of the most recent incident and the ongoing concern for safety.",
+        "undisputed_facts": [
+          "Nadia P. Loe and Priya C. Roe share a relationship as a dating partner.",
+          "Nadia P. Loe has filed, or is preparing to file, a complaint for protection from abuse in Cumberland County District Court."
+        ],
+        "disputed_facts": [
+          "Whether the defendant's conduct meets the statutory definition of abuse warranting a protection order.",
+          "The scope of relief, including whether exclusive use of the residence and temporary parental rights are warranted.",
+          "The defendant's account of the incident on 2026-04-06 at the plaintiff's workplace."
+        ],
+        "timeline": [
+          {
+            "date": "2026-04-06",
+            "event": "Most recent reported incident at the plaintiff's workplace."
+          },
+          {
+            "date": "2026-05-24",
+            "event": "Complaint for protection from abuse prepared for filing in Portland District Court."
+          }
+        ]
+      },
+      "third_parties": [
+        {
+          "id": "tp1",
+          "name": "Ingrid Q. Moe",
+          "type": "neighbor",
+          "role": "Neighbor who witnessed an incident",
+          "relevance": "Personally observed an incident and can corroborate the plaintiff's account.",
+          "contact": {
+            "phone": "(207) 555-0186",
+            "city": "Auburn",
+            "state": "ME",
+            "email": "ingrid.moe@example.org"
+          }
+        },
+        {
+          "id": "tp2",
+          "name": "Felix J. Jessup",
+          "type": "healthcare_provider",
+          "role": "Domestic-violence advocate",
+          "relevance": "Assists the plaintiff with safety planning and connecting to community resources.",
+          "contact": {
+            "phone": "(207) 555-0148",
+            "city": "Bath",
+            "state": "ME",
+            "email": "felix.jessup@example.org"
+          }
+        }
+      ],
+      "intake_interview": {
+        "interviewer": "Intake Attorney",
+        "interviewee_role": "plaintiff",
+        "date": "2026-05-24",
+        "exchanges": [
+          {
+            "topic": "Immediate safety",
+            "question": "Right now, are you and anyone in your household safe, and do you have a place to stay tonight?",
+            "answer": "I am safe at the moment. I am staying somewhere the defendant does not have access to, but I am worried about what happens next, which is why I came in today."
+          },
+          {
+            "topic": "Most recent incident",
+            "question": "Without going into more detail than you are comfortable with, what happened most recently?",
+            "answer": "The most recent incident was on 2026-04-06 at the plaintiff's workplace. I felt threatened and afraid for my safety, and that is when I decided I needed a court order."
+          },
+          {
+            "topic": "Children",
+            "question": "Are there children involved, and do you have concerns about their safety?",
+            "answer": "I want the order to cover anyone in my household who needs protection, and if the court can address temporary parenting arrangements, I would like that addressed too."
+          },
+          {
+            "topic": "Firearms",
+            "question": "Are you aware of any firearms the defendant has access to?",
+            "answer": "I have told you what I know about whether there are firearms. I understand the court can order the defendant to surrender any firearms while the order is in place, and I would want that if it applies."
+          },
+          {
+            "topic": "Relief sought",
+            "question": "What outcome do you need from the court?",
+            "answer": "I need no contact and stay-away order. Most of all I want the contact to stop and to feel safe day to day."
+          }
+        ]
+      },
+      "client_objectives": {
+        "goals": [
+          "Obtain a protection from abuse order with no contact and a stay-away provision.",
+          "Secure protection for any household members, including the children, who need it.",
+          "Where applicable, obtain exclusive use of the residence so the plaintiff can remain safely at home."
+        ],
+        "priorities": [
+          "Personal safety and an immediate stop to all contact.",
+          "Protection of the children and other household members.",
+          "A clear, enforceable order the plaintiff can rely on day to day."
+        ],
+        "risk_tolerance": "low",
+        "desired_outcomes": [
+          "A granted protection order providing no contact and stay-away order.",
+          "Surrender of any firearms by the defendant for the duration of the order."
+        ],
+        "non_starters": [
+          "Any resolution that requires ongoing direct contact with the defendant.",
+          "Any arrangement that leaves household members unprotected."
+        ],
+        "constraints": {
+          "budget": "Modest; the plaintiff wants an efficient path to a protective order.",
+          "timeline": "Seeks a temporary order promptly, with a hearing on a final order to follow."
+        }
+      },
+      "issues": [
+        {
+          "issue": "Firearms prohibition and surrender during the order",
+          "category": "family",
+          "governing_law": "19-A M.R.S. § 4007(1)(A-1)",
+          "sub_questions": [
+            "Should the order prohibit the defendant from possessing firearms?",
+            "What surrender and verification terms are appropriate?"
+          ],
+          "strength": "moderate",
+          "client_position": "Asks the court to prohibit firearm possession and order surrender for the duration of the order.",
+          "id": "iss1"
+        },
+        {
+          "issue": "Enforcement and consequences of any violation",
+          "category": "family",
+          "governing_law": "19-A M.R.S. § 4011",
+          "sub_questions": [
+            "What conduct would violate the order?",
+            "What enforcement mechanisms and penalties apply to a violation?"
+          ],
+          "strength": "strong",
+          "client_position": "Seeks clear terms so any violation can be enforced by law enforcement and the court.",
+          "id": "iss2"
+        },
+        {
+          "issue": "Entitlement to relief on a protection from abuse complaint",
+          "category": "family",
+          "governing_law": "19-A M.R.S. § 4007",
+          "sub_questions": [
+            "Does the alleged conduct constitute abuse under the statute?",
+            "Which forms of relief (no contact, stay-away, residence, parental rights) are appropriate?"
+          ],
+          "strength": "moderate",
+          "client_position": "Seeks no contact and stay-away order based on the pattern of conduct and the most recent incident.",
+          "id": "iss3"
+        }
+      ],
+      "evidence": [
+        {
+          "title": "Photographs of injuries and property damage",
+          "type": "photo",
+          "party": "plaintiff",
+          "description": "Dated photographs the plaintiff offers to corroborate the reported incidents.",
+          "id": "ev1"
+        },
+        {
+          "title": "Witness statement affidavit",
+          "type": "affidavit",
+          "party": "plaintiff",
+          "description": "Sworn statement from a witness corroborating the plaintiff's account.",
+          "id": "ev2"
+        },
+        {
+          "title": "Emergency department medical record",
+          "type": "medical_record",
+          "party": "plaintiff",
+          "description": "Record from an ER visit relevant to a reported incident.",
+          "id": "ev3"
+        }
+      ],
+      "facts": {
+        "relationship": "dating partner",
+        "most_recent_incident_date": "2026-04-06",
+        "incident_location": "the plaintiff's workplace",
+        "prior_incidents": 7,
+        "firearms_present": false,
+        "requested_relief": "no contact and stay-away order",
+        "police_called": true
+      },
+      "related_matters": [
+        {
+          "universe_id": "UNIV-marital-breakdown-cascade-0007",
+          "matter_id": "MMC-2025-237630",
+          "scenario_id": "family-divorce-cumberland",
+          "relationship": "relates_to",
+          "description": "Arises between the same spouses; a protective order can shape the parenting schedule in the divorce."
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "provenance": {
+        "mock": true,
+        "fictional": true,
+        "generator": "deterministic-engine",
+        "generator_version": "0.1.0",
+        "scenario_id": "business-formation-scorp",
+        "seed": 7003
+      },
+      "matter": {
+        "matter_id": "MMC-2026-771146",
+        "practice_area": "business",
+        "title": "Formation of Evergreen Studios LLC and S-Corporation Election by Priya C. Roe",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Kennebec",
+          "court_location": "Augusta",
+          "court_type": "Maine Secretary of State / IRS (filing offices)"
+        },
+        "case_type": "entity_formation",
+        "filing_date": "2026-04-27",
+        "status": "intake",
+        "summary": "Priya C. Roe is forming Evergreen Studios LLC, a Maine corporation engaged in software development, and electing S-corporation status effective 2026-02-19; the engagement covers the Articles of Incorporation, the EIN application (Form SS-4), the timely S-election (Form 2553), and Maine corporate and payroll-withholding registration.",
+        "event_date": "2026-02-19",
+        "universe_id": "UNIV-marital-breakdown-cascade-0007"
+      },
+      "parties": {
+        "applicant": {
+          "entity_type": "person",
+          "first_name": "Priya",
+          "middle_name": "C",
+          "last_name": "Roe",
+          "full_name": "Priya C. Roe",
+          "address": "224 Lighthouse Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04031",
+          "phone": "(207) 555-0111",
+          "email": "priya.roe@example.net",
+          "date_of_birth": "1974-01-31",
+          "ssn_last4": "9264",
+          "role": "Founder / responsible party"
+        },
+        "company": {
+          "entity_type": "organization",
+          "organization_name": "Evergreen Studios LLC",
+          "full_name": "Evergreen Studios LLC",
+          "address": "282 Willow Bend",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04073",
+          "phone": "(207) 555-0107",
+          "role": "Newly formed Maine corporation"
+        },
+        "attorney": {
+          "entity_type": "person",
+          "first_name": "Wesley",
+          "middle_name": "J",
+          "last_name": "Poe",
+          "full_name": "Wesley J. Poe",
+          "role": "Attorney for the client",
+          "address": "200 Willow Bend",
+          "city": "Waterville",
+          "state": "ME",
+          "zip": "04017",
+          "phone": "(207) 555-0175",
+          "email": "wesley.poe@example.com",
+          "date_of_birth": "1980-11-18",
+          "ssn_last4": "1566",
+          "bar_number": "5106",
+          "organization_name": "Birchwood & Calloway LLP"
+        },
+        "client": {
+          "entity_type": "person",
+          "first_name": "Priya",
+          "middle_name": "C",
+          "last_name": "Roe",
+          "full_name": "Priya C. Roe",
+          "address": "224 Lighthouse Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04031",
+          "phone": "(207) 555-0111",
+          "email": "priya.roe@example.net",
+          "date_of_birth": "1974-01-31",
+          "ssn_last4": "9264",
+          "role": "Founder / responsible party"
+        }
+      },
+      "fact_pattern": {
+        "summary": "Priya C. Roe is forming Evergreen Studios LLC, a Maine corporation engaged in software development, and electing S-corporation status effective 2026-02-19; the engagement covers the Articles of Incorporation, the EIN application (Form SS-4), the timely S-election (Form 2553), and Maine corporate and payroll-withholding registration.",
+        "narrative": "Priya C. Roe is the founder and IRS responsible party for Evergreen Studios LLC, a new corporation being organized in Maine to carry on software development. Articles of Incorporation were filed with the Maine Secretary of State with an incorporation date of 2026-02-19, and the corporation will have 2 shareholder(s) at formation.\n\nThe founder intends to elect S-corporation treatment under Subchapter S so that the corporation's income passes through to the shareholders, electing on a calendar year basis with a fiscal year end of December 31 and effective on 2026-02-19. The corporation expects 2 employee(s) and plans to begin payroll on or about 2026-03-16, using the accrual method of accounting and reporting under NAICS code 238220.\n\nBecause S-corporation owner-employees must be paid reasonable wages, the founder plans owner compensation of approximately $43327 per year and projects first-year revenue near $105512. The remaining work is to obtain an EIN on Form SS-4, file Form 2553 within the statutory window so the election is timely, register with Maine Revenue Services for corporate income tax and employer withholding, and set up payroll so the first Maine wage filings are correct.",
+        "undisputed_facts": [
+          "Evergreen Studios LLC is being organized as a corporation in Maine with an incorporation date of 2026-02-19.",
+          "Priya C. Roe is the founder and the IRS responsible party for the corporation.",
+          "The corporation intends to elect S-corporation status effective 2026-02-19.",
+          "The corporation expects 2 shareholder(s) and approximately 2 employee(s) in its first year."
+        ],
+        "disputed_facts": [
+          "Whether owner compensation of approximately $43327 satisfies the reasonable-compensation standard for an S-corporation owner-employee given the activity and revenue.",
+          "Whether the Form 2553 election will be filed within the statutory window so that S status is effective on 2026-02-19 without needing late-election relief.",
+          "Whether the accrual method of accounting is the appropriate choice for the corporation's first tax year."
+        ],
+        "timeline": [
+          {
+            "date": "2026-02-19",
+            "event": "Articles of Incorporation for Evergreen Studios LLC filed with the Maine Secretary of State."
+          },
+          {
+            "date": "2026-03-16",
+            "event": "Corporation begins payroll for its owner-employee and any staff, triggering Maine withholding obligations."
+          },
+          {
+            "date": "2026-04-27",
+            "event": "EIN application (Form SS-4) and S-election (Form 2553) prepared for filing with the IRS for Evergreen Studios LLC."
+          }
+        ]
+      },
+      "third_parties": [
+        {
+          "id": "tp1",
+          "name": "Evergreen Analytics Co.",
+          "type": "business_entity",
+          "role": "Registered agent for the corporation",
+          "relevance": "Serves as the corporation's registered agent for service of process and official Maine Secretary of State correspondence.",
+          "contact": {
+            "phone": "(207) 555-0147",
+            "city": "Gorham",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp2",
+          "name": "Beatrice A. Calloway",
+          "type": "witness",
+          "role": "Accountant",
+          "relationship": "Company's CPA",
+          "relevance": "Advises on the S-election, reasonable compensation, payroll setup, and prepares the corporation's federal and Maine tax filings.",
+          "contact": {
+            "phone": "(207) 555-0151",
+            "city": "Falmouth",
+            "state": "ME",
+            "email": "beatrice.calloway@example.net"
+          }
+        }
+      ],
+      "intake_interview": {
+        "interviewer": "Intake Attorney",
+        "interviewee_role": "applicant",
+        "date": "2026-04-27",
+        "exchanges": [
+          {
+            "topic": "The business",
+            "question": "Tell me about the business and why you want a corporation with an S-election.",
+            "answer": "I'm starting Evergreen Studios LLC to do software development. I want the liability protection of a corporation, but I'd rather have the profits pass through to me instead of being taxed at the corporate level, so an S-election makes sense."
+          },
+          {
+            "topic": "Owners",
+            "question": "Who owns the company, and is everyone eligible to hold S-corporation stock?",
+            "answer": "There are 2 of us on the cap table. We're all individuals and U.S. persons, so I believe we all qualify, and everyone is on board with making the S-election."
+          },
+          {
+            "topic": "Employees and payroll",
+            "question": "Will the company have employees, and what are your payroll plans?",
+            "answer": "We expect about 2 employee(s) to start, and I plan to put myself on payroll as an owner-employee. I'd like to run the first payroll around 2026-03-16, and I want to make sure we withhold Maine taxes correctly."
+          },
+          {
+            "topic": "Banking and EIN",
+            "question": "Where do things stand on the EIN and the business bank account?",
+            "answer": "I still need the EIN before I can open the company's bank account, so getting Form SS-4 done is my first priority. Once the EIN comes through I'll open the operating account at the business bank."
+          },
+          {
+            "topic": "Goals",
+            "question": "What does a successful setup look like for you?",
+            "answer": "Limited liability, pass-through taxation with a reasonable salary for myself, a clean EIN and payroll setup, and being fully registered in Maine. Above all, I cannot afford to miss the S-election deadline."
+          }
+        ]
+      },
+      "client_objectives": {
+        "goals": [
+          "Form Evergreen Studios LLC as a Maine corporation with limited liability for its shareholders.",
+          "Make a timely and effective S-corporation election so income passes through to the shareholders.",
+          "Obtain the EIN and set up compliant federal and Maine payroll, including owner reasonable compensation.",
+          "Complete Maine registration for corporate income tax and employer withholding."
+        ],
+        "priorities": [
+          "Filing Form 2553 within the statutory window so the S-election is effective on 2026-02-19.",
+          "Paying the owner-employee reasonable compensation that withstands IRS scrutiny.",
+          "Proper EIN, payroll, and Maine withholding setup from the first payroll."
+        ],
+        "risk_tolerance": "moderate",
+        "desired_outcomes": [
+          "An approved Maine corporation with an effective S-election as of 2026-02-19.",
+          "An issued EIN, a funded operating account, and correct first-year federal and Maine payroll filings."
+        ],
+        "non_starters": [
+          "Blowing the S-election deadline and losing pass-through treatment for the first year."
+        ],
+        "constraints": {
+          "budget": "Modest startup budget; wants the formation and elections done right the first time.",
+          "timeline": "Needs the EIN and Form 2553 filed in time for the election to be effective on the incorporation date."
+        }
+      },
+      "issues": [
+        {
+          "issue": "Pass-through treatment and owner fringe-benefit rules",
+          "category": "business",
+          "governing_law": "IRC § 1366 and § 1372",
+          "sub_questions": [
+            "How do items of income, loss, and deduction pass through to the shareholders?",
+            "Which fringe benefits are limited for more-than-2% shareholder-employees?"
+          ],
+          "strength": "moderate",
+          "client_position": "The founder seeks full pass-through treatment and to structure any owner fringe benefits in light of the 2% shareholder-employee rules.",
+          "id": "iss1"
+        },
+        {
+          "issue": "Eligibility of the corporation and its shareholders to elect S status",
+          "category": "business",
+          "governing_law": "IRC § 1361",
+          "sub_questions": [
+            "Are all shareholders eligible (individuals, estates, or qualifying trusts) and within the 100-shareholder limit?",
+            "Does the corporation have only one class of stock as required?"
+          ],
+          "strength": "strong",
+          "client_position": "The corporation has eligible individual shareholders and a single class of stock, so it qualifies as a small business corporation.",
+          "id": "iss2"
+        },
+        {
+          "issue": "Maine corporate registration and employer withholding obligations",
+          "category": "business",
+          "governing_law": "13-C M.R.S. (formation); 36 M.R.S. § 5102 et seq. and § 5250 (income tax and withholding)",
+          "sub_questions": [
+            "Are the Articles of Incorporation compliant with the Maine Business Corporation Act?",
+            "When must the corporation register for and begin Maine income-tax withholding on wages?"
+          ],
+          "strength": "strong",
+          "client_position": "The corporation will file compliant Articles and register with Maine Revenue Services for corporate income tax and employer withholding before the first payroll.",
+          "id": "iss3"
+        },
+        {
+          "issue": "Reasonable compensation for the S-corporation owner-employee",
+          "category": "business",
+          "governing_law": "Reasonable compensation doctrine (IRS guidance; Rev. Rul. 74-44)",
+          "sub_questions": [
+            "Is the planned $43327 owner salary reasonable for the services performed?",
+            "How should wages and distributions be allocated to withstand reclassification?"
+          ],
+          "strength": "moderate",
+          "client_position": "Planned owner compensation of approximately $43327 reflects the value of services and is intended to satisfy the reasonable-compensation standard.",
+          "id": "iss4"
+        },
+        {
+          "issue": "Obtaining an Employer Identification Number on Form SS-4",
+          "category": "business",
+          "governing_law": "IRC § 6109; Form SS-4 instructions",
+          "sub_questions": [
+            "Who is the responsible party for the EIN application?",
+            "What entity classification and principal activity should be reported?"
+          ],
+          "strength": "strong",
+          "client_position": "Priya C. Roe is the responsible party and will apply for the EIN reporting the corporation's principal activity of software development.",
+          "id": "iss5"
+        }
+      ],
+      "expert_opinions": [
+        {
+          "id": "exp1",
+          "expert": {
+            "name": "Desmond G. Coe",
+            "field": "Tax / S-corporation planning",
+            "credentials": "CPA",
+            "retained_by": "applicant"
+          },
+          "topic": "S-election timing, reasonable compensation, and payroll setup",
+          "opinion": "The corporation qualifies for the S-election, and the planned owner compensation and payroll structure are consistent with IRS guidance.",
+          "basis": "Review of the cap table, projected revenue, and comparable owner-compensation data."
+        }
+      ],
+      "evidence": [
+        {
+          "title": "IRS EIN confirmation letter (CP 575)",
+          "type": "correspondence",
+          "party": "applicant",
+          "description": "The IRS notice confirming the assigned Employer Identification Number for the corporation.",
+          "id": "ev1"
+        },
+        {
+          "title": "Shareholder agreement",
+          "type": "contract",
+          "party": "company",
+          "description": "The agreement among the shareholders covering ownership, transfer restrictions, and the S-election.",
+          "id": "ev2"
+        },
+        {
+          "title": "IRS Form SS-4 application",
+          "type": "document",
+          "party": "applicant",
+          "description": "The Application for Employer Identification Number identifying Priya C. Roe as the responsible party.",
+          "id": "ev3"
+        },
+        {
+          "title": "IRS Form 2553 S-election",
+          "type": "document",
+          "party": "company",
+          "description": "The Election by a Small Business Corporation, with shareholder consents, electing S status effective 2026-02-19.",
+          "id": "ev4"
+        }
+      ],
+      "financials": {
+        "currency": "USD",
+        "amounts": [
+          {
+            "label": "Initial capital contributed",
+            "amount": 77743,
+            "basis": "Total cash and property contributed by the shareholders at formation."
+          },
+          {
+            "label": "Expected first-year revenue",
+            "amount": 666378,
+            "basis": "Projected gross receipts for the corporation's first tax year."
+          },
+          {
+            "label": "Estimated first-year payroll",
+            "amount": 109638,
+            "basis": "Total projected wages for all employees in the first year."
+          }
+        ]
+      },
+      "facts": {
+        "entity_name": "Evergreen Studios LLC",
+        "entity_type": "corporation",
+        "state_of_incorporation": "Maine",
+        "incorporation_date": "2026-02-19",
+        "ein_applied": true,
+        "s_corp_election": true,
+        "election_effective_date": "2026-03-29",
+        "tax_year": "calendar year",
+        "fiscal_year_end": "December 31",
+        "num_shareholders": 2,
+        "num_employees": 2,
+        "first_payroll_date": "2026-03-16",
+        "accounting_method": "accrual",
+        "naics_code": "238220",
+        "principal_activity": "software development",
+        "expected_first_year_revenue": 105512,
+        "responsible_party_name": "Priya C. Roe",
+        "reasonable_compensation": 43327
+      },
+      "related_matters": [
+        {
+          "universe_id": "UNIV-marital-breakdown-cascade-0007",
+          "matter_id": "MMC-2025-237630",
+          "scenario_id": "family-divorce-cumberland",
+          "relationship": "marital_asset_of",
+          "description": "The business is a marital asset whose value is contested in the divorce."
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "divorce",
+      "to": "protection_order",
+      "type": "relates_to",
+      "description": "The protection order concerns the same spouses and affects custody decided here."
+    },
+    {
+      "from": "divorce",
+      "to": "business_matter",
+      "type": "values",
+      "description": "The marital business is an asset that must be valued and divided in the divorce."
+    },
+    {
+      "from": "protection_order",
+      "to": "divorce",
+      "type": "relates_to",
+      "description": "Arises between the same spouses; a protective order can shape the parenting schedule in the divorce."
+    },
+    {
+      "from": "business_matter",
+      "to": "divorce",
+      "type": "marital_asset_of",
+      "description": "The business is a marital asset whose value is contested in the divorce."
+    }
+  ]
+}

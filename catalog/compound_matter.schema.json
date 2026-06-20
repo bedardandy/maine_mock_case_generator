@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bedardandy/maine_mock_case_generator/catalog/compound_matter.schema.json",
+  "title": "Compound Matter Universe",
+  "description": "A set of FICTIONAL legal matters that are intertwined: they share one cast of people and organizations and cross-reference one another, modeling how a single real-world event cascades across practice areas (e.g. a death -> probate + estate tax + guardianship). Each entry in `matters` is itself a full Mock Matter validating against mock_matter.schema.json; validate those separately.",
+  "type": "object",
+  "required": ["schema_version", "provenance", "universe_id", "title", "matters"],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0" },
+    "provenance": {
+      "type": "object",
+      "required": ["mock", "fictional", "generator"],
+      "additionalProperties": true,
+      "properties": {
+        "mock": { "const": true },
+        "fictional": { "const": true },
+        "generator": { "type": "string" },
+        "generator_version": { "type": "string" },
+        "compound_id": { "type": "string" },
+        "seed": { "type": ["integer", "string", "null"] }
+      }
+    },
+    "universe_id": { "type": "string", "description": "Stable id shared by every matter in this universe." },
+    "title": { "type": "string" },
+    "theme": { "type": "string", "description": "The precipitating event / through-line that ties the matters together." },
+    "narrative": { "type": "string", "description": "Plain-language overview of how the matters interrelate." },
+    "cast": {
+      "type": "array",
+      "description": "The shared people and organizations. Each appears in one or more matters under possibly different roles.",
+      "items": {
+        "type": "object",
+        "required": ["cast_id", "kind", "name"],
+        "additionalProperties": true,
+        "properties": {
+          "cast_id": { "type": "string" },
+          "kind": { "type": "string", "enum": ["person", "organization"] },
+          "name": { "type": "string", "description": "Display name (full name or organization name)." },
+          "description": { "type": "string" },
+          "appears_as": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["matter_id", "role"],
+              "additionalProperties": true,
+              "properties": {
+                "matter_id": { "type": "string", "description": "The compound-local matter id (e.g. 'probate')." },
+                "role": { "type": "string", "description": "Role key that this cast member fills in that matter." }
+              }
+            }
+          }
+        }
+      }
+    },
+    "matters": {
+      "type": "array",
+      "description": "The constituent Mock Matters. Each is independently valid against mock_matter.schema.json and carries matter.universe_id + related_matters back-links.",
+      "items": { "type": "object", "additionalProperties": true }
+    },
+    "relationships": {
+      "type": "array",
+      "description": "Directed links between constituent matters.",
+      "items": {
+        "type": "object",
+        "required": ["from", "to", "type"],
+        "additionalProperties": true,
+        "properties": {
+          "from": { "type": "string", "description": "Compound-local matter id." },
+          "to": { "type": "string", "description": "Compound-local matter id." },
+          "type": { "type": "string", "description": "Nature of the link, e.g. 'feeds', 'asset_of', 'values', 'arises_from'." },
+          "description": { "type": "string" }
+        }
+      }
+    }
+  }
+}
