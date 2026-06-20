@@ -1,0 +1,194 @@
+id: personal-injury-auto
+title: "{plaintiff_full_name} v. {defendant_full_name}"
+practice_area: civil
+case_type: personal_injury
+status: active
+docket_prefix: CV
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, CV-067, CV-181]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+dates:
+  filing_date: {date_between: ["2025-02-01", "2025-10-01"]}
+  event_date: "{collision_date}"
+
+# A motor-vehicle personal-injury action: the injured plaintiff sues the at-fault
+# driver, and (where the vehicle was commercial) the driver's employer under
+# respondeat superior. Rich tort matter with a full litigation block.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, label: "Plaintiff (injured motorist)"}
+    - {key: defendant, label: "Defendant (at-fault driver)"}
+    - {key: defendant_2, entity: organization, label: "Defendant (driver's employer)"}
+
+facts:
+  collision_date: {date_between: ["2023-06-01", "2024-08-31"]}
+  collision_location: {pick: ["the intersection of Forest Avenue and Woodford Street", "Interstate 295 northbound near Exit 7", "the intersection of Congress Street and State Street", "Route 1 in Falmouth", "the Maine Turnpike near mile marker 44", "the intersection of Main Street and Western Avenue", "Outer Broadway near the I-295 on-ramp", "Route 302 in Windham"]}
+  collision_type: {pick: ["rear-end collision", "left-turn collision", "intersection T-bone", "highway merge collision"]}
+  injury_type: {pick: ["cervical spine injury", "fractured wrist and ribs", "traumatic brain injury (mild)", "lumbar disc herniation"]}
+  liability_disputed: {pick: [true, false]}
+  commercial_vehicle: {pick: [true, false]}
+  medical_specials: {int_between: [8000, 240000]}
+  lost_wages: {int_between: [2000, 90000]}
+  property_damage: {int_between: [3000, 45000]}
+  policy_limits: {int_between: [50000, 1000000]}
+  comparative_fault_alleged: {pick: [true, false]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: insurer, name_kind: organization, role: "Plaintiff's auto insurer", relevance: "Carries the plaintiff's policy, including uninsured/underinsured motorist coverage, and paid medical-payments benefits."}
+    - {type: insurer, name_kind: organization, role: "Defendant's liability insurer", relevance: "Carries the at-fault driver's liability policy and controls the defense and any settlement within limits."}
+    - {type: witness, name_kind: person, role: "Investigating police officer", relevance: "Responded to the scene and authored the official crash report and diagram."}
+    - {type: healthcare_provider, name_kind: person, role: "Treating physician", relevance: "Treated the plaintiff's injuries and can testify to diagnosis, causation, and prognosis."}
+    - {type: witness, name_kind: person, role: "Independent eyewitness", relevance: "Saw the collision and can describe the vehicles' speed, signaling, and right-of-way."}
+    - {type: business_entity, name_kind: organization, role: "Tow and storage company", relevance: "Towed the plaintiff's vehicle and holds the post-collision inspection and storage records."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name} was injured in a {collision_type} at {collision_location} and sues the at-fault driver {defendant_full_name} (and the driver's employer {defendant_2_full_name}) for negligence, claiming a {injury_type} and roughly ${medical_specials} in medical bills."
+  narrative:
+    - "On {collision_date}, {plaintiff_full_name} was lawfully operating a motor vehicle at {collision_location} when {defendant_full_name} caused a {collision_type}. {plaintiff_first} suffered a {injury_type} and was transported for emergency care; {plaintiff_first}'s vehicle sustained roughly ${property_damage} in damage and was towed from the scene."
+    - "{plaintiff_first} alleges that {defendant_first} drove negligently, breaching the duty of reasonable care owed to other motorists, and that this breach proximately caused the collision and resulting injuries. To the extent {defendant_first} was operating a commercial vehicle in the course of employment, {plaintiff_first} alleges that {defendant_2_full_name} is vicariously liable under respondeat superior and independently negligent in entrusting and supervising the vehicle."
+    - "As a result of the collision, {plaintiff_first} has incurred approximately ${medical_specials} in medical specials and about ${lost_wages} in lost wages, and continues to experience pain and functional limitation. The defense disputes the nature and extent of the injuries and contends that comparative fault should reduce any recovery. The matter was filed in {county} County Superior Court and is in active discovery."
+  undisputed:
+    - "A {collision_type} occurred at {collision_location} on {collision_date} involving the parties' vehicles."
+    - "{plaintiff_full_name} received medical treatment following the collision."
+    - "The investigating officer responded to the scene and prepared a crash report."
+  disputed:
+    - "Which driver was at fault for the {collision_type}, and in what proportion."
+    - "Whether the {injury_type} was caused by the collision or by a pre-existing condition."
+    - "The reasonable value of the plaintiff's past and future medical care and lost earnings."
+    - "Whether the plaintiff's own comparative fault should reduce or bar recovery under 14 M.R.S. § 156."
+  timeline:
+    - {date: "{collision_date}", event: "The {collision_type} occurred at {collision_location}; {plaintiff_first} was injured."}
+    - {date: "{filing_date}", event: "Complaint for negligence filed in {court_location} Superior Court."}
+
+interview:
+  interviewer: "Litigation Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "The collision", question: "Walk me through how the crash happened.", answer: "I was driving normally at {collision_location} when it became a {collision_type}. I never had a chance to avoid it. The police came and wrote it up."}
+    - {topic: "Injuries", question: "What injuries did you suffer, and how are you now?", answer: "I was diagnosed with a {injury_type}. I have been in treatment ever since and still have pain and trouble doing things I used to do easily."}
+    - {topic: "Treatment and bills", question: "What has your medical care looked like?", answer: "Emergency care, imaging, follow-ups, and therapy. The bills are already around ${medical_specials}, and my doctor says I may need more care."}
+    - {topic: "Lost income", question: "Has this affected your ability to work?", answer: "Yes. I missed a lot of work and lost about ${lost_wages} in wages. I am worried about whether I can keep up long term."}
+    - {topic: "Fault", question: "Is the other driver blaming you at all?", answer: "Their insurer is hinting I was partly at fault, but I had the right of way. I do not think any of this was my fault."}
+    - {topic: "Goal", question: "What outcome are you hoping for?", answer: "Fair compensation for my medical bills, lost wages, and what I have been through. I will go to trial if I have to, but a fair settlement is fine."}
+
+objectives:
+  goals:
+    - "Establish the defendant's negligence and full liability for the {collision_type}."
+    - "Recover compensation for past and future medical care, lost wages, and pain and suffering."
+    - "Maximize recovery against available liability and underinsured-motorist coverage."
+  priorities:
+    - "Proving causation linking the {injury_type} to the collision."
+    - "Defeating the comparative-fault defense."
+    - "Documenting the full economic and non-economic loss."
+  risk_tolerance: {pick: [moderate, high]}
+  desired_outcomes:
+    - "A judgment or settlement compensating the plaintiff's full damages."
+    - "A liability finding (or strong settlement posture) unreduced by comparative fault."
+  non_starters:
+    - "A nuisance-value settlement that ignores the future medical needs."
+  constraints:
+    budget: {pick: ["Contingency-fee representation; costs advanced and recovered from any judgment.", "Cost-conscious; prefers an efficient resolution but will fund trial if liability is contested."]}
+    timeline: "Wants the matter resolved before the close of discovery if a fair offer is made."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Whether the defendant negligently caused the collision", category: tort, governing_law: "Common law negligence (duty, breach, causation, damages)", sub_questions: ["Did the defendant breach the duty of reasonable care?", "Was the breach the proximate cause of the plaintiff's injuries?"], strength: strong, client_position: "The defendant's negligent operation caused the {collision_type} and all resulting harm."}
+    - {issue: "Whether the plaintiff's comparative fault reduces or bars recovery", category: tort, governing_law: "14 M.R.S. § 156", sub_questions: ["Did the plaintiff exercise reasonable care?", "If fault is shared, what is each party's percentage?"], strength: moderate, client_position: "The plaintiff bears no fault and any reduction is unwarranted."}
+    - {issue: "Whether the action was timely filed within the limitations period", category: procedure, governing_law: "14 M.R.S. § 752", sub_questions: ["When did the cause of action accrue?", "Was suit filed within six years?"], strength: strong}
+    - {issue: "Whether the employer is vicariously liable for the driver's conduct", category: tort, governing_law: "Respondeat superior; common law (vicarious liability and negligent entrustment)", sub_questions: ["Was the driver acting within the scope of employment?", "Did the employer negligently entrust the vehicle?"], strength: moderate, client_position: "The employer is liable for its driver's negligence committed on the job."}
+    - {issue: "Availability of uninsured/underinsured motorist coverage", category: insurance, governing_law: "24-A M.R.S. § 2902", sub_questions: ["Do the at-fault driver's limits fall short of the plaintiff's damages?", "What UM/UIM benefits are available to the plaintiff?"], strength: moderate}
+    - {issue: "Entitlement to punitive damages for the conduct alleged", category: remedies, governing_law: "14 M.R.S. § 1604-A", sub_questions: ["Does the evidence show malice or reckless indifference?"], strength: weak}
+
+experts:
+  count: {min: 2, max: 4}
+  pool:
+    - {field: "Accident reconstruction", credentials: "P.E., ACTAR", retained_by: plaintiff, topic: "Cause and mechanics of the collision", opinion: "The physical evidence shows the defendant's vehicle caused the impact; the plaintiff could not have avoided it.", basis: "Crash report, scene measurements, vehicle damage, and event-data-recorder download."}
+    - {field: "Treating physician / medical causation", credentials: "M.D.", retained_by: plaintiff, topic: "Diagnosis, causation, and prognosis of the injuries", opinion: "The plaintiff's {injury_type} was caused by the collision and will require ongoing care.", basis: "Examination, imaging, and the course of treatment."}
+    - {field: "Vocational and economic loss", credentials: "Ph.D., CRC", retained_by: plaintiff, topic: "Past and future lost earnings and earning capacity", opinion: "The injuries reduced the plaintiff's earning capacity, yielding a quantifiable economic loss.", basis: "Wage records, vocational assessment, and life-expectancy tables."}
+    - {field: "Biomechanical engineering", credentials: "Ph.D., P.E.", retained_by: defendant, topic: "Injury causation and collision forces", opinion: "The forces involved were insufficient to cause the claimed injuries.", basis: "Delta-V analysis and occupant-kinematics modeling."}
+    - {field: "Defense medical examination", credentials: "M.D.", retained_by: defendant, topic: "Independent evaluation of the claimed injuries", opinion: "The current complaints are degenerative and unrelated to the collision.", basis: "Independent examination and records review."}
+
+evidence:
+  count: {min: 5, max: 8}
+  pool:
+    - {title: "Police crash report and diagram", type: public_record, party: plaintiff, description: "The investigating officer's official report, narrative, and scene diagram."}
+    - {title: "Scene and vehicle photographs", type: photo, party: plaintiff, description: "Photographs of the vehicles, damage, debris field, and roadway."}
+    - {title: "Medical records and itemized bills", type: medical_record, party: plaintiff, description: "Treatment records and billing for the plaintiff's injuries."}
+    - {title: "Wage-loss documentation", type: financial_record, party: plaintiff, description: "Employer letter and pay records substantiating lost earnings."}
+    - {title: "Plaintiff's expert reports", type: affidavit, party: plaintiff, description: "Reconstruction, medical-causation, and economic-loss reports."}
+    - {title: "Vehicle repair estimate", type: financial_record, party: plaintiff, description: "Itemized estimate or total-loss valuation for the plaintiff's vehicle."}
+    - {title: "911 call transcript", type: correspondence, party: plaintiff, description: "Transcript and audio of the emergency call reporting the collision."}
+    - {title: "Defendant's cell-phone records", type: document, party: defendant, description: "Call and text logs around the time of the collision relevant to distraction."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Medical specials to date", amount: {int_between: [8000, 240000]}, basis: "Itemized past medical bills."}
+    - {label: "Lost wages", amount: {int_between: [2000, 90000]}, basis: "Documented time missed from work."}
+    - {label: "Property damage", amount: {int_between: [3000, 45000]}, basis: "Vehicle repair estimate or total-loss value."}
+    - {label: "Estimated future medical and care", amount: {int_between: [10000, 350000]}, basis: "Life-care and treatment projections."}
+    - {label: "Pain-and-suffering demand", amount: {int_between: [25000, 750000]}, basis: "Non-economic loss demand."}
+    - {label: "Defendant's policy limits", amount: {int_between: [50000, 1000000]}, basis: "Available liability coverage."}
+
+litigation:
+  posture: discovery
+  causes_of_action:
+    - {count: 1, claim: "Negligence", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "Common law negligence; 14 M.R.S. § 156", elements: ["A duty of reasonable care", "Breach of that duty", "Proximate causation", "Damages"], relief_sought: "Compensatory damages for medical expenses, lost wages, and pain and suffering", strength: strong}
+    - {count: 2, claim: "Vicarious liability and negligent entrustment", by: "{plaintiff_full_name}", against: "{defendant_2_full_name}", governing_law: "Respondeat superior; common law", elements: ["An employment or agency relationship", "Conduct within the scope of employment", "Negligent entrustment or supervision", "Resulting damages"], relief_sought: "Compensatory damages against the employer", strength: moderate}
+    - {count: 3, claim: "Negligence per se", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "29-A M.R.S. (rules of the road)", elements: ["Violation of a safety statute", "Plaintiff within the protected class", "Harm of the type the statute guards against", "Causation"], relief_sought: "Compensatory damages", strength: moderate}
+  affirmative_defenses:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {defense: "Comparative negligence", by: "{defendant_full_name}", basis: "The plaintiff's own negligence caused or contributed to the collision. 14 M.R.S. § 156."}
+      - {defense: "Failure to mitigate damages", by: "{defendant_full_name}", basis: "The plaintiff failed to follow medical advice and minimize the claimed losses."}
+      - {defense: "Sudden emergency", by: "{defendant_full_name}", basis: "The defendant faced an unforeseen emergency not of the defendant's making."}
+      - {defense: "Statute of limitations", by: "{defendant_full_name}", basis: "The action was not commenced within the limitations period. 14 M.R.S. § 752."}
+      - {defense: "Lack of causation", by: "{defendant_full_name}", basis: "The claimed injuries are pre-existing or degenerative and were not caused by the collision."}
+  counterclaims:
+    - {count: 1, claim: "Negligence (property damage)", by: "{defendant_full_name}", against: "{plaintiff_full_name}", relief: "Damages for the defendant's own vehicle repair costs allegedly caused by the plaintiff."}
+  discovery:
+    n: {min: 4, max: 6}
+    pick_n:
+      - {type: interrogatories, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-01", "2025-04-20"]}, status: responded, description: "First set of interrogatories on the collision, speed, and insurance."}
+      - {type: request_for_production, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-01", "2025-04-20"]}, status: objected, description: "Requests for the defendant's phone records, vehicle data, and employment file."}
+      - {type: request_for_production, propounding_party: "{defendant_full_name}", responding_party: "{plaintiff_full_name}", served_date: {date_between: ["2025-04-25", "2025-05-15"]}, status: responded, description: "Requests for the plaintiff's medical and employment records."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-06-01", "2025-07-01"]}, status: outstanding, description: "Deposition of the at-fault driver."}
+      - {type: deposition, propounding_party: "{defendant_full_name}", responding_party: "{plaintiff_full_name}", served_date: {date_between: ["2025-06-01", "2025-07-01"]}, status: served, description: "Deposition of the plaintiff."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "the treating physician", served_date: {date_between: ["2025-07-05", "2025-08-01"]}, status: outstanding, description: "Deposition of the treating physician on causation."}
+      - {type: request_for_admission, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-05-01", "2025-05-25"]}, status: responded, description: "Admissions on fault, right-of-way, and authenticity of the crash report."}
+      - {type: independent_examination, propounding_party: "{defendant_full_name}", responding_party: "{plaintiff_full_name}", served_date: {date_between: ["2025-08-05", "2025-09-01"]}, status: served, description: "Defense medical examination of the plaintiff."}
+      - {type: subpoena, propounding_party: "{plaintiff_full_name}", responding_party: "the defendant's liability insurer", served_date: {date_between: ["2025-05-01", "2025-05-25"]}, status: served, description: "Subpoena for the policy, declarations, and claim file."}
+  motions:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {title: "Motion to compel the independent medical examination", type: discovery, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-08-01", "2025-09-01"]}, status: granted, relief: "An order compelling the plaintiff to attend a defense medical examination."}
+      - {title: "Motion in limine to exclude the accident reconstruction", type: evidentiary, movant: "{defendant_full_name}", filed_date: {date_between: ["2026-01-15", "2026-02-28"]}, status: filed, relief: "Exclusion of the plaintiff's reconstruction expert testimony."}
+      - {title: "Motion for partial summary judgment on liability", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-10-01", "2025-11-15"]}, status: under_advisement, relief: "Judgment establishing the defendant's liability as a matter of law."}
+      - {title: "Motion to bifurcate liability and damages", type: trial, movant: "{defendant_full_name}", filed_date: {date_between: ["2026-03-01", "2026-04-01"]}, status: opposed, relief: "Separate trials on liability and damages."}
+      - {title: "Motion to compel the defendant's phone records", type: discovery, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-05-15", "2025-06-15"]}, status: granted_in_part, relief: "An order compelling production of the defendant's call and text logs."}
+  docket:
+    - {date: {date_between: ["2025-02-01", "2025-02-15"]}, entry: "Complaint and demand for jury trial filed.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-03-01", "2025-03-15"]}, entry: "Defendants' answer and affirmative defenses filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-03-20", "2025-04-01"]}, entry: "Scheduling order entered; discovery deadline set.", party: "the court"}
+    - {date: {date_between: ["2025-06-15", "2025-06-30"]}, entry: "Order compelling production of the defendant's phone records.", party: "the court"}
+    - {date: {date_between: ["2025-09-01", "2025-09-15"]}, entry: "Defense medical examination completed; expert disclosures exchanged.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-11-20", "2025-12-05"]}, entry: "Partial summary judgment on liability taken under advisement.", party: "the court"}
+    - {date: {date_between: ["2026-02-01", "2026-02-15"]}, entry: "Mediation held; case continues toward trial.", party: "the court"}
+  trial:
+    jury: {pick: [true, false]}
+    estimated_days: {int_between: [4, 12]}
+    scheduled_date: {date_between: ["2026-05-01", "2026-11-01"]}

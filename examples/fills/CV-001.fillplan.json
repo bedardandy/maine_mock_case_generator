@@ -1,0 +1,268 @@
+{
+  "form_id": "CV-001",
+  "coverage": {
+    "total_fields": 26,
+    "filled_fields": 22,
+    "empty_fields": 4,
+    "percent": 84.6
+  },
+  "required": {
+    "keys": [
+      "parties.defendant.full_name",
+      "parties.plaintiff.full_name",
+      "party.full_name"
+    ],
+    "missing": [],
+    "ok": true
+  },
+  "entries": [
+    {
+      "field_id": "county_of_filing_or_district_court_jurisdiction_x_the_appropriate_box_and_enter_the_county_or_location",
+      "fact_key": "matter.court_county",
+      "value": "Sagadahoc",
+      "filled": true
+    },
+    {
+      "field_id": "undefined",
+      "fact_key": "matter.court_location",
+      "value": "Bath",
+      "filled": true
+    },
+    {
+      "field_id": "docket_no",
+      "fact_key": "matter.docket_number",
+      "value": "SAG-CV-2025-406",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_2",
+      "fact_key": "facts.panel_chair_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "that_concluded_on_date_of_panel_finding_mmddyyyy",
+      "fact_key": "facts.panel_finding_date",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "the_parties_have_participated_in_a_formal_adr_process_with_name_of_neutral",
+      "fact_key": "facts.neutral_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "on_date_mmddyyyy",
+      "fact_key": "facts.adr_process_date",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "name_first_middle_initial_last",
+      "fact_key": "parties.plaintiff.full_name",
+      "value": "Olivia B. Ellsworth",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address_include_county_1",
+      "fact_key": "parties.plaintiff.address",
+      "value": "39 Meadowbrook Drive",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address_include_county_2",
+      "fact_key": "parties.plaintiff.address",
+      "value": "39 Meadowbrook Drive",
+      "filled": true
+    },
+    {
+      "field_id": "telephone",
+      "fact_key": "parties.plaintiff.phone",
+      "value": "(207) 555-0174",
+      "filled": true
+    },
+    {
+      "field_id": "email",
+      "fact_key": "parties.plaintiff.email",
+      "value": "olivia.ellsworth@example.com",
+      "filled": true
+    },
+    {
+      "field_id": "name_first_middle_initial_last_1",
+      "fact_key": "parties.defendant.full_name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address_include_county",
+      "fact_key": "parties.defendant.address",
+      "value": "37 Cedar Way",
+      "filled": true
+    },
+    {
+      "field_id": "telephone_5",
+      "fact_key": "parties.defendant.phone",
+      "value": "(207) 555-0154",
+      "filled": true
+    },
+    {
+      "field_id": "name_and_bar_number",
+      "fact_key": "parties.attorney.full_name",
+      "value": "Olivia D. Jessup",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address_1",
+      "fact_key": "parties.attorney.address",
+      "value": "294 Elm Terrace",
+      "filled": true
+    },
+    {
+      "field_id": "telephone_3",
+      "fact_key": "parties.attorney.phone",
+      "value": "(207) 555-0174",
+      "filled": true
+    },
+    {
+      "field_id": "email_3",
+      "fact_key": "parties.attorney.email",
+      "value": "olivia.jessup@example.net",
+      "filled": true
+    },
+    {
+      "field_id": "name_and_bar_number_5",
+      "fact_key": "parties.attorney.full_name",
+      "value": "Olivia D. Jessup",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address_4",
+      "fact_key": "parties.attorney.address",
+      "value": "294 Elm Terrace",
+      "filled": true
+    },
+    {
+      "field_id": "telephone_11",
+      "fact_key": "parties.attorney.phone",
+      "value": "(207) 555-0174",
+      "filled": true
+    },
+    {
+      "field_id": "email_11",
+      "fact_key": "parties.attorney.email",
+      "value": "olivia.jessup@example.net",
+      "filled": true
+    },
+    {
+      "field_id": "date_mmddyyyy",
+      "fact_key": "today()",
+      "value": "2026-06-20",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_4",
+      "fact_key": "party.signature",
+      "value": "Olivia B. Ellsworth",
+      "filled": true
+    },
+    {
+      "field_id": "printed_name_of_plaintiff_or_attorney",
+      "fact_key": "party.full_name",
+      "value": "Olivia B. Ellsworth",
+      "filled": true
+    }
+  ],
+  "title": "Complaint (general civil)",
+  "repo": "maine-court-forms",
+  "profile": "canonical",
+  "case": {
+    "matter": {
+      "docket_number": "SAG-CV-2025-406",
+      "case_id": "MMC-2025-479146",
+      "court_county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court",
+      "case_type": "personal_injury",
+      "filing_date": "2025-10-01",
+      "event_date": "2024-05-30"
+    },
+    "parties": {
+      "plaintiff": {
+        "full_name": "Olivia B. Ellsworth",
+        "first_name": "Olivia",
+        "middle_name": "B",
+        "last_name": "Ellsworth",
+        "address": "39 Meadowbrook Drive",
+        "city": "Yarmouth",
+        "state": "ME",
+        "zip": "04047",
+        "phone": "(207) 555-0174",
+        "email": "olivia.ellsworth@example.com",
+        "date_of_birth": "1969-04-20"
+      },
+      "defendant": {
+        "full_name": "Maria Q. Fairbanks",
+        "first_name": "Maria",
+        "middle_name": "Q",
+        "last_name": "Fairbanks",
+        "address": "37 Cedar Way",
+        "city": "Falmouth",
+        "state": "ME",
+        "zip": "04071",
+        "phone": "(207) 555-0154",
+        "email": "maria.fairbanks@example.com",
+        "date_of_birth": "1965-03-05"
+      },
+      "defendant_2": {
+        "full_name": "Coastal Outfitters LLC",
+        "address": "115 Pine Lane",
+        "city": "Gorham",
+        "state": "ME",
+        "zip": "04038",
+        "phone": "(207) 555-0153"
+      },
+      "attorney": {
+        "full_name": "Olivia D. Jessup",
+        "first_name": "Olivia",
+        "middle_name": "D",
+        "last_name": "Jessup",
+        "address": "294 Elm Terrace",
+        "city": "Windham",
+        "state": "ME",
+        "zip": "04014",
+        "phone": "(207) 555-0174",
+        "email": "olivia.jessup@example.net",
+        "date_of_birth": "1961-04-07",
+        "bar_number": "2596"
+      }
+    },
+    "party": {
+      "full_name": "Olivia B. Ellsworth",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20",
+      "signature": "Olivia B. Ellsworth"
+    },
+    "facts": {
+      "collision_date": "2024-05-30",
+      "collision_location": "Interstate 295 northbound near Exit 7",
+      "collision_type": "rear-end collision",
+      "injury_type": "fractured wrist and ribs",
+      "liability_disputed": false,
+      "commercial_vehicle": false,
+      "medical_specials": 211745,
+      "lost_wages": 43175,
+      "property_damage": 33513,
+      "policy_limits": 664006,
+      "comparative_fault_alleged": false
+    }
+  }
+}

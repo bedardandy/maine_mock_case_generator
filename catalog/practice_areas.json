@@ -27,8 +27,14 @@
     "civil": {
       "label": "Civil litigation / small claims",
       "downstream_repo": "maine-court-forms",
-      "example_forms": ["SC-001", "CV-001"],
-      "common_case_types": ["small_claims", "civil"]
+      "example_forms": ["SC-001", "CV-001", "CV-007"],
+      "common_case_types": ["small_claims", "civil", "personal_injury", "employment", "forcible_entry_detainer"]
+    },
+    "criminal": {
+      "label": "Criminal defense",
+      "downstream_repo": "maine-court-forms",
+      "example_forms": ["CR-001", "CR-030"],
+      "common_case_types": ["criminal"]
     },
     "probate": {
       "label": "Probate, estates, and guardianship",

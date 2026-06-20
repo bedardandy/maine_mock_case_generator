@@ -33,6 +33,14 @@
       "practice_areas": ["family"],
       "best_scenario": "protection-from-abuse"
     },
+    "CV-001": {
+      "title": "Complaint (general civil)",
+      "repo": "maine-court-forms",
+      "dir": "integration/maine-court-forms/CV-001",
+      "profile": "canonical",
+      "practice_areas": ["civil"],
+      "best_scenario": "personal-injury-auto"
+    },
     "CV-007": {
       "title": "Complaint for Residential Forcible Entry and Detainer (Eviction)",
       "repo": "maine-court-forms",

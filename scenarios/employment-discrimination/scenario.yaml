@@ -1,0 +1,189 @@
+id: employment-discrimination
+title: "{plaintiff_full_name} v. {defendant_full_name}"
+practice_area: civil
+case_type: employment
+status: active
+docket_prefix: CV
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, CV-067]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+dates:
+  filing_date: {date_between: ["2025-03-01", "2025-12-01"]}
+  event_date: "{termination_date}"
+
+# A Maine employment-discrimination / wrongful-termination action under the Maine
+# Human Rights Act and Title VII: a terminated employee sues the employer (an
+# organization) and the supervisor who carried out the adverse action, alleging
+# discrimination and retaliation for reporting it, after exhausting before the MHRC.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, label: "Plaintiff (employee)"}
+    - {key: defendant, entity: organization, label: "Defendant employer"}
+    - {key: defendant_2, label: "Defendant supervisor/manager"}
+
+facts:
+  protected_class: {pick: ["disability", "age (over 40)", "sex", "race", "national origin", "religion"]}
+  adverse_action: {pick: ["termination", "demotion", "failure to promote", "constructive discharge"]}
+  hire_date: {date_between: ["2016-01-01", "2021-12-31"]}
+  termination_date: {date_between: ["2024-06-01", "2025-02-28"]}
+  reported_internally: {pick: [true, false]}
+  mhrc_complaint_filed: {pick: [true]}
+  right_to_sue_issued: {pick: [true]}
+  annual_salary: {int_between: [42000, 160000]}
+  replacement_younger_or_outside_class: {pick: [true, false]}
+  performance_reviews: {pick: ["consistently positive before the complaint", "mixed", "strong until the protected activity"]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: government_agency, name: "Maine Human Rights Commission", role: "State civil rights agency", relevance: "Investigated the charge of discrimination and issued the right-to-sue letter after exhaustion under 5 M.R.S. § 4622."}
+    - {type: government_agency, name: "U.S. Equal Employment Opportunity Commission", role: "Federal civil rights agency", relevance: "Cross-filed the Title VII charge and issued a notice of right to sue."}
+    - {type: witness, name_kind: person, role: "Employer's HR director", relevance: "Received the internal complaint and participated in the decision to take the adverse action."}
+    - {type: witness, name_kind: person, role: "Coworker witness", relevance: "Observed the conduct and the differential treatment of the plaintiff."}
+    - {type: healthcare_provider, name_kind: person, role: "Treating provider", relevance: "Treated the plaintiff for the emotional-distress damages claimed in the suit."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name}, a longtime employee of {defendant_full_name}, alleges the company and supervisor {defendant_2_full_name} subjected {plaintiff_first} to {adverse_action} because of {protected_class} and in retaliation for reporting discrimination, in violation of the Maine Human Rights Act and Title VII."
+  narrative:
+    - "{plaintiff_full_name} was hired by {defendant_full_name} on {hire_date} and, by all accounts, performed the job with reviews that were {performance_reviews}. {plaintiff_first} is a member of a protected class on the basis of {protected_class}."
+    - "{plaintiff_first} alleges that, after raising concerns about discriminatory treatment, {plaintiff_last} was subjected to {adverse_action} on {termination_date}. The decision was carried out by {plaintiff_first}'s supervisor, {defendant_2_full_name}, and approved within the company. {plaintiff_first} contends the stated reasons were a pretext and that {plaintiff_first} was replaced by or treated worse than someone outside the protected class."
+    - "{plaintiff_first} timely filed a charge of discrimination with the Maine Human Rights Commission, which was cross-filed with the EEOC, and received a right-to-sue letter. {plaintiff_first} then filed this action in {county} County Superior Court seeking back pay, front pay, compensatory damages for emotional distress, and attorney fees. The matter is in active discovery."
+  undisputed:
+    - "{plaintiff_full_name} was employed by {defendant_full_name} beginning on {hire_date}."
+    - "{plaintiff_first}'s employment ended, or the adverse action occurred, on or about {termination_date}."
+    - "{plaintiff_first} filed a charge with the Maine Human Rights Commission and received a right-to-sue letter before filing suit."
+  disputed:
+    - "Whether the adverse action was motivated by {protected_class} or by a legitimate, non-discriminatory reason."
+    - "Whether the employer's stated reason for the {adverse_action} is a pretext for discrimination or retaliation."
+    - "Whether {plaintiff_first}'s internal complaint was protected activity that caused the adverse action."
+    - "The amount of back pay, front pay, and emotional-distress damages, and whether {plaintiff_first} mitigated by seeking comparable work."
+  timeline:
+    - {date: "{hire_date}", event: "{plaintiff_first} was hired by {defendant_full_name}."}
+    - {date: "{termination_date}", event: "{plaintiff_first} was subjected to {adverse_action}."}
+    - {date: "{filing_date}", event: "Complaint filed in {court_location} Superior Court after the right-to-sue letter issued."}
+
+interview:
+  interviewer: "Employment Litigation Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "What happened", question: "Tell me how your employment ended.", answer: "I worked at {defendant_full_name} for years with good reviews. After I spoke up about how I was being treated because of my {protected_class}, things changed and I was hit with {adverse_action}. My supervisor, {defendant_2_first}, was the one who pushed it through."}
+    - {topic: "Protected activity", question: "Did you report the discrimination before the adverse action?", answer: "Yes. I raised it internally with HR. Not long after, the {adverse_action} came down. It felt like payback for complaining."}
+    - {topic: "Pretext", question: "What reason did the company give, and do you believe it?", answer: "They pointed to performance, but my reviews were {performance_reviews}. I think the real reason was my {protected_class}, and I was replaced by or treated worse than someone outside my group."}
+    - {topic: "Agency process", question: "Did you go to the Maine Human Rights Commission?", answer: "Yes. I filed a charge with the Maine Human Rights Commission, it was cross-filed with the EEOC, and I got my right-to-sue letter. That is why we can be in court now."}
+    - {topic: "Damages", question: "How has this affected you financially and personally?", answer: "I lost my salary of about ${annual_salary} a year plus benefits, and I have been looking for comparable work. The stress has been significant and I have been seeing a provider about it."}
+    - {topic: "Goal", question: "What outcome are you looking for?", answer: "I want to be made whole: back pay, front pay, and the record corrected. I want the employer held accountable, but I will settle if the deal is fair."}
+
+objectives:
+  goals:
+    - "Obtain make-whole relief, including back pay and front pay, for the {adverse_action}."
+    - "Establish that the employer and supervisor discriminated and retaliated in violation of the Maine Human Rights Act and Title VII."
+    - "Recover compensatory damages for emotional distress, plus attorney fees and costs."
+  priorities:
+    - "Proving pretext and the causal link between the protected activity and the adverse action."
+    - "Correcting the employment record and protecting future job prospects."
+    - "Preserving leverage for a fair, timely settlement."
+  risk_tolerance: {pick: [moderate, high]}
+  desired_outcomes:
+    - "A judgment or settlement providing back pay, front pay, and compensatory damages."
+    - "A neutral or corrected reference and removal of adverse material from the personnel file."
+  non_starters:
+    - "Any resolution that leaves the discrimination and retaliation unaddressed."
+  constraints:
+    budget: {pick: ["Limited; the plaintiff prefers an efficient, fee-shifting case with settlement potential.", "Moderate; willing to litigate through summary judgment but open to mediation."]}
+    timeline: "Wants the matter resolved without prolonged delay while back pay continues to accrue."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Whether the plaintiff can establish a prima facie case of employment discrimination", category: employment, governing_law: "Maine Human Rights Act, 5 M.R.S. § 4572; Title VII, 42 U.S.C. § 2000e-2; McDonnell Douglas burden-shifting framework", sub_questions: ["Is the plaintiff a member of a protected class who was qualified for the position?", "Did the plaintiff suffer an adverse employment action under circumstances giving rise to an inference of discrimination?"], strength: moderate, client_position: "The plaintiff was qualified, performing well, and suffered the adverse action because of {protected_class}."}
+    - {issue: "Whether the employer's stated reason is a pretext for discrimination", category: employment, governing_law: "McDonnell Douglas burden-shifting framework; 5 M.R.S. § 4572", sub_questions: ["Has the employer articulated a legitimate, non-discriminatory reason?", "Can the plaintiff show that reason is unworthy of credence or that discrimination was the real reason?"], strength: moderate, client_position: "The performance rationale is pretextual given reviews that were {performance_reviews} and more favorable treatment of comparators."}
+    - {issue: "Whether the adverse action was unlawful retaliation for protected activity", category: employment, governing_law: "Maine Human Rights Act, 5 M.R.S. § 4633", sub_questions: ["Did the plaintiff engage in protected activity by reporting discrimination?", "Is there a causal connection between the protected activity and the adverse action?"], strength: strong, client_position: "The adverse action followed closely after the internal complaint and was caused by it."}
+    - {issue: "Whether the plaintiff exhausted administrative remedies and holds a valid right to sue", category: employment, governing_law: "Maine Human Rights Act exhaustion, 5 M.R.S. § 4622", sub_questions: ["Was the charge timely filed with the Maine Human Rights Commission?", "Did a right-to-sue letter issue before the complaint was filed?"], strength: strong, client_position: "The charge was timely filed and a right-to-sue letter issued, so the claims are properly before the court."}
+    - {issue: "The measure of damages and available civil penalties", category: employment, governing_law: "Maine Human Rights Act remedies and civil penalties, 5 M.R.S. § 4613", sub_questions: ["What back pay, front pay, and compensatory damages are recoverable?", "Are civil penal damages and attorney fees available, and did the plaintiff mitigate?"], strength: moderate, client_position: "The plaintiff is entitled to back pay, front pay, emotional-distress damages, a civil penalty, and attorney fees."}
+
+experts:
+  count: {min: 1, max: 3}
+  pool:
+    - {field: "Vocational rehabilitation and economic loss", credentials: "M.S., CRC", retained_by: plaintiff, topic: "Back pay, front pay, and loss of earning capacity", opinion: "The plaintiff's wage loss and diminished earning capacity are substantial given age, skills, and the local labor market.", basis: "Wage records, labor-market data, and a vocational assessment."}
+    - {field: "Industrial/organizational psychology", credentials: "Ph.D.", retained_by: defendant, topic: "Performance evaluation and the basis for the employment decision", opinion: "The employer's evaluation process was facially neutral and consistently applied.", basis: "Personnel records, evaluation instruments, and comparator data."}
+    - {field: "Forensic economics", credentials: "Ph.D.", retained_by: plaintiff, topic: "Present value of lost wages and benefits", opinion: "The present value of the plaintiff's lost back pay, front pay, and benefits is significant and reasonably quantifiable.", basis: "Earnings histories, benefit valuations, and discount-rate modeling."}
+
+evidence:
+  count: {min: 5, max: 8}
+  pool:
+    - {title: "Personnel file and performance reviews", type: document, party: defendant, description: "The plaintiff's complete personnel file, including evaluations that were {performance_reviews}."}
+    - {title: "Termination letter", type: correspondence, party: defendant, description: "The letter or notice memorializing the {adverse_action} and the stated reason."}
+    - {title: "Internal complaint emails", type: correspondence, party: plaintiff, description: "Emails reporting discrimination to HR and management before the adverse action."}
+    - {title: "MHRC charge and right-to-sue letter", type: public_record, party: plaintiff, description: "The Maine Human Rights Commission charge of discrimination and the issued right-to-sue letter."}
+    - {title: "Comparator and replacement records", type: document, party: defendant, description: "Records identifying who replaced the plaintiff or comparators treated more favorably."}
+    - {title: "Employee handbook and anti-discrimination policy", type: document, party: defendant, description: "The handbook and EEO/anti-retaliation policies in effect during the employment."}
+    - {title: "Pay and benefits records", type: financial_record, party: plaintiff, description: "Wage statements and benefits records supporting the back-pay and front-pay claims."}
+    - {title: "Plaintiff's contemporaneous notes", type: affidavit, party: plaintiff, description: "The plaintiff's dated notes documenting the discriminatory conduct and the complaint."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Lost back pay", amount: {int_between: [25000, 220000]}, basis: "Wages lost from the adverse action to the present."}
+    - {label: "Projected front pay", amount: {int_between: [30000, 300000]}, basis: "Estimated future wage loss until reemployment or recovery."}
+    - {label: "Lost benefits value", amount: {int_between: [5000, 60000]}, basis: "Value of lost health, retirement, and other benefits."}
+    - {label: "Compensatory / emotional-distress demand", amount: {int_between: [25000, 250000]}, basis: "Emotional-distress and reputational harm."}
+    - {label: "Estimated attorney fees and statutory civil penalty", amount: {int_between: [40000, 300000]}, basis: "Fee-shifting recovery and the civil penal damages under 5 M.R.S. § 4613."}
+
+litigation:
+  posture: discovery
+  causes_of_action:
+    - {count: 1, claim: "Employment discrimination under the Maine Human Rights Act", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "5 M.R.S. § 4572", elements: ["Membership in a protected class", "Qualification for the position", "An adverse employment action", "Circumstances giving rise to an inference of discrimination"], relief_sought: "Back pay, front pay, compensatory damages, a civil penalty, and attorney fees", strength: moderate}
+    - {count: 2, claim: "Retaliation under the Maine Human Rights Act", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "5 M.R.S. § 4633", elements: ["Protected activity opposing discrimination", "A materially adverse action", "A causal connection between the two"], relief_sought: "Back pay, front pay, compensatory damages, and attorney fees", strength: strong}
+    - {count: 3, claim: "Employment discrimination under Title VII", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "42 U.S.C. § 2000e-2", elements: ["An adverse employment action", "Based on a protected characteristic", "Exhaustion of administrative remedies", "A timely charge and right-to-sue letter"], relief_sought: "Back pay, front pay, compensatory damages, and attorney fees", strength: moderate}
+    - {count: 4, claim: "Aiding and abetting unlawful discrimination", by: "{plaintiff_full_name}", against: "{defendant_2_full_name}", governing_law: "Maine Human Rights Act, 5 M.R.S. § 4633(2)", elements: ["Unlawful discrimination by the employer", "The supervisor aided or abetted that discrimination", "Resulting harm to the plaintiff"], relief_sought: "Individual liability for compensatory damages", strength: weak}
+  affirmative_defenses:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {defense: "Legitimate, non-discriminatory reason", by: "{defendant_full_name}", basis: "The adverse action was based on documented performance or business reasons, not a protected characteristic."}
+      - {defense: "Failure to exhaust administrative remedies", by: "{defendant_full_name}", basis: "Some claims were not raised in the charge before the Maine Human Rights Commission. 5 M.R.S. § 4622."}
+      - {defense: "After-acquired evidence", by: "{defendant_full_name}", basis: "Evidence discovered after the action would have independently justified the termination, limiting back pay."}
+      - {defense: "Failure to mitigate damages", by: "{defendant_full_name}", basis: "The plaintiff did not exercise reasonable diligence to seek comparable substitute employment."}
+      - {defense: "Same-decision (Mt. Healthy) defense", by: "{defendant_full_name}", basis: "The employer would have made the same decision regardless of any protected activity or characteristic."}
+      - {defense: "Statute of limitations", by: "{defendant_full_name}", basis: "Claims fall outside the limitations period for filing a charge or suit."}
+  counterclaims:
+    - {count: 1, claim: "Breach of confidentiality agreement", by: "{defendant_full_name}", against: "{plaintiff_full_name}", relief: "Damages and injunctive relief for the disclosure of confidential company information."}
+  discovery:
+    n: {min: 4, max: 6}
+    pick_n:
+      - {type: interrogatories, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-15", "2025-05-15"]}, status: responded, description: "First set of interrogatories on the decision-makers and the reasons for the adverse action."}
+      - {type: request_for_production, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-15", "2025-05-15"]}, status: objected, description: "Requests for the personnel file, comparator records, and internal complaint emails."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_2_full_name}", served_date: {date_between: ["2025-06-01", "2025-07-15"]}, status: outstanding, description: "Deposition of the supervisor who carried out the adverse action."}
+      - {type: deposition, propounding_party: "{defendant_full_name}", responding_party: "{plaintiff_full_name}", served_date: {date_between: ["2025-06-01", "2025-07-15"]}, status: served, description: "Deposition of the plaintiff on the claims and damages."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "the employer's HR director", served_date: {date_between: ["2025-07-20", "2025-08-20"]}, status: served, description: "Deposition of the HR director who received the complaint."}
+      - {type: request_for_admission, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-05-20", "2025-06-20"]}, status: responded, description: "Admissions on the timing of the complaint and the adverse action."}
+      - {type: subpoena, propounding_party: "{defendant_full_name}", responding_party: "the plaintiff's subsequent employer", served_date: {date_between: ["2025-08-25", "2025-09-25"]}, status: served, description: "Subpoena to a subsequent employer on mitigation and post-termination earnings."}
+  motions:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {title: "Motion to dismiss for failure to exhaust", type: dispositive, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-03-15", "2025-04-15"]}, status: denied, relief: "Dismissal of claims not raised before the Maine Human Rights Commission."}
+      - {title: "Motion to compel comparator data", type: discovery, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-06-01", "2025-07-01"]}, status: granted, relief: "An order compelling production of comparator and replacement records."}
+      - {title: "Motion for summary judgment", type: dispositive, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-10-01", "2025-11-15"]}, status: under_advisement, relief: "Judgment that the plaintiff cannot show pretext or causation."}
+      - {title: "Motion in limine to exclude me-too evidence", type: evidentiary, movant: "{defendant_full_name}", filed_date: {date_between: ["2026-01-15", "2026-02-28"]}, status: filed, relief: "Exclusion of other employees' discrimination testimony."}
+      - {title: "Motion for partial summary judgment on retaliation", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-10-01", "2025-11-15"]}, status: opposed, relief: "Judgment that the adverse action followed the protected activity."}
+  docket:
+    - {date: {date_between: ["2025-03-01", "2025-03-12"]}, entry: "Complaint filed following the Maine Human Rights Commission right-to-sue letter.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-03-20", "2025-04-05"]}, entry: "Answer and counterclaim filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-04-15", "2025-04-30"]}, entry: "Scheduling order entered; discovery deadline set.", party: "the court"}
+    - {date: {date_between: ["2025-06-15", "2025-07-05"]}, entry: "Order on the parties' discovery disputes regarding comparator data.", party: "the court"}
+    - {date: {date_between: ["2025-09-01", "2025-09-20"]}, entry: "Discovery closes; expert disclosures exchanged.", party: "the court"}
+    - {date: {date_between: ["2025-11-20", "2025-12-10"]}, entry: "Summary judgment briefing completed and taken under advisement.", party: "the court"}
+  trial:
+    jury: {pick: [true, false]}
+    estimated_days: {int_between: [4, 10]}
+    scheduled_date: {date_between: ["2026-05-01", "2026-11-01"]}

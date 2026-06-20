@@ -1,0 +1,492 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "criminal-oui",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-208061",
+    "practice_area": "criminal",
+    "title": "State of Maine v. Samuel B. Danforth",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "District Court (Unified Criminal Docket)"
+    },
+    "case_type": "criminal",
+    "filing_date": "2025-10-09",
+    "status": "active",
+    "summary": "The State of Maine charges Samuel B. Danforth with operating under the influence (class d) in Sagadahoc County following a roadside stop for a sobriety checkpoint on 2025-10-10. The defense, through counsel, scrutinizes the basis for the stop and the foundation for the chemical test while protecting the client's license.",
+    "event_date": "2025-10-10",
+    "docket_number": "SAG-CR-2025-695"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "organization",
+      "organization_name": "State of Maine",
+      "full_name": "State of Maine",
+      "role": "The State (prosecution)",
+      "address": "204 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04010",
+      "phone": "(207) 555-0168"
+    },
+    "defendant": {
+      "entity_type": "person",
+      "first_name": "Samuel",
+      "middle_name": "B",
+      "last_name": "Danforth",
+      "full_name": "Samuel B. Danforth",
+      "role": "Defendant (the accused, the client)",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "samuel.danforth@example.org",
+      "date_of_birth": "1975-02-05",
+      "ssn_last4": "3943"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Jessup",
+      "full_name": "Maria Q. Jessup",
+      "role": "Attorney for the client",
+      "address": "32 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04029",
+      "phone": "(207) 555-0180",
+      "email": "maria.jessup@example.net",
+      "date_of_birth": "1964-02-01",
+      "ssn_last4": "9455",
+      "bar_number": "7499",
+      "organization_name": "Birchwood & Calloway LLP"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Samuel",
+      "middle_name": "B",
+      "last_name": "Danforth",
+      "full_name": "Samuel B. Danforth",
+      "role": "Defendant (the accused, the client)",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "samuel.danforth@example.org",
+      "date_of_birth": "1975-02-05",
+      "ssn_last4": "3943"
+    }
+  },
+  "fact_pattern": {
+    "summary": "The State of Maine charges Samuel B. Danforth with operating under the influence (class d) in Sagadahoc County following a roadside stop for a sobriety checkpoint on 2025-10-10. The defense, through counsel, scrutinizes the basis for the stop and the foundation for the chemical test while protecting the client's license.",
+    "narrative": "On 2025-10-10, an officer stopped Samuel B. Danforth in Sagadahoc County, Maine, citing a sobriety checkpoint. After roadside contact, the officer initiated an operating-under-the-influence investigation, and the State now charges Samuel with operating under the influence (class d).\n\nThe investigation involved a blood test; the reported result was 0.11. The defense questions whether the stop was supported by reasonable suspicion, whether there was probable cause to arrest, and whether the chemical test result rests on an adequate evidentiary foundation.\n\nSamuel entered a plea of not guilty and is contesting the case at the pretrial stage. Counsel is evaluating motions to suppress, the admissibility of the breath result, and the separate administrative license consequence handled by the Maine Bureau of Motor Vehicles, distinct from the criminal penalties.",
+    "undisputed_facts": [
+      "An officer stopped Samuel B. Danforth on 2025-10-10 in Sagadahoc County, Maine.",
+      "The encounter was investigated as an operating-under-the-influence matter and resulted in a blood test.",
+      "Samuel entered a plea of not guilty."
+    ],
+    "disputed_facts": [
+      "Whether the officer had reasonable suspicion for the stop and probable cause to arrest.",
+      "Whether the chemical test result is admissible and adequately founded (calibration, operator certification, and procedure).",
+      "Whether the State can prove every element of operating under the influence (class d) beyond a reasonable doubt."
+    ],
+    "timeline": [
+      {
+        "date": "2025-10-09",
+        "event": "Charging instrument filed in Bath (Unified Criminal Docket)."
+      },
+      {
+        "date": "2025-10-10",
+        "event": "Traffic stop and OUI investigation of Samuel in Sagadahoc County."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Rosa G. Roe",
+      "type": "expert",
+      "role": "State's breath-test operator",
+      "relevance": "Certified operator who administered the evidentiary breath test.",
+      "contact": {
+        "phone": "(207) 555-0163",
+        "city": "Camden",
+        "state": "ME",
+        "email": "rosa.roe@example.org"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Maine Bureau of Motor Vehicles",
+      "type": "government_agency",
+      "role": "Secretary of State / BMV",
+      "relevance": "Administers the parallel administrative license suspension under the implied-consent law.",
+      "contact": {
+        "phone": "(207) 555-0174",
+        "city": "Auburn",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Marcus H. Moe",
+      "type": "witness",
+      "role": "Arresting officer",
+      "relevance": "Made the traffic stop, conducted the OUI investigation, and authored the police report.",
+      "contact": {
+        "phone": "(207) 555-0110",
+        "city": "Farmington",
+        "state": "ME",
+        "email": "marcus.moe@example.org"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Quentin K. Greenhill",
+      "type": "expert",
+      "role": "Independent toxicologist",
+      "relevance": "May testify to breath-alcohol margin of error and absorption (rising-BAC) science.",
+      "contact": {
+        "phone": "(207) 555-0177",
+        "city": "Farmington",
+        "state": "ME",
+        "email": "quentin.greenhill@example.com"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Defense Attorney",
+    "interviewee_role": "defendant",
+    "date": "2025-10-09",
+    "exchanges": [
+      {
+        "topic": "The stop",
+        "question": "Why did the officer say they pulled you over?",
+        "answer": "They told me it was a sobriety checkpoint. I did not think I was doing anything that would draw attention."
+      },
+      {
+        "topic": "The testing",
+        "question": "What testing happened, and did you agree to it?",
+        "answer": "There was a blood test, and they read me something about implied consent. I was nervous and not sure what my options were."
+      },
+      {
+        "topic": "Goal",
+        "question": "What matters most to you in how this comes out?",
+        "answer": "Keeping my license if I possibly can, avoiding a conviction, and keeping the fines and costs manageable. I rely on driving for work."
+      },
+      {
+        "topic": "License",
+        "question": "Have you heard anything from the Bureau of Motor Vehicles?",
+        "answer": "Something about a separate suspension. I did not realize the license piece was its own process apart from court."
+      },
+      {
+        "topic": "Plea",
+        "question": "How do you want to proceed for now?",
+        "answer": "I want to plead not guilty and have you look hard at whether the stop and the test were done right before I decide anything."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Suppress evidence obtained from an unlawful stop or an unfounded chemical test.",
+      "Avoid a criminal OUI conviction, or minimize it to the least serious resolution.",
+      "Protect the client's driving privileges in both the criminal and administrative tracks."
+    ],
+    "priorities": [
+      "Test the validity of the stop and the arrest.",
+      "Challenge the foundation and admissibility of the chemical test.",
+      "Mitigate fines, fees, and license consequences."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "Dismissal, acquittal, or a reduced, non-conviction disposition.",
+      "Preservation of the client's license or the shortest possible suspension."
+    ],
+    "non_starters": [
+      "A plea that carries a longer license loss than the State can actually prove warranted."
+    ],
+    "constraints": {
+      "budget": "Modest; prefers focused motion practice over a prolonged trial.",
+      "timeline": "Wants the suppression issues resolved before any dispositional decision."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Right to an independent chemical test",
+      "category": "criminal_procedure",
+      "governing_law": "29-A M.R.S. § 2521(3)",
+      "sub_questions": [
+        "Was the defendant afforded a reasonable opportunity for an independent test?"
+      ],
+      "strength": "weak",
+      "client_position": "Asserts that any denial of an independent test undercuts the State's evidence.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Whether the stop was supported by reasonable suspicion and the arrest by probable cause",
+      "category": "criminal_procedure",
+      "governing_law": "U.S. Const. amend. IV; 29-A M.R.S. § 2411",
+      "sub_questions": [
+        "Was the basis for the stop articulable and lawful?",
+        "Did the officer develop probable cause before the arrest?"
+      ],
+      "strength": "moderate",
+      "client_position": "Contends the stop and arrest lacked adequate justification and that resulting evidence should be suppressed.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Administrative license suspension versus the criminal license consequence",
+      "category": "administrative",
+      "governing_law": "29-A M.R.S. § 2453",
+      "sub_questions": [
+        "What suspension does the Bureau of Motor Vehicles impose, and on what timeline?",
+        "How does the administrative action interact with any criminal sentence?"
+      ],
+      "strength": "weak",
+      "client_position": "Seeks to limit license loss and coordinate the administrative and criminal tracks.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Whether the State can prove each element of the OUI charge",
+      "category": "criminal",
+      "governing_law": "29-A M.R.S. § 2411",
+      "sub_questions": [
+        "Can the State prove operation and impairment or a prohibited alcohol level?"
+      ],
+      "strength": "moderate",
+      "client_position": "Holds the State to its burden of proof beyond a reasonable doubt.",
+      "id": "iss4"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Beatrice S. Danforth",
+        "field": "Field sobriety testing",
+        "credentials": "Certified instructor",
+        "retained_by": "defendant"
+      },
+      "topic": "Administration and scoring of standardized field sobriety tests",
+      "opinion": "Deviations from standardized procedure can undermine the reliability of the field sobriety indicators.",
+      "basis": "NHTSA standards and the officer's report and video."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Rosa C. Greenhill",
+        "field": "Forensic toxicology",
+        "credentials": "Ph.D.",
+        "retained_by": "defendant"
+      },
+      "topic": "Breath-alcohol margin of error and rising-BAC extrapolation",
+      "opinion": "The reported result, within the instrument's margin of error and absorption timing, may not reflect the alcohol level at the time of operation.",
+      "basis": "Instrument specifications, calibration records, and pharmacokinetic modeling."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Breath-test instrument logs and calibration records",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "Maintenance, calibration, and certification records for the testing instrument.",
+      "id": "ev1"
+    },
+    {
+      "title": "Chemical test result",
+      "type": "medical_record",
+      "party": "plaintiff",
+      "description": "The reported breath or blood alcohol result at the center of the case.",
+      "id": "ev2"
+    },
+    {
+      "title": "Police OUI report",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "The arresting officer's narrative report of the stop, investigation, and arrest.",
+      "id": "ev3"
+    },
+    {
+      "title": "Field sobriety test notes",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "Officer's notes and scoring of any standardized field sobriety tests.",
+      "id": "ev4"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Estimated lost income from license suspension",
+        "amount": 1565,
+        "basis": "Reduced work availability during any suspension."
+      },
+      {
+        "label": "Ignition interlock device cost",
+        "amount": 860,
+        "basis": "Installation and monthly monitoring for the required period."
+      },
+      {
+        "label": "Anticipated fines and court fees",
+        "amount": 1869,
+        "basis": "Statutory fine range and court costs for a misdemeanor OUI."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "pretrial",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Operating Under the Influence",
+        "by": "State of Maine",
+        "against": "Samuel B. Danforth",
+        "governing_law": "29-A M.R.S. § 2411",
+        "elements": [
+          "Operating a motor vehicle",
+          "On a public way",
+          "While under the influence of intoxicants or with a prohibited alcohol level",
+          "In this State"
+        ],
+        "relief_sought": "Conviction; fine and license suspension",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Failure to submit to a chemical test (implied consent)",
+        "by": "State of Maine",
+        "against": "Samuel B. Danforth",
+        "governing_law": "29-A M.R.S. § 2521",
+        "elements": [
+          "Lawful request for a chemical test",
+          "Adequate implied-consent advisory",
+          "Failure or refusal to submit"
+        ],
+        "relief_sought": "Enhanced penalties and administrative suspension",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Unlawful stop",
+        "by": "Samuel B. Danforth",
+        "basis": "The stop lacked reasonable suspicion. U.S. Const. amend. IV."
+      },
+      {
+        "defense": "Rising-BAC defense",
+        "by": "Samuel B. Danforth",
+        "basis": "Alcohol was still being absorbed, so the test overstates the alcohol level at the time of operation."
+      },
+      {
+        "defense": "Lack of probable cause to arrest",
+        "by": "Samuel B. Danforth",
+        "basis": "The officer arrested without probable cause to believe the defendant was operating under the influence."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to suppress evidence from the stop",
+        "type": "suppression",
+        "movant": "Samuel B. Danforth",
+        "filed_date": "2025-10-18",
+        "status": "filed",
+        "relief": "Suppression of all evidence obtained after an unlawful stop."
+      },
+      {
+        "title": "Motion to suppress the breath test",
+        "type": "suppression",
+        "movant": "Samuel B. Danforth",
+        "filed_date": "2025-11-14",
+        "status": "opposed",
+        "relief": "Exclusion of the chemical test result for lack of foundation."
+      }
+    ],
+    "discovery": [
+      {
+        "type": "subpoena",
+        "propounding_party": "Samuel B. Danforth",
+        "responding_party": "Maine Bureau of Motor Vehicles",
+        "served_date": "2025-10-26",
+        "status": "served",
+        "description": "Subpoena for the breath-test instrument's calibration and certification records."
+      },
+      {
+        "type": "request_for_production",
+        "propounding_party": "Samuel B. Danforth",
+        "responding_party": "State of Maine",
+        "served_date": "2025-11-09",
+        "status": "responded",
+        "description": "Document request for dispatch audio and the implied-consent form."
+      },
+      {
+        "type": "request_for_production",
+        "propounding_party": "Samuel B. Danforth",
+        "responding_party": "State of Maine",
+        "served_date": "2025-10-14",
+        "status": "served",
+        "description": "Request for the State's discovery under M.R.U.Crim.P. Rule 16 (reports, video, test records)."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2025-09-08",
+        "entry": "Complaint and charging instrument filed.",
+        "party": "State of Maine"
+      },
+      {
+        "date": "2025-09-16",
+        "entry": "Initial appearance; bail and conditions of release set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-10-01",
+        "entry": "Arraignment; plea of not guilty entered.",
+        "party": "Samuel B. Danforth"
+      },
+      {
+        "date": "2025-10-27",
+        "entry": "Discovery served and exchanged under Rule 16.",
+        "party": "Samuel B. Danforth"
+      },
+      {
+        "date": "2025-11-27",
+        "entry": "Motion to suppress filed and set for hearing.",
+        "party": "Samuel B. Danforth"
+      },
+      {
+        "date": "2026-01-27",
+        "entry": "Dispositional conference held.",
+        "party": "the court"
+      }
+    ],
+    "trial": {
+      "jury": false,
+      "estimated_days": 1,
+      "scheduled_date": "2026-06-13"
+    }
+  },
+  "facts": {
+    "arrest_date": "2025-10-10",
+    "charge": "Operating Under the Influence (Class D)",
+    "bac_result": "0.11",
+    "prior_ouis": 1,
+    "chemical_test": "blood test",
+    "stop_reason": "a sobriety checkpoint",
+    "field_sobriety_administered": true,
+    "accident_involved": true,
+    "license_suspended": false,
+    "plea": "not guilty"
+  }
+}

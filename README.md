@@ -110,7 +110,7 @@ boundary assertions (zero-children handling, no-counsel projection, multi-party 
 
 ## Seed scenarios
 
-Seven archetypes spanning the three downstream repos. Add more by dropping a new
+Sixteen archetypes spanning the three downstream repos and seven practice areas. Add more by dropping a new
 `scenarios/<id>/scenario.yaml` — no code changes required.
 
 | Scenario | Practice area | Downstream repo |
@@ -127,6 +127,10 @@ Seven archetypes spanning the three downstream repos. Add more by dropping a new
 | `pro-se-interstate-custody` | family (edge: pro se + UCCJEA jurisdiction) | maine-court-forms |
 | `real-estate-transfer` | real estate (deed + transfer tax) | transactional-tax-forms |
 | `residential-eviction` | civil (landlord-tenant FED) | maine-court-forms |
+| `personal-injury-auto` | civil (auto tort, deep litigation) | maine-court-forms |
+| `employment-discrimination` | civil (MHRA / Title VII) | maine-court-forms |
+| `criminal-oui` | criminal (OUI defense) | maine-court-forms |
+| `adult-conservatorship` | probate (guardian/conservator of an adult) | maine-probate-forms |
 
 Browse a worked sample of each under [`examples/`](examples/) (`*.matter.json` and the
 projected `*.canonical.json`).
