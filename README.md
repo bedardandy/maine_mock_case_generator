@@ -52,19 +52,25 @@ Or via `make`: `make list`, `make generate SCENARIO=estate-tax-706 SEED=2`, `mak
 ## Concrete fills (end-to-end proof)
 
 The generator doesn't stop at a canonical case — it pours matters into **real downstream
-form mappings** so you can see exactly which PDF fields get populated:
+form mappings** (vendored in `integration/`) so you can see exactly which PDF fields get
+populated. **Nine forms across all three repos and three fact-key namespaces** are wired:
 
 ```bash
 python tools/fill.py --list
-python tools/fill.py FM-004 --scenario family-divorce-cumberland --seed 1   # court form, native
-python tools/fill.py IRS-SS-4 --seed 1 --show-empty                          # tax form, via adapter
+python tools/fill.py CV-007 --seed 1        # eviction, native canonical (~97%)
+python tools/fill.py ME-RETTD --seed 1      # real estate transfer, via real-estate adapter (100%)
+python tools/fill.py IRS-SS-4 --seed 1 --show-empty   # EIN application, via tax adapter
 ```
 
-`integration/` vendors the real `mapping.json` from your form repos. Court forms consume
-our canonical namespace directly; tax forms (different namespace) go through
-`generator/adapters.py`. Each fill prints a coverage report and required-key check; the
-form-namespace case JSON it emits is the input the downstream repo's PDF engine renders.
-See [`integration/README.md`](integration/README.md).
+| Namespace (profile) | Forms | Adapter |
+|---------------------|-------|---------|
+| `canonical` (`parties`/`matter`/`facts`) | FM-004, FM-006, FM-050, PA-001, CV-007, MRS-706ME | none — native |
+| `tax` (`entity`/`responsible_party`/…) | IRS-SS-4, IRS-2553 | `adapters.to_tax_case` |
+| `real_estate` (`property`/`transferor`/`transferee`) | ME-RETTD | `adapters.to_real_estate_case` |
+
+Each fill prints a coverage report and required-key check; the form-namespace case JSON it
+emits is the input the downstream repo's PDF engine renders. See
+[`integration/README.md`](integration/README.md).
 
 ## Compound (intertwined) matters
 
@@ -118,6 +124,8 @@ Seven archetypes spanning the three downstream repos. Add more by dropping a new
 | `complex-civil-litigation` | civil (deep, multi-party litigation) | maine-court-forms |
 | `insolvent-estate` | probate (edge: claims exceed assets) | maine-probate-forms |
 | `pro-se-interstate-custody` | family (edge: pro se + UCCJEA jurisdiction) | maine-court-forms |
+| `real-estate-transfer` | real estate (deed + transfer tax) | transactional-tax-forms |
+| `residential-eviction` | civil (landlord-tenant FED) | maine-court-forms |
 
 Browse a worked sample of each under [`examples/`](examples/) (`*.matter.json` and the
 projected `*.canonical.json`).

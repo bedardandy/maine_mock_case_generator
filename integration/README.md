@@ -14,21 +14,37 @@ canonical case into that form's expected fact-keys.
 ```
 integration/
   registry.json
-  maine-court-forms/FM-004/         Complaint for Divorce        (profile: canonical)
-  transactional-tax-forms/IRS-SS-4/ EIN application (Form SS-4)  (profile: tax)
+  maine-court-forms/        FM-004, FM-006, FM-050, PA-001, CV-007   (profile: canonical)
+  transactional-tax-forms/  IRS-SS-4, IRS-2553   (tax)  ·  MRS-706ME (canonical)  ·  ME-RETTD (real_estate)
 ```
 
-## The two namespaces
+## Three namespaces
 
-The downstream repos do **not** all speak the same fact-key namespace:
+The downstream repos do **not** all speak the same fact-key namespace — surfacing this is
+the real integration work:
 
 | Profile | Namespace | Adapter | Example form |
 |---------|-----------|---------|--------------|
-| `canonical` | `matter.*`, `parties.<role>.*`, `party.*`, `facts.*` | none — our canonical case *is* this namespace | FM-004 (`parties.plaintiff.full_name`, `matter.court_location`) |
-| `tax` | `entity.*`, `responsible_party.*`, `executor.*`, `decedent.*`, `facts.*` | `generator/adapters.py::to_tax_case` | IRS-SS-4 (`entity.legal_name`, `responsible_party.name`) |
+| `canonical` | `matter.*`, `parties.<role>.*`, `party.*`, `facts.*` | none — our canonical case *is* this namespace | FM-004, CV-007, MRS-706ME |
+| `tax` | `entity.*`, `responsible_party.*`, `executor.*`, `decedent.*`, `facts.*` | `adapters.to_tax_case` | IRS-SS-4, IRS-2553 |
+| `real_estate` | `property.*`, `transferor.*`, `transferee.*`, `facts.*` | `adapters.to_real_estate_case` | ME-RETTD |
 
-So a **court** form fills natively from a projected canonical case, while a **tax** form
-goes through the tax adapter first. This is the real integration work, made explicit.
+A `canonical` form fills natively from a projected canonical case; a `tax` or
+`real_estate` form goes through the matching adapter first.
+
+## Wired forms
+
+| Form | Repo | Profile | Best scenario |
+|------|------|---------|---------------|
+| FM-004 | maine-court-forms | canonical | family-divorce-cumberland |
+| FM-006 | maine-court-forms | canonical | pro-se-interstate-custody |
+| FM-050 | maine-court-forms | canonical | family-divorce-cumberland |
+| PA-001 | maine-court-forms | canonical | protection-from-abuse |
+| CV-007 | maine-court-forms | canonical | residential-eviction |
+| IRS-SS-4 | transactional-tax-forms | tax | business-formation-scorp |
+| IRS-2553 | transactional-tax-forms | tax | business-formation-scorp |
+| MRS-706ME | transactional-tax-forms | canonical | estate-tax-706 |
+| ME-RETTD | transactional-tax-forms | real_estate | real-estate-transfer |
 
 ## Run a fill
 

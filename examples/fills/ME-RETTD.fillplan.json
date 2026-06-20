@@ -1,0 +1,506 @@
+{
+  "form_id": "ME-RETTD",
+  "coverage": {
+    "total_fields": 74,
+    "filled_fields": 74,
+    "empty_fields": 0,
+    "percent": 100.0
+  },
+  "required": {
+    "keys": [],
+    "missing": [],
+    "ok": true
+  },
+  "entries": [
+    {
+      "field_id": "text_field_7",
+      "fact_key": "property.county",
+      "value": "Sagadahoc",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_5",
+      "fact_key": "property.town",
+      "value": "Portland",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_6",
+      "fact_key": "transferee.name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_9",
+      "fact_key": "transferee.name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_10",
+      "fact_key": "transferee.mailing_address",
+      "value": "37 Cedar Way",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_11",
+      "fact_key": "transferee.mailing_city",
+      "value": "Falmouth",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_12",
+      "fact_key": "transferee.mailing_state",
+      "value": "ME",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_13",
+      "fact_key": "transferee.mailing_zip",
+      "value": "04071",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_16",
+      "fact_key": "transferor.name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_17",
+      "fact_key": "transferor.ssn_or_ein",
+      "value": "900-00-0614",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_18",
+      "fact_key": "transferor.name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_19",
+      "fact_key": "transferor.ssn_or_ein",
+      "value": "900-00-0614",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_20",
+      "fact_key": "transferor.address",
+      "value": "422 Spruce Avenue",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_21",
+      "fact_key": "transferor.mailing_city",
+      "value": "Yarmouth",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_22",
+      "fact_key": "transferor.mailing_state",
+      "value": "ME",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_23",
+      "fact_key": "transferor.mailing_zip",
+      "value": "04047",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_24",
+      "fact_key": "property.map_block_lot",
+      "value": "Map 31, Block 9, Lot 5",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_25",
+      "fact_key": "property.map_block_lot",
+      "value": "Map 31, Block 9, Lot 5",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_26",
+      "fact_key": "property.map_block_lot",
+      "value": "Map 31, Block 9, Lot 5",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_27",
+      "fact_key": "property.map_block_lot",
+      "value": "Map 31, Block 9, Lot 5",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_29",
+      "fact_key": "property.type",
+      "value": "residential condominium",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_28",
+      "fact_key": "property.address",
+      "value": "129 Old Mill Road",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_30",
+      "fact_key": "property.purchase_price",
+      "value": 831933,
+      "filled": true
+    },
+    {
+      "field_id": "text_field_31",
+      "fact_key": "facts.adjusted_assessed_value",
+      "value": 258061,
+      "filled": true
+    },
+    {
+      "field_id": "text_field_33",
+      "fact_key": "property.transfer_date",
+      "value": "2026-03-17",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_34",
+      "fact_key": "facts.special_circumstances_explanation",
+      "value": "Partial-interest transfer between family members",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_37",
+      "fact_key": "transferee.name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_38",
+      "fact_key": "transferee.name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_39",
+      "fact_key": "transferee.name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_40",
+      "fact_key": "transferee.name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_41",
+      "fact_key": "transferee.name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_42",
+      "fact_key": "transferee.name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_43",
+      "fact_key": "transferee.name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_44",
+      "fact_key": "transferee.name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_53",
+      "fact_key": "transferee.ssn_or_ein",
+      "value": "900-00-3657",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_54",
+      "fact_key": "transferee.ssn_or_ein",
+      "value": "900-00-3657",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_55",
+      "fact_key": "transferee.ssn_or_ein",
+      "value": "900-00-3657",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_56",
+      "fact_key": "transferee.ssn_or_ein",
+      "value": "900-00-3657",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_57",
+      "fact_key": "transferee.ssn_or_ein",
+      "value": "900-00-3657",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_58",
+      "fact_key": "transferee.ssn_or_ein",
+      "value": "900-00-3657",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_59",
+      "fact_key": "transferee.ssn_or_ein",
+      "value": "900-00-3657",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_60",
+      "fact_key": "transferee.ssn_or_ein",
+      "value": "900-00-3657",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_45",
+      "fact_key": "transferor.name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_46",
+      "fact_key": "transferor.name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_47",
+      "fact_key": "transferor.name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_48",
+      "fact_key": "transferor.name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_49",
+      "fact_key": "transferor.name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_50",
+      "fact_key": "transferor.name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_51",
+      "fact_key": "transferor.name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_52",
+      "fact_key": "transferor.name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_61",
+      "fact_key": "transferor.ssn_or_ein",
+      "value": "900-00-0614",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_62",
+      "fact_key": "transferor.ssn_or_ein",
+      "value": "900-00-0614",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_63",
+      "fact_key": "transferor.ssn_or_ein",
+      "value": "900-00-0614",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_64",
+      "fact_key": "transferor.ssn_or_ein",
+      "value": "900-00-0614",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_65",
+      "fact_key": "transferor.ssn_or_ein",
+      "value": "900-00-0614",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_66",
+      "fact_key": "transferor.ssn_or_ein",
+      "value": "900-00-0614",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_67",
+      "fact_key": "transferor.ssn_or_ein",
+      "value": "900-00-0614",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_68",
+      "fact_key": "transferor.ssn_or_ein",
+      "value": "900-00-0614",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_69",
+      "fact_key": "property.town",
+      "value": "Portland",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_71",
+      "fact_key": "property.town",
+      "value": "Portland",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_72",
+      "fact_key": "property.town",
+      "value": "Portland",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_73",
+      "fact_key": "property.town",
+      "value": "Portland",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_74",
+      "fact_key": "property.town",
+      "value": "Portland",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_75",
+      "fact_key": "property.town",
+      "value": "Portland",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_76",
+      "fact_key": "property.town",
+      "value": "Portland",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_77",
+      "fact_key": "property.town",
+      "value": "Portland",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_78",
+      "fact_key": "property.map_block_lot",
+      "value": "Map 31, Block 9, Lot 5",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_79",
+      "fact_key": "property.map_block_lot",
+      "value": "Map 31, Block 9, Lot 5",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_80",
+      "fact_key": "property.map_block_lot",
+      "value": "Map 31, Block 9, Lot 5",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_81",
+      "fact_key": "property.map_block_lot",
+      "value": "Map 31, Block 9, Lot 5",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_82",
+      "fact_key": "property.map_block_lot",
+      "value": "Map 31, Block 9, Lot 5",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_83",
+      "fact_key": "property.map_block_lot",
+      "value": "Map 31, Block 9, Lot 5",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_84",
+      "fact_key": "property.map_block_lot",
+      "value": "Map 31, Block 9, Lot 5",
+      "filled": true
+    },
+    {
+      "field_id": "text_field_85",
+      "fact_key": "property.map_block_lot",
+      "value": "Map 31, Block 9, Lot 5",
+      "filled": true
+    }
+  ],
+  "title": "Real Estate Transfer Tax Declaration",
+  "repo": "transactional-tax-forms",
+  "profile": "real_estate",
+  "case": {
+    "transferor": {
+      "name": "Grace C. Roe",
+      "address": "422 Spruce Avenue",
+      "mailing_address": "422 Spruce Avenue",
+      "mailing_city": "Yarmouth",
+      "mailing_state": "ME",
+      "mailing_zip": "04047",
+      "ssn_or_ein": "900-00-0614"
+    },
+    "transferee": {
+      "name": "Maria Q. Fairbanks",
+      "address": "37 Cedar Way",
+      "mailing_address": "37 Cedar Way",
+      "mailing_city": "Falmouth",
+      "mailing_state": "ME",
+      "mailing_zip": "04071",
+      "ssn_or_ein": "900-00-3657"
+    },
+    "property": {
+      "address": "129 Old Mill Road",
+      "town": "Portland",
+      "county": "Sagadahoc",
+      "map_block_lot": "Map 31, Block 9, Lot 5",
+      "purchase_price": 831933,
+      "transfer_date": "2026-03-17",
+      "type": "residential condominium"
+    },
+    "facts": {
+      "property_address": "129 Old Mill Road",
+      "property_town": "Portland",
+      "property_county": "Sagadahoc",
+      "property_map_block_lot": "Map 31, Block 9, Lot 5",
+      "purchase_price": 831933,
+      "transfer_date": "2026-03-17",
+      "property_type": "residential condominium",
+      "adjusted_assessed_value": 258061,
+      "special_circumstances_explanation": "Partial-interest transfer between family members",
+      "deed_type": "quitclaim deed with covenant",
+      "financing": "conventional mortgage",
+      "transfer_tax_exemption": true
+    }
+  }
+}

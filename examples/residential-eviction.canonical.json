@@ -1,0 +1,82 @@
+{
+  "matter": {
+    "docket_number": "SAG-FED-2025-660",
+    "case_id": "MMC-2025-202163",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "District Court",
+    "case_type": "forcible_entry_detainer",
+    "filing_date": "2025-12-09",
+    "event_date": "2026-02-26"
+  },
+  "parties": {
+    "plaintiff": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "defendant": {
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
+    },
+    "attorney": {
+      "full_name": "Ingrid B. Kingsley",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "bar_number": "7867"
+    }
+  },
+  "party": {
+    "full_name": "Grace C. Roe",
+    "first_name": "Grace",
+    "middle_name": "C",
+    "last_name": "Roe",
+    "address": "422 Spruce Avenue",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "email": "grace.roe@example.com",
+    "date_of_birth": "1969-04-20",
+    "signature": "Grace C. Roe"
+  },
+  "facts": {
+    "premises_address": "22 Tidewater Lane, Apt 3",
+    "premises_city": "Augusta",
+    "tenancy_type": "a month-to-month tenancy at will",
+    "monthly_rent": 2097,
+    "months_in_arrears": 6,
+    "total_rent_owed": 3911,
+    "notice_type": "7-day notice to quit for nonpayment of rent",
+    "notice_to_quit_date": "2026-02-26",
+    "eviction_basis": "termination of a tenancy at will",
+    "other_eviction_basis": "Unauthorized occupants in the unit",
+    "other_attachment": "",
+    "section8_tenancy": false
+  }
+}

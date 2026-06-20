@@ -102,7 +102,49 @@ def to_tax_case(canonical: dict, matter: dict) -> dict:
     return tax
 
 
+def to_real_estate_case(canonical: dict, matter: dict) -> dict:
+    """Translate a canonical case into the real-estate transfer namespace (ME-RETTD):
+    property / transferor / transferee / facts. Reads grantor/grantee from the
+    `transferor` and `transferee` party roles and the property from facts.
+    """
+    parties = canonical.get("parties", {})
+    facts = dict(canonical.get("facts", {}))
+    m_parties = matter.get("parties", {})
+    jurisdiction = matter.get("matter", {}).get("jurisdiction", {})
+
+    def party_block(role: str) -> dict:
+        party = parties.get(role, {})
+        return {
+            "name": party.get("full_name", ""),
+            "address": party.get("address", ""),
+            "mailing_address": party.get("address", ""),
+            "mailing_city": party.get("city", ""),
+            "mailing_state": party.get("state", ""),
+            "mailing_zip": party.get("zip", ""),
+            "ssn_or_ein": _fiction_tin(m_parties.get(role, {})),
+        }
+
+    re_case = {
+        "transferor": party_block("transferor"),
+        "transferee": party_block("transferee"),
+        "property": {
+            "address": facts.get("property_address", ""),
+            "town": facts.get("property_town", ""),
+            "county": facts.get("property_county") or jurisdiction.get("county", ""),
+            "map_block_lot": facts.get("property_map_block_lot", ""),
+            "purchase_price": facts.get("purchase_price", ""),
+            "transfer_date": facts.get("transfer_date", ""),
+            "type": facts.get("property_type", ""),
+        },
+        "facts": {},
+    }
+    for key, value in facts.items():
+        re_case["facts"].setdefault(key, value)
+    return re_case
+
+
 # Profile name -> adapter callable. "canonical" needs no translation.
 PROFILES = {
     "tax": to_tax_case,
+    "real_estate": to_real_estate_case,
 }
