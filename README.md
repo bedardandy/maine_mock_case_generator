@@ -127,7 +127,7 @@ See [`docs/probate-fixtures.md`](docs/probate-fixtures.md).
 
 ## Seed scenarios
 
-Sixteen archetypes spanning the three downstream repos and seven practice areas. Add more by dropping a new
+Twenty-five archetypes spanning the three downstream repos and eight practice areas. Add more by dropping a new
 `scenarios/<id>/scenario.yaml` — no code changes required.
 
 | Scenario | Practice area | Downstream repo |
@@ -148,6 +148,15 @@ Sixteen archetypes spanning the three downstream repos and seven practice areas.
 | `employment-discrimination` | civil (MHRA / Title VII) | maine-court-forms |
 | `criminal-oui` | criminal (OUI defense) | maine-court-forms |
 | `adult-conservatorship` | probate (guardian/conservator of an adult) | maine-probate-forms |
+| `commercial-contract-dispute` | civil (breach + personal guaranty) | maine-court-forms |
+| `construction-defect` | civil (multi-party defect/excavation) | maine-court-forms |
+| `condominium-construction-dispute` | real estate (Maine Condo Act) | maine-court-forms |
+| `equitable-partition` | real estate (co-tenant partition) | maine-court-forms |
+| `paper-street-road-access` | real estate (paper streets + road assn.) | maine-court-forms |
+| `rule-80b-zoning-appeal` | administrative (Rule 80B record review) | maine-court-forms |
+| `arbitration-award-dispute` | civil (confirm/vacate award) | maine-court-forms |
+| `improvident-transfer` | probate (elder undue-influence deed) | maine-court-forms |
+| `divorce-hidden-crypto` | family (concealed crypto assets) | maine-court-forms |
 
 Browse a worked sample of each under [`examples/`](examples/) (`*.matter.json` and the
 projected `*.canonical.json`).

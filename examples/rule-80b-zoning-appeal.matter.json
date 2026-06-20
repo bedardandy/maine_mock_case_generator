@@ -1,0 +1,586 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "rule-80b-zoning-appeal",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-846702",
+    "practice_area": "administrative",
+    "title": "Olivia B. Ellsworth v. Town of Harborwick",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court"
+    },
+    "case_type": "administrative_appeal_80b",
+    "filing_date": "2026-05-01",
+    "status": "active",
+    "summary": "Olivia B. Ellsworth, an aggrieved abutting neighbor, brings a Rule 80B appeal in Sagadahoc County Superior Court challenging the Zoning Board of Appeals of Town of Harborwick, which granted a setback waiver for a self-storage facility; the petitioner contends the decision was an error of law and is unsupported by substantial evidence in the record.",
+    "event_date": "2026-01-11",
+    "docket_number": "SAG-AP-2026-164"
+  },
+  "parties": {
+    "petitioner": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Petitioner (aggrieved abutter appealing)",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "respondent": {
+      "entity_type": "organization",
+      "organization_name": "Town of Harborwick",
+      "full_name": "Town of Harborwick",
+      "role": "Respondent municipality",
+      "address": "46 Lighthouse Drive",
+      "city": "Camden",
+      "state": "ME",
+      "zip": "04009",
+      "phone": "(207) 555-0130"
+    },
+    "other_party": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Jessup",
+      "full_name": "Maria Q. Jessup",
+      "role": "Party-in-interest (the permittee/developer)",
+      "address": "32 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04029",
+      "phone": "(207) 555-0180",
+      "email": "maria.jessup@example.net",
+      "date_of_birth": "1964-02-01",
+      "ssn_last4": "9455"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Rosa",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Rosa B. Ellsworth",
+      "role": "Attorney for the client",
+      "address": "115 Pine Lane",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153",
+      "email": "rosa.ellsworth@example.com",
+      "date_of_birth": "1967-03-02",
+      "ssn_last4": "9353",
+      "bar_number": "6054",
+      "organization_name": "Ellsworth Advocates PC"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Petitioner (aggrieved abutter appealing)",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Olivia B. Ellsworth, an aggrieved abutting neighbor, brings a Rule 80B appeal in Sagadahoc County Superior Court challenging the Zoning Board of Appeals of Town of Harborwick, which granted a setback waiver for a self-storage facility; the petitioner contends the decision was an error of law and is unsupported by substantial evidence in the record.",
+    "narrative": "Olivia B. Ellsworth owns property in Town of Stoneport and is a abutter across a private way. On 2026-01-11, the Zoning Board of Appeals granted a setback waiver authorizing a self-storage facility on the adjoining parcel, over the petitioner's objection at the public hearing.\n\nOlivia contends the board misapplied Land Use Ordinance § 7.4, made inadequate findings, and reached a result that the record does not support. Olivia alleges concrete harm in the form of groundwater impacts, which supplies the particularized injury required for standing as an aggrieved party.\n\nWithin forty-five days of the decision, Olivia filed this Rule 80B appeal in Bath Superior Court, naming Town of Harborwick as respondent and the permittee as a party-in-interest. Because this is an appeal on the record, the court will review the certified municipal record for error of law and substantial evidence rather than hold a trial; Olivia asks the court to reverse the decision or remand it to the board.",
+    "undisputed_facts": [
+      "The Zoning Board of Appeals of Town of Harborwick granted a setback waiver for a self-storage facility on 2026-01-11.",
+      "Olivia B. Ellsworth owns abutting property and appeared in opposition before the board.",
+      "Olivia filed this appeal in Bath Superior Court under M.R. Civ. P. 80B."
+    ],
+    "disputed_facts": [
+      "Whether Olivia has standing as an aggrieved party who suffered a particularized injury distinct from the general public.",
+      "Whether the board committed an error of law in applying Land Use Ordinance § 7.4.",
+      "Whether the board's findings are supported by substantial evidence in the record.",
+      "Whether the board's findings of fact are adequate and free of bias or conflict of interest."
+    ],
+    "timeline": [
+      {
+        "date": "2026-01-11",
+        "event": "The Zoning Board of Appeals granted a setback waiver for a self-storage facility."
+      },
+      {
+        "date": "2026-05-01",
+        "event": "Rule 80B notice of appeal filed in Bath Superior Court."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Lillian R. Kingsley",
+      "type": "government_agency",
+      "role": "Municipal Code Enforcement Officer",
+      "relevance": "Administers the ordinance, reviewed the application, and is the record-keeper for the board's proceedings.",
+      "contact": {
+        "phone": "(207) 555-0146",
+        "city": "Windham",
+        "state": "ME",
+        "email": "lillian.kingsley@example.com"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Maria K. Kingsley",
+      "type": "witness",
+      "role": "Chair of the board",
+      "relevance": "Presided over the hearing and signed the decision now under appeal.",
+      "contact": {
+        "phone": "(207) 555-0167",
+        "city": "Bath",
+        "state": "ME",
+        "email": "maria.kingsley@example.net"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Maria T. Coe",
+      "type": "expert",
+      "role": "Developer's project engineer",
+      "relevance": "Prepared the plans and engineering submissions the board relied on in granting relief.",
+      "contact": {
+        "phone": "(207) 555-0153",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "maria.coe@example.org"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Omar C. Roe",
+      "type": "neighbor",
+      "role": "Other abutting neighbor who objects",
+      "relevance": "Appeared and objected at the hearing and shares the petitioner's concerns about the project.",
+      "contact": {
+        "phone": "(207) 555-0197",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "omar.roe@example.net"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Theodore S. Larkspur",
+      "type": "witness",
+      "role": "Town's land-use attorney",
+      "relevance": "Advised the board at the hearing and defends the decision on appeal.",
+      "contact": {
+        "phone": "(207) 555-0174",
+        "city": "Falmouth",
+        "state": "ME",
+        "email": "theodore.larkspur@example.org"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Land Use Litigation Attorney",
+    "interviewee_role": "petitioner",
+    "date": "2026-05-01",
+    "exchanges": [
+      {
+        "topic": "What happened",
+        "question": "What did the board decide, and how does it affect you?",
+        "answer": "The Zoning Board of Appeals granted a setback waiver for a self-storage facility right next to me. I live in Town of Stoneport and my property adjoins the parcel. I spoke against it at the hearing, but they approved it anyway."
+      },
+      {
+        "topic": "Harm",
+        "question": "How does this project harm you specifically?",
+        "answer": "It is not just a general gripe. I am looking at groundwater impacts. That is a real, particular injury to my property, not something every resident of town shares."
+      },
+      {
+        "topic": "The decision",
+        "question": "Why do you think the board got it wrong?",
+        "answer": "They did not really apply Land Use Ordinance § 7.4 the way it is written, and their findings were thin. I do not think the record supports what they did."
+      },
+      {
+        "topic": "Deadline",
+        "question": "When was the decision, and are we in time to appeal?",
+        "answer": "It was decided on 2026-01-11. I know there is a 45-day clock under the rules, and I came to you right away so we would not blow the deadline."
+      },
+      {
+        "topic": "Process",
+        "question": "How does this kind of appeal work?",
+        "answer": "I understand it is not a brand-new trial. The Superior Court looks at the town's record and decides if the board made a legal error or had no real evidence. I just want it reversed, or at least sent back."
+      },
+      {
+        "topic": "Goal",
+        "question": "What outcome are you hoping for?",
+        "answer": "Stop or rein in the project and protect my neighborhood. If the court will not reverse outright, I would take a remand that forces the board to do it properly."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Reverse or vacate the Zoning Board of Appeals's decision granted a setback waiver for a self-storage facility.",
+      "In the alternative, remand to the board for proper findings and a record-supported decision.",
+      "Protect the petitioner's property and neighborhood from groundwater impacts."
+    ],
+    "priorities": [
+      "Establishing standing as an aggrieved abutter with a particularized injury.",
+      "Showing error of law and the absence of substantial evidence within the record-review constraints.",
+      "Preserving the issues that were raised before the board below."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "A judgment reversing the board's decision, or a remand for adequate findings.",
+      "A result that meaningfully limits or conditions a self-storage facility."
+    ],
+    "non_starters": [
+      "A disposition that lets the unsupported decision stand without review of the record."
+    ],
+    "constraints": {
+      "budget": "Limited but committed; willing to fund a trial-of-the-facts motion only if clearly necessary.",
+      "timeline": "Wants the appeal briefed and argued promptly, mindful of the 45-day filing deadline already met."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Whether the board's findings of fact were adequate to permit meaningful review",
+      "category": "administrative",
+      "governing_law": "M.R. Civ. P. 80B; Maine administrative-law findings requirement",
+      "sub_questions": [
+        "Did the board make findings sufficient to support its conclusion?",
+        "Can the court conduct meaningful review on the findings made?"
+      ],
+      "strength": "moderate",
+      "client_position": "The board's findings are conclusory and inadequate, warranting reversal or remand.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Whether the petitioner has standing as an aggrieved party with a particularized injury",
+      "category": "administrative",
+      "governing_law": "Adelman v. Town of Baldwin, 2000 ME 91; M.R. Civ. P. 80B",
+      "sub_questions": [
+        "Does the petitioner suffer a particularized injury distinct from the general public?",
+        "Does abutter status and the alleged harm confer standing to appeal?"
+      ],
+      "strength": "moderate",
+      "client_position": "As a abutter across a private way facing groundwater impacts, the petitioner has a particularized injury sufficient for standing.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Whether bias or a conflict of interest of a board member tainted the decision",
+      "category": "administrative",
+      "governing_law": "30-A M.R.S. § 2691; due-process and bias principles",
+      "sub_questions": [
+        "Did a board member have a disqualifying conflict of interest?",
+        "Did bias deprive the petitioner of a fair and impartial hearing?"
+      ],
+      "strength": "weak",
+      "client_position": "A board member's conflict or bias deprived the petitioner of a fair hearing.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Whether the board committed an error of law in applying the ordinance",
+      "category": "administrative",
+      "governing_law": "M.R. Civ. P. 80B; Land Use Ordinance § 7.4",
+      "sub_questions": [
+        "Did the board misinterpret or misapply the governing ordinance?",
+        "Is the court's review of the legal question de novo?"
+      ],
+      "strength": "moderate",
+      "client_position": "The board misapplied Land Use Ordinance § 7.4, an error of law the court reviews without deference.",
+      "id": "iss4"
+    },
+    {
+      "issue": "Whether the board's findings are supported by substantial evidence in the record",
+      "category": "administrative",
+      "governing_law": "M.R. Civ. P. 80B (substantial-evidence review)",
+      "sub_questions": [
+        "Is there substantial evidence in the record supporting the board's findings?",
+        "Did the board ignore record evidence to the contrary?"
+      ],
+      "strength": "moderate",
+      "client_position": "The record lacks substantial evidence for the board's key findings.",
+      "id": "iss5"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Beatrice M. Ellsworth",
+        "field": "Real estate appraisal",
+        "credentials": "MAI",
+        "retained_by": "petitioner"
+      },
+      "topic": "Diminution in the value of the petitioner's property",
+      "opinion": "The approved project would measurably diminish the value of the abutting property. (Such valuation evidence ordinarily requires a trial of the facts to be considered on a Rule 80B appeal.)",
+      "basis": "Comparable-sales analysis and inspection of the abutting property."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Jane M. Greenhill",
+        "field": "Traffic engineering",
+        "credentials": "P.E., PTOE",
+        "retained_by": "petitioner"
+      },
+      "topic": "Traffic and access impacts of the project on the abutting way",
+      "opinion": "The project will generate traffic impacts the record does not adequately address. (Relevant to a trial-of-the-facts motion; otherwise the court is confined to the record before the board.)",
+      "basis": "Trip-generation analysis and review of the site plans of record."
+    },
+    {
+      "id": "exp3",
+      "expert": {
+        "name": "Henry D. Larkspur",
+        "field": "Land-use and municipal planning",
+        "credentials": "AICP",
+        "retained_by": "petitioner"
+      },
+      "topic": "Application of the ordinance and planning standards to the project",
+      "opinion": "The board's decision departs from the ordinance and accepted planning practice. (Offered chiefly to support a motion for a trial of the facts; in pure record review such opinion may be limited to the existing record.)",
+      "basis": "Review of the certified record, the ordinance, and the application materials."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Certified municipal record and board decision with findings",
+      "type": "public_record",
+      "party": "respondent",
+      "description": "The certified record assembled by the municipality, including the written decision and findings of fact under review.",
+      "id": "ev1"
+    },
+    {
+      "title": "Board meeting minutes and hearing audio",
+      "type": "public_record",
+      "party": "respondent",
+      "description": "Minutes and the audio recording of the hearing at which the board acted.",
+      "id": "ev2"
+    },
+    {
+      "title": "Variance / site-plan application and plans",
+      "type": "document",
+      "party": "other_party",
+      "description": "The application, narrative, and engineered plans the permittee submitted to the board.",
+      "id": "ev3"
+    },
+    {
+      "title": "Text of the governing ordinance",
+      "type": "document",
+      "party": "petitioner",
+      "description": "The full text of Land Use Ordinance § 7.4 as in effect at the time of the decision.",
+      "id": "ev4"
+    },
+    {
+      "title": "Photographs of the site and abutting property",
+      "type": "photo",
+      "party": "petitioner",
+      "description": "Photographs depicting the parcel, the abutting property, and the alleged impacts.",
+      "id": "ev5"
+    },
+    {
+      "title": "Staff and engineering reports",
+      "type": "document",
+      "party": "respondent",
+      "description": "Code enforcement, staff, and peer-review engineering reports in the record.",
+      "id": "ev6"
+    },
+    {
+      "title": "Petitioner's objection letters",
+      "type": "correspondence",
+      "party": "petitioner",
+      "description": "Written objections the petitioner submitted to the board before and during the hearing.",
+      "id": "ev7"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Estimated cost of the Rule 80B appeal",
+        "amount": 11451,
+        "basis": "Attorney fees and costs for a record-review appeal."
+      },
+      {
+        "label": "Estimated diminution in the petitioner's property value",
+        "amount": 66875,
+        "basis": "Appraiser's estimate of value loss attributable to the project."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "pretrial",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Error of law in applying the ordinance",
+        "by": "Olivia B. Ellsworth",
+        "against": "Town of Harborwick",
+        "governing_law": "M.R. Civ. P. 80B; Land Use Ordinance § 7.4",
+        "elements": [
+          "A final municipal land-use decision",
+          "Misinterpretation or misapplication of the governing ordinance",
+          "Reviewed by the court as a question of law"
+        ],
+        "relief_sought": "Reversal or vacatur of the board's decision",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Decision unsupported by substantial evidence in the record",
+        "by": "Olivia B. Ellsworth",
+        "against": "Town of Harborwick",
+        "governing_law": "M.R. Civ. P. 80B (substantial-evidence review)",
+        "elements": [
+          "A board decision resting on findings of fact",
+          "The absence of substantial evidence in the record to support those findings",
+          "Prejudice to the petitioner"
+        ],
+        "relief_sought": "Reversal of the decision as unsupported by the record",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Abuse of discretion and inadequate findings of fact",
+        "by": "Olivia B. Ellsworth",
+        "against": "Town of Harborwick",
+        "governing_law": "M.R. Civ. P. 80B; 30-A M.R.S. § 4353",
+        "elements": [
+          "A duty to make adequate findings",
+          "Conclusory or inadequate findings that preclude meaningful review",
+          "An exercise of discretion outside the bounds permitted by the ordinance"
+        ],
+        "relief_sought": "Remand for adequate findings or reversal",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Procedural error or bias depriving the petitioner of a fair hearing",
+        "by": "Olivia B. Ellsworth",
+        "against": "Town of Harborwick",
+        "governing_law": "30-A M.R.S. § 2691; due-process principles",
+        "elements": [
+          "A right to a fair and impartial hearing",
+          "A disqualifying conflict, bias, or procedural defect",
+          "Resulting prejudice to the petitioner"
+        ],
+        "relief_sought": "Vacatur and remand for a new hearing before an impartial board",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Decision supported by substantial evidence",
+        "by": "Town of Harborwick",
+        "basis": "The board's findings rest on substantial evidence in the certified record and are entitled to deference."
+      },
+      {
+        "defense": "Lack of standing",
+        "by": "Town of Harborwick",
+        "basis": "The petitioner suffered no particularized injury distinct from the general public. Adelman v. Town of Baldwin, 2000 ME 91."
+      },
+      {
+        "defense": "Untimely appeal",
+        "by": "Maria Q. Jessup",
+        "basis": "The notice of appeal was not filed within the 45-day deadline. 30-A M.R.S. § 2691(3)(G); M.R. Civ. P. 80B."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to stay the permit pending appeal",
+        "type": "procedural",
+        "movant": "Olivia B. Ellsworth",
+        "filed_date": "2026-03-08",
+        "status": "denied",
+        "relief": "A stay halting work under the permit while the appeal is pending."
+      },
+      {
+        "title": "Motion to supplement the record",
+        "type": "procedural",
+        "movant": "Olivia B. Ellsworth",
+        "filed_date": "2026-04-29",
+        "status": "under_advisement",
+        "relief": "Leave to add omitted materials to the certified record."
+      },
+      {
+        "title": "Motion for a trial of the facts under M.R. Civ. P. 80B(d)",
+        "type": "procedural",
+        "movant": "Olivia B. Ellsworth",
+        "filed_date": "2025-12-21",
+        "status": "opposed",
+        "relief": "Leave to take evidence beyond the record on a disputed factual issue."
+      },
+      {
+        "title": "Motion to specify and assemble the record",
+        "type": "procedural",
+        "movant": "Olivia B. Ellsworth",
+        "filed_date": "2025-11-13",
+        "status": "granted",
+        "relief": "An order directing the municipality to assemble and certify the complete administrative record."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2025-09-05",
+        "entry": "Notice of appeal filed under M.R. Civ. P. 80B.",
+        "party": "Olivia B. Ellsworth"
+      },
+      {
+        "date": "2025-10-03",
+        "entry": "Administrative record certified and filed by the municipality.",
+        "party": "Town of Harborwick"
+      },
+      {
+        "date": "2025-11-10",
+        "entry": "Petitioner's brief filed.",
+        "party": "Olivia B. Ellsworth"
+      },
+      {
+        "date": "2025-12-19",
+        "entry": "Respondent's and party-in-interest's briefs filed.",
+        "party": "Town of Harborwick"
+      },
+      {
+        "date": "2026-02-03",
+        "entry": "Reply brief filed and the appeal taken under advisement on the briefs.",
+        "party": "Olivia B. Ellsworth"
+      },
+      {
+        "date": "2026-03-15",
+        "entry": "Oral argument scheduled before the Superior Court.",
+        "party": "the court"
+      }
+    ],
+    "trial": {
+      "jury": false,
+      "estimated_days": 1,
+      "scheduled_date": "2026-10-03"
+    }
+  },
+  "facts": {
+    "municipality": "Town of Stoneport",
+    "board": "Zoning Board of Appeals",
+    "board_decision": "granted a setback waiver",
+    "project": "a self-storage facility",
+    "board_decision_date": "2026-01-11",
+    "appeal_within_45_days": true,
+    "standing_basis": "abutter across a private way",
+    "ordinance_section": "Land Use Ordinance § 7.4",
+    "harm_alleged": "groundwater impacts"
+  }
+}

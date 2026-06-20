@@ -1,0 +1,96 @@
+{
+  "matter": {
+    "docket_number": "SAG-RE-2025-284",
+    "case_id": "MMC-2025-932967",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Superior Court",
+    "case_type": "real_property",
+    "filing_date": "2025-07-17",
+    "event_date": "1949-06-15"
+  },
+  "parties": {
+    "plaintiff": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "defendant": {
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
+    },
+    "defendant_2": {
+      "full_name": "Coastal Outfitters LLC",
+      "address": "115 Pine Lane",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153"
+    },
+    "other_party": {
+      "full_name": "Town of Mooselook",
+      "address": "75 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0139"
+    },
+    "attorney": {
+      "full_name": "Felix D. Moe",
+      "first_name": "Felix",
+      "middle_name": "D",
+      "last_name": "Moe",
+      "address": "299 Tidewater Lane",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04048",
+      "phone": "(207) 555-0112",
+      "email": "felix.moe@example.net",
+      "date_of_birth": "1956-02-02",
+      "bar_number": "1976"
+    }
+  },
+  "party": {
+    "full_name": "Grace C. Roe",
+    "first_name": "Grace",
+    "middle_name": "C",
+    "last_name": "Roe",
+    "address": "422 Spruce Avenue",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "email": "grace.roe@example.com",
+    "date_of_birth": "1969-04-20",
+    "signature": "Grace C. Roe"
+  },
+  "facts": {
+    "subdivision_name": "the Lakeview Heights plat",
+    "plan_recorded_year": "1949",
+    "paper_street_name": "Maple Street",
+    "deemed_vacated": true,
+    "road_association_name": "the Lakeview Heights Road Association",
+    "actual_access_road": "a seasonal private road",
+    "annual_maintenance_cost": 33699,
+    "defendant_unpaid_share": 6524,
+    "developer_back_lot": "a rear parcel the developer plans to build on",
+    "developer_access_theory": "that the recorded plan grants all lot owners rights in the paper street"
+  }
+}

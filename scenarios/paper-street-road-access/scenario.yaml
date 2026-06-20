@@ -1,0 +1,180 @@
+id: paper-street-road-access
+title: "{plaintiff_last} v. {defendant_2_full_name} et al. (Paper Street / Road Access)"
+practice_area: real_estate
+case_type: real_property
+status: active
+docket_prefix: RE
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, RE-QT]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+# A Maine real-property dispute over a "paper street" -- a way drawn on an old
+# subdivision plat but never built -- and the cost-sharing fight in the private road
+# association that maintains the actual access road. A developer claims the long-vacated
+# paper street as access to a landlocked back lot it wants to subdivide, while a neighbor
+# refuses to pay his proportionate share of the road-maintenance assessments. The case
+# pairs the Maine Paper Streets Law (23 M.R.S. ss 3032-3033) and the private way
+# maintenance / cost-sharing statute (23 M.R.S. s 3101) with quiet title and declaratory
+# relief over the status of the way and the developer's claimed easement.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, label: "Plaintiff lot owner (and road association officer)"}
+    - {key: defendant, label: "Defendant neighbor (refuses to pay road maintenance)"}
+    - {key: defendant_2, entity: organization, label: "Defendant developer (claims the paper street for back-lot access)"}
+    - {key: other_party, entity: organization, name: "Town of Mooselook", label: "The municipality (interested in the way's status)"}
+
+dates:
+  filing_date: {date_between: ["2025-05-01", "2026-03-01"]}
+  event_date: "{plan_recorded_year}-06-15"
+
+facts:
+  subdivision_name: {pick: ["the Pinecrest Shores subdivision", "the Lakeview Heights plat", "the Old Orchard Grove subdivision", "the Birch Point shore lots"]}
+  plan_recorded_year: {pick: ["1958", "1962", "1971", "1949", "1965"]}
+  paper_street_name: {pick: ["Laurel Avenue", "Shore Drive", "Cove Lane", "Maple Street"]}
+  deemed_vacated: {pick: [true]}
+  road_association_name: {pick: ["the Pinecrest Road Association", "the Lakeview Heights Road Association", "the Birch Point Road Association"]}
+  actual_access_road: {pick: ["a gravel private way serving twelve camps", "a shared shorefront lane", "a seasonal private road"]}
+  annual_maintenance_cost: {int_between: [4000, 38000]}
+  defendant_unpaid_share: {int_between: [600, 9000]}
+  developer_back_lot: {pick: ["a landlocked back lot the developer wants to subdivide", "a rear parcel the developer plans to build on"]}
+  developer_access_theory: {pick: ["that the recorded plan grants all lot owners rights in the paper street", "an easement by implication from the subdivision plan", "a deeded right-of-way over the paper street"]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: government_agency, name: "Town Road Commissioner", role: "Town code enforcement / road commissioner", relevance: "Speaks to whether the town ever accepted the way and to road-standard requirements."}
+    - {type: expert, name_kind: person, role: "Title abstractor / examiner", relevance: "Examined the chain of title and the recorded plan for the affected lots."}
+    - {type: neighbor, name_kind: person, role: "Other lot owner in the subdivision", relevance: "Pays road assessments and has an interest in the status of the paper street."}
+    - {type: government_agency, name: "County Registry of Deeds", role: "Registry of Deeds", relevance: "Holds the recorded subdivision plan and the chain of deeds."}
+    - {type: family_member, name_kind: person, role: "Heir of the original subdivider", relevance: "Successor to the developer who recorded the original plat and any reserved rights."}
+    - {type: expert, name_kind: person, role: "Licensed surveyor", relevance: "Surveyed the paper street and the actual access road on the ground."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name}, a lot owner and officer of {road_association_name}, sues to confirm that {paper_street_name} in {subdivision_name} is a deemed-vacated paper street, to defeat {defendant_2_full_name}'s claim of access over it to {developer_back_lot}, and to collect {defendant_full_name}'s unpaid share of the private road maintenance."
+  narrative:
+    - "{subdivision_name} was platted and the plan recorded in {plan_recorded_year}, showing {paper_street_name} as a way running through the development. {paper_street_name} was never built or accepted as a public way; on the ground the lots are served instead by {actual_access_road}, which {road_association_name} maintains. {plaintiff_full_name} owns a lot in the subdivision and serves as an officer of the association."
+    - "{defendant_2_full_name}, a developer, owns {developer_back_lot} and now claims a right to open and use {paper_street_name} as access, asserting {developer_access_theory}. {plaintiff_first} contends that under Maine's Paper Streets Law {paper_street_name} was deemed vacated decades ago because the town never accepted it, so the developer has no public way and, the association says, no private easement to push a new road through the neighborhood."
+    - "Separately, {defendant_full_name}, a neighbor whose lot is served by {actual_access_road}, has refused to pay his proportionate share of the road-maintenance assessments. The association's annual maintenance cost runs about ${annual_maintenance_cost}, and {defendant_first}'s unpaid share has grown to roughly ${defendant_unpaid_share}. {plaintiff_first} seeks a declaration that the way is vacated and the developer has no easement, to quiet title, to collect the unpaid assessment with attorney fees, and to enjoin the developer from opening {paper_street_name}."
+  undisputed:
+    - "{subdivision_name} was platted and its plan recorded in {plan_recorded_year}."
+    - "{paper_street_name} was never built and the lots are in fact served by {actual_access_road}."
+    - "{road_association_name} maintains the actual access road and levies assessments on the lot owners."
+  disputed:
+    - "Whether {paper_street_name} is deemed vacated under the Paper Streets Law and, if so, whether any private access rights survive."
+    - "Whether {defendant_2_full_name} holds an easement over the paper street to reach {developer_back_lot}."
+    - "Whether the assessment formula is fair and equitable and how much {defendant_full_name} owes for road maintenance."
+  timeline:
+    - {date: "{event_date}", event: "The plan for {subdivision_name}, showing {paper_street_name}, was recorded."}
+    - {date: "{filing_date}", event: "Complaint to quiet title and for declaratory and injunctive relief prepared for filing in {court_location} Superior Court."}
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "Goal", question: "What are you trying to accomplish?", answer: "I want it confirmed that {paper_street_name} is a dead paper street and keep the developer from cutting a new road through to {developer_back_lot}. And I want {defendant_first} to finally pay his share of the road."}
+    - {topic: "The paper street", question: "Tell me about {paper_street_name}.", answer: "It is only a line on the old {plan_recorded_year} plan. It was never built. We all use {actual_access_road}, and the town never took {paper_street_name} over."}
+    - {topic: "The developer", question: "What is the developer claiming?", answer: "They bought {developer_back_lot} and now say {developer_access_theory}. They want to open that paper street as a road. The whole neighborhood is against it."}
+    - {topic: "The road association", question: "How does the road get maintained and paid for?", answer: "{road_association_name} runs it. We assess the owners for upkeep -- it is about ${annual_maintenance_cost} a year for grading, gravel, and plowing. Everyone pays but {defendant_first}."}
+    - {topic: "The unpaid share", question: "How much is {defendant_first} behind?", answer: "He is into us for about ${defendant_unpaid_share} now. He just refuses, and the rest of us are covering his share of a road he uses every day."}
+    - {topic: "Approach", question: "How do you want to handle this?", answer: "I would rather settle the road bill than fight forever, but I am not going to let the developer open that street. The survey and the title work back us up."}
+
+objectives:
+  goals:
+    - "Confirm that {paper_street_name} is deemed vacated and that {defendant_2_full_name} has no easement to open it to reach {developer_back_lot}."
+    - "Collect {defendant_full_name}'s unpaid proportionate share of the road-maintenance assessments, plus attorney fees."
+    - "Protect {actual_access_road} and the character of the neighborhood from a new through-road."
+  priorities:
+    - "Keeping the developer from opening the paper street."
+    - "A clean adjudication that the way is vacated and quieting title."
+    - "A fair and enforceable road-maintenance cost-sharing arrangement."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A declaration and quiet-title judgment that the paper street is vacated and the developer holds no easement over it."
+    - "A money judgment for the unpaid road-maintenance share with attorney fees, and an order barring the developer from opening the way."
+  non_starters:
+    - "Any outcome that lets the developer build or open a road over {paper_street_name}."
+  constraints:
+    budget: {pick: ["Moderate; the association is funding the case and prefers to settle the assessment dispute.", "Moderate; willing to pay for the survey and title work but cost-conscious on the rest."]}
+    timeline: "Wants the way's status settled before the developer can start any road or subdivision work."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Whether {paper_street_name} is deemed vacated under the Paper Streets Law", category: real_estate, governing_law: "23 M.R.S. § 3032", sub_questions: ["Was the way platted before 1987 and never accepted by the municipality?", "Was it deemed vacated by the later of September 29, 1997 or 15 years after recording?"], strength: strong, client_position: "Because the town never accepted {paper_street_name}, it was deemed vacated by operation of the statute."}
+    - {issue: "The rights of action and reservations attending a vacated platted way", category: real_estate, governing_law: "23 M.R.S. § 3033", sub_questions: ["What rights survive vacation of the public way?", "Did the recorded plan or any deed reserve private access rights?"], strength: moderate, client_position: "No enforceable private easement over the paper street survives in the developer."}
+    - {issue: "Whether lot owners retain private access rights over the paper street despite vacation of public rights", category: real_estate, governing_law: "23 M.R.S. § 3032", sub_questions: ["Does the doctrine of incipient dedication grant lot owners private rights in the platted way?", "Has any such private right been used or abandoned?"], strength: moderate, client_position: "Any incipient private rights do not entitle the developer to open a new road for a back lot."}
+    - {issue: "Private road association maintenance and each owner's fair and equitable proportionate share", category: real_estate, governing_law: "23 M.R.S. § 3101", sub_questions: ["Is the assessment a fair and equitable apportionment among benefited owners?", "May the association recover the unpaid share and attorney fees by civil action?"], strength: strong, client_position: "{defendant_first} owes his fair and equitable proportionate share plus attorney fees for non-payment."}
+    - {issue: "Quiet title and declaratory judgment as to the status of the way and the developer's claimed easement", category: real_estate, governing_law: "14 M.R.S. § 6651; 14 M.R.S. § 5951 et seq.", sub_questions: ["Is a declaration appropriate to settle the status of the way?", "Should title be quieted against the developer's claimed easement?"], strength: moderate}
+
+experts:
+  count: {min: 1, max: 3}
+  pool:
+    - {field: "Title examination / abstracting", credentials: "Licensed Title Abstractor", retained_by: plaintiff, topic: "Chain of title and the recorded plan", opinion: "The chain of title and the recorded plan show no deeded easement reserving the paper street to the developer's back lot.", basis: "Examination of the recorded subdivision plan and the deeds in the chain of title."}
+    - {field: "Land surveying", credentials: "PLS", retained_by: plaintiff, topic: "Location of the paper street and the actual access road", opinion: "The paper street was never constructed on the ground; the lots are served only by the existing private way.", basis: "Field survey tied to the recorded plan and monuments."}
+    - {field: "Civil engineering", credentials: "P.E.", retained_by: defendant_2, topic: "Road standards and feasibility of opening the paper street", opinion: "The paper street corridor can feasibly be built to a road standard adequate to serve the back lot.", basis: "Engineering analysis of grades, drainage, and applicable road standards."}
+
+evidence:
+  count: {min: 4, max: 7}
+  pool:
+    - {title: "Recorded subdivision plan / plat", type: public_record, party: plaintiff, description: "The recorded plan showing the paper street and the lot layout."}
+    - {title: "Chain of deeds for the affected lots", type: public_record, party: plaintiff, description: "The recorded conveyances for the lots and the claimed easement."}
+    - {title: "Road association bylaws and maintenance assessments", type: document, party: plaintiff, description: "The association's bylaws and the schedule of maintenance assessments."}
+    - {title: "Records of the unpaid share and demand letters", type: correspondence, party: plaintiff, description: "Ledgers of the defendant's unpaid share and the demand letters sent."}
+    - {title: "The developer's deed and access claim", type: public_record, party: defendant_2, description: "The developer's deed to the back lot and its written assertion of access over the paper street."}
+    - {title: "Survey of the paper street and access road", type: document, party: plaintiff, description: "A survey locating the unbuilt paper street and the actual private road."}
+    - {title: "Photographs of the road and the unbuilt paper street", type: photo, party: plaintiff, description: "Photographs of the maintained private road and the never-built paper street corridor."}
+    - {title: "Town records on acceptance of the way", type: public_record, party: other_party, description: "The town's records showing acceptance or non-acceptance of the platted way."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Annual road-maintenance cost", amount: {int_between: [4000, 38000]}, basis: "The association's annual grading, gravel, and plowing budget."}
+    - {label: "Defendant's unpaid share plus attorney fees", amount: {int_between: [1500, 16000]}, basis: "Accrued unpaid assessments and statutory attorney fees for non-payment."}
+    - {label: "Cost to bring the paper street to a buildable standard", amount: {int_between: [40000, 350000]}, basis: "Engineer's estimate to construct the corridor to a road standard."}
+    - {label: "Value impact of the access dispute on the lots", amount: {int_between: [10000, 200000]}, basis: "Estimated effect of the dispute on the affected lots' market value."}
+    - {label: "Survey and title-examination costs", amount: {int_between: [3000, 28000]}, basis: "Cost of the boundary survey and the title abstract."}
+
+litigation:
+  posture: pleadings
+  causes_of_action:
+    - {count: 1, claim: "Declaratory judgment that the paper street is deemed vacated and the developer has no easement", by: "{plaintiff_full_name}", against: "{defendant_2_full_name} and the Town of Mooselook", governing_law: "23 M.R.S. § 3032; 23 M.R.S. § 3033; 14 M.R.S. § 5951 et seq.", elements: ["A pre-1987 platted way never accepted by the municipality", "Vacation by operation of the Paper Streets Law", "No surviving private easement in the developer", "An actual controversy ripe for declaration"], relief_sought: "A declaration that the paper street is deemed vacated and that the developer holds no easement over it", strength: strong}
+    - {count: 2, claim: "Quiet title", by: "{plaintiff_full_name}", against: "{defendant_2_full_name}", governing_law: "14 M.R.S. § 6651", elements: ["The plaintiff and the association have an interest in the access ways", "The developer asserts an adverse claim of easement over the paper street", "The adverse claim is without basis in the record title", "Title should be quieted against the claim"], relief_sought: "A judgment quieting title against the developer's claimed easement over the paper street", strength: moderate}
+    - {count: 3, claim: "Collection of the unpaid road-maintenance assessment with attorney fees", by: "{plaintiff_full_name} and {road_association_name}", against: "{defendant_full_name}", governing_law: "23 M.R.S. § 3101", elements: ["The defendant's lot is served by and benefits from the private way", "A fair and equitable proportionate share was assessed", "The defendant has failed to pay his share", "The association may recover the share and attorney fees by civil action"], relief_sought: "Judgment for the unpaid proportionate share of maintenance, plus attorney fees and costs", strength: strong}
+    - {count: 4, claim: "Injunction barring the developer from opening the paper street", by: "{plaintiff_full_name}", against: "{defendant_2_full_name}", governing_law: "14 M.R.S. § 6051", elements: ["The paper street is vacated and the developer has no easement", "Opening the way would cause irreparable harm to the lot owners", "The balance of harms favors the plaintiff", "There is no adequate remedy at law"], relief_sought: "An order enjoining the developer from constructing or opening a road over the paper street", strength: moderate}
+  affirmative_defenses:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {defense: "The plan reserved private access rights to all lot owners", by: "{defendant_2_full_name}", basis: "The recorded subdivision plan reserved private rights in the platted ways to every lot owner, including the developer. 23 M.R.S. § 3033."}
+      - {defense: "Easement by implication or necessity", by: "{defendant_2_full_name}", basis: "The back lot takes an easement over the paper street by implication from the subdivision plan or by necessity for access."}
+      - {defense: "The assessment formula is not fair and equitable", by: "{defendant_full_name}", basis: "The maintenance assessment is not a fair and equitable apportionment of the actual benefit to the defendant's lot. 23 M.R.S. § 3101."}
+      - {defense: "Laches and acquiescence", by: "{defendant_2_full_name}", basis: "The plaintiff and the association acquiesced in the platted way and delayed unreasonably in challenging access."}
+  counterclaims:
+    - {count: 1, claim: "Easement over the paper street to the back lot", by: "{defendant_2_full_name}", against: "{plaintiff_full_name}", relief: "A declaration that the developer holds an easement over the paper street sufficient to access and develop the back lot."}
+  motions:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {title: "Motion for summary judgment on the vacation of the way", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-09-01", "2025-10-15"]}, status: opposed, relief: "Summary judgment that the paper street is deemed vacated and the developer has no easement."}
+      - {title: "Motion for a preliminary injunction", type: procedural, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-07-01", "2025-08-15"]}, status: granted_in_part, relief: "A preliminary injunction barring road construction over the paper street pending judgment."}
+      - {title: "Motion to join all lot owners as necessary parties", type: procedural, movant: "{defendant_2_full_name}", filed_date: {date_between: ["2025-08-01", "2025-09-15"]}, status: filed, relief: "An order joining all subdivision lot owners as necessary parties."}
+      - {title: "Motion to appoint a referee on the assessment", type: procedural, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-10-20", "2025-12-01"]}, status: under_advisement, relief: "Appointment of a referee to determine the fair and equitable share owed."}
+  docket:
+    - {date: {date_between: ["2025-05-05", "2025-05-20"]}, entry: "Complaint to quiet title and for declaratory and injunctive relief filed.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-06-05", "2025-06-25"]}, entry: "Answer and counterclaim asserting an easement filed by the developer.", party: "{defendant_2_full_name}"}
+    - {date: {date_between: ["2025-07-10", "2025-07-30"]}, entry: "Answer of the defendant neighbor on the assessment filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-08-15", "2025-09-05"]}, entry: "Order on the motion for a preliminary injunction entered.", party: "the court"}
+    - {date: {date_between: ["2025-10-01", "2025-10-25"]}, entry: "Scheduling order entered and the Town appears on the way's status.", party: "the court"}
+    - {date: {date_between: ["2025-11-10", "2025-12-05"]}, entry: "Hearing held on summary judgment as to vacation of the way.", party: "the court"}
+  trial:
+    jury: false
+    estimated_days: {int_between: [2, 5]}
+    scheduled_date: {date_between: ["2026-09-01", "2027-04-01"]}

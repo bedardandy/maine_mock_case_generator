@@ -1,0 +1,525 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "arbitration-award-dispute",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-691783",
+    "practice_area": "civil",
+    "title": "Riverbend Analytics LLC v. Coastal Provisions LLC",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court"
+    },
+    "case_type": "arbitration",
+    "filing_date": "2025-08-17",
+    "status": "active",
+    "summary": "Riverbend Analytics LLC moves in Sagadahoc County Superior Court to confirm a commercial arbitration award entered in its favor arising out of a technology services agreement, and to reduce it to an enforceable judgment; Coastal Provisions LLC cross-moves to vacate the award, contending the panel refused to hear material evidence.",
+    "event_date": "2026-01-18",
+    "docket_number": "SAG-CV-2025-161"
+  },
+  "parties": {
+    "petitioner": {
+      "entity_type": "organization",
+      "organization_name": "Riverbend Analytics LLC",
+      "full_name": "Riverbend Analytics LLC",
+      "role": "Petitioner (award creditor; moves to confirm)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174"
+    },
+    "respondent": {
+      "entity_type": "organization",
+      "organization_name": "Coastal Provisions LLC",
+      "full_name": "Coastal Provisions LLC",
+      "role": "Respondent (award debtor; moves to vacate)",
+      "address": "46 Lighthouse Drive",
+      "city": "Camden",
+      "state": "ME",
+      "zip": "04009",
+      "phone": "(207) 555-0130"
+    },
+    "other_party": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Jessup",
+      "full_name": "Maria Q. Jessup",
+      "role": "The arbitrator / panel chair",
+      "address": "32 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04029",
+      "phone": "(207) 555-0180",
+      "email": "maria.jessup@example.net",
+      "date_of_birth": "1964-02-01",
+      "ssn_last4": "9455"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Rosa",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Rosa B. Ellsworth",
+      "role": "Attorney for the client",
+      "address": "115 Pine Lane",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153",
+      "email": "rosa.ellsworth@example.com",
+      "date_of_birth": "1967-03-02",
+      "ssn_last4": "9353",
+      "bar_number": "6054",
+      "organization_name": "Ellsworth Advocates PC"
+    },
+    "client": {
+      "entity_type": "organization",
+      "organization_name": "Riverbend Analytics LLC",
+      "full_name": "Riverbend Analytics LLC",
+      "role": "Petitioner (award creditor; moves to confirm)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Riverbend Analytics LLC moves in Sagadahoc County Superior Court to confirm a commercial arbitration award entered in its favor arising out of a technology services agreement, and to reduce it to an enforceable judgment; Coastal Provisions LLC cross-moves to vacate the award, contending the panel refused to hear material evidence.",
+    "narrative": "Riverbend Analytics LLC and Coastal Provisions LLC were parties to a technology services agreement containing a mediation-then-arbitration clause. Their dispute was submitted to a single arbitrator under AAA Commercial Rules, which on 2026-01-18 issued a reasoned award in favor of the petitioner in the amount of approximately $5539594.\n\nRiverbend Analytics LLC now applies to the Superior Court under Maine's Uniform Arbitration Act, 14 M.R.S. ch. 706, to confirm the award and enter judgment on it. Coastal Provisions LLC resists confirmation and cross-applies to vacate the award, asserting that the panel refused to hear material evidence. Because judicial review of an arbitration award is narrow, the court will not reweigh the merits and may set the award aside only on the exclusive statutory grounds in 14 M.R.S. § 5938.\n\nThis is a record-based, motion-practice matter rather than a trial: there is no jury and essentially no discovery. The parties brief the cross-applications on the arbitration record, and the court decides whether to confirm under 14 M.R.S. § 5937, modify or correct under § 5939, or vacate under § 5938. The petitioner also seeks fees, costs, and post-award interest under 14 M.R.S. § 5943.",
+    "undisputed_facts": [
+      "The parties agreed to arbitrate disputes arising out of a technology services agreement pursuant to a mediation-then-arbitration clause.",
+      "The dispute was heard by a single arbitrator under AAA Commercial Rules and an award issued on 2026-01-18.",
+      "The award was entered in favor of the petitioner in an amount of approximately $5539594."
+    ],
+    "disputed_facts": [
+      "Whether any of the exclusive statutory grounds to vacate the award under 14 M.R.S. § 5938 are established, including whether the panel refused to hear material evidence.",
+      "Whether the arbitrators exceeded the authority conferred by the parties' arbitration agreement.",
+      "Whether the award should be confirmed as entered, modified or corrected, or vacated.",
+      "Whether the petitioner is entitled to fees, costs, and post-award interest under 14 M.R.S. § 5943."
+    ],
+    "timeline": [
+      {
+        "date": "2025-08-17",
+        "event": "Application to confirm the award filed in Bath Superior Court under 14 M.R.S. § 5937."
+      },
+      {
+        "date": "2026-01-18",
+        "event": "a single arbitrator under AAA Commercial Rules issues the arbitration award in favor of the petitioner."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Cobblestone Partners Co.",
+      "type": "business_entity",
+      "role": "Underlying project owner / counterparty",
+      "relevance": "The opposing party in the underlying contract dispute that produced the award now before the court.",
+      "contact": {
+        "phone": "(207) 555-0146",
+        "city": "Windham",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Marcus K. Poe",
+      "type": "witness",
+      "role": "Fact witness from the arbitration",
+      "relevance": "Testified at the arbitration hearing on the merits of the underlying dispute.",
+      "contact": {
+        "phone": "(207) 555-0167",
+        "city": "Bath",
+        "state": "ME",
+        "email": "marcus.poe@example.net"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Summit Logistics Co.",
+      "type": "insurer",
+      "role": "Surety / bonding company",
+      "relevance": "Issued a bond related to the underlying contract and is exposed to the confirmed award.",
+      "contact": {
+        "phone": "(207) 555-0121",
+        "city": "Gorham",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Riverbend Analytics LLC",
+      "type": "business_entity",
+      "role": "The arbitrator's former firm",
+      "relevance": "Prior affiliation said to bear on the alleged failure to disclose a conflict.",
+      "contact": {
+        "phone": "(207) 555-0197",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Commercial Litigation Attorney",
+    "interviewee_role": "petitioner",
+    "date": "2025-08-17",
+    "exchanges": [
+      {
+        "topic": "The award",
+        "question": "What did the arbitration decide, and how much did you win?",
+        "answer": "We arbitrated our dispute over a technology services agreement and the arbitrator ruled for us, awarding about $5539594. We want that turned into a court judgment we can actually enforce."
+      },
+      {
+        "topic": "The challenge",
+        "question": "What is the other side doing about it?",
+        "answer": "Instead of paying, they are trying to vacate the award. Their theory is the panel refused to hear material evidence. We think it is just a do-over attempt because they lost."
+      },
+      {
+        "topic": "Standard of review",
+        "question": "How hard is it for them to undo an arbitration award?",
+        "answer": "My understanding is the court does not retry the case and can only vacate on a few narrow statutory grounds. We want you to hold them to that deferential standard."
+      },
+      {
+        "topic": "Enforcement",
+        "question": "What is the urgency for you?",
+        "answer": "Time and money. Every month this drags on is a month we cannot collect. We want the award confirmed and reduced to judgment as quickly as possible, with interest running."
+      },
+      {
+        "topic": "Fees and interest",
+        "question": "Are you looking to recover anything beyond the award itself?",
+        "answer": "Yes. We want our fees and costs for the confirmation fight and the post-award interest the statute allows. We should not have to eat the cost of their losing motion."
+      },
+      {
+        "topic": "Settlement",
+        "question": "Would you consider resolving this short of a ruling?",
+        "answer": "Only if they pay essentially the full award promptly. We are not interested in a discount that rewards them for filing a meritless vacatur motion."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Confirm the arbitration award under 14 M.R.S. § 5937 and reduce it to an enforceable judgment as quickly as possible.",
+      "Defeat the respondent's cross-motion to vacate under the deferential statutory standard of 14 M.R.S. § 5938.",
+      "Recover attorney fees, costs, and post-award interest under 14 M.R.S. § 5943."
+    ],
+    "priorities": [
+      "Speed: converting the award into a collectible judgment without unnecessary delay.",
+      "Holding the court to the narrow scope of review so the merits are not re-litigated.",
+      "Preserving and maximizing the monetary recovery, including interest."
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "An order confirming the award in full and entering judgment for the award amount plus interest.",
+      "Denial of the cross-motion to vacate and an award of fees and costs to the petitioner."
+    ],
+    "non_starters": [
+      "Any vacatur or remand that reopens the arbitrated merits.",
+      "A negotiated discount that effectively rewards the respondent's meritless vacatur motion."
+    ],
+    "constraints": {
+      "budget": "Cost-conscious but committed to fully defending the award and pursuing fees and interest.",
+      "timeline": "Wants the award confirmed and reduced to judgment promptly so collection and post-award interest are not delayed."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Whether the award should instead be modified or corrected",
+      "category": "arbitration",
+      "governing_law": "14 M.R.S. § 5939",
+      "sub_questions": [
+        "Is there an evident miscalculation or a description error in the award?",
+        "Can any imperfection in form be corrected without affecting the merits?"
+      ],
+      "strength": "moderate",
+      "client_position": "At most a clerical correction is warranted; the substance of the award stands and should be confirmed.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Whether the scope of judicial review permits any review of the merits or only errors of law",
+      "category": "arbitration",
+      "governing_law": "14 M.R.S. § 5928",
+      "sub_questions": [
+        "Is the issue substantively arbitrable?",
+        "Does the deferential standard bar the court from reweighing the evidence or the arbitrators' legal conclusions?"
+      ],
+      "strength": "strong",
+      "client_position": "Review is narrow; the court will not reweigh the merits, and any claimed error of law does not justify vacatur.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Whether the petitioner is entitled to fees, costs, and post-award interest",
+      "category": "arbitration",
+      "governing_law": "14 M.R.S. § 5943",
+      "sub_questions": [
+        "Does the statute or the award support an award of fees and costs on confirmation?",
+        "From what date does post-award interest run on the judgment?"
+      ],
+      "strength": "moderate",
+      "client_position": "The petitioner is entitled to costs and post-award interest, and to fees to the extent the award and statute allow.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Whether the arbitration award should be confirmed and judgment entered on it",
+      "category": "arbitration",
+      "governing_law": "14 M.R.S. § 5937 and § 5941",
+      "sub_questions": [
+        "Has a timely application to confirm been made?",
+        "Are there grounds to vacate, modify, or correct that would preclude confirmation?"
+      ],
+      "strength": "strong",
+      "client_position": "The award is valid and must be confirmed and reduced to judgment under 14 M.R.S. § 5937 and § 5941.",
+      "id": "iss4"
+    },
+    {
+      "issue": "Whether the arbitrators exceeded their powers by awarding relief outside the contract",
+      "category": "arbitration",
+      "governing_law": "14 M.R.S. § 5938(1)(C)",
+      "sub_questions": [
+        "Did the award draw its essence from the parties' agreement?",
+        "Did the arbitrators decide only matters submitted to them?"
+      ],
+      "strength": "weak",
+      "client_position": "The arbitrators acted within the broad authority the parties conferred, so the 'exceeded powers' ground fails.",
+      "id": "iss5"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Beatrice B. Poe",
+        "field": "Arbitration procedure and disclosure standards",
+        "credentials": "J.D.",
+        "retained_by": "respondent"
+      },
+      "topic": "Arbitrator disclosure obligations and the alleged evident partiality",
+      "opinion": "The arbitrator's nondisclosure departed from accepted disclosure standards and supports a partiality challenge. (Offered to support the cross-motion to vacate; the court still reviews the award only under the narrow statutory grounds.)",
+      "basis": "Review of the AAA appointment record, the arbitrator's disclosures, and the parties' conflict correspondence."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Demand for arbitration and answering statement",
+      "type": "document",
+      "party": "petitioner",
+      "description": "The initiating demand and the answering statement framing the matters submitted to arbitration.",
+      "id": "ev1"
+    },
+    {
+      "title": "Correspondence about the alleged conflict",
+      "type": "correspondence",
+      "party": "respondent",
+      "description": "Emails and letters concerning the arbitrator's prior affiliation and the alleged failure to disclose.",
+      "id": "ev2"
+    },
+    {
+      "title": "Arbitration hearing transcript and exhibits",
+      "type": "document",
+      "party": "respondent",
+      "description": "The record of the merits hearing, offered on the claim that material evidence was refused.",
+      "id": "ev3"
+    },
+    {
+      "title": "Arbitrator's disclosures and AAA appointment record",
+      "type": "document",
+      "party": "other_party",
+      "description": "The arbitrator's disclosure statements and the AAA record of appointment, central to the partiality challenge.",
+      "id": "ev4"
+    },
+    {
+      "title": "Proof of the amounts awarded",
+      "type": "financial_record",
+      "party": "petitioner",
+      "description": "Invoices, ledgers, and computations supporting the award amount and post-award interest.",
+      "id": "ev5"
+    },
+    {
+      "title": "The parties' contract with the arbitration clause",
+      "type": "contract",
+      "party": "petitioner",
+      "description": "The underlying agreement containing a mediation-then-arbitration clause that defines the scope of arbitral authority.",
+      "id": "ev6"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Post-award interest",
+        "amount": 325297,
+        "basis": "Interest accruing on the award under 14 M.R.S. § 5943."
+      },
+      {
+        "label": "Arbitration award amount",
+        "amount": 1162270,
+        "basis": "The principal sum awarded by the arbitrator and sought to be confirmed."
+      },
+      {
+        "label": "Attorney fees and costs sought on confirmation",
+        "amount": 144418,
+        "basis": "Fees and costs incurred in the confirmation proceeding."
+      },
+      {
+        "label": "Bond amount related to the underlying contract",
+        "amount": 173636,
+        "basis": "Surety bond on the underlying project potentially reached by the confirmed award."
+      },
+      {
+        "label": "Disputed punitive / consequential component",
+        "amount": 457614,
+        "basis": "The portion of the award the respondent contends exceeded the arbitrators' powers."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "motion_practice",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Application to confirm the arbitration award and for entry of judgment",
+        "by": "Riverbend Analytics LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "14 M.R.S. § 5937 and § 5941",
+        "elements": [
+          "A valid arbitration agreement and a final award",
+          "A timely application to confirm",
+          "No basis to vacate, modify, or correct the award"
+        ],
+        "relief_sought": "An order confirming the award and entering judgment for the award amount plus post-award interest",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Application, in the alternative, to modify or correct the award",
+        "by": "Riverbend Analytics LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "14 M.R.S. § 5939",
+        "elements": [
+          "An evident miscalculation, a description error, or an imperfection in form",
+          "A correction that does not affect the merits of the controversy"
+        ],
+        "relief_sought": "Correction or modification of the award and confirmation as modified",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Respondent's cross-application to vacate the award",
+        "by": "Coastal Provisions LLC",
+        "against": "Riverbend Analytics LLC",
+        "governing_law": "14 M.R.S. § 5938",
+        "elements": [
+          "An exclusive statutory ground such as corruption, fraud, or undue means",
+          "Evident partiality or corruption of an arbitrator",
+          "The arbitrators exceeding their powers, or a refusal to hear material evidence"
+        ],
+        "relief_sought": "An order vacating the award and denying confirmation",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Evident partiality / failure to disclose",
+        "by": "Coastal Provisions LLC",
+        "basis": "An arbitrator failed to disclose a conflict, showing evident partiality. 14 M.R.S. § 5938(1)(B)."
+      },
+      {
+        "defense": "Refusal to hear material evidence",
+        "by": "Coastal Provisions LLC",
+        "basis": "The panel refused to hear evidence material to the controversy, prejudicing the respondent. 14 M.R.S. § 5938(1)(D)."
+      },
+      {
+        "defense": "The arbitrators exceeded their powers",
+        "by": "Coastal Provisions LLC",
+        "basis": "The award granted relief outside the parties' agreement and the matters submitted. 14 M.R.S. § 5938(1)(C)."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for entry of judgment and post-award interest",
+        "type": "procedural",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2026-01-30",
+        "status": "filed",
+        "relief": "Entry of judgment on the confirmed award with interest under 14 M.R.S. § 5943."
+      },
+      {
+        "title": "Motion to seal the arbitration record",
+        "type": "procedural",
+        "movant": "Coastal Provisions LLC",
+        "filed_date": "2026-01-06",
+        "status": "granted_in_part",
+        "relief": "An order sealing confidential portions of the arbitration record filed with the court."
+      },
+      {
+        "title": "Motion to confirm the arbitration award",
+        "type": "dispositive",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2026-03-23",
+        "status": "filed",
+        "relief": "An order confirming the award under 14 M.R.S. § 5937."
+      },
+      {
+        "title": "Motion to modify or correct the award",
+        "type": "dispositive",
+        "movant": "Coastal Provisions LLC",
+        "filed_date": "2025-11-04",
+        "status": "under_advisement",
+        "relief": "Modification or correction of the award under 14 M.R.S. § 5939."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2025-06-05",
+        "entry": "Arbitration award issued and served on the parties.",
+        "party": "Maria Q. Jessup"
+      },
+      {
+        "date": "2025-07-14",
+        "entry": "Application and motion to confirm the award filed.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-08-22",
+        "entry": "Cross-motion to vacate the award filed.",
+        "party": "Coastal Provisions LLC"
+      },
+      {
+        "date": "2025-09-18",
+        "entry": "Briefing on the cross-applications completed.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-11-15",
+        "entry": "Hearing / oral argument on the cross-motions held.",
+        "party": "the court"
+      }
+    ],
+    "trial": {
+      "jury": false,
+      "estimated_days": 2,
+      "scheduled_date": "2027-01-22"
+    }
+  },
+  "facts": {
+    "underlying_dispute": "a technology services agreement",
+    "arbitration_forum": "a single arbitrator under AAA Commercial Rules",
+    "contract_clause": "a mediation-then-arbitration clause",
+    "award_date": "2026-01-18",
+    "award_amount": 5539594,
+    "award_in_favor_of": "the petitioner",
+    "vacatur_ground": "the panel refused to hear material evidence",
+    "attorney_fees_in_award": true,
+    "included_punitive_or_consequential": true
+  }
+}

@@ -1,0 +1,194 @@
+id: commercial-contract-dispute
+title: "{plaintiff_full_name} v. {defendant_full_name} et al."
+practice_area: civil
+case_type: contract
+status: active
+docket_prefix: CV
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, CV-067]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+# A breach-of-commercial-contract action: a distributor/buyer sues a supplier
+# (an organization) and the supplier's owner (who signed a personal guaranty)
+# over a failed supply/distribution agreement. Now in active discovery.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, entity: organization, label: "Plaintiff (distributor / buyer)"}
+    - {key: defendant, entity: organization, label: "Defendant (supplier / manufacturer)"}
+    - {key: defendant_2, label: "Defendant (owner and personal guarantor)"}
+
+dates:
+  filing_date: {date_between: ["2025-03-01", "2025-11-01"]}
+  event_date: "{breach_date}"
+
+facts:
+  contract_type: {pick: ["an exclusive distribution agreement", "a master supply agreement", "a requirements contract for component parts", "a wholesale goods supply contract"]}
+  goods: {pick: ["specialty food products", "marine hardware", "building materials", "craft brewery inputs", "seafood inventory"]}
+  contract_date: {date_between: ["2022-06-01", "2024-01-31"]}
+  contract_value: {int_between: [120000, 3500000]}
+  breach_type: {pick: ["failure to deliver conforming goods", "delivery of defective goods", "non-payment of invoices", "wrongful termination of the agreement", "failure to meet exclusivity terms"]}
+  breach_date: {date_between: ["2024-08-01", "2025-06-30"]}
+  amount_owed: {int_between: [60000, 1800000]}
+  guaranty_signed: {pick: [true]}
+  notice_of_default_date: {date_between: ["2024-09-01", "2025-07-15"]}
+  cure_period_expired: {pick: [true, false]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: financial_institution, name_kind: bank, role: "Plaintiff's commercial bank", relevance: "Provided the working-capital line of credit and holds records of the plaintiff's payments and receivables."}
+    - {type: witness, name_kind: person, role: "Defendant's account manager", relevance: "Was the plaintiff's day-to-day contact and negotiated the orders and delivery schedule."}
+    - {type: business_entity, name_kind: organization, role: "Substitute supplier", relevance: "The competing supplier the plaintiff turned to in mitigation after the breach; its invoices show the cover price."}
+    - {type: business_entity, name_kind: organization, role: "Freight and logistics company", relevance: "Carried the shipments and documents the timing and condition of deliveries."}
+    - {type: witness, name_kind: person, role: "Former employee of the defendant", relevance: "Has direct knowledge of the contract negotiations and the alleged quality problems."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name} sues its supplier {defendant_full_name} and the supplier's owner, {defendant_2_full_name}, for breach of {contract_type} covering {goods}, alleging {breach_type} that left ${amount_owed} owing, and seeks to enforce {defendant_2_first}'s personal guaranty."
+  narrative:
+    - "On or about {contract_date}, {plaintiff_full_name} and {defendant_full_name} entered into {contract_type} under which {defendant_full_name} would supply {goods} for distribution by {plaintiff_full_name}. The agreement was valued at roughly ${contract_value} over its term, and {defendant_2_full_name}, the supplier's owner, personally guaranteed {defendant_full_name}'s performance and payment obligations."
+    - "Beginning around {breach_date}, the relationship broke down over {breach_type}. {plaintiff_first} alleges the conduct breached the agreement and the implied warranties of merchantability and fitness, leaving approximately ${amount_owed} unpaid or unrecovered. {plaintiff_first} served a written notice of default on {notice_of_default_date} and, when the dispute was not resolved, covered by buying substitute goods from another supplier to keep its own customers supplied."
+    - "{plaintiff_full_name} filed suit in {county} County Superior Court asserting breach of contract, breach of warranty, and account stated against {defendant_full_name}, and a separate count to enforce the personal guaranty against {defendant_2_full_name}. {defendant_first} denies liability and has counterclaimed. The matter is now in active, contested discovery."
+  undisputed:
+    - "{plaintiff_full_name} and {defendant_full_name} signed {contract_type} on or about {contract_date}."
+    - "{defendant_2_full_name} signed a personal guaranty of {defendant_full_name}'s obligations under the agreement."
+    - "{plaintiff_full_name} served a written notice of default dated {notice_of_default_date}."
+  disputed:
+    - "Whether {defendant_full_name}'s conduct amounted to {breach_type} or whether the goods and performance conformed to the agreement."
+    - "The amount, if any, owed to {plaintiff_full_name}, alleged to be about ${amount_owed}."
+    - "Whether {plaintiff_full_name} reasonably mitigated its damages through its cover purchases."
+    - "Whether the personal guaranty is enforceable against {defendant_2_full_name}."
+  timeline:
+    - {date: "{contract_date}", event: "{plaintiff_full_name} and {defendant_full_name} executed {contract_type}; {defendant_2_first} signed the guaranty."}
+    - {date: "{breach_date}", event: "The alleged breach ({breach_type}) occurred."}
+    - {date: "{notice_of_default_date}", event: "{plaintiff_first} served a written notice of default."}
+    - {date: "{filing_date}", event: "Complaint filed in {court_location} Superior Court."}
+
+interview:
+  interviewer: "Litigation Partner"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "The deal", question: "What was the arrangement with the supplier?", answer: "We had {contract_type} for {goods}, worth around ${contract_value} over its term. {defendant_2_first}, who owns the company, signed a personal guaranty, which is why we were comfortable extending credit."}
+    - {topic: "The breach", question: "What went wrong?", answer: "It came down to {breach_type}. By {breach_date} it was clear we had a real problem, and we are out roughly ${amount_owed}. We sent a formal notice of default on {notice_of_default_date}."}
+    - {topic: "Mitigation", question: "What did you do to limit the damage?", answer: "We could not leave our own customers hanging, so we sourced substitute goods from another supplier at a higher price. We kept every invoice so we can show the cover cost."}
+    - {topic: "The guarantor", question: "How important is the personal guaranty to you?", answer: "Very. The company may not be good for the money, so {defendant_2_first}'s guaranty is how we actually get paid. I want to hold {defendant_2_first} to it."}
+    - {topic: "Their counterclaim", question: "They are claiming you breached. What is your view?", answer: "They say we wrongfully rejected the goods, but the goods were defective and we documented it. Their counterclaim is a pressure tactic and I want it defeated."}
+    - {topic: "Goal", question: "How do you want this to end?", answer: "Recover the debt and our cover costs, get a judgment against the guarantor, and beat the counterclaim. If they make a fair offer, I will settle rather than run up fees."}
+
+objectives:
+  goals:
+    - "Recover the approximately ${amount_owed} owed plus cover and lost-profit damages from {defendant_full_name}."
+    - "Enforce the personal guaranty and obtain a judgment against {defendant_2_full_name} as guarantor."
+    - "Defeat {defendant_full_name}'s counterclaim for breach and wrongful rejection."
+  priorities:
+    - "Reaching the guarantor as a real source of recovery."
+    - "Building a clean record on damages and mitigation."
+    - "Resolving the case efficiently if a fair settlement is available."
+  risk_tolerance: {pick: [moderate, high]}
+  desired_outcomes:
+    - "A judgment or settlement for the debt plus cover and lost-profit damages, with prejudgment interest and fees."
+    - "Personal liability of {defendant_2_full_name} under the guaranty."
+  non_starters:
+    - "Any resolution that releases the guarantor without paying the core debt."
+  constraints:
+    budget: {pick: ["Funded through trial, but settlement is preferred if the number is fair.", "Cost-conscious; wants staged budgets and an early, realistic settlement assessment."]}
+    timeline: "Wants the case trial-ready within roughly eighteen months of filing."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Whether {defendant_full_name} breached the supply/distribution agreement", category: contract, governing_law: "Common law of contract; 11 M.R.S. § 2-301", sub_questions: ["Was there a valid, enforceable agreement?", "Did the defendant's conduct constitute a material breach?"], strength: strong, client_position: "The agreement was valid and the defendant materially breached it."}
+    - {issue: "Breach of the implied warranties of merchantability and fitness", category: contract, governing_law: "11 M.R.S. § 2-314 and § 2-315", sub_questions: ["Were the goods merchantable and fit for their intended purpose?", "Did the buyer rely on the seller's skill or judgment?"], strength: moderate, client_position: "The goods were defective and unfit, breaching the implied warranties."}
+    - {issue: "Whether the claims are barred by the UCC statute of limitations", category: procedure, governing_law: "11 M.R.S. § 2-725", sub_questions: ["Did the cause of action accrue within four years of filing?"], strength: weak}
+    - {issue: "Liability on an account stated for the unpaid invoices", category: contract, governing_law: "Common law account stated", sub_questions: ["Did the parties agree on a balance due?", "Did the defendant fail to object to the statements of account?"], strength: moderate, client_position: "The ledger reflects an agreed, unpaid balance."}
+    - {issue: "Enforceability of the personal guaranty against the owner", category: contract, governing_law: "Suretyship; common law of guaranty", sub_questions: ["Is the guaranty supported by consideration and properly signed?", "Are there suretyship defenses that discharge the guarantor?"], strength: moderate, client_position: "The guaranty is enforceable and the guarantor is liable for the debt."}
+    - {issue: "Recovery of cover and mitigation damages", category: remedies, governing_law: "11 M.R.S. § 2-712", sub_questions: ["Did the buyer cover in good faith and without unreasonable delay?", "What is the difference between the cover price and the contract price?"], strength: strong, client_position: "The cover purchases were reasonable and measure the recoverable damages."}
+    - {issue: "Entitlement to prejudgment interest", category: remedies, governing_law: "14 M.R.S. § 1602-B", sub_questions: ["From what date does prejudgment interest run on the amounts owed?"], strength: moderate}
+
+experts:
+  count: {min: 1, max: 3}
+  pool:
+    - {field: "Forensic accounting", credentials: "CPA, CFF", retained_by: plaintiff, topic: "Damages, lost profits, and the cover differential", opinion: "The plaintiff's recoverable loss, including cover and lost profits, approximates the amount claimed.", basis: "Invoices, the account ledger, cover-purchase records, and profit margins."}
+    - {field: "Industry and trade usage", credentials: "M.B.A.", retained_by: plaintiff, topic: "Trade usage and customary terms in the relevant supply market", opinion: "The defendant's performance fell short of customary standards and the parties' course of dealing.", basis: "Industry practice, the agreement, and order history."}
+    - {field: "Goods quality and engineering", credentials: "P.E.", retained_by: defendant, topic: "Whether the delivered goods conformed to specification", opinion: "The goods met the applicable specifications and were fit for their ordinary purpose.", basis: "Inspection records, specifications, and sample testing."}
+
+evidence:
+  count: {min: 5, max: 8}
+  pool:
+    - {title: "Executed supply/distribution agreement", type: contract, party: plaintiff, description: "The signed contract governing the parties' supply relationship."}
+    - {title: "Personal guaranty", type: contract, party: plaintiff, description: "The guaranty signed by the owner of the supplier."}
+    - {title: "Unpaid invoices and account ledger", type: financial_record, party: plaintiff, description: "The outstanding invoices and running account statement showing the balance due."}
+    - {title: "Notice of default", type: correspondence, party: plaintiff, description: "The written notice of default sent to the supplier and guarantor."}
+    - {title: "Email negotiations and order confirmations", type: correspondence, party: plaintiff, description: "The email record of the negotiations, purchase orders, and confirmations."}
+    - {title: "Proof of cover purchases", type: financial_record, party: plaintiff, description: "Invoices from the substitute supplier documenting the cover price."}
+    - {title: "Inspection and rejection records", type: document, party: plaintiff, description: "Receiving, inspection, and rejection paperwork for the disputed goods."}
+    - {title: "Defendant's financial statements", type: financial_record, party: defendant, description: "The supplier's financials, relevant to collectability and the counterclaim."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Contract value", amount: {int_between: [120000, 3500000]}, basis: "Total value of the supply/distribution agreement over its term."}
+    - {label: "Amount owed / claimed", amount: {int_between: [60000, 1800000]}, basis: "Unpaid invoices and the balance on the account stated."}
+    - {label: "Cover and lost-profit damages", amount: {int_between: [25000, 900000]}, basis: "Difference between the cover price and the contract price, plus lost profits."}
+    - {label: "Prejudgment interest", amount: {int_between: [3000, 150000]}, basis: "Statutory prejudgment interest on the amounts owed. 14 M.R.S. § 1602-B."}
+    - {label: "Attorney fees and costs", amount: {int_between: [20000, 350000]}, basis: "Estimated plaintiff-side fees and costs through trial."}
+
+litigation:
+  posture: discovery
+  causes_of_action:
+    - {count: 1, claim: "Breach of contract", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "Common law; 11 M.R.S. § 2-301", elements: ["A valid contract", "Performance by the plaintiff", "Material breach by the defendant", "Resulting damages"], relief_sought: "Compensatory damages of approximately ${amount_owed} plus cover and lost-profit damages", strength: strong}
+    - {count: 2, claim: "Breach of the implied warranties of merchantability and fitness", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "11 M.R.S. § 2-314 and § 2-315", elements: ["A sale of goods by a merchant", "Goods that were not merchantable or fit for purpose", "Notice of the breach", "Resulting damages"], relief_sought: "Damages for the defective goods and consequential loss", strength: moderate}
+    - {count: 3, claim: "Account stated", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "Common law account stated", elements: ["An account between the parties", "An agreed balance due", "A promise, express or implied, to pay", "Nonpayment"], relief_sought: "Judgment for the agreed unpaid balance", strength: moderate}
+    - {count: 4, claim: "Enforcement of personal guaranty", by: "{plaintiff_full_name}", against: "{defendant_2_full_name}", governing_law: "Suretyship; common law of guaranty", elements: ["A valid, signed guaranty", "Default by the principal obligor", "Consideration", "Amount due under the guaranty"], relief_sought: "Judgment against the guarantor for the guaranteed debt", strength: moderate}
+  affirmative_defenses:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {defense: "Failure of conditions precedent", by: "{defendant_full_name}", basis: "The plaintiff did not satisfy conditions required before performance was due."}
+      - {defense: "Accord and satisfaction", by: "{defendant_full_name}", basis: "The parties resolved the disputed amounts by a later agreement and payment."}
+      - {defense: "Setoff and recoupment", by: "{defendant_full_name}", basis: "Any amount owed is offset by the plaintiff's own breaches and chargebacks."}
+      - {defense: "Statute of limitations", by: "{defendant_full_name}", basis: "The claims accrued more than four years before filing. 11 M.R.S. § 2-725."}
+      - {defense: "Failure to mitigate", by: "{defendant_full_name}", basis: "The plaintiff's cover purchases were unreasonable and inflated the claimed loss."}
+      - {defense: "The goods conformed", by: "{defendant_full_name}", basis: "The goods met specification and were merchantable and fit for their purpose."}
+  counterclaims:
+    - {count: 1, claim: "Breach of contract by the plaintiff", by: "{defendant_full_name}", against: "{plaintiff_full_name}", relief: "Damages for the plaintiff's nonpayment and failure to take agreed quantities."}
+    - {count: 2, claim: "Wrongful rejection of conforming goods", by: "{defendant_full_name}", against: "{plaintiff_full_name}", relief: "Damages for the price of goods wrongfully rejected and resale losses."}
+  discovery:
+    n: {min: 4, max: 6}
+    pick_n:
+      - {type: interrogatories, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-01", "2025-05-01"]}, status: responded, description: "First set of interrogatories on the deliveries, defects, and account."}
+      - {type: request_for_production, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-01", "2025-05-01"]}, status: objected, description: "Requests for the defendant's financial statements and accounting records."}
+      - {type: request_for_production, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-05-05", "2025-06-05"]}, status: served, description: "Requests for the email negotiations and order communications."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_2_full_name}", served_date: {date_between: ["2025-06-10", "2025-07-20"]}, status: outstanding, description: "Deposition of the owner and personal guarantor."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "the defendant's account manager", served_date: {date_between: ["2025-06-10", "2025-07-20"]}, status: served, description: "Deposition of the account manager who handled the orders."}
+      - {type: deposition, propounding_party: "{defendant_full_name}", responding_party: "{plaintiff_full_name}", served_date: {date_between: ["2025-06-10", "2025-07-20"]}, status: served, description: "Deposition of the plaintiff's principal."}
+      - {type: request_for_admission, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-05-05", "2025-06-05"]}, status: responded, description: "Admissions on the receipt of invoices and the balance due."}
+      - {type: subpoena, propounding_party: "{plaintiff_full_name}", responding_party: "the plaintiff's commercial bank", served_date: {date_between: ["2025-05-05", "2025-06-05"]}, status: served, description: "Subpoena to the bank for payment and receivable records."}
+  motions:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {title: "Motion to dismiss for failure to state a claim", type: dispositive, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-04-01", "2025-05-01"]}, status: denied, relief: "Dismissal of the warranty and account-stated counts."}
+      - {title: "Motion to compel production of the defendant's financials", type: discovery, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-06-01", "2025-07-01"]}, status: granted, relief: "An order compelling the defendant's financial statements and ledgers."}
+      - {title: "Motion for partial summary judgment on the guaranty", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-09-01", "2025-10-15"]}, status: under_advisement, relief: "Judgment that the personal guaranty is enforceable against the guarantor."}
+      - {title: "Motion in limine on the damages model", type: evidentiary, movant: "{defendant_full_name}", filed_date: {date_between: ["2026-01-15", "2026-03-01"]}, status: filed, relief: "Exclusion of the plaintiff's cover and lost-profit damages model."}
+      - {title: "Motion for a protective order", type: discovery, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-06-01", "2025-07-01"]}, status: granted_in_part, relief: "Protection of confidential pricing and customer information."}
+  docket:
+    - {date: {date_between: ["2025-03-05", "2025-03-20"]}, entry: "Complaint and demand for jury trial filed.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-04-05", "2025-04-20"]}, entry: "Answer and counterclaims filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-05-05", "2025-05-20"]}, entry: "Scheduling order entered; discovery deadline set.", party: "the court"}
+    - {date: {date_between: ["2025-06-05", "2025-06-20"]}, entry: "Order denying the motion to dismiss.", party: "the court"}
+    - {date: {date_between: ["2025-07-05", "2025-07-20"]}, entry: "Order compelling production of the defendant's financials.", party: "the court"}
+    - {date: {date_between: ["2025-09-05", "2025-09-20"]}, entry: "Cross-motions for summary judgment on the guaranty briefed.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-11-05", "2025-11-20"]}, entry: "Discovery continues; expert disclosures exchanged.", party: "the court"}
+  trial:
+    jury: {pick: [true, false]}
+    estimated_days: {int_between: [4, 10]}
+    scheduled_date: {date_between: ["2026-06-01", "2027-01-15"]}

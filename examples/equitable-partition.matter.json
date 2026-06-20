@@ -1,0 +1,544 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "equitable-partition",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-702326",
+    "practice_area": "real_estate",
+    "title": "Roe v. Fairbanks et al. (Partition of Real Estate)",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court"
+    },
+    "case_type": "partition",
+    "filing_date": "2025-06-17",
+    "status": "active",
+    "summary": "Grace C. Roe, a co-tenant of a lakefront cottage and lot the parties inherited from their late father's estate, petitions the Sagadahoc County Superior Court to partition the property, seeking partition by sale and division of proceeds, with an accounting among the co-tenants and resolution of an access dispute.",
+    "event_date": "2020-09-05",
+    "docket_number": "SAG-RE-2025-407"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Plaintiff co-tenant (seeks partition/sale)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "defendant": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Defendant co-tenant (opposes sale)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "defendant_2": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Defendant co-tenant",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "ssn_last4": "4744"
+    },
+    "defendant_3": {
+      "entity_type": "person",
+      "first_name": "Omar",
+      "middle_name": "W",
+      "last_name": "Loe",
+      "full_name": "Omar W. Loe",
+      "role": "Defendant co-tenant",
+      "address": "62 Tidewater Lane",
+      "city": "Waterville",
+      "state": "ME",
+      "zip": "04072",
+      "phone": "(207) 555-0187",
+      "email": "omar.loe@example.com",
+      "date_of_birth": "1995-10-25",
+      "ssn_last4": "9358"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "M",
+      "last_name": "Noe",
+      "full_name": "Ingrid M. Noe",
+      "role": "Attorney for the client",
+      "address": "51 Spruce Avenue",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04073",
+      "phone": "(207) 555-0107",
+      "email": "ingrid.noe@example.net",
+      "date_of_birth": "1988-09-11",
+      "ssn_last4": "8711",
+      "bar_number": "8005",
+      "organization_name": "Greenhill Law Offices"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Plaintiff co-tenant (seeks partition/sale)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe, a co-tenant of a lakefront cottage and lot the parties inherited from their late father's estate, petitions the Sagadahoc County Superior Court to partition the property, seeking partition by sale and division of proceeds, with an accounting among the co-tenants and resolution of an access dispute.",
+    "narrative": "Grace C. Roe and the defendant co-tenants own a lakefront cottage and lot of roughly 151 acres as tenants in common, having taken title from their late father's estate in 2020-09-05. Title is held by three siblings, one holding a one-half and two holding one-quarter shares. The town assesses the property at about $680988, and the parcel includes an undeveloped lot with a right-of-way.\n\nThe co-tenants no longer agree on what to do with the land. Grace wants to realize the value of the inherited interest and has asked for partition by sale and division of proceeds, while the other co-tenants want to keep the property in the family. Complicating any physical division, the only access is over a disputed right-of-way / paper street, which bears directly on whether the parcel can fairly be split in kind without injuring the co-owners or landlocking a lot.\n\nThere is also a dispute over money: one branch of the family says it has carried the taxes, insurance, and upkeep for years and is entitled to a credit, and any in-kind division may require an owelty payment to equalize the shares. Grace now seeks an order of partition, the appointment of referees, an accounting and contribution among the co-tenants, and a declaration settling the access question.",
+    "undisputed_facts": [
+      "The parties hold a lakefront cottage and lot as tenants in common, having inherited it from their late father's estate.",
+      "Title passed to the co-tenants on or about 2020-09-05.",
+      "No co-tenant has agreed to buy out the others at a price all accept."
+    ],
+    "disputed_facts": [
+      "Whether the property should be divided in kind or sold and the proceeds divided.",
+      "The amount of any accounting or contribution credit for taxes, insurance, and upkeep advanced by one co-tenant.",
+      "Whether the only access is over a disputed right-of-way / paper street, and how that affects the feasibility and fairness of an in-kind division."
+    ],
+    "timeline": [
+      {
+        "date": "2020-09-05",
+        "event": "The co-tenants took title to the parcel from their late father's estate."
+      },
+      {
+        "date": "2025-06-17",
+        "event": "Complaint for partition prepared for filing in Bath Superior Court."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Pine Tree Community Bank",
+      "type": "financial_institution",
+      "role": "Mortgage holder",
+      "relevance": "Holds a mortgage encumbering one co-tenant's undivided share.",
+      "contact": {
+        "phone": "(207) 555-0165",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Wesley B. Fairbanks",
+      "type": "family_member",
+      "role": "Sibling who is not a party",
+      "relevance": "Not joined as a party but claims to have paid the property taxes and upkeep.",
+      "contact": {
+        "phone": "(207) 555-0185",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "wesley.fairbanks@example.net"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Theodore S. Larkspur",
+      "type": "expert",
+      "role": "Licensed surveyor",
+      "relevance": "Surveyed the boundaries and prepared a subdivision sketch.",
+      "contact": {
+        "phone": "(207) 555-0174",
+        "city": "Falmouth",
+        "state": "ME",
+        "email": "theodore.larkspur@example.org"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Town Assessor's Office",
+      "type": "government_agency",
+      "role": "Town tax assessor",
+      "relevance": "Maintains the assessment and tax bills for the parcel.",
+      "contact": {
+        "phone": "(207) 555-0160",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Northstar Partners Corp.",
+      "type": "business_entity",
+      "role": "Real estate broker",
+      "relevance": "Appraised and listed the property and gave a broker's opinion of value.",
+      "contact": {
+        "phone": "(207) 555-0191",
+        "city": "Auburn",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Intake Attorney",
+    "interviewee_role": "plaintiff",
+    "date": "2025-06-17",
+    "exchanges": [
+      {
+        "topic": "Goal",
+        "question": "What do you want to happen with the property?",
+        "answer": "I want to realize fair value from my share. My first choice is partition by sale and division of proceeds, but I am not trying to force a fire sale if it can be divided fairly."
+      },
+      {
+        "topic": "Ownership",
+        "question": "Who owns the property and how did you all get it?",
+        "answer": "It came to us from their late father's estate back in 2020-09-05. It is held by three siblings, one holding a one-half and two holding one-quarter shares, and we have never formally sorted out who gets what."
+      },
+      {
+        "topic": "Access",
+        "question": "Is there anything that makes splitting the land difficult?",
+        "answer": "Yes. the only access is over a disputed right-of-way / paper street. That is a big part of why I do not think you can just draw a line down the middle."
+      },
+      {
+        "topic": "Money",
+        "question": "Has anyone been paying the taxes and upkeep?",
+        "answer": "One side of the family says they have covered the taxes and the camp upkeep for years and want credit for it. I want that looked at honestly with actual records."
+      },
+      {
+        "topic": "Relationships",
+        "question": "How important is it to keep the peace in the family?",
+        "answer": "It matters to me. I would rather reach something fair and be able to sit at a holiday table, but I am not willing to give up my share to do it."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Obtain an order of partition that realizes fair value from Grace's interest in the property.",
+      "Secure an accounting and contribution credit for taxes, insurance, and upkeep paid.",
+      "Resolve the access / right-of-way question so the property's value and divisibility are clear."
+    ],
+    "priorities": [
+      "Realizing fair value, by sale if an in-kind split would be unfair.",
+      "An honest accounting of what each co-tenant has contributed.",
+      "Preserving family relationships where possible."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "Partition by sale at fair value, or an in-kind division with an equalizing owelty payment.",
+      "A credit reflecting taxes and upkeep advanced by Grace."
+    ],
+    "non_starters": [
+      "An in-kind split that leaves Grace with a landlocked or unmarketable lot."
+    ],
+    "constraints": {
+      "budget": "Moderate; willing to pay for a survey and appraisal to support the case.",
+      "timeline": "Wants the partition resolved before another tax year of carrying costs accrues."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Whether the property should be partitioned in kind or by sale",
+      "category": "real_estate",
+      "governing_law": "14 M.R.S. § 6051(7)",
+      "sub_questions": [
+        "Can the parcel be divided in kind without great prejudice to the co-owners?",
+        "Would a sale better serve the interests of all co-tenants?"
+      ],
+      "strength": "moderate",
+      "client_position": "Physical division would injure the owners, so the property should be sold and the proceeds divided.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Accounting for taxes, upkeep, rents, and contributions among co-tenants",
+      "category": "real_estate",
+      "governing_law": "14 M.R.S. § 6501",
+      "sub_questions": [
+        "What credits are owed for taxes, insurance, and upkeep advanced?",
+        "Is any co-tenant chargeable for exclusive use or rents received?"
+      ],
+      "strength": "moderate",
+      "client_position": "Grace is entitled to a credit for amounts advanced on the common property.",
+      "id": "iss2"
+    },
+    {
+      "issue": "The right of a tenant in common to compel partition of the inherited parcel",
+      "category": "real_estate",
+      "governing_law": "14 M.R.S. § 6501",
+      "sub_questions": [
+        "Is Grace a tenant in common entitled to demand partition as of right?",
+        "Does any agreement among the co-tenants waive or bar partition?"
+      ],
+      "strength": "strong",
+      "client_position": "As a co-tenant, Grace has an absolute right to compel partition.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Effect of the access / right-of-way dispute on marketability and feasibility of in-kind division",
+      "category": "real_estate",
+      "governing_law": "14 M.R.S. § 6051(7)",
+      "sub_questions": [
+        "Does the access defect landlock any proposed lot?",
+        "How does the right-of-way affect the property's market value?"
+      ],
+      "strength": "moderate",
+      "id": "iss4"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Diego H. Loe",
+        "field": "Real estate appraisal",
+        "credentials": "MAI",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Fair market value of the parcel",
+      "opinion": "The property is worth materially more sold as a whole than divided into smaller lots.",
+      "basis": "Sales-comparison and income approaches to value."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Appraisal and broker's opinion of value",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "Appraisal report and the broker's opinion of value and listing materials.",
+      "id": "ev1"
+    },
+    {
+      "title": "Photographs of the property and improvements",
+      "type": "photo",
+      "party": "plaintiff",
+      "description": "Photographs of the parcel, the access way, and the camp or farmhouse.",
+      "id": "ev2"
+    },
+    {
+      "title": "Recorded deed and chain of title",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "The recorded deed and prior conveyances establishing the tenancy in common.",
+      "id": "ev3"
+    },
+    {
+      "title": "Probate decree of distribution",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "The probate decree showing the inheritance to the co-tenants.",
+      "id": "ev4"
+    },
+    {
+      "title": "Records of taxes and upkeep paid",
+      "type": "financial_record",
+      "party": "defendant",
+      "description": "Receipts and ledgers of taxes, insurance, and upkeep paid by individual co-tenants.",
+      "id": "ev5"
+    },
+    {
+      "title": "Tax assessment and bills",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "Town assessment card and property tax bills for the parcel.",
+      "id": "ev6"
+    },
+    {
+      "title": "Survey and subdivision sketch",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "Boundary survey and any proposed subdivision sketch showing access.",
+      "id": "ev7"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Proposed owelty payment to equalize an in-kind division",
+        "amount": 118867,
+        "basis": "Difference in value between unequal proposed lots."
+      },
+      {
+        "label": "Taxes and upkeep advanced by one co-tenant",
+        "amount": 51024,
+        "basis": "Receipts for taxes, insurance, and maintenance."
+      },
+      {
+        "label": "Estimated brokerage and sale costs",
+        "amount": 97485,
+        "basis": "Commission, closing, and marketing costs."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "pleadings",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Partition of real estate",
+        "by": "Grace C. Roe",
+        "against": "the defendant co-tenants",
+        "governing_law": "14 M.R.S. § 6501; 14 M.R.S. § 6051(7)",
+        "elements": [
+          "The plaintiff holds an undivided interest as a tenant in common",
+          "The co-tenants cannot agree on a voluntary division or sale",
+          "Partition is appropriate, in kind or by sale",
+          "Referees should be appointed to carry out the partition"
+        ],
+        "relief_sought": "An order of partition, by sale if the property cannot fairly be divided in kind, and appointment of referees",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Accounting and contribution among co-tenants",
+        "by": "Grace C. Roe",
+        "against": "the defendant co-tenants",
+        "governing_law": "14 M.R.S. § 6501; common law",
+        "elements": [
+          "A tenancy in common among the parties",
+          "Disproportionate payment of taxes, insurance, or upkeep",
+          "Or receipt of rents or exclusive use by a co-tenant",
+          "An equitable adjustment of the parties' shares"
+        ],
+        "relief_sought": "An accounting and a credit or charge adjusting each co-tenant's share of the proceeds",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Declaratory judgment as to the right-of-way",
+        "by": "Grace C. Roe",
+        "against": "the defendant co-tenants",
+        "governing_law": "14 M.R.S. § 5953",
+        "elements": [
+          "An actual controversy over access to the parcel",
+          "Uncertainty about the existence or scope of the right-of-way",
+          "The access question affects partition and value",
+          "A declaration will resolve the controversy"
+        ],
+        "relief_sought": "A declaration of the existence and scope of the right-of-way serving the parcel",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Set-off for exclusive use and accounting",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The plaintiff owes an accounting and offset for periods of exclusive use of the common property."
+      },
+      {
+        "defense": "The property can be fairly divided in kind",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The parcel can be partitioned in kind without great prejudice, so no sale is warranted. 14 M.R.S. § 6051(7)."
+      },
+      {
+        "defense": "Family agreement bars sale",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The co-tenants agreed to keep the property in the family, which bars a forced sale."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Accounting and contribution",
+        "by": "Maria Q. Fairbanks",
+        "against": "Grace C. Roe",
+        "relief": "A credit for taxes, insurance, and upkeep advanced and an offset for the plaintiff's use of the property."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for partition by sale",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-10-13",
+        "status": "opposed",
+        "relief": "An order that the property be sold and the proceeds divided."
+      },
+      {
+        "title": "Motion to appoint referees / commissioners",
+        "type": "procedural",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-07-15",
+        "status": "filed",
+        "relief": "Appointment of referees to make or supervise the partition."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2025-04-05",
+        "entry": "Complaint for partition filed.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-05-25",
+        "entry": "Answers of the defendant co-tenants filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-07-23",
+        "entry": "Order appointing referees to view the property entered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-10-10",
+        "entry": "Referees' report on division versus sale filed.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-12-13",
+        "entry": "Hearing held on partition by sale versus in kind.",
+        "party": "the court"
+      }
+    ],
+    "trial": {
+      "jury": false,
+      "estimated_days": 4,
+      "scheduled_date": "2026-08-02"
+    }
+  },
+  "facts": {
+    "property_type": "a lakefront cottage and lot",
+    "acreage": 151,
+    "num_co_owners": "three siblings, one holding a one-half and two holding one-quarter shares",
+    "inherited_from": "their late father's estate",
+    "inheritance_date": "2020-09-05",
+    "assessed_value": 680988,
+    "partition_sought": "partition by sale and division of proceeds",
+    "improvements": "an undeveloped lot with a right-of-way",
+    "access_issue": "the only access is over a disputed right-of-way / paper street",
+    "contribution_dispute": true
+  }
+}

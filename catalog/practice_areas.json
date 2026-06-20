@@ -36,6 +36,12 @@
       "example_forms": ["CR-001", "CR-030"],
       "common_case_types": ["criminal"]
     },
+    "administrative": {
+      "label": "Administrative / municipal appeals",
+      "downstream_repo": "maine-court-forms",
+      "example_forms": ["CV-001"],
+      "common_case_types": ["administrative_appeal_80b", "administrative_appeal_80c"]
+    },
     "probate": {
       "label": "Probate, estates, and guardianship",
       "downstream_repo": "maine-probate-forms",

@@ -1,0 +1,624 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "commercial-contract-dispute",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-749078",
+    "practice_area": "civil",
+    "title": "Harbor Outfitters LLC v. Coastal Provisions LLC et al.",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court"
+    },
+    "case_type": "contract",
+    "filing_date": "2025-10-29",
+    "status": "active",
+    "summary": "Harbor Outfitters LLC sues its supplier Coastal Provisions LLC and the supplier's owner, Maria Q. Jessup, for breach of a master supply agreement covering specialty food products, alleging delivery of defective goods that left $264326 owing, and seeks to enforce Maria's personal guaranty.",
+    "event_date": "2025-02-07",
+    "docket_number": "SAG-CV-2025-310"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "organization",
+      "organization_name": "Harbor Outfitters LLC",
+      "full_name": "Harbor Outfitters LLC",
+      "role": "Plaintiff (distributor / buyer)",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174"
+    },
+    "defendant": {
+      "entity_type": "organization",
+      "organization_name": "Coastal Provisions LLC",
+      "full_name": "Coastal Provisions LLC",
+      "role": "Defendant (supplier / manufacturer)",
+      "address": "46 Lighthouse Drive",
+      "city": "Camden",
+      "state": "ME",
+      "zip": "04009",
+      "phone": "(207) 555-0130"
+    },
+    "defendant_2": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Jessup",
+      "full_name": "Maria Q. Jessup",
+      "role": "Defendant (owner and personal guarantor)",
+      "address": "32 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04029",
+      "phone": "(207) 555-0180",
+      "email": "maria.jessup@example.net",
+      "date_of_birth": "1964-02-01",
+      "ssn_last4": "9455"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Rosa",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Rosa B. Ellsworth",
+      "role": "Attorney for the client",
+      "address": "115 Pine Lane",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153",
+      "email": "rosa.ellsworth@example.com",
+      "date_of_birth": "1967-03-02",
+      "ssn_last4": "9353",
+      "bar_number": "6054",
+      "organization_name": "Ellsworth Advocates PC"
+    },
+    "client": {
+      "entity_type": "organization",
+      "organization_name": "Harbor Outfitters LLC",
+      "full_name": "Harbor Outfitters LLC",
+      "role": "Plaintiff (distributor / buyer)",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Harbor Outfitters LLC sues its supplier Coastal Provisions LLC and the supplier's owner, Maria Q. Jessup, for breach of a master supply agreement covering specialty food products, alleging delivery of defective goods that left $264326 owing, and seeks to enforce Maria's personal guaranty.",
+    "narrative": "On or about 2024-01-17, Harbor Outfitters LLC and Coastal Provisions LLC entered into a master supply agreement under which Coastal Provisions LLC would supply specialty food products for distribution by Harbor Outfitters LLC. The agreement was valued at roughly $2515804 over its term, and Maria Q. Jessup, the supplier's owner, personally guaranteed Coastal Provisions LLC's performance and payment obligations.\n\nBeginning around 2025-02-07, the relationship broke down over delivery of defective goods.  alleges the conduct breached the agreement and the implied warranties of merchantability and fitness, leaving approximately $264326 unpaid or unrecovered.  served a written notice of default on 2025-06-16 and, when the dispute was not resolved, covered by buying substitute goods from another supplier to keep its own customers supplied.\n\nHarbor Outfitters LLC filed suit in Sagadahoc County Superior Court asserting breach of contract, breach of warranty, and account stated against Coastal Provisions LLC, and a separate count to enforce the personal guaranty against Maria Q. Jessup.  denies liability and has counterclaimed. The matter is now in active, contested discovery.",
+    "undisputed_facts": [
+      "Harbor Outfitters LLC and Coastal Provisions LLC signed a master supply agreement on or about 2024-01-17.",
+      "Maria Q. Jessup signed a personal guaranty of Coastal Provisions LLC's obligations under the agreement.",
+      "Harbor Outfitters LLC served a written notice of default dated 2025-06-16."
+    ],
+    "disputed_facts": [
+      "Whether Coastal Provisions LLC's conduct amounted to delivery of defective goods or whether the goods and performance conformed to the agreement.",
+      "The amount, if any, owed to Harbor Outfitters LLC, alleged to be about $264326.",
+      "Whether Harbor Outfitters LLC reasonably mitigated its damages through its cover purchases.",
+      "Whether the personal guaranty is enforceable against Maria Q. Jessup."
+    ],
+    "timeline": [
+      {
+        "date": "2024-01-17",
+        "event": "Harbor Outfitters LLC and Coastal Provisions LLC executed a master supply agreement; Maria signed the guaranty."
+      },
+      {
+        "date": "2025-02-07",
+        "event": "The alleged breach (delivery of defective goods) occurred."
+      },
+      {
+        "date": "2025-06-16",
+        "event": " served a written notice of default."
+      },
+      {
+        "date": "2025-10-29",
+        "event": "Complaint filed in Bath Superior Court."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Rosa M. Greenhill",
+      "type": "witness",
+      "role": "Former employee of the defendant",
+      "relevance": "Has direct knowledge of the contract negotiations and the alleged quality problems.",
+      "contact": {
+        "phone": "(207) 555-0138",
+        "city": "Windham",
+        "state": "ME",
+        "email": "rosa.greenhill@example.com"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Summit Holdings Co.",
+      "type": "business_entity",
+      "role": "Freight and logistics company",
+      "relevance": "Carried the shipments and documents the timing and condition of deliveries.",
+      "contact": {
+        "phone": "(207) 555-0143",
+        "city": "Waterville",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Maria T. Coe",
+      "type": "witness",
+      "role": "Defendant's account manager",
+      "relevance": "Was the plaintiff's day-to-day contact and negotiated the orders and delivery schedule.",
+      "contact": {
+        "phone": "(207) 555-0153",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "maria.coe@example.org"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Riverbend Analytics LLC",
+      "type": "business_entity",
+      "role": "Substitute supplier",
+      "relevance": "The competing supplier the plaintiff turned to in mitigation after the breach; its invoices show the cover price.",
+      "contact": {
+        "phone": "(207) 555-0197",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Litigation Partner",
+    "interviewee_role": "plaintiff",
+    "date": "2025-10-29",
+    "exchanges": [
+      {
+        "topic": "The deal",
+        "question": "What was the arrangement with the supplier?",
+        "answer": "We had a master supply agreement for specialty food products, worth around $2515804 over its term. Maria, who owns the company, signed a personal guaranty, which is why we were comfortable extending credit."
+      },
+      {
+        "topic": "The breach",
+        "question": "What went wrong?",
+        "answer": "It came down to delivery of defective goods. By 2025-02-07 it was clear we had a real problem, and we are out roughly $264326. We sent a formal notice of default on 2025-06-16."
+      },
+      {
+        "topic": "Mitigation",
+        "question": "What did you do to limit the damage?",
+        "answer": "We could not leave our own customers hanging, so we sourced substitute goods from another supplier at a higher price. We kept every invoice so we can show the cover cost."
+      },
+      {
+        "topic": "The guarantor",
+        "question": "How important is the personal guaranty to you?",
+        "answer": "Very. The company may not be good for the money, so Maria's guaranty is how we actually get paid. I want to hold Maria to it."
+      },
+      {
+        "topic": "Their counterclaim",
+        "question": "They are claiming you breached. What is your view?",
+        "answer": "They say we wrongfully rejected the goods, but the goods were defective and we documented it. Their counterclaim is a pressure tactic and I want it defeated."
+      },
+      {
+        "topic": "Goal",
+        "question": "How do you want this to end?",
+        "answer": "Recover the debt and our cover costs, get a judgment against the guarantor, and beat the counterclaim. If they make a fair offer, I will settle rather than run up fees."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Recover the approximately $264326 owed plus cover and lost-profit damages from Coastal Provisions LLC.",
+      "Enforce the personal guaranty and obtain a judgment against Maria Q. Jessup as guarantor.",
+      "Defeat Coastal Provisions LLC's counterclaim for breach and wrongful rejection."
+    ],
+    "priorities": [
+      "Reaching the guarantor as a real source of recovery.",
+      "Building a clean record on damages and mitigation.",
+      "Resolving the case efficiently if a fair settlement is available."
+    ],
+    "risk_tolerance": "high",
+    "desired_outcomes": [
+      "A judgment or settlement for the debt plus cover and lost-profit damages, with prejudgment interest and fees.",
+      "Personal liability of Maria Q. Jessup under the guaranty."
+    ],
+    "non_starters": [
+      "Any resolution that releases the guarantor without paying the core debt."
+    ],
+    "constraints": {
+      "budget": "Cost-conscious; wants staged budgets and an early, realistic settlement assessment.",
+      "timeline": "Wants the case trial-ready within roughly eighteen months of filing."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Entitlement to prejudgment interest",
+      "category": "remedies",
+      "governing_law": "14 M.R.S. § 1602-B",
+      "sub_questions": [
+        "From what date does prejudgment interest run on the amounts owed?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Liability on an account stated for the unpaid invoices",
+      "category": "contract",
+      "governing_law": "Common law account stated",
+      "sub_questions": [
+        "Did the parties agree on a balance due?",
+        "Did the defendant fail to object to the statements of account?"
+      ],
+      "strength": "moderate",
+      "client_position": "The ledger reflects an agreed, unpaid balance.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Whether Coastal Provisions LLC breached the supply/distribution agreement",
+      "category": "contract",
+      "governing_law": "Common law of contract; 11 M.R.S. § 2-301",
+      "sub_questions": [
+        "Was there a valid, enforceable agreement?",
+        "Did the defendant's conduct constitute a material breach?"
+      ],
+      "strength": "strong",
+      "client_position": "The agreement was valid and the defendant materially breached it.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Enforceability of the personal guaranty against the owner",
+      "category": "contract",
+      "governing_law": "Suretyship; common law of guaranty",
+      "sub_questions": [
+        "Is the guaranty supported by consideration and properly signed?",
+        "Are there suretyship defenses that discharge the guarantor?"
+      ],
+      "strength": "moderate",
+      "client_position": "The guaranty is enforceable and the guarantor is liable for the debt.",
+      "id": "iss4"
+    },
+    {
+      "issue": "Breach of the implied warranties of merchantability and fitness",
+      "category": "contract",
+      "governing_law": "11 M.R.S. § 2-314 and § 2-315",
+      "sub_questions": [
+        "Were the goods merchantable and fit for their intended purpose?",
+        "Did the buyer rely on the seller's skill or judgment?"
+      ],
+      "strength": "moderate",
+      "client_position": "The goods were defective and unfit, breaching the implied warranties.",
+      "id": "iss5"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "John R. Birchwood",
+        "field": "Goods quality and engineering",
+        "credentials": "P.E.",
+        "retained_by": "defendant"
+      },
+      "topic": "Whether the delivered goods conformed to specification",
+      "opinion": "The goods met the applicable specifications and were fit for their ordinary purpose.",
+      "basis": "Inspection records, specifications, and sample testing."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Diego M. Ellsworth",
+        "field": "Forensic accounting",
+        "credentials": "CPA, CFF",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Damages, lost profits, and the cover differential",
+      "opinion": "The plaintiff's recoverable loss, including cover and lost profits, approximates the amount claimed.",
+      "basis": "Invoices, the account ledger, cover-purchase records, and profit margins."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Defendant's financial statements",
+      "type": "financial_record",
+      "party": "defendant",
+      "description": "The supplier's financials, relevant to collectability and the counterclaim.",
+      "id": "ev1"
+    },
+    {
+      "title": "Unpaid invoices and account ledger",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "The outstanding invoices and running account statement showing the balance due.",
+      "id": "ev2"
+    },
+    {
+      "title": "Personal guaranty",
+      "type": "contract",
+      "party": "plaintiff",
+      "description": "The guaranty signed by the owner of the supplier.",
+      "id": "ev3"
+    },
+    {
+      "title": "Email negotiations and order confirmations",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "The email record of the negotiations, purchase orders, and confirmations.",
+      "id": "ev4"
+    },
+    {
+      "title": "Executed supply/distribution agreement",
+      "type": "contract",
+      "party": "plaintiff",
+      "description": "The signed contract governing the parties' supply relationship.",
+      "id": "ev5"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Contract value",
+        "amount": 3216920,
+        "basis": "Total value of the supply/distribution agreement over its term."
+      },
+      {
+        "label": "Amount owed / claimed",
+        "amount": 579285,
+        "basis": "Unpaid invoices and the balance on the account stated."
+      },
+      {
+        "label": "Prejudgment interest",
+        "amount": 107306,
+        "basis": "Statutory prejudgment interest on the amounts owed. 14 M.R.S. § 1602-B."
+      },
+      {
+        "label": "Attorney fees and costs",
+        "amount": 224970,
+        "basis": "Estimated plaintiff-side fees and costs through trial."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "discovery",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Breach of contract",
+        "by": "Harbor Outfitters LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "Common law; 11 M.R.S. § 2-301",
+        "elements": [
+          "A valid contract",
+          "Performance by the plaintiff",
+          "Material breach by the defendant",
+          "Resulting damages"
+        ],
+        "relief_sought": "Compensatory damages of approximately $264326 plus cover and lost-profit damages",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Breach of the implied warranties of merchantability and fitness",
+        "by": "Harbor Outfitters LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "11 M.R.S. § 2-314 and § 2-315",
+        "elements": [
+          "A sale of goods by a merchant",
+          "Goods that were not merchantable or fit for purpose",
+          "Notice of the breach",
+          "Resulting damages"
+        ],
+        "relief_sought": "Damages for the defective goods and consequential loss",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Account stated",
+        "by": "Harbor Outfitters LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "Common law account stated",
+        "elements": [
+          "An account between the parties",
+          "An agreed balance due",
+          "A promise, express or implied, to pay",
+          "Nonpayment"
+        ],
+        "relief_sought": "Judgment for the agreed unpaid balance",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Enforcement of personal guaranty",
+        "by": "Harbor Outfitters LLC",
+        "against": "Maria Q. Jessup",
+        "governing_law": "Suretyship; common law of guaranty",
+        "elements": [
+          "A valid, signed guaranty",
+          "Default by the principal obligor",
+          "Consideration",
+          "Amount due under the guaranty"
+        ],
+        "relief_sought": "Judgment against the guarantor for the guaranteed debt",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Failure of conditions precedent",
+        "by": "Coastal Provisions LLC",
+        "basis": "The plaintiff did not satisfy conditions required before performance was due."
+      },
+      {
+        "defense": "Accord and satisfaction",
+        "by": "Coastal Provisions LLC",
+        "basis": "The parties resolved the disputed amounts by a later agreement and payment."
+      },
+      {
+        "defense": "Statute of limitations",
+        "by": "Coastal Provisions LLC",
+        "basis": "The claims accrued more than four years before filing. 11 M.R.S. § 2-725."
+      },
+      {
+        "defense": "Failure to mitigate",
+        "by": "Coastal Provisions LLC",
+        "basis": "The plaintiff's cover purchases were unreasonable and inflated the claimed loss."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Breach of contract by the plaintiff",
+        "by": "Coastal Provisions LLC",
+        "against": "Harbor Outfitters LLC",
+        "relief": "Damages for the plaintiff's nonpayment and failure to take agreed quantities."
+      },
+      {
+        "count": 2,
+        "claim": "Wrongful rejection of conforming goods",
+        "by": "Coastal Provisions LLC",
+        "against": "Harbor Outfitters LLC",
+        "relief": "Damages for the price of goods wrongfully rejected and resale losses."
+      }
+    ],
+    "discovery": [
+      {
+        "type": "deposition",
+        "propounding_party": "Harbor Outfitters LLC",
+        "responding_party": "the defendant's account manager",
+        "served_date": "2025-07-06",
+        "status": "served",
+        "description": "Deposition of the account manager who handled the orders."
+      },
+      {
+        "type": "request_for_production",
+        "propounding_party": "Harbor Outfitters LLC",
+        "responding_party": "Coastal Provisions LLC",
+        "served_date": "2025-04-12",
+        "status": "objected",
+        "description": "Requests for the defendant's financial statements and accounting records."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Harbor Outfitters LLC",
+        "responding_party": "Maria Q. Jessup",
+        "served_date": "2025-07-04",
+        "status": "outstanding",
+        "description": "Deposition of the owner and personal guarantor."
+      },
+      {
+        "type": "subpoena",
+        "propounding_party": "Harbor Outfitters LLC",
+        "responding_party": "the plaintiff's commercial bank",
+        "served_date": "2025-05-19",
+        "status": "served",
+        "description": "Subpoena to the bank for payment and receivable records."
+      },
+      {
+        "type": "request_for_production",
+        "propounding_party": "Harbor Outfitters LLC",
+        "responding_party": "Coastal Provisions LLC",
+        "served_date": "2025-05-14",
+        "status": "served",
+        "description": "Requests for the email negotiations and order communications."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Coastal Provisions LLC",
+        "responding_party": "Harbor Outfitters LLC",
+        "served_date": "2025-06-15",
+        "status": "served",
+        "description": "Deposition of the plaintiff's principal."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to compel production of the defendant's financials",
+        "type": "discovery",
+        "movant": "Harbor Outfitters LLC",
+        "filed_date": "2025-06-08",
+        "status": "granted",
+        "relief": "An order compelling the defendant's financial statements and ledgers."
+      },
+      {
+        "title": "Motion for a protective order",
+        "type": "discovery",
+        "movant": "Coastal Provisions LLC",
+        "filed_date": "2025-06-01",
+        "status": "granted_in_part",
+        "relief": "Protection of confidential pricing and customer information."
+      },
+      {
+        "title": "Motion for partial summary judgment on the guaranty",
+        "type": "dispositive",
+        "movant": "Harbor Outfitters LLC",
+        "filed_date": "2025-10-02",
+        "status": "under_advisement",
+        "relief": "Judgment that the personal guaranty is enforceable against the guarantor."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2025-03-10",
+        "entry": "Complaint and demand for jury trial filed.",
+        "party": "Harbor Outfitters LLC"
+      },
+      {
+        "date": "2025-04-13",
+        "entry": "Answer and counterclaims filed.",
+        "party": "Coastal Provisions LLC"
+      },
+      {
+        "date": "2025-05-14",
+        "entry": "Scheduling order entered; discovery deadline set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-06-05",
+        "entry": "Order denying the motion to dismiss.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-07-09",
+        "entry": "Order compelling production of the defendant's financials.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-18",
+        "entry": "Cross-motions for summary judgment on the guaranty briefed.",
+        "party": "Harbor Outfitters LLC"
+      },
+      {
+        "date": "2025-11-16",
+        "entry": "Discovery continues; expert disclosures exchanged.",
+        "party": "the court"
+      }
+    ],
+    "trial": {
+      "jury": false,
+      "estimated_days": 5,
+      "scheduled_date": "2026-11-24"
+    }
+  },
+  "facts": {
+    "contract_type": "a master supply agreement",
+    "goods": "specialty food products",
+    "contract_date": "2024-01-17",
+    "contract_value": 2515804,
+    "breach_type": "delivery of defective goods",
+    "breach_date": "2025-02-07",
+    "amount_owed": 264326,
+    "guaranty_signed": true,
+    "notice_of_default_date": "2025-06-16",
+    "cure_period_expired": true
+  }
+}

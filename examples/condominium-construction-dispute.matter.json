@@ -1,0 +1,657 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "condominium-construction-dispute",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-914983",
+    "practice_area": "real_estate",
+    "title": "Riverbend Analytics LLC v. Coastal Provisions LLC et al.",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court"
+    },
+    "case_type": "condominium",
+    "filing_date": "2025-05-17",
+    "status": "active",
+    "summary": "Riverbend Analytics LLC, the unit owners' association for Granite Wharf Condominiums (a phased 110-unit community), sues the declarant Coastal Provisions LLC and its general contractor Summit Outfitters LLC over roof and building-envelope leaks in the common elements, and forecloses an assessment lien against delinquent unit owner Ingrid B. Kingsley.",
+    "event_date": "2023-12-30",
+    "docket_number": "SAG-CV-2025-421"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "organization",
+      "organization_name": "Riverbend Analytics LLC",
+      "full_name": "Riverbend Analytics LLC",
+      "role": "Plaintiff unit owners' association",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174"
+    },
+    "defendant": {
+      "entity_type": "organization",
+      "organization_name": "Coastal Provisions LLC",
+      "full_name": "Coastal Provisions LLC",
+      "role": "Defendant declarant/developer",
+      "address": "46 Lighthouse Drive",
+      "city": "Camden",
+      "state": "ME",
+      "zip": "04009",
+      "phone": "(207) 555-0130"
+    },
+    "defendant_2": {
+      "entity_type": "organization",
+      "organization_name": "Summit Outfitters LLC",
+      "full_name": "Summit Outfitters LLC",
+      "role": "Defendant general contractor",
+      "address": "425 Tidewater Lane",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04029",
+      "phone": "(207) 555-0180"
+    },
+    "other_party": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Delinquent unit owner (assessment-lien count)",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "ssn_last4": "4744"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Omar",
+      "middle_name": "W",
+      "last_name": "Loe",
+      "full_name": "Omar W. Loe",
+      "role": "Attorney for the client",
+      "address": "62 Tidewater Lane",
+      "city": "Waterville",
+      "state": "ME",
+      "zip": "04072",
+      "phone": "(207) 555-0187",
+      "email": "omar.loe@example.com",
+      "date_of_birth": "1995-10-25",
+      "ssn_last4": "9358",
+      "bar_number": "4078",
+      "organization_name": "Greenhill Law Offices"
+    },
+    "client": {
+      "entity_type": "organization",
+      "organization_name": "Riverbend Analytics LLC",
+      "full_name": "Riverbend Analytics LLC",
+      "role": "Plaintiff unit owners' association",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Riverbend Analytics LLC, the unit owners' association for Granite Wharf Condominiums (a phased 110-unit community), sues the declarant Coastal Provisions LLC and its general contractor Summit Outfitters LLC over roof and building-envelope leaks in the common elements, and forecloses an assessment lien against delinquent unit owner Ingrid B. Kingsley.",
+    "narrative": "Granite Wharf Condominiums is a phased 110-unit community. The declarant, Coastal Provisions LLC, created the condominium under the Maine Condominium Act, 33 M.R.S. ch. 31, recorded the declaration and bylaws, and controlled the association's board until turning the project over to the unit owners on or about 2023-12-30. Summit Outfitters LLC served as the general contractor for the construction.\n\nAfter turnover, the association's building-envelope consultant documented roof and building-envelope leaks affecting the common elements. The association alleges these defects existed at construction, that the declarant breached its statutory and express warranties against structural defects, and that the declarant-controlled board failed to fund reserves while it ran the association. The estimated cost to repair the common elements, together with a reserve shortfall of about $689078 and a special assessment of about $369985, has fallen on the unit owners.\n\nActing under 33 M.R.S. § 1603-102(a)(4), the association sued Coastal Provisions LLC and Summit Outfitters LLC in Sagadahoc County Superior Court to fund the repairs and recover its litigation expenses and attorney fees. In the same action, the association seeks to foreclose its assessment lien against Ingrid B. Kingsley, who owns a unit and owes roughly $32995 in unpaid assessments. The matter is in active, contested discovery.",
+    "undisputed_facts": [
+      "Coastal Provisions LLC was the declarant of Granite Wharf Condominiums and recorded the declaration and bylaws.",
+      "Declarant control of the association transitioned to the unit owners on or about 2023-12-30.",
+      "Ingrid B. Kingsley owns a unit at Granite Wharf Condominiums and has not paid all assessments levied against the unit."
+    ],
+    "disputed_facts": [
+      "Whether the roof and building-envelope leaks are construction defects chargeable to the declarant and contractor or normal wear and owner-maintenance items.",
+      "Whether the declarant's warranties against structural defects were validly disclaimed and whether any claim is barred by limitations or repose.",
+      "Whether an arbitration clause in the declaration compels arbitration of the association's claims.",
+      "The amount of the assessment lien, including interest and reasonable attorney fees, and its priority against the unit owner's mortgage lender."
+    ],
+    "timeline": [
+      {
+        "date": "2023-12-30",
+        "event": "Declarant control of the Granite Wharf Condominiums association transitioned to the unit owners."
+      },
+      {
+        "date": "2025-05-17",
+        "event": "Complaint filed in Bath Superior Court asserting defect claims and foreclosing the assessment lien."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Municipal Building Department",
+      "type": "government_agency",
+      "role": "Local code authority",
+      "relevance": "Issued the building permits and certificates of occupancy and holds inspection records.",
+      "contact": {
+        "phone": "(207) 555-0131",
+        "city": "Orono",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Northstar Partners Corp.",
+      "type": "insurer",
+      "role": "Developer's liability insurer",
+      "relevance": "May owe a defense and indemnity to the declarant and contractor for the defect claims.",
+      "contact": {
+        "phone": "(207) 555-0193",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Carmen F. Fairbanks",
+      "type": "expert",
+      "role": "Association's building-envelope consultant",
+      "relevance": "Investigated the common-element defects and prepared the envelope and moisture reports.",
+      "contact": {
+        "phone": "(207) 555-0196",
+        "city": "Belfast",
+        "state": "ME",
+        "email": "carmen.fairbanks@example.com"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Pine Tree Community Bank",
+      "type": "financial_institution",
+      "role": "Declarant's construction lender",
+      "relevance": "Financed construction of the condominium and holds related records.",
+      "contact": {
+        "phone": "(207) 555-0197",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Litigation Attorney",
+    "interviewee_role": "plaintiff",
+    "date": "2025-05-17",
+    "exchanges": [
+      {
+        "topic": "Role",
+        "question": "Who am I speaking with on behalf of the association?",
+        "answer": "I am the board president of the Granite Wharf Condominiums unit owners' association. The board voted to authorize this suit on behalf of all the unit owners."
+      },
+      {
+        "topic": "Defects",
+        "question": "What is wrong with the buildings?",
+        "answer": "Our building-envelope consultant found roof and building-envelope leaks in the common elements. It traces back to how the project was built, and the cost to fix it is enormous."
+      },
+      {
+        "topic": "Turnover",
+        "question": "What happened when the developer turned the association over to you?",
+        "answer": "The declarant ran our board until about 2023-12-30. By the time we took over, the reserves were short by roughly $689078 and the problems were already there."
+      },
+      {
+        "topic": "Assessments",
+        "question": "Why is one unit owner named as a defendant?",
+        "answer": "One owner stopped paying and now owes about $32995. We recorded our lien and need to foreclose it so the rest of the owners are not stuck carrying that unit."
+      },
+      {
+        "topic": "Arbitration",
+        "question": "Does the declaration require arbitration?",
+        "answer": "We are not sure. There is language in the declaration the developer may try to use to push us into arbitration, and we need your read on whether it applies."
+      },
+      {
+        "topic": "Goal",
+        "question": "What does a good outcome look like?",
+        "answer": "Get the declarant and contractor to pay for the repairs, recover our attorney fees, collect the delinquent assessments, and settle the arbitration question early."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Fund the common-element repairs by holding the declarant and the general contractor liable for the construction defects.",
+      "Recover the association's litigation expenses and reasonable attorney fees from the declarant.",
+      "Collect the delinquent assessments by foreclosing the association's assessment lien against the unit.",
+      "Resolve early whether any arbitration clause in the declaration compels arbitration of the claims."
+    ],
+    "priorities": [
+      "Establishing declarant and contractor liability for the defects.",
+      "Protecting the unit owners from further special assessments.",
+      "An efficient, well-sequenced discovery and expert plan."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "A judgment or settlement funding the repairs, plus the association's fees and costs.",
+      "A foreclosure judgment on the assessment lien with interest and attorney fees."
+    ],
+    "non_starters": [
+      "Any resolution that leaves the unit owners to fund the declarant's construction defects."
+    ],
+    "constraints": {
+      "budget": "Adequate through trial, but a sensible settlement is preferred over a prolonged fight.",
+      "timeline": "Wants the defect claims resolved before the next assessment cycle and the lien foreclosed promptly."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Enforcement of the assessment lien and recovery of attorney fees",
+      "category": "real_estate",
+      "governing_law": "33 M.R.S. § 1603-116",
+      "sub_questions": [
+        "Was the lien perfected by recording the declaration?",
+        "Is the foreclosure within the six-year enforcement limit, and are reasonable attorney fees recoverable?"
+      ],
+      "strength": "strong",
+      "client_position": "The recorded declaration perfected the lien, the claim is timely, and reasonable attorney fees are recoverable.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Declarant liability for the association's litigation expenses and attorney fees",
+      "category": "real_estate",
+      "governing_law": "33 M.R.S. § 1603-111",
+      "sub_questions": [
+        "May the association recover its litigation costs and fees from the declarant?"
+      ],
+      "strength": "moderate",
+      "client_position": "The declarant must bear the association's litigation expenses and attorney fees.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Whether an arbitration clause in the declaration compels arbitration",
+      "category": "real_estate",
+      "governing_law": "14 M.R.S. § 5927; 33 M.R.S. § 1603-116",
+      "sub_questions": [
+        "Does the declaration contain an enforceable agreement to arbitrate?",
+        "Does it reach the association's statutory defect and lien claims?"
+      ],
+      "strength": "unknown",
+      "client_position": "Any arbitration clause does not compel arbitration of the association's statutory claims.",
+      "id": "iss3"
+    },
+    {
+      "issue": "The association's standing to sue on behalf of the unit owners",
+      "category": "real_estate",
+      "governing_law": "33 M.R.S. § 1603-102(a)(4)",
+      "sub_questions": [
+        "May the association assert claims on matters affecting the common elements?",
+        "Was the suit properly authorized by the board?"
+      ],
+      "strength": "strong",
+      "client_position": "The association has statutory standing to sue on behalf of all unit owners as to the common elements.",
+      "id": "iss4"
+    },
+    {
+      "issue": "Declarant-control transition period and fiduciary duties of a declarant-appointed board",
+      "category": "real_estate",
+      "governing_law": "33 M.R.S. § 1603-103",
+      "sub_questions": [
+        "Did the declarant-appointed board owe and breach fiduciary duties during declarant control?",
+        "Did it fail to fund adequate reserves before turnover?"
+      ],
+      "strength": "moderate",
+      "client_position": "The declarant-controlled board breached its fiduciary duties by underfunding reserves before turnover.",
+      "id": "iss5"
+    },
+    {
+      "issue": "Declarant tort and contract liability for the common-element defects",
+      "category": "real_estate",
+      "governing_law": "33 M.R.S. § 1603-111",
+      "sub_questions": [
+        "Is the declarant answerable in tort and contract for the defects?",
+        "Did the declarant's conduct cause the common-element damage?"
+      ],
+      "strength": "moderate",
+      "client_position": "The declarant is liable in tort and contract for the construction defects in the common elements.",
+      "id": "iss6"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Beatrice R. Birchwood",
+        "field": "Building-envelope architecture",
+        "credentials": "AIA, RA",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Causes of the common-element water intrusion and envelope failures",
+      "opinion": "The common-element defects result from deficient original design and construction, not maintenance.",
+      "basis": "Site investigation, water testing, and review of the construction documents."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Diego M. Ellsworth",
+        "field": "Construction cost estimating",
+        "credentials": "CPE",
+        "retained_by": "defendant"
+      },
+      "topic": "Reasonable cost to repair the alleged defects",
+      "opinion": "The association's repair scope and cost estimate are overstated for the conditions observed.",
+      "basis": "Independent quantity takeoff and current unit-cost data."
+    },
+    {
+      "id": "exp3",
+      "expert": {
+        "name": "Jane M. Greenhill",
+        "field": "Reserve-study analysis",
+        "credentials": "RS",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Adequacy of reserve funding before and after turnover",
+      "opinion": "The association's reserves were materially underfunded during declarant control.",
+      "basis": "Reserve study, component inventory, and the association's funding history."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Construction contracts and plans",
+      "type": "contract",
+      "party": "defendant",
+      "description": "The declarant-contractor construction contracts and the approved building plans and specifications.",
+      "id": "ev1"
+    },
+    {
+      "title": "Warranty correspondence",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "Correspondence asserting and responding to the warranty claims against the declarant.",
+      "id": "ev2"
+    },
+    {
+      "title": "Recorded declaration and bylaws",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "The recorded condominium declaration and bylaws establishing the regime and the assessment lien.",
+      "id": "ev3"
+    },
+    {
+      "title": "Association financial statements",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "The association's financial statements and budgets before and after turnover.",
+      "id": "ev4"
+    },
+    {
+      "title": "Building-envelope and engineering reports",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "The consultant's envelope and the engineer's structural reports on the common-element defects.",
+      "id": "ev5"
+    },
+    {
+      "title": "Assessment ledger and recorded lien",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "The unit's assessment ledger and the recorded assessment lien on the delinquent unit.",
+      "id": "ev6"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Estimated common-element repair cost",
+        "amount": 897790,
+        "basis": "Engineer's and consultant's estimated cost to remediate the defects."
+      },
+      {
+        "label": "Unpaid assessments and attorney fees on the lien count",
+        "amount": 66875,
+        "basis": "Delinquent assessments plus interest and reasonable attorney fees under § 1603-116."
+      },
+      {
+        "label": "Warranty-claim damages",
+        "amount": 1834618,
+        "basis": "Damages claimed for breach of the declarant warranties against structural defects."
+      },
+      {
+        "label": "Reserve shortfall",
+        "amount": 616129,
+        "basis": "Reserve-study deficit attributable to the declarant-control period."
+      },
+      {
+        "label": "Special assessment levied for repairs",
+        "amount": 1285341,
+        "basis": "Special assessment adopted by the association to fund common-element repairs."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "discovery",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Breach of declarant warranties against structural defects",
+        "by": "Riverbend Analytics LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "33 M.R.S. § 1604-113 and § 1604-114",
+        "elements": [
+          "A declarant subject to the implied and express warranties",
+          "Structural defects in the common elements",
+          "No valid disclaimer of the warranties",
+          "Resulting damage to the unit owners"
+        ],
+        "relief_sought": "Damages to repair the common elements, plus litigation expenses and attorney fees",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Negligence",
+        "by": "Riverbend Analytics LLC",
+        "against": "Summit Outfitters LLC",
+        "governing_law": "Common law; 33 M.R.S. § 1603-111",
+        "elements": [
+          "A duty of reasonable care in construction",
+          "Breach of that duty",
+          "Causation",
+          "Damage to the common elements"
+        ],
+        "relief_sought": "Compensatory damages for the cost of repair",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Breach of fiduciary duty by the declarant-controlled board",
+        "by": "Riverbend Analytics LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "33 M.R.S. § 1603-103; common law",
+        "elements": [
+          "A fiduciary duty owed by the declarant-appointed board",
+          "Breach during the declarant-control period",
+          "Causation",
+          "Damages, including underfunded reserves"
+        ],
+        "relief_sought": "Damages for the reserve shortfall and related losses",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Breach of contract",
+        "by": "Riverbend Analytics LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "Common law",
+        "elements": [
+          "A valid contract with the declarant",
+          "Performance by the association",
+          "Breach by the declarant",
+          "Resulting damages"
+        ],
+        "relief_sought": "Compensatory damages and attorney fees",
+        "strength": "moderate"
+      },
+      {
+        "count": 5,
+        "claim": "Foreclosure of the assessment lien",
+        "by": "Riverbend Analytics LLC",
+        "against": "Ingrid B. Kingsley",
+        "governing_law": "33 M.R.S. § 1603-116",
+        "elements": [
+          "A perfected assessment lien",
+          "Assessments levied and unpaid",
+          "The foreclosure is within the six-year enforcement limit"
+        ],
+        "relief_sought": "Judgment of foreclosure for the unpaid assessments, interest, and reasonable attorney fees",
+        "strength": "strong"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Failure to fund reserves",
+        "by": "Coastal Provisions LLC",
+        "basis": "The association's own failure to fund reserves and maintain the common elements caused or aggravated the claimed damage."
+      },
+      {
+        "defense": "Valid disclaimer of warranty",
+        "by": "Coastal Provisions LLC",
+        "basis": "Any implied warranties against structural defects were conspicuously and validly disclaimed in the declaration and sale documents. 33 M.R.S. § 1604-115."
+      },
+      {
+        "defense": "Lien time-barred or assessments improperly levied",
+        "by": "Ingrid B. Kingsley",
+        "basis": "The assessment lien is unenforceable as time-barred or the underlying assessments were improperly levied. 33 M.R.S. § 1603-116."
+      }
+    ],
+    "cross_claims": [
+      {
+        "claim": "Indemnification and contribution",
+        "by": "Coastal Provisions LLC",
+        "against": "Summit Outfitters LLC",
+        "basis": "If the declarant is liable for the defects, the general contractor must indemnify it for defective work the contractor performed."
+      }
+    ],
+    "discovery": [
+      {
+        "type": "deposition",
+        "propounding_party": "Coastal Provisions LLC",
+        "responding_party": "the property management company",
+        "served_date": "2025-06-20",
+        "status": "served",
+        "description": "Deposition of the association's property manager on the books and reserves."
+      },
+      {
+        "type": "subpoena",
+        "propounding_party": "Riverbend Analytics LLC",
+        "responding_party": "the developer's liability insurer",
+        "served_date": "2025-05-26",
+        "status": "served",
+        "description": "Subpoena to the developer's insurer for policies and claim records."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Riverbend Analytics LLC",
+        "responding_party": "Coastal Provisions LLC",
+        "served_date": "2025-06-10",
+        "status": "outstanding",
+        "description": "Deposition of the declarant's principal."
+      },
+      {
+        "type": "request_for_production",
+        "propounding_party": "Riverbend Analytics LLC",
+        "responding_party": "Summit Outfitters LLC",
+        "served_date": "2025-04-17",
+        "status": "objected",
+        "description": "Requests for construction records, submittals, and as-built drawings."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Riverbend Analytics LLC",
+        "responding_party": "Summit Outfitters LLC",
+        "served_date": "2025-07-13",
+        "status": "served",
+        "description": "Deposition of the general contractor's project manager."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to compel arbitration",
+        "type": "dispositive",
+        "movant": "Coastal Provisions LLC",
+        "filed_date": "2025-03-26",
+        "status": "opposed",
+        "relief": "An order compelling arbitration under the arbitration clause in the declaration, if any."
+      },
+      {
+        "title": "Motion to appoint a receiver for reserves",
+        "type": "provisional",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-06-17",
+        "status": "denied",
+        "relief": "Appointment of a receiver to safeguard and administer the association's reserve funds."
+      },
+      {
+        "title": "Motion for representative treatment",
+        "type": "pleading",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-05-19",
+        "status": "granted",
+        "relief": "Confirmation that the association may litigate the common-element claims in a representative capacity."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2025-03-01",
+        "entry": "Complaint filed asserting common-element defect claims and foreclosure of the assessment lien.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-03-24",
+        "entry": "Defendants' answers and the declarant's cross-claim against the general contractor filed.",
+        "party": "Coastal Provisions LLC"
+      },
+      {
+        "date": "2025-04-28",
+        "entry": "Scheduling order entered; discovery and expert-disclosure deadlines set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-05-21",
+        "entry": "Order on the motion to compel arbitration entered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-07-20",
+        "entry": "Independent building inspection and testing of the common elements conducted.",
+        "party": "Coastal Provisions LLC"
+      },
+      {
+        "date": "2025-09-19",
+        "entry": "Association's expert reports on the defects and reserves served.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-10-25",
+        "entry": "Order on the motion for summary judgment on the assessment lien entered.",
+        "party": "the court"
+      }
+    ],
+    "trial": {
+      "jury": true,
+      "estimated_days": 5,
+      "scheduled_date": "2026-12-26"
+    }
+  },
+  "facts": {
+    "condominium_name": "Granite Wharf Condominiums",
+    "condo_type": "a phased 110-unit community",
+    "num_units": 99,
+    "common_element_defect": "roof and building-envelope leaks",
+    "declarant_turnover_date": "2023-12-30",
+    "special_assessment_amount": 369985,
+    "reserve_shortfall": 689078,
+    "unpaid_assessments": 32995,
+    "warranty_claim": true,
+    "arbitration_clause_in_declaration": false
+  }
+}

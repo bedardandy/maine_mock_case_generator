@@ -37,7 +37,7 @@
         "matter_id": { "type": "string", "description": "Stable id for this matter, e.g. 'MMC-2026-000123'." },
         "practice_area": {
           "type": "string",
-          "enum": ["family", "probate", "tax", "civil", "criminal", "business", "real_estate", "other"]
+          "enum": ["family", "probate", "tax", "civil", "criminal", "business", "real_estate", "administrative", "other"]
         },
         "title": { "type": "string", "description": "Human-readable matter caption/title." },
         "jurisdiction": {
