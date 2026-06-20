@@ -1,0 +1,300 @@
+[
+  {
+    "universe_id": "UNIV-death-cascade-0007",
+    "matter_id": "MMC-2026-129936",
+    "scenario_id": "decedent-estate-informal",
+    "canonical": {
+      "matter": {
+        "docket_number": "KEN-PE-2026-628",
+        "case_id": "MMC-2026-129936",
+        "court_county": "Kennebec",
+        "court_location": "Augusta",
+        "court_type": "Probate Court",
+        "case_type": "decedent_estate",
+        "filing_date": "2026-03-30",
+        "event_date": "2025-11-03"
+      },
+      "parties": {
+        "decedent": {
+          "full_name": "Nadia P. Loe",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "date_of_birth": "1960-01-25"
+        },
+        "personal_representative": {
+          "full_name": "Felix M. Coe",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03"
+        },
+        "attorney": {
+          "full_name": "Nadia E. Danforth",
+          "first_name": "Nadia",
+          "middle_name": "E",
+          "last_name": "Danforth",
+          "address": "341 Harbor Road",
+          "city": "Yarmouth",
+          "state": "ME",
+          "zip": "04046",
+          "phone": "(207) 555-0124",
+          "email": "nadia.danforth@example.net",
+          "date_of_birth": "1970-04-29",
+          "bar_number": "5753"
+        },
+        "plaintiff": {
+          "full_name": "Nadia P. Loe",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "date_of_birth": "1960-01-25"
+        }
+      },
+      "party": {
+        "full_name": "Felix M. Coe",
+        "first_name": "Felix",
+        "middle_name": "M",
+        "last_name": "Coe",
+        "address": "300 Pine Lane",
+        "city": "Farmington",
+        "state": "ME",
+        "zip": "04028",
+        "phone": "(207) 555-0104",
+        "email": "felix.coe@example.com",
+        "date_of_birth": "1974-08-03",
+        "signature": "Felix M. Coe"
+      },
+      "facts": {
+        "date_of_death": "2025-11-03",
+        "will_exists": false,
+        "will_date": "2021-05-16",
+        "decedent_domicile_county": "Kennebec",
+        "relationship_to_decedent": "surviving spouse",
+        "approximate_estate_value": 258927,
+        "real_property": true,
+        "num_heirs": 2,
+        "bond_required": false,
+        "probate_type": "informal probate"
+      }
+    }
+  },
+  {
+    "universe_id": "UNIV-death-cascade-0007",
+    "matter_id": "MMC-2026-444016",
+    "scenario_id": "estate-tax-706",
+    "canonical": {
+      "matter": {
+        "case_id": "MMC-2026-444016",
+        "court_county": "Cumberland",
+        "court_location": "Portland",
+        "court_type": "Probate Court / IRS / Maine Revenue Services",
+        "case_type": "estate_tax",
+        "filing_date": "2026-05-18",
+        "event_date": "2025-05-19"
+      },
+      "parties": {
+        "decedent": {
+          "full_name": "Nadia P. Loe",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "date_of_birth": "1960-01-25"
+        },
+        "personal_representative": {
+          "full_name": "Felix M. Coe",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03"
+        },
+        "attorney": {
+          "full_name": "Maria K. Kingsley",
+          "first_name": "Maria",
+          "middle_name": "K",
+          "last_name": "Kingsley",
+          "address": "231 Meadowbrook Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04002",
+          "phone": "(207) 555-0135",
+          "email": "maria.kingsley@example.com",
+          "date_of_birth": "1981-12-22",
+          "bar_number": "6473"
+        },
+        "plaintiff": {
+          "full_name": "Nadia P. Loe",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "date_of_birth": "1960-01-25"
+        }
+      },
+      "party": {
+        "full_name": "Felix M. Coe",
+        "first_name": "Felix",
+        "middle_name": "M",
+        "last_name": "Coe",
+        "address": "300 Pine Lane",
+        "city": "Farmington",
+        "state": "ME",
+        "zip": "04028",
+        "phone": "(207) 555-0104",
+        "email": "felix.coe@example.com",
+        "date_of_birth": "1974-08-03",
+        "signature": "Felix M. Coe"
+      },
+      "facts": {
+        "date_of_death": "2025-05-19",
+        "decedent_domicile_county": "Cumberland",
+        "decedent_state": "Maine",
+        "gross_estate_value": 19551562,
+        "real_property_value": 2751139,
+        "closely_held_business_value": 6372315,
+        "marketable_securities_value": 4083503,
+        "life_insurance_value": 380346,
+        "debts_and_expenses": 266946,
+        "marital_deduction": false,
+        "charitable_deduction": false,
+        "alternate_valuation_elected": true,
+        "portability_election": true,
+        "num_beneficiaries": 4,
+        "prior_taxable_gifts": false,
+        "executor_name": "Felix M. Coe",
+        "return_due_date": "2026-07-05"
+      }
+    }
+  },
+  {
+    "universe_id": "UNIV-death-cascade-0007",
+    "matter_id": "MMC-2026-717342",
+    "scenario_id": "minor-guardianship",
+    "canonical": {
+      "matter": {
+        "docket_number": "KEN-GC-2026-323",
+        "case_id": "MMC-2026-717342",
+        "court_county": "Kennebec",
+        "court_location": "Augusta",
+        "court_type": "Probate Court",
+        "case_type": "guardianship",
+        "filing_date": "2026-03-27"
+      },
+      "parties": {
+        "petitioner": {
+          "full_name": "Diego F. Jessup",
+          "first_name": "Diego",
+          "middle_name": "F",
+          "last_name": "Jessup",
+          "address": "54 Tidewater Lane",
+          "city": "Bangor",
+          "state": "ME",
+          "zip": "04048",
+          "phone": "(207) 555-0112",
+          "email": "diego.jessup@example.net",
+          "date_of_birth": "1956-02-02"
+        },
+        "respondent": {
+          "full_name": "Felix M. Coe",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03"
+        },
+        "child_1": {
+          "full_name": "Rosa B. Ellsworth",
+          "first_name": "Rosa",
+          "middle_name": "B",
+          "last_name": "Ellsworth",
+          "address": "115 Pine Lane",
+          "city": "Gorham",
+          "state": "ME",
+          "zip": "04038",
+          "phone": "(207) 555-0153",
+          "email": "rosa.ellsworth@example.com",
+          "date_of_birth": "2022-10-20"
+        },
+        "attorney": {
+          "full_name": "Wesley J. Poe",
+          "first_name": "Wesley",
+          "middle_name": "J",
+          "last_name": "Poe",
+          "address": "200 Willow Bend",
+          "city": "Waterville",
+          "state": "ME",
+          "zip": "04017",
+          "phone": "(207) 555-0175",
+          "email": "wesley.poe@example.com",
+          "date_of_birth": "1980-11-18",
+          "bar_number": "5106"
+        },
+        "plaintiff": {
+          "full_name": "Diego F. Jessup",
+          "first_name": "Diego",
+          "middle_name": "F",
+          "last_name": "Jessup",
+          "address": "54 Tidewater Lane",
+          "city": "Bangor",
+          "state": "ME",
+          "zip": "04048",
+          "phone": "(207) 555-0112",
+          "email": "diego.jessup@example.net",
+          "date_of_birth": "1956-02-02"
+        },
+        "defendant": {
+          "full_name": "Felix M. Coe",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03"
+        }
+      },
+      "party": {
+        "full_name": "Diego F. Jessup",
+        "first_name": "Diego",
+        "middle_name": "F",
+        "last_name": "Jessup",
+        "address": "54 Tidewater Lane",
+        "city": "Bangor",
+        "state": "ME",
+        "zip": "04048",
+        "phone": "(207) 555-0112",
+        "email": "diego.jessup@example.net",
+        "date_of_birth": "1956-02-02",
+        "signature": "Diego F. Jessup"
+      },
+      "facts": {
+        "petitioner_relationship": "uncle",
+        "reason_for_guardianship": "a parent's incarceration",
+        "parental_consent": true,
+        "guardianship_type": "temporary guardianship",
+        "current_living_arrangement": "the child splits time between relatives",
+        "duration": "for a temporary period subject to review",
+        "minor_count": "1"
+      }
+    }
+  }
+]

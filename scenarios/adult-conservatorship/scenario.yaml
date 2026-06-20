@@ -1,0 +1,133 @@
+id: adult-conservatorship
+title: "Petition for Guardianship and/or Conservatorship of {respondent_full_name}"
+practice_area: probate
+case_type: conservatorship
+status: pre_filing
+docket_prefix: GC
+assign_docket: true
+
+downstream:
+  repo: maine-probate-forms
+  example_forms: [GS-014, PP-201, PP-401]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Probate Court
+
+dates:
+  filing_date: {date_between: ["2025-10-01", "2026-05-15"]}
+
+parties:
+  client_role: petitioner
+  attorney: true
+  roles:
+    - {key: petitioner, label: "Petitioner (proposed guardian/conservator)"}
+    - {key: respondent, label: "Respondent (alleged incapacitated adult)"}
+
+facts:
+  respondent_relationship: {pick: ["the petitioner's mother", "the petitioner's father", "the petitioner's adult sibling", "the petitioner's spouse"]}
+  alleged_condition: {pick: ["advanced dementia", "a severe traumatic brain injury", "a serious developmental disability", "a stroke with cognitive impairment"]}
+  petition_type: {pick: ["guardianship of the person", "conservatorship of the estate", "both guardianship and conservatorship"]}
+  respondent_consents: {pick: [true, false]}
+  least_restrictive_considered: {pick: [true]}
+  estate_value: {int_between: [25000, 1200000]}
+  monthly_income: {int_between: [1200, 7000]}
+  existing_poa: {pick: [true, false]}
+  care_setting: {pick: ["lives at home with supports", "resides in a long-term care facility", "lives with the petitioner"]}
+  physician_evaluation_obtained: {pick: [true, false]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: healthcare_provider, name_kind: person, role: "Respondent's primary physician", relevance: "Treats the respondent and can speak to the nature and extent of the alleged incapacity and the level of care required."}
+    - {type: witness, name_kind: person, role: "Court visitor / guardian ad litem", relevance: "Appointed to meet with the respondent, investigate the petition, and report to the court on the respondent's circumstances and wishes."}
+    - {type: financial_institution, name_kind: bank, role: "Bank holding the respondent's accounts", relevance: "Holds the respondent's deposit and investment accounts that any conservatorship would be charged with protecting."}
+    - {type: family_member, name_kind: person, role: "Adult sibling of the petitioner", relationship: "Another adult child of the respondent", relevance: "An interested family member entitled to notice who may support or object to the petition or the choice of fiduciary."}
+    - {type: government_agency, name: "Maine Adult Protective Services", role: "Adult Protective Services", relevance: "State agency that may hold information about the respondent's safety and well-being and is an interested party in protective proceedings."}
+    - {type: healthcare_provider, name_kind: organization, role: "Long-term care facility", relevance: "Facility where the respondent may reside and that can speak to day-to-day care needs and supervision."}
+
+fact_pattern:
+  summary: "{petitioner_full_name} petitions the {court_location} Probate Court for appointment as guardian and/or conservator of {respondent_full_name}, {respondent_relationship}, who is alleged to be incapacitated by {alleged_condition_lower}, and asks the court for {petition_type_lower} limited to the authority the respondent's situation actually requires."
+  narrative:
+    - "{respondent_full_name} is {respondent_relationship}. {respondent_first} is alleged to be an incapacitated adult as a result of {alleged_condition_lower}, which has affected {respondent_first}'s ability to manage personal care and financial affairs without assistance. {respondent_first} currently {care_setting}."
+    - "{petitioner_first} has been closely involved in {respondent_first}'s life and care, and now seeks {petition_type_lower} so that someone has clear legal authority to act for {respondent_first} in a way that protects {respondent_first}'s safety, dignity, and finances. {petitioner_first} understands that any appointment must be the least restrictive means of meeting {respondent_first}'s needs and is asking only for the authority the circumstances require."
+    - "{petitioner_first} now petitions the {court_location} Probate Court under the Maine Probate Code for appointment as guardian and/or conservator of {respondent_full_name}. The respondent will be served and informed of the right to counsel and the right to be present, a court visitor or guardian ad litem may be appointed to investigate, and the petitioner asks the court to make the findings the statute requires by clear and convincing evidence before any appointment is made."
+  undisputed:
+    - "{respondent_full_name} is {respondent_relationship}."
+    - "{petitioner_full_name} seeks appointment as guardian and/or conservator of {respondent_full_name} in {county} County Probate Court."
+    - "Any appointment must be limited to the least restrictive means of meeting the respondent's needs and supported by clear and convincing evidence."
+  disputed:
+    - "Whether the respondent is an incapacitated adult within the meaning of the statute and, if so, to what extent."
+    - "Whether a less restrictive alternative, such as supported decision-making or an existing power of attorney, would adequately meet the respondent's needs."
+    - "Whether the petitioner is the appropriate person to serve and what scope of authority over the person and the estate is warranted."
+  timeline:
+    - {date: "{filing_date}", event: "Petition for appointment of a guardian and/or conservator prepared for filing in {court_location} Probate Court."}
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: petitioner
+  exchanges:
+    - {topic: "Relationship and concern", question: "How are you related to the respondent, and what has brought you in today?", answer: "The respondent is {respondent_relationship}. Over the past while it has become clear that handling everyday decisions and finances has become too much to manage safely alone, and I want to make sure there is proper authority in place to help."}
+    - {topic: "Authority needed", question: "Are you looking for authority over personal care, over finances, or both?", answer: "I have been thinking about {petition_type_lower}. I do not want more control than is necessary. I want exactly the authority needed to keep things safe and no more than that."}
+    - {topic: "Current situation", question: "Where is the respondent living now, and what does daily care look like?", answer: "Right now the respondent {care_setting}. There is a care routine in place, and my goal is to keep things as stable and dignified as possible while making sure nothing important falls through the cracks."}
+    - {topic: "Less restrictive options", question: "Have you considered whether something short of a guardianship or conservatorship would work?", answer: "Yes. We have looked at whether existing arrangements and supports could be enough, and I understand the court will want to see that we considered the least restrictive option before appointing anyone."}
+    - {topic: "Finances", question: "What does the respondent's financial picture look like?", answer: "There are accounts and some regular income and benefits that need to be protected and managed carefully, along with ordinary monthly care costs. I want everything accounted for and handled transparently."}
+    - {topic: "Family", question: "How does the rest of the family feel about this?", answer: "I have tried to keep the family informed. I would much rather have everyone on the same page than end up in a fight, and I want every interested person to receive proper notice so this is done the right way."}
+
+objectives:
+  goals:
+    - "Obtain only the authority over the respondent's person and estate that the respondent's circumstances actually require."
+    - "Protect the respondent's finances, benefits, and property from loss or mismanagement."
+    - "Safeguard the respondent's safety, health, and dignity while preserving as much independence as possible."
+    - "Ensure every interested person receives proper notice so any resulting order is sound."
+  priorities:
+    - "The respondent's safety, well-being, and dignity."
+    - "Honoring the least restrictive alternative and the respondent's own wishes wherever possible."
+    - "Protecting the respondent's finances and property."
+    - "Avoiding unnecessary family conflict."
+  risk_tolerance: low
+  desired_outcomes:
+    - "Appointment of {petitioner_first} as guardian and/or conservator with authority tailored to the respondent's needs."
+    - "A protective order that secures the respondent's finances and well-being with the least possible restriction."
+  non_starters:
+    - "Any arrangement that compromises the respondent's safety or strips away more independence than necessary."
+  constraints:
+    budget: {pick: ["Limited; the petitioner wants an efficient, low-conflict path to the authority needed.", "Modest; the petitioner is willing to retain an evaluator and a care manager but wants costs kept reasonable."]}
+    timeline: "Wants protective authority in place promptly so the respondent's care and finances are not left unmanaged."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Statutory basis for appointing a guardian of an incapacitated adult", category: probate, governing_law: "18-C M.R.S. § 5-301 and § 5-301-A", sub_questions: ["Is the respondent an incapacitated adult within the meaning of the statute?", "Do the facts support appointment of the petitioner as guardian of the person?"], strength: moderate, client_position: "The respondent's condition warrants a guardian, and the petitioner is an appropriate person to serve, limited to the authority required."}
+    - {issue: "Basis for conservatorship and a protective order over the estate", category: probate, governing_law: "18-C M.R.S. § 5-401 and § 5-409", sub_questions: ["Are the respondent's property and finances at risk without protective management?", "What scope of conservatorship or protective order is warranted?"], strength: moderate, client_position: "A conservatorship or protective order is needed to safeguard the respondent's accounts, income, and property."}
+    - {issue: "The clear-and-convincing-evidence standard and required findings", category: probate, governing_law: "18-C M.R.S. § 5-301", sub_questions: ["What findings must the court make to appoint a guardian or conservator?", "Does the evidence, including the physician's evaluation, meet the clear-and-convincing standard?"], strength: moderate, client_position: "The medical evaluation and supporting evidence establish the statutory grounds by clear and convincing evidence."}
+    - {issue: "Least restrictive alternative and supported decision-making", category: probate, governing_law: "18-C M.R.S. § 5-301-A", sub_questions: ["Would a less restrictive alternative adequately meet the respondent's needs?", "How is the requested authority limited to the least restrictive means?"], strength: moderate, client_position: "The petitioner has considered less restrictive options and seeks only the authority that the respondent's needs actually require."}
+    - {issue: "Notice and the respondent's due-process rights", category: probate, governing_law: "18-C M.R.S. § 5-305", sub_questions: ["Has the respondent been informed of the right to counsel and the right to be present?", "Have all interested persons received the notice the statute requires?"], strength: strong, client_position: "The respondent's rights to counsel and to be present will be honored, and all interested persons will be given proper notice before any hearing."}
+    - {issue: "Powers and duties of the guardian or conservator and the role of an existing power of attorney", category: probate, governing_law: "18-C M.R.S. § 5-313 and § 5-418", sub_questions: ["What powers and duties would the guardian or conservator have, and how are they limited?", "Does an existing power of attorney already address some of the respondent's needs?"], strength: moderate, client_position: "The petitioner seeks defined, limited powers and will account to the court, recognizing any existing power of attorney that already serves the respondent."}
+
+experts:
+  count: {min: 1, max: 2}
+  pool:
+    - {field: "Geriatric medicine / neuropsychology", credentials: "M.D.", retained_by: court, topic: "The respondent's capacity and functional abilities", opinion: "The respondent's condition significantly impairs the capacity to manage personal care and financial affairs without assistance.", basis: "Clinical examination, cognitive testing, and review of the medical record."}
+    - {field: "Geriatric care management", credentials: "RN, CMC", retained_by: petitioner, topic: "An appropriate, least-restrictive care plan", opinion: "A supported care plan with defined oversight meets the respondent's needs while preserving as much independence as possible.", basis: "In-home assessment, review of supports, and interviews with caregivers."}
+
+evidence:
+  count: {min: 3, max: 6}
+  pool:
+    - {title: "Physician's capacity evaluation and affidavit", type: medical_record, party: petitioner, description: "Sworn medical evaluation of the respondent's capacity and functional limitations supporting the petition."}
+    - {title: "Petition and proposed care plan", type: document, party: petitioner, description: "The petition for appointment together with a proposed plan for the respondent's care and supervision."}
+    - {title: "Financial inventory of the respondent's assets", type: financial_record, party: petitioner, description: "Itemized inventory of the respondent's accounts, property, income, and benefits to be protected."}
+    - {title: "Existing power of attorney or advance directive", type: document, party: respondent, description: "Any durable power of attorney, health care directive, or similar instrument the respondent previously executed."}
+    - {title: "Bank statements", type: financial_record, party: petitioner, description: "Recent statements for the respondent's deposit and investment accounts."}
+    - {title: "Letters from family members", type: correspondence, party: petitioner, description: "Statements from family describing the respondent's needs and views on the proposed appointment."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 2, max: 4}
+  amounts:
+    - {label: "Value of the respondent's estate to be protected", amount: {int_between: [25000, 1200000]}, basis: "Estimated total value of the respondent's accounts and property."}
+    - {label: "Respondent's monthly income and benefits", amount: {int_between: [1200, 7000]}, basis: "Monthly income from pensions, Social Security, and other benefits."}
+    - {label: "Estimated monthly care costs", amount: {int_between: [1500, 12000]}, basis: "Estimated monthly cost of the respondent's care and supervision."}
+    - {label: "Existing debts", amount: {int_between: [0, 45000]}, basis: "Outstanding debts and obligations of the respondent."}

@@ -1,0 +1,199 @@
+id: complex-civil-litigation
+title: "{plaintiff_last} et al. v. {defendant_full_name} et al."
+practice_area: civil
+case_type: civil
+status: active
+docket_prefix: CV
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, CV-067, CV-181]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+dates:
+  filing_date: {date_between: ["2025-01-10", "2025-03-01"]}
+  event_date: "{investment_date}"
+
+# A sprawling multi-party investment-fraud / breach-of-fiduciary-duty action:
+# two investors sue a closely-held company and its CEO, who in turn impleads the
+# company's outside auditor. Models deep litigation end to end.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, label: "Lead plaintiff (investor)"}
+    - {key: plaintiff_2, label: "Co-plaintiff (investor)"}
+    - {key: defendant, entity: organization, label: "Defendant company"}
+    - {key: defendant_2, label: "Defendant officer (CEO)"}
+    - {key: third_party_defendant, entity: organization, label: "Third-party defendant (outside auditor)"}
+
+facts:
+  company_name: "{defendant_full_name}"
+  deal_type: {pick: ["a private placement of preferred stock", "a convertible note financing", "a purchase of LLC membership interests", "a Series A preferred round"]}
+  investment_amount: {int_between: [250000, 6000000]}
+  investment_date: {date_between: ["2022-03-01", "2023-09-30"]}
+  misrepresentation_topic: {pick: ["revenue recognition and bookings", "customer concentration", "the status of a flagship contract", "undisclosed contingent liabilities", "the company's cash runway"]}
+  discovery_of_breach_date: {date_between: ["2024-06-01", "2024-12-31"]}
+  amount_in_controversy: {int_between: [400000, 9000000]}
+  demand_made: {pick: [true, false]}
+  class_action: {pick: [false, false, true]}
+  auditor_role: "issued the audited financial statements relied upon in the offering"
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: witness, name_kind: person, role: "Former VP of Finance", relevance: "Whistleblower who flagged the accounting irregularities before resigning."}
+    - {type: financial_institution, name_kind: bank, role: "Escrow agent", relevance: "Held the investment proceeds at closing; records trace the use of funds."}
+    - {type: government_agency, name: "Maine Office of Securities", role: "State securities regulator", relevance: "Opened a parallel inquiry into the offering."}
+    - {type: expert, name_kind: person, role: "Industry analyst", relevance: "Covered the company and can speak to market expectations."}
+    - {type: business_entity, name_kind: organization, role: "Placement agent", relevance: "Marketed the securities to the plaintiffs."}
+    - {type: witness, name_kind: person, role: "Former board member", relevance: "Attended the board meetings where the projections were approved."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name} and {plaintiff_2_full_name} invested in {deal_type} of {defendant_full_name} and now sue the company, its CEO {defendant_2_full_name}, and (by third-party complaint) its outside auditor, alleging the offering misrepresented {misrepresentation_topic}."
+  narrative:
+    - "On or about {investment_date}, {plaintiff_full_name} and {plaintiff_2_full_name} together committed roughly ${investment_amount} to {deal_type} of {defendant_full_name}, a closely-held Maine company led by its chief executive, {defendant_2_full_name}. The investment was solicited on the strength of an offering package and audited financial statements."
+    - "The plaintiffs allege that the offering materials materially misrepresented {misrepresentation_topic}, that {defendant_2_full_name} knew or recklessly disregarded the true facts, and that the audited statements prepared by {third_party_defendant_full_name} masked the problem. The plaintiffs say they discovered the misstatements around {discovery_of_breach_date}, after which the investment lost most of its value."
+    - "The plaintiffs filed suit in {county} County Superior Court seeking damages of approximately ${amount_in_controversy}. The company answered and counterclaimed, asserted cross-claims against its CEO, and filed a third-party complaint impleading {third_party_defendant_full_name}, which {auditor_role}. The matter is now in active, contested discovery."
+  undisputed:
+    - "The plaintiffs invested in {defendant_full_name} on or about {investment_date}."
+    - "{third_party_defendant_full_name} audited the financial statements used in the offering."
+    - "The investment's value declined materially after {discovery_of_breach_date}."
+  disputed:
+    - "Whether the offering materials misrepresented {misrepresentation_topic}."
+    - "Whether {defendant_2_full_name} acted with scienter or merely made an honest business judgment."
+    - "Whether the auditor's work fell below professional standards and caused the loss."
+    - "The amount of recoverable damages and whether punitive damages are available."
+
+interview:
+  interviewer: "Litigation Partner"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "The deal", question: "How did you come to invest, and how much?", answer: "We put in about ${investment_amount} into {deal_type}. We relied on their offering deck and the audited financials. {plaintiff_2_first} and I went in together."}
+    - {topic: "The problem", question: "When did you realize something was wrong?", answer: "Around {discovery_of_breach_date}. The story they told about {misrepresentation_topic} turned out to be false, and a former finance executive confirmed it."}
+    - {topic: "The auditor", question: "What is your view of the auditor's role?", answer: "Their name was on the financials we relied on. If they had done their job, this would have been caught."}
+    - {topic: "Goal", question: "What outcome do you want?", answer: "Recover what we lost, hold {defendant_2_first} accountable, and get there efficiently. We will go to trial if we must, but a sensible settlement is fine."}
+    - {topic: "Risk", question: "How do you feel about the cost and exposure of litigation?", answer: "We know it is expensive and they are fighting hard with counterclaims. We are committed but cost-conscious."}
+
+objectives:
+  goals:
+    - "Recover the plaintiffs' investment losses, approximately ${amount_in_controversy}."
+    - "Establish liability of the CEO for breach of fiduciary duty and fraud."
+    - "Preserve the third-party claim against the auditor as an additional source of recovery."
+  priorities:
+    - "Efficient, well-sequenced discovery."
+    - "Defeating the company's counterclaims."
+    - "Maximizing leverage for a favorable settlement."
+  risk_tolerance: {pick: [moderate, high]}
+  desired_outcomes:
+    - "A judgment or settlement compensating the plaintiffs' losses plus costs."
+    - "A finding (or strong settlement posture) on fiduciary breach and misrepresentation."
+  non_starters:
+    - "A walk-away that leaves the misrepresentation unaddressed."
+  constraints:
+    budget: {pick: ["Substantial but monitored; the plaintiffs want staged budgets per phase.", "Funded through trial, but settlement is preferred if value is fair."]}
+    timeline: "Wants the case trial-ready within roughly eighteen months of filing."
+
+issues:
+  count: {min: 3, max: 4}
+  pool:
+    - {issue: "Whether the offering materials contained actionable misrepresentations", category: securities, governing_law: "Common law fraud; 5 M.R.S. § 207", strength: moderate}
+    - {issue: "Whether the CEO breached fiduciary duties owed to investors", category: corporate, governing_law: "13-C M.R.S. § 831; common law", strength: moderate}
+    - {issue: "Whether the auditor is liable for negligent misrepresentation to non-client investors", category: professional_liability, governing_law: "Restatement (Second) of Torts § 552", strength: weak}
+    - {issue: "The measure and availability of damages, including punitive damages", category: remedies, governing_law: "14 M.R.S. § 1604-A", strength: moderate}
+    - {issue: "Whether any claims are time-barred", category: procedure, governing_law: "14 M.R.S. § 752", strength: weak}
+
+experts:
+  count: {min: 2, max: 4}
+  pool:
+    - {field: "Forensic accounting", credentials: "CPA, CFF", retained_by: plaintiff, topic: "Tracing of proceeds and restatement analysis", opinion: "The audited statements overstated reported results for the relevant periods.", basis: "General ledger, bank records, and audit workpapers."}
+    - {field: "Business valuation", credentials: "ASA", retained_by: plaintiff, topic: "But-for value of the investment", opinion: "The securities were worth materially less than the price paid at closing.", basis: "Market and income approaches applied to corrected financials."}
+    - {field: "Damages economics", credentials: "Ph.D.", retained_by: plaintiff, topic: "Out-of-pocket and benefit-of-the-bargain damages", opinion: "Plaintiffs' recoverable loss approximates the amount in controversy.", basis: "Event study and cash-flow modeling."}
+    - {field: "Auditing standards", credentials: "CPA", retained_by: third_party_defendant, topic: "Compliance with generally accepted auditing standards", opinion: "The audit conformed to professional standards given the information available.", basis: "Audit file and GAAS checklist."}
+    - {field: "Corporate governance", credentials: "J.D., Ph.D.", retained_by: defendant, topic: "Application of the business judgment rule", opinion: "The CEO's decisions fell within a reasonable range of business judgment.", basis: "Board minutes and contemporaneous records."}
+
+evidence:
+  count: {min: 5, max: 8}
+  pool:
+    - {title: "Securities purchase agreement", type: contract, party: plaintiff, description: "The executed agreement governing the investment."}
+    - {title: "Private offering memorandum", type: document, party: plaintiff, description: "The offering deck and PPM relied upon by the plaintiffs."}
+    - {title: "Audited financial statements", type: financial_record, party: third_party_defendant, description: "The audited statements at the center of the dispute."}
+    - {title: "Auditor workpapers", type: financial_record, party: third_party_defendant, description: "The audit file produced in discovery."}
+    - {title: "Board meeting minutes", type: document, party: defendant, description: "Minutes approving the projections and offering."}
+    - {title: "Email thread on revenue recognition", type: correspondence, party: defendant, description: "Internal emails discussing the accounting treatment."}
+    - {title: "Escrow account statements", type: financial_record, party: plaintiff, description: "Records tracing the use of the investment proceeds."}
+    - {title: "Whistleblower memorandum", type: document, party: plaintiff, description: "The former VP of Finance's internal memo flagging the issue."}
+    - {title: "Plaintiffs' expert report", type: affidavit, party: plaintiff, description: "Forensic accounting and damages report."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Plaintiffs' investment at risk", amount: {int_between: [250000, 6000000]}, basis: "Capital committed at closing."}
+    - {label: "Compensatory damages sought", amount: {int_between: [400000, 9000000]}, basis: "Out-of-pocket and benefit-of-the-bargain loss."}
+    - {label: "Punitive damages sought", amount: {int_between: [100000, 4000000]}, basis: "Alleged knowing misrepresentation."}
+    - {label: "Estimated plaintiff-side fees and costs through trial", amount: {int_between: [200000, 1500000]}, basis: "Litigation budget."}
+    - {label: "Expert witness fees", amount: {int_between: [60000, 500000]}, basis: "Retained experts."}
+
+litigation:
+  posture: discovery
+  causes_of_action:
+    - {count: 1, claim: "Breach of contract", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "14 M.R.S. § 752; common law", elements: ["A valid contract", "Performance by the plaintiffs", "Breach by the defendant", "Resulting damages"], relief_sought: "Compensatory damages of approximately ${amount_in_controversy}", strength: strong}
+    - {count: 2, claim: "Breach of fiduciary duty", by: "{plaintiff_full_name}", against: "{defendant_2_full_name}", governing_law: "13-C M.R.S. § 831; common law", elements: ["A fiduciary relationship", "Breach of the duty of loyalty or care", "Causation", "Damages"], relief_sought: "Disgorgement and compensatory damages", strength: moderate}
+    - {count: 3, claim: "Fraudulent misrepresentation", by: "{plaintiff_full_name}", against: "{defendant_2_full_name}", governing_law: "Common law fraud", elements: ["A material misrepresentation of fact", "Knowledge of falsity (scienter)", "Justifiable reliance", "Damages"], relief_sought: "Compensatory and punitive damages", strength: moderate}
+    - {count: 4, claim: "Negligent misrepresentation", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "Restatement (Second) of Torts § 552", elements: ["A false statement in the course of business", "Failure to exercise reasonable care", "Justifiable reliance", "Pecuniary loss"], relief_sought: "Compensatory damages", strength: moderate}
+    - {count: 5, claim: "Violation of the Maine Unfair Trade Practices Act", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "5 M.R.S. § 207", elements: ["An unfair or deceptive act", "In the conduct of trade or commerce", "Loss of money or property"], relief_sought: "Actual damages, attorney fees, and costs", strength: weak}
+    - {count: 6, claim: "Unjust enrichment", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "Common law", elements: ["A benefit conferred", "Appreciation of the benefit", "Inequitable retention"], relief_sought: "Restitution", strength: weak}
+  affirmative_defenses:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {defense: "Statute of limitations", by: "{defendant_full_name}", basis: "Claims accrued more than six years before filing. 14 M.R.S. § 752."}
+      - {defense: "Failure to state a claim", by: "{defendant_full_name}", basis: "The complaint does not plead fraud with particularity. M.R. Civ. P. 9(b)."}
+      - {defense: "Comparative fault", by: "{defendant_full_name}", basis: "The plaintiffs were sophisticated and failed to conduct due diligence. 14 M.R.S. § 156."}
+      - {defense: "Business judgment rule", by: "{defendant_2_full_name}", basis: "The challenged decisions were informed, good-faith business judgments."}
+      - {defense: "Waiver and estoppel", by: "{defendant_full_name}", basis: "The plaintiffs ratified the transaction by accepting later disclosures."}
+      - {defense: "Statute of frauds", by: "{defendant_full_name}", basis: "Any oral representations are unenforceable."}
+  counterclaims:
+    - {count: 1, claim: "Breach of the non-disclosure agreement", by: "{defendant_full_name}", against: "{plaintiff_full_name}", relief: "Damages and injunctive relief for disclosure of confidential information."}
+    - {count: 2, claim: "Defamation", by: "{defendant_2_full_name}", against: "{plaintiff_full_name}", relief: "Damages for allegedly false public statements about the company."}
+  cross_claims:
+    - {claim: "Indemnification and contribution", by: "{defendant_full_name}", against: "{defendant_2_full_name}", basis: "If the company is liable, the CEO must indemnify it for his own misconduct."}
+  third_party_claims:
+    - {claim: "Contribution and professional negligence", by: "{defendant_full_name}", against: "{third_party_defendant_full_name}", basis: "The auditor's negligent audit caused or contributed to any loss."}
+  discovery:
+    n: {min: 4, max: 6}
+    pick_n:
+      - {type: interrogatories, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-03-15", "2025-04-15"]}, status: responded, description: "First set of interrogatories on the offering and accounting."}
+      - {type: request_for_production, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-03-15", "2025-04-15"]}, status: objected, description: "Requests for financial records, board materials, and emails."}
+      - {type: request_for_production, propounding_party: "{plaintiff_full_name}", responding_party: "{third_party_defendant_full_name}", served_date: {date_between: ["2025-04-20", "2025-05-20"]}, status: compelled, description: "Requests for the audit workpapers."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_2_full_name}", served_date: {date_between: ["2025-06-01", "2025-07-15"]}, status: outstanding, description: "Deposition of the CEO."}
+      - {type: deposition, propounding_party: "{defendant_full_name}", responding_party: "{plaintiff_full_name}", served_date: {date_between: ["2025-06-01", "2025-07-15"]}, status: served, description: "Deposition of the lead plaintiff."}
+      - {type: request_for_admission, propounding_party: "{defendant_full_name}", responding_party: "{plaintiff_full_name}", served_date: {date_between: ["2025-05-01", "2025-06-01"]}, status: responded, description: "Admissions on diligence and reliance."}
+      - {type: subpoena, propounding_party: "{plaintiff_full_name}", responding_party: "the escrow agent", served_date: {date_between: ["2025-05-01", "2025-06-01"]}, status: served, description: "Subpoena for escrow account records."}
+      - {type: expert_disclosure, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-08-01", "2025-09-15"]}, status: served, description: "Plaintiffs' expert designations and reports."}
+  motions:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {title: "Motion to dismiss for failure to state a claim", type: dispositive, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-02-15", "2025-03-15"]}, status: denied, relief: "Dismissal of the fraud and UTPA counts."}
+      - {title: "Motion to compel production of audit workpapers", type: discovery, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-05-01", "2025-06-01"]}, status: granted, relief: "An order compelling the auditor's workpapers."}
+      - {title: "Motion for a protective order", type: discovery, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-05-01", "2025-06-01"]}, status: granted_in_part, relief: "Protection of trade-secret financial information."}
+      - {title: "Motion for partial summary judgment", type: dispositive, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-10-01", "2025-11-15"]}, status: under_advisement, relief: "Judgment on the negligent-misrepresentation count."}
+      - {title: "Motion in limine to exclude the damages expert", type: evidentiary, movant: "{defendant_full_name}", filed_date: {date_between: ["2026-02-01", "2026-03-15"]}, status: filed, relief: "Exclusion of the plaintiffs' damages model."}
+      - {title: "Motion to amend to add a punitive damages claim", type: pleading, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-09-01", "2025-10-15"]}, status: opposed, relief: "Leave to add a punitive damages demand."}
+  docket:
+    - {date: {date_between: ["2025-01-10", "2025-01-20"]}, entry: "Complaint and demand for jury trial filed.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-02-05", "2025-02-15"]}, entry: "Defendants' answer, counterclaims, and cross-claim filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-02-20", "2025-03-01"]}, entry: "Third-party complaint against the auditor filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-03-05", "2025-03-15"]}, entry: "Scheduling order entered; discovery deadline set.", party: "the court"}
+    - {date: {date_between: ["2025-04-01", "2025-04-15"]}, entry: "Order denying the motion to dismiss.", party: "the court"}
+    - {date: {date_between: ["2025-06-01", "2025-06-15"]}, entry: "Order compelling production of the audit workpapers.", party: "the court"}
+    - {date: {date_between: ["2025-09-01", "2025-09-20"]}, entry: "Plaintiffs' expert reports served; discovery continues.", party: "{plaintiff_full_name}"}
+  trial:
+    jury: {pick: [true, false]}
+    estimated_days: {int_between: [5, 15]}
+    scheduled_date: {date_between: ["2026-09-01", "2027-03-01"]}

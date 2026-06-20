@@ -26,10 +26,19 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from generator import (  # noqa: E402
+    fill_form,
+    generate_compound,
+    generate_for_form,
     generate_matter,
+    list_compounds,
+    list_forms,
+    list_probate_forms,
     list_scenarios,
+    load_form,
+    load_form_fields,
     project_to_canonical,
     validate_canonical,
+    validate_compound,
     validate_matter,
 )
 
@@ -110,7 +119,87 @@ def main() -> int:
     print("-" * 72)
     print(f"{len(rows)} scenarios, {total_runs} runs, {total_fail} failure(s).")
 
-    return 0 if total_fail == 0 else 1
+    # Concrete fills: pour a matter into each wired downstream form mapping.
+    fill_fail = 0
+    forms = list_forms()
+    if forms:
+        print()
+        print(f"{'form':<10} {'repo':<26} {'profile':<10} {'coverage':>10}  required")
+        print("-" * 72)
+        for fid in forms:
+            meta = load_form(fid)["meta"]
+            scenario = meta.get("best_scenario")
+            try:
+                plan = fill_form(generate_matter(scenario, args.seed_base), fid)
+            except Exception as exc:
+                fill_fail += 1
+                print(f"{fid:<10} ERROR: {exc}")
+                continue
+            cov = plan["coverage"]
+            req = "OK" if plan["required"]["ok"] else f"MISSING {plan['required']['missing']}"
+            if not plan["required"]["ok"]:
+                fill_fail += 1
+            print(f"{fid:<10} {meta['repo']:<26} {meta['profile']:<10} "
+                  f"{cov['filled_fields']:>3}/{cov['total_fields']:<3} ({cov['percent']:>4}%)  {req}")
+        print("-" * 72)
+        print(f"{len(forms)} wired form(s), {fill_fail} fill failure(s).")
+
+    # Compound (intertwined) matter universes.
+    compound_fail = 0
+    compounds = list_compounds()
+    if compounds:
+        print()
+        print(f"{'compound':<30} {'matters':>7} {'cast':>5} {'links':>6}  status")
+        print("-" * 72)
+        for cid in compounds:
+            ok = True
+            matters = cast = links = 0
+            for i in range(min(args.count, 3)):
+                try:
+                    compound = generate_compound(cid, args.seed_base + i)
+                except Exception as exc:
+                    ok = False
+                    print(f"{cid:<30} ERROR: {exc}")
+                    break
+                if validate_compound(compound):
+                    ok = False
+                matters = len(compound["matters"])
+                cast = len(compound["cast"])
+                links = len(compound["relationships"])
+            if not ok:
+                compound_fail += 1
+            print(f"{cid:<30} {matters:>7} {cast:>5} {links:>6}  {'PASS' if ok else 'FAIL'}")
+        print("-" * 72)
+        print(f"{len(compounds)} compound universe(s), {compound_fail} failure(s).")
+
+    # Schema-driven probate fixtures (the maine-probate-forms native fill shape).
+    probate_fail = 0
+    probate_forms = list_probate_forms()
+    if probate_forms:
+        print()
+        print(f"{'probate form':<14} {'fields':>7} {'filled':>7}  status")
+        print("-" * 72)
+        for fid in probate_forms:
+            ok = True
+            total = filled = 0
+            try:
+                for i in range(min(args.count, 3)):
+                    case = generate_for_form(fid, args.seed_base + i)
+                filled = (len(case.get("case_dict", {})) + len(case.get("narrative_facts", {}))
+                          + sum(len(v) for k, v in case.items() if k.endswith("_record") and isinstance(v, dict)))
+            except Exception as exc:
+                ok = False
+                print(f"{fid:<14} ERROR: {exc}")
+                continue
+            total = len(load_form_fields(fid))
+            if not ok:
+                probate_fail += 1
+            print(f"{fid:<14} {total:>7} {filled:>7}  {'PASS' if ok else 'FAIL'}")
+        print("-" * 72)
+        print(f"{len(probate_forms)} probate form(s), {probate_fail} failure(s).")
+
+    failed = total_fail or fill_fail or compound_fail or probate_fail
+    return 0 if not failed else 1
 
 
 if __name__ == "__main__":

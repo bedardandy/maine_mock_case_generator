@@ -9,9 +9,9 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2026-490487",
+    "matter_id": "MMC-2026-620528",
     "practice_area": "family",
-    "title": "Protection From Abuse: Olivia B. Ellsworth v. John Q. Poe",
+    "title": "Protection From Abuse: Olivia B. Ellsworth v. Maria Q. Fairbanks",
     "jurisdiction": {
       "state": "ME",
       "county": "Cumberland",
@@ -21,9 +21,9 @@
     "case_type": "protection_from_abuse",
     "filing_date": "2026-02-13",
     "status": "pre_filing",
-    "summary": "Olivia B. Ellsworth petitions the Portland District Court for a protection from abuse order against John Q. Poe, a former spouse, seeking no contact and stay-away order following a course of conduct that includes a most recent incident on 2026-05-19 at the shared residence.",
-    "event_date": "2026-05-19",
-    "docket_number": "CUM-PA-2026-199"
+    "summary": "Olivia B. Ellsworth petitions the Portland District Court for a protection from abuse order against Maria Q. Fairbanks, a current spouse, seeking no contact and exclusive use of the residence following a course of conduct that includes a most recent incident on 2026-05-21 at a public parking lot.",
+    "event_date": "2026-05-21",
+    "docket_number": "CUM-PA-2026-796"
   },
   "parties": {
     "plaintiff": {
@@ -39,39 +39,60 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "olivia.ellsworth@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
     },
     "defendant": {
       "entity_type": "person",
-      "first_name": "John",
+      "first_name": "Maria",
       "middle_name": "Q",
-      "last_name": "Poe",
-      "full_name": "John Q. Poe",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
       "role": "Defendant (person to be restrained)",
-      "address": "216 Maple Court",
-      "city": "Orono",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
       "state": "ME",
-      "zip": "04012",
-      "phone": "(207) 555-0170",
-      "email": "john.poe@example.org",
-      "date_of_birth": "1998-10-17"
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "child_1": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Minor child",
+      "date_of_birth": "2013-01-26"
+    },
+    "child_2": {
+      "entity_type": "person",
+      "first_name": "Marcus",
+      "middle_name": "W",
+      "last_name": "Roe",
+      "full_name": "Marcus W. Roe",
+      "role": "Minor child",
+      "date_of_birth": "2021-05-29"
     },
     "attorney": {
       "entity_type": "person",
-      "first_name": "Marcus",
-      "middle_name": "B",
-      "last_name": "Kingsley",
-      "full_name": "Marcus B. Kingsley",
+      "first_name": "Omar",
+      "middle_name": "W",
+      "last_name": "Loe",
+      "full_name": "Omar W. Loe",
       "role": "Attorney for the client",
-      "address": "297 Tidewater Lane",
-      "city": "Ellsworth",
+      "address": "62 Tidewater Lane",
+      "city": "Waterville",
       "state": "ME",
-      "zip": "04007",
-      "phone": "(207) 555-0128",
-      "email": "marcus.kingsley@example.com",
-      "date_of_birth": "1966-03-10",
-      "bar_number": "5744",
-      "organization_name": "Kingsley & Associates"
+      "zip": "04072",
+      "phone": "(207) 555-0187",
+      "email": "omar.loe@example.com",
+      "date_of_birth": "1995-10-25",
+      "ssn_last4": "9358",
+      "bar_number": "4078",
+      "organization_name": "Greenhill Law Offices"
     },
     "client": {
       "entity_type": "person",
@@ -86,20 +107,21 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "olivia.ellsworth@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
     }
   },
   "fact_pattern": {
-    "summary": "Olivia B. Ellsworth petitions the Portland District Court for a protection from abuse order against John Q. Poe, a former spouse, seeking no contact and stay-away order following a course of conduct that includes a most recent incident on 2026-05-19 at the shared residence.",
-    "narrative": "Olivia B. Ellsworth and John Q. Poe are connected as a former spouse. Over time, the plaintiff reports an escalating pattern of conduct by the defendant that has caused the plaintiff to fear for safety. The most recent incident occurred on 2026-05-19 at the shared residence.\n\nThe plaintiff describes prior incidents over the relationship, estimated at 5 in number, ranging from threatening statements to attempts to control the plaintiff's movements and contacts. The plaintiff seeks the court's intervention to stop the contact and establish clear, enforceable boundaries.\n\nOlivia now asks the court for no contact and stay-away order under the Maine protection from abuse statute. The plaintiff is prepared to request temporary relief on an expedited basis given the recency of the most recent incident and the ongoing concern for safety.",
+    "summary": "Olivia B. Ellsworth petitions the Portland District Court for a protection from abuse order against Maria Q. Fairbanks, a current spouse, seeking no contact and exclusive use of the residence following a course of conduct that includes a most recent incident on 2026-05-21 at a public parking lot.",
+    "narrative": "Olivia B. Ellsworth and Maria Q. Fairbanks are connected as a current spouse. Over time, the plaintiff reports an escalating pattern of conduct by the defendant that has caused the plaintiff to fear for safety. The most recent incident occurred on 2026-05-21 at a public parking lot.\n\nThe plaintiff describes prior incidents over the relationship, estimated at 2 in number, ranging from threatening statements to attempts to control the plaintiff's movements and contacts. The plaintiff seeks the court's intervention to stop the contact and establish clear, enforceable boundaries.\n\nOlivia now asks the court for no contact and exclusive use of the residence under the Maine protection from abuse statute. The plaintiff is prepared to request temporary relief on an expedited basis given the recency of the most recent incident and the ongoing concern for safety.",
     "undisputed_facts": [
-      "Olivia B. Ellsworth and John Q. Poe share a relationship as a former spouse.",
+      "Olivia B. Ellsworth and Maria Q. Fairbanks share a relationship as a current spouse.",
       "Olivia B. Ellsworth has filed, or is preparing to file, a complaint for protection from abuse in Cumberland County District Court."
     ],
     "disputed_facts": [
       "Whether the defendant's conduct meets the statutory definition of abuse warranting a protection order.",
       "The scope of relief, including whether exclusive use of the residence and temporary parental rights are warranted.",
-      "The defendant's account of the incident on 2026-05-19 at the shared residence."
+      "The defendant's account of the incident on 2026-05-21 at a public parking lot."
     ],
     "timeline": [
       {
@@ -107,48 +129,48 @@
         "event": "Complaint for protection from abuse prepared for filing in Portland District Court."
       },
       {
-        "date": "2026-05-19",
-        "event": "Most recent reported incident at the shared residence."
+        "date": "2026-05-21",
+        "event": "Most recent reported incident at a public parking lot."
       }
     ]
   },
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Desmond S. Noe",
-      "type": "witness",
-      "role": "Responding police officer",
-      "relevance": "Responded to a reported incident and may testify to observations and statements made at the scene.",
-      "contact": {
-        "phone": "(207) 555-0187",
-        "city": "Lewiston",
-        "state": "ME",
-        "email": "desmond.noe@example.net"
-      }
-    },
-    {
-      "id": "tp2",
-      "name": "Lillian K. Danforth",
-      "type": "healthcare_provider",
-      "role": "Domestic-violence advocate",
-      "relevance": "Assists the plaintiff with safety planning and connecting to community resources.",
-      "contact": {
-        "phone": "(207) 555-0131",
-        "city": "Orono",
-        "state": "ME",
-        "email": "lillian.danforth@example.net"
-      }
-    },
-    {
-      "id": "tp3",
-      "name": "Pemaquid Software Co.",
+      "name": "Penobscot Maritime Supply",
       "type": "employer",
       "role": "Plaintiff's employer",
       "relevance": "Aware of a workplace incident and relevant to a workplace stay-away provision.",
       "contact": {
-        "phone": "(207) 555-0167",
-        "city": "Bath",
+        "phone": "(207) 555-0158",
+        "city": "Orono",
         "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Beatrice C. Boe",
+      "type": "neighbor",
+      "role": "Neighbor who witnessed an incident",
+      "relevance": "Personally observed an incident and can corroborate the plaintiff's account.",
+      "contact": {
+        "phone": "(207) 555-0173",
+        "city": "Belfast",
+        "state": "ME",
+        "email": "beatrice.boe@example.net"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Lillian C. Birchwood",
+      "type": "healthcare_provider",
+      "role": "Domestic-violence advocate",
+      "relevance": "Assists the plaintiff with safety planning and connecting to community resources.",
+      "contact": {
+        "phone": "(207) 555-0115",
+        "city": "Windham",
+        "state": "ME",
+        "email": "lillian.birchwood@example.org"
       }
     }
   ],
@@ -165,7 +187,7 @@
       {
         "topic": "Most recent incident",
         "question": "Without going into more detail than you are comfortable with, what happened most recently?",
-        "answer": "The most recent incident was on 2026-05-19 at the shared residence. I felt threatened and afraid for my safety, and that is when I decided I needed a court order."
+        "answer": "The most recent incident was on 2026-05-21 at a public parking lot. I felt threatened and afraid for my safety, and that is when I decided I needed a court order."
       },
       {
         "topic": "Children",
@@ -180,7 +202,7 @@
       {
         "topic": "Relief sought",
         "question": "What outcome do you need from the court?",
-        "answer": "I need no contact and stay-away order. Most of all I want the contact to stop and to feel safe day to day."
+        "answer": "I need no contact and exclusive use of the residence. Most of all I want the contact to stop and to feel safe day to day."
       }
     ]
   },
@@ -197,7 +219,7 @@
     ],
     "risk_tolerance": "low",
     "desired_outcomes": [
-      "A granted protection order providing no contact and stay-away order.",
+      "A granted protection order providing no contact and exclusive use of the residence.",
       "Surrender of any firearms by the defendant for the duration of the order."
     ],
     "non_starters": [
@@ -211,18 +233,6 @@
   },
   "issues": [
     {
-      "issue": "Enforcement and consequences of any violation",
-      "category": "family",
-      "governing_law": "19-A M.R.S. § 4011",
-      "sub_questions": [
-        "What conduct would violate the order?",
-        "What enforcement mechanisms and penalties apply to a violation?"
-      ],
-      "strength": "strong",
-      "client_position": "Seeks clear terms so any violation can be enforced by law enforcement and the court.",
-      "id": "iss1"
-    },
-    {
       "issue": "Firearms prohibition and surrender during the order",
       "category": "family",
       "governing_law": "19-A M.R.S. § 4007(1)(A-1)",
@@ -232,7 +242,7 @@
       ],
       "strength": "moderate",
       "client_position": "Asks the court to prohibit firearm possession and order surrender for the duration of the order.",
-      "id": "iss2"
+      "id": "iss1"
     },
     {
       "issue": "Entitlement to relief on a protection from abuse complaint",
@@ -243,15 +253,39 @@
         "Which forms of relief (no contact, stay-away, residence, parental rights) are appropriate?"
       ],
       "strength": "moderate",
-      "client_position": "Seeks no contact and stay-away order based on the pattern of conduct and the most recent incident.",
+      "client_position": "Seeks no contact and exclusive use of the residence based on the pattern of conduct and the most recent incident.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Standing and commencement of the protection action",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 4005",
+      "sub_questions": [
+        "Does the plaintiff's relationship to the defendant qualify under the statute?",
+        "Is venue in Cumberland County proper?"
+      ],
+      "strength": "strong",
+      "client_position": "Qualifies to file as a current spouse and brings the action in the proper county.",
       "id": "iss3"
+    },
+    {
+      "issue": "Enforcement and consequences of any violation",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 4011",
+      "sub_questions": [
+        "What conduct would violate the order?",
+        "What enforcement mechanisms and penalties apply to a violation?"
+      ],
+      "strength": "strong",
+      "client_position": "Seeks clear terms so any violation can be enforced by law enforcement and the court.",
+      "id": "iss4"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
       "expert": {
-        "name": "Wesley B. Fairbanks",
+        "name": "Beatrice S. Danforth",
         "field": "Domestic violence dynamics",
         "credentials": "LCSW",
         "retained_by": "plaintiff"
@@ -263,10 +297,10 @@
   ],
   "evidence": [
     {
-      "title": "Witness statement affidavit",
-      "type": "affidavit",
+      "title": "Police incident report",
+      "type": "public_record",
       "party": "plaintiff",
-      "description": "Sworn statement from a witness corroborating the plaintiff's account.",
+      "description": "Report documenting law-enforcement response to a reported incident.",
       "id": "ev1"
     },
     {
@@ -282,15 +316,36 @@
       "party": "plaintiff",
       "description": "Screenshots of messages from the defendant relevant to the no-contact request.",
       "id": "ev3"
+    },
+    {
+      "title": "Photographs of injuries and property damage",
+      "type": "photo",
+      "party": "plaintiff",
+      "description": "Dated photographs the plaintiff offers to corroborate the reported incidents.",
+      "id": "ev4"
+    },
+    {
+      "title": "Witness statement affidavit",
+      "type": "affidavit",
+      "party": "plaintiff",
+      "description": "Sworn statement from a witness corroborating the plaintiff's account.",
+      "id": "ev5"
+    },
+    {
+      "title": "Emergency department medical record",
+      "type": "medical_record",
+      "party": "plaintiff",
+      "description": "Record from an ER visit relevant to a reported incident.",
+      "id": "ev6"
     }
   ],
   "facts": {
-    "relationship": "former spouse",
-    "most_recent_incident_date": "2026-05-19",
-    "incident_location": "the shared residence",
-    "prior_incidents": 5,
+    "relationship": "current spouse",
+    "most_recent_incident_date": "2026-05-21",
+    "incident_location": "a public parking lot",
+    "prior_incidents": 2,
     "firearms_present": true,
-    "requested_relief": "no contact and stay-away order",
+    "requested_relief": "no contact and exclusive use of the residence",
     "police_called": true
   }
 }

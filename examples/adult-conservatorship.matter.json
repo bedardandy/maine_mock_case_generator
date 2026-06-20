@@ -1,0 +1,391 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "adult-conservatorship",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-691783",
+    "practice_area": "probate",
+    "title": "Petition for Guardianship and/or Conservatorship of Maria Q. Fairbanks",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Probate Court"
+    },
+    "case_type": "conservatorship",
+    "filing_date": "2025-11-08",
+    "status": "pre_filing",
+    "summary": "Grace C. Roe petitions the Bath Probate Court for appointment as guardian and/or conservator of Maria Q. Fairbanks, the petitioner's mother, who is alleged to be incapacitated by a serious developmental disability, and asks the court for both guardianship and conservatorship limited to the authority the respondent's situation actually requires.",
+    "docket_number": "SAG-GC-2025-161"
+  },
+  "parties": {
+    "petitioner": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Petitioner (proposed guardian/conservator)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "respondent": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Respondent (alleged incapacitated adult)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Attorney for the client",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "ssn_last4": "4744",
+      "bar_number": "7867",
+      "organization_name": "Hawthorne Legal Group"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Petitioner (proposed guardian/conservator)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe petitions the Bath Probate Court for appointment as guardian and/or conservator of Maria Q. Fairbanks, the petitioner's mother, who is alleged to be incapacitated by a serious developmental disability, and asks the court for both guardianship and conservatorship limited to the authority the respondent's situation actually requires.",
+    "narrative": "Maria Q. Fairbanks is the petitioner's mother. Maria is alleged to be an incapacitated adult as a result of a serious developmental disability, which has affected Maria's ability to manage personal care and financial affairs without assistance. Maria currently lives with the petitioner.\n\nGrace has been closely involved in Maria's life and care, and now seeks both guardianship and conservatorship so that someone has clear legal authority to act for Maria in a way that protects Maria's safety, dignity, and finances. Grace understands that any appointment must be the least restrictive means of meeting Maria's needs and is asking only for the authority the circumstances require.\n\nGrace now petitions the Bath Probate Court under the Maine Probate Code for appointment as guardian and/or conservator of Maria Q. Fairbanks. The respondent will be served and informed of the right to counsel and the right to be present, a court visitor or guardian ad litem may be appointed to investigate, and the petitioner asks the court to make the findings the statute requires by clear and convincing evidence before any appointment is made.",
+    "undisputed_facts": [
+      "Maria Q. Fairbanks is the petitioner's mother.",
+      "Grace C. Roe seeks appointment as guardian and/or conservator of Maria Q. Fairbanks in Sagadahoc County Probate Court.",
+      "Any appointment must be limited to the least restrictive means of meeting the respondent's needs and supported by clear and convincing evidence."
+    ],
+    "disputed_facts": [
+      "Whether the respondent is an incapacitated adult within the meaning of the statute and, if so, to what extent.",
+      "Whether a less restrictive alternative, such as supported decision-making or an existing power of attorney, would adequately meet the respondent's needs.",
+      "Whether the petitioner is the appropriate person to serve and what scope of authority over the person and the estate is warranted."
+    ],
+    "timeline": [
+      {
+        "date": "2025-11-08",
+        "event": "Petition for appointment of a guardian and/or conservator prepared for filing in Bath Probate Court."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Rosa M. Greenhill",
+      "type": "witness",
+      "role": "Court visitor / guardian ad litem",
+      "relevance": "Appointed to meet with the respondent, investigate the petition, and report to the court on the respondent's circumstances and wishes.",
+      "contact": {
+        "phone": "(207) 555-0138",
+        "city": "Windham",
+        "state": "ME",
+        "email": "rosa.greenhill@example.com"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Maria K. Kingsley",
+      "type": "family_member",
+      "role": "Adult sibling of the petitioner",
+      "relationship": "Another adult child of the respondent",
+      "relevance": "An interested family member entitled to notice who may support or object to the petition or the choice of fiduciary.",
+      "contact": {
+        "phone": "(207) 555-0167",
+        "city": "Bath",
+        "state": "ME",
+        "email": "maria.kingsley@example.net"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Maine Adult Protective Services",
+      "type": "government_agency",
+      "role": "Adult Protective Services",
+      "relevance": "State agency that may hold information about the respondent's safety and well-being and is an interested party in protective proceedings.",
+      "contact": {
+        "phone": "(207) 555-0109",
+        "city": "Camden",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Cobblestone Builders Co.",
+      "type": "healthcare_provider",
+      "role": "Long-term care facility",
+      "relevance": "Facility where the respondent may reside and that can speak to day-to-day care needs and supervision.",
+      "contact": {
+        "phone": "(207) 555-0153",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Lighthouse Trust Company",
+      "type": "financial_institution",
+      "role": "Bank holding the respondent's accounts",
+      "relevance": "Holds the respondent's deposit and investment accounts that any conservatorship would be charged with protecting.",
+      "contact": {
+        "phone": "(207) 555-0173",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Intake Attorney",
+    "interviewee_role": "petitioner",
+    "date": "2025-11-08",
+    "exchanges": [
+      {
+        "topic": "Relationship and concern",
+        "question": "How are you related to the respondent, and what has brought you in today?",
+        "answer": "The respondent is the petitioner's mother. Over the past while it has become clear that handling everyday decisions and finances has become too much to manage safely alone, and I want to make sure there is proper authority in place to help."
+      },
+      {
+        "topic": "Authority needed",
+        "question": "Are you looking for authority over personal care, over finances, or both?",
+        "answer": "I have been thinking about both guardianship and conservatorship. I do not want more control than is necessary. I want exactly the authority needed to keep things safe and no more than that."
+      },
+      {
+        "topic": "Current situation",
+        "question": "Where is the respondent living now, and what does daily care look like?",
+        "answer": "Right now the respondent lives with the petitioner. There is a care routine in place, and my goal is to keep things as stable and dignified as possible while making sure nothing important falls through the cracks."
+      },
+      {
+        "topic": "Less restrictive options",
+        "question": "Have you considered whether something short of a guardianship or conservatorship would work?",
+        "answer": "Yes. We have looked at whether existing arrangements and supports could be enough, and I understand the court will want to see that we considered the least restrictive option before appointing anyone."
+      },
+      {
+        "topic": "Finances",
+        "question": "What does the respondent's financial picture look like?",
+        "answer": "There are accounts and some regular income and benefits that need to be protected and managed carefully, along with ordinary monthly care costs. I want everything accounted for and handled transparently."
+      },
+      {
+        "topic": "Family",
+        "question": "How does the rest of the family feel about this?",
+        "answer": "I have tried to keep the family informed. I would much rather have everyone on the same page than end up in a fight, and I want every interested person to receive proper notice so this is done the right way."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Obtain only the authority over the respondent's person and estate that the respondent's circumstances actually require.",
+      "Protect the respondent's finances, benefits, and property from loss or mismanagement.",
+      "Safeguard the respondent's safety, health, and dignity while preserving as much independence as possible.",
+      "Ensure every interested person receives proper notice so any resulting order is sound."
+    ],
+    "priorities": [
+      "The respondent's safety, well-being, and dignity.",
+      "Honoring the least restrictive alternative and the respondent's own wishes wherever possible.",
+      "Protecting the respondent's finances and property.",
+      "Avoiding unnecessary family conflict."
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "Appointment of Grace as guardian and/or conservator with authority tailored to the respondent's needs.",
+      "A protective order that secures the respondent's finances and well-being with the least possible restriction."
+    ],
+    "non_starters": [
+      "Any arrangement that compromises the respondent's safety or strips away more independence than necessary."
+    ],
+    "constraints": {
+      "budget": "Modest; the petitioner is willing to retain an evaluator and a care manager but wants costs kept reasonable.",
+      "timeline": "Wants protective authority in place promptly so the respondent's care and finances are not left unmanaged."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Least restrictive alternative and supported decision-making",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 5-301-A",
+      "sub_questions": [
+        "Would a less restrictive alternative adequately meet the respondent's needs?",
+        "How is the requested authority limited to the least restrictive means?"
+      ],
+      "strength": "moderate",
+      "client_position": "The petitioner has considered less restrictive options and seeks only the authority that the respondent's needs actually require.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Notice and the respondent's due-process rights",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 5-305",
+      "sub_questions": [
+        "Has the respondent been informed of the right to counsel and the right to be present?",
+        "Have all interested persons received the notice the statute requires?"
+      ],
+      "strength": "strong",
+      "client_position": "The respondent's rights to counsel and to be present will be honored, and all interested persons will be given proper notice before any hearing.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Powers and duties of the guardian or conservator and the role of an existing power of attorney",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 5-313 and § 5-418",
+      "sub_questions": [
+        "What powers and duties would the guardian or conservator have, and how are they limited?",
+        "Does an existing power of attorney already address some of the respondent's needs?"
+      ],
+      "strength": "moderate",
+      "client_position": "The petitioner seeks defined, limited powers and will account to the court, recognizing any existing power of attorney that already serves the respondent.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Statutory basis for appointing a guardian of an incapacitated adult",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 5-301 and § 5-301-A",
+      "sub_questions": [
+        "Is the respondent an incapacitated adult within the meaning of the statute?",
+        "Do the facts support appointment of the petitioner as guardian of the person?"
+      ],
+      "strength": "moderate",
+      "client_position": "The respondent's condition warrants a guardian, and the petitioner is an appropriate person to serve, limited to the authority required.",
+      "id": "iss4"
+    },
+    {
+      "issue": "The clear-and-convincing-evidence standard and required findings",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 5-301",
+      "sub_questions": [
+        "What findings must the court make to appoint a guardian or conservator?",
+        "Does the evidence, including the physician's evaluation, meet the clear-and-convincing standard?"
+      ],
+      "strength": "moderate",
+      "client_position": "The medical evaluation and supporting evidence establish the statutory grounds by clear and convincing evidence.",
+      "id": "iss5"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "John R. Birchwood",
+        "field": "Geriatric care management",
+        "credentials": "RN, CMC",
+        "retained_by": "petitioner"
+      },
+      "topic": "An appropriate, least-restrictive care plan",
+      "opinion": "A supported care plan with defined oversight meets the respondent's needs while preserving as much independence as possible.",
+      "basis": "In-home assessment, review of supports, and interviews with caregivers."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Diego M. Ellsworth",
+        "field": "Geriatric medicine / neuropsychology",
+        "credentials": "M.D.",
+        "retained_by": "court"
+      },
+      "topic": "The respondent's capacity and functional abilities",
+      "opinion": "The respondent's condition significantly impairs the capacity to manage personal care and financial affairs without assistance.",
+      "basis": "Clinical examination, cognitive testing, and review of the medical record."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Existing power of attorney or advance directive",
+      "type": "document",
+      "party": "respondent",
+      "description": "Any durable power of attorney, health care directive, or similar instrument the respondent previously executed.",
+      "id": "ev1"
+    },
+    {
+      "title": "Financial inventory of the respondent's assets",
+      "type": "financial_record",
+      "party": "petitioner",
+      "description": "Itemized inventory of the respondent's accounts, property, income, and benefits to be protected.",
+      "id": "ev2"
+    },
+    {
+      "title": "Petition and proposed care plan",
+      "type": "document",
+      "party": "petitioner",
+      "description": "The petition for appointment together with a proposed plan for the respondent's care and supervision.",
+      "id": "ev3"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Value of the respondent's estate to be protected",
+        "amount": 627788,
+        "basis": "Estimated total value of the respondent's accounts and property."
+      },
+      {
+        "label": "Respondent's monthly income and benefits",
+        "amount": 2259,
+        "basis": "Monthly income from pensions, Social Security, and other benefits."
+      },
+      {
+        "label": "Existing debts",
+        "amount": 16227,
+        "basis": "Outstanding debts and obligations of the respondent."
+      },
+      {
+        "label": "Estimated monthly care costs",
+        "amount": 8019,
+        "basis": "Estimated monthly cost of the respondent's care and supervision."
+      }
+    ]
+  },
+  "facts": {
+    "respondent_relationship": "the petitioner's mother",
+    "alleged_condition": "a serious developmental disability",
+    "petition_type": "both guardianship and conservatorship",
+    "respondent_consents": true,
+    "least_restrictive_considered": true,
+    "estate_value": 418994,
+    "monthly_income": 4250,
+    "existing_poa": true,
+    "care_setting": "lives with the petitioner",
+    "physician_evaluation_obtained": true
+  }
+}

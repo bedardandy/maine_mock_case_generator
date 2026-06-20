@@ -1,0 +1,175 @@
+id: arbitration-award-dispute
+title: "{petitioner_full_name} v. {respondent_full_name}"
+practice_area: civil
+case_type: arbitration
+status: active
+docket_prefix: CV
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, CV-067]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+# A Maine post-arbitration court fight under the Uniform Arbitration Act (14 M.R.S.
+# ch. 706). The prevailing party (petitioner / award creditor) moves to CONFIRM a
+# commercial arbitration award and reduce it to an enforceable judgment; the losing
+# party (respondent / award debtor) cross-moves to VACATE it on the narrow statutory
+# grounds (arbitrators exceeded their powers, evident partiality, refusal to hear
+# material evidence, undue means). The underlying dispute arose from a commercial or
+# construction contract with an arbitration clause. This is a RECORD-BASED, motion-
+# practice matter: there is NO jury and essentially no discovery; the court's review
+# is deferential and confined to the statutory grounds, not a re-weighing of the merits.
+parties:
+  client_role: petitioner
+  attorney: true
+  roles:
+    - {key: petitioner, entity: organization, label: "Petitioner (award creditor; moves to confirm)"}
+    - {key: respondent, entity: organization, label: "Respondent (award debtor; moves to vacate)"}
+    - {key: other_party, label: "The arbitrator / panel chair"}
+
+dates:
+  filing_date: {date_between: ["2025-06-01", "2026-04-01"]}
+  event_date: "{award_date}"
+
+facts:
+  underlying_dispute: {pick: ["a commercial construction contract", "a technology services agreement", "a manufacturing supply contract", "a commercial lease dispute", "a partnership buyout"]}
+  arbitration_forum: {pick: ["a single arbitrator under AAA Commercial Rules", "a three-arbitrator AAA panel", "an ad hoc arbitration before a retired judge"]}
+  contract_clause: {pick: ["a broad arbitration clause in the parties' contract", "an AAA arbitration provision", "a mediation-then-arbitration clause"]}
+  award_date: {date_between: ["2025-04-01", "2026-02-15"]}
+  award_amount: {int_between: [180000, 6500000]}
+  award_in_favor_of: {pick: ["the petitioner"]}
+  vacatur_ground: {pick: ["the arbitrators exceeded their powers by awarding relief outside the contract", "evident partiality of an arbitrator who failed to disclose a conflict", "the panel refused to hear material evidence", "the award was procured by undue means"]}
+  attorney_fees_in_award: {pick: [true, false]}
+  included_punitive_or_consequential: {pick: [true, false]}
+
+third_parties:
+  count: {min: 2, max: 4}
+  pool:
+    - {type: business_entity, name: "American Arbitration Association", role: "AAA case administrator", relevance: "Administered the arbitration, appointed the arbitrator, and maintains the case file and appointment record."}
+    - {type: business_entity, name_kind: organization, role: "Underlying project owner / counterparty", relevance: "The opposing party in the underlying contract dispute that produced the award now before the court."}
+    - {type: insurer, name_kind: organization, role: "Surety / bonding company", relevance: "Issued a bond related to the underlying contract and is exposed to the confirmed award."}
+    - {type: witness, name_kind: person, role: "Fact witness from the arbitration", relevance: "Testified at the arbitration hearing on the merits of the underlying dispute."}
+    - {type: business_entity, name_kind: organization, role: "The arbitrator's former firm", relevance: "Prior affiliation said to bear on the alleged failure to disclose a conflict."}
+
+fact_pattern:
+  summary: "{petitioner_full_name} moves in {county} County Superior Court to confirm a commercial arbitration award entered in its favor arising out of {underlying_dispute}, and to reduce it to an enforceable judgment; {respondent_full_name} cross-moves to vacate the award, contending {vacatur_ground_lower}."
+  narrative:
+    - "{petitioner_full_name} and {respondent_full_name} were parties to {underlying_dispute} containing {contract_clause}. Their dispute was submitted to {arbitration_forum}, which on {award_date} issued a reasoned award in favor of {award_in_favor_of} in the amount of approximately ${award_amount}."
+    - "{petitioner_full_name} now applies to the Superior Court under Maine's Uniform Arbitration Act, 14 M.R.S. ch. 706, to confirm the award and enter judgment on it. {respondent_full_name} resists confirmation and cross-applies to vacate the award, asserting that {vacatur_ground_lower}. Because judicial review of an arbitration award is narrow, the court will not reweigh the merits and may set the award aside only on the exclusive statutory grounds in 14 M.R.S. § 5938."
+    - "This is a record-based, motion-practice matter rather than a trial: there is no jury and essentially no discovery. The parties brief the cross-applications on the arbitration record, and the court decides whether to confirm under 14 M.R.S. § 5937, modify or correct under § 5939, or vacate under § 5938. The petitioner also seeks fees, costs, and post-award interest under 14 M.R.S. § 5943."
+  undisputed:
+    - "The parties agreed to arbitrate disputes arising out of {underlying_dispute} pursuant to {contract_clause}."
+    - "The dispute was heard by {arbitration_forum} and an award issued on {award_date}."
+    - "The award was entered in favor of {award_in_favor_of} in an amount of approximately ${award_amount}."
+  disputed:
+    - "Whether any of the exclusive statutory grounds to vacate the award under 14 M.R.S. § 5938 are established, including whether {vacatur_ground_lower}."
+    - "Whether the arbitrators exceeded the authority conferred by the parties' arbitration agreement."
+    - "Whether the award should be confirmed as entered, modified or corrected, or vacated."
+    - "Whether the petitioner is entitled to fees, costs, and post-award interest under 14 M.R.S. § 5943."
+  timeline:
+    - {date: "{award_date}", event: "{arbitration_forum} issues the arbitration award in favor of {award_in_favor_of}."}
+    - {date: "{filing_date}", event: "Application to confirm the award filed in {court_location} Superior Court under 14 M.R.S. § 5937."}
+
+interview:
+  interviewer: "Commercial Litigation Attorney"
+  interviewee_role: petitioner
+  exchanges:
+    - {topic: "The award", question: "What did the arbitration decide, and how much did you win?", answer: "We arbitrated our dispute over {underlying_dispute} and the arbitrator ruled for us, awarding about ${award_amount}. We want that turned into a court judgment we can actually enforce."}
+    - {topic: "The challenge", question: "What is the other side doing about it?", answer: "Instead of paying, they are trying to vacate the award. Their theory is {vacatur_ground_lower}. We think it is just a do-over attempt because they lost."}
+    - {topic: "Standard of review", question: "How hard is it for them to undo an arbitration award?", answer: "My understanding is the court does not retry the case and can only vacate on a few narrow statutory grounds. We want you to hold them to that deferential standard."}
+    - {topic: "Enforcement", question: "What is the urgency for you?", answer: "Time and money. Every month this drags on is a month we cannot collect. We want the award confirmed and reduced to judgment as quickly as possible, with interest running."}
+    - {topic: "Fees and interest", question: "Are you looking to recover anything beyond the award itself?", answer: "Yes. We want our fees and costs for the confirmation fight and the post-award interest the statute allows. We should not have to eat the cost of their losing motion."}
+    - {topic: "Settlement", question: "Would you consider resolving this short of a ruling?", answer: "Only if they pay essentially the full award promptly. We are not interested in a discount that rewards them for filing a meritless vacatur motion."}
+
+objectives:
+  goals:
+    - "Confirm the arbitration award under 14 M.R.S. § 5937 and reduce it to an enforceable judgment as quickly as possible."
+    - "Defeat the respondent's cross-motion to vacate under the deferential statutory standard of 14 M.R.S. § 5938."
+    - "Recover attorney fees, costs, and post-award interest under 14 M.R.S. § 5943."
+  priorities:
+    - "Speed: converting the award into a collectible judgment without unnecessary delay."
+    - "Holding the court to the narrow scope of review so the merits are not re-litigated."
+    - "Preserving and maximizing the monetary recovery, including interest."
+  risk_tolerance: low
+  desired_outcomes:
+    - "An order confirming the award in full and entering judgment for the award amount plus interest."
+    - "Denial of the cross-motion to vacate and an award of fees and costs to the petitioner."
+  non_starters:
+    - "Any vacatur or remand that reopens the arbitrated merits."
+    - "A negotiated discount that effectively rewards the respondent's meritless vacatur motion."
+  constraints:
+    budget: {pick: ["Focused; the client prefers a tight, brief-driven confirmation proceeding over protracted litigation.", "Cost-conscious but committed to fully defending the award and pursuing fees and interest."]}
+    timeline: "Wants the award confirmed and reduced to judgment promptly so collection and post-award interest are not delayed."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Whether the arbitration award should be confirmed and judgment entered on it", category: arbitration, governing_law: "14 M.R.S. § 5937 and § 5941", sub_questions: ["Has a timely application to confirm been made?", "Are there grounds to vacate, modify, or correct that would preclude confirmation?"], strength: strong, client_position: "The award is valid and must be confirmed and reduced to judgment under 14 M.R.S. § 5937 and § 5941."}
+    - {issue: "Whether any exclusive statutory ground to vacate the award is established", category: arbitration, governing_law: "14 M.R.S. § 5938", sub_questions: ["Was the award procured by corruption, fraud, or undue means?", "Was there evident partiality or corruption of an arbitrator, an excess of the arbitrators' powers, or a refusal to hear material evidence?"], strength: weak, client_position: "None of the narrow grounds in 14 M.R.S. § 5938 is met; the cross-motion to vacate should be denied."}
+    - {issue: "Whether the arbitrators exceeded their powers by awarding relief outside the contract", category: arbitration, governing_law: "14 M.R.S. § 5938(1)(C)", sub_questions: ["Did the award draw its essence from the parties' agreement?", "Did the arbitrators decide only matters submitted to them?"], strength: weak, client_position: "The arbitrators acted within the broad authority the parties conferred, so the 'exceeded powers' ground fails."}
+    - {issue: "Whether the award should instead be modified or corrected", category: arbitration, governing_law: "14 M.R.S. § 5939", sub_questions: ["Is there an evident miscalculation or a description error in the award?", "Can any imperfection in form be corrected without affecting the merits?"], strength: moderate, client_position: "At most a clerical correction is warranted; the substance of the award stands and should be confirmed."}
+    - {issue: "Whether the scope of judicial review permits any review of the merits or only errors of law", category: arbitration, governing_law: "14 M.R.S. § 5928", sub_questions: ["Is the issue substantively arbitrable?", "Does the deferential standard bar the court from reweighing the evidence or the arbitrators' legal conclusions?"], strength: strong, client_position: "Review is narrow; the court will not reweigh the merits, and any claimed error of law does not justify vacatur."}
+    - {issue: "Whether the petitioner is entitled to fees, costs, and post-award interest", category: arbitration, governing_law: "14 M.R.S. § 5943", sub_questions: ["Does the statute or the award support an award of fees and costs on confirmation?", "From what date does post-award interest run on the judgment?"], strength: moderate, client_position: "The petitioner is entitled to costs and post-award interest, and to fees to the extent the award and statute allow."}
+
+experts:
+  count: {min: 0, max: 1}
+  pool:
+    - {field: "Arbitration procedure and disclosure standards", credentials: "J.D.", retained_by: respondent, topic: "Arbitrator disclosure obligations and the alleged evident partiality", opinion: "The arbitrator's nondisclosure departed from accepted disclosure standards and supports a partiality challenge. (Offered to support the cross-motion to vacate; the court still reviews the award only under the narrow statutory grounds.)", basis: "Review of the AAA appointment record, the arbitrator's disclosures, and the parties' conflict correspondence."}
+
+evidence:
+  count: {min: 4, max: 7}
+  pool:
+    - {title: "Arbitration award and the arbitrator's reasoned decision", type: document, party: petitioner, description: "The signed award and the arbitrator's written reasons that the petitioner seeks to confirm."}
+    - {title: "The parties' contract with the arbitration clause", type: contract, party: petitioner, description: "The underlying agreement containing {contract_clause} that defines the scope of arbitral authority."}
+    - {title: "Arbitrator's disclosures and AAA appointment record", type: document, party: other_party, description: "The arbitrator's disclosure statements and the AAA record of appointment, central to the partiality challenge."}
+    - {title: "Arbitration hearing transcript and exhibits", type: document, party: respondent, description: "The record of the merits hearing, offered on the claim that material evidence was refused."}
+    - {title: "Correspondence about the alleged conflict", type: correspondence, party: respondent, description: "Emails and letters concerning the arbitrator's prior affiliation and the alleged failure to disclose."}
+    - {title: "Demand for arbitration and answering statement", type: document, party: petitioner, description: "The initiating demand and the answering statement framing the matters submitted to arbitration."}
+    - {title: "Proof of the amounts awarded", type: financial_record, party: petitioner, description: "Invoices, ledgers, and computations supporting the award amount and post-award interest."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Arbitration award amount", amount: {int_between: [180000, 6500000]}, basis: "The principal sum awarded by the arbitrator and sought to be confirmed."}
+    - {label: "Attorney fees and costs sought on confirmation", amount: {int_between: [15000, 200000]}, basis: "Fees and costs incurred in the confirmation proceeding."}
+    - {label: "Post-award interest", amount: {int_between: [5000, 350000]}, basis: "Interest accruing on the award under 14 M.R.S. § 5943."}
+    - {label: "Disputed punitive / consequential component", amount: {int_between: [0, 1500000]}, basis: "The portion of the award the respondent contends exceeded the arbitrators' powers."}
+    - {label: "Bond amount related to the underlying contract", amount: {int_between: [50000, 2000000]}, basis: "Surety bond on the underlying project potentially reached by the confirmed award."}
+
+litigation:
+  posture: motion_practice
+  causes_of_action:
+    - {count: 1, claim: "Application to confirm the arbitration award and for entry of judgment", by: "{petitioner_full_name}", against: "{respondent_full_name}", governing_law: "14 M.R.S. § 5937 and § 5941", elements: ["A valid arbitration agreement and a final award", "A timely application to confirm", "No basis to vacate, modify, or correct the award"], relief_sought: "An order confirming the award and entering judgment for the award amount plus post-award interest", strength: strong}
+    - {count: 2, claim: "Application, in the alternative, to modify or correct the award", by: "{petitioner_full_name}", against: "{respondent_full_name}", governing_law: "14 M.R.S. § 5939", elements: ["An evident miscalculation, a description error, or an imperfection in form", "A correction that does not affect the merits of the controversy"], relief_sought: "Correction or modification of the award and confirmation as modified", strength: moderate}
+    - {count: 3, claim: "Respondent's cross-application to vacate the award", by: "{respondent_full_name}", against: "{petitioner_full_name}", governing_law: "14 M.R.S. § 5938", elements: ["An exclusive statutory ground such as corruption, fraud, or undue means", "Evident partiality or corruption of an arbitrator", "The arbitrators exceeding their powers, or a refusal to hear material evidence"], relief_sought: "An order vacating the award and denying confirmation", strength: weak}
+  affirmative_defenses:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {defense: "The arbitrators exceeded their powers", by: "{respondent_full_name}", basis: "The award granted relief outside the parties' agreement and the matters submitted. 14 M.R.S. § 5938(1)(C)."}
+      - {defense: "Evident partiality / failure to disclose", by: "{respondent_full_name}", basis: "An arbitrator failed to disclose a conflict, showing evident partiality. 14 M.R.S. § 5938(1)(B)."}
+      - {defense: "Refusal to hear material evidence", by: "{respondent_full_name}", basis: "The panel refused to hear evidence material to the controversy, prejudicing the respondent. 14 M.R.S. § 5938(1)(D)."}
+      - {defense: "The dispute was not arbitrable", by: "{respondent_full_name}", basis: "No valid agreement to arbitrate this dispute existed, so there was no arbitral authority. 14 M.R.S. § 5928."}
+  motions:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {title: "Motion to confirm the arbitration award", type: dispositive, movant: "{petitioner_full_name}", filed_date: {date_between: ["2025-06-15", "2026-04-15"]}, status: filed, relief: "An order confirming the award under 14 M.R.S. § 5937."}
+      - {title: "Cross-motion to vacate the arbitration award", type: dispositive, movant: "{respondent_full_name}", filed_date: {date_between: ["2025-06-15", "2026-04-15"]}, status: opposed, relief: "An order vacating the award under 14 M.R.S. § 5938."}
+      - {title: "Motion to modify or correct the award", type: dispositive, movant: "{respondent_full_name}", filed_date: {date_between: ["2025-06-15", "2026-04-15"]}, status: under_advisement, relief: "Modification or correction of the award under 14 M.R.S. § 5939."}
+      - {title: "Motion for entry of judgment and post-award interest", type: procedural, movant: "{petitioner_full_name}", filed_date: {date_between: ["2025-06-15", "2026-04-15"]}, status: filed, relief: "Entry of judgment on the confirmed award with interest under 14 M.R.S. § 5943."}
+      - {title: "Motion to seal the arbitration record", type: procedural, movant: "{respondent_full_name}", filed_date: {date_between: ["2025-06-15", "2026-04-15"]}, status: granted_in_part, relief: "An order sealing confidential portions of the arbitration record filed with the court."}
+  docket:
+    - {date: {date_between: ["2025-06-01", "2025-06-20"]}, entry: "Arbitration award issued and served on the parties.", party: "{other_party_full_name}"}
+    - {date: {date_between: ["2025-07-01", "2025-07-25"]}, entry: "Application and motion to confirm the award filed.", party: "{petitioner_full_name}"}
+    - {date: {date_between: ["2025-08-05", "2025-08-30"]}, entry: "Cross-motion to vacate the award filed.", party: "{respondent_full_name}"}
+    - {date: {date_between: ["2025-09-10", "2025-10-10"]}, entry: "Briefing on the cross-applications completed.", party: "{petitioner_full_name}"}
+    - {date: {date_between: ["2025-10-20", "2025-11-20"]}, entry: "Hearing / oral argument on the cross-motions held.", party: "the court"}
+  trial:
+    jury: false
+    estimated_days: {int_between: [1, 2]}
+    scheduled_date: {date_between: ["2026-08-01", "2027-02-01"]}

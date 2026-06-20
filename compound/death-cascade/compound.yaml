@@ -1,0 +1,35 @@
+id: death-cascade
+title: "Estate and family of {decedent_full_name}"
+theme: "The death of {decedent_full_name} cascades into probate, a federal and Maine estate tax filing, and a guardianship for a surviving minor child."
+narrative: >
+  When {decedent_full_name} died, {surviving_spouse_full_name} undertook to probate the
+  estate and prepare the estate tax returns, while {grandparent_full_name} petitioned for
+  guardianship of the surviving minor child, {minor_child_full_name}. The three matters
+  share one family and one set of assets: the estate's inventory and date-of-death values
+  drive the tax filings, and the minor child is at once an heir of the estate and the ward
+  of the guardianship.
+
+cast:
+  - {cast_id: decedent, kind: person, contact: false, label: "Decedent"}
+  - {cast_id: surviving_spouse, kind: person, label: "Surviving spouse, personal representative, and respondent parent"}
+  - {cast_id: adult_child, kind: person, label: "Adult child and estate beneficiary"}
+  - {cast_id: minor_child, kind: person, child: true, label: "Minor child: estate heir and guardianship ward"}
+  - {cast_id: grandparent, kind: person, label: "Grandparent and proposed guardian"}
+
+matters:
+  - id: probate
+    scenario: decedent-estate-informal
+    roles: {decedent: decedent, personal_representative: surviving_spouse}
+    relates:
+      - {to: estate_tax, type: feeds, description: "The estate inventory and date-of-death values feed the Form 706 and 706ME filings."}
+      - {to: guardianship, type: relates_to, description: "A minor heir of this estate is the subject of the guardianship."}
+  - id: estate_tax
+    scenario: estate-tax-706
+    roles: {decedent: decedent, personal_representative: surviving_spouse}
+    relates:
+      - {to: probate, type: arises_from, description: "The estate tax returns arise from the same decedent's estate being probated."}
+  - id: guardianship
+    scenario: minor-guardianship
+    roles: {petitioner: grandparent, respondent: surviving_spouse, child_1: minor_child}
+    relates:
+      - {to: probate, type: relates_to, description: "The ward is a beneficiary of the decedent's estate."}

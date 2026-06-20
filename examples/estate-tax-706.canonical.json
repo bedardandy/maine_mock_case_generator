@@ -17,45 +17,53 @@
       "date_of_birth": "1997-10-02"
     },
     "personal_representative": {
-      "full_name": "Samuel B. Danforth",
-      "first_name": "Samuel",
+      "full_name": "Theodore B. Kingsley",
+      "first_name": "Theodore",
       "middle_name": "B",
-      "last_name": "Danforth",
+      "last_name": "Kingsley",
       "address": "467 Spruce Avenue",
       "city": "Bangor",
       "state": "ME",
       "zip": "04005",
       "phone": "(207) 555-0111",
-      "email": "samuel.danforth@example.org",
+      "email": "theodore.kingsley@example.org",
       "date_of_birth": "1975-02-05"
     },
     "attorney": {
-      "full_name": "Marcus W. Poe",
-      "first_name": "Marcus",
-      "middle_name": "W",
-      "last_name": "Poe",
-      "address": "219 Pine Lane",
+      "full_name": "Maria Q. Jessup",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Jessup",
+      "address": "32 Meadowbrook Drive",
       "city": "Yarmouth",
       "state": "ME",
       "zip": "04029",
       "phone": "(207) 555-0180",
-      "email": "marcus.poe@example.net",
+      "email": "maria.jessup@example.net",
       "date_of_birth": "1964-02-01",
       "bar_number": "7499"
+    },
+    "plaintiff": {
+      "full_name": "Olivia B. Ellsworth",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "date_of_birth": "1997-10-02"
     }
   },
   "party": {
-    "full_name": "Samuel B. Danforth",
-    "first_name": "Samuel",
+    "full_name": "Theodore B. Kingsley",
+    "first_name": "Theodore",
     "middle_name": "B",
-    "last_name": "Danforth",
+    "last_name": "Kingsley",
     "address": "467 Spruce Avenue",
     "city": "Bangor",
     "state": "ME",
     "zip": "04005",
     "phone": "(207) 555-0111",
-    "email": "samuel.danforth@example.org",
-    "date_of_birth": "1975-02-05"
+    "email": "theodore.kingsley@example.org",
+    "date_of_birth": "1975-02-05",
+    "signature": "Theodore B. Kingsley"
   },
   "facts": {
     "date_of_death": "2025-04-24",
@@ -73,7 +81,7 @@
     "portability_election": true,
     "num_beneficiaries": 5,
     "prior_taxable_gifts": true,
-    "executor_name": "Samuel B. Danforth",
+    "executor_name": "Theodore B. Kingsley",
     "return_due_date": "2026-07-10"
   }
 }

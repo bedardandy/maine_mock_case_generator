@@ -1,0 +1,664 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "complex-civil-litigation",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-538433",
+    "practice_area": "civil",
+    "title": "Roe et al. v. Coastal Outfitters LLC et al.",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court"
+    },
+    "case_type": "civil",
+    "filing_date": "2025-01-19",
+    "status": "active",
+    "summary": "Grace C. Roe and Maria Q. Fairbanks invested in a Series A preferred round of Coastal Outfitters LLC and now sue the company, its CEO Olivia D. Jessup, and (by third-party complaint) its outside auditor, alleging the offering misrepresented the status of a flagship contract.",
+    "event_date": "2023-06-03",
+    "docket_number": "SAG-CV-2025-268"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Lead plaintiff (investor)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "plaintiff_2": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Co-plaintiff (investor)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "defendant": {
+      "entity_type": "organization",
+      "organization_name": "Coastal Outfitters LLC",
+      "full_name": "Coastal Outfitters LLC",
+      "role": "Defendant company",
+      "address": "115 Pine Lane",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153"
+    },
+    "defendant_2": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "D",
+      "last_name": "Jessup",
+      "full_name": "Olivia D. Jessup",
+      "role": "Defendant officer (CEO)",
+      "address": "294 Elm Terrace",
+      "city": "Windham",
+      "state": "ME",
+      "zip": "04014",
+      "phone": "(207) 555-0174",
+      "email": "olivia.jessup@example.net",
+      "date_of_birth": "1961-04-07",
+      "ssn_last4": "6101"
+    },
+    "third_party_defendant": {
+      "entity_type": "organization",
+      "organization_name": "Summit Logistics LLC",
+      "full_name": "Summit Logistics LLC",
+      "role": "Third-party defendant (outside auditor)",
+      "address": "318 Cedar Way",
+      "city": "Belfast",
+      "state": "ME",
+      "zip": "04088",
+      "phone": "(207) 555-0168"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Omar",
+      "middle_name": "R",
+      "last_name": "Calloway",
+      "full_name": "Omar R. Calloway",
+      "role": "Attorney for the client",
+      "address": "301 Old Mill Road",
+      "city": "Auburn",
+      "state": "ME",
+      "zip": "04039",
+      "phone": "(207) 555-0131",
+      "email": "omar.calloway@example.com",
+      "date_of_birth": "1957-05-05",
+      "ssn_last4": "1341",
+      "bar_number": "5919",
+      "organization_name": "Ellsworth Advocates PC"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Lead plaintiff (investor)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe and Maria Q. Fairbanks invested in a Series A preferred round of Coastal Outfitters LLC and now sue the company, its CEO Olivia D. Jessup, and (by third-party complaint) its outside auditor, alleging the offering misrepresented the status of a flagship contract.",
+    "narrative": "On or about 2023-06-03, Grace C. Roe and Maria Q. Fairbanks together committed roughly $3131282 to a Series A preferred round of Coastal Outfitters LLC, a closely-held Maine company led by its chief executive, Olivia D. Jessup. The investment was solicited on the strength of an offering package and audited financial statements.\n\nThe plaintiffs allege that the offering materials materially misrepresented the status of a flagship contract, that Olivia D. Jessup knew or recklessly disregarded the true facts, and that the audited statements prepared by Summit Logistics LLC masked the problem. The plaintiffs say they discovered the misstatements around 2024-11-03, after which the investment lost most of its value.\n\nThe plaintiffs filed suit in Sagadahoc County Superior Court seeking damages of approximately $1628106. The company answered and counterclaimed, asserted cross-claims against its CEO, and filed a third-party complaint impleading Summit Logistics LLC, which issued the audited financial statements relied upon in the offering. The matter is now in active, contested discovery.",
+    "undisputed_facts": [
+      "The plaintiffs invested in Coastal Outfitters LLC on or about 2023-06-03.",
+      "Summit Logistics LLC audited the financial statements used in the offering.",
+      "The investment's value declined materially after 2024-11-03."
+    ],
+    "disputed_facts": [
+      "Whether the offering materials misrepresented the status of a flagship contract.",
+      "Whether Olivia D. Jessup acted with scienter or merely made an honest business judgment.",
+      "Whether the auditor's work fell below professional standards and caused the loss.",
+      "The amount of recoverable damages and whether punitive damages are available."
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Pine Tree Community Bank",
+      "type": "financial_institution",
+      "role": "Escrow agent",
+      "relevance": "Held the investment proceeds at closing; records trace the use of funds.",
+      "contact": {
+        "phone": "(207) 555-0197",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Beatrice S. Danforth",
+      "type": "expert",
+      "role": "Industry analyst",
+      "relevance": "Covered the company and can speak to market expectations.",
+      "contact": {
+        "phone": "(207) 555-0174",
+        "city": "Falmouth",
+        "state": "ME",
+        "email": "beatrice.danforth@example.org"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Lighthouse Logistics LLC",
+      "type": "business_entity",
+      "role": "Placement agent",
+      "relevance": "Marketed the securities to the plaintiffs.",
+      "contact": {
+        "phone": "(207) 555-0193",
+        "city": "Bath",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Beatrice M. Ellsworth",
+      "type": "witness",
+      "role": "Former VP of Finance",
+      "relevance": "Whistleblower who flagged the accounting irregularities before resigning.",
+      "contact": {
+        "phone": "(207) 555-0102",
+        "city": "Windham",
+        "state": "ME",
+        "email": "beatrice.ellsworth@example.com"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Litigation Partner",
+    "interviewee_role": "plaintiff",
+    "date": "2025-01-19",
+    "exchanges": [
+      {
+        "topic": "The deal",
+        "question": "How did you come to invest, and how much?",
+        "answer": "We put in about $3131282 into a Series A preferred round. We relied on their offering deck and the audited financials. Maria and I went in together."
+      },
+      {
+        "topic": "The problem",
+        "question": "When did you realize something was wrong?",
+        "answer": "Around 2024-11-03. The story they told about the status of a flagship contract turned out to be false, and a former finance executive confirmed it."
+      },
+      {
+        "topic": "The auditor",
+        "question": "What is your view of the auditor's role?",
+        "answer": "Their name was on the financials we relied on. If they had done their job, this would have been caught."
+      },
+      {
+        "topic": "Goal",
+        "question": "What outcome do you want?",
+        "answer": "Recover what we lost, hold Olivia accountable, and get there efficiently. We will go to trial if we must, but a sensible settlement is fine."
+      },
+      {
+        "topic": "Risk",
+        "question": "How do you feel about the cost and exposure of litigation?",
+        "answer": "We know it is expensive and they are fighting hard with counterclaims. We are committed but cost-conscious."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Recover the plaintiffs' investment losses, approximately $1628106.",
+      "Establish liability of the CEO for breach of fiduciary duty and fraud.",
+      "Preserve the third-party claim against the auditor as an additional source of recovery."
+    ],
+    "priorities": [
+      "Efficient, well-sequenced discovery.",
+      "Defeating the company's counterclaims.",
+      "Maximizing leverage for a favorable settlement."
+    ],
+    "risk_tolerance": "high",
+    "desired_outcomes": [
+      "A judgment or settlement compensating the plaintiffs' losses plus costs.",
+      "A finding (or strong settlement posture) on fiduciary breach and misrepresentation."
+    ],
+    "non_starters": [
+      "A walk-away that leaves the misrepresentation unaddressed."
+    ],
+    "constraints": {
+      "budget": "Substantial but monitored; the plaintiffs want staged budgets per phase.",
+      "timeline": "Wants the case trial-ready within roughly eighteen months of filing."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Whether the auditor is liable for negligent misrepresentation to non-client investors",
+      "category": "professional_liability",
+      "governing_law": "Restatement (Second) of Torts § 552",
+      "strength": "weak",
+      "id": "iss1"
+    },
+    {
+      "issue": "Whether the CEO breached fiduciary duties owed to investors",
+      "category": "corporate",
+      "governing_law": "13-C M.R.S. § 831; common law",
+      "strength": "moderate",
+      "id": "iss2"
+    },
+    {
+      "issue": "Whether any claims are time-barred",
+      "category": "procedure",
+      "governing_law": "14 M.R.S. § 752",
+      "strength": "weak",
+      "id": "iss3"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Wesley F. Poe",
+        "field": "Auditing standards",
+        "credentials": "CPA",
+        "retained_by": "third_party_defendant"
+      },
+      "topic": "Compliance with generally accepted auditing standards",
+      "opinion": "The audit conformed to professional standards given the information available.",
+      "basis": "Audit file and GAAS checklist."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Lillian W. Ellsworth",
+        "field": "Corporate governance",
+        "credentials": "J.D., Ph.D.",
+        "retained_by": "defendant"
+      },
+      "topic": "Application of the business judgment rule",
+      "opinion": "The CEO's decisions fell within a reasonable range of business judgment.",
+      "basis": "Board minutes and contemporaneous records."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Audited financial statements",
+      "type": "financial_record",
+      "party": "third_party_defendant",
+      "description": "The audited statements at the center of the dispute.",
+      "id": "ev1"
+    },
+    {
+      "title": "Escrow account statements",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "Records tracing the use of the investment proceeds.",
+      "id": "ev2"
+    },
+    {
+      "title": "Whistleblower memorandum",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "The former VP of Finance's internal memo flagging the issue.",
+      "id": "ev3"
+    },
+    {
+      "title": "Board meeting minutes",
+      "type": "document",
+      "party": "defendant",
+      "description": "Minutes approving the projections and offering.",
+      "id": "ev4"
+    },
+    {
+      "title": "Plaintiffs' expert report",
+      "type": "affidavit",
+      "party": "plaintiff",
+      "description": "Forensic accounting and damages report.",
+      "id": "ev5"
+    },
+    {
+      "title": "Auditor workpapers",
+      "type": "financial_record",
+      "party": "third_party_defendant",
+      "description": "The audit file produced in discovery.",
+      "id": "ev6"
+    },
+    {
+      "title": "Private offering memorandum",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "The offering deck and PPM relied upon by the plaintiffs.",
+      "id": "ev7"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Estimated plaintiff-side fees and costs through trial",
+        "amount": 517295,
+        "basis": "Litigation budget."
+      },
+      {
+        "label": "Compensatory damages sought",
+        "amount": 4291590,
+        "basis": "Out-of-pocket and benefit-of-the-bargain loss."
+      },
+      {
+        "label": "Plaintiffs' investment at risk",
+        "amount": 5774038,
+        "basis": "Capital committed at closing."
+      },
+      {
+        "label": "Punitive damages sought",
+        "amount": 1078682,
+        "basis": "Alleged knowing misrepresentation."
+      },
+      {
+        "label": "Expert witness fees",
+        "amount": 66324,
+        "basis": "Retained experts."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "discovery",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Breach of contract",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "14 M.R.S. § 752; common law",
+        "elements": [
+          "A valid contract",
+          "Performance by the plaintiffs",
+          "Breach by the defendant",
+          "Resulting damages"
+        ],
+        "relief_sought": "Compensatory damages of approximately $1628106",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Breach of fiduciary duty",
+        "by": "Grace C. Roe",
+        "against": "Olivia D. Jessup",
+        "governing_law": "13-C M.R.S. § 831; common law",
+        "elements": [
+          "A fiduciary relationship",
+          "Breach of the duty of loyalty or care",
+          "Causation",
+          "Damages"
+        ],
+        "relief_sought": "Disgorgement and compensatory damages",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Fraudulent misrepresentation",
+        "by": "Grace C. Roe",
+        "against": "Olivia D. Jessup",
+        "governing_law": "Common law fraud",
+        "elements": [
+          "A material misrepresentation of fact",
+          "Knowledge of falsity (scienter)",
+          "Justifiable reliance",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory and punitive damages",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Negligent misrepresentation",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "Restatement (Second) of Torts § 552",
+        "elements": [
+          "A false statement in the course of business",
+          "Failure to exercise reasonable care",
+          "Justifiable reliance",
+          "Pecuniary loss"
+        ],
+        "relief_sought": "Compensatory damages",
+        "strength": "moderate"
+      },
+      {
+        "count": 5,
+        "claim": "Violation of the Maine Unfair Trade Practices Act",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "5 M.R.S. § 207",
+        "elements": [
+          "An unfair or deceptive act",
+          "In the conduct of trade or commerce",
+          "Loss of money or property"
+        ],
+        "relief_sought": "Actual damages, attorney fees, and costs",
+        "strength": "weak"
+      },
+      {
+        "count": 6,
+        "claim": "Unjust enrichment",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "Common law",
+        "elements": [
+          "A benefit conferred",
+          "Appreciation of the benefit",
+          "Inequitable retention"
+        ],
+        "relief_sought": "Restitution",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Waiver and estoppel",
+        "by": "Coastal Outfitters LLC",
+        "basis": "The plaintiffs ratified the transaction by accepting later disclosures."
+      },
+      {
+        "defense": "Failure to state a claim",
+        "by": "Coastal Outfitters LLC",
+        "basis": "The complaint does not plead fraud with particularity. M.R. Civ. P. 9(b)."
+      },
+      {
+        "defense": "Comparative fault",
+        "by": "Coastal Outfitters LLC",
+        "basis": "The plaintiffs were sophisticated and failed to conduct due diligence. 14 M.R.S. § 156."
+      },
+      {
+        "defense": "Statute of frauds",
+        "by": "Coastal Outfitters LLC",
+        "basis": "Any oral representations are unenforceable."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Breach of the non-disclosure agreement",
+        "by": "Coastal Outfitters LLC",
+        "against": "Grace C. Roe",
+        "relief": "Damages and injunctive relief for disclosure of confidential information."
+      },
+      {
+        "count": 2,
+        "claim": "Defamation",
+        "by": "Olivia D. Jessup",
+        "against": "Grace C. Roe",
+        "relief": "Damages for allegedly false public statements about the company."
+      }
+    ],
+    "cross_claims": [
+      {
+        "claim": "Indemnification and contribution",
+        "by": "Coastal Outfitters LLC",
+        "against": "Olivia D. Jessup",
+        "basis": "If the company is liable, the CEO must indemnify it for his own misconduct."
+      }
+    ],
+    "third_party_claims": [
+      {
+        "claim": "Contribution and professional negligence",
+        "by": "Coastal Outfitters LLC",
+        "against": "Summit Logistics LLC",
+        "basis": "The auditor's negligent audit caused or contributed to any loss."
+      }
+    ],
+    "discovery": [
+      {
+        "type": "request_for_production",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Summit Logistics LLC",
+        "served_date": "2025-05-09",
+        "status": "compelled",
+        "description": "Requests for the audit workpapers."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Olivia D. Jessup",
+        "served_date": "2025-07-07",
+        "status": "outstanding",
+        "description": "Deposition of the CEO."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Coastal Outfitters LLC",
+        "responding_party": "Grace C. Roe",
+        "served_date": "2025-06-21",
+        "status": "served",
+        "description": "Deposition of the lead plaintiff."
+      },
+      {
+        "type": "expert_disclosure",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Coastal Outfitters LLC",
+        "served_date": "2025-08-09",
+        "status": "served",
+        "description": "Plaintiffs' expert designations and reports."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion in limine to exclude the damages expert",
+        "type": "evidentiary",
+        "movant": "Coastal Outfitters LLC",
+        "filed_date": "2026-02-26",
+        "status": "filed",
+        "relief": "Exclusion of the plaintiffs' damages model."
+      },
+      {
+        "title": "Motion to amend to add a punitive damages claim",
+        "type": "pleading",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-09-26",
+        "status": "opposed",
+        "relief": "Leave to add a punitive damages demand."
+      },
+      {
+        "title": "Motion to dismiss for failure to state a claim",
+        "type": "dispositive",
+        "movant": "Coastal Outfitters LLC",
+        "filed_date": "2025-02-27",
+        "status": "denied",
+        "relief": "Dismissal of the fraud and UTPA counts."
+      },
+      {
+        "title": "Motion to compel production of audit workpapers",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-05-07",
+        "status": "granted",
+        "relief": "An order compelling the auditor's workpapers."
+      },
+      {
+        "title": "Motion for a protective order",
+        "type": "discovery",
+        "movant": "Coastal Outfitters LLC",
+        "filed_date": "2025-05-31",
+        "status": "granted_in_part",
+        "relief": "Protection of trade-secret financial information."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2025-01-20",
+        "entry": "Complaint and demand for jury trial filed.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-02-11",
+        "entry": "Defendants' answer, counterclaims, and cross-claim filed.",
+        "party": "Coastal Outfitters LLC"
+      },
+      {
+        "date": "2025-02-20",
+        "entry": "Third-party complaint against the auditor filed.",
+        "party": "Coastal Outfitters LLC"
+      },
+      {
+        "date": "2025-03-08",
+        "entry": "Scheduling order entered; discovery deadline set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-04-02",
+        "entry": "Order denying the motion to dismiss.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-06-04",
+        "entry": "Order compelling production of the audit workpapers.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-15",
+        "entry": "Plaintiffs' expert reports served; discovery continues.",
+        "party": "Grace C. Roe"
+      }
+    ],
+    "trial": {
+      "jury": true,
+      "estimated_days": 6,
+      "scheduled_date": "2026-11-27"
+    }
+  },
+  "facts": {
+    "company_name": "Coastal Outfitters LLC",
+    "deal_type": "a Series A preferred round",
+    "investment_amount": 3131282,
+    "investment_date": "2023-06-03",
+    "misrepresentation_topic": "the status of a flagship contract",
+    "discovery_of_breach_date": "2024-11-03",
+    "amount_in_controversy": 1628106,
+    "demand_made": true,
+    "class_action": true,
+    "auditor_role": "issued the audited financial statements relied upon in the offering"
+  }
+}

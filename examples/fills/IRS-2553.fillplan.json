@@ -1,0 +1,204 @@
+{
+  "form_id": "IRS-2553",
+  "coverage": {
+    "total_fields": 23,
+    "filled_fields": 12,
+    "empty_fields": 11,
+    "percent": 52.2
+  },
+  "required": {
+    "keys": [],
+    "missing": [],
+    "ok": true
+  },
+  "entries": [
+    {
+      "field_id": "topmostsubform_0_page1_0_nameaddress_0_f1_01_0",
+      "fact_key": "entity.legal_name",
+      "value": "Summit Outfitters Co.",
+      "filled": true
+    },
+    {
+      "field_id": "topmostsubform_0_page1_0_nameaddress_0_f1_02_0",
+      "fact_key": "entity.street_address",
+      "value": "37 Cedar Way",
+      "filled": true
+    },
+    {
+      "field_id": "topmostsubform_0_page1_0_nameaddress_0_f1_03_0",
+      "fact_key": "entity.mailing_address",
+      "value": "37 Cedar Way",
+      "filled": true
+    },
+    {
+      "field_id": "topmostsubform_0_page1_0_f1_04_0",
+      "fact_key": "entity.ein",
+      "value": "",
+      "filled": false
+    },
+    {
+      "field_id": "topmostsubform_0_page1_0_f1_05_0",
+      "fact_key": "entity.formation_date",
+      "value": "2025-12-19",
+      "filled": true
+    },
+    {
+      "field_id": "topmostsubform_0_page1_0_f1_06_0",
+      "fact_key": "entity.state_of_formation",
+      "value": "Maine",
+      "filled": true
+    },
+    {
+      "field_id": "topmostsubform_0_page1_0_f1_07_0",
+      "fact_key": "facts.election_effective_date",
+      "value": "2026-02-10",
+      "filled": true
+    },
+    {
+      "field_id": "topmostsubform_0_page1_0_f1_08_0",
+      "fact_key": "facts.fiscal_year_end",
+      "value": "December 31",
+      "filled": true
+    },
+    {
+      "field_id": "topmostsubform_0_page1_0_f1_09_0",
+      "fact_key": "facts.fiscal_year_52_53_week_month",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "topmostsubform_0_page1_0_f1_10_0",
+      "fact_key": "responsible_party.name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "topmostsubform_0_page1_0_f1_11_0",
+      "fact_key": "entity.phone",
+      "value": "(207) 555-0154",
+      "filled": true
+    },
+    {
+      "field_id": "topmostsubform_0_page1_0_f1_21_0",
+      "fact_key": "responsible_party.title",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "topmostsubform_0_page2_0_f2_01_0",
+      "fact_key": "entity.legal_name",
+      "value": "Summit Outfitters Co.",
+      "filled": true
+    },
+    {
+      "field_id": "topmostsubform_0_page2_0_f2_02_0",
+      "fact_key": "entity.ein",
+      "value": "",
+      "filled": false
+    },
+    {
+      "field_id": "topmostsubform_0_page3_0_f3_01_0",
+      "fact_key": "entity.legal_name",
+      "value": "Summit Outfitters Co.",
+      "filled": true
+    },
+    {
+      "field_id": "topmostsubform_0_page3_0_f3_02_0",
+      "fact_key": "entity.ein",
+      "value": "",
+      "filled": false
+    },
+    {
+      "field_id": "topmostsubform_0_page4_0_f4_01_0",
+      "fact_key": "entity.legal_name",
+      "value": "Summit Outfitters Co.",
+      "filled": true
+    },
+    {
+      "field_id": "topmostsubform_0_page4_0_f4_02_0",
+      "fact_key": "entity.ein",
+      "value": "",
+      "filled": false
+    },
+    {
+      "field_id": "topmostsubform_0_page4_0_f4_03_0",
+      "fact_key": "facts.income_beneficiary_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "topmostsubform_0_page4_0_f4_04_0",
+      "fact_key": "facts.income_beneficiary_ssn",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "topmostsubform_0_page4_0_f4_05_0",
+      "fact_key": "trust.name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "topmostsubform_0_page4_0_f4_06_0",
+      "fact_key": "trust.ein",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "topmostsubform_0_page4_0_f4_07_0",
+      "fact_key": "facts.stock_transfer_date",
+      "value": null,
+      "filled": false
+    }
+  ],
+  "title": "Election by a Small Business Corporation (S-corporation)",
+  "repo": "transactional-tax-forms",
+  "profile": "tax",
+  "case": {
+    "entity": {
+      "legal_name": "Summit Outfitters Co.",
+      "trade_name": "",
+      "street_address": "37 Cedar Way",
+      "mailing_address": "37 Cedar Way",
+      "mailing_city": "Falmouth",
+      "county": "Sagadahoc",
+      "phone": "(207) 555-0154",
+      "state_of_formation": "Maine",
+      "formation_date": "2025-12-19",
+      "ein": ""
+    },
+    "responsible_party": {
+      "name": "Grace C. Roe",
+      "ssn_itin_ein": "900-00-0614"
+    },
+    "executor": {},
+    "decedent": {},
+    "trust": {},
+    "facts": {
+      "new_org_type": "Corporation (S-corporation election pending)",
+      "new_business_type": "software development",
+      "principal_line_of_merchandise": "software development",
+      "first_date_wages_paid": "2026-01-27",
+      "accounting_year_closing_month": "December",
+      "reason_for_applying": "Started new business",
+      "entity_name": "Summit Outfitters Co.",
+      "entity_type": "corporation",
+      "state_of_incorporation": "Maine",
+      "incorporation_date": "2025-12-19",
+      "ein_applied": true,
+      "s_corp_election": true,
+      "election_effective_date": "2026-02-10",
+      "tax_year": "calendar year",
+      "fiscal_year_end": "December 31",
+      "num_shareholders": 2,
+      "num_employees": 5,
+      "first_payroll_date": "2026-01-27",
+      "accounting_method": "cash",
+      "naics_code": "453998",
+      "principal_activity": "software development",
+      "expected_first_year_revenue": 729078,
+      "responsible_party_name": "Grace C. Roe",
+      "reasonable_compensation": 61995
+    }
+  }
+}

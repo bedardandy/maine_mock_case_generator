@@ -13,10 +13,19 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from generator import (  # noqa: E402
+    fill_form,
+    generate_compound,
+    generate_for_form,
     generate_matter,
+    list_compounds,
+    list_forms,
+    list_probate_forms,
     list_scenarios,
+    load_form,
+    project_compound,
     project_to_canonical,
     validate_canonical,
+    validate_compound,
     validate_matter,
 )
 
@@ -46,6 +55,46 @@ def main() -> int:
             json.dumps(case, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
         )
         print(f"wrote examples/{sid}.matter.json and examples/{sid}.canonical.json")
+
+    # Concrete fill plans against the real vendored form mappings.
+    fills_dir = examples_dir / "fills"
+    fills_dir.mkdir(exist_ok=True)
+    for fid in list_forms():
+        scenario = load_form(fid)["meta"]["best_scenario"]
+        plan = fill_form(generate_matter(scenario, EXAMPLE_SEED), fid, today="2026-06-20")
+        (fills_dir / f"{fid}.fillplan.json").write_text(
+            json.dumps(plan, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        )
+        cov = plan["coverage"]
+        print(f"wrote examples/fills/{fid}.fillplan.json ({cov['filled_fields']}/{cov['total_fields']})")
+
+    # Compound (intertwined) matter universes.
+    compound_dir = examples_dir / "compound"
+    compound_dir.mkdir(exist_ok=True)
+    for cid in list_compounds():
+        compound = generate_compound(cid, EXAMPLE_SEED)
+        errors = validate_compound(compound)
+        if errors:
+            failures += 1
+            print(f"FAIL compound {cid}: {errors[:2]}")
+            continue
+        (compound_dir / f"{cid}.compound.json").write_text(
+            json.dumps(compound, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        )
+        (compound_dir / f"{cid}.canonical.json").write_text(
+            json.dumps(project_compound(compound), indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        )
+        print(f"wrote examples/compound/{cid}.compound.json ({len(compound['matters'])} matters)")
+
+    # Schema-driven probate fixtures (the maine-probate-forms native fill shape).
+    probate_dir = examples_dir / "probate"
+    probate_dir.mkdir(exist_ok=True)
+    for fid in list_probate_forms():
+        case = generate_for_form(fid, EXAMPLE_SEED)
+        (probate_dir / f"{fid}.seed{EXAMPLE_SEED}.json").write_text(
+            json.dumps(case, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        )
+        print(f"wrote examples/probate/{fid}.seed{EXAMPLE_SEED}.json")
 
     return 1 if failures else 0
 

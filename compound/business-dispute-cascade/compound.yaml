@@ -1,0 +1,29 @@
+id: business-dispute-cascade
+title: "Rise and dispute of {company_name}"
+theme: "{company_name}, founded by {founder_full_name}, incorporates and raises capital, and is then sued by its investors for misrepresentations in the offering."
+narrative: >
+  {founder_full_name} formed {company_name} and elected S-corporation status. The company
+  later raised money from {investor_full_name} and {co_investor_full_name}, who now sue the
+  company, its CEO {founder_full_name}, and the outside auditor {auditor_name} over alleged
+  misrepresentations in the offering. The same company and founder appear as the applicant
+  in the formation matter and as defendants in the litigation, tying the transactional and
+  litigation matters into one story.
+
+cast:
+  - {cast_id: founder, kind: person, label: "Founder and CEO"}
+  - {cast_id: company, kind: organization, label: "The company"}
+  - {cast_id: investor, kind: person, label: "Lead investor (the litigation client)"}
+  - {cast_id: co_investor, kind: person, label: "Co-investor"}
+  - {cast_id: auditor, kind: organization, label: "Outside auditor"}
+
+matters:
+  - id: formation
+    scenario: business-formation-scorp
+    roles: {applicant: founder, company: company}
+    relates:
+      - {to: litigation, type: precedes, description: "The company and its S-election set up the entity later sued by its investors."}
+  - id: litigation
+    scenario: complex-civil-litigation
+    roles: {plaintiff: investor, plaintiff_2: co_investor, defendant: company, defendant_2: founder, third_party_defendant: auditor}
+    relates:
+      - {to: formation, type: arises_from, description: "The investors sue the very company formed in the formation matter, along with its founder and auditor."}

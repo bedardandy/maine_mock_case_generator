@@ -1,0 +1,174 @@
+id: equitable-partition
+title: "{plaintiff_last} v. {defendant_last} et al. (Partition of Real Estate)"
+practice_area: real_estate
+case_type: partition
+status: active
+docket_prefix: RE
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, RE-PART]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+# A Maine partition action among co-tenants who inherited one parcel as tenants in
+# common. One co-owner wants to cash out; the others want to keep the property in the
+# family. The court must choose between partition in kind and partition by sale, sort
+# out an accounting for taxes and upkeep, and resolve an access / right-of-way wrinkle
+# that bears on whether the land can fairly be divided at all.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, label: "Plaintiff co-tenant (seeks partition/sale)"}
+    - {key: defendant, label: "Defendant co-tenant (opposes sale)"}
+    - {key: defendant_2, label: "Defendant co-tenant"}
+    - {key: defendant_3, label: "Defendant co-tenant"}
+
+dates:
+  filing_date: {date_between: ["2025-04-01", "2026-02-01"]}
+  event_date: "{inheritance_date}"
+
+facts:
+  property_type: {pick: ["a 40-acre woodland and shorefront parcel", "a coastal family camp on a tidal cove", "a 120-acre former farm", "a lakefront cottage and lot"]}
+  acreage: {int_between: [2, 180]}
+  num_co_owners: {pick: ["four siblings as equal tenants in common", "three siblings, one holding a one-half and two holding one-quarter shares", "five cousins with unequal shares"]}
+  inherited_from: {pick: ["their late mother's estate", "their late father's estate", "a grandparent's testamentary devise"]}
+  inheritance_date: {date_between: ["2019-01-01", "2023-12-31"]}
+  assessed_value: {int_between: [160000, 1600000]}
+  partition_sought: {pick: ["partition by sale and division of proceeds", "partition in kind if feasible, otherwise by sale"]}
+  improvements: {pick: ["a seasonal camp used by one branch of the family", "an old farmhouse and barn", "an undeveloped lot with a right-of-way"]}
+  access_issue: {pick: ["the only access is over a disputed right-of-way / paper street", "frontage is limited so in-kind division may landlock a lot", "a shared private road serves the parcel"]}
+  contribution_dispute: {pick: [true, false]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: business_entity, name_kind: organization, role: "Real estate broker", relevance: "Appraised and listed the property and gave a broker's opinion of value."}
+    - {type: government_agency, name: "Town Assessor's Office", role: "Town tax assessor", relevance: "Maintains the assessment and tax bills for the parcel."}
+    - {type: family_member, name_kind: person, role: "Sibling who is not a party", relevance: "Not joined as a party but claims to have paid the property taxes and upkeep."}
+    - {type: financial_institution, name_kind: bank, role: "Mortgage holder", relevance: "Holds a mortgage encumbering one co-tenant's undivided share."}
+    - {type: business_entity, name_kind: organization, role: "Prospective buyer", relevance: "Has expressed interest in purchasing the parcel if it is sold."}
+    - {type: expert, name_kind: person, role: "Licensed surveyor", relevance: "Surveyed the boundaries and prepared a subdivision sketch."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name}, a co-tenant of {property_type} the parties inherited from {inherited_from}, petitions the {county} County Superior Court to partition the property, seeking {partition_sought}, with an accounting among the co-tenants and resolution of an access dispute."
+  narrative:
+    - "{plaintiff_full_name} and the defendant co-tenants own {property_type} of roughly {acreage} acres as tenants in common, having taken title from {inherited_from} in {inheritance_date}. Title is held by {num_co_owners}. The town assesses the property at about ${assessed_value}, and the parcel includes {improvements}."
+    - "The co-tenants no longer agree on what to do with the land. {plaintiff_first} wants to realize the value of the inherited interest and has asked for {partition_sought}, while the other co-tenants want to keep the property in the family. Complicating any physical division, {access_issue}, which bears directly on whether the parcel can fairly be split in kind without injuring the co-owners or landlocking a lot."
+    - "There is also a dispute over money: one branch of the family says it has carried the taxes, insurance, and upkeep for years and is entitled to a credit, and any in-kind division may require an owelty payment to equalize the shares. {plaintiff_first} now seeks an order of partition, the appointment of referees, an accounting and contribution among the co-tenants, and a declaration settling the access question."
+  undisputed:
+    - "The parties hold {property_type} as tenants in common, having inherited it from {inherited_from}."
+    - "Title passed to the co-tenants on or about {inheritance_date}."
+    - "No co-tenant has agreed to buy out the others at a price all accept."
+  disputed:
+    - "Whether the property should be divided in kind or sold and the proceeds divided."
+    - "The amount of any accounting or contribution credit for taxes, insurance, and upkeep advanced by one co-tenant."
+    - "Whether {access_issue}, and how that affects the feasibility and fairness of an in-kind division."
+  timeline:
+    - {date: "{inheritance_date}", event: "The co-tenants took title to the parcel from {inherited_from}."}
+    - {date: "{filing_date}", event: "Complaint for partition prepared for filing in {court_location} Superior Court."}
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "Goal", question: "What do you want to happen with the property?", answer: "I want to realize fair value from my share. My first choice is {partition_sought}, but I am not trying to force a fire sale if it can be divided fairly."}
+    - {topic: "Ownership", question: "Who owns the property and how did you all get it?", answer: "It came to us from {inherited_from} back in {inheritance_date}. It is held by {num_co_owners}, and we have never formally sorted out who gets what."}
+    - {topic: "Access", question: "Is there anything that makes splitting the land difficult?", answer: "Yes. {access_issue}. That is a big part of why I do not think you can just draw a line down the middle."}
+    - {topic: "Money", question: "Has anyone been paying the taxes and upkeep?", answer: "One side of the family says they have covered the taxes and the camp upkeep for years and want credit for it. I want that looked at honestly with actual records."}
+    - {topic: "Relationships", question: "How important is it to keep the peace in the family?", answer: "It matters to me. I would rather reach something fair and be able to sit at a holiday table, but I am not willing to give up my share to do it."}
+
+objectives:
+  goals:
+    - "Obtain an order of partition that realizes fair value from {plaintiff_first}'s interest in the property."
+    - "Secure an accounting and contribution credit for taxes, insurance, and upkeep paid."
+    - "Resolve the access / right-of-way question so the property's value and divisibility are clear."
+  priorities:
+    - "Realizing fair value, by sale if an in-kind split would be unfair."
+    - "An honest accounting of what each co-tenant has contributed."
+    - "Preserving family relationships where possible."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "Partition by sale at fair value, or an in-kind division with an equalizing owelty payment."
+    - "A credit reflecting taxes and upkeep advanced by {plaintiff_first}."
+  non_starters:
+    - "An in-kind split that leaves {plaintiff_first} with a landlocked or unmarketable lot."
+  constraints:
+    budget: {pick: ["Moderate; prefers a negotiated buyout or sale over a prolonged trial.", "Moderate; willing to pay for a survey and appraisal to support the case."]}
+    timeline: "Wants the partition resolved before another tax year of carrying costs accrues."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "The right of a tenant in common to compel partition of the inherited parcel", category: real_estate, governing_law: "14 M.R.S. § 6501", sub_questions: ["Is {plaintiff_first} a tenant in common entitled to demand partition as of right?", "Does any agreement among the co-tenants waive or bar partition?"], strength: strong, client_position: "As a co-tenant, {plaintiff_first} has an absolute right to compel partition."}
+    - {issue: "Whether the property should be partitioned in kind or by sale", category: real_estate, governing_law: "14 M.R.S. § 6051(7)", sub_questions: ["Can the parcel be divided in kind without great prejudice to the co-owners?", "Would a sale better serve the interests of all co-tenants?"], strength: moderate, client_position: "Physical division would injure the owners, so the property should be sold and the proceeds divided."}
+    - {issue: "Appointment of referees or commissioners to carry out the partition", category: real_estate, governing_law: "14 M.R.S. Chapter 719", sub_questions: ["Who should be appointed to make or supervise the division or sale?", "What standards govern the referees' report?"], strength: moderate}
+    - {issue: "Owelty: an equalizing money payment on any in-kind division", category: real_estate, governing_law: "14 M.R.S. Chapter 719", sub_questions: ["If divided in kind, what owelty is needed to equalize unequal shares?", "Which co-tenant pays and which receives the owelty?"], strength: moderate}
+    - {issue: "Accounting for taxes, upkeep, rents, and contributions among co-tenants", category: real_estate, governing_law: "14 M.R.S. § 6501", sub_questions: ["What credits are owed for taxes, insurance, and upkeep advanced?", "Is any co-tenant chargeable for exclusive use or rents received?"], strength: moderate, client_position: "{plaintiff_first} is entitled to a credit for amounts advanced on the common property."}
+    - {issue: "Effect of the access / right-of-way dispute on marketability and feasibility of in-kind division", category: real_estate, governing_law: "14 M.R.S. § 6051(7)", sub_questions: ["Does the access defect landlock any proposed lot?", "How does the right-of-way affect the property's market value?"], strength: moderate}
+
+experts:
+  count: {min: 1, max: 3}
+  pool:
+    - {field: "Real estate appraisal", credentials: "MAI", retained_by: plaintiff, topic: "Fair market value of the parcel", opinion: "The property is worth materially more sold as a whole than divided into smaller lots.", basis: "Sales-comparison and income approaches to value."}
+    - {field: "Land surveying", credentials: "PLS", retained_by: plaintiff, topic: "Feasibility of in-kind subdivision and access", opinion: "Because of limited frontage and the disputed right-of-way, an in-kind division would landlock at least one lot.", basis: "Boundary survey, deeds, and a proposed subdivision sketch."}
+    - {field: "Forestry / timber valuation", credentials: "Licensed Forester", retained_by: defendant, topic: "Standing timber value", opinion: "The woodland carries significant standing-timber value that favors keeping the parcel intact.", basis: "Timber cruise and stumpage pricing."}
+
+evidence:
+  count: {min: 4, max: 7}
+  pool:
+    - {title: "Recorded deed and chain of title", type: public_record, party: plaintiff, description: "The recorded deed and prior conveyances establishing the tenancy in common."}
+    - {title: "Probate decree of distribution", type: public_record, party: plaintiff, description: "The probate decree showing the inheritance to the co-tenants."}
+    - {title: "Tax assessment and bills", type: public_record, party: plaintiff, description: "Town assessment card and property tax bills for the parcel."}
+    - {title: "Appraisal and broker's opinion of value", type: financial_record, party: plaintiff, description: "Appraisal report and the broker's opinion of value and listing materials."}
+    - {title: "Survey and subdivision sketch", type: document, party: plaintiff, description: "Boundary survey and any proposed subdivision sketch showing access."}
+    - {title: "Records of taxes and upkeep paid", type: financial_record, party: defendant, description: "Receipts and ledgers of taxes, insurance, and upkeep paid by individual co-tenants."}
+    - {title: "Photographs of the property and improvements", type: photo, party: plaintiff, description: "Photographs of the parcel, the access way, and the camp or farmhouse."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Assessed / appraised value of the parcel", amount: {int_between: [160000, 1600000]}, basis: "Town assessment and the appraiser's opinion of value."}
+    - {label: "Estimated net sale proceeds", amount: {int_between: [140000, 1500000]}, basis: "Projected gross sale price less costs of sale."}
+    - {label: "Taxes and upkeep advanced by one co-tenant", amount: {int_between: [4000, 90000]}, basis: "Receipts for taxes, insurance, and maintenance."}
+    - {label: "Proposed owelty payment to equalize an in-kind division", amount: {int_between: [10000, 250000]}, basis: "Difference in value between unequal proposed lots."}
+    - {label: "Estimated brokerage and sale costs", amount: {int_between: [8000, 110000]}, basis: "Commission, closing, and marketing costs."}
+
+litigation:
+  posture: pleadings
+  causes_of_action:
+    - {count: 1, claim: "Partition of real estate", by: "{plaintiff_full_name}", against: "the defendant co-tenants", governing_law: "14 M.R.S. § 6501; 14 M.R.S. § 6051(7)", elements: ["The plaintiff holds an undivided interest as a tenant in common", "The co-tenants cannot agree on a voluntary division or sale", "Partition is appropriate, in kind or by sale", "Referees should be appointed to carry out the partition"], relief_sought: "An order of partition, by sale if the property cannot fairly be divided in kind, and appointment of referees", strength: strong}
+    - {count: 2, claim: "Accounting and contribution among co-tenants", by: "{plaintiff_full_name}", against: "the defendant co-tenants", governing_law: "14 M.R.S. § 6501; common law", elements: ["A tenancy in common among the parties", "Disproportionate payment of taxes, insurance, or upkeep", "Or receipt of rents or exclusive use by a co-tenant", "An equitable adjustment of the parties' shares"], relief_sought: "An accounting and a credit or charge adjusting each co-tenant's share of the proceeds", strength: moderate}
+    - {count: 3, claim: "Declaratory judgment as to the right-of-way", by: "{plaintiff_full_name}", against: "the defendant co-tenants", governing_law: "14 M.R.S. § 5953", elements: ["An actual controversy over access to the parcel", "Uncertainty about the existence or scope of the right-of-way", "The access question affects partition and value", "A declaration will resolve the controversy"], relief_sought: "A declaration of the existence and scope of the right-of-way serving the parcel", strength: moderate}
+  affirmative_defenses:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {defense: "The property can be fairly divided in kind", by: "{defendant_full_name}", basis: "The parcel can be partitioned in kind without great prejudice, so no sale is warranted. 14 M.R.S. § 6051(7)."}
+      - {defense: "Set-off for exclusive use and accounting", by: "{defendant_full_name}", basis: "The plaintiff owes an accounting and offset for periods of exclusive use of the common property."}
+      - {defense: "Family agreement bars sale", by: "{defendant_full_name}", basis: "The co-tenants agreed to keep the property in the family, which bars a forced sale."}
+      - {defense: "Laches", by: "{defendant_full_name}", basis: "The plaintiff delayed unreasonably in seeking partition to the defendants' prejudice."}
+  counterclaims:
+    - {count: 1, claim: "Accounting and contribution", by: "{defendant_full_name}", against: "{plaintiff_full_name}", relief: "A credit for taxes, insurance, and upkeep advanced and an offset for the plaintiff's use of the property."}
+  motions:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {title: "Motion to appoint referees / commissioners", type: procedural, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-07-01", "2025-08-15"]}, status: filed, relief: "Appointment of referees to make or supervise the partition."}
+      - {title: "Motion for partition by sale", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-09-01", "2025-10-15"]}, status: opposed, relief: "An order that the property be sold and the proceeds divided."}
+      - {title: "Motion for an accounting", type: procedural, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-09-01", "2025-10-15"]}, status: filed, relief: "An order directing an accounting among the co-tenants."}
+      - {title: "Motion to determine the access right", type: procedural, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-11-01", "2025-12-15"]}, status: under_advisement, relief: "A determination of the existence and scope of the right-of-way."}
+  docket:
+    - {date: {date_between: ["2025-04-05", "2025-04-25"]}, entry: "Complaint for partition filed.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-05-10", "2025-05-30"]}, entry: "Answers of the defendant co-tenants filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-07-05", "2025-07-25"]}, entry: "Order appointing referees to view the property entered.", party: "the court"}
+    - {date: {date_between: ["2025-10-05", "2025-10-25"]}, entry: "Referees' report on division versus sale filed.", party: "the court"}
+    - {date: {date_between: ["2025-12-05", "2025-12-20"]}, entry: "Hearing held on partition by sale versus in kind.", party: "the court"}
+  trial:
+    jury: false
+    estimated_days: {int_between: [2, 5]}
+    scheduled_date: {date_between: ["2026-08-01", "2027-03-01"]}

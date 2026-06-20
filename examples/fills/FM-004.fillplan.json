@@ -1,0 +1,536 @@
+{
+  "form_id": "FM-004",
+  "coverage": {
+    "total_fields": 66,
+    "filled_fields": 32,
+    "empty_fields": 34,
+    "percent": 48.5
+  },
+  "required": {
+    "keys": [
+      "parties.defendant.full_name",
+      "parties.plaintiff.full_name"
+    ],
+    "missing": [],
+    "ok": true
+  },
+  "entries": [
+    {
+      "field_id": "plaintiff",
+      "fact_key": "parties.plaintiff.full_name",
+      "value": "Olivia B. Ellsworth",
+      "filled": true
+    },
+    {
+      "field_id": "defendant",
+      "fact_key": "parties.defendant.full_name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "location_town",
+      "fact_key": "matter.court_location",
+      "value": "Portland",
+      "filled": true
+    },
+    {
+      "field_id": "docket_no",
+      "fact_key": "matter.docket_number",
+      "value": "CUM-FM-2026-624",
+      "filled": true
+    },
+    {
+      "field_id": "undefined",
+      "fact_key": "facts.marriage_city",
+      "value": "Camden",
+      "filled": true
+    },
+    {
+      "field_id": "state",
+      "fact_key": "facts.marriage_county",
+      "value": "Penobscot",
+      "filled": true
+    },
+    {
+      "field_id": "on_mmddyyyy",
+      "fact_key": "facts.marriage_state",
+      "value": "Maine",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_2",
+      "fact_key": "facts.marriage_date",
+      "value": "2010-08-15",
+      "filled": true
+    },
+    {
+      "field_id": "county",
+      "fact_key": "parties.plaintiff.city",
+      "value": "Yarmouth",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_4",
+      "fact_key": "parties.plaintiff.state",
+      "value": "ME",
+      "filled": true
+    },
+    {
+      "field_id": "county_2",
+      "fact_key": "parties.defendant.city",
+      "value": "Falmouth",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_6",
+      "fact_key": "parties.defendant.state",
+      "value": "ME",
+      "filled": true
+    },
+    {
+      "field_id": "docket_no_2",
+      "fact_key": "facts.previous_court_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "undefined_7",
+      "fact_key": "facts.previous_docket_number",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "undefined_8",
+      "fact_key": "facts.previous_dismissal_date",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "visitation_rights_with_respect_to_the_children_except_1",
+      "fact_key": "facts.other_custody_claimant",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "other_state_concerning_custody_of_the_minor_children_except_as_follows",
+      "fact_key": "facts.protection_from_abuse_docket_number",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "undefined_10",
+      "fact_key": "facts.probate_matter_docket_number",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "undefined_11",
+      "fact_key": "facts.other_case_description_and_docket",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "19a_mrs_18433_if_this_does_not_apply_please_leave_blank_1",
+      "fact_key": "facts.name_change_explanation",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "and",
+      "fact_key": "facts.plaintiff_new_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "i_ask_that_the_childs_name_be_changed_to",
+      "fact_key": "facts.child_1_current_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "a",
+      "fact_key": "facts.child_1_new_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "undefined_12",
+      "fact_key": "facts.child_2_current_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "the_childs_name_is",
+      "fact_key": "facts.child_2_new_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "undefined_13",
+      "fact_key": "facts.child_3_current_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "the_childs_name_is_2",
+      "fact_key": "facts.child_3_new_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "undefined_14",
+      "fact_key": "facts.child_4_current_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "d",
+      "fact_key": "facts.child_4_new_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "undefined_15",
+      "fact_key": "facts.child_5_current_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "the_childs_name_is_3",
+      "fact_key": "facts.child_5_new_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "undefined_16",
+      "fact_key": "facts.child_6_current_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "the_childs_name_is_4",
+      "fact_key": "facts.child_6_new_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "date_mmddyyyy",
+      "fact_key": "today()",
+      "value": "2026-06-20",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_17",
+      "fact_key": "party.signature",
+      "value": "Olivia B. Ellsworth",
+      "filled": true
+    },
+    {
+      "field_id": "plaintiffs_attorney",
+      "fact_key": "parties.attorney.full_name",
+      "value": "Diego F. Jessup",
+      "filled": true
+    },
+    {
+      "field_id": "maine_bar_no",
+      "fact_key": "parties.attorney.bar_number",
+      "value": "1976",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address_1",
+      "fact_key": "parties.attorney.address",
+      "value": "54 Tidewater Lane",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address_2",
+      "fact_key": "parties.attorney.city",
+      "value": "Bangor",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address_3",
+      "fact_key": "parties.attorney.state",
+      "value": "ME",
+      "filled": true
+    },
+    {
+      "field_id": "phone",
+      "fact_key": "parties.attorney.phone",
+      "value": "(207) 555-0112",
+      "filled": true
+    },
+    {
+      "field_id": "email",
+      "fact_key": "parties.attorney.email",
+      "value": "diego.jessup@example.net",
+      "filled": true
+    },
+    {
+      "field_id": "plaintiff_2",
+      "fact_key": "parties.plaintiff.full_name",
+      "value": "Olivia B. Ellsworth",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address",
+      "fact_key": "parties.plaintiff.address",
+      "value": "39 Meadowbrook Drive",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_18",
+      "fact_key": "parties.plaintiff.city",
+      "value": "Yarmouth",
+      "filled": true
+    },
+    {
+      "field_id": "home_phone",
+      "fact_key": "parties.plaintiff.phone",
+      "value": "(207) 555-0174",
+      "filled": true
+    },
+    {
+      "field_id": "cell_phone",
+      "fact_key": "facts.cell_phone",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "email_2",
+      "fact_key": "parties.plaintiff.email",
+      "value": "olivia.ellsworth@example.com",
+      "filled": true
+    },
+    {
+      "field_id": "full_name_1",
+      "fact_key": "parties.child_1.full_name",
+      "value": "Ingrid B. Kingsley",
+      "filled": true
+    },
+    {
+      "field_id": "mmddyyyy_1",
+      "fact_key": "parties.child_1.date_of_birth",
+      "value": "2013-01-26",
+      "filled": true
+    },
+    {
+      "field_id": "present_addresses_do_not_list_if_confidential_to_other_party_1",
+      "fact_key": "parties.child_1.address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "full_name_2",
+      "fact_key": "parties.child_2.full_name",
+      "value": "Marcus W. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "mmddyyyy_2",
+      "fact_key": "parties.child_2.date_of_birth",
+      "value": "2021-05-29",
+      "filled": true
+    },
+    {
+      "field_id": "present_addresses_do_not_list_if_confidential_to_other_party_2",
+      "fact_key": "parties.child_2.address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "full_name_3",
+      "fact_key": "parties.child_3.full_name",
+      "value": "Omar W. Loe",
+      "filled": true
+    },
+    {
+      "field_id": "mmddyyyy_3",
+      "fact_key": "parties.child_3.date_of_birth",
+      "value": "2022-10-20",
+      "filled": true
+    },
+    {
+      "field_id": "present_addresses_do_not_list_if_confidential_to_other_party_3",
+      "fact_key": "parties.child_3.address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "full_name_4",
+      "fact_key": "parties.child_4.full_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "mmddyyyy_4",
+      "fact_key": "parties.child_4.date_of_birth",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "present_addresses_do_not_list_if_confidential_to_other_party_4",
+      "fact_key": "parties.child_4.address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "full_name_5",
+      "fact_key": "parties.child_5.full_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "mmddyyyy_5",
+      "fact_key": "parties.child_5.date_of_birth",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "present_addresses_do_not_list_if_confidential_to_other_party_5",
+      "fact_key": "parties.child_5.address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "full_name_6",
+      "fact_key": "parties.child_6.full_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "mmddyyyy_6",
+      "fact_key": "parties.child_6.date_of_birth",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "present_addresses_do_not_list_if_confidential_to_other_party_6",
+      "fact_key": "parties.child_6.address",
+      "value": null,
+      "filled": false
+    }
+  ],
+  "title": "Complaint for Divorce",
+  "repo": "maine-court-forms",
+  "profile": "canonical",
+  "case": {
+    "matter": {
+      "docket_number": "CUM-FM-2026-624",
+      "case_id": "MMC-2026-223800",
+      "court_county": "Cumberland",
+      "court_location": "Portland",
+      "court_type": "District Court",
+      "case_type": "family_matters",
+      "filing_date": "2026-02-13",
+      "event_date": "2025-04-20"
+    },
+    "parties": {
+      "plaintiff": {
+        "full_name": "Olivia B. Ellsworth",
+        "first_name": "Olivia",
+        "middle_name": "B",
+        "last_name": "Ellsworth",
+        "address": "39 Meadowbrook Drive",
+        "city": "Yarmouth",
+        "state": "ME",
+        "zip": "04047",
+        "phone": "(207) 555-0174",
+        "email": "olivia.ellsworth@example.com",
+        "date_of_birth": "1969-04-20"
+      },
+      "defendant": {
+        "full_name": "Maria Q. Fairbanks",
+        "first_name": "Maria",
+        "middle_name": "Q",
+        "last_name": "Fairbanks",
+        "address": "37 Cedar Way",
+        "city": "Falmouth",
+        "state": "ME",
+        "zip": "04071",
+        "phone": "(207) 555-0154",
+        "email": "maria.fairbanks@example.com",
+        "date_of_birth": "1965-03-05"
+      },
+      "child_1": {
+        "full_name": "Ingrid B. Kingsley",
+        "first_name": "Ingrid",
+        "middle_name": "B",
+        "last_name": "Kingsley",
+        "date_of_birth": "2013-01-26"
+      },
+      "child_2": {
+        "full_name": "Marcus W. Roe",
+        "first_name": "Marcus",
+        "middle_name": "W",
+        "last_name": "Roe",
+        "date_of_birth": "2021-05-29"
+      },
+      "child_3": {
+        "full_name": "Omar W. Loe",
+        "first_name": "Omar",
+        "middle_name": "W",
+        "last_name": "Loe",
+        "date_of_birth": "2022-10-20"
+      },
+      "attorney": {
+        "full_name": "Diego F. Jessup",
+        "first_name": "Diego",
+        "middle_name": "F",
+        "last_name": "Jessup",
+        "address": "54 Tidewater Lane",
+        "city": "Bangor",
+        "state": "ME",
+        "zip": "04048",
+        "phone": "(207) 555-0112",
+        "email": "diego.jessup@example.net",
+        "date_of_birth": "1956-02-02",
+        "bar_number": "1976"
+      }
+    },
+    "party": {
+      "full_name": "Olivia B. Ellsworth",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20",
+      "signature": "Olivia B. Ellsworth"
+    },
+    "facts": {
+      "marriage_date": "2010-08-15",
+      "marriage_city": "Camden",
+      "marriage_county": "Penobscot",
+      "marriage_state": "Maine",
+      "separation_date": "2025-04-20",
+      "grounds": "Irreconcilable marital differences",
+      "residency_months": 36,
+      "spousal_support_requested": false,
+      "marital_home": "jointly owned condominium",
+      "num_minor_children": "3",
+      "primary_residence_parent": "Maria Q. Fairbanks",
+      "employer_name": "Acadia Print Works",
+      "current_gross_pay": 1436,
+      "hourly_wage": 61,
+      "hours_worked": 44,
+      "last_year_earnings": 65994,
+      "expected_year_earnings": 46728,
+      "bonuses_income": 9411,
+      "commissions_tips_income": 2459,
+      "fringe_benefits": 4302,
+      "health_insurance_cost_self": 293,
+      "health_insurance_cost_children": 225,
+      "cash_bank_accounts_value": 24402,
+      "credit_cards_balance": 14707,
+      "mortgages_balance": 150962,
+      "loans_balance": 19954,
+      "other_assets_value": 4797
+    }
+  }
+}

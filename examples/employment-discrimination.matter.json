@@ -1,0 +1,589 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "employment-discrimination",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-414328",
+    "practice_area": "civil",
+    "title": "Grace C. Roe v. Summit Outfitters Co.",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court"
+    },
+    "case_type": "employment",
+    "filing_date": "2025-05-17",
+    "status": "active",
+    "summary": "Grace C. Roe, a longtime employee of Summit Outfitters Co., alleges the company and supervisor John D. Kingsley subjected Grace to termination because of disability and in retaliation for reporting discrimination, in violation of the Maine Human Rights Act and Title VII.",
+    "event_date": "2024-09-14",
+    "docket_number": "SAG-CV-2025-354"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Plaintiff (employee)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "defendant": {
+      "entity_type": "organization",
+      "organization_name": "Summit Outfitters Co.",
+      "full_name": "Summit Outfitters Co.",
+      "role": "Defendant employer",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154"
+    },
+    "defendant_2": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "D",
+      "last_name": "Kingsley",
+      "full_name": "John D. Kingsley",
+      "role": "Defendant supervisor/manager",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "john.kingsley@example.org",
+      "date_of_birth": "1998-04-24",
+      "ssn_last4": "0763"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Felix",
+      "middle_name": "K",
+      "last_name": "Loe",
+      "full_name": "Felix K. Loe",
+      "role": "Attorney for the client",
+      "address": "216 Birch Street",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0139",
+      "email": "felix.loe@example.net",
+      "date_of_birth": "1958-04-03",
+      "ssn_last4": "1688",
+      "bar_number": "4078",
+      "organization_name": "Greenhill Law Offices"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Plaintiff (employee)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe, a longtime employee of Summit Outfitters Co., alleges the company and supervisor John D. Kingsley subjected Grace to termination because of disability and in retaliation for reporting discrimination, in violation of the Maine Human Rights Act and Title VII.",
+    "narrative": "Grace C. Roe was hired by Summit Outfitters Co. on 2016-09-01 and, by all accounts, performed the job with reviews that were mixed. Grace is a member of a protected class on the basis of disability.\n\nGrace alleges that, after raising concerns about discriminatory treatment, Roe was subjected to termination on 2024-09-14. The decision was carried out by Grace's supervisor, John D. Kingsley, and approved within the company. Grace contends the stated reasons were a pretext and that Grace was replaced by or treated worse than someone outside the protected class.\n\nGrace timely filed a charge of discrimination with the Maine Human Rights Commission, which was cross-filed with the EEOC, and received a right-to-sue letter. Grace then filed this action in Sagadahoc County Superior Court seeking back pay, front pay, compensatory damages for emotional distress, and attorney fees. The matter is in active discovery.",
+    "undisputed_facts": [
+      "Grace C. Roe was employed by Summit Outfitters Co. beginning on 2016-09-01.",
+      "Grace's employment ended, or the adverse action occurred, on or about 2024-09-14.",
+      "Grace filed a charge with the Maine Human Rights Commission and received a right-to-sue letter before filing suit."
+    ],
+    "disputed_facts": [
+      "Whether the adverse action was motivated by disability or by a legitimate, non-discriminatory reason.",
+      "Whether the employer's stated reason for the termination is a pretext for discrimination or retaliation.",
+      "Whether Grace's internal complaint was protected activity that caused the adverse action.",
+      "The amount of back pay, front pay, and emotional-distress damages, and whether Grace mitigated by seeking comparable work."
+    ],
+    "timeline": [
+      {
+        "date": "2016-09-01",
+        "event": "Grace was hired by Summit Outfitters Co.."
+      },
+      {
+        "date": "2024-09-14",
+        "event": "Grace was subjected to termination."
+      },
+      {
+        "date": "2025-05-17",
+        "event": "Complaint filed in Bath Superior Court after the right-to-sue letter issued."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "U.S. Equal Employment Opportunity Commission",
+      "type": "government_agency",
+      "role": "Federal civil rights agency",
+      "relevance": "Cross-filed the Title VII charge and issued a notice of right to sue.",
+      "contact": {
+        "phone": "(207) 555-0138",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Maine Human Rights Commission",
+      "type": "government_agency",
+      "role": "State civil rights agency",
+      "relevance": "Investigated the charge of discrimination and issued the right-to-sue letter after exhaustion under 5 M.R.S. § 4622.",
+      "contact": {
+        "phone": "(207) 555-0157",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Carmen F. Fairbanks",
+      "type": "witness",
+      "role": "Employer's HR director",
+      "relevance": "Received the internal complaint and participated in the decision to take the adverse action.",
+      "contact": {
+        "phone": "(207) 555-0196",
+        "city": "Belfast",
+        "state": "ME",
+        "email": "carmen.fairbanks@example.com"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Employment Litigation Attorney",
+    "interviewee_role": "plaintiff",
+    "date": "2025-05-17",
+    "exchanges": [
+      {
+        "topic": "What happened",
+        "question": "Tell me how your employment ended.",
+        "answer": "I worked at Summit Outfitters Co. for years with good reviews. After I spoke up about how I was being treated because of my disability, things changed and I was hit with termination. My supervisor, John, was the one who pushed it through."
+      },
+      {
+        "topic": "Protected activity",
+        "question": "Did you report the discrimination before the adverse action?",
+        "answer": "Yes. I raised it internally with HR. Not long after, the termination came down. It felt like payback for complaining."
+      },
+      {
+        "topic": "Pretext",
+        "question": "What reason did the company give, and do you believe it?",
+        "answer": "They pointed to performance, but my reviews were mixed. I think the real reason was my disability, and I was replaced by or treated worse than someone outside my group."
+      },
+      {
+        "topic": "Agency process",
+        "question": "Did you go to the Maine Human Rights Commission?",
+        "answer": "Yes. I filed a charge with the Maine Human Rights Commission, it was cross-filed with the EEOC, and I got my right-to-sue letter. That is why we can be in court now."
+      },
+      {
+        "topic": "Damages",
+        "question": "How has this affected you financially and personally?",
+        "answer": "I lost my salary of about $103027 a year plus benefits, and I have been looking for comparable work. The stress has been significant and I have been seeing a provider about it."
+      },
+      {
+        "topic": "Goal",
+        "question": "What outcome are you looking for?",
+        "answer": "I want to be made whole: back pay, front pay, and the record corrected. I want the employer held accountable, but I will settle if the deal is fair."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Obtain make-whole relief, including back pay and front pay, for the termination.",
+      "Establish that the employer and supervisor discriminated and retaliated in violation of the Maine Human Rights Act and Title VII.",
+      "Recover compensatory damages for emotional distress, plus attorney fees and costs."
+    ],
+    "priorities": [
+      "Proving pretext and the causal link between the protected activity and the adverse action.",
+      "Correcting the employment record and protecting future job prospects.",
+      "Preserving leverage for a fair, timely settlement."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "A judgment or settlement providing back pay, front pay, and compensatory damages.",
+      "A neutral or corrected reference and removal of adverse material from the personnel file."
+    ],
+    "non_starters": [
+      "Any resolution that leaves the discrimination and retaliation unaddressed."
+    ],
+    "constraints": {
+      "budget": "Moderate; willing to litigate through summary judgment but open to mediation.",
+      "timeline": "Wants the matter resolved without prolonged delay while back pay continues to accrue."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Whether the adverse action was unlawful retaliation for protected activity",
+      "category": "employment",
+      "governing_law": "Maine Human Rights Act, 5 M.R.S. § 4633",
+      "sub_questions": [
+        "Did the plaintiff engage in protected activity by reporting discrimination?",
+        "Is there a causal connection between the protected activity and the adverse action?"
+      ],
+      "strength": "strong",
+      "client_position": "The adverse action followed closely after the internal complaint and was caused by it.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Whether the plaintiff exhausted administrative remedies and holds a valid right to sue",
+      "category": "employment",
+      "governing_law": "Maine Human Rights Act exhaustion, 5 M.R.S. § 4622",
+      "sub_questions": [
+        "Was the charge timely filed with the Maine Human Rights Commission?",
+        "Did a right-to-sue letter issue before the complaint was filed?"
+      ],
+      "strength": "strong",
+      "client_position": "The charge was timely filed and a right-to-sue letter issued, so the claims are properly before the court.",
+      "id": "iss2"
+    },
+    {
+      "issue": "The measure of damages and available civil penalties",
+      "category": "employment",
+      "governing_law": "Maine Human Rights Act remedies and civil penalties, 5 M.R.S. § 4613",
+      "sub_questions": [
+        "What back pay, front pay, and compensatory damages are recoverable?",
+        "Are civil penal damages and attorney fees available, and did the plaintiff mitigate?"
+      ],
+      "strength": "moderate",
+      "client_position": "The plaintiff is entitled to back pay, front pay, emotional-distress damages, a civil penalty, and attorney fees.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Whether the employer's stated reason is a pretext for discrimination",
+      "category": "employment",
+      "governing_law": "McDonnell Douglas burden-shifting framework; 5 M.R.S. § 4572",
+      "sub_questions": [
+        "Has the employer articulated a legitimate, non-discriminatory reason?",
+        "Can the plaintiff show that reason is unworthy of credence or that discrimination was the real reason?"
+      ],
+      "strength": "moderate",
+      "client_position": "The performance rationale is pretextual given reviews that were mixed and more favorable treatment of comparators.",
+      "id": "iss4"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Eleanor C. Hawthorne",
+        "field": "Vocational rehabilitation and economic loss",
+        "credentials": "M.S., CRC",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Back pay, front pay, and loss of earning capacity",
+      "opinion": "The plaintiff's wage loss and diminished earning capacity are substantial given age, skills, and the local labor market.",
+      "basis": "Wage records, labor-market data, and a vocational assessment."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Comparator and replacement records",
+      "type": "document",
+      "party": "defendant",
+      "description": "Records identifying who replaced the plaintiff or comparators treated more favorably.",
+      "id": "ev1"
+    },
+    {
+      "title": "Employee handbook and anti-discrimination policy",
+      "type": "document",
+      "party": "defendant",
+      "description": "The handbook and EEO/anti-retaliation policies in effect during the employment.",
+      "id": "ev2"
+    },
+    {
+      "title": "Plaintiff's contemporaneous notes",
+      "type": "affidavit",
+      "party": "plaintiff",
+      "description": "The plaintiff's dated notes documenting the discriminatory conduct and the complaint.",
+      "id": "ev3"
+    },
+    {
+      "title": "MHRC charge and right-to-sue letter",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "The Maine Human Rights Commission charge of discrimination and the issued right-to-sue letter.",
+      "id": "ev4"
+    },
+    {
+      "title": "Internal complaint emails",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "Emails reporting discrimination to HR and management before the adverse action.",
+      "id": "ev5"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Compensatory / emotional-distress demand",
+        "amount": 69052,
+        "basis": "Emotional-distress and reputational harm."
+      },
+      {
+        "label": "Lost benefits value",
+        "amount": 45037,
+        "basis": "Value of lost health, retirement, and other benefits."
+      },
+      {
+        "label": "Lost back pay",
+        "amount": 55695,
+        "basis": "Wages lost from the adverse action to the present."
+      },
+      {
+        "label": "Projected front pay",
+        "amount": 288837,
+        "basis": "Estimated future wage loss until reemployment or recovery."
+      },
+      {
+        "label": "Estimated attorney fees and statutory civil penalty",
+        "amount": 55454,
+        "basis": "Fee-shifting recovery and the civil penal damages under 5 M.R.S. § 4613."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "discovery",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Employment discrimination under the Maine Human Rights Act",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "5 M.R.S. § 4572",
+        "elements": [
+          "Membership in a protected class",
+          "Qualification for the position",
+          "An adverse employment action",
+          "Circumstances giving rise to an inference of discrimination"
+        ],
+        "relief_sought": "Back pay, front pay, compensatory damages, a civil penalty, and attorney fees",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Retaliation under the Maine Human Rights Act",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "5 M.R.S. § 4633",
+        "elements": [
+          "Protected activity opposing discrimination",
+          "A materially adverse action",
+          "A causal connection between the two"
+        ],
+        "relief_sought": "Back pay, front pay, compensatory damages, and attorney fees",
+        "strength": "strong"
+      },
+      {
+        "count": 3,
+        "claim": "Employment discrimination under Title VII",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "42 U.S.C. § 2000e-2",
+        "elements": [
+          "An adverse employment action",
+          "Based on a protected characteristic",
+          "Exhaustion of administrative remedies",
+          "A timely charge and right-to-sue letter"
+        ],
+        "relief_sought": "Back pay, front pay, compensatory damages, and attorney fees",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Aiding and abetting unlawful discrimination",
+        "by": "Grace C. Roe",
+        "against": "John D. Kingsley",
+        "governing_law": "Maine Human Rights Act, 5 M.R.S. § 4633(2)",
+        "elements": [
+          "Unlawful discrimination by the employer",
+          "The supervisor aided or abetted that discrimination",
+          "Resulting harm to the plaintiff"
+        ],
+        "relief_sought": "Individual liability for compensatory damages",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "After-acquired evidence",
+        "by": "Summit Outfitters Co.",
+        "basis": "Evidence discovered after the action would have independently justified the termination, limiting back pay."
+      },
+      {
+        "defense": "Failure to exhaust administrative remedies",
+        "by": "Summit Outfitters Co.",
+        "basis": "Some claims were not raised in the charge before the Maine Human Rights Commission. 5 M.R.S. § 4622."
+      },
+      {
+        "defense": "Same-decision (Mt. Healthy) defense",
+        "by": "Summit Outfitters Co.",
+        "basis": "The employer would have made the same decision regardless of any protected activity or characteristic."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Breach of confidentiality agreement",
+        "by": "Summit Outfitters Co.",
+        "against": "Grace C. Roe",
+        "relief": "Damages and injunctive relief for the disclosure of confidential company information."
+      }
+    ],
+    "discovery": [
+      {
+        "type": "deposition",
+        "propounding_party": "Summit Outfitters Co.",
+        "responding_party": "Grace C. Roe",
+        "served_date": "2025-06-26",
+        "status": "served",
+        "description": "Deposition of the plaintiff on the claims and damages."
+      },
+      {
+        "type": "subpoena",
+        "propounding_party": "Summit Outfitters Co.",
+        "responding_party": "the plaintiff's subsequent employer",
+        "served_date": "2025-09-11",
+        "status": "served",
+        "description": "Subpoena to a subsequent employer on mitigation and post-termination earnings."
+      },
+      {
+        "type": "interrogatories",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Summit Outfitters Co.",
+        "served_date": "2025-05-13",
+        "status": "responded",
+        "description": "First set of interrogatories on the decision-makers and the reasons for the adverse action."
+      },
+      {
+        "type": "request_for_production",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Summit Outfitters Co.",
+        "served_date": "2025-04-19",
+        "status": "objected",
+        "description": "Requests for the personnel file, comparator records, and internal complaint emails."
+      },
+      {
+        "type": "request_for_admission",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Summit Outfitters Co.",
+        "served_date": "2025-06-16",
+        "status": "responded",
+        "description": "Admissions on the timing of the complaint and the adverse action."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for summary judgment",
+        "type": "dispositive",
+        "movant": "Summit Outfitters Co.",
+        "filed_date": "2025-10-10",
+        "status": "under_advisement",
+        "relief": "Judgment that the plaintiff cannot show pretext or causation."
+      },
+      {
+        "title": "Motion in limine to exclude me-too evidence",
+        "type": "evidentiary",
+        "movant": "Summit Outfitters Co.",
+        "filed_date": "2026-01-20",
+        "status": "filed",
+        "relief": "Exclusion of other employees' discrimination testimony."
+      },
+      {
+        "title": "Motion to compel comparator data",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-06-06",
+        "status": "granted",
+        "relief": "An order compelling production of comparator and replacement records."
+      },
+      {
+        "title": "Motion for partial summary judgment on retaliation",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-10-10",
+        "status": "opposed",
+        "relief": "Judgment that the adverse action followed the protected activity."
+      },
+      {
+        "title": "Motion to dismiss for failure to exhaust",
+        "type": "dispositive",
+        "movant": "Summit Outfitters Co.",
+        "filed_date": "2025-03-29",
+        "status": "denied",
+        "relief": "Dismissal of claims not raised before the Maine Human Rights Commission."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2025-03-11",
+        "entry": "Complaint filed following the Maine Human Rights Commission right-to-sue letter.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-03-27",
+        "entry": "Answer and counterclaim filed.",
+        "party": "Summit Outfitters Co."
+      },
+      {
+        "date": "2025-04-15",
+        "entry": "Scheduling order entered; discovery deadline set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-06-30",
+        "entry": "Order on the parties' discovery disputes regarding comparator data.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-19",
+        "entry": "Discovery closes; expert disclosures exchanged.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-11-25",
+        "entry": "Summary judgment briefing completed and taken under advisement.",
+        "party": "the court"
+      }
+    ],
+    "trial": {
+      "jury": false,
+      "estimated_days": 6,
+      "scheduled_date": "2026-05-02"
+    }
+  },
+  "facts": {
+    "protected_class": "disability",
+    "adverse_action": "termination",
+    "hire_date": "2016-09-01",
+    "termination_date": "2024-09-14",
+    "reported_internally": false,
+    "mhrc_complaint_filed": true,
+    "right_to_sue_issued": true,
+    "annual_salary": 103027,
+    "replacement_younger_or_outside_class": false,
+    "performance_reviews": "mixed"
+  }
+}

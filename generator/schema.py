@@ -6,7 +6,7 @@ from functools import lru_cache
 
 from jsonschema import Draft202012Validator
 
-from .paths import CANONICAL_CASE_SCHEMA, MOCK_MATTER_SCHEMA
+from .paths import CANONICAL_CASE_SCHEMA, COMPOUND_MATTER_SCHEMA, MOCK_MATTER_SCHEMA
 
 
 @lru_cache(maxsize=None)
@@ -21,6 +21,10 @@ def mock_matter_schema() -> dict:
 
 def canonical_case_schema() -> dict:
     return _load(CANONICAL_CASE_SCHEMA)
+
+
+def compound_matter_schema() -> dict:
+    return _load(COMPOUND_MATTER_SCHEMA)
 
 
 def _errors(instance, schema) -> list[str]:
@@ -39,3 +43,11 @@ def validate_matter(matter: dict) -> list[str]:
 
 def validate_canonical(case: dict) -> list[str]:
     return _errors(case, canonical_case_schema())
+
+
+def validate_compound(compound: dict) -> list[str]:
+    """Validate the compound envelope, then each constituent matter."""
+    errors = _errors(compound, compound_matter_schema())
+    for i, matter in enumerate(compound.get("matters", [])):
+        errors.extend(f"matters[{i}].{e}" for e in validate_matter(matter))
+    return errors

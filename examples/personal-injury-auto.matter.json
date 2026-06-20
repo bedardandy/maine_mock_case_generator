@@ -1,0 +1,567 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "personal-injury-auto",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-479146",
+    "practice_area": "civil",
+    "title": "Olivia B. Ellsworth v. Maria Q. Fairbanks",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court"
+    },
+    "case_type": "personal_injury",
+    "filing_date": "2025-10-01",
+    "status": "active",
+    "summary": "Olivia B. Ellsworth was injured in a rear-end collision at Interstate 295 northbound near Exit 7 and sues the at-fault driver Maria Q. Fairbanks (and the driver's employer Coastal Outfitters LLC) for negligence, claiming a fractured wrist and ribs and roughly $211745 in medical bills.",
+    "event_date": "2024-05-30",
+    "docket_number": "SAG-CV-2025-406"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Plaintiff (injured motorist)",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "defendant": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Defendant (at-fault driver)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "defendant_2": {
+      "entity_type": "organization",
+      "organization_name": "Coastal Outfitters LLC",
+      "full_name": "Coastal Outfitters LLC",
+      "role": "Defendant (driver's employer)",
+      "address": "115 Pine Lane",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "D",
+      "last_name": "Jessup",
+      "full_name": "Olivia D. Jessup",
+      "role": "Attorney for the client",
+      "address": "294 Elm Terrace",
+      "city": "Windham",
+      "state": "ME",
+      "zip": "04014",
+      "phone": "(207) 555-0174",
+      "email": "olivia.jessup@example.net",
+      "date_of_birth": "1961-04-07",
+      "ssn_last4": "6101",
+      "bar_number": "2596",
+      "organization_name": "Ellsworth Advocates PC"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Plaintiff (injured motorist)",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Olivia B. Ellsworth was injured in a rear-end collision at Interstate 295 northbound near Exit 7 and sues the at-fault driver Maria Q. Fairbanks (and the driver's employer Coastal Outfitters LLC) for negligence, claiming a fractured wrist and ribs and roughly $211745 in medical bills.",
+    "narrative": "On 2024-05-30, Olivia B. Ellsworth was lawfully operating a motor vehicle at Interstate 295 northbound near Exit 7 when Maria Q. Fairbanks caused a rear-end collision. Olivia suffered a fractured wrist and ribs and was transported for emergency care; Olivia's vehicle sustained roughly $33513 in damage and was towed from the scene.\n\nOlivia alleges that Maria drove negligently, breaching the duty of reasonable care owed to other motorists, and that this breach proximately caused the collision and resulting injuries. To the extent Maria was operating a commercial vehicle in the course of employment, Olivia alleges that Coastal Outfitters LLC is vicariously liable under respondeat superior and independently negligent in entrusting and supervising the vehicle.\n\nAs a result of the collision, Olivia has incurred approximately $211745 in medical specials and about $43175 in lost wages, and continues to experience pain and functional limitation. The defense disputes the nature and extent of the injuries and contends that comparative fault should reduce any recovery. The matter was filed in Sagadahoc County Superior Court and is in active discovery.",
+    "undisputed_facts": [
+      "A rear-end collision occurred at Interstate 295 northbound near Exit 7 on 2024-05-30 involving the parties' vehicles.",
+      "Olivia B. Ellsworth received medical treatment following the collision.",
+      "The investigating officer responded to the scene and prepared a crash report."
+    ],
+    "disputed_facts": [
+      "Which driver was at fault for the rear-end collision, and in what proportion.",
+      "Whether the fractured wrist and ribs was caused by the collision or by a pre-existing condition.",
+      "The reasonable value of the plaintiff's past and future medical care and lost earnings.",
+      "Whether the plaintiff's own comparative fault should reduce or bar recovery under 14 M.R.S. § 156."
+    ],
+    "timeline": [
+      {
+        "date": "2024-05-30",
+        "event": "The rear-end collision occurred at Interstate 295 northbound near Exit 7; Olivia was injured."
+      },
+      {
+        "date": "2025-10-01",
+        "event": "Complaint for negligence filed in Bath Superior Court."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Northstar Partners Corp.",
+      "type": "insurer",
+      "role": "Defendant's liability insurer",
+      "relevance": "Carries the at-fault driver's liability policy and controls the defense and any settlement within limits.",
+      "contact": {
+        "phone": "(207) 555-0193",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Riverbend Builders Corp.",
+      "type": "business_entity",
+      "role": "Tow and storage company",
+      "relevance": "Towed the plaintiff's vehicle and holds the post-collision inspection and storage records.",
+      "contact": {
+        "phone": "(207) 555-0119",
+        "city": "Camden",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Summit Studios Corp.",
+      "type": "insurer",
+      "role": "Plaintiff's auto insurer",
+      "relevance": "Carries the plaintiff's policy, including uninsured/underinsured motorist coverage, and paid medical-payments benefits.",
+      "contact": {
+        "phone": "(207) 555-0188",
+        "city": "Belfast",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Litigation Attorney",
+    "interviewee_role": "plaintiff",
+    "date": "2025-10-01",
+    "exchanges": [
+      {
+        "topic": "The collision",
+        "question": "Walk me through how the crash happened.",
+        "answer": "I was driving normally at Interstate 295 northbound near Exit 7 when it became a rear-end collision. I never had a chance to avoid it. The police came and wrote it up."
+      },
+      {
+        "topic": "Injuries",
+        "question": "What injuries did you suffer, and how are you now?",
+        "answer": "I was diagnosed with a fractured wrist and ribs. I have been in treatment ever since and still have pain and trouble doing things I used to do easily."
+      },
+      {
+        "topic": "Treatment and bills",
+        "question": "What has your medical care looked like?",
+        "answer": "Emergency care, imaging, follow-ups, and therapy. The bills are already around $211745, and my doctor says I may need more care."
+      },
+      {
+        "topic": "Lost income",
+        "question": "Has this affected your ability to work?",
+        "answer": "Yes. I missed a lot of work and lost about $43175 in wages. I am worried about whether I can keep up long term."
+      },
+      {
+        "topic": "Fault",
+        "question": "Is the other driver blaming you at all?",
+        "answer": "Their insurer is hinting I was partly at fault, but I had the right of way. I do not think any of this was my fault."
+      },
+      {
+        "topic": "Goal",
+        "question": "What outcome are you hoping for?",
+        "answer": "Fair compensation for my medical bills, lost wages, and what I have been through. I will go to trial if I have to, but a fair settlement is fine."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Establish the defendant's negligence and full liability for the rear-end collision.",
+      "Recover compensation for past and future medical care, lost wages, and pain and suffering.",
+      "Maximize recovery against available liability and underinsured-motorist coverage."
+    ],
+    "priorities": [
+      "Proving causation linking the fractured wrist and ribs to the collision.",
+      "Defeating the comparative-fault defense.",
+      "Documenting the full economic and non-economic loss."
+    ],
+    "risk_tolerance": "high",
+    "desired_outcomes": [
+      "A judgment or settlement compensating the plaintiff's full damages.",
+      "A liability finding (or strong settlement posture) unreduced by comparative fault."
+    ],
+    "non_starters": [
+      "A nuisance-value settlement that ignores the future medical needs."
+    ],
+    "constraints": {
+      "budget": "Contingency-fee representation; costs advanced and recovered from any judgment.",
+      "timeline": "Wants the matter resolved before the close of discovery if a fair offer is made."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Whether the action was timely filed within the limitations period",
+      "category": "procedure",
+      "governing_law": "14 M.R.S. § 752",
+      "sub_questions": [
+        "When did the cause of action accrue?",
+        "Was suit filed within six years?"
+      ],
+      "strength": "strong",
+      "id": "iss1"
+    },
+    {
+      "issue": "Whether the employer is vicariously liable for the driver's conduct",
+      "category": "tort",
+      "governing_law": "Respondeat superior; common law (vicarious liability and negligent entrustment)",
+      "sub_questions": [
+        "Was the driver acting within the scope of employment?",
+        "Did the employer negligently entrust the vehicle?"
+      ],
+      "strength": "moderate",
+      "client_position": "The employer is liable for its driver's negligence committed on the job.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Whether the defendant negligently caused the collision",
+      "category": "tort",
+      "governing_law": "Common law negligence (duty, breach, causation, damages)",
+      "sub_questions": [
+        "Did the defendant breach the duty of reasonable care?",
+        "Was the breach the proximate cause of the plaintiff's injuries?"
+      ],
+      "strength": "strong",
+      "client_position": "The defendant's negligent operation caused the rear-end collision and all resulting harm.",
+      "id": "iss3"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Diego M. Ellsworth",
+        "field": "Vocational and economic loss",
+        "credentials": "Ph.D., CRC",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Past and future lost earnings and earning capacity",
+      "opinion": "The injuries reduced the plaintiff's earning capacity, yielding a quantifiable economic loss.",
+      "basis": "Wage records, vocational assessment, and life-expectancy tables."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Jane M. Greenhill",
+        "field": "Biomechanical engineering",
+        "credentials": "Ph.D., P.E.",
+        "retained_by": "defendant"
+      },
+      "topic": "Injury causation and collision forces",
+      "opinion": "The forces involved were insufficient to cause the claimed injuries.",
+      "basis": "Delta-V analysis and occupant-kinematics modeling."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Scene and vehicle photographs",
+      "type": "photo",
+      "party": "plaintiff",
+      "description": "Photographs of the vehicles, damage, debris field, and roadway.",
+      "id": "ev1"
+    },
+    {
+      "title": "Wage-loss documentation",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "Employer letter and pay records substantiating lost earnings.",
+      "id": "ev2"
+    },
+    {
+      "title": "Police crash report and diagram",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "The investigating officer's official report, narrative, and scene diagram.",
+      "id": "ev3"
+    },
+    {
+      "title": "Defendant's cell-phone records",
+      "type": "document",
+      "party": "defendant",
+      "description": "Call and text logs around the time of the collision relevant to distraction.",
+      "id": "ev4"
+    },
+    {
+      "title": "Medical records and itemized bills",
+      "type": "medical_record",
+      "party": "plaintiff",
+      "description": "Treatment records and billing for the plaintiff's injuries.",
+      "id": "ev5"
+    },
+    {
+      "title": "Vehicle repair estimate",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "Itemized estimate or total-loss valuation for the plaintiff's vehicle.",
+      "id": "ev6"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Lost wages",
+        "amount": 23805,
+        "basis": "Documented time missed from work."
+      },
+      {
+        "label": "Estimated future medical and care",
+        "amount": 245503,
+        "basis": "Life-care and treatment projections."
+      },
+      {
+        "label": "Pain-and-suffering demand",
+        "amount": 446154,
+        "basis": "Non-economic loss demand."
+      },
+      {
+        "label": "Defendant's policy limits",
+        "amount": 626129,
+        "basis": "Available liability coverage."
+      },
+      {
+        "label": "Medical specials to date",
+        "amount": 80833,
+        "basis": "Itemized past medical bills."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "discovery",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Negligence",
+        "by": "Olivia B. Ellsworth",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "Common law negligence; 14 M.R.S. § 156",
+        "elements": [
+          "A duty of reasonable care",
+          "Breach of that duty",
+          "Proximate causation",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages for medical expenses, lost wages, and pain and suffering",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Vicarious liability and negligent entrustment",
+        "by": "Olivia B. Ellsworth",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "Respondeat superior; common law",
+        "elements": [
+          "An employment or agency relationship",
+          "Conduct within the scope of employment",
+          "Negligent entrustment or supervision",
+          "Resulting damages"
+        ],
+        "relief_sought": "Compensatory damages against the employer",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Negligence per se",
+        "by": "Olivia B. Ellsworth",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "29-A M.R.S. (rules of the road)",
+        "elements": [
+          "Violation of a safety statute",
+          "Plaintiff within the protected class",
+          "Harm of the type the statute guards against",
+          "Causation"
+        ],
+        "relief_sought": "Compensatory damages",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Statute of limitations",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The action was not commenced within the limitations period. 14 M.R.S. § 752."
+      },
+      {
+        "defense": "Sudden emergency",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The defendant faced an unforeseen emergency not of the defendant's making."
+      },
+      {
+        "defense": "Lack of causation",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The claimed injuries are pre-existing or degenerative and were not caused by the collision."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Negligence (property damage)",
+        "by": "Maria Q. Fairbanks",
+        "against": "Olivia B. Ellsworth",
+        "relief": "Damages for the defendant's own vehicle repair costs allegedly caused by the plaintiff."
+      }
+    ],
+    "discovery": [
+      {
+        "type": "deposition",
+        "propounding_party": "Olivia B. Ellsworth",
+        "responding_party": "the treating physician",
+        "served_date": "2025-07-10",
+        "status": "outstanding",
+        "description": "Deposition of the treating physician on causation."
+      },
+      {
+        "type": "request_for_admission",
+        "propounding_party": "Olivia B. Ellsworth",
+        "responding_party": "Maria Q. Fairbanks",
+        "served_date": "2025-05-05",
+        "status": "responded",
+        "description": "Admissions on fault, right-of-way, and authenticity of the crash report."
+      },
+      {
+        "type": "request_for_production",
+        "propounding_party": "Olivia B. Ellsworth",
+        "responding_party": "Maria Q. Fairbanks",
+        "served_date": "2025-04-08",
+        "status": "objected",
+        "description": "Requests for the defendant's phone records, vehicle data, and employment file."
+      },
+      {
+        "type": "independent_examination",
+        "propounding_party": "Maria Q. Fairbanks",
+        "responding_party": "Olivia B. Ellsworth",
+        "served_date": "2025-08-26",
+        "status": "served",
+        "description": "Defense medical examination of the plaintiff."
+      },
+      {
+        "type": "interrogatories",
+        "propounding_party": "Olivia B. Ellsworth",
+        "responding_party": "Maria Q. Fairbanks",
+        "served_date": "2025-04-08",
+        "status": "responded",
+        "description": "First set of interrogatories on the collision, speed, and insurance."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to bifurcate liability and damages",
+        "type": "trial",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-03-19",
+        "status": "opposed",
+        "relief": "Separate trials on liability and damages."
+      },
+      {
+        "title": "Motion in limine to exclude the accident reconstruction",
+        "type": "evidentiary",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-01-15",
+        "status": "filed",
+        "relief": "Exclusion of the plaintiff's reconstruction expert testimony."
+      },
+      {
+        "title": "Motion to compel the defendant's phone records",
+        "type": "discovery",
+        "movant": "Olivia B. Ellsworth",
+        "filed_date": "2025-05-24",
+        "status": "granted_in_part",
+        "relief": "An order compelling production of the defendant's call and text logs."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2025-02-07",
+        "entry": "Complaint and demand for jury trial filed.",
+        "party": "Olivia B. Ellsworth"
+      },
+      {
+        "date": "2025-03-09",
+        "entry": "Defendants' answer and affirmative defenses filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-03-25",
+        "entry": "Scheduling order entered; discovery deadline set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-06-25",
+        "entry": "Order compelling production of the defendant's phone records.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-03",
+        "entry": "Defense medical examination completed; expert disclosures exchanged.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-11-21",
+        "entry": "Partial summary judgment on liability taken under advisement.",
+        "party": "the court"
+      },
+      {
+        "date": "2026-02-08",
+        "entry": "Mediation held; case continues toward trial.",
+        "party": "the court"
+      }
+    ],
+    "trial": {
+      "jury": false,
+      "estimated_days": 10,
+      "scheduled_date": "2026-08-11"
+    }
+  },
+  "facts": {
+    "collision_date": "2024-05-30",
+    "collision_location": "Interstate 295 northbound near Exit 7",
+    "collision_type": "rear-end collision",
+    "injury_type": "fractured wrist and ribs",
+    "liability_disputed": false,
+    "commercial_vehicle": false,
+    "medical_specials": 211745,
+    "lost_wages": 43175,
+    "property_damage": 33513,
+    "policy_limits": 664006,
+    "comparative_fault_alleged": false
+  }
+}

@@ -1,0 +1,198 @@
+id: condominium-construction-dispute
+title: "{plaintiff_full_name} v. {defendant_full_name} et al."
+practice_area: real_estate
+case_type: condominium
+status: active
+docket_prefix: CV
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, CV-067]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+dates:
+  filing_date: {date_between: ["2025-03-01", "2025-12-01"]}
+  event_date: "{declarant_turnover_date}"
+
+# A Maine Condominium Act (Title 33, Chapter 31) dispute. A unit owners' association
+# sues the declarant/developer and its general contractor over construction defects in
+# the common elements, and in the same action forecloses an assessment lien against a
+# delinquent unit owner. Exercises multi-party real-estate litigation end to end.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, entity: organization, label: "Plaintiff unit owners' association"}
+    - {key: defendant, entity: organization, label: "Defendant declarant/developer"}
+    - {key: defendant_2, entity: organization, label: "Defendant general contractor"}
+    - {key: other_party, label: "Delinquent unit owner (assessment-lien count)"}
+
+facts:
+  condominium_name: {pick: ["Granite Wharf Condominiums", "Tidewater Mill Lofts", "Birchwood Commons", "Harborview Townhomes", "Saco Falls Condominium"]}
+  condo_type: {pick: ["a converted historic mill with 38 loft units", "newly built oceanfront townhomes (16 units)", "a 60-unit mid-rise", "a small 8-unit conversion", "a phased 110-unit community"]}
+  num_units: {int_between: [8, 110]}
+  common_element_defect: {pick: ["roof and building-envelope leaks", "facade and masonry failures", "defective decks and balconies", "an undersized stormwater system", "structural deficiencies in the garage"]}
+  declarant_turnover_date: {date_between: ["2022-06-01", "2024-09-30"]}
+  special_assessment_amount: {int_between: [120000, 2400000]}
+  reserve_shortfall: {int_between: [40000, 900000]}
+  unpaid_assessments: {int_between: [6000, 85000]}
+  warranty_claim: {pick: [true]}
+  arbitration_clause_in_declaration: {pick: [true, false]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: business_entity, name_kind: organization, role: "Condominium property management company", relevance: "Manages the common elements and maintains the association's books, ledgers, and reserve accounts."}
+    - {type: financial_institution, name_kind: bank, role: "Declarant's construction lender", relevance: "Financed construction of the condominium and holds related records."}
+    - {type: expert, name_kind: person, role: "Association's building-envelope consultant", relevance: "Investigated the common-element defects and prepared the envelope and moisture reports."}
+    - {type: insurer, name_kind: organization, role: "Developer's liability insurer", relevance: "May owe a defense and indemnity to the declarant and contractor for the defect claims."}
+    - {type: government_agency, name: "Municipal Building Department", role: "Local code authority", relevance: "Issued the building permits and certificates of occupancy and holds inspection records."}
+    - {type: financial_institution, name_kind: bank, role: "Delinquent unit owner's mortgage lender", relevance: "Holds a recorded mortgage on the delinquent unit and has priority interests affected by the lien foreclosure."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name}, the unit owners' association for {condominium_name} ({condo_type_lower}), sues the declarant {defendant_full_name} and its general contractor {defendant_2_full_name} over {common_element_defect} in the common elements, and forecloses an assessment lien against delinquent unit owner {other_party_full_name}."
+  narrative:
+    - "{condominium_name} is {condo_type}. The declarant, {defendant_full_name}, created the condominium under the Maine Condominium Act, 33 M.R.S. ch. 31, recorded the declaration and bylaws, and controlled the association's board until turning the project over to the unit owners on or about {declarant_turnover_date}. {defendant_2_full_name} served as the general contractor for the construction."
+    - "After turnover, the association's building-envelope consultant documented {common_element_defect} affecting the common elements. The association alleges these defects existed at construction, that the declarant breached its statutory and express warranties against structural defects, and that the declarant-controlled board failed to fund reserves while it ran the association. The estimated cost to repair the common elements, together with a reserve shortfall of about ${reserve_shortfall} and a special assessment of about ${special_assessment_amount}, has fallen on the unit owners."
+    - "Acting under 33 M.R.S. § 1603-102(a)(4), the association sued {defendant_full_name} and {defendant_2_full_name} in {county} County Superior Court to fund the repairs and recover its litigation expenses and attorney fees. In the same action, the association seeks to foreclose its assessment lien against {other_party_full_name}, who owns a unit and owes roughly ${unpaid_assessments} in unpaid assessments. The matter is in active, contested discovery."
+  undisputed:
+    - "{defendant_full_name} was the declarant of {condominium_name} and recorded the declaration and bylaws."
+    - "Declarant control of the association transitioned to the unit owners on or about {declarant_turnover_date}."
+    - "{other_party_full_name} owns a unit at {condominium_name} and has not paid all assessments levied against the unit."
+  disputed:
+    - "Whether the {common_element_defect} are construction defects chargeable to the declarant and contractor or normal wear and owner-maintenance items."
+    - "Whether the declarant's warranties against structural defects were validly disclaimed and whether any claim is barred by limitations or repose."
+    - "Whether an arbitration clause in the declaration compels arbitration of the association's claims."
+    - "The amount of the assessment lien, including interest and reasonable attorney fees, and its priority against the unit owner's mortgage lender."
+  timeline:
+    - {date: "{declarant_turnover_date}", event: "Declarant control of the {condominium_name} association transitioned to the unit owners."}
+    - {date: "{filing_date}", event: "Complaint filed in {court_location} Superior Court asserting defect claims and foreclosing the assessment lien."}
+
+interview:
+  interviewer: "Litigation Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "Role", question: "Who am I speaking with on behalf of the association?", answer: "I am the board president of the {condominium_name} unit owners' association. The board voted to authorize this suit on behalf of all the unit owners."}
+    - {topic: "Defects", question: "What is wrong with the buildings?", answer: "Our building-envelope consultant found {common_element_defect} in the common elements. It traces back to how the project was built, and the cost to fix it is enormous."}
+    - {topic: "Turnover", question: "What happened when the developer turned the association over to you?", answer: "The declarant ran our board until about {declarant_turnover_date}. By the time we took over, the reserves were short by roughly ${reserve_shortfall} and the problems were already there."}
+    - {topic: "Assessments", question: "Why is one unit owner named as a defendant?", answer: "One owner stopped paying and now owes about ${unpaid_assessments}. We recorded our lien and need to foreclose it so the rest of the owners are not stuck carrying that unit."}
+    - {topic: "Arbitration", question: "Does the declaration require arbitration?", answer: "We are not sure. There is language in the declaration the developer may try to use to push us into arbitration, and we need your read on whether it applies."}
+    - {topic: "Goal", question: "What does a good outcome look like?", answer: "Get the declarant and contractor to pay for the repairs, recover our attorney fees, collect the delinquent assessments, and settle the arbitration question early."}
+
+objectives:
+  goals:
+    - "Fund the common-element repairs by holding the declarant and the general contractor liable for the construction defects."
+    - "Recover the association's litigation expenses and reasonable attorney fees from the declarant."
+    - "Collect the delinquent assessments by foreclosing the association's assessment lien against the unit."
+    - "Resolve early whether any arbitration clause in the declaration compels arbitration of the claims."
+  priorities:
+    - "Establishing declarant and contractor liability for the defects."
+    - "Protecting the unit owners from further special assessments."
+    - "An efficient, well-sequenced discovery and expert plan."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A judgment or settlement funding the repairs, plus the association's fees and costs."
+    - "A foreclosure judgment on the assessment lien with interest and attorney fees."
+  non_starters:
+    - "Any resolution that leaves the unit owners to fund the declarant's construction defects."
+  constraints:
+    budget: {pick: ["Funded by special assessment; the board wants staged budgets per phase.", "Adequate through trial, but a sensible settlement is preferred over a prolonged fight."]}
+    timeline: "Wants the defect claims resolved before the next assessment cycle and the lien foreclosed promptly."
+
+issues:
+  count: {min: 4, max: 6}
+  pool:
+    - {issue: "The association's standing to sue on behalf of the unit owners", category: real_estate, governing_law: "33 M.R.S. § 1603-102(a)(4)", sub_questions: ["May the association assert claims on matters affecting the common elements?", "Was the suit properly authorized by the board?"], strength: strong, client_position: "The association has statutory standing to sue on behalf of all unit owners as to the common elements."}
+    - {issue: "Declarant tort and contract liability for the common-element defects", category: real_estate, governing_law: "33 M.R.S. § 1603-111", sub_questions: ["Is the declarant answerable in tort and contract for the defects?", "Did the declarant's conduct cause the common-element damage?"], strength: moderate, client_position: "The declarant is liable in tort and contract for the construction defects in the common elements."}
+    - {issue: "Breach of the implied and express warranties against structural defects", category: real_estate, governing_law: "33 M.R.S. § 1604-113 and § 1604-114", sub_questions: ["Do the implied warranties under § 1604-113 cover these defects?", "Were any express warranties under § 1604-114 given or validly disclaimed?"], strength: moderate, client_position: "The defects breach the implied warranty against structural defects and any disclaimer was ineffective."}
+    - {issue: "Enforcement of the assessment lien and recovery of attorney fees", category: real_estate, governing_law: "33 M.R.S. § 1603-116", sub_questions: ["Was the lien perfected by recording the declaration?", "Is the foreclosure within the six-year enforcement limit, and are reasonable attorney fees recoverable?"], strength: strong, client_position: "The recorded declaration perfected the lien, the claim is timely, and reasonable attorney fees are recoverable."}
+    - {issue: "Declarant liability for the association's litigation expenses and attorney fees", category: real_estate, governing_law: "33 M.R.S. § 1603-111", sub_questions: ["May the association recover its litigation costs and fees from the declarant?"], strength: moderate, client_position: "The declarant must bear the association's litigation expenses and attorney fees."}
+    - {issue: "Declarant-control transition period and fiduciary duties of a declarant-appointed board", category: real_estate, governing_law: "33 M.R.S. § 1603-103", sub_questions: ["Did the declarant-appointed board owe and breach fiduciary duties during declarant control?", "Did it fail to fund adequate reserves before turnover?"], strength: moderate, client_position: "The declarant-controlled board breached its fiduciary duties by underfunding reserves before turnover."}
+    - {issue: "Whether an arbitration clause in the declaration compels arbitration", category: real_estate, governing_law: "14 M.R.S. § 5927; 33 M.R.S. § 1603-116", sub_questions: ["Does the declaration contain an enforceable agreement to arbitrate?", "Does it reach the association's statutory defect and lien claims?"], strength: unknown, client_position: "Any arbitration clause does not compel arbitration of the association's statutory claims."}
+
+experts:
+  count: {min: 2, max: 4}
+  pool:
+    - {field: "Building-envelope architecture", credentials: "AIA, RA", retained_by: plaintiff, topic: "Causes of the common-element water intrusion and envelope failures", opinion: "The common-element defects result from deficient original design and construction, not maintenance.", basis: "Site investigation, water testing, and review of the construction documents."}
+    - {field: "Structural engineering", credentials: "P.E., S.E.", retained_by: plaintiff, topic: "Structural adequacy of the common elements", opinion: "The as-built structure departs from code and the approved plans in ways that require repair.", basis: "Field inspection, destructive testing, and structural calculations."}
+    - {field: "Reserve-study analysis", credentials: "RS", retained_by: plaintiff, topic: "Adequacy of reserve funding before and after turnover", opinion: "The association's reserves were materially underfunded during declarant control.", basis: "Reserve study, component inventory, and the association's funding history."}
+    - {field: "Condominium governance and turnover", credentials: "CMCA, PCAM", retained_by: plaintiff, topic: "Declarant-control transition and board fiduciary practice", opinion: "The declarant-appointed board's reserve and disclosure practices fell below the standard for a transitioning board.", basis: "Governing documents, board minutes, and turnover records."}
+    - {field: "Construction cost estimating", credentials: "CPE", retained_by: defendant, topic: "Reasonable cost to repair the alleged defects", opinion: "The association's repair scope and cost estimate are overstated for the conditions observed.", basis: "Independent quantity takeoff and current unit-cost data."}
+
+evidence:
+  count: {min: 5, max: 8}
+  pool:
+    - {title: "Recorded declaration and bylaws", type: public_record, party: plaintiff, description: "The recorded condominium declaration and bylaws establishing the regime and the assessment lien."}
+    - {title: "Construction contracts and plans", type: contract, party: defendant, description: "The declarant-contractor construction contracts and the approved building plans and specifications."}
+    - {title: "Building-envelope and engineering reports", type: document, party: plaintiff, description: "The consultant's envelope and the engineer's structural reports on the common-element defects."}
+    - {title: "Photographs of the defects", type: photo, party: plaintiff, description: "Photographs documenting the condition of the affected common elements."}
+    - {title: "Reserve study", type: financial_record, party: plaintiff, description: "The reserve study quantifying the reserve shortfall and repair components."}
+    - {title: "Assessment ledger and recorded lien", type: public_record, party: plaintiff, description: "The unit's assessment ledger and the recorded assessment lien on the delinquent unit."}
+    - {title: "Turnover and transition documents", type: document, party: plaintiff, description: "Records from the declarant's turnover of association control to the unit owners."}
+    - {title: "Warranty correspondence", type: correspondence, party: plaintiff, description: "Correspondence asserting and responding to the warranty claims against the declarant."}
+    - {title: "Association financial statements", type: financial_record, party: plaintiff, description: "The association's financial statements and budgets before and after turnover."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Special assessment levied for repairs", amount: {int_between: [120000, 2400000]}, basis: "Special assessment adopted by the association to fund common-element repairs."}
+    - {label: "Estimated common-element repair cost", amount: {int_between: [200000, 3500000]}, basis: "Engineer's and consultant's estimated cost to remediate the defects."}
+    - {label: "Reserve shortfall", amount: {int_between: [40000, 900000]}, basis: "Reserve-study deficit attributable to the declarant-control period."}
+    - {label: "Unpaid assessments and attorney fees on the lien count", amount: {int_between: [8000, 110000]}, basis: "Delinquent assessments plus interest and reasonable attorney fees under § 1603-116."}
+    - {label: "Warranty-claim damages", amount: {int_between: [150000, 3000000]}, basis: "Damages claimed for breach of the declarant warranties against structural defects."}
+
+litigation:
+  posture: discovery
+  causes_of_action:
+    - {count: 1, claim: "Breach of declarant warranties against structural defects", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "33 M.R.S. § 1604-113 and § 1604-114", elements: ["A declarant subject to the implied and express warranties", "Structural defects in the common elements", "No valid disclaimer of the warranties", "Resulting damage to the unit owners"], relief_sought: "Damages to repair the common elements, plus litigation expenses and attorney fees", strength: moderate}
+    - {count: 2, claim: "Negligence", by: "{plaintiff_full_name}", against: "{defendant_2_full_name}", governing_law: "Common law; 33 M.R.S. § 1603-111", elements: ["A duty of reasonable care in construction", "Breach of that duty", "Causation", "Damage to the common elements"], relief_sought: "Compensatory damages for the cost of repair", strength: moderate}
+    - {count: 3, claim: "Breach of fiduciary duty by the declarant-controlled board", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "33 M.R.S. § 1603-103; common law", elements: ["A fiduciary duty owed by the declarant-appointed board", "Breach during the declarant-control period", "Causation", "Damages, including underfunded reserves"], relief_sought: "Damages for the reserve shortfall and related losses", strength: moderate}
+    - {count: 4, claim: "Breach of contract", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "Common law", elements: ["A valid contract with the declarant", "Performance by the association", "Breach by the declarant", "Resulting damages"], relief_sought: "Compensatory damages and attorney fees", strength: moderate}
+    - {count: 5, claim: "Foreclosure of the assessment lien", by: "{plaintiff_full_name}", against: "{other_party_full_name}", governing_law: "33 M.R.S. § 1603-116", elements: ["A perfected assessment lien", "Assessments levied and unpaid", "The foreclosure is within the six-year enforcement limit"], relief_sought: "Judgment of foreclosure for the unpaid assessments, interest, and reasonable attorney fees", strength: strong}
+  affirmative_defenses:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {defense: "Normal wear and owner-maintenance", by: "{defendant_full_name}", basis: "The complained-of conditions are ordinary wear and the unit owners' maintenance obligations, not construction defects."}
+      - {defense: "Statute of limitations and repose", by: "{defendant_full_name}", basis: "The defect claims accrued, or the improvement was substantially completed, outside the limitations and repose periods. 14 M.R.S. § 752; § 752-A."}
+      - {defense: "Valid disclaimer of warranty", by: "{defendant_full_name}", basis: "Any implied warranties against structural defects were conspicuously and validly disclaimed in the declaration and sale documents. 33 M.R.S. § 1604-115."}
+      - {defense: "Failure to fund reserves", by: "{defendant_full_name}", basis: "The association's own failure to fund reserves and maintain the common elements caused or aggravated the claimed damage."}
+      - {defense: "Lien time-barred or assessments improperly levied", by: "{other_party_full_name}", basis: "The assessment lien is unenforceable as time-barred or the underlying assessments were improperly levied. 33 M.R.S. § 1603-116."}
+  cross_claims:
+    - {claim: "Indemnification and contribution", by: "{defendant_full_name}", against: "{defendant_2_full_name}", basis: "If the declarant is liable for the defects, the general contractor must indemnify it for defective work the contractor performed."}
+  discovery:
+    n: {min: 4, max: 6}
+    pick_n:
+      - {type: interrogatories, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-01", "2025-05-01"]}, status: responded, description: "First set of interrogatories on the design, construction, and turnover of the condominium."}
+      - {type: request_for_production, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_2_full_name}", served_date: {date_between: ["2025-04-10", "2025-05-10"]}, status: objected, description: "Requests for construction records, submittals, and as-built drawings."}
+      - {type: request_for_production, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-10", "2025-05-10"]}, status: served, description: "Requests for the declarant's financials, budgets, and reserve records during declarant control."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-06-01", "2025-07-15"]}, status: outstanding, description: "Deposition of the declarant's principal."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_2_full_name}", served_date: {date_between: ["2025-06-01", "2025-07-15"]}, status: served, description: "Deposition of the general contractor's project manager."}
+      - {type: deposition, propounding_party: "{defendant_full_name}", responding_party: "the property management company", served_date: {date_between: ["2025-06-15", "2025-07-31"]}, status: served, description: "Deposition of the association's property manager on the books and reserves."}
+      - {type: independent_examination, propounding_party: "{defendant_full_name}", responding_party: "{plaintiff_full_name}", served_date: {date_between: ["2025-07-15", "2025-08-31"]}, status: served, description: "Independent building inspection and destructive testing of the common elements."}
+      - {type: subpoena, propounding_party: "{plaintiff_full_name}", responding_party: "the developer's liability insurer", served_date: {date_between: ["2025-05-15", "2025-06-15"]}, status: served, description: "Subpoena to the developer's insurer for policies and claim records."}
+  motions:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {title: "Motion to compel arbitration", type: dispositive, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-03-15", "2025-04-30"]}, status: opposed, relief: "An order compelling arbitration under the arbitration clause in the declaration, if any."}
+      - {title: "Motion for summary judgment on the assessment lien", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-09-01", "2025-10-15"]}, status: under_advisement, relief: "Summary judgment of foreclosure on the assessment lien against the delinquent unit."}
+      - {title: "Motion for representative treatment", type: pleading, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-05-01", "2025-06-15"]}, status: granted, relief: "Confirmation that the association may litigate the common-element claims in a representative capacity."}
+      - {title: "Motion to appoint a receiver for reserves", type: provisional, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-06-01", "2025-07-15"]}, status: denied, relief: "Appointment of a receiver to safeguard and administer the association's reserve funds."}
+      - {title: "Motion in limine to exclude the defect expert", type: evidentiary, movant: "{defendant_full_name}", filed_date: {date_between: ["2026-04-01", "2026-06-15"]}, status: filed, relief: "Exclusion of the association's building-envelope expert opinions."}
+  docket:
+    - {date: {date_between: ["2025-03-01", "2025-03-12"]}, entry: "Complaint filed asserting common-element defect claims and foreclosure of the assessment lien.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-03-20", "2025-04-05"]}, entry: "Defendants' answers and the declarant's cross-claim against the general contractor filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-04-15", "2025-04-30"]}, entry: "Scheduling order entered; discovery and expert-disclosure deadlines set.", party: "the court"}
+    - {date: {date_between: ["2025-05-10", "2025-05-25"]}, entry: "Order on the motion to compel arbitration entered.", party: "the court"}
+    - {date: {date_between: ["2025-07-01", "2025-07-20"]}, entry: "Independent building inspection and testing of the common elements conducted.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-09-01", "2025-09-20"]}, entry: "Association's expert reports on the defects and reserves served.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-10-15", "2025-11-05"]}, entry: "Order on the motion for summary judgment on the assessment lien entered.", party: "the court"}
+  trial:
+    jury: {pick: [true, false]}
+    estimated_days: {int_between: [5, 12]}
+    scheduled_date: {date_between: ["2026-09-01", "2027-05-01"]}

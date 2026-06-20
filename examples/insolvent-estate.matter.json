@@ -1,0 +1,385 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "insolvent-estate",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-709851",
+    "practice_area": "probate",
+    "title": "Insolvent estate of Olivia B. Ellsworth",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Probate Court"
+    },
+    "case_type": "decedent_estate",
+    "filing_date": "2026-05-01",
+    "status": "active",
+    "summary": "Theodore B. Kingsley administers the insolvent estate of Olivia B. Ellsworth, whose allowed claims of roughly $379749 far exceed probate assets of about $55959, requiring the court to apply the statutory order of priority among competing creditors and allowances.",
+    "event_date": "2025-06-22",
+    "docket_number": "SAG-PE-2026-684"
+  },
+  "parties": {
+    "decedent": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Decedent",
+      "date_of_birth": "1997-10-02",
+      "ssn_last4": "1542"
+    },
+    "personal_representative": {
+      "entity_type": "person",
+      "first_name": "Theodore",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Theodore B. Kingsley",
+      "role": "Personal representative (administering an insolvent estate)",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "theodore.kingsley@example.org",
+      "date_of_birth": "1975-02-05",
+      "ssn_last4": "3943"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Jessup",
+      "full_name": "Maria Q. Jessup",
+      "role": "Attorney for the client",
+      "address": "32 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04029",
+      "phone": "(207) 555-0180",
+      "email": "maria.jessup@example.net",
+      "date_of_birth": "1964-02-01",
+      "ssn_last4": "9455",
+      "bar_number": "7499",
+      "organization_name": "Birchwood & Calloway LLP"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Theodore",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Theodore B. Kingsley",
+      "role": "Personal representative (administering an insolvent estate)",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "theodore.kingsley@example.org",
+      "date_of_birth": "1975-02-05",
+      "ssn_last4": "3943"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Theodore B. Kingsley administers the insolvent estate of Olivia B. Ellsworth, whose allowed claims of roughly $379749 far exceed probate assets of about $55959, requiring the court to apply the statutory order of priority among competing creditors and allowances.",
+    "narrative": "Olivia B. Ellsworth died on 2025-06-22. Theodore B. Kingsley, the adult child, was appointed to administer the estate and soon discovered that it is insolvent: probate assets total only about $55959, while allowed and asserted claims approach $379749, including roughly $77815 in secured debt.\n\nBecause the estate cannot pay everyone, the personal representative must marshal the assets, determine which claims are valid, and pay them in the order of priority set by the Maine Probate Code rather than first-come-first-served. The surviving family asserts homestead, exempt-property, and family allowances that take priority over general creditors, while several unsecured creditors compete for whatever remains.\n\nTo protect against personal liability for an improper distribution, Theodore has asked the court to proceed by formal, supervised administration, give notice to creditors, and approve a plan of distribution that abates the devises and prorates the unsecured claims.",
+    "undisputed_facts": [
+      "Olivia B. Ellsworth died on 2025-06-22.",
+      "Asserted claims against the estate exceed its probate assets.",
+      "There are at least 5 creditors competing for payment."
+    ],
+    "disputed_facts": [
+      "The validity and classification of several creditor claims.",
+      "Whether the family allowances were properly claimed and in what amount.",
+      "Whether certain transfers before death should be recovered as estate assets."
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Pine Tree Community Bank",
+      "type": "financial_institution",
+      "role": "Mortgage lender (secured creditor)",
+      "relevance": "Holds a secured claim against the decedent's real property.",
+      "contact": {
+        "phone": "(207) 555-0179",
+        "city": "Camden",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Lighthouse Partners Corp.",
+      "type": "creditor",
+      "role": "Credit card issuer",
+      "relevance": "Files an unsecured claim that competes with other creditors.",
+      "contact": {
+        "phone": "(207) 555-0138",
+        "city": "Windham",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Evergreen Logistics Corp.",
+      "type": "creditor",
+      "role": "Hospital / medical creditor",
+      "relevance": "Asserts a large unsecured claim for end-of-life care.",
+      "contact": {
+        "phone": "(207) 555-0167",
+        "city": "Bath",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Maine Revenue Services",
+      "type": "government_agency",
+      "role": "Taxing authority",
+      "relevance": "Asserts a priority claim for unpaid taxes.",
+      "contact": {
+        "phone": "(207) 555-0177",
+        "city": "Farmington",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Henry E. Calloway",
+      "type": "beneficiary",
+      "role": "Surviving spouse claiming allowances",
+      "relevance": "Claims the homestead, exempt-property, and family allowances ahead of general creditors.",
+      "contact": {
+        "phone": "(207) 555-0162",
+        "city": "Falmouth",
+        "state": "ME",
+        "email": "henry.calloway@example.net"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Probate Attorney",
+    "interviewee_role": "personal_representative",
+    "date": "2026-05-01",
+    "exchanges": [
+      {
+        "topic": "Scope",
+        "question": "What does the estate actually own?",
+        "answer": "Not much liquid. A house with a mortgage, a vehicle, a small bank account. The debts are far bigger than the assets."
+      },
+      {
+        "topic": "Creditors",
+        "question": "Who is demanding payment?",
+        "answer": "The hospital, a couple of credit cards, the funeral home, the mortgage lender, and a tax notice arrived too. Everyone wants to be paid first."
+      },
+      {
+        "topic": "Family",
+        "question": "Is anyone in the household relying on the estate?",
+        "answer": "Yes. The surviving spouse needs the homestead and family allowance just to get by."
+      },
+      {
+        "topic": "Worry",
+        "question": "What worries you most about serving?",
+        "answer": "I do not want to be personally on the hook if I pay the wrong people in the wrong order."
+      },
+      {
+        "topic": "Goal",
+        "question": "What outcome are you seeking?",
+        "answer": "Handle it correctly, pay claims in the right priority, protect the family's allowances, and close the estate without liability."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Administer the insolvent estate in the statutory order of priority.",
+      "Preserve the surviving family's homestead, exempt-property, and family allowances.",
+      "Avoid personal liability for any improper or out-of-order distribution."
+    ],
+    "priorities": [
+      "Correct classification and priority of competing claims.",
+      "Protection of the family allowances.",
+      "An orderly, court-approved plan of distribution."
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "A court-approved distribution that pays claims in priority and abates devises.",
+      "A discharge of the personal representative on closing."
+    ],
+    "non_starters": [
+      "Paying general creditors ahead of statutory allowances and priority claims."
+    ],
+    "constraints": {
+      "budget": "Limited; estate funds are scarce and fees themselves are a priority expense.",
+      "timeline": "Bounded by the non-claim period for creditors."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Abatement of devises where the estate is insolvent",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 3-902",
+      "sub_questions": [
+        "In what order do devises abate to satisfy claims and allowances?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Recovery of non-probate transfers to satisfy claims",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 6-102",
+      "sub_questions": [
+        "Are recent transfers reachable to pay creditors of an insolvent estate?"
+      ],
+      "strength": "weak",
+      "id": "iss2"
+    },
+    {
+      "issue": "Personal representative liability for improper distribution",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 3-807; § 3-703",
+      "sub_questions": [
+        "What protects the PR who follows the statutory order and gives proper notice?"
+      ],
+      "strength": "moderate",
+      "id": "iss3"
+    },
+    {
+      "issue": "Family, homestead, and exempt-property allowances versus creditors",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 2-401; § 2-402; § 2-403; § 2-404",
+      "sub_questions": [
+        "Do the allowances take priority over general creditors?",
+        "In what amounts?"
+      ],
+      "strength": "strong",
+      "client_position": "Contends the allowances are paid ahead of general creditors.",
+      "id": "iss4"
+    },
+    {
+      "issue": "Order of priority for payment of claims against an insolvent estate",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 3-805",
+      "sub_questions": [
+        "Which claims are priority claims (costs of administration, funeral, taxes)?",
+        "How are unsecured claims prorated when assets are insufficient?"
+      ],
+      "strength": "strong",
+      "client_position": "Seeks court approval to pay claims strictly in statutory order.",
+      "id": "iss5"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Maria S. Ashford",
+        "field": "Estate accounting",
+        "credentials": "CPA",
+        "retained_by": "personal_representative"
+      },
+      "topic": "Classification and proration of claims",
+      "opinion": "After priority claims and allowances, unsecured creditors recover only a fraction of their claims.",
+      "basis": "Inventory, claims register, and a proposed distribution schedule."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Beatrice B. Poe",
+        "field": "Real estate appraisal",
+        "credentials": "MAI",
+        "retained_by": "personal_representative"
+      },
+      "topic": "Date-of-death value of the real property",
+      "opinion": "The encumbered real property has limited equity available to unsecured creditors.",
+      "basis": "Appraisal and the mortgage payoff."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Notice to creditors and proof of publication",
+      "type": "public_record",
+      "party": "personal_representative",
+      "description": "Triggers the deadline for filing claims.",
+      "id": "ev1"
+    },
+    {
+      "title": "Funeral and administration expense invoices",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "description": "Priority expenses of administration.",
+      "id": "ev2"
+    },
+    {
+      "title": "Mortgage payoff statement",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "description": "Documents the secured claim against the real property.",
+      "id": "ev3"
+    },
+    {
+      "title": "Inventory and appraisal showing a deficit",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "description": "Lists assets well below total claims.",
+      "id": "ev4"
+    },
+    {
+      "title": "Register of creditor claims",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "description": "All filed claims with amounts and classifications.",
+      "id": "ev5"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Total probate assets",
+        "amount": 82709,
+        "basis": "Inventory and appraisal."
+      },
+      {
+        "label": "Funeral and administration expenses (priority)",
+        "amount": 10931,
+        "basis": "Invoices."
+      },
+      {
+        "label": "Total asserted claims",
+        "amount": 274403,
+        "basis": "Register of creditor claims."
+      },
+      {
+        "label": "Family and homestead allowances claimed",
+        "amount": 19418,
+        "basis": "Statutory allowances."
+      },
+      {
+        "label": "Secured claims",
+        "amount": 73905,
+        "basis": "Mortgage and liens."
+      }
+    ]
+  },
+  "facts": {
+    "date_of_death": "2025-06-22",
+    "will_exists": true,
+    "relationship_to_decedent": "adult child",
+    "total_probate_assets": 55959,
+    "total_allowed_claims": 379749,
+    "secured_claims": 77815,
+    "funeral_and_admin_expenses": 26717,
+    "num_creditors": 5,
+    "homestead_allowance_claimed": false,
+    "estate_is_insolvent": true,
+    "proceeding_type": "formal, supervised administration"
+  }
+}

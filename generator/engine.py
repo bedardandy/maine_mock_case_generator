@@ -87,13 +87,18 @@ def _build_third_parties(scenario: dict, ctx: dict, rng: random.Random, pools: P
     return out
 
 
-def _build_parties(scenario: dict, ctx: dict, rng: random.Random, pools: Pools) -> dict:
+def _build_parties(scenario: dict, ctx: dict, rng: random.Random, pools: Pools,
+                   overrides: dict | None = None) -> dict:
     pcfg = scenario.get("parties", {})
+    overrides = overrides or {}
     parties: dict = {}
 
     for role in pcfg.get("roles", []):
         key = role["key"]
-        if role.get("entity") == "organization":
+        if key in overrides:
+            party = copy.deepcopy(overrides[key])
+            party.setdefault("role", role.get("label", ""))
+        elif role.get("entity") == "organization":
             party = build_organization(pools, name=role.get("name", ""), role=role.get("label", ""))
         else:
             party = build_person(
@@ -105,26 +110,41 @@ def _build_parties(scenario: dict, ctx: dict, rng: random.Random, pools: Pools) 
         parties[key] = party
         _ctx_for_party(ctx, key, party)
 
-    # Children: child_1, child_2, ...
-    num_children = dsl.resolve_count(pcfg.get("children"), rng) if pcfg.get("children") else 0
+    # Children: shared-cast overrides win; otherwise generate child_1..N.
+    child_keys = sorted((k for k in overrides if k.startswith("child_")),
+                        key=lambda k: int(k.split("_")[1]))
     child_names = []
-    for n in range(1, num_children + 1):
-        child = build_person(pools, role="Minor child", with_contact=False, child=True)
-        parties[f"child_{n}"] = child
-        _ctx_for_party(ctx, f"child_{n}", child)
-        child_names.append(child["full_name"])
+    if child_keys:
+        for n, k in enumerate(child_keys, start=1):
+            child = copy.deepcopy(overrides[k])
+            child.setdefault("role", "Minor child")
+            parties[f"child_{n}"] = child
+            _ctx_for_party(ctx, f"child_{n}", child)
+            child_names.append(child.get("full_name", ""))
+        num_children = len(child_keys)
+    else:
+        num_children = dsl.resolve_count(pcfg.get("children"), rng) if pcfg.get("children") else 0
+        for n in range(1, num_children + 1):
+            child = build_person(pools, role="Minor child", with_contact=False, child=True)
+            parties[f"child_{n}"] = child
+            _ctx_for_party(ctx, f"child_{n}", child)
+            child_names.append(child["full_name"])
     ctx["num_children"] = num_children
     ctx["num_children_words"] = _NUM_WORDS.get(num_children, str(num_children))
     ctx["children_names"] = _name_list(child_names)
 
     # Attorney for the represented client.
     if pcfg.get("attorney", True):
-        attorney = build_person(pools, role="Attorney for the client")
-        attorney["bar_number"] = pools.bar_number()
-        attorney["organization_name"] = pools.law_firm()
+        if "attorney" in overrides:
+            attorney = copy.deepcopy(overrides["attorney"])
+            attorney.setdefault("role", "Attorney for the client")
+        else:
+            attorney = build_person(pools, role="Attorney for the client")
+            attorney["bar_number"] = pools.bar_number()
+            attorney["organization_name"] = pools.law_firm()
         parties["attorney"] = attorney
         _ctx_for_party(ctx, "attorney", attorney)
-        ctx["attorney_firm"] = attorney["organization_name"]
+        ctx["attorney_firm"] = attorney.get("organization_name", "")
 
     # Client alias (independent copy) for the signing-filer projection.
     client_role = pcfg.get("client_role")
@@ -215,8 +235,14 @@ def _assemble_financials(scenario: dict, ctx: dict, rng: random.Random):
     return financials
 
 
-def generate_matter(scenario_id: str, seed: int = 0) -> dict:
-    """Build a fully-validated Mock Matter from a scenario archetype and seed."""
+def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = None) -> dict:
+    """Build a fully-validated Mock Matter from a scenario archetype and seed.
+
+    ``overrides`` maps a party role key (plaintiff, decedent, child_1, attorney, ...) to a
+    pre-built party object, so a compound matter can share the same cast across several
+    constituent matters. Overridden identities are in place before any templating, so
+    narrative and facts stay internally consistent.
+    """
     scenario = load_scenario(scenario_id)
     rng = random.Random(seed)
     pools = Pools(rng)
@@ -242,7 +268,7 @@ def generate_matter(scenario_id: str, seed: int = 0) -> dict:
     ctx["filing_date"] = filing_date
 
     # --- parties ---------------------------------------------------------
-    parties = _build_parties(scenario, ctx, rng, pools)
+    parties = _build_parties(scenario, ctx, rng, pools, overrides)
 
     # --- canonical bridge facts -----------------------------------------
     facts = dsl.resolve(scenario.get("facts", {}), ctx, rng)
@@ -327,6 +353,9 @@ def generate_matter(scenario_id: str, seed: int = 0) -> dict:
     financials = _assemble_financials(scenario, ctx, rng)
     if financials:
         out["financials"] = financials
+
+    if scenario.get("litigation"):
+        out["litigation"] = dsl.resolve(scenario["litigation"], ctx, rng)
 
     if facts:
         out["facts"] = facts

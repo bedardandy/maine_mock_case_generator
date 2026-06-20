@@ -1,0 +1,1207 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "compound-engine",
+    "generator_version": "0.1.0",
+    "compound_id": "death-cascade",
+    "seed": 7
+  },
+  "universe_id": "UNIV-death-cascade-0007",
+  "title": "Estate and family of Nadia P. Loe",
+  "theme": "The death of Nadia P. Loe cascades into probate, a federal and Maine estate tax filing, and a guardianship for a surviving minor child.",
+  "narrative": "When Nadia P. Loe died, Felix M. Coe undertook to probate the estate and prepare the estate tax returns, while Diego F. Jessup petitioned for guardianship of the surviving minor child, Rosa B. Ellsworth. The three matters share one family and one set of assets: the estate's inventory and date-of-death values drive the tax filings, and the minor child is at once an heir of the estate and the ward of the guardianship.\n",
+  "cast": [
+    {
+      "cast_id": "decedent",
+      "kind": "person",
+      "name": "Nadia P. Loe",
+      "description": "Decedent",
+      "appears_as": [
+        {
+          "matter_id": "probate",
+          "role": "decedent"
+        },
+        {
+          "matter_id": "estate_tax",
+          "role": "decedent"
+        }
+      ]
+    },
+    {
+      "cast_id": "surviving_spouse",
+      "kind": "person",
+      "name": "Felix M. Coe",
+      "description": "Surviving spouse, personal representative, and respondent parent",
+      "appears_as": [
+        {
+          "matter_id": "probate",
+          "role": "personal_representative"
+        },
+        {
+          "matter_id": "estate_tax",
+          "role": "personal_representative"
+        },
+        {
+          "matter_id": "guardianship",
+          "role": "respondent"
+        }
+      ]
+    },
+    {
+      "cast_id": "adult_child",
+      "kind": "person",
+      "name": "Marcus W. Poe",
+      "description": "Adult child and estate beneficiary",
+      "appears_as": []
+    },
+    {
+      "cast_id": "minor_child",
+      "kind": "person",
+      "name": "Rosa B. Ellsworth",
+      "description": "Minor child: estate heir and guardianship ward",
+      "appears_as": [
+        {
+          "matter_id": "guardianship",
+          "role": "child_1"
+        }
+      ]
+    },
+    {
+      "cast_id": "grandparent",
+      "kind": "person",
+      "name": "Diego F. Jessup",
+      "description": "Grandparent and proposed guardian",
+      "appears_as": [
+        {
+          "matter_id": "guardianship",
+          "role": "petitioner"
+        }
+      ]
+    }
+  ],
+  "matters": [
+    {
+      "schema_version": "1.0",
+      "provenance": {
+        "mock": true,
+        "fictional": true,
+        "generator": "deterministic-engine",
+        "generator_version": "0.1.0",
+        "scenario_id": "decedent-estate-informal",
+        "seed": 7001
+      },
+      "matter": {
+        "matter_id": "MMC-2026-129936",
+        "practice_area": "probate",
+        "title": "Estate of Nadia P. Loe: informal probate and appointment of Felix M. Coe",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Kennebec",
+          "court_location": "Augusta",
+          "court_type": "Probate Court"
+        },
+        "case_type": "decedent_estate",
+        "filing_date": "2026-03-30",
+        "status": "pre_filing",
+        "summary": "Felix M. Coe applies for informal probate of the estate of Nadia P. Loe, who died on 2025-11-03 domiciled in Kennebec County, Maine, and asks the Augusta Probate Court to be appointed personal representative to marshal an estate valued at roughly $258927, pay valid claims, and distribute the remainder to the heirs and devisees.",
+        "event_date": "2025-11-03",
+        "docket_number": "KEN-PE-2026-628",
+        "universe_id": "UNIV-death-cascade-0007"
+      },
+      "parties": {
+        "decedent": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "full_name": "Nadia P. Loe",
+          "date_of_birth": "1960-01-25",
+          "ssn_last4": "1186",
+          "role": "Decedent"
+        },
+        "personal_representative": {
+          "entity_type": "person",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "full_name": "Felix M. Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03",
+          "ssn_last4": "1144",
+          "role": "Applicant / proposed personal representative"
+        },
+        "attorney": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "E",
+          "last_name": "Danforth",
+          "full_name": "Nadia E. Danforth",
+          "role": "Attorney for the client",
+          "address": "341 Harbor Road",
+          "city": "Yarmouth",
+          "state": "ME",
+          "zip": "04046",
+          "phone": "(207) 555-0124",
+          "email": "nadia.danforth@example.net",
+          "date_of_birth": "1970-04-29",
+          "ssn_last4": "2431",
+          "bar_number": "5753",
+          "organization_name": "Hawthorne Legal Group"
+        },
+        "client": {
+          "entity_type": "person",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "full_name": "Felix M. Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03",
+          "ssn_last4": "1144",
+          "role": "Applicant / proposed personal representative"
+        }
+      },
+      "fact_pattern": {
+        "summary": "Felix M. Coe applies for informal probate of the estate of Nadia P. Loe, who died on 2025-11-03 domiciled in Kennebec County, Maine, and asks the Augusta Probate Court to be appointed personal representative to marshal an estate valued at roughly $258927, pay valid claims, and distribute the remainder to the heirs and devisees.",
+        "narrative": "Nadia P. Loe died on 2025-11-03 while domiciled in Kennebec County, Maine. Felix M. Coe, the decedent's surviving spouse, has the highest priority among those willing to serve and seeks appointment as personal representative through informal probate so the estate can be administered without a contested formal proceeding.\n\nThe decedent left an estate valued at approximately $258927, consisting of bank and brokerage accounts, vehicles and personal property, and, where applicable, real property. There are roughly 2 heir(s) and devisee(s) to whom notice must be given. The applicant believes the estate is solvent and that administration can proceed informally.\n\nFelix now asks the Probate Court to determine that the application is complete, to admit the will to informal probate if a valid will exists, and to appoint Felix as personal representative with authority to collect assets, pay funeral expenses and valid creditor claims within the statutory period, and distribute the balance of the estate to those entitled under the will or, if there is no will, under the Maine intestacy statutes.",
+        "undisputed_facts": [
+          "Nadia P. Loe died on 2025-11-03 domiciled in Kennebec County, Maine.",
+          "Felix M. Coe is the decedent's surviving spouse and applies to serve as personal representative.",
+          "The estate is valued at approximately $258927 and includes accounts and personal property to be marshaled and administered."
+        ],
+        "disputed_facts": [
+          "Whether the will (if any) was validly executed and is entitled to informal probate, or whether the estate passes by intestacy.",
+          "The validity and priority of creditor claims presented against the estate, including final medical and funeral expenses.",
+          "Whether a bond should be required of the personal representative and in what amount."
+        ],
+        "timeline": [
+          {
+            "date": "2021-05-16",
+            "event": "Decedent executed the will offered for informal probate, if a valid will exists."
+          },
+          {
+            "date": "2025-11-03",
+            "event": "Nadia P. Loe died domiciled in Kennebec County, Maine."
+          },
+          {
+            "date": "2026-03-30",
+            "event": "Application for informal probate and appointment of a personal representative prepared for filing in the Augusta Probate Court."
+          }
+        ]
+      },
+      "third_parties": [
+        {
+          "id": "tp1",
+          "name": "Downeast Federal Savings",
+          "type": "financial_institution",
+          "role": "Bank holding the decedent's accounts",
+          "relevance": "Holds the decedent's checking, savings, and brokerage accounts that the personal representative must marshal and administer.",
+          "contact": {
+            "phone": "(207) 555-0105",
+            "city": "Waterville",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp2",
+          "name": "Carmen T. Ellsworth",
+          "type": "beneficiary",
+          "role": "Devisee named in the will",
+          "relationship": "Named devisee",
+          "relevance": "A person named to take under the will; entitled to notice and to receive the devise if the will is admitted.",
+          "contact": {
+            "phone": "(207) 555-0132",
+            "city": "Orono",
+            "state": "ME",
+            "email": "carmen.ellsworth@example.org"
+          }
+        },
+        {
+          "id": "tp3",
+          "name": "Jane S. Larkspur",
+          "type": "beneficiary",
+          "role": "Surviving spouse of the decedent",
+          "relationship": "Surviving spouse",
+          "relevance": "A statutory beneficiary entitled to an intestate share, homestead allowance, and any family allowance; must receive notice of the proceeding.",
+          "contact": {
+            "phone": "(207) 555-0117",
+            "city": "Bangor",
+            "state": "ME",
+            "email": "jane.larkspur@example.org"
+          }
+        },
+        {
+          "id": "tp4",
+          "name": "Evergreen Funeral Home",
+          "type": "creditor",
+          "role": "Funeral and burial creditor",
+          "relevance": "Holds a claim for funeral and burial expenses, which are a priority charge against the estate.",
+          "contact": {
+            "phone": "(207) 555-0138",
+            "city": "Bangor",
+            "state": "ME"
+          }
+        }
+      ],
+      "intake_interview": {
+        "interviewer": "Intake Attorney",
+        "interviewee_role": "personal_representative",
+        "date": "2026-03-30",
+        "exchanges": [
+          {
+            "topic": "Relationship",
+            "question": "What was your relationship to the person who passed away, and when did they die?",
+            "answer": "I am the decedent's surviving spouse. Nadia passed away on 2025-11-03. I am the one the family is looking to handle the estate, and I want to be appointed so I can take care of things properly."
+          },
+          {
+            "topic": "Will",
+            "question": "Did the decedent leave a will, and do you have the original?",
+            "answer": "We have looked carefully for any will. If there is a valid will, I want it admitted so we can follow the decedent's wishes; if there is no will, I understand the estate would pass to the heirs under Maine law. Either way, I would like to handle it informally if we can."
+          },
+          {
+            "topic": "Assets",
+            "question": "What does the estate consist of?",
+            "answer": "There are bank and brokerage accounts, a vehicle and personal belongings, and, depending on the situation, real property. All told it is worth somewhere around $258927. I need authority to get the accounts released and to deal with the property."
+          },
+          {
+            "topic": "Heirs",
+            "question": "Who are the heirs or the people named to inherit?",
+            "answer": "There are about 2 people who would inherit, including close family. I want to make sure everyone entitled to notice gets it and that the estate is divided fairly and correctly."
+          },
+          {
+            "topic": "Needs",
+            "question": "What do you most need to be able to do once you are appointed?",
+            "answer": "I need the legal authority to act for the estate: to pay the funeral bill and the valid debts, to collect and protect the assets, to transfer or sell property if needed, and ultimately to distribute what is left to the heirs and devisees. I would rather avoid a formal, contested proceeding if at all possible."
+          }
+        ]
+      },
+      "client_objectives": {
+        "goals": [
+          "Be appointed personal representative of the estate through informal probate.",
+          "Marshal, inventory, and protect the assets of the estate.",
+          "Pay funeral expenses and valid creditor claims in the order of priority required by law.",
+          "Distribute the remaining estate to the heirs and devisees entitled to it."
+        ],
+        "priorities": [
+          "Obtaining clear authority to act for the estate without delay.",
+          "Protecting estate assets and keeping the estate solvent.",
+          "Treating all heirs and devisees fairly and avoiding family conflict."
+        ],
+        "risk_tolerance": "low",
+        "desired_outcomes": [
+          "Appointment as personal representative and, if a valid will exists, admission of the will to informal probate.",
+          "Orderly payment of valid claims and distribution of the estate to those entitled under the will or by intestacy."
+        ],
+        "non_starters": [
+          "A contested formal probate proceeding, if it can reasonably be avoided.",
+          "Any distribution that ignores a valid will or shortchanges an heir entitled to a share."
+        ],
+        "constraints": {
+          "budget": "Moderate; paid from estate funds, with a preference for resolving claims by agreement.",
+          "timeline": "Wants appointment promptly so accounts can be released and time-sensitive claims and bills addressed."
+        }
+      },
+      "issues": [
+        {
+          "issue": "Intestate share if the decedent died without a valid will",
+          "category": "probate",
+          "governing_law": "18-C M.R.S. § 2-102",
+          "sub_questions": [
+            "If there is no will, what share passes to the surviving spouse?",
+            "How is the balance distributed among the decedent's heirs?"
+          ],
+          "strength": "moderate",
+          "client_position": "If no valid will exists, seeks distribution to the surviving spouse and heirs as the intestacy statutes direct.",
+          "id": "iss1"
+        },
+        {
+          "issue": "Determination of heirs and their shares by intestate succession",
+          "category": "probate",
+          "governing_law": "18-C M.R.S. § 2-103",
+          "sub_questions": [
+            "Who are the decedent's heirs as a matter of law?",
+            "What fractional share does each heir take?"
+          ],
+          "strength": "moderate",
+          "client_position": "Seeks an accurate determination of the 2 heir(s) and their respective shares.",
+          "id": "iss2"
+        },
+        {
+          "issue": "Timeliness of commencing the probate proceeding",
+          "category": "probate",
+          "governing_law": "18-C M.R.S. § 3-108",
+          "sub_questions": [
+            "Is the application brought within the period allowed to commence probate?",
+            "Do any exceptions to the limitation period apply?"
+          ],
+          "strength": "strong",
+          "client_position": "Files well within the limitation period for commencing probate after the decedent's death.",
+          "id": "iss3"
+        }
+      ],
+      "expert_opinions": [
+        {
+          "id": "exp1",
+          "expert": {
+            "name": "Desmond D. Moe",
+            "field": "Real estate appraisal",
+            "credentials": "MAI",
+            "retained_by": "personal_representative"
+          },
+          "topic": "Date-of-death value of the decedent's real property",
+          "opinion": "The decedent's real property had a fair market value as of the date of death within the appraised range used for the inventory.",
+          "basis": "Inspection of the property and analysis of comparable sales in the county."
+        },
+        {
+          "id": "exp2",
+          "expert": {
+            "name": "Nadia M. Doe",
+            "field": "Estate accounting",
+            "credentials": "CPA",
+            "retained_by": "personal_representative"
+          },
+          "topic": "Inventory, accounting, and solvency of the estate",
+          "opinion": "The estate is solvent, and the proposed inventory and accounting fairly reflect its assets, debts, and distributions.",
+          "basis": "Review of account statements, claims presented, and the preliminary inventory of assets."
+        }
+      ],
+      "evidence": [
+        {
+          "title": "Preliminary inventory of assets",
+          "type": "financial_record",
+          "party": "personal_representative",
+          "description": "Schedule of the estate's real and personal property with date-of-death values.",
+          "id": "ev1"
+        },
+        {
+          "title": "Bank and brokerage statements",
+          "type": "financial_record",
+          "party": "personal_representative",
+          "description": "Account statements documenting the decedent's cash and investment accounts.",
+          "id": "ev2"
+        },
+        {
+          "title": "Recorded deed to real property",
+          "type": "public_record",
+          "party": "personal_representative",
+          "description": "Recorded deed evidencing the decedent's interest in real property, where applicable.",
+          "id": "ev3"
+        },
+        {
+          "title": "Certified death certificate",
+          "type": "public_record",
+          "party": "personal_representative",
+          "description": "Certified copy of the decedent's death certificate establishing the date and place of death.",
+          "id": "ev4"
+        },
+        {
+          "title": "Funeral bill and other claims",
+          "type": "financial_record",
+          "party": "personal_representative",
+          "description": "Funeral and burial invoice and other creditor claims presented against the estate.",
+          "id": "ev5"
+        }
+      ],
+      "financials": {
+        "currency": "USD",
+        "amounts": [
+          {
+            "label": "Outstanding debts and claims",
+            "amount": 57718,
+            "basis": "Funeral expenses, final medical bills, and other creditor claims presented against the estate."
+          },
+          {
+            "label": "Real property value",
+            "amount": 202087,
+            "basis": "Estimated date-of-death fair market value of the decedent's real property."
+          },
+          {
+            "label": "Vehicle and personal property",
+            "amount": 34874,
+            "basis": "Estimated value of the decedent's vehicle and tangible personal property."
+          },
+          {
+            "label": "Bank and brokerage accounts",
+            "amount": 276907,
+            "basis": "Date-of-death balances of the decedent's cash and investment accounts."
+          }
+        ]
+      },
+      "facts": {
+        "date_of_death": "2025-11-03",
+        "will_exists": false,
+        "will_date": "2021-05-16",
+        "decedent_domicile_county": "Kennebec",
+        "relationship_to_decedent": "surviving spouse",
+        "approximate_estate_value": 258927,
+        "real_property": true,
+        "num_heirs": 2,
+        "bond_required": false,
+        "probate_type": "informal probate"
+      },
+      "related_matters": [
+        {
+          "universe_id": "UNIV-death-cascade-0007",
+          "matter_id": "MMC-2026-444016",
+          "scenario_id": "estate-tax-706",
+          "relationship": "feeds",
+          "description": "The estate inventory and date-of-death values feed the Form 706 and 706ME filings."
+        },
+        {
+          "universe_id": "UNIV-death-cascade-0007",
+          "matter_id": "MMC-2026-717342",
+          "scenario_id": "minor-guardianship",
+          "relationship": "relates_to",
+          "description": "A minor heir of this estate is the subject of the guardianship."
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "provenance": {
+        "mock": true,
+        "fictional": true,
+        "generator": "deterministic-engine",
+        "generator_version": "0.1.0",
+        "scenario_id": "estate-tax-706",
+        "seed": 7002
+      },
+      "matter": {
+        "matter_id": "MMC-2026-444016",
+        "practice_area": "tax",
+        "title": "Estate of Nadia P. Loe: federal estate tax return (Form 706) and Maine estate tax return (706ME), with Felix M. Coe as executor",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Cumberland",
+          "court_location": "Portland",
+          "court_type": "Probate Court / IRS / Maine Revenue Services"
+        },
+        "case_type": "estate_tax",
+        "filing_date": "2026-05-18",
+        "status": "intake",
+        "summary": "Felix M. Coe is the executor of the estate of Nadia P. Loe, who died on 2025-05-19 domiciled in Cumberland County, Maine, leaving a gross estate of roughly $19551562; counsel and the executor must prepare a timely, accurate federal estate tax return (Form 706) and Maine estate tax return (706ME), file Form 56 fiduciary notice, and handle fiduciary income tax (Forms 1041 and 1041ME) during administration.",
+        "event_date": "2025-05-19",
+        "universe_id": "UNIV-death-cascade-0007"
+      },
+      "parties": {
+        "decedent": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "full_name": "Nadia P. Loe",
+          "date_of_birth": "1960-01-25",
+          "ssn_last4": "1186",
+          "role": "Decedent"
+        },
+        "personal_representative": {
+          "entity_type": "person",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "full_name": "Felix M. Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03",
+          "ssn_last4": "1144",
+          "role": "Executor / personal representative (fiduciary)"
+        },
+        "attorney": {
+          "entity_type": "person",
+          "first_name": "Maria",
+          "middle_name": "K",
+          "last_name": "Kingsley",
+          "full_name": "Maria K. Kingsley",
+          "role": "Attorney for the client",
+          "address": "231 Meadowbrook Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04002",
+          "phone": "(207) 555-0135",
+          "email": "maria.kingsley@example.com",
+          "date_of_birth": "1981-12-22",
+          "ssn_last4": "8373",
+          "bar_number": "6473",
+          "organization_name": "Kingsley & Associates"
+        },
+        "client": {
+          "entity_type": "person",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "full_name": "Felix M. Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03",
+          "ssn_last4": "1144",
+          "role": "Executor / personal representative (fiduciary)"
+        }
+      },
+      "fact_pattern": {
+        "summary": "Felix M. Coe is the executor of the estate of Nadia P. Loe, who died on 2025-05-19 domiciled in Cumberland County, Maine, leaving a gross estate of roughly $19551562; counsel and the executor must prepare a timely, accurate federal estate tax return (Form 706) and Maine estate tax return (706ME), file Form 56 fiduciary notice, and handle fiduciary income tax (Forms 1041 and 1041ME) during administration.",
+        "narrative": "Nadia P. Loe died on 2025-05-19 while domiciled in Cumberland County, Maine. Felix M. Coe has been appointed executor and personal representative of the estate and, as fiduciary, is responsible for filing the decedent's final returns and the estate's transfer- and income-tax returns. Because the gross estate is valued at approximately $19551562, it exceeds the federal basic exclusion amount, so a federal estate tax return (Form 706) is required under IRC § 6018, and a Maine estate tax return (Form 706ME) is required under 36 M.R.S. § 4062 et seq.\n\nThe gross estate is composed of several asset classes that must be valued as of the date of death (or, if the executor elects, the alternate valuation date six months later under IRC § 2032): real property of roughly $2751139, a closely-held business interest of roughly $6372315, marketable securities of roughly $4083503, and life insurance proceeds of roughly $380346 that are includible under IRC § 2042. Debts of the decedent, funeral expenses, and administration expenses totaling about $266946 are deductible under IRC § 2053. The estate names approximately 4 beneficiary(ies), which may include a surviving spouse (marital deduction under IRC § 2056), a charity (charitable deduction under IRC § 2055), and one or more children.\n\nFelix must file Form 56 to notify the IRS of the fiduciary relationship, prepare and file the Form 706 and Form 706ME by the return due date of 2026-07-05 (nine months after death, extendable six months under IRC § 6075), claim every available deduction, and decide whether to elect portability of the decedent's unused exclusion (the DSUE amount) under IRC § 2010(c). During administration the estate will also earn income, requiring fiduciary income tax returns on Form 1041 and Form 1041ME under IRC § 641. Counsel will engage qualified appraisers to support the reported values and minimize audit exposure.",
+        "undisputed_facts": [
+          "Nadia P. Loe died on 2025-05-19 domiciled in Cumberland County, Maine.",
+          "Felix M. Coe is the duly appointed executor and fiduciary of the estate.",
+          "The gross estate is valued at approximately $19551562, exceeding the federal filing threshold and requiring a Form 706 and a Form 706ME.",
+          "The estate's federal estate tax return is due approximately nine months after death, on 2026-07-05, subject to a six-month extension."
+        ],
+        "disputed_facts": [
+          "The date-of-death fair market value of the closely-held business interest and the real property, and whether to elect alternate valuation under IRC § 2032.",
+          "The amount of the marital and charitable deductions and the resulting size of the taxable estate.",
+          "Whether to elect portability of the decedent's unused applicable exclusion (DSUE) for the benefit of a surviving spouse."
+        ],
+        "timeline": [
+          {
+            "date": "2025-05-19",
+            "event": "Nadia P. Loe died domiciled in Cumberland County, Maine; the estate's nine-month estate-tax clock begins."
+          },
+          {
+            "date": "2026-05-18",
+            "event": "Felix M. Coe engages counsel to prepare the Form 706, Form 706ME, Form 56, and the fiduciary income tax returns."
+          },
+          {
+            "date": "2026-07-05",
+            "event": "Form 706 and Form 706ME due (nine months after death), absent a six-month extension."
+          }
+        ]
+      },
+      "third_parties": [
+        {
+          "id": "tp1",
+          "name": "Riverbend Provisions Co.",
+          "type": "insurer",
+          "role": "Life insurance company",
+          "relevance": "Pays the life insurance proceeds includible in the gross estate under IRC § 2042 and furnishes the Form 712 statement supporting the reported value.",
+          "contact": {
+            "phone": "(207) 555-0125",
+            "city": "Portland",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp2",
+          "name": "Maine Revenue Services",
+          "type": "government_agency",
+          "role": "State taxing authority",
+          "relevance": "Administers the Maine estate tax under 36 M.R.S. § 4062 et seq. and receives the Form 706ME and Form 1041ME returns for the estate.",
+          "contact": {
+            "phone": "(207) 555-0154",
+            "city": "Bangor",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp3",
+          "name": "Evergreen Outfitters Co.",
+          "type": "beneficiary",
+          "role": "Charitable beneficiary",
+          "relevance": "A bequest to this qualified charity is deductible from the gross estate under IRC § 2055, reducing the taxable estate.",
+          "contact": {
+            "phone": "(207) 555-0159",
+            "city": "Falmouth",
+            "state": "ME"
+          }
+        }
+      ],
+      "intake_interview": {
+        "interviewer": "Intake Tax Attorney",
+        "interviewee_role": "personal_representative",
+        "date": "2026-05-18",
+        "exchanges": [
+          {
+            "topic": "Role and assets",
+            "question": "You are serving as executor. Can you walk me through the decedent's assets and roughly what the estate is worth?",
+            "answer": "Yes, I am the executor. The estate is worth around $19551562 all told. There is real property, a closely-held business interest, a brokerage account of marketable securities, and a life insurance policy. Some of it was held in Nadia's revocable trust. I need to get accurate values as of the date of death so we report everything correctly."
+          },
+          {
+            "topic": "Deductions",
+            "question": "Who inherits? In particular, is there a surviving spouse or any charitable bequest?",
+            "answer": "There are about 4 beneficiaries. I want to make sure that anything passing to the surviving spouse gets the marital deduction and that any gift to charity is deducted, because that should reduce what the estate owes. I would rather not overpay the tax."
+          },
+          {
+            "topic": "Appraisals",
+            "question": "The business and the real estate will need defensible valuations. Have you arranged appraisals?",
+            "answer": "Not yet. I know the business interest is the hard one to value, and the real property needs a proper appraisal too. I want appraisals we can stand behind if the IRS or Maine Revenue Services questions the numbers. I do not want an unsupported valuation."
+          },
+          {
+            "topic": "Prior gifts",
+            "question": "Did the decedent make any large lifetime gifts or file gift tax returns?",
+            "answer": "I believe there may have been some sizable gifts in earlier years, and I think gift tax returns were filed. I will gather any Form 709s so they can be taken into account in computing the estate tax and the remaining exclusion."
+          },
+          {
+            "topic": "Deadlines and portability",
+            "question": "Finally, are you aware of the deadline, and do you want us to consider portability?",
+            "answer": "I understand the federal return is due about nine months after the death, on 2026-07-05, and that we can extend it six months if needed. I do not want to miss that deadline. Please also advise me on electing portability so any unused exclusion can be preserved for the surviving spouse."
+          }
+        ]
+      },
+      "client_objectives": {
+        "goals": [
+          "Prepare and file an accurate, timely federal estate tax return (Form 706) and Maine estate tax return (Form 706ME) by 2026-07-05.",
+          "Maximize the marital deduction under IRC § 2056 and the charitable deduction under IRC § 2055 to minimize the taxable estate.",
+          "Preserve portability of the decedent's unused applicable exclusion (DSUE) for the surviving spouse under IRC § 2010(c).",
+          "Obtain defensible date-of-death appraisals of the closely-held business interest and the real property.",
+          "File Form 56 fiduciary notice and the estate's fiduciary income tax returns (Form 1041 and Form 1041ME) during administration."
+        ],
+        "priorities": [
+          "Meeting the nine-month filing deadline (or properly extending it) so no late-filing penalty accrues.",
+          "Supporting every reported value with a defensible appraisal to limit audit and adjustment risk.",
+          "Capturing all available deductions and elections to minimize federal and Maine estate tax."
+        ],
+        "risk_tolerance": "low",
+        "desired_outcomes": [
+          "Timely, fully-supported Form 706 and Form 706ME accepted without adjustment.",
+          "Full marital and charitable deductions claimed and, where beneficial, a valid portability election preserving the DSUE amount."
+        ],
+        "non_starters": [
+          "Missing the Form 706 filing deadline and incurring late-filing or late-payment penalties.",
+          "Reporting an asset at an unsupported value that cannot be defended on audit."
+        ],
+        "constraints": {
+          "budget": "Moderate and paid from the estate, with a strong preference for defensible valuations and timely filing.",
+          "timeline": "The federal and Maine estate tax returns are due approximately nine months after death, on 2026-07-05, with a six-month extension available."
+        }
+      },
+      "issues": [
+        {
+          "issue": "Fiduciary income tax during administration",
+          "category": "tax",
+          "governing_law": "IRC § 641",
+          "sub_questions": [
+            "Does the estate's income during administration require Form 1041 and Form 1041ME?",
+            "Which fiscal year and deductions should the fiduciary elect?"
+          ],
+          "strength": "moderate",
+          "client_position": "Will file Form 1041 and Form 1041ME for income earned by the estate during administration under IRC § 641.",
+          "id": "iss1"
+        },
+        {
+          "issue": "Marital deduction for property passing to the surviving spouse",
+          "category": "tax",
+          "governing_law": "IRC § 2056",
+          "sub_questions": [
+            "Does the property passing to the surviving spouse qualify for the unlimited marital deduction?",
+            "Is a QTIP election needed for any terminable interest?"
+          ],
+          "strength": "strong",
+          "client_position": "Asserts that qualifying property passing to the surviving spouse is fully deductible under IRC § 2056.",
+          "id": "iss2"
+        },
+        {
+          "issue": "Form 706 filing requirement and the nine-month due date",
+          "category": "tax",
+          "governing_law": "IRC § 6018; IRC § 6075",
+          "sub_questions": [
+            "Is a Form 706 required because the gross estate exceeds the filing threshold?",
+            "Is the return timely filed within nine months of death or a properly extended date?"
+          ],
+          "strength": "strong",
+          "client_position": "Recognizes a Form 706 is required under IRC § 6018 and will file by the nine-month due date of 2026-07-05 under IRC § 6075 or a valid extension.",
+          "id": "iss3"
+        }
+      ],
+      "expert_opinions": [
+        {
+          "id": "exp1",
+          "expert": {
+            "name": "John B. Noe",
+            "field": "Real estate appraisal",
+            "credentials": "MAI",
+            "retained_by": "personal_representative"
+          },
+          "topic": "Date-of-death value of the decedent's real property",
+          "opinion": "The decedent's real property had a fair market value as of the date of death within the appraised range used on the Form 706.",
+          "basis": "Inspection of the property and analysis of comparable sales in the county."
+        },
+        {
+          "id": "exp2",
+          "expert": {
+            "name": "Eleanor G. Kingsley",
+            "field": "Estate and fiduciary tax",
+            "credentials": "CPA",
+            "retained_by": "personal_representative"
+          },
+          "topic": "Preparation of the Form 706, Form 706ME, and the estate's fiduciary income tax returns",
+          "opinion": "The reported gross estate, deductions, and tax are computed correctly, and the recommended elections minimize the combined federal and Maine tax.",
+          "basis": "Review of the estate inventory, appraisals, account statements, and prior gift tax returns."
+        },
+        {
+          "id": "exp3",
+          "expert": {
+            "name": "Jane A. Calloway",
+            "field": "Closely-held business valuation",
+            "credentials": "ASA",
+            "retained_by": "personal_representative"
+          },
+          "topic": "Date-of-death fair market value of the decedent's closely-held business interest",
+          "opinion": "The closely-held business interest had a fair market value as of the date of death within the appraised range, after appropriate discounts for lack of marketability and control.",
+          "basis": "Review of the company's financial statements, comparable transactions, and applicable valuation discounts."
+        }
+      ],
+      "evidence": [
+        {
+          "title": "Prior gift tax returns (Form 709)",
+          "type": "document",
+          "party": "personal_representative",
+          "description": "The decedent's prior federal gift tax returns reflecting taxable gifts that affect the remaining applicable exclusion.",
+          "id": "ev1"
+        },
+        {
+          "title": "Life insurance Form 712 statements",
+          "type": "financial_record",
+          "party": "personal_representative",
+          "description": "Insurer-provided Form 712 statements substantiating the life insurance proceeds includible in the gross estate.",
+          "id": "ev2"
+        },
+        {
+          "title": "Brokerage and bank statements",
+          "type": "financial_record",
+          "party": "personal_representative",
+          "description": "Account statements documenting the date-of-death value of marketable securities and cash held by the decedent and the estate.",
+          "id": "ev3"
+        },
+        {
+          "title": "Date-of-death appraisals of real estate and business interests",
+          "type": "financial_record",
+          "party": "personal_representative",
+          "description": "Qualified appraisals supporting the reported date-of-death fair market values of the real property and the closely-held business interest.",
+          "id": "ev4"
+        },
+        {
+          "title": "Certified death certificate",
+          "type": "public_record",
+          "party": "personal_representative",
+          "description": "Certified copy of the decedent's death certificate establishing the date and place of death.",
+          "id": "ev5"
+        }
+      ],
+      "financials": {
+        "currency": "USD",
+        "amounts": [
+          {
+            "label": "Debts and administration expenses",
+            "amount": 314529,
+            "basis": "Deductible debts of the decedent, funeral expenses, and administration expenses under IRC § 2053."
+          },
+          {
+            "label": "Real property value",
+            "amount": 2342969,
+            "basis": "Appraised date-of-death fair market value of the decedent's real property."
+          },
+          {
+            "label": "Life insurance proceeds",
+            "amount": 1628595,
+            "basis": "Death benefit includible in the gross estate under IRC § 2042, per the Form 712 statement."
+          }
+        ]
+      },
+      "facts": {
+        "date_of_death": "2025-05-19",
+        "decedent_domicile_county": "Cumberland",
+        "decedent_state": "Maine",
+        "gross_estate_value": 19551562,
+        "real_property_value": 2751139,
+        "closely_held_business_value": 6372315,
+        "marketable_securities_value": 4083503,
+        "life_insurance_value": 380346,
+        "debts_and_expenses": 266946,
+        "marital_deduction": false,
+        "charitable_deduction": false,
+        "alternate_valuation_elected": true,
+        "portability_election": true,
+        "num_beneficiaries": 4,
+        "prior_taxable_gifts": false,
+        "executor_name": "Felix M. Coe",
+        "return_due_date": "2026-07-05"
+      },
+      "related_matters": [
+        {
+          "universe_id": "UNIV-death-cascade-0007",
+          "matter_id": "MMC-2026-129936",
+          "scenario_id": "decedent-estate-informal",
+          "relationship": "arises_from",
+          "description": "The estate tax returns arise from the same decedent's estate being probated."
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "provenance": {
+        "mock": true,
+        "fictional": true,
+        "generator": "deterministic-engine",
+        "generator_version": "0.1.0",
+        "scenario_id": "minor-guardianship",
+        "seed": 7003
+      },
+      "matter": {
+        "matter_id": "MMC-2026-717342",
+        "practice_area": "probate",
+        "title": "Petition for Guardianship of a Minor by Diego F. Jessup",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Kennebec",
+          "court_location": "Augusta",
+          "court_type": "Probate Court"
+        },
+        "case_type": "guardianship",
+        "filing_date": "2026-03-27",
+        "status": "pre_filing",
+        "summary": "Diego F. Jessup, the uncle of one minor child(ren) (Rosa B. Ellsworth), petitions the Augusta Probate Court for temporary guardianship because of a parent's incarceration, and asks the court to authorize the petitioner to make day-to-day, school, and medical decisions for the child(ren).",
+        "docket_number": "KEN-GC-2026-323",
+        "universe_id": "UNIV-death-cascade-0007"
+      },
+      "parties": {
+        "petitioner": {
+          "entity_type": "person",
+          "first_name": "Diego",
+          "middle_name": "F",
+          "last_name": "Jessup",
+          "full_name": "Diego F. Jessup",
+          "address": "54 Tidewater Lane",
+          "city": "Bangor",
+          "state": "ME",
+          "zip": "04048",
+          "phone": "(207) 555-0112",
+          "email": "diego.jessup@example.net",
+          "date_of_birth": "1956-02-02",
+          "ssn_last4": "9246",
+          "role": "Petitioner (proposed guardian)"
+        },
+        "respondent": {
+          "entity_type": "person",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "full_name": "Felix M. Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03",
+          "ssn_last4": "1144",
+          "role": "Respondent parent"
+        },
+        "child_1": {
+          "entity_type": "person",
+          "first_name": "Rosa",
+          "middle_name": "B",
+          "last_name": "Ellsworth",
+          "full_name": "Rosa B. Ellsworth",
+          "address": "115 Pine Lane",
+          "city": "Gorham",
+          "state": "ME",
+          "zip": "04038",
+          "phone": "(207) 555-0153",
+          "email": "rosa.ellsworth@example.com",
+          "date_of_birth": "2022-10-20",
+          "role": "Minor child"
+        },
+        "attorney": {
+          "entity_type": "person",
+          "first_name": "Wesley",
+          "middle_name": "J",
+          "last_name": "Poe",
+          "full_name": "Wesley J. Poe",
+          "role": "Attorney for the client",
+          "address": "200 Willow Bend",
+          "city": "Waterville",
+          "state": "ME",
+          "zip": "04017",
+          "phone": "(207) 555-0175",
+          "email": "wesley.poe@example.com",
+          "date_of_birth": "1980-11-18",
+          "ssn_last4": "1566",
+          "bar_number": "5106",
+          "organization_name": "Birchwood & Calloway LLP"
+        },
+        "client": {
+          "entity_type": "person",
+          "first_name": "Diego",
+          "middle_name": "F",
+          "last_name": "Jessup",
+          "full_name": "Diego F. Jessup",
+          "address": "54 Tidewater Lane",
+          "city": "Bangor",
+          "state": "ME",
+          "zip": "04048",
+          "phone": "(207) 555-0112",
+          "email": "diego.jessup@example.net",
+          "date_of_birth": "1956-02-02",
+          "ssn_last4": "9246",
+          "role": "Petitioner (proposed guardian)"
+        }
+      },
+      "fact_pattern": {
+        "summary": "Diego F. Jessup, the uncle of one minor child(ren) (Rosa B. Ellsworth), petitions the Augusta Probate Court for temporary guardianship because of a parent's incarceration, and asks the court to authorize the petitioner to make day-to-day, school, and medical decisions for the child(ren).",
+        "narrative": "Diego F. Jessup is the uncle of one minor child(ren): Rosa B. Ellsworth. Because of a parent's incarceration, the child(ren)'s parent or parents are temporarily unable to provide full-time care, and Diego has stepped in to ensure the child(ren) are safe, supported, and able to stay in their routine.\n\nAt present, the child splits time between relatives. Without a guardianship order, Diego lacks clear legal authority to enroll the child(ren) in school activities, consent to medical care, and handle the ordinary decisions of daily life. Diego seeks temporary guardianship to provide that authority and a stable home.\n\nDiego now petitions the Augusta Probate Court under the Maine Probate Code for appointment as guardian of the minor child(ren), to remain in effect for a temporary period subject to review. The petition will be served on the child(ren)'s parents and other interested persons as the statute requires, and Diego asks the court to find that the appointment is in the child(ren)'s best interests.",
+        "undisputed_facts": [
+          "Diego F. Jessup is the uncle of one minor child(ren).",
+          "The child(ren)'s parent or parents are, for the time being, unable to provide full-time care because of a parent's incarceration.",
+          "Diego F. Jessup is seeking appointment as guardian of the minor child(ren) in Kennebec County Probate Court."
+        ],
+        "disputed_facts": [
+          "Whether the statutory basis for appointing a guardian of the minor is satisfied, including consent of the parents or a clear-and-convincing showing in the absence of consent.",
+          "Whether all parents and interested persons have received the notice the statute requires.",
+          "Whether the proposed guardianship, and its scope and duration, serves the best interests of the child(ren)."
+        ],
+        "timeline": [
+          {
+            "date": "2026-03-27",
+            "event": "Petition for guardianship of a minor prepared for filing in Augusta Probate Court."
+          }
+        ]
+      },
+      "third_parties": [
+        {
+          "id": "tp1",
+          "name": "Marcus A. Doe",
+          "type": "witness",
+          "role": "Child's school counselor",
+          "relevance": "Knows the child's day-to-day functioning and adjustment at school and can speak to stability and continuity.",
+          "contact": {
+            "phone": "(207) 555-0190",
+            "city": "Yarmouth",
+            "state": "ME",
+            "email": "marcus.doe@example.org"
+          }
+        },
+        {
+          "id": "tp2",
+          "name": "Marcus S. Doe",
+          "type": "healthcare_provider",
+          "role": "Child's pediatrician",
+          "relevance": "Oversees the child's routine medical care and can speak to ongoing health needs and the authority required to address them.",
+          "contact": {
+            "phone": "(207) 555-0147",
+            "city": "Gorham",
+            "state": "ME",
+            "email": "marcus.doe@example.net"
+          }
+        }
+      ],
+      "intake_interview": {
+        "interviewer": "Intake Attorney",
+        "interviewee_role": "petitioner",
+        "date": "2026-03-27",
+        "exchanges": [
+          {
+            "topic": "Relationship to the child",
+            "question": "How are you related to the child or children, and how long have you been involved in their lives?",
+            "answer": "I am the uncle. I have been closely involved with the child(ren) for a long time, and lately I have been the one making sure they are cared for day to day."
+          },
+          {
+            "topic": "Why now",
+            "question": "What has changed that makes a guardianship necessary right now?",
+            "answer": "Because of a parent's incarceration, the parent or parents cannot provide full-time care at the moment. I want to make sure the child(ren) stay safe and settled while that is worked out."
+          },
+          {
+            "topic": "Where the parents stand",
+            "question": "Do the parents support this, or do you expect any objection?",
+            "answer": "I have talked with the family about it. The court will need to know whether the parents consent or object, and I want the parents to receive proper notice either way so this is done correctly."
+          },
+          {
+            "topic": "Current situation",
+            "question": "Where are the children living now, and how are they doing?",
+            "answer": "Right now, the child splits time between relatives. They are doing as well as can be expected, and my goal is to keep their home, school, and routine as steady as possible."
+          },
+          {
+            "topic": "Authority needed",
+            "question": "What specifically do you need to be able to do for the children?",
+            "answer": "I need clear authority to handle school enrollment and activities and to consent to medical care and appointments. Without an order, people keep telling me they cannot deal with me because I am not the legal guardian."
+          }
+        ]
+      },
+      "client_objectives": {
+        "goals": [
+          "Obtain legal authority to make school and medical decisions for the minor child(ren).",
+          "Provide the child(ren) with a safe, stable home for as long as the parents are unable to do so.",
+          "Ensure all parents and interested persons receive proper notice so any resulting order is sound."
+        ],
+        "priorities": [
+          "The safety and best interests of the child(ren).",
+          "Minimizing disruption to the child(ren)'s home, school, and routine.",
+          "A clear, enforceable order that lets the petitioner act for the child(ren)."
+        ],
+        "risk_tolerance": "low",
+        "desired_outcomes": [
+          "Appointment of Diego as guardian with authority over the child(ren)'s school and medical decisions.",
+          "An order, effective for a temporary period subject to review, that keeps the child(ren) in a stable placement."
+        ],
+        "non_starters": [
+          "Any arrangement that endangers the child(ren) or compromises their safety."
+        ],
+        "constraints": {
+          "budget": "Modest; the petitioner wants an efficient, low-conflict path to a guardianship order.",
+          "timeline": "Wants authority in place promptly so school and medical decisions are not delayed."
+        }
+      },
+      "issues": [
+        {
+          "issue": "Statutory basis for appointing a guardian of a minor",
+          "category": "probate",
+          "governing_law": "18-C M.R.S. § 5-204",
+          "sub_questions": [
+            "Are the parents unable or unavailable to provide care so that a guardian is needed?",
+            "Do the facts support appointment of the petitioner as guardian?"
+          ],
+          "strength": "moderate",
+          "client_position": "The petitioner is an appropriate guardian and the statutory grounds for appointment are met.",
+          "id": "iss1"
+        },
+        {
+          "issue": "Hearing and findings required for appointment",
+          "category": "probate",
+          "governing_law": "18-C M.R.S. § 5-207",
+          "sub_questions": [
+            "What findings must the court make to appoint a guardian?",
+            "What scope and limits should the letters of guardianship include?"
+          ],
+          "strength": "moderate",
+          "client_position": "The record supports the findings needed for appointment with authority over the child(ren)'s care, schooling, and medical decisions.",
+          "id": "iss2"
+        },
+        {
+          "issue": "Best interests of the child as the governing standard",
+          "category": "probate",
+          "governing_law": "18-C M.R.S. § 5-204",
+          "sub_questions": [
+            "How does the proposed guardianship serve the child(ren)'s best interests?",
+            "Does it preserve stability and continuity for the child(ren)?"
+          ],
+          "strength": "moderate",
+          "client_position": "Appointing the petitioner as guardian is in the child(ren)'s best interests and keeps them safe and settled.",
+          "id": "iss3"
+        },
+        {
+          "issue": "Notice to parents and other interested persons",
+          "category": "probate",
+          "governing_law": "18-C M.R.S. § 5-205",
+          "sub_questions": [
+            "Who must be served with the petition and notice of hearing?",
+            "Has notice been given in the manner and time the statute requires?"
+          ],
+          "strength": "strong",
+          "client_position": "The petitioner will provide notice to the parents and all interested persons as required before any hearing.",
+          "id": "iss4"
+        },
+        {
+          "issue": "Parental consent versus the clear-and-convincing showing required without it",
+          "category": "probate",
+          "governing_law": "18-C M.R.S. § 5-204(2)",
+          "sub_questions": [
+            "Have the parents consented to the guardianship?",
+            "If a parent objects, can the petitioner show by clear and convincing evidence that appointment is warranted?"
+          ],
+          "strength": "unknown",
+          "client_position": "Where the parents consent, the petitioner relies on that consent; where they do not, the petitioner is prepared to make the heightened showing the statute requires.",
+          "id": "iss5"
+        }
+      ],
+      "evidence": [
+        {
+          "title": "Proposed guardian's background-check results",
+          "type": "document",
+          "party": "petitioner",
+          "description": "Background screening of the proposed guardian relevant to suitability.",
+          "id": "ev1"
+        },
+        {
+          "title": "Certified birth certificate of the minor",
+          "type": "public_record",
+          "party": "petitioner",
+          "description": "Certified record establishing the child's identity, date of birth, and parentage.",
+          "id": "ev2"
+        },
+        {
+          "title": "Signed parental consent / affidavit",
+          "type": "affidavit",
+          "party": "petitioner",
+          "description": "Sworn consent of a parent to the guardianship, where consent is given.",
+          "id": "ev3"
+        }
+      ],
+      "financials": {
+        "currency": "USD",
+        "amounts": [
+          {
+            "label": "Proposed guardian's monthly household income",
+            "amount": 3403,
+            "basis": "Monthly income available to support the household."
+          },
+          {
+            "label": "Child's estimated monthly expenses",
+            "amount": 2161,
+            "basis": "Estimated monthly cost of the child's food, clothing, school, and activities."
+          }
+        ]
+      },
+      "facts": {
+        "petitioner_relationship": "uncle",
+        "reason_for_guardianship": "a parent's incarceration",
+        "parental_consent": true,
+        "guardianship_type": "temporary guardianship",
+        "current_living_arrangement": "the child splits time between relatives",
+        "duration": "for a temporary period subject to review",
+        "minor_count": "1"
+      },
+      "related_matters": [
+        {
+          "universe_id": "UNIV-death-cascade-0007",
+          "matter_id": "MMC-2026-129936",
+          "scenario_id": "decedent-estate-informal",
+          "relationship": "relates_to",
+          "description": "The ward is a beneficiary of the decedent's estate."
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "probate",
+      "to": "estate_tax",
+      "type": "feeds",
+      "description": "The estate inventory and date-of-death values feed the Form 706 and 706ME filings."
+    },
+    {
+      "from": "probate",
+      "to": "guardianship",
+      "type": "relates_to",
+      "description": "A minor heir of this estate is the subject of the guardianship."
+    },
+    {
+      "from": "estate_tax",
+      "to": "probate",
+      "type": "arises_from",
+      "description": "The estate tax returns arise from the same decedent's estate being probated."
+    },
+    {
+      "from": "guardianship",
+      "to": "probate",
+      "type": "relates_to",
+      "description": "The ward is a beneficiary of the decedent's estate."
+    }
+  ]
+}

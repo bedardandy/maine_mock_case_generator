@@ -1,0 +1,172 @@
+id: rule-80b-zoning-appeal
+title: "{petitioner_full_name} v. {respondent_full_name}"
+practice_area: administrative
+case_type: administrative_appeal_80b
+status: active
+docket_prefix: AP
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, AP-80B]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+# A Maine Rule 80B appeal to the Superior Court from a municipal land-use decision.
+# An aggrieved abutting neighbor (the petitioner) appeals the local board's grant of
+# relief to a developer (the party-in-interest). This is a RECORD-REVIEW appeal: there
+# is NO jury and no traditional discovery; the court reviews the administrative record
+# for error of law and whether the board's findings rest on substantial evidence.
+parties:
+  client_role: petitioner
+  attorney: true
+  roles:
+    - {key: petitioner, label: "Petitioner (aggrieved abutter appealing)"}
+    - {key: respondent, entity: organization, name: "Town of Harborwick", label: "Respondent municipality"}
+    - {key: other_party, label: "Party-in-interest (the permittee/developer)"}
+
+dates:
+  filing_date: {date_between: ["2025-09-01", "2026-05-01"]}
+  event_date: "{board_decision_date}"
+
+facts:
+  municipality: {pick: ["Town of Harborwick", "Town of Stoneport", "Town of Wells Cove", "City of Granite Falls"]}
+  board: {pick: ["Zoning Board of Appeals", "Planning Board", "Board of Appeals"]}
+  board_decision: {pick: ["granted a dimensional variance", "granted a use variance", "approved a special exception", "approved the site plan", "granted a setback waiver"]}
+  project: {pick: ["a 14-unit condominium development", "an expansion of a gravel pit and excavation operation", "a 120-foot telecommunications tower", "a waterfront marina expansion", "a self-storage facility"]}
+  board_decision_date: {date_between: ["2025-08-01", "2026-04-01"]}
+  appeal_within_45_days: {pick: [true]}
+  standing_basis: {pick: ["direct abutter whose property adjoins the parcel", "abutter across a private way", "owner within 250 feet"]}
+  ordinance_section: {pick: ["Land Use Ordinance § 7.4", "Zoning Ordinance Art. V § 5-302", "Shoreland Zoning Ordinance § 15"]}
+  harm_alleged: {pick: ["increased traffic and noise", "loss of view and light", "stormwater runoff onto the petitioner's land", "diminished property value", "groundwater impacts"]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: government_agency, name_kind: person, role: "Municipal Code Enforcement Officer", relevance: "Administers the ordinance, reviewed the application, and is the record-keeper for the board's proceedings."}
+    - {type: witness, name_kind: person, role: "Chair of the board", relevance: "Presided over the hearing and signed the decision now under appeal."}
+    - {type: neighbor, name_kind: person, role: "Other abutting neighbor who objects", relevance: "Appeared and objected at the hearing and shares the petitioner's concerns about the project."}
+    - {type: expert, name_kind: person, role: "Developer's project engineer", relevance: "Prepared the plans and engineering submissions the board relied on in granting relief."}
+    - {type: witness, name_kind: person, role: "Town's land-use attorney", relevance: "Advised the board at the hearing and defends the decision on appeal."}
+
+fact_pattern:
+  summary: "{petitioner_full_name}, an aggrieved abutting neighbor, brings a Rule 80B appeal in {county} County Superior Court challenging the {board} of {respondent_full_name}, which {board_decision} for {project}; the petitioner contends the decision was an error of law and is unsupported by substantial evidence in the record."
+  narrative:
+    - "{petitioner_full_name} owns property in {municipality} and is a {standing_basis}. On {board_decision_date}, the {board} {board_decision} authorizing {project} on the adjoining parcel, over the petitioner's objection at the public hearing."
+    - "{petitioner_first} contends the board misapplied {ordinance_section}, made inadequate findings, and reached a result that the record does not support. {petitioner_first} alleges concrete harm in the form of {harm_alleged}, which supplies the particularized injury required for standing as an aggrieved party."
+    - "Within forty-five days of the decision, {petitioner_first} filed this Rule 80B appeal in {court_location} Superior Court, naming {respondent_full_name} as respondent and the permittee as a party-in-interest. Because this is an appeal on the record, the court will review the certified municipal record for error of law and substantial evidence rather than hold a trial; {petitioner_first} asks the court to reverse the decision or remand it to the board."
+  undisputed:
+    - "The {board} of {respondent_full_name} {board_decision} for {project} on {board_decision_date}."
+    - "{petitioner_full_name} owns abutting property and appeared in opposition before the board."
+    - "{petitioner_first} filed this appeal in {court_location} Superior Court under M.R. Civ. P. 80B."
+  disputed:
+    - "Whether {petitioner_first} has standing as an aggrieved party who suffered a particularized injury distinct from the general public."
+    - "Whether the board committed an error of law in applying {ordinance_section}."
+    - "Whether the board's findings are supported by substantial evidence in the record."
+    - "Whether the board's findings of fact are adequate and free of bias or conflict of interest."
+  timeline:
+    - {date: "{board_decision_date}", event: "The {board} {board_decision} for {project}."}
+    - {date: "{filing_date}", event: "Rule 80B notice of appeal filed in {court_location} Superior Court."}
+
+interview:
+  interviewer: "Land Use Litigation Attorney"
+  interviewee_role: petitioner
+  exchanges:
+    - {topic: "What happened", question: "What did the board decide, and how does it affect you?", answer: "The {board} {board_decision} for {project} right next to me. I live in {municipality} and my property adjoins the parcel. I spoke against it at the hearing, but they approved it anyway."}
+    - {topic: "Harm", question: "How does this project harm you specifically?", answer: "It is not just a general gripe. I am looking at {harm_alleged}. That is a real, particular injury to my property, not something every resident of town shares."}
+    - {topic: "The decision", question: "Why do you think the board got it wrong?", answer: "They did not really apply {ordinance_section} the way it is written, and their findings were thin. I do not think the record supports what they did."}
+    - {topic: "Deadline", question: "When was the decision, and are we in time to appeal?", answer: "It was decided on {board_decision_date}. I know there is a 45-day clock under the rules, and I came to you right away so we would not blow the deadline."}
+    - {topic: "Process", question: "How does this kind of appeal work?", answer: "I understand it is not a brand-new trial. The Superior Court looks at the town's record and decides if the board made a legal error or had no real evidence. I just want it reversed, or at least sent back."}
+    - {topic: "Goal", question: "What outcome are you hoping for?", answer: "Stop or rein in the project and protect my neighborhood. If the court will not reverse outright, I would take a remand that forces the board to do it properly."}
+
+objectives:
+  goals:
+    - "Reverse or vacate the {board}'s decision {board_decision} for {project}."
+    - "In the alternative, remand to the board for proper findings and a record-supported decision."
+    - "Protect the petitioner's property and neighborhood from {harm_alleged}."
+  priorities:
+    - "Establishing standing as an aggrieved abutter with a particularized injury."
+    - "Showing error of law and the absence of substantial evidence within the record-review constraints."
+    - "Preserving the issues that were raised before the board below."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A judgment reversing the board's decision, or a remand for adequate findings."
+    - "A result that meaningfully limits or conditions {project}."
+  non_starters:
+    - "A disposition that lets the unsupported decision stand without review of the record."
+  constraints:
+    budget: {pick: ["Modest; the petitioner prefers a focused record-review appeal over expensive fact development.", "Limited but committed; willing to fund a trial-of-the-facts motion only if clearly necessary."]}
+    timeline: "Wants the appeal briefed and argued promptly, mindful of the 45-day filing deadline already met."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Whether the petitioner has standing as an aggrieved party with a particularized injury", category: administrative, governing_law: "Adelman v. Town of Baldwin, 2000 ME 91; M.R. Civ. P. 80B", sub_questions: ["Does the petitioner suffer a particularized injury distinct from the general public?", "Does abutter status and the alleged harm confer standing to appeal?"], strength: moderate, client_position: "As a {standing_basis} facing {harm_alleged}, the petitioner has a particularized injury sufficient for standing."}
+    - {issue: "Whether the appeal was timely commenced within the 45-day deadline", category: administrative, governing_law: "30-A M.R.S. § 2691(3)(G); M.R. Civ. P. 80B", sub_questions: ["Was the notice of appeal filed within 45 days of the board's decision?", "Did the petitioner follow the required Rule 80B procedure?"], strength: strong, client_position: "The appeal was filed within 45 days of the {board_decision_date} decision, satisfying the deadline and procedure."}
+    - {issue: "Whether the board committed an error of law in applying the ordinance", category: administrative, governing_law: "M.R. Civ. P. 80B; {ordinance_section}", sub_questions: ["Did the board misinterpret or misapply the governing ordinance?", "Is the court's review of the legal question de novo?"], strength: moderate, client_position: "The board misapplied {ordinance_section}, an error of law the court reviews without deference."}
+    - {issue: "Whether the board's findings are supported by substantial evidence in the record", category: administrative, governing_law: "M.R. Civ. P. 80B (substantial-evidence review)", sub_questions: ["Is there substantial evidence in the record supporting the board's findings?", "Did the board ignore record evidence to the contrary?"], strength: moderate, client_position: "The record lacks substantial evidence for the board's key findings."}
+    - {issue: "Whether the variance criteria, including undue hardship, were met", category: administrative, governing_law: "30-A M.R.S. § 4353", sub_questions: ["Did the applicant prove undue hardship as the variance statute requires?", "Were all statutory variance criteria satisfied on the record?"], strength: moderate, client_position: "The applicant failed to establish undue hardship and the other statutory variance criteria."}
+    - {issue: "Whether the board's findings of fact were adequate to permit meaningful review", category: administrative, governing_law: "M.R. Civ. P. 80B; Maine administrative-law findings requirement", sub_questions: ["Did the board make findings sufficient to support its conclusion?", "Can the court conduct meaningful review on the findings made?"], strength: moderate, client_position: "The board's findings are conclusory and inadequate, warranting reversal or remand."}
+    - {issue: "Whether bias or a conflict of interest of a board member tainted the decision", category: administrative, governing_law: "30-A M.R.S. § 2691; due-process and bias principles", sub_questions: ["Did a board member have a disqualifying conflict of interest?", "Did bias deprive the petitioner of a fair and impartial hearing?"], strength: weak, client_position: "A board member's conflict or bias deprived the petitioner of a fair hearing."}
+
+experts:
+  count: {min: 1, max: 3}
+  pool:
+    - {field: "Land-use and municipal planning", credentials: "AICP", retained_by: petitioner, topic: "Application of the ordinance and planning standards to the project", opinion: "The board's decision departs from the ordinance and accepted planning practice. (Offered chiefly to support a motion for a trial of the facts; in pure record review such opinion may be limited to the existing record.)", basis: "Review of the certified record, the ordinance, and the application materials."}
+    - {field: "Traffic engineering", credentials: "P.E., PTOE", retained_by: petitioner, topic: "Traffic and access impacts of the project on the abutting way", opinion: "The project will generate traffic impacts the record does not adequately address. (Relevant to a trial-of-the-facts motion; otherwise the court is confined to the record before the board.)", basis: "Trip-generation analysis and review of the site plans of record."}
+    - {field: "Real estate appraisal", credentials: "MAI", retained_by: petitioner, topic: "Diminution in the value of the petitioner's property", opinion: "The approved project would measurably diminish the value of the abutting property. (Such valuation evidence ordinarily requires a trial of the facts to be considered on a Rule 80B appeal.)", basis: "Comparable-sales analysis and inspection of the abutting property."}
+
+evidence:
+  count: {min: 4, max: 7}
+  pool:
+    - {title: "Certified municipal record and board decision with findings", type: public_record, party: respondent, description: "The certified record assembled by the municipality, including the written decision and findings of fact under review."}
+    - {title: "Board meeting minutes and hearing audio", type: public_record, party: respondent, description: "Minutes and the audio recording of the hearing at which the board acted."}
+    - {title: "Variance / site-plan application and plans", type: document, party: other_party, description: "The application, narrative, and engineered plans the permittee submitted to the board."}
+    - {title: "Petitioner's objection letters", type: correspondence, party: petitioner, description: "Written objections the petitioner submitted to the board before and during the hearing."}
+    - {title: "Photographs of the site and abutting property", type: photo, party: petitioner, description: "Photographs depicting the parcel, the abutting property, and the alleged impacts."}
+    - {title: "Text of the governing ordinance", type: document, party: petitioner, description: "The full text of {ordinance_section} as in effect at the time of the decision."}
+    - {title: "Staff and engineering reports", type: document, party: respondent, description: "Code enforcement, staff, and peer-review engineering reports in the record."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 1, max: 3}
+  amounts:
+    - {label: "Estimated diminution in the petitioner's property value", amount: {int_between: [8000, 75000]}, basis: "Appraiser's estimate of value loss attributable to the project."}
+    - {label: "Estimated cost of the Rule 80B appeal", amount: {int_between: [6000, 30000]}, basis: "Attorney fees and costs for a record-review appeal."}
+    - {label: "Escrow / bond if a stay of the permit is sought", amount: {int_between: [2000, 20000]}, basis: "Security the court may require to stay the permit pending appeal."}
+
+litigation:
+  posture: pretrial
+  causes_of_action:
+    - {count: 1, claim: "Error of law in applying the ordinance", by: "{petitioner_full_name}", against: "{respondent_full_name}", governing_law: "M.R. Civ. P. 80B; {ordinance_section}", elements: ["A final municipal land-use decision", "Misinterpretation or misapplication of the governing ordinance", "Reviewed by the court as a question of law"], relief_sought: "Reversal or vacatur of the board's decision", strength: moderate}
+    - {count: 2, claim: "Decision unsupported by substantial evidence in the record", by: "{petitioner_full_name}", against: "{respondent_full_name}", governing_law: "M.R. Civ. P. 80B (substantial-evidence review)", elements: ["A board decision resting on findings of fact", "The absence of substantial evidence in the record to support those findings", "Prejudice to the petitioner"], relief_sought: "Reversal of the decision as unsupported by the record", strength: moderate}
+    - {count: 3, claim: "Abuse of discretion and inadequate findings of fact", by: "{petitioner_full_name}", against: "{respondent_full_name}", governing_law: "M.R. Civ. P. 80B; 30-A M.R.S. § 4353", elements: ["A duty to make adequate findings", "Conclusory or inadequate findings that preclude meaningful review", "An exercise of discretion outside the bounds permitted by the ordinance"], relief_sought: "Remand for adequate findings or reversal", strength: moderate}
+    - {count: 4, claim: "Procedural error or bias depriving the petitioner of a fair hearing", by: "{petitioner_full_name}", against: "{respondent_full_name}", governing_law: "30-A M.R.S. § 2691; due-process principles", elements: ["A right to a fair and impartial hearing", "A disqualifying conflict, bias, or procedural defect", "Resulting prejudice to the petitioner"], relief_sought: "Vacatur and remand for a new hearing before an impartial board", strength: weak}
+  affirmative_defenses:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {defense: "Lack of standing", by: "{respondent_full_name}", basis: "The petitioner suffered no particularized injury distinct from the general public. Adelman v. Town of Baldwin, 2000 ME 91."}
+      - {defense: "Untimely appeal", by: "{other_party_full_name}", basis: "The notice of appeal was not filed within the 45-day deadline. 30-A M.R.S. § 2691(3)(G); M.R. Civ. P. 80B."}
+      - {defense: "Decision supported by substantial evidence", by: "{respondent_full_name}", basis: "The board's findings rest on substantial evidence in the certified record and are entitled to deference."}
+      - {defense: "Failure to preserve the issue below", by: "{other_party_full_name}", basis: "The petitioner did not raise the argument before the board, so it is not preserved for review."}
+  motions:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {title: "Motion to specify and assemble the record", type: procedural, movant: "{petitioner_full_name}", filed_date: {date_between: ["2025-09-15", "2026-05-15"]}, status: granted, relief: "An order directing the municipality to assemble and certify the complete administrative record."}
+      - {title: "Motion for a trial of the facts under M.R. Civ. P. 80B(d)", type: procedural, movant: "{petitioner_full_name}", filed_date: {date_between: ["2025-09-15", "2026-05-15"]}, status: opposed, relief: "Leave to take evidence beyond the record on a disputed factual issue."}
+      - {title: "Motion to stay the permit pending appeal", type: procedural, movant: "{petitioner_full_name}", filed_date: {date_between: ["2025-09-15", "2026-05-15"]}, status: denied, relief: "A stay halting work under the permit while the appeal is pending."}
+      - {title: "Motion to supplement the record", type: procedural, movant: "{petitioner_full_name}", filed_date: {date_between: ["2025-09-15", "2026-05-15"]}, status: under_advisement, relief: "Leave to add omitted materials to the certified record."}
+  docket:
+    - {date: {date_between: ["2025-09-01", "2025-09-20"]}, entry: "Notice of appeal filed under M.R. Civ. P. 80B.", party: "{petitioner_full_name}"}
+    - {date: {date_between: ["2025-10-01", "2025-10-25"]}, entry: "Administrative record certified and filed by the municipality.", party: "{respondent_full_name}"}
+    - {date: {date_between: ["2025-11-05", "2025-11-30"]}, entry: "Petitioner's brief filed.", party: "{petitioner_full_name}"}
+    - {date: {date_between: ["2025-12-10", "2026-01-10"]}, entry: "Respondent's and party-in-interest's briefs filed.", party: "{respondent_full_name}"}
+    - {date: {date_between: ["2026-01-20", "2026-02-20"]}, entry: "Reply brief filed and the appeal taken under advisement on the briefs.", party: "{petitioner_full_name}"}
+    - {date: {date_between: ["2026-03-01", "2026-04-01"]}, entry: "Oral argument scheduled before the Superior Court.", party: "the court"}
+  trial:
+    jury: false
+    estimated_days: {int_between: [1, 2]}
+    scheduled_date: {date_between: ["2026-06-01", "2027-01-15"]}

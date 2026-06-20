@@ -12,16 +12,20 @@ _CANONICAL_PARTY_FIELDS = (
     "date_of_birth", "signature", "bar_number",
 )
 
-# Roles carried into the canonical object. "client" is intentionally excluded
-# because it aliases another role and becomes the signing `party` instead.
-_PROJECTED_ROLES = (
-    "plaintiff", "defendant", "petitioner", "respondent",
-    "decedent", "personal_representative", "attorney", "other_party", "company",
-)
+# "client" is intentionally not projected as a party because it aliases another
+# role and becomes the signing `party` instead. Every other party role carries
+# through (including multi-party rosters like plaintiff_2 / third_party_defendant),
+# since the canonical schema allows additional party keys.
+_SKIP_ROLES = ("client",)
 
-# When a strict downstream filler expects plaintiff/defendant, supply them from
-# the equivalent role without dropping the original.
-_ALIASES = {"plaintiff": "petitioner", "defendant": "respondent"}
+# When a strict downstream filler expects plaintiff/defendant, supply them from an
+# equivalent role without dropping the original. Each target lists candidate sources
+# tried in order. Estate forms (e.g. MRS-706ME) model the decedent as the primary
+# "plaintiff" party, so a decedent fills plaintiff when no literal plaintiff exists.
+_ALIASES = {
+    "plaintiff": ("petitioner", "decedent"),
+    "defendant": ("respondent",),
+}
 
 
 def _reduce_party(party: dict) -> dict:
@@ -57,12 +61,17 @@ def project_to_canonical(matter: dict) -> dict:
     src_parties = matter.get("parties", {})
     canonical_parties: dict = {}
     for key, party in src_parties.items():
-        if key in _PROJECTED_ROLES or key.startswith("child_"):
-            canonical_parties[key] = _reduce_party(party)
+        if key in _SKIP_ROLES:
+            continue
+        canonical_parties[key] = _reduce_party(party)
     # Aliases so plaintiff/defendant exist for strict downstream fillers.
-    for target, source in _ALIASES.items():
-        if target not in canonical_parties and source in canonical_parties:
-            canonical_parties[target] = dict(canonical_parties[source])
+    for target, sources in _ALIASES.items():
+        if target in canonical_parties:
+            continue
+        for source in sources:
+            if source in canonical_parties:
+                canonical_parties[target] = dict(canonical_parties[source])
+                break
 
     case = {"matter": canonical_matter, "parties": canonical_parties}
 
@@ -74,6 +83,9 @@ def project_to_canonical(matter: dict) -> dict:
             break
     if signer_source is not None:
         case["party"] = _reduce_party(signer_source)
+        # A filer signs their own name; provide it for forms with a signature field.
+        if case["party"].get("full_name") and not case["party"].get("signature"):
+            case["party"]["signature"] = case["party"]["full_name"]
 
     if matter.get("facts"):
         case["facts"] = dict(matter["facts"])

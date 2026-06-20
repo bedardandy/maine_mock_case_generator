@@ -121,6 +121,8 @@ def build_person(pools: Pools, role: str = "", with_contact: bool = True,
         party["email"] = pools.email(party["first_name"], party["last_name"])
     if with_dob:
         party["date_of_birth"] = pools.child_dob() if child else pools.dob()
+    if not child:
+        party["ssn_last4"] = pools.ssn_last4()
     return party
 
 

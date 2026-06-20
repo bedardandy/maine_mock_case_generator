@@ -1,0 +1,710 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "construction-defect",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-588218",
+    "practice_area": "civil",
+    "title": "Grace C. Roe v. Summit Outfitters Co. et al.",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court"
+    },
+    "case_type": "construction",
+    "filing_date": "2025-04-19",
+    "status": "active",
+    "summary": "Grace C. Roe hired Summit Outfitters Co. to build a custom single-family home for roughly $1363566, and now sues the general contractor, its excavation subcontractor Coastal Logistics Inc., and (by third-party complaint) the design professional Riverbend Analytics Inc. over framing and roof structural deficiencies the homeowner attributes to inadequate site drainage design.",
+    "event_date": "2022-11-01",
+    "docket_number": "SAG-CV-2025-699"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Plaintiff homeowner",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "defendant": {
+      "entity_type": "organization",
+      "organization_name": "Summit Outfitters Co.",
+      "full_name": "Summit Outfitters Co.",
+      "role": "Defendant general contractor",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154"
+    },
+    "defendant_2": {
+      "entity_type": "organization",
+      "organization_name": "Coastal Logistics Inc.",
+      "full_name": "Coastal Logistics Inc.",
+      "role": "Defendant excavation subcontractor",
+      "address": "324 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174"
+    },
+    "third_party_defendant": {
+      "entity_type": "organization",
+      "organization_name": "Riverbend Analytics Inc.",
+      "full_name": "Riverbend Analytics Inc.",
+      "role": "Third-party defendant design professional (architect/engineer)",
+      "address": "25 Spruce Avenue",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "D",
+      "last_name": "Jessup",
+      "full_name": "Olivia D. Jessup",
+      "role": "Attorney for the client",
+      "address": "294 Elm Terrace",
+      "city": "Windham",
+      "state": "ME",
+      "zip": "04014",
+      "phone": "(207) 555-0174",
+      "email": "olivia.jessup@example.net",
+      "date_of_birth": "1961-04-07",
+      "ssn_last4": "6101",
+      "bar_number": "2596",
+      "organization_name": "Ellsworth Advocates PC"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Plaintiff homeowner",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe hired Summit Outfitters Co. to build a custom single-family home for roughly $1363566, and now sues the general contractor, its excavation subcontractor Coastal Logistics Inc., and (by third-party complaint) the design professional Riverbend Analytics Inc. over framing and roof structural deficiencies the homeowner attributes to inadequate site drainage design.",
+    "narrative": "Grace C. Roe contracted with Summit Outfitters Co., a general contractor, to construct a custom single-family home for a contract price of approximately $1363566. The work reached substantial completion on or about 2022-11-01. The project included a written 10-year structural warranty.\n\nBeginning around 2024-07-12, Roe observed framing and roof structural deficiencies at the property. A subsequent investigation traced the problem to inadequate site drainage design, work that fell to the excavation subcontractor Coastal Logistics Inc. and that the homeowner contends departed from the plans prepared by the design professional Riverbend Analytics Inc.. The homeowner obtained a repair estimate of roughly $602549.\n\nGrace filed suit in Sagadahoc County Superior Court against Summit Outfitters Co. for breach of the construction contract, breach of the implied warranty of workmanlike construction, and negligence, and against Coastal Logistics Inc. for negligent excavation and fill compaction. Summit Outfitters Co. answered, cross-claimed against Coastal Logistics Inc. for indemnity and contribution, and filed a third-party complaint impleading Riverbend Analytics Inc.. The matter is now in active, contested discovery.",
+    "undisputed_facts": [
+      "Grace C. Roe and Summit Outfitters Co. entered a written construction contract for a custom single-family home.",
+      "The work reached substantial completion on or about 2022-11-01.",
+      "Roe reported framing and roof structural deficiencies at the property beginning around 2024-07-12."
+    ],
+    "disputed_facts": [
+      "Whether the defects arose from inadequate site drainage design or from causes outside the contractors' control.",
+      "How fault should be allocated among the general contractor, the excavation subcontractor, and the design professional.",
+      "The reasonable cost to repair the property and the diminution in its value.",
+      "Whether the mechanic's lien is valid and enforceable and whether any claims are barred by the statute of repose."
+    ],
+    "timeline": [
+      {
+        "date": "2022-11-01",
+        "event": "Summit Outfitters Co. reached substantial completion of a custom single-family home."
+      },
+      {
+        "date": "2024-07-12",
+        "event": "Roe discovered framing and roof structural deficiencies and began investigating the cause."
+      },
+      {
+        "date": "2025-04-19",
+        "event": "Complaint filed in Bath Superior Court; cross-claim and third-party complaint follow."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Evergreen Logistics Corp.",
+      "type": "insurer",
+      "role": "General contractor's liability insurer",
+      "relevance": "Issued the contractor's commercial general liability policy implicated by the defect claims.",
+      "contact": {
+        "phone": "(207) 555-0167",
+        "city": "Bath",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Desmond D. Poe",
+      "type": "witness",
+      "role": "Neighboring property owner",
+      "relevance": "Owns adjacent land that floods from site runoff and can testify to the grading and drainage conditions.",
+      "contact": {
+        "phone": "(207) 555-0165",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "desmond.poe@example.org"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Town Code Enforcement Office",
+      "type": "government_agency",
+      "role": "Municipal building inspector / code office",
+      "relevance": "Issued the building permit and conducted the foundation and framing inspections.",
+      "contact": {
+        "phone": "(207) 555-0153",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Lighthouse Trust Company",
+      "type": "financial_institution",
+      "role": "Construction lender",
+      "relevance": "Funded the construction loan and holds a mortgage on the property; records reflect draws against the work.",
+      "contact": {
+        "phone": "(207) 555-0173",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Litigation Partner",
+    "interviewee_role": "plaintiff",
+    "date": "2025-04-19",
+    "exchanges": [
+      {
+        "topic": "The project",
+        "question": "What did you hire the contractor to build, and for how much?",
+        "answer": "We hired  to build a custom single-family home for about $1363566. It was supposed to be our long-term home."
+      },
+      {
+        "topic": "The problem",
+        "question": "When did the problems start, and what are they?",
+        "answer": "Around 2024-07-12 we started seeing framing and roof structural deficiencies. It has only gotten worse since."
+      },
+      {
+        "topic": "The cause",
+        "question": "What did your experts find caused it?",
+        "answer": "They traced it to inadequate site drainage design. The excavation work and the fill were not done right, and the foundation did not follow the plans."
+      },
+      {
+        "topic": "The cost",
+        "question": "What will it take to fix?",
+        "answer": "The repair estimate is around $602549, and that does not count what we have spent living elsewhere while this gets sorted out."
+      },
+      {
+        "topic": "The parties",
+        "question": "Who do you think is responsible?",
+        "answer": "The general contractor signed the contract, but the excavator and the architect have to own their part too. I want it sorted out among them, not on my back."
+      },
+      {
+        "topic": "Goal",
+        "question": "What outcome do you want?",
+        "answer": "Get the house properly repaired, be made whole for the extra costs, and settle this through their insurers if we can. I will go to trial if I have to."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Recover the full reasonable cost to repair the property, approximately $602549, plus consequential damages.",
+      "Allocate fault among the general contractor, the excavation subcontractor, and the design professional.",
+      "Preserve and resolve the mechanic's lien dispute on favorable terms."
+    ],
+    "priorities": [
+      "A properly repaired, structurally sound home.",
+      "Holding each responsible party accountable for its share of the loss.",
+      "Resolving the case efficiently through the contractors' insurers where possible."
+    ],
+    "risk_tolerance": "high",
+    "desired_outcomes": [
+      "A judgment or settlement funding the full repair scope and consequential damages.",
+      "An allocation of liability that does not leave the homeowner bearing the contractors' fault."
+    ],
+    "non_starters": [
+      "A resolution that leaves the foundation and water-intrusion defects unrepaired."
+    ],
+    "constraints": {
+      "budget": "Willing to litigate the lien and liability, but settlement at fair value is preferred.",
+      "timeline": "Wants the defects repaired before another wet season and the case trial-ready within roughly eighteen months."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Indemnity and contribution among the defendants",
+      "category": "construction",
+      "governing_law": "14 M.R.S. § 156",
+      "sub_questions": [
+        "Which party must indemnify or contribute to any judgment?",
+        "How does comparative fault govern the allocation?"
+      ],
+      "strength": "moderate",
+      "client_position": "Supports an allocation that holds each contractor responsible for its own fault.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Negligent excavation and fill compaction by the subcontractor",
+      "category": "construction",
+      "governing_law": "Common law negligence",
+      "sub_questions": [
+        "Was the site excavated and the structural fill compacted to specification?",
+        "Did that work cause the settlement and intrusion?"
+      ],
+      "strength": "moderate",
+      "client_position": "Improper excavation and uncompacted fill are a root cause of the defects.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Breach of the construction contract by the general contractor",
+      "category": "construction",
+      "governing_law": "14 M.R.S. § 752; common law contract",
+      "sub_questions": [
+        "Did the work conform to the contract documents and approved plans?",
+        "What damages flow from the nonconforming work?"
+      ],
+      "strength": "strong",
+      "client_position": "Seeks repair-cost damages for the contractor's failure to build to the contract and plans.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Validity and enforcement of the mechanic's / materialman's lien",
+      "category": "construction",
+      "governing_law": "10 M.R.S. § 3251 et seq.",
+      "sub_questions": [
+        "Was the lien perfected within the statutory period?",
+        "Should the lien be enforced, reduced, or discharged?"
+      ],
+      "strength": "unknown",
+      "client_position": "Disputes the amount and enforceability of the lien against the homeowner's setoff.",
+      "id": "iss4"
+    },
+    {
+      "issue": "Breach of the implied warranty of workmanlike construction and habitability",
+      "category": "construction",
+      "governing_law": "Common law implied warranty (Banville v. Huckins)",
+      "sub_questions": [
+        "Was the home built in a reasonably workmanlike manner and fit to live in?",
+        "Did the defects breach the implied warranty?"
+      ],
+      "strength": "moderate",
+      "client_position": "Contends the foundation and water-intrusion defects breach the implied warranty.",
+      "id": "iss5"
+    },
+    {
+      "issue": "Negligence of the contractor, excavator, and design professional",
+      "category": "construction",
+      "governing_law": "Common law negligence; 14 M.R.S. § 156 (comparative fault)",
+      "sub_questions": [
+        "What standard of care applied to each party?",
+        "How is fault apportioned among them?"
+      ],
+      "strength": "moderate",
+      "client_position": "Each party breached its standard of care and is liable for its share of the harm.",
+      "id": "iss6"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Ingrid R. Kingsley",
+        "field": "Structural engineering",
+        "credentials": "P.E.",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Cause of foundation distress and water intrusion",
+      "opinion": "The foundation settlement and intrusion result from inadequate support and drainage, not normal settling.",
+      "basis": "Site inspection, crack mapping, and review of the structural plans."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Diego M. Ellsworth",
+        "field": "Home inspection",
+        "credentials": "ASHI",
+        "retained_by": "defendant"
+      },
+      "topic": "Condition and maintenance of the property",
+      "opinion": "Observed conditions are consistent with deferred maintenance and owner grading rather than original construction.",
+      "basis": "Visual inspection and maintenance history."
+    },
+    {
+      "id": "exp3",
+      "expert": {
+        "name": "Jane M. Greenhill",
+        "field": "Construction cost estimating",
+        "credentials": "CPE",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Scope and cost of repair",
+      "opinion": "A complete, code-compliant repair requires underpinning and drainage remediation at the estimated cost.",
+      "basis": "Defect scope, unit pricing, and contractor bids."
+    },
+    {
+      "id": "exp4",
+      "expert": {
+        "name": "Henry D. Larkspur",
+        "field": "Geotechnical / soils engineering",
+        "credentials": "P.E., G.E.",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Excavation, structural fill, and compaction",
+      "opinion": "The structural fill was not compacted to specification, allowing differential settlement.",
+      "basis": "Soil borings, compaction testing, and the excavation records."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Construction contract and plans",
+      "type": "contract",
+      "party": "plaintiff",
+      "description": "The executed construction agreement, specifications, and drawings.",
+      "id": "ev1"
+    },
+    {
+      "title": "Geotechnical and engineering reports",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "Soils, compaction, and structural engineering reports on the defects.",
+      "id": "ev2"
+    },
+    {
+      "title": "Building inspection and code records",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "Permit, inspection cards, and code-enforcement records for the project.",
+      "id": "ev3"
+    },
+    {
+      "title": "Photographs of cracking and water intrusion",
+      "type": "photo",
+      "party": "plaintiff",
+      "description": "Dated photographs documenting the foundation cracks and basement water.",
+      "id": "ev4"
+    },
+    {
+      "title": "Approved foundation and site plans",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "The stamped foundation and site/grading plans approved for the project.",
+      "id": "ev5"
+    },
+    {
+      "title": "Repair estimate and scope of work",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "Itemized repair estimate and remediation scope.",
+      "id": "ev6"
+    },
+    {
+      "title": "Change orders and pay applications",
+      "type": "financial_record",
+      "party": "defendant",
+      "description": "Project change orders and the contractor's payment applications.",
+      "id": "ev7"
+    },
+    {
+      "title": "Mechanic's lien filing",
+      "type": "public_record",
+      "party": "defendant",
+      "description": "The recorded mechanic's / materialman's lien on the property.",
+      "id": "ev8"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Contract price",
+        "amount": 1332259,
+        "basis": "The construction contract sum."
+      },
+      {
+        "label": "Estimated repair cost",
+        "amount": 336335,
+        "basis": "Cost to repair to a code-compliant condition."
+      },
+      {
+        "label": "Consequential damages",
+        "amount": 25947,
+        "basis": "Temporary housing and mold remediation during repairs."
+      },
+      {
+        "label": "Diminution in value",
+        "amount": 245717,
+        "basis": "Residual loss in market value after repair."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "discovery",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Breach of construction contract",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "14 M.R.S. § 752; common law",
+        "elements": [
+          "A valid construction contract",
+          "Performance by the homeowner",
+          "Defective or nonconforming work by the contractor",
+          "Resulting damages"
+        ],
+        "relief_sought": "Repair-cost damages of approximately $602549",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Breach of the implied warranty of workmanlike construction",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "Common law implied warranty",
+        "elements": [
+          "Construction of a residence",
+          "An implied warranty of workmanlike, habitable construction",
+          "Breach by defective work",
+          "Damages"
+        ],
+        "relief_sought": "Cost to repair and consequential damages",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Negligence",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "Common law negligence; 14 M.R.S. § 156",
+        "elements": [
+          "A duty of reasonable care in construction",
+          "Breach of that duty",
+          "Causation",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages for the cost of repair and diminution in value",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Negligence (negligent excavation and fill compaction)",
+        "by": "Grace C. Roe",
+        "against": "Coastal Logistics Inc.",
+        "governing_law": "Common law negligence",
+        "elements": [
+          "A duty to excavate and compact fill to specification",
+          "Breach of that duty",
+          "Causation of the settlement and intrusion",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages attributable to the defective sitework",
+        "strength": "moderate"
+      },
+      {
+        "count": 5,
+        "claim": "Enforcement and discharge of the mechanic's lien",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "10 M.R.S. § 3251 et seq.",
+        "elements": [
+          "A recorded mechanic's lien",
+          "A genuine dispute over the amount owed",
+          "The homeowner's setoff for defective work"
+        ],
+        "relief_sought": "A declaration reducing or discharging the lien and an accounting",
+        "strength": "unknown"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Failure to maintain and improper grading by the owner",
+        "by": "Summit Outfitters Co.",
+        "basis": "The conditions result from the owner's failure to maintain and regrade the site."
+      },
+      {
+        "defense": "Betterment",
+        "by": "Summit Outfitters Co.",
+        "basis": "The claimed repairs would put the homeowner in a better position than the contract required."
+      },
+      {
+        "defense": "The work met code",
+        "by": "Coastal Logistics Inc.",
+        "basis": "The excavation and fill work passed inspection and complied with the applicable building code."
+      },
+      {
+        "defense": "Lack of notice and opportunity to cure",
+        "by": "Summit Outfitters Co.",
+        "basis": "The homeowner failed to provide notice and a reasonable opportunity to cure the alleged defects."
+      },
+      {
+        "defense": "Statute of repose",
+        "by": "Summit Outfitters Co.",
+        "basis": "Claims for design and construction are barred by the period of repose. 14 M.R.S. § 752-A."
+      }
+    ],
+    "cross_claims": [
+      {
+        "claim": "Indemnification and contribution",
+        "by": "Summit Outfitters Co.",
+        "against": "Coastal Logistics Inc.",
+        "basis": "If the general contractor is liable, the excavation subcontractor must indemnify and contribute for its defective sitework. 14 M.R.S. § 156."
+      },
+      {
+        "claim": "Indemnification and contribution",
+        "by": "Summit Outfitters Co.",
+        "against": "Riverbend Analytics Inc.",
+        "basis": "Any defect traceable to the design entitles the general contractor to indemnity and contribution from the design professional."
+      }
+    ],
+    "third_party_claims": [
+      {
+        "claim": "Contribution and professional negligence",
+        "by": "Summit Outfitters Co.",
+        "against": "Riverbend Analytics Inc.",
+        "basis": "The design professional's deficient foundation and drainage design caused or contributed to the loss. 14 M.R.S. § 156."
+      }
+    ],
+    "discovery": [
+      {
+        "type": "request_for_production",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Summit Outfitters Co.",
+        "served_date": "2025-04-08",
+        "status": "objected",
+        "description": "Requests for the plans, pay applications, change orders, and soils reports."
+      },
+      {
+        "type": "interrogatories",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Summit Outfitters Co.",
+        "served_date": "2025-04-22",
+        "status": "responded",
+        "description": "First set of interrogatories on the scope of work and subcontractors."
+      },
+      {
+        "type": "subpoena",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "the building inspector",
+        "served_date": "2025-05-15",
+        "status": "served",
+        "description": "Subpoena to the municipal building inspector for permit and inspection records."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Summit Outfitters Co.",
+        "responding_party": "Riverbend Analytics Inc.",
+        "served_date": "2025-08-01",
+        "status": "served",
+        "description": "Deposition of the project architect/engineer."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to bifurcate liability and damages",
+        "type": "pretrial",
+        "movant": "Summit Outfitters Co.",
+        "filed_date": "2026-02-01",
+        "status": "opposed",
+        "relief": "Separate trials on liability and damages."
+      },
+      {
+        "title": "Motion for summary judgment on the mechanic's lien",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-10-10",
+        "status": "under_advisement",
+        "relief": "Judgment reducing or discharging the recorded lien."
+      },
+      {
+        "title": "Motion in limine to exclude a defect expert",
+        "type": "evidentiary",
+        "movant": "Summit Outfitters Co.",
+        "filed_date": "2026-03-27",
+        "status": "filed",
+        "relief": "Exclusion of the homeowner's causation expert."
+      },
+      {
+        "title": "Motion to consolidate",
+        "type": "procedural",
+        "movant": "Summit Outfitters Co.",
+        "filed_date": "2025-04-07",
+        "status": "granted",
+        "relief": "Consolidation of the related lien and defect actions."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2025-02-10",
+        "entry": "Complaint filed against the general contractor and excavation subcontractor.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-03-10",
+        "entry": "Answer, cross-claim against the subcontractor, and third-party complaint against the design professional filed.",
+        "party": "Summit Outfitters Co."
+      },
+      {
+        "date": "2025-04-06",
+        "entry": "Scheduling order entered; discovery and expert-disclosure deadlines set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-06-03",
+        "entry": "Order granting destructive testing and site inspection of the foundation.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-17",
+        "entry": "Expert reports on causation, soils, and repair cost served.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-11-20",
+        "entry": "Motion for summary judgment on the mechanic's lien taken under advisement.",
+        "party": "the court"
+      },
+      {
+        "date": "2026-01-16",
+        "entry": "Mediation held; discovery continues toward trial.",
+        "party": "the court"
+      }
+    ],
+    "trial": {
+      "jury": false,
+      "estimated_days": 14,
+      "scheduled_date": "2026-12-10"
+    }
+  },
+  "facts": {
+    "project": "a custom single-family home",
+    "contract_price": 1363566,
+    "substantial_completion_date": "2022-11-01",
+    "primary_defect": "framing and roof structural deficiencies",
+    "root_cause": "inadequate site drainage design",
+    "discovery_date": "2024-07-12",
+    "repair_cost_estimate": 602549,
+    "mechanic_lien_filed": false,
+    "warranty_period": "a written 10-year structural warranty"
+  }
+}

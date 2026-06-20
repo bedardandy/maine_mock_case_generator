@@ -1,0 +1,78 @@
+{
+  "matter": {
+    "docket_number": "SAG-CV-2025-310",
+    "case_id": "MMC-2025-749078",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Superior Court",
+    "case_type": "contract",
+    "filing_date": "2025-10-29",
+    "event_date": "2025-02-07"
+  },
+  "parties": {
+    "plaintiff": {
+      "full_name": "Harbor Outfitters LLC",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174"
+    },
+    "defendant": {
+      "full_name": "Coastal Provisions LLC",
+      "address": "46 Lighthouse Drive",
+      "city": "Camden",
+      "state": "ME",
+      "zip": "04009",
+      "phone": "(207) 555-0130"
+    },
+    "defendant_2": {
+      "full_name": "Maria Q. Jessup",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Jessup",
+      "address": "32 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04029",
+      "phone": "(207) 555-0180",
+      "email": "maria.jessup@example.net",
+      "date_of_birth": "1964-02-01"
+    },
+    "attorney": {
+      "full_name": "Rosa B. Ellsworth",
+      "first_name": "Rosa",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "address": "115 Pine Lane",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153",
+      "email": "rosa.ellsworth@example.com",
+      "date_of_birth": "1967-03-02",
+      "bar_number": "6054"
+    }
+  },
+  "party": {
+    "full_name": "Harbor Outfitters LLC",
+    "address": "39 Meadowbrook Drive",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "signature": "Harbor Outfitters LLC"
+  },
+  "facts": {
+    "contract_type": "a master supply agreement",
+    "goods": "specialty food products",
+    "contract_date": "2024-01-17",
+    "contract_value": 2515804,
+    "breach_type": "delivery of defective goods",
+    "breach_date": "2025-02-07",
+    "amount_owed": 264326,
+    "guaranty_signed": true,
+    "notice_of_default_date": "2025-06-16",
+    "cure_period_expired": true
+  }
+}

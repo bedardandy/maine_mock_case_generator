@@ -1,0 +1,200 @@
+id: construction-defect
+title: "{plaintiff_full_name} v. {defendant_full_name} et al."
+practice_area: civil
+case_type: construction
+status: active
+docket_prefix: CV
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, CV-067]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+dates:
+  filing_date: {date_between: ["2025-02-01", "2025-11-01"]}
+  event_date: "{substantial_completion_date}"
+
+# A multi-party residential construction-defect suit: a homeowner sues the general
+# contractor over foundation and water-intrusion problems; the GC cross-claims against
+# its excavation subcontractor and impleads the design professional. Models a full
+# construction-litigation posture end to end.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, label: "Plaintiff homeowner"}
+    - {key: defendant, entity: organization, label: "Defendant general contractor"}
+    - {key: defendant_2, entity: organization, label: "Defendant excavation subcontractor"}
+    - {key: third_party_defendant, entity: organization, label: "Third-party defendant design professional (architect/engineer)"}
+
+facts:
+  project: {pick: ["a custom single-family home", "a major home addition and foundation", "a coastal home on ledge and fill", "a converted barn residence"]}
+  contract_price: {int_between: [180000, 1400000]}
+  substantial_completion_date: {date_between: ["2022-09-01", "2024-06-30"]}
+  primary_defect: {pick: ["chronic basement water intrusion", "foundation settlement and cracking", "improperly compacted structural fill", "a failed footing drain and grading", "framing and roof structural deficiencies"]}
+  root_cause: {pick: ["improper excavation and uncompacted fill", "inadequate site drainage design", "deviation from the approved foundation plan", "substandard concrete and footings"]}
+  discovery_date: {date_between: ["2023-11-01", "2025-01-31"]}
+  repair_cost_estimate: {int_between: [45000, 650000]}
+  mechanic_lien_filed: {pick: [true, false]}
+  warranty_period: {pick: ["a one-year builder warranty", "a written 10-year structural warranty", "no express warranty"]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: financial_institution, name_kind: bank, role: "Construction lender", relevance: "Funded the construction loan and holds a mortgage on the property; records reflect draws against the work."}
+    - {type: government_agency, name: "Town Code Enforcement Office", role: "Municipal building inspector / code office", relevance: "Issued the building permit and conducted the foundation and framing inspections."}
+    - {type: insurer, name_kind: organization, role: "General contractor's liability insurer", relevance: "Issued the contractor's commercial general liability policy implicated by the defect claims."}
+    - {type: insurer, name_kind: organization, role: "Surety on the contractor's bond", relevance: "Issued the performance and payment bond on the project."}
+    - {type: business_entity, name_kind: organization, role: "Subsequent inspection company", relevance: "Retained after the problems appeared to inspect the foundation and document the defects."}
+    - {type: witness, name_kind: person, role: "Neighboring property owner", relevance: "Owns adjacent land that floods from site runoff and can testify to the grading and drainage conditions."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name} hired {defendant_full_name} to build {project_lower} for roughly ${contract_price}, and now sues the general contractor, its excavation subcontractor {defendant_2_full_name}, and (by third-party complaint) the design professional {third_party_defendant_full_name} over {primary_defect_lower} the homeowner attributes to {root_cause_lower}."
+  narrative:
+    - "{plaintiff_full_name} contracted with {defendant_full_name}, a general contractor, to construct {project_lower} for a contract price of approximately ${contract_price}. The work reached substantial completion on or about {substantial_completion_date}. The project included {warranty_period_lower}."
+    - "Beginning around {discovery_date}, {plaintiff_last} observed {primary_defect_lower} at the property. A subsequent investigation traced the problem to {root_cause}, work that fell to the excavation subcontractor {defendant_2_full_name} and that the homeowner contends departed from the plans prepared by the design professional {third_party_defendant_full_name}. The homeowner obtained a repair estimate of roughly ${repair_cost_estimate}."
+    - "{plaintiff_first} filed suit in {county} County Superior Court against {defendant_full_name} for breach of the construction contract, breach of the implied warranty of workmanlike construction, and negligence, and against {defendant_2_full_name} for negligent excavation and fill compaction. {defendant_full_name} answered, cross-claimed against {defendant_2_full_name} for indemnity and contribution, and filed a third-party complaint impleading {third_party_defendant_full_name}. The matter is now in active, contested discovery."
+  undisputed:
+    - "{plaintiff_full_name} and {defendant_full_name} entered a written construction contract for {project_lower}."
+    - "The work reached substantial completion on or about {substantial_completion_date}."
+    - "{plaintiff_last} reported {primary_defect_lower} at the property beginning around {discovery_date}."
+  disputed:
+    - "Whether the defects arose from {root_cause_lower} or from causes outside the contractors' control."
+    - "How fault should be allocated among the general contractor, the excavation subcontractor, and the design professional."
+    - "The reasonable cost to repair the property and the diminution in its value."
+    - "Whether the mechanic's lien is valid and enforceable and whether any claims are barred by the statute of repose."
+  timeline:
+    - {date: "{substantial_completion_date}", event: "{defendant_full_name} reached substantial completion of {project_lower}."}
+    - {date: "{discovery_date}", event: "{plaintiff_last} discovered {primary_defect_lower} and began investigating the cause."}
+    - {date: "{filing_date}", event: "Complaint filed in {court_location} Superior Court; cross-claim and third-party complaint follow."}
+
+interview:
+  interviewer: "Litigation Partner"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "The project", question: "What did you hire the contractor to build, and for how much?", answer: "We hired {defendant_first} to build {project_lower} for about ${contract_price}. It was supposed to be our long-term home."}
+    - {topic: "The problem", question: "When did the problems start, and what are they?", answer: "Around {discovery_date} we started seeing {primary_defect_lower}. It has only gotten worse since."}
+    - {topic: "The cause", question: "What did your experts find caused it?", answer: "They traced it to {root_cause}. The excavation work and the fill were not done right, and the foundation did not follow the plans."}
+    - {topic: "The cost", question: "What will it take to fix?", answer: "The repair estimate is around ${repair_cost_estimate}, and that does not count what we have spent living elsewhere while this gets sorted out."}
+    - {topic: "The parties", question: "Who do you think is responsible?", answer: "The general contractor signed the contract, but the excavator and the architect have to own their part too. I want it sorted out among them, not on my back."}
+    - {topic: "Goal", question: "What outcome do you want?", answer: "Get the house properly repaired, be made whole for the extra costs, and settle this through their insurers if we can. I will go to trial if I have to."}
+
+objectives:
+  goals:
+    - "Recover the full reasonable cost to repair the property, approximately ${repair_cost_estimate}, plus consequential damages."
+    - "Allocate fault among the general contractor, the excavation subcontractor, and the design professional."
+    - "Preserve and resolve the mechanic's lien dispute on favorable terms."
+  priorities:
+    - "A properly repaired, structurally sound home."
+    - "Holding each responsible party accountable for its share of the loss."
+    - "Resolving the case efficiently through the contractors' insurers where possible."
+  risk_tolerance: {pick: [moderate, high]}
+  desired_outcomes:
+    - "A judgment or settlement funding the full repair scope and consequential damages."
+    - "An allocation of liability that does not leave the homeowner bearing the contractors' fault."
+  non_starters:
+    - "A resolution that leaves the foundation and water-intrusion defects unrepaired."
+  constraints:
+    budget: {pick: ["Funded but cost-conscious; the homeowner prefers an insurer-funded settlement to a long trial.", "Willing to litigate the lien and liability, but settlement at fair value is preferred."]}
+    timeline: "Wants the defects repaired before another wet season and the case trial-ready within roughly eighteen months."
+
+issues:
+  count: {min: 4, max: 6}
+  pool:
+    - {issue: "Breach of the construction contract by the general contractor", category: construction, governing_law: "14 M.R.S. § 752; common law contract", sub_questions: ["Did the work conform to the contract documents and approved plans?", "What damages flow from the nonconforming work?"], strength: strong, client_position: "Seeks repair-cost damages for the contractor's failure to build to the contract and plans."}
+    - {issue: "Breach of the implied warranty of workmanlike construction and habitability", category: construction, governing_law: "Common law implied warranty (Banville v. Huckins)", sub_questions: ["Was the home built in a reasonably workmanlike manner and fit to live in?", "Did the defects breach the implied warranty?"], strength: moderate, client_position: "Contends the foundation and water-intrusion defects breach the implied warranty."}
+    - {issue: "Negligence of the contractor, excavator, and design professional", category: construction, governing_law: "Common law negligence; 14 M.R.S. § 156 (comparative fault)", sub_questions: ["What standard of care applied to each party?", "How is fault apportioned among them?"], strength: moderate, client_position: "Each party breached its standard of care and is liable for its share of the harm."}
+    - {issue: "Negligent excavation and fill compaction by the subcontractor", category: construction, governing_law: "Common law negligence", sub_questions: ["Was the site excavated and the structural fill compacted to specification?", "Did that work cause the settlement and intrusion?"], strength: moderate, client_position: "Improper excavation and uncompacted fill are a root cause of the defects."}
+    - {issue: "Validity and enforcement of the mechanic's / materialman's lien", category: construction, governing_law: "10 M.R.S. § 3251 et seq.", sub_questions: ["Was the lien perfected within the statutory period?", "Should the lien be enforced, reduced, or discharged?"], strength: unknown, client_position: "Disputes the amount and enforceability of the lien against the homeowner's setoff."}
+    - {issue: "Timeliness under the construction limitation period and statute of repose", category: procedure, governing_law: "14 M.R.S. § 752-A", sub_questions: ["When did the claims accrue?", "Do any claims fall outside the period of repose for design and construction?"], strength: moderate, client_position: "The claims were brought within the limitation and repose periods."}
+    - {issue: "Indemnity and contribution among the defendants", category: construction, governing_law: "14 M.R.S. § 156", sub_questions: ["Which party must indemnify or contribute to any judgment?", "How does comparative fault govern the allocation?"], strength: moderate, client_position: "Supports an allocation that holds each contractor responsible for its own fault."}
+
+experts:
+  count: {min: 2, max: 4}
+  pool:
+    - {field: "Structural engineering", credentials: "P.E.", retained_by: plaintiff, topic: "Cause of foundation distress and water intrusion", opinion: "The foundation settlement and intrusion result from inadequate support and drainage, not normal settling.", basis: "Site inspection, crack mapping, and review of the structural plans."}
+    - {field: "Geotechnical / soils engineering", credentials: "P.E., G.E.", retained_by: plaintiff, topic: "Excavation, structural fill, and compaction", opinion: "The structural fill was not compacted to specification, allowing differential settlement.", basis: "Soil borings, compaction testing, and the excavation records."}
+    - {field: "Construction cost estimating", credentials: "CPE", retained_by: plaintiff, topic: "Scope and cost of repair", opinion: "A complete, code-compliant repair requires underpinning and drainage remediation at the estimated cost.", basis: "Defect scope, unit pricing, and contractor bids."}
+    - {field: "Architecture / standard of care", credentials: "AIA, NCARB", retained_by: third_party_defendant, topic: "Design professional standard of care", opinion: "The design met the applicable standard of care and the foundation plan was adequate as drawn.", basis: "The design documents and applicable building codes."}
+    - {field: "Home inspection", credentials: "ASHI", retained_by: defendant, topic: "Condition and maintenance of the property", opinion: "Observed conditions are consistent with deferred maintenance and owner grading rather than original construction.", basis: "Visual inspection and maintenance history."}
+
+evidence:
+  count: {min: 5, max: 8}
+  pool:
+    - {title: "Construction contract and plans", type: contract, party: plaintiff, description: "The executed construction agreement, specifications, and drawings."}
+    - {title: "Approved foundation and site plans", type: document, party: plaintiff, description: "The stamped foundation and site/grading plans approved for the project."}
+    - {title: "Photographs of cracking and water intrusion", type: photo, party: plaintiff, description: "Dated photographs documenting the foundation cracks and basement water."}
+    - {title: "Geotechnical and engineering reports", type: document, party: plaintiff, description: "Soils, compaction, and structural engineering reports on the defects."}
+    - {title: "Repair estimate and scope of work", type: financial_record, party: plaintiff, description: "Itemized repair estimate and remediation scope."}
+    - {title: "Mechanic's lien filing", type: public_record, party: defendant, description: "The recorded mechanic's / materialman's lien on the property."}
+    - {title: "Building inspection and code records", type: public_record, party: plaintiff, description: "Permit, inspection cards, and code-enforcement records for the project."}
+    - {title: "Change orders and pay applications", type: financial_record, party: defendant, description: "Project change orders and the contractor's payment applications."}
+    - {title: "Correspondence about the problems", type: correspondence, party: plaintiff, description: "Emails and letters between the parties about the defects and demands to cure."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Contract price", amount: {int_between: [180000, 1400000]}, basis: "The construction contract sum."}
+    - {label: "Estimated repair cost", amount: {int_between: [45000, 650000]}, basis: "Cost to repair to a code-compliant condition."}
+    - {label: "Diminution in value", amount: {int_between: [20000, 300000]}, basis: "Residual loss in market value after repair."}
+    - {label: "Consequential damages", amount: {int_between: [8000, 120000]}, basis: "Temporary housing and mold remediation during repairs."}
+    - {label: "Expert and investigation costs", amount: {int_between: [25000, 250000]}, basis: "Retained engineering and estimating experts."}
+
+litigation:
+  posture: discovery
+  causes_of_action:
+    - {count: 1, claim: "Breach of construction contract", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "14 M.R.S. § 752; common law", elements: ["A valid construction contract", "Performance by the homeowner", "Defective or nonconforming work by the contractor", "Resulting damages"], relief_sought: "Repair-cost damages of approximately ${repair_cost_estimate}", strength: strong}
+    - {count: 2, claim: "Breach of the implied warranty of workmanlike construction", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "Common law implied warranty", elements: ["Construction of a residence", "An implied warranty of workmanlike, habitable construction", "Breach by defective work", "Damages"], relief_sought: "Cost to repair and consequential damages", strength: moderate}
+    - {count: 3, claim: "Negligence", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "Common law negligence; 14 M.R.S. § 156", elements: ["A duty of reasonable care in construction", "Breach of that duty", "Causation", "Damages"], relief_sought: "Compensatory damages for the cost of repair and diminution in value", strength: moderate}
+    - {count: 4, claim: "Negligence (negligent excavation and fill compaction)", by: "{plaintiff_full_name}", against: "{defendant_2_full_name}", governing_law: "Common law negligence", elements: ["A duty to excavate and compact fill to specification", "Breach of that duty", "Causation of the settlement and intrusion", "Damages"], relief_sought: "Compensatory damages attributable to the defective sitework", strength: moderate}
+    - {count: 5, claim: "Enforcement and discharge of the mechanic's lien", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "10 M.R.S. § 3251 et seq.", elements: ["A recorded mechanic's lien", "A genuine dispute over the amount owed", "The homeowner's setoff for defective work"], relief_sought: "A declaration reducing or discharging the lien and an accounting", strength: unknown}
+  affirmative_defenses:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {defense: "Comparative fault", by: "{defendant_full_name}", basis: "Any loss is attributable in part to the homeowner and others. 14 M.R.S. § 156."}
+      - {defense: "Statute of repose", by: "{defendant_full_name}", basis: "Claims for design and construction are barred by the period of repose. 14 M.R.S. § 752-A."}
+      - {defense: "Failure to maintain and improper grading by the owner", by: "{defendant_full_name}", basis: "The conditions result from the owner's failure to maintain and regrade the site."}
+      - {defense: "Betterment", by: "{defendant_full_name}", basis: "The claimed repairs would put the homeowner in a better position than the contract required."}
+      - {defense: "Lack of notice and opportunity to cure", by: "{defendant_full_name}", basis: "The homeowner failed to provide notice and a reasonable opportunity to cure the alleged defects."}
+      - {defense: "The work met code", by: "{defendant_2_full_name}", basis: "The excavation and fill work passed inspection and complied with the applicable building code."}
+  cross_claims:
+    - {claim: "Indemnification and contribution", by: "{defendant_full_name}", against: "{defendant_2_full_name}", basis: "If the general contractor is liable, the excavation subcontractor must indemnify and contribute for its defective sitework. 14 M.R.S. § 156."}
+    - {claim: "Indemnification and contribution", by: "{defendant_full_name}", against: "{third_party_defendant_full_name}", basis: "Any defect traceable to the design entitles the general contractor to indemnity and contribution from the design professional."}
+  third_party_claims:
+    - {claim: "Contribution and professional negligence", by: "{defendant_full_name}", against: "{third_party_defendant_full_name}", basis: "The design professional's deficient foundation and drainage design caused or contributed to the loss. 14 M.R.S. § 156."}
+  discovery:
+    n: {min: 4, max: 6}
+    pick_n:
+      - {type: interrogatories, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-01", "2025-05-01"]}, status: responded, description: "First set of interrogatories on the scope of work and subcontractors."}
+      - {type: request_for_production, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-01", "2025-05-01"]}, status: objected, description: "Requests for the plans, pay applications, change orders, and soils reports."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-06-15", "2025-07-31"]}, status: outstanding, description: "Deposition of the general contractor's principal."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_2_full_name}", served_date: {date_between: ["2025-06-15", "2025-07-31"]}, status: served, description: "Deposition of the excavation subcontractor."}
+      - {type: deposition, propounding_party: "{defendant_full_name}", responding_party: "{third_party_defendant_full_name}", served_date: {date_between: ["2025-08-01", "2025-09-15"]}, status: served, description: "Deposition of the project architect/engineer."}
+      - {type: independent_examination, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-05-15", "2025-06-15"]}, status: compelled, description: "Destructive testing and site inspection of the foundation and fill."}
+      - {type: subpoena, propounding_party: "{plaintiff_full_name}", responding_party: "the building inspector", served_date: {date_between: ["2025-05-01", "2025-06-01"]}, status: served, description: "Subpoena to the municipal building inspector for permit and inspection records."}
+  motions:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {title: "Motion to compel destructive testing", type: discovery, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-05-01", "2025-06-01"]}, status: granted, relief: "An order permitting destructive testing and site inspection."}
+      - {title: "Motion for summary judgment on the mechanic's lien", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-10-01", "2025-11-15"]}, status: under_advisement, relief: "Judgment reducing or discharging the recorded lien."}
+      - {title: "Motion to consolidate", type: procedural, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-03-15", "2025-04-15"]}, status: granted, relief: "Consolidation of the related lien and defect actions."}
+      - {title: "Motion in limine to exclude a defect expert", type: evidentiary, movant: "{defendant_full_name}", filed_date: {date_between: ["2026-03-01", "2026-04-15"]}, status: filed, relief: "Exclusion of the homeowner's causation expert."}
+      - {title: "Motion to bifurcate liability and damages", type: pretrial, movant: "{defendant_full_name}", filed_date: {date_between: ["2026-02-01", "2026-03-15"]}, status: opposed, relief: "Separate trials on liability and damages."}
+  docket:
+    - {date: {date_between: ["2025-02-01", "2025-02-15"]}, entry: "Complaint filed against the general contractor and excavation subcontractor.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-03-01", "2025-03-15"]}, entry: "Answer, cross-claim against the subcontractor, and third-party complaint against the design professional filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-04-01", "2025-04-15"]}, entry: "Scheduling order entered; discovery and expert-disclosure deadlines set.", party: "the court"}
+    - {date: {date_between: ["2025-06-01", "2025-06-15"]}, entry: "Order granting destructive testing and site inspection of the foundation.", party: "the court"}
+    - {date: {date_between: ["2025-09-01", "2025-09-20"]}, entry: "Expert reports on causation, soils, and repair cost served.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-11-01", "2025-11-20"]}, entry: "Motion for summary judgment on the mechanic's lien taken under advisement.", party: "the court"}
+    - {date: {date_between: ["2026-01-15", "2026-02-01"]}, entry: "Mediation held; discovery continues toward trial.", party: "the court"}
+  trial:
+    jury: {pick: [true, false]}
+    estimated_days: {int_between: [6, 15]}
+    scheduled_date: {date_between: ["2026-09-01", "2027-04-01"]}

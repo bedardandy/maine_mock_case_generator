@@ -69,3 +69,18 @@ Notes:
 - estate tax: `gross_estate_value`, `marital_deduction`, `executor_name`, `return_due_date`
 
 Downstream `mapping.json` files translate these keys to specific PDF field ids.
+
+## Deep-litigation section (optional)
+
+Contested matters may carry a `litigation` object: `posture`, `causes_of_action`
+(count, claim, elements, relief, strength), `affirmative_defenses`, `counterclaims`,
+`cross_claims`, `third_party_claims`, `discovery` (type, parties, status), `motions`
+(title, movant, status), a chronological `docket`, and `trial` (jury, days, date). See the
+`complex-civil-litigation` scenario.
+
+## Compound matters
+
+A third schema, `catalog/compound_matter.schema.json`, describes a **universe** of
+intertwined matters that share one cast and cross-reference each other. Each entry in its
+`matters` array is itself a full Mock Matter (validated separately). See
+[`compound.md`](compound.md).

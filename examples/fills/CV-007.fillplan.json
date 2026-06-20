@@ -1,0 +1,338 @@
+{
+  "form_id": "CV-007",
+  "coverage": {
+    "total_fields": 39,
+    "filled_fields": 38,
+    "empty_fields": 1,
+    "percent": 97.4
+  },
+  "required": {
+    "keys": [
+      "parties.defendant.full_name",
+      "parties.plaintiff.full_name"
+    ],
+    "missing": [],
+    "ok": true
+  },
+  "entries": [
+    {
+      "field_id": "plaintiff",
+      "fact_key": "parties.plaintiff.full_name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "v",
+      "fact_key": "parties.defendant.full_name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "defendants",
+      "fact_key": "parties.defendant.full_name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "location_town",
+      "fact_key": "matter.court_location",
+      "value": "Bath",
+      "filled": true
+    },
+    {
+      "field_id": "docket_no",
+      "fact_key": "matter.docket_number",
+      "value": "SAG-FED-2025-660",
+      "filled": true
+    },
+    {
+      "field_id": "now_comes_the_plaintiff",
+      "fact_key": "parties.plaintiff.full_name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "1_the_plaintiff_is_the_owner_of_the_premises_located_at",
+      "fact_key": "facts.premises_address",
+      "value": "22 Tidewater Lane, Apt 3",
+      "filled": true
+    },
+    {
+      "field_id": "maine",
+      "fact_key": "facts.premises_city",
+      "value": "Augusta",
+      "filled": true
+    },
+    {
+      "field_id": "months_in_arrears_of_payment_of_rent",
+      "fact_key": "facts.months_in_arrears",
+      "value": 6,
+      "filled": true
+    },
+    {
+      "field_id": "undefined",
+      "fact_key": "facts.other_eviction_basis",
+      "value": "Unauthorized occupants in the unit",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_2",
+      "fact_key": "facts.notice_to_quit_date",
+      "value": "2026-02-26",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_3",
+      "fact_key": "facts.other_attachment",
+      "value": "",
+      "filled": false
+    },
+    {
+      "field_id": "maine_2",
+      "fact_key": "facts.premises_address",
+      "value": "22 Tidewater Lane, Apt 3",
+      "filled": true
+    },
+    {
+      "field_id": "date_mmddyyyy",
+      "fact_key": "today()",
+      "value": "2026-06-20",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_4",
+      "fact_key": "party.signature",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "printed_name",
+      "fact_key": "parties.plaintiff.full_name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "bar_number_if_applicable",
+      "fact_key": "parties.attorney.bar_number",
+      "value": "7867",
+      "filled": true
+    },
+    {
+      "field_id": "plaintiff_attorney_1",
+      "fact_key": "parties.attorney.full_name",
+      "value": "Ingrid B. Kingsley",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address",
+      "fact_key": "parties.attorney.address",
+      "value": "297 Tidewater Lane",
+      "filled": true
+    },
+    {
+      "field_id": "plaintiff_attorney_2",
+      "fact_key": "parties.attorney.city",
+      "value": "Ellsworth",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_5",
+      "fact_key": "parties.attorney.zip",
+      "value": "04007",
+      "filled": true
+    },
+    {
+      "field_id": "telephone_office",
+      "fact_key": "parties.attorney.phone",
+      "value": "(207) 555-0128",
+      "filled": true
+    },
+    {
+      "field_id": "email",
+      "fact_key": "parties.attorney.email",
+      "value": "ingrid.kingsley@example.com",
+      "filled": true
+    },
+    {
+      "field_id": "plaintiff_1",
+      "fact_key": "parties.plaintiff.full_name",
+      "value": "Grace C. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_6",
+      "fact_key": "parties.plaintiff.zip",
+      "value": "04047",
+      "filled": true
+    },
+    {
+      "field_id": "telephone_cell",
+      "fact_key": "parties.plaintiff.phone",
+      "value": "(207) 555-0174",
+      "filled": true
+    },
+    {
+      "field_id": "email_2",
+      "fact_key": "parties.plaintiff.email",
+      "value": "grace.roe@example.com",
+      "filled": true
+    },
+    {
+      "field_id": "defendant_1",
+      "fact_key": "parties.defendant.full_name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address_1_2",
+      "fact_key": "parties.defendant.address",
+      "value": "37 Cedar Way",
+      "filled": true
+    },
+    {
+      "field_id": "defendant_2",
+      "fact_key": "parties.defendant.city",
+      "value": "Falmouth",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address_2_2",
+      "fact_key": "parties.defendant.zip",
+      "value": "04071",
+      "filled": true
+    },
+    {
+      "field_id": "telephone_cell_2",
+      "fact_key": "parties.defendant.phone",
+      "value": "(207) 555-0154",
+      "filled": true
+    },
+    {
+      "field_id": "email_4",
+      "fact_key": "parties.defendant.email",
+      "value": "maria.fairbanks@example.com",
+      "filled": true
+    },
+    {
+      "field_id": "defendant_1_2",
+      "fact_key": "parties.defendant.full_name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address_1_4",
+      "fact_key": "parties.defendant.address",
+      "value": "37 Cedar Way",
+      "filled": true
+    },
+    {
+      "field_id": "defendant_2_2",
+      "fact_key": "parties.defendant.city",
+      "value": "Falmouth",
+      "filled": true
+    },
+    {
+      "field_id": "mailing_address_2_4",
+      "fact_key": "parties.defendant.zip",
+      "value": "04071",
+      "filled": true
+    },
+    {
+      "field_id": "telephone_cell_3",
+      "fact_key": "parties.defendant.phone",
+      "value": "(207) 555-0154",
+      "filled": true
+    },
+    {
+      "field_id": "email_6",
+      "fact_key": "parties.defendant.email",
+      "value": "maria.fairbanks@example.com",
+      "filled": true
+    }
+  ],
+  "title": "Complaint for Residential Forcible Entry and Detainer (Eviction)",
+  "repo": "maine-court-forms",
+  "profile": "canonical",
+  "case": {
+    "matter": {
+      "docket_number": "SAG-FED-2025-660",
+      "case_id": "MMC-2025-202163",
+      "court_county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "District Court",
+      "case_type": "forcible_entry_detainer",
+      "filing_date": "2025-12-09",
+      "event_date": "2026-02-26"
+    },
+    "parties": {
+      "plaintiff": {
+        "full_name": "Grace C. Roe",
+        "first_name": "Grace",
+        "middle_name": "C",
+        "last_name": "Roe",
+        "address": "422 Spruce Avenue",
+        "city": "Yarmouth",
+        "state": "ME",
+        "zip": "04047",
+        "phone": "(207) 555-0174",
+        "email": "grace.roe@example.com",
+        "date_of_birth": "1969-04-20"
+      },
+      "defendant": {
+        "full_name": "Maria Q. Fairbanks",
+        "first_name": "Maria",
+        "middle_name": "Q",
+        "last_name": "Fairbanks",
+        "address": "37 Cedar Way",
+        "city": "Falmouth",
+        "state": "ME",
+        "zip": "04071",
+        "phone": "(207) 555-0154",
+        "email": "maria.fairbanks@example.com",
+        "date_of_birth": "1965-03-05"
+      },
+      "attorney": {
+        "full_name": "Ingrid B. Kingsley",
+        "first_name": "Ingrid",
+        "middle_name": "B",
+        "last_name": "Kingsley",
+        "address": "297 Tidewater Lane",
+        "city": "Ellsworth",
+        "state": "ME",
+        "zip": "04007",
+        "phone": "(207) 555-0128",
+        "email": "ingrid.kingsley@example.com",
+        "date_of_birth": "1966-03-10",
+        "bar_number": "7867"
+      }
+    },
+    "party": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "signature": "Grace C. Roe"
+    },
+    "facts": {
+      "premises_address": "22 Tidewater Lane, Apt 3",
+      "premises_city": "Augusta",
+      "tenancy_type": "a month-to-month tenancy at will",
+      "monthly_rent": 2097,
+      "months_in_arrears": 6,
+      "total_rent_owed": 3911,
+      "notice_type": "7-day notice to quit for nonpayment of rent",
+      "notice_to_quit_date": "2026-02-26",
+      "eviction_basis": "termination of a tenancy at will",
+      "other_eviction_basis": "Unauthorized occupants in the unit",
+      "other_attachment": "",
+      "section8_tenancy": false
+    }
+  }
+}

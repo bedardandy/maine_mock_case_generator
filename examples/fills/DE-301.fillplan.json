@@ -1,0 +1,361 @@
+{
+  "form_id": "DE-301",
+  "coverage": {
+    "total_fields": 43,
+    "filled_fields": 19,
+    "empty_fields": 24,
+    "percent": 44.2
+  },
+  "required": {
+    "keys": [
+      "parties.decedent.full_name",
+      "parties.personal_representative.full_name"
+    ],
+    "missing": [],
+    "ok": true
+  },
+  "entries": [
+    {
+      "field_id": "county_probate_court",
+      "fact_key": "matter.court_county",
+      "value": "Sagadahoc",
+      "filled": true
+    },
+    {
+      "field_id": "docket_no",
+      "fact_key": "matter.docket_number",
+      "value": "SAG-PE-2026-935",
+      "filled": true
+    },
+    {
+      "field_id": "estate_of_decedent",
+      "fact_key": "parties.decedent.full_name",
+      "value": "Olivia B. Ellsworth",
+      "filled": true
+    },
+    {
+      "field_id": "petitioner_name",
+      "fact_key": "parties.personal_representative.full_name",
+      "value": "Theodore B. Kingsley",
+      "filled": true
+    },
+    {
+      "field_id": "petitioner_contact",
+      "fact_key": "parties.personal_representative.phone",
+      "value": "(207) 555-0111",
+      "filled": true
+    },
+    {
+      "field_id": "petitioner_interest",
+      "fact_key": "facts.petitioner_interest",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "petitioner_interest_other",
+      "fact_key": "facts.petitioner_interest_other",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "petitioner_interest_other_details",
+      "fact_key": "facts.petitioner_interest_other_details",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "decedent_full_legal_name",
+      "fact_key": "parties.decedent.full_name",
+      "value": "Olivia B. Ellsworth",
+      "filled": true
+    },
+    {
+      "field_id": "date_of_death",
+      "fact_key": "facts.date_of_death",
+      "value": "2025-09-22",
+      "filled": true
+    },
+    {
+      "field_id": "decedent_domicile",
+      "fact_key": "facts.decedent_domicile_county",
+      "value": "Sagadahoc",
+      "filled": true
+    },
+    {
+      "field_id": "domiciled_in_county",
+      "fact_key": "facts.domiciled_in_county",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "venue_basis_if_not_domiciled",
+      "fact_key": "facts.venue_basis_if_not_domiciled",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "person_whose_appointment_is_sought",
+      "fact_key": "parties.personal_representative.full_name",
+      "value": "Theodore B. Kingsley",
+      "filled": true
+    },
+    {
+      "field_id": "will_presented_for_probate",
+      "fact_key": "facts.will_exists",
+      "value": true,
+      "filled": true
+    },
+    {
+      "field_id": "will_details",
+      "fact_key": "facts.will_details",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "nominated_as_pr_in_will",
+      "fact_key": "facts.nominated_as_pr_in_will",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "nomination_explanation",
+      "fact_key": "facts.nomination_explanation",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "reason_for_special_admin",
+      "fact_key": "facts.reason_for_special_admin",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "appointment_without_notice",
+      "fact_key": "facts.appointment_without_notice",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "emergency_nature",
+      "fact_key": "facts.emergency_nature",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "interested_party_name_1",
+      "fact_key": "facts.interested_party_name_1",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "interested_party_addr_1",
+      "fact_key": "facts.interested_party_addr_1",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "interested_party_name_2",
+      "fact_key": "facts.interested_party_name_2",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "interested_party_addr_2",
+      "fact_key": "facts.interested_party_addr_2",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "interested_party_name_3",
+      "fact_key": "facts.interested_party_name_3",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "interested_party_addr_3",
+      "fact_key": "facts.interested_party_addr_3",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "interested_party_name_4",
+      "fact_key": "facts.interested_party_name_4",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "interested_party_addr_4",
+      "fact_key": "facts.interested_party_addr_4",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "petitioner_signature",
+      "fact_key": "party.signature",
+      "value": "Theodore B. Kingsley",
+      "filled": true
+    },
+    {
+      "field_id": "date_signed",
+      "fact_key": "today()",
+      "value": "2026-06-20",
+      "filled": true
+    },
+    {
+      "field_id": "attorney_name",
+      "fact_key": "parties.attorney.full_name",
+      "value": "Maria Q. Jessup",
+      "filled": true
+    },
+    {
+      "field_id": "attorney_address",
+      "fact_key": "parties.attorney.address",
+      "value": "32 Meadowbrook Drive",
+      "filled": true
+    },
+    {
+      "field_id": "attorney_phone",
+      "fact_key": "parties.attorney.phone",
+      "value": "(207) 555-0180",
+      "filled": true
+    },
+    {
+      "field_id": "special_admin_acceptance_signature",
+      "fact_key": "party.signature",
+      "value": "Theodore B. Kingsley",
+      "filled": true
+    },
+    {
+      "field_id": "special_admin_acceptance_date",
+      "fact_key": "today()",
+      "value": "2026-06-20",
+      "filled": true
+    },
+    {
+      "field_id": "order_limitations",
+      "fact_key": "facts.order_limitations",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "judge_date",
+      "fact_key": "facts.court_use_judge_date",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "judge_signature",
+      "fact_key": "facts.court_use_judge_signature",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "certified_copy_date",
+      "fact_key": "facts.court_use_certified_copy_date",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "register_signature",
+      "fact_key": "facts.court_use_register_signature",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "attorney_bar_number",
+      "fact_key": "parties.attorney.bar_number",
+      "value": "7499",
+      "filled": true
+    },
+    {
+      "field_id": "attorney_email",
+      "fact_key": "parties.attorney.email",
+      "value": "maria.jessup@example.net",
+      "filled": true
+    }
+  ],
+  "title": "Petition for Formal Appointment of Special Administrator",
+  "repo": "maine-probate-forms",
+  "profile": "canonical",
+  "case": {
+    "matter": {
+      "docket_number": "SAG-PE-2026-935",
+      "case_id": "MMC-2026-687472",
+      "court_county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Probate Court",
+      "case_type": "decedent_estate",
+      "filing_date": "2026-05-31",
+      "event_date": "2025-09-22"
+    },
+    "parties": {
+      "decedent": {
+        "full_name": "Olivia B. Ellsworth",
+        "first_name": "Olivia",
+        "middle_name": "B",
+        "last_name": "Ellsworth",
+        "date_of_birth": "1997-10-02"
+      },
+      "personal_representative": {
+        "full_name": "Theodore B. Kingsley",
+        "first_name": "Theodore",
+        "middle_name": "B",
+        "last_name": "Kingsley",
+        "address": "467 Spruce Avenue",
+        "city": "Bangor",
+        "state": "ME",
+        "zip": "04005",
+        "phone": "(207) 555-0111",
+        "email": "theodore.kingsley@example.org",
+        "date_of_birth": "1975-02-05"
+      },
+      "attorney": {
+        "full_name": "Maria Q. Jessup",
+        "first_name": "Maria",
+        "middle_name": "Q",
+        "last_name": "Jessup",
+        "address": "32 Meadowbrook Drive",
+        "city": "Yarmouth",
+        "state": "ME",
+        "zip": "04029",
+        "phone": "(207) 555-0180",
+        "email": "maria.jessup@example.net",
+        "date_of_birth": "1964-02-01",
+        "bar_number": "7499"
+      },
+      "plaintiff": {
+        "full_name": "Olivia B. Ellsworth",
+        "first_name": "Olivia",
+        "middle_name": "B",
+        "last_name": "Ellsworth",
+        "date_of_birth": "1997-10-02"
+      }
+    },
+    "party": {
+      "full_name": "Theodore B. Kingsley",
+      "first_name": "Theodore",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "theodore.kingsley@example.org",
+      "date_of_birth": "1975-02-05",
+      "signature": "Theodore B. Kingsley"
+    },
+    "facts": {
+      "date_of_death": "2025-09-22",
+      "will_exists": true,
+      "will_date": "2022-06-27",
+      "decedent_domicile_county": "Sagadahoc",
+      "relationship_to_decedent": "adult son",
+      "approximate_estate_value": 348677,
+      "real_property": false,
+      "num_heirs": 2,
+      "bond_required": true,
+      "probate_type": "informal appointment"
+    }
+  }
+}

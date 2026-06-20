@@ -1,0 +1,120 @@
+id: real-estate-transfer
+title: "Sale of {property_address} from {transferor_full_name} to {transferee_full_name}"
+practice_area: real_estate
+case_type: real_estate_transfer
+status: intake
+docket_prefix: RE
+assign_docket: false
+
+downstream:
+  repo: transactional-tax-forms
+  example_forms: [ME-RETTD]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Maine Registry of Deeds / Maine Revenue Services"
+
+dates:
+  filing_date: {date_between: ["2025-10-01", "2026-05-15"]}
+  event_date: "{transfer_date}"
+
+# A residential real-estate closing that drives the Maine Real Estate Transfer Tax
+# Declaration (ME-RETTD), which uses a property / transferor / transferee namespace.
+parties:
+  client_role: transferee
+  attorney: true
+  roles:
+    - {key: transferor, label: "Transferor (seller / grantor)"}
+    - {key: transferee, label: "Transferee (buyer / grantee)"}
+
+facts:
+  property_address: {pick: ["14 Lighthouse Drive", "203 Granite Ridge Road", "8 Harbor Road", "57 Meadowbrook Drive", "129 Old Mill Road"]}
+  property_town: {pick: ["Portland", "Brunswick", "Camden", "Bar Harbor", "Falmouth", "Yarmouth"]}
+  property_county: "{county}"
+  property_map_block_lot: {pick: ["Map 12, Block 3, Lot 7", "Map 4, Block 1, Lot 22", "Map 31, Block 9, Lot 5"]}
+  purchase_price: {int_between: [185000, 1250000]}
+  transfer_date: {date_between: ["2026-01-05", "2026-05-10"]}
+  property_type: {pick: ["single-family residential", "residential condominium", "two-unit residential", "vacant residential land"]}
+  adjusted_assessed_value: {int_between: [150000, 1100000]}
+  special_circumstances_explanation: {pick: ["None", "Partial-interest transfer between family members", "Transfer includes seller-financing", "Short sale approved by lender"]}
+  deed_type: {pick: ["warranty deed", "quitclaim deed with covenant"]}
+  financing: {pick: ["conventional mortgage", "cash", "seller financing", "FHA mortgage"]}
+  transfer_tax_exemption: {pick: [false, false, true]}
+
+third_parties:
+  count: {min: 2, max: 4}
+  pool:
+    - {type: business_entity, name_kind: organization, role: "Title insurance company", relevance: "Issues the owner's and lender's title policies at closing."}
+    - {type: financial_institution, name_kind: bank, role: "Mortgage lender", relevance: "Finances the buyer's purchase and records a mortgage."}
+    - {type: business_entity, name_kind: organization, role: "Real estate brokerage", relevance: "Represented the parties in the transaction."}
+    - {type: government_agency, name: "Maine Revenue Services", role: "Transfer tax authority", relevance: "Collects the real estate transfer tax via the RETTD."}
+    - {type: government_agency, name: "County Registry of Deeds", role: "Recording office", relevance: "Records the deed and the transfer tax declaration."}
+
+fact_pattern:
+  summary: "{transferee_full_name} is purchasing {property_type} at {property_address}, {property_town}, Maine from {transferor_full_name} for ${purchase_price}, requiring a Maine Real Estate Transfer Tax Declaration at recording."
+  narrative:
+    - "{transferor_full_name} has agreed to sell, and {transferee_full_name} to buy, the {property_type} property at {property_address} in {property_town}, {county} County, Maine. The agreed purchase price is ${purchase_price}, with closing set for about {transfer_date}."
+    - "The buyer is financing the purchase through {financing}, and title will pass by {deed_type}. At recording in the {county} County Registry of Deeds, the parties must file a Real Estate Transfer Tax Declaration (RETTD) reporting the price, the property, and the transferor and transferee, and pay the Maine transfer tax unless an exemption applies."
+    - "Counsel is handling the closing, confirming clear title, prorating taxes, and preparing the deed and the transfer tax declaration for the parties' signatures."
+  undisputed:
+    - "The property at {property_address}, {property_town} is being transferred from {transferor_full_name} to {transferee_full_name}."
+    - "The stated purchase price is ${purchase_price}."
+    - "The transfer must be reported on a Maine RETTD at recording."
+  disputed:
+    - "Whether a transfer tax exemption applies to this transaction."
+    - "The allocation of prorated property taxes and closing costs between the parties."
+
+interview:
+  interviewer: "Closing Attorney"
+  interviewee_role: transferee
+  exchanges:
+    - {topic: "Property", question: "What are you buying and for how much?", answer: "The {property_type} at {property_address} in {property_town}, for ${purchase_price}."}
+    - {topic: "Financing", question: "How are you paying?", answer: "Through {financing}. We expect to close around {transfer_date}."}
+    - {topic: "Title", question: "Any known title concerns?", answer: "Not that we know of; we are getting title insurance and a {deed_type}."}
+    - {topic: "Taxes", question: "Do you understand the transfer tax?", answer: "We know there is a Maine transfer tax reported on the RETTD at recording, split between buyer and seller."}
+    - {topic: "Goal", question: "What do you need from the closing?", answer: "Clear title, a clean RETTD, and the deed recorded correctly."}
+
+objectives:
+  goals:
+    - "Close the purchase with clear, insurable title."
+    - "File an accurate Real Estate Transfer Tax Declaration and pay the correct tax."
+    - "Record the deed promptly in the county registry."
+  priorities:
+    - "Clear title and correct recording."
+    - "Accurate transfer tax reporting."
+  risk_tolerance: low
+  desired_outcomes:
+    - "A recorded deed and a properly filed RETTD."
+  non_starters:
+    - "Closing with an unresolved title defect."
+  constraints:
+    budget: "Standard closing costs; buyer and seller split the transfer tax."
+    timeline: "Closing target around {transfer_date}."
+
+issues:
+  count: {min: 2, max: 4}
+  pool:
+    - {issue: "Calculation of the Maine real estate transfer tax", category: tax, governing_law: "36 M.R.S. § 4641-A", sub_questions: ["What is the consideration subject to tax?", "How is the tax split between transferor and transferee?"], strength: strong}
+    - {issue: "Availability of a transfer tax exemption", category: tax, governing_law: "36 M.R.S. § 4641-C", sub_questions: ["Does any statutory exemption apply to this transfer?"], strength: moderate}
+    - {issue: "Marketability and insurability of title", category: real_estate, governing_law: "33 M.R.S. § 351", sub_questions: ["Are there liens, easements, or encumbrances of record?"], strength: moderate}
+    - {issue: "Proper recording of the deed and declaration", category: real_estate, governing_law: "33 M.R.S. § 651", sub_questions: ["Is the deed in recordable form with the RETTD attached?"], strength: strong}
+
+evidence:
+  count: {min: 3, max: 5}
+  pool:
+    - {title: "Purchase and sale agreement", type: contract, party: transferee, description: "The executed agreement setting price and terms."}
+    - {title: "Title commitment", type: document, party: transferee, description: "The title company's commitment and exceptions."}
+    - {title: "Proposed deed", type: document, party: transferor, description: "The deed prepared for the conveyance."}
+    - {title: "Settlement statement", type: financial_record, party: transferee, description: "Closing disclosure with prorations and the transfer tax."}
+    - {title: "Property tax assessment", type: public_record, party: transferee, description: "The municipal assessment supporting adjusted assessed value."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 2, max: 4}
+  amounts:
+    - {label: "Purchase price", amount: {int_between: [185000, 1250000]}, basis: "Agreed consideration."}
+    - {label: "Estimated Maine transfer tax", amount: {int_between: [800, 5500]}, basis: "$2.20 per $500 of value, split between the parties."}
+    - {label: "Mortgage amount", amount: {int_between: [0, 1000000]}, basis: "Buyer's financing."}
+    - {label: "Adjusted assessed value", amount: {int_between: [150000, 1100000]}, basis: "Municipal assessment."}

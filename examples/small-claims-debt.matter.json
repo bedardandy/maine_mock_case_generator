@@ -11,7 +11,7 @@
   "matter": {
     "matter_id": "MMC-2025-490487",
     "practice_area": "civil",
-    "title": "Small Claims of Grace C. Roe v. John Q. Poe",
+    "title": "Small Claims of Grace C. Roe v. Maria Q. Fairbanks",
     "jurisdiction": {
       "state": "ME",
       "county": "Sagadahoc",
@@ -21,7 +21,7 @@
     "case_type": "small_claims",
     "filing_date": "2025-11-17",
     "status": "pre_filing",
-    "summary": "Grace C. Roe, the sole proprietor of a home-repair business, brings a small claims action in Sagadahoc County District Court against a former customer, John Q. Poe, to collect the unpaid balance arising from unpaid invoice for completed services; the claim is within the $6,000 Maine small claims limit.",
+    "summary": "Grace C. Roe, the sole proprietor of a freelance web-design practice, brings a small claims action in Sagadahoc County District Court against a former customer, Maria Q. Fairbanks, to collect the unpaid balance arising from unpaid invoice for completed services; the claim is within the $6,000 Maine small claims limit.",
     "event_date": "2025-05-27",
     "docket_number": "SAG-SC-2025-199"
   },
@@ -39,39 +39,42 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
     },
     "defendant": {
       "entity_type": "person",
-      "first_name": "John",
+      "first_name": "Maria",
       "middle_name": "Q",
-      "last_name": "Poe",
-      "full_name": "John Q. Poe",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
       "role": "Defendant (customer who owes the debt)",
-      "address": "216 Maple Court",
-      "city": "Orono",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
       "state": "ME",
-      "zip": "04012",
-      "phone": "(207) 555-0170",
-      "email": "john.poe@example.org",
-      "date_of_birth": "1998-10-17"
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
     },
     "attorney": {
       "entity_type": "person",
-      "first_name": "Samuel",
+      "first_name": "Ingrid",
       "middle_name": "B",
-      "last_name": "Boe",
-      "full_name": "Samuel B. Boe",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
       "role": "Attorney for the client",
       "address": "297 Tidewater Lane",
       "city": "Ellsworth",
       "state": "ME",
       "zip": "04007",
       "phone": "(207) 555-0128",
-      "email": "samuel.boe@example.com",
+      "email": "ingrid.kingsley@example.com",
       "date_of_birth": "1966-03-10",
-      "bar_number": "5744",
-      "organization_name": "Kingsley & Associates"
+      "ssn_last4": "4744",
+      "bar_number": "7867",
+      "organization_name": "Hawthorne Legal Group"
     },
     "client": {
       "entity_type": "person",
@@ -86,27 +89,28 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
     }
   },
   "fact_pattern": {
-    "summary": "Grace C. Roe, the sole proprietor of a home-repair business, brings a small claims action in Sagadahoc County District Court against a former customer, John Q. Poe, to collect the unpaid balance arising from unpaid invoice for completed services; the claim is within the $6,000 Maine small claims limit.",
-    "narrative": "Grace C. Roe owns and operates a home-repair business as a sole proprietor in Sagadahoc County, Maine. In early 2025 the business agreed to perform work for John Q. Poe, a customer, and completed that work on 2025-05-27. The matter arises from unpaid invoice for completed services.\n\nThe business billed John an invoice amount of $3427 for the work. John paid only $573 toward that bill and then stopped responding, leaving the unpaid balance (the invoice amount less the amount paid) outstanding. Grace sent a written demand for payment on 2025-12-28, but John neither paid the balance nor disputed the underlying charges in writing.\n\nGrace now seeks a small claims judgment for the unpaid balance, together with court costs and post-judgment interest. Because the total amount in controversy is at or below $6,000, the claim falls within the jurisdiction of the Maine District Court small claims docket under 14 M.R.S. § 7482, and Grace intends to file in Bath.",
+    "summary": "Grace C. Roe, the sole proprietor of a freelance web-design practice, brings a small claims action in Sagadahoc County District Court against a former customer, Maria Q. Fairbanks, to collect the unpaid balance arising from unpaid invoice for completed services; the claim is within the $6,000 Maine small claims limit.",
+    "narrative": "Grace C. Roe owns and operates a freelance web-design practice as a sole proprietor in Sagadahoc County, Maine. In early 2025 the business agreed to perform work for Maria Q. Fairbanks, a customer, and completed that work on 2025-05-27. The matter arises from unpaid invoice for completed services.\n\nThe business billed Maria an invoice amount of $3427 for the work. Maria paid only $573 toward that bill and then stopped responding, leaving the unpaid balance (the invoice amount less the amount paid) outstanding. Grace sent a written demand for payment on 2025-12-28, but Maria neither paid the balance nor disputed the underlying charges in writing.\n\nGrace now seeks a small claims judgment for the unpaid balance, together with court costs and post-judgment interest. Because the total amount in controversy is at or below $6,000, the claim falls within the jurisdiction of the Maine District Court small claims docket under 14 M.R.S. § 7482, and Grace intends to file in Bath.",
     "undisputed_facts": [
-      "Grace C. Roe operates a home-repair business as a sole proprietor.",
-      "The work was completed on 2025-05-27 and John Q. Poe was billed $3427.",
-      "John Q. Poe paid $573 and a balance remains unpaid.",
+      "Grace C. Roe operates a freelance web-design practice as a sole proprietor.",
+      "The work was completed on 2025-05-27 and Maria Q. Fairbanks was billed $3427.",
+      "Maria Q. Fairbanks paid $573 and a balance remains unpaid.",
       "Grace sent a written demand for payment on 2025-12-28."
     ],
     "disputed_facts": [
-      "Whether the full invoiced amount was actually owed, or whether John claims the work was incomplete or defective.",
+      "Whether the full invoiced amount was actually owed, or whether Maria claims the work was incomplete or defective.",
       "Whether the parties ever agreed on the price and scope of the work, given that the engagement was based on a written work order the customer signed.",
       "Whether Grace is entitled to the claimed pre-judgment interest in addition to the unpaid balance."
     ],
     "timeline": [
       {
         "date": "2025-05-27",
-        "event": "Grace completed the work for John and issued the invoice for $3427."
+        "event": "Grace completed the work for Maria and issued the invoice for $3427."
       },
       {
         "date": "2025-11-17",
@@ -166,7 +170,7 @@
       {
         "topic": "What is owed",
         "question": "How much does the customer owe you, and how did the debt come about?",
-        "answer": "I run a home-repair business. I billed John $3427 for the work, they only paid $573, and the rest of the balance is still unpaid. This all comes out of unpaid invoice for completed services."
+        "answer": "I run a freelance web-design practice. I billed Maria $3427 for the work, they only paid $573, and the rest of the balance is still unpaid. This all comes out of unpaid invoice for completed services."
       },
       {
         "topic": "The agreement",
@@ -176,7 +180,7 @@
       {
         "topic": "Collection attempts",
         "question": "What have you done so far to try to collect?",
-        "answer": "I called and emailed several times, then I sent a written demand letter on 2025-12-28. I even talked to a collections agency, but John just went quiet and never paid the balance."
+        "answer": "I called and emailed several times, then I sent a written demand letter on 2025-12-28. I even talked to a collections agency, but Maria just went quiet and never paid the balance."
       },
       {
         "topic": "Interest and costs",
@@ -192,7 +196,7 @@
   },
   "client_objectives": {
     "goals": [
-      "Obtain a small claims judgment for the unpaid balance owed by John Q. Poe.",
+      "Obtain a small claims judgment for the unpaid balance owed by Maria Q. Fairbanks.",
       "Recover court costs, including the filing fee, from the defendant.",
       "Resolve the matter efficiently without spending more than the debt is worth."
     ],
@@ -204,7 +208,7 @@
     "risk_tolerance": "moderate",
     "desired_outcomes": [
       "A money judgment for the unpaid balance plus allowable court costs and post-judgment interest.",
-      "Prompt payment, or a realistic payment plan, from John."
+      "Prompt payment, or a realistic payment plan, from Maria."
     ],
     "non_starters": [
       "Writing off the full debt and walking away with nothing."
@@ -348,7 +352,7 @@
     ]
   },
   "facts": {
-    "business_name": "a home-repair business",
+    "business_name": "a freelance web-design practice",
     "debt_origin": "unpaid invoice for completed services",
     "services_completed_date": "2025-05-27",
     "invoice_amount": 3427,

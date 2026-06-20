@@ -1,0 +1,133 @@
+id: insolvent-estate
+title: "Insolvent estate of {decedent_full_name}"
+practice_area: probate
+case_type: decedent_estate
+status: active
+docket_prefix: PE
+
+downstream:
+  repo: maine-probate-forms
+  example_forms: [DE-101, DE-301, DE-405, PP-401]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Probate Court
+
+dates:
+  filing_date: {date_between: ["2025-09-01", "2026-05-01"]}
+  event_date: "{date_of_death}"
+
+# EDGE CASE: the estate's debts exceed its assets. Stresses claim-priority,
+# allowance-versus-creditor, and abatement logic. The asset and claim ranges do not
+# overlap, so the estate is always insolvent regardless of seed.
+parties:
+  client_role: personal_representative
+  attorney: true
+  roles:
+    - {key: decedent, label: "Decedent", with_contact: false, with_dob: true}
+    - {key: personal_representative, label: "Personal representative (administering an insolvent estate)"}
+
+facts:
+  date_of_death: {date_between: ["2025-03-01", "2026-01-31"]}
+  will_exists: {pick: [true, false]}
+  relationship_to_decedent: {pick: ["surviving spouse", "adult child", "sibling", "court-appointed administrator"]}
+  total_probate_assets: {int_between: [18000, 120000]}
+  total_allowed_claims: {int_between: [160000, 520000]}
+  secured_claims: {int_between: [40000, 180000]}
+  funeral_and_admin_expenses: {int_between: [9000, 28000]}
+  num_creditors: {int_between: [4, 11]}
+  homestead_allowance_claimed: {pick: [true, false]}
+  estate_is_insolvent: {pick: [true]}
+  proceeding_type: {pick: ["formal, supervised administration", "formal testacy and supervised administration"]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: creditor, name_kind: organization, role: "Hospital / medical creditor", relevance: "Asserts a large unsecured claim for end-of-life care."}
+    - {type: financial_institution, name_kind: bank, role: "Mortgage lender (secured creditor)", relevance: "Holds a secured claim against the decedent's real property."}
+    - {type: creditor, name_kind: organization, role: "Credit card issuer", relevance: "Files an unsecured claim that competes with other creditors."}
+    - {type: creditor, name_kind: organization, role: "Funeral home", relevance: "Holds a priority claim for reasonable funeral expenses."}
+    - {type: government_agency, name: "Maine Revenue Services", role: "Taxing authority", relevance: "Asserts a priority claim for unpaid taxes."}
+    - {type: beneficiary, name_kind: person, role: "Surviving spouse claiming allowances", relevance: "Claims the homestead, exempt-property, and family allowances ahead of general creditors."}
+    - {type: beneficiary, name_kind: person, role: "Residuary devisee", relevance: "Stands to receive nothing if the estate remains insolvent."}
+
+fact_pattern:
+  summary: "{personal_representative_full_name} administers the insolvent estate of {decedent_full_name}, whose allowed claims of roughly ${total_allowed_claims} far exceed probate assets of about ${total_probate_assets}, requiring the court to apply the statutory order of priority among competing creditors and allowances."
+  narrative:
+    - "{decedent_full_name} died on {date_of_death}. {personal_representative_full_name}, the {relationship_to_decedent}, was appointed to administer the estate and soon discovered that it is insolvent: probate assets total only about ${total_probate_assets}, while allowed and asserted claims approach ${total_allowed_claims}, including roughly ${secured_claims} in secured debt."
+    - "Because the estate cannot pay everyone, the personal representative must marshal the assets, determine which claims are valid, and pay them in the order of priority set by the Maine Probate Code rather than first-come-first-served. The surviving family asserts homestead, exempt-property, and family allowances that take priority over general creditors, while several unsecured creditors compete for whatever remains."
+    - "To protect against personal liability for an improper distribution, {personal_representative_first} has asked the court to proceed by {proceeding_type}, give notice to creditors, and approve a plan of distribution that abates the devises and prorates the unsecured claims."
+  undisputed:
+    - "{decedent_full_name} died on {date_of_death}."
+    - "Asserted claims against the estate exceed its probate assets."
+    - "There are at least {num_creditors} creditors competing for payment."
+  disputed:
+    - "The validity and classification of several creditor claims."
+    - "Whether the family allowances were properly claimed and in what amount."
+    - "Whether certain transfers before death should be recovered as estate assets."
+
+interview:
+  interviewer: "Probate Attorney"
+  interviewee_role: personal_representative
+  exchanges:
+    - {topic: "Scope", question: "What does the estate actually own?", answer: "Not much liquid. A house with a mortgage, a vehicle, a small bank account. The debts are far bigger than the assets."}
+    - {topic: "Creditors", question: "Who is demanding payment?", answer: "The hospital, a couple of credit cards, the funeral home, the mortgage lender, and a tax notice arrived too. Everyone wants to be paid first."}
+    - {topic: "Family", question: "Is anyone in the household relying on the estate?", answer: "Yes. The surviving spouse needs the homestead and family allowance just to get by."}
+    - {topic: "Worry", question: "What worries you most about serving?", answer: "I do not want to be personally on the hook if I pay the wrong people in the wrong order."}
+    - {topic: "Goal", question: "What outcome are you seeking?", answer: "Handle it correctly, pay claims in the right priority, protect the family's allowances, and close the estate without liability."}
+
+objectives:
+  goals:
+    - "Administer the insolvent estate in the statutory order of priority."
+    - "Preserve the surviving family's homestead, exempt-property, and family allowances."
+    - "Avoid personal liability for any improper or out-of-order distribution."
+  priorities:
+    - "Correct classification and priority of competing claims."
+    - "Protection of the family allowances."
+    - "An orderly, court-approved plan of distribution."
+  risk_tolerance: low
+  desired_outcomes:
+    - "A court-approved distribution that pays claims in priority and abates devises."
+    - "A discharge of the personal representative on closing."
+  non_starters:
+    - "Paying general creditors ahead of statutory allowances and priority claims."
+  constraints:
+    budget: "Limited; estate funds are scarce and fees themselves are a priority expense."
+    timeline: "Bounded by the non-claim period for creditors."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Order of priority for payment of claims against an insolvent estate", category: probate, governing_law: "18-C M.R.S. § 3-805", sub_questions: ["Which claims are priority claims (costs of administration, funeral, taxes)?", "How are unsecured claims prorated when assets are insufficient?"], strength: strong, client_position: "Seeks court approval to pay claims strictly in statutory order."}
+    - {issue: "Family, homestead, and exempt-property allowances versus creditors", category: probate, governing_law: "18-C M.R.S. § 2-401; § 2-402; § 2-403; § 2-404", sub_questions: ["Do the allowances take priority over general creditors?", "In what amounts?"], strength: strong, client_position: "Contends the allowances are paid ahead of general creditors."}
+    - {issue: "Abatement of devises where the estate is insolvent", category: probate, governing_law: "18-C M.R.S. § 3-902", sub_questions: ["In what order do devises abate to satisfy claims and allowances?"], strength: moderate}
+    - {issue: "Personal representative liability for improper distribution", category: probate, governing_law: "18-C M.R.S. § 3-807; § 3-703", sub_questions: ["What protects the PR who follows the statutory order and gives proper notice?"], strength: moderate}
+    - {issue: "Recovery of non-probate transfers to satisfy claims", category: probate, governing_law: "18-C M.R.S. § 6-102", sub_questions: ["Are recent transfers reachable to pay creditors of an insolvent estate?"], strength: weak}
+
+experts:
+  count: {min: 0, max: 2}
+  pool:
+    - {field: "Real estate appraisal", credentials: "MAI", retained_by: personal_representative, topic: "Date-of-death value of the real property", opinion: "The encumbered real property has limited equity available to unsecured creditors.", basis: "Appraisal and the mortgage payoff."}
+    - {field: "Estate accounting", credentials: "CPA", retained_by: personal_representative, topic: "Classification and proration of claims", opinion: "After priority claims and allowances, unsecured creditors recover only a fraction of their claims.", basis: "Inventory, claims register, and a proposed distribution schedule."}
+
+evidence:
+  count: {min: 3, max: 6}
+  pool:
+    - {title: "Certified death certificate", type: public_record, party: personal_representative, description: "Establishes the date of death and opens the non-claim period."}
+    - {title: "Inventory and appraisal showing a deficit", type: financial_record, party: personal_representative, description: "Lists assets well below total claims."}
+    - {title: "Register of creditor claims", type: financial_record, party: personal_representative, description: "All filed claims with amounts and classifications."}
+    - {title: "Mortgage payoff statement", type: financial_record, party: personal_representative, description: "Documents the secured claim against the real property."}
+    - {title: "Funeral and administration expense invoices", type: financial_record, party: personal_representative, description: "Priority expenses of administration."}
+    - {title: "Notice to creditors and proof of publication", type: public_record, party: personal_representative, description: "Triggers the deadline for filing claims."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 4, max: 5}
+  amounts:
+    - {label: "Total probate assets", amount: {int_between: [18000, 120000]}, basis: "Inventory and appraisal."}
+    - {label: "Total asserted claims", amount: {int_between: [160000, 520000]}, basis: "Register of creditor claims."}
+    - {label: "Secured claims", amount: {int_between: [40000, 180000]}, basis: "Mortgage and liens."}
+    - {label: "Funeral and administration expenses (priority)", amount: {int_between: [9000, 28000]}, basis: "Invoices."}
+    - {label: "Family and homestead allowances claimed", amount: {int_between: [10000, 35000]}, basis: "Statutory allowances."}

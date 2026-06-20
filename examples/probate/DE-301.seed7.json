@@ -1,0 +1,42 @@
+{
+  "case_dict": {
+    "county_probate_court": "Aroostook",
+    "docket_no": "2024-AROO-6469",
+    "estate_of_decedent": "Mark P. Snow"
+  },
+  "narrative_facts": {
+    "petitioner_interest": "Not applicable",
+    "petitioner_interest_other": "Not applicable",
+    "petitioner_interest_other_details": "Not applicable",
+    "date_of_death": "2025-01-27",
+    "domiciled_in_county": "Aroostook",
+    "nomination_explanation": "Not applicable",
+    "reason_for_special_admin": "Not applicable",
+    "interested_party_name_1": "Not applicable",
+    "interested_party_addr_1": "Not applicable",
+    "interested_party_name_2": "Not applicable",
+    "interested_party_addr_2": "Not applicable",
+    "interested_party_name_3": "Not applicable",
+    "interested_party_addr_3": "Not applicable",
+    "interested_party_name_4": "Not applicable",
+    "interested_party_addr_4": "Not applicable",
+    "special_admin_acceptance_date": "2025-05-14",
+    "certified_copy_date": "2025-09-04"
+  },
+  "petitioner_record": {
+    "petitioner": "Daniel G. Goff",
+    "petitioner_contact": "Daniel G. Goff"
+  },
+  "decedent_record": {
+    "decedent": "Mark P. Snow"
+  },
+  "attorney_record": {
+    "attorney": "Ruth B. Frost"
+  },
+  "_meta": {
+    "form": "DE-301",
+    "seed": 7,
+    "stress": false,
+    "synthetic": true
+  }
+}

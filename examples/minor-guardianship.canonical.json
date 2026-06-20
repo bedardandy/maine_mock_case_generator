@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-GC-2026-829",
-    "case_id": "MMC-2026-674351",
+    "docket_number": "SAG-GC-2026-310",
+    "case_id": "MMC-2026-749078",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Probate Court",
@@ -23,38 +23,38 @@
       "date_of_birth": "1969-04-20"
     },
     "respondent": {
-      "full_name": "John Q. Poe",
-      "first_name": "John",
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
       "middle_name": "Q",
-      "last_name": "Poe",
-      "address": "216 Maple Court",
-      "city": "Orono",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
       "state": "ME",
-      "zip": "04012",
-      "phone": "(207) 555-0170",
-      "email": "john.poe@example.org",
-      "date_of_birth": "1998-10-17"
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
     },
     "child_1": {
-      "full_name": "Marcus B. Kingsley",
-      "first_name": "Marcus",
-      "middle_name": "B",
+      "full_name": "Rosa P. Kingsley",
+      "first_name": "Rosa",
+      "middle_name": "P",
       "last_name": "Kingsley",
-      "date_of_birth": "2013-01-26"
+      "date_of_birth": "2024-04-23"
     },
     "attorney": {
-      "full_name": "Marcus W. Roe",
-      "first_name": "Marcus",
-      "middle_name": "W",
-      "last_name": "Roe",
-      "address": "441 Birch Street",
-      "city": "Waterville",
+      "full_name": "John E. Jessup",
+      "first_name": "John",
+      "middle_name": "E",
+      "last_name": "Jessup",
+      "address": "150 Lighthouse Drive",
+      "city": "Gorham",
       "state": "ME",
-      "zip": "04054",
-      "phone": "(207) 555-0118",
-      "email": "marcus.roe@example.net",
-      "date_of_birth": "1994-10-20",
-      "bar_number": "6054"
+      "zip": "04070",
+      "phone": "(207) 555-0115",
+      "email": "john.jessup@example.net",
+      "date_of_birth": "1982-10-14",
+      "bar_number": "2688"
     },
     "plaintiff": {
       "full_name": "Olivia B. Ellsworth",
@@ -70,17 +70,17 @@
       "date_of_birth": "1969-04-20"
     },
     "defendant": {
-      "full_name": "John Q. Poe",
-      "first_name": "John",
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
       "middle_name": "Q",
-      "last_name": "Poe",
-      "address": "216 Maple Court",
-      "city": "Orono",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
       "state": "ME",
-      "zip": "04012",
-      "phone": "(207) 555-0170",
-      "email": "john.poe@example.org",
-      "date_of_birth": "1998-10-17"
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
     }
   },
   "party": {
@@ -94,14 +94,15 @@
     "zip": "04047",
     "phone": "(207) 555-0174",
     "email": "olivia.ellsworth@example.com",
-    "date_of_birth": "1969-04-20"
+    "date_of_birth": "1969-04-20",
+    "signature": "Olivia B. Ellsworth"
   },
   "facts": {
-    "petitioner_relationship": "adult sibling",
+    "petitioner_relationship": "uncle",
     "reason_for_guardianship": "a parent's substance use treatment",
-    "parental_consent": true,
+    "parental_consent": false,
     "guardianship_type": "full guardianship of a minor",
-    "current_living_arrangement": "the child splits time between relatives",
+    "current_living_arrangement": "the child already lives with the petitioner",
     "duration": "until the minor reaches 18 or further court order",
     "minor_count": "1"
   }

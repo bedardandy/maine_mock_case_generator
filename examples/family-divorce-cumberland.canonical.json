@@ -1,13 +1,13 @@
 {
   "matter": {
-    "docket_number": "CUM-FM-2026-161",
-    "case_id": "MMC-2026-691783",
+    "docket_number": "CUM-FM-2026-624",
+    "case_id": "MMC-2026-223800",
     "court_county": "Cumberland",
     "court_location": "Portland",
     "court_type": "District Court",
     "case_type": "family_matters",
     "filing_date": "2026-02-13",
-    "event_date": "2025-05-29"
+    "event_date": "2025-04-20"
   },
   "parties": {
     "plaintiff": {
@@ -24,38 +24,52 @@
       "date_of_birth": "1969-04-20"
     },
     "defendant": {
-      "full_name": "John Q. Poe",
-      "first_name": "John",
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
       "middle_name": "Q",
-      "last_name": "Poe",
-      "address": "216 Maple Court",
-      "city": "Orono",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
       "state": "ME",
-      "zip": "04012",
-      "phone": "(207) 555-0170",
-      "email": "john.poe@example.org",
-      "date_of_birth": "1998-10-17"
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
     },
     "child_1": {
-      "full_name": "Marcus B. Kingsley",
-      "first_name": "Marcus",
+      "full_name": "Ingrid B. Kingsley",
+      "first_name": "Ingrid",
       "middle_name": "B",
       "last_name": "Kingsley",
       "date_of_birth": "2013-01-26"
     },
-    "attorney": {
+    "child_2": {
       "full_name": "Marcus W. Roe",
       "first_name": "Marcus",
       "middle_name": "W",
       "last_name": "Roe",
-      "address": "441 Birch Street",
-      "city": "Waterville",
+      "date_of_birth": "2021-05-29"
+    },
+    "child_3": {
+      "full_name": "Omar W. Loe",
+      "first_name": "Omar",
+      "middle_name": "W",
+      "last_name": "Loe",
+      "date_of_birth": "2022-10-20"
+    },
+    "attorney": {
+      "full_name": "Diego F. Jessup",
+      "first_name": "Diego",
+      "middle_name": "F",
+      "last_name": "Jessup",
+      "address": "54 Tidewater Lane",
+      "city": "Bangor",
       "state": "ME",
-      "zip": "04054",
-      "phone": "(207) 555-0118",
-      "email": "marcus.roe@example.net",
-      "date_of_birth": "1994-10-20",
-      "bar_number": "6054"
+      "zip": "04048",
+      "phone": "(207) 555-0112",
+      "email": "diego.jessup@example.net",
+      "date_of_birth": "1956-02-02",
+      "bar_number": "1976"
     }
   },
   "party": {
@@ -69,17 +83,36 @@
     "zip": "04047",
     "phone": "(207) 555-0174",
     "email": "olivia.ellsworth@example.com",
-    "date_of_birth": "1969-04-20"
+    "date_of_birth": "1969-04-20",
+    "signature": "Olivia B. Ellsworth"
   },
   "facts": {
-    "marriage_date": "2010-01-20",
-    "marriage_place": "Portland, Maine",
-    "separation_date": "2025-05-29",
-    "grounds": "Irreconcilable differences",
-    "residency_months": 30,
-    "spousal_support_requested": true,
-    "marital_home": "rented apartment",
-    "num_minor_children": "1",
-    "primary_residence_parent": "Olivia B. Ellsworth"
+    "marriage_date": "2010-08-15",
+    "marriage_city": "Camden",
+    "marriage_county": "Penobscot",
+    "marriage_state": "Maine",
+    "separation_date": "2025-04-20",
+    "grounds": "Irreconcilable marital differences",
+    "residency_months": 36,
+    "spousal_support_requested": false,
+    "marital_home": "jointly owned condominium",
+    "num_minor_children": "3",
+    "primary_residence_parent": "Maria Q. Fairbanks",
+    "employer_name": "Acadia Print Works",
+    "current_gross_pay": 1436,
+    "hourly_wage": 61,
+    "hours_worked": 44,
+    "last_year_earnings": 65994,
+    "expected_year_earnings": 46728,
+    "bonuses_income": 9411,
+    "commissions_tips_income": 2459,
+    "fringe_benefits": 4302,
+    "health_insurance_cost_self": 293,
+    "health_insurance_cost_children": 225,
+    "cash_bank_accounts_value": 24402,
+    "credit_cards_balance": 14707,
+    "mortgages_balance": 150962,
+    "loans_balance": 19954,
+    "other_assets_value": 4797
   }
 }

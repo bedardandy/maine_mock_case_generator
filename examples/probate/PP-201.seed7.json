@@ -1,0 +1,36 @@
+{
+  "case_dict": {
+    "county": "Aroostook",
+    "docket_no": "2024-AROO-6469"
+  },
+  "narrative_facts": {
+    "petitioner_info": "Not applicable",
+    "petitioner_relationship": "Not applicable",
+    "nominee_info": "Not applicable",
+    "respondent_location": "Not applicable",
+    "respondent_age": "Not applicable",
+    "nominee_relationship": "Not applicable",
+    "persons_to_notify": "Not applicable",
+    "emergency_guardian_details": "Not applicable",
+    "guardianship_scope_details": "Not applicable",
+    "respondent_need_description": "Not applicable",
+    "nominee_justification": "Not applicable",
+    "respondent_attorney": "Not applicable",
+    "respondent_attorney_details": "Not applicable",
+    "limit_contact_persons": "Not applicable",
+    "respondent_property": "Not applicable",
+    "petition_date": "2025-01-03"
+  },
+  "respondent_record": {
+    "respondent": "Mark P. Snow"
+  },
+  "attorney_record": {
+    "attorney": "Michael G. Googins"
+  },
+  "_meta": {
+    "form": "PP-201",
+    "seed": 7,
+    "stress": false,
+    "synthetic": true
+  }
+}

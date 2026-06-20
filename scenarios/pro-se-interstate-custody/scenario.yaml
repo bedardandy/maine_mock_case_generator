@@ -1,0 +1,126 @@
+id: pro-se-interstate-custody
+title: "{plaintiff_full_name} v. {defendant_full_name} (interstate custody)"
+practice_area: family
+case_type: parental_rights
+status: pre_filing
+docket_prefix: FM
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [FM-006, FM-040, FM-089]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: District Court
+
+dates:
+  filing_date: {date_between: ["2025-10-01", "2026-05-01"]}
+  event_date: "{relocation_date}"
+
+# EDGE CASE: a self-represented (pro se) parent and a cross-border (UCCJEA) jurisdiction
+# question. No attorney is generated (attorney: false), which exercises the empty-counsel
+# path through projection and form fills.
+parties:
+  client_role: plaintiff
+  attorney: false
+  children: {min: 1, max: 2}
+  roles:
+    - {key: plaintiff, label: "Plaintiff parent (self-represented, in Maine)"}
+    - {key: defendant, label: "Defendant parent (in another state)"}
+
+facts:
+  child_current_state: {pick: ["Maine", "New Hampshire", "Massachusetts", "Florida"]}
+  other_parent_state: {pick: ["New Hampshire", "Massachusetts", "Florida", "Texas"]}
+  relocation_date: {date_between: ["2025-01-01", "2025-11-30"]}
+  months_child_in_maine: {int_between: [2, 22]}
+  existing_order: {pick: ["no prior custody order exists", "a prior order from another state exists", "a temporary Maine order exists"]}
+  emergency_basis: {pick: [true, false]}
+  is_self_represented: {pick: [true]}
+  relief_sought: {pick: ["establish initial parental rights and a contact schedule", "modify an existing out-of-state order", "register and enforce an out-of-state order", "emergency temporary custody"]}
+
+third_parties:
+  count: {min: 2, max: 4}
+  pool:
+    - {type: witness, name_kind: person, role: "Child's out-of-state teacher", relevance: "Can attest to where the child has actually been living and attending school."}
+    - {type: government_agency, name: "Family Division of the other state's court", role: "Sister-state court", relevance: "May already have or claim jurisdiction over the child custody determination."}
+    - {type: family_member, name_kind: person, role: "Maternal grandparent", relationship: "Grandparent", relevance: "Has provided care during the child's time in Maine."}
+    - {type: healthcare_provider, name_kind: person, role: "Child's pediatrician", relevance: "Records show the child's primary residence and continuity of care."}
+    - {type: witness, name_kind: person, role: "Family mediator", relevance: "Attempted to mediate the cross-border parenting dispute."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name}, appearing without a lawyer, asks a Maine District Court to {relief_sought} for {num_children_words} child(ren), raising a threshold UCCJEA question because the other parent is in {other_parent_state} and the child's home state may be {child_current_state}."
+  narrative:
+    - "{plaintiff_full_name} is a self-represented parent living in {county} County, Maine. The other parent, {defendant_full_name}, lives in {other_parent_state}. Around {relocation_date}, the living arrangements changed, and the child has now been in {child_current_state} for roughly {months_child_in_maine} months by the plaintiff's count."
+    - "Because the parents and the child are spread across state lines, the first question is not the merits but jurisdiction: under the Uniform Child Custody Jurisdiction and Enforcement Act, a court must determine the child's 'home state' before it can make an initial custody determination, and {existing_order}."
+    - "{plaintiff_first} seeks to {relief_sought}. Proceeding without counsel, {plaintiff_first} needs the court to sort out whether Maine has jurisdiction, whether it must communicate with the other state's court, and what temporary arrangements protect the child in the meantime."
+  undisputed:
+    - "The parents live in different states ({county} County, Maine and {other_parent_state})."
+    - "The child's living arrangements changed on or about {relocation_date}."
+    - "The plaintiff is proceeding without an attorney."
+  disputed:
+    - "Which state is the child's home state for UCCJEA purposes."
+    - "Whether Maine has initial, modification, or only emergency jurisdiction."
+    - "Where the child has primarily resided over the past six months."
+
+interview:
+  interviewer: "Court Self-Help Resource"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "Where the child lives", question: "In the last six months, where has the child actually lived?", answer: "Mostly with me in {child_current_state}, about {months_child_in_maine} months, but it has gone back and forth since {relocation_date}."}
+    - {topic: "Other parent", question: "Where is the other parent now?", answer: "{defendant_first} is in {other_parent_state}. That is part of the problem; we are in different states."}
+    - {topic: "Existing orders", question: "Is there any custody order already?", answer: "Honestly I am not sure it counts, but {existing_order}."}
+    - {topic: "Representation", question: "Will you have a lawyer?", answer: "No, I cannot afford one right now. I am doing this myself with the court's self-help materials."}
+    - {topic: "Goal", question: "What are you asking the court to do?", answer: "I want to {relief_sought} and keep things stable for the kids while it gets sorted out."}
+
+objectives:
+  goals:
+    - "Establish that Maine has (or does not have) jurisdiction under the UCCJEA before litigating the merits."
+    - "Obtain a workable parental rights and contact schedule for the child(ren)."
+    - "Keep the children stable during the cross-border dispute."
+  priorities:
+    - "Getting the jurisdiction question right the first time."
+    - "Stability and continuity for the children."
+    - "Doing this affordably, without counsel."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A jurisdictional ruling and, if Maine has jurisdiction, an initial or modified order."
+    - "Clear temporary arrangements pending a final determination."
+  non_starters:
+    - "A ruling that destabilizes the children's schooling and routine."
+  constraints:
+    budget: "Self-represented; cannot afford an attorney and relies on court self-help resources."
+    timeline: "Wants temporary clarity quickly, before the next school term."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Home-state determination for initial child-custody jurisdiction", category: family, governing_law: "19-A M.R.S. § 1745; § 1748", sub_questions: ["Where has the child lived for the six consecutive months before filing?", "If no home state, does a significant-connection basis apply?"], strength: moderate, client_position: "Contends Maine is, or has become, the child's home state."}
+    - {issue: "Initial versus modification jurisdiction over the custody determination", category: family, governing_law: "19-A M.R.S. § 1748; § 1751", sub_questions: ["Is there an existing order entitled to continuing jurisdiction in another state?"], strength: moderate}
+    - {issue: "Temporary emergency jurisdiction", category: family, governing_law: "19-A M.R.S. § 1748(4)", sub_questions: ["Is the child present in Maine and is emergency protection necessary?"], strength: weak, client_position: "Asserts an emergency basis only if the child is at risk."}
+    - {issue: "Inconvenient-forum and simultaneous-proceeding analysis", category: family, governing_law: "19-A M.R.S. § 1752; § 1753", sub_questions: ["Should Maine decline in favor of the other state?", "Is a proceeding already pending elsewhere?"], strength: moderate}
+    - {issue: "Registration and enforcement of an out-of-state custody order", category: family, governing_law: "19-A M.R.S. § 1761", sub_questions: ["Must any existing out-of-state order be registered before enforcement?"], strength: moderate}
+
+experts:
+  count: {min: 0, max: 1}
+  pool:
+    - {field: "Child custody / parenting evaluation", credentials: "LCSW", retained_by: court, topic: "Best interests and stability", opinion: "Continuity of the child's schooling and caregivers favors a stable primary residence.", basis: "Records review and interviews."}
+
+evidence:
+  count: {min: 3, max: 6}
+  pool:
+    - {title: "Children's certified birth certificates", type: public_record, party: plaintiff, description: "Establish parentage."}
+    - {title: "School enrollment and attendance records", type: document, party: plaintiff, description: "Show where the child has actually been attending school (key to home-state)."}
+    - {title: "Existing out-of-state custody order", type: public_record, party: defendant, description: "Any prior order whose state may retain jurisdiction."}
+    - {title: "Residency and travel log", type: document, party: plaintiff, description: "The plaintiff's record of where the child has lived month to month."}
+    - {title: "Pediatric and medical records", type: medical_record, party: plaintiff, description: "Continuity-of-care records reflecting the child's primary residence."}
+    - {title: "Co-parenting message history", type: correspondence, party: plaintiff, description: "Communications about the relocation and schedule."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 1, max: 3}
+  amounts:
+    - {label: "Estimated travel costs for interstate exchanges", amount: {int_between: [1200, 9000]}, basis: "Flights or mileage between states."}
+    - {label: "Court filing and service fees", amount: {int_between: [100, 350]}, basis: "Filing and out-of-state service."}
+    - {label: "Lost income for court appearances", amount: {int_between: [400, 4000]}, basis: "Time away from work, self-represented."}

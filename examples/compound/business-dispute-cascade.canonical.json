@@ -1,0 +1,203 @@
+[
+  {
+    "universe_id": "UNIV-business-dispute-cascade-0007",
+    "matter_id": "MMC-2026-560900",
+    "scenario_id": "business-formation-scorp",
+    "canonical": {
+      "matter": {
+        "case_id": "MMC-2026-560900",
+        "court_county": "Kennebec",
+        "court_location": "Augusta",
+        "court_type": "Maine Secretary of State / IRS (filing offices)",
+        "case_type": "entity_formation",
+        "filing_date": "2026-04-30",
+        "event_date": "2026-03-16"
+      },
+      "parties": {
+        "applicant": {
+          "full_name": "Nadia P. Loe",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "address": "335 Pine Lane",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04069",
+          "phone": "(207) 555-0112",
+          "email": "nadia.loe@example.org",
+          "date_of_birth": "1964-01-30"
+        },
+        "company": {
+          "full_name": "Evergreen Analytics LLC",
+          "address": "224 Lighthouse Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04031",
+          "phone": "(207) 555-0111"
+        },
+        "attorney": {
+          "full_name": "Nadia E. Danforth",
+          "first_name": "Nadia",
+          "middle_name": "E",
+          "last_name": "Danforth",
+          "address": "341 Harbor Road",
+          "city": "Yarmouth",
+          "state": "ME",
+          "zip": "04046",
+          "phone": "(207) 555-0124",
+          "email": "nadia.danforth@example.net",
+          "date_of_birth": "1970-04-29",
+          "bar_number": "5753"
+        }
+      },
+      "party": {
+        "full_name": "Nadia P. Loe",
+        "first_name": "Nadia",
+        "middle_name": "P",
+        "last_name": "Loe",
+        "address": "335 Pine Lane",
+        "city": "Falmouth",
+        "state": "ME",
+        "zip": "04069",
+        "phone": "(207) 555-0112",
+        "email": "nadia.loe@example.org",
+        "date_of_birth": "1964-01-30",
+        "signature": "Nadia P. Loe"
+      },
+      "facts": {
+        "entity_name": "Evergreen Analytics LLC",
+        "entity_type": "corporation",
+        "state_of_incorporation": "Maine",
+        "incorporation_date": "2026-03-16",
+        "ein_applied": false,
+        "s_corp_election": true,
+        "election_effective_date": "2025-12-27",
+        "tax_year": "calendar year",
+        "fiscal_year_end": "December 31",
+        "num_shareholders": 3,
+        "num_employees": 0,
+        "first_payroll_date": "2026-01-18",
+        "accounting_method": "accrual",
+        "naics_code": "561730",
+        "principal_activity": "retail of specialty goods",
+        "expected_first_year_revenue": 162577,
+        "responsible_party_name": "Nadia P. Loe",
+        "reasonable_compensation": 39970
+      }
+    }
+  },
+  {
+    "universe_id": "UNIV-business-dispute-cascade-0007",
+    "matter_id": "MMC-2025-462859",
+    "scenario_id": "complex-civil-litigation",
+    "canonical": {
+      "matter": {
+        "docket_number": "CUM-CV-2025-528",
+        "case_id": "MMC-2025-462859",
+        "court_county": "Cumberland",
+        "court_location": "Portland",
+        "court_type": "Superior Court",
+        "case_type": "civil",
+        "filing_date": "2025-01-14",
+        "event_date": "2022-11-18"
+      },
+      "parties": {
+        "plaintiff": {
+          "full_name": "Felix B. Fairbanks",
+          "first_name": "Felix",
+          "middle_name": "B",
+          "last_name": "Fairbanks",
+          "address": "425 Tidewater Lane",
+          "city": "Yarmouth",
+          "state": "ME",
+          "zip": "04029",
+          "phone": "(207) 555-0180",
+          "email": "felix.fairbanks@example.net",
+          "date_of_birth": "1964-02-01"
+        },
+        "plaintiff_2": {
+          "full_name": "Rosa B. Ellsworth",
+          "first_name": "Rosa",
+          "middle_name": "B",
+          "last_name": "Ellsworth",
+          "address": "115 Pine Lane",
+          "city": "Gorham",
+          "state": "ME",
+          "zip": "04038",
+          "phone": "(207) 555-0153",
+          "email": "rosa.ellsworth@example.com",
+          "date_of_birth": "1967-03-02"
+        },
+        "defendant": {
+          "full_name": "Evergreen Analytics LLC",
+          "address": "224 Lighthouse Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04031",
+          "phone": "(207) 555-0111"
+        },
+        "defendant_2": {
+          "full_name": "Nadia P. Loe",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "address": "335 Pine Lane",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04069",
+          "phone": "(207) 555-0112",
+          "email": "nadia.loe@example.org",
+          "date_of_birth": "1964-01-30"
+        },
+        "third_party_defendant": {
+          "full_name": "Northstar Builders LLC",
+          "address": "299 Tidewater Lane",
+          "city": "Bangor",
+          "state": "ME",
+          "zip": "04048",
+          "phone": "(207) 555-0112"
+        },
+        "attorney": {
+          "full_name": "Malik K. Kingsley",
+          "first_name": "Malik",
+          "middle_name": "K",
+          "last_name": "Kingsley",
+          "address": "231 Meadowbrook Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04002",
+          "phone": "(207) 555-0135",
+          "email": "malik.kingsley@example.com",
+          "date_of_birth": "1981-12-22",
+          "bar_number": "6473"
+        }
+      },
+      "party": {
+        "full_name": "Felix B. Fairbanks",
+        "first_name": "Felix",
+        "middle_name": "B",
+        "last_name": "Fairbanks",
+        "address": "425 Tidewater Lane",
+        "city": "Yarmouth",
+        "state": "ME",
+        "zip": "04029",
+        "phone": "(207) 555-0180",
+        "email": "felix.fairbanks@example.net",
+        "date_of_birth": "1964-02-01",
+        "signature": "Felix B. Fairbanks"
+      },
+      "facts": {
+        "company_name": "Evergreen Analytics LLC",
+        "deal_type": "a purchase of LLC membership interests",
+        "investment_amount": 3387890,
+        "investment_date": "2022-11-18",
+        "misrepresentation_topic": "undisclosed contingent liabilities",
+        "discovery_of_breach_date": "2024-09-18",
+        "amount_in_controversy": 1921386,
+        "demand_made": true,
+        "class_action": true,
+        "auditor_role": "issued the audited financial statements relied upon in the offering"
+      }
+    }
+  }
+]

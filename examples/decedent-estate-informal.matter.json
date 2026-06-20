@@ -11,7 +11,7 @@
   "matter": {
     "matter_id": "MMC-2026-687472",
     "practice_area": "probate",
-    "title": "Estate of Olivia B. Ellsworth: informal appointment and appointment of Samuel B. Danforth",
+    "title": "Estate of Olivia B. Ellsworth: informal appointment and appointment of Theodore B. Kingsley",
     "jurisdiction": {
       "state": "ME",
       "county": "Sagadahoc",
@@ -21,7 +21,7 @@
     "case_type": "decedent_estate",
     "filing_date": "2026-05-31",
     "status": "pre_filing",
-    "summary": "Samuel B. Danforth applies for informal appointment of the estate of Olivia B. Ellsworth, who died on 2025-09-22 domiciled in Sagadahoc County, Maine, and asks the Bath Probate Court to be appointed personal representative to marshal an estate valued at roughly $348677, pay valid claims, and distribute the remainder to the heirs and devisees.",
+    "summary": "Theodore B. Kingsley applies for informal appointment of the estate of Olivia B. Ellsworth, who died on 2025-09-22 domiciled in Sagadahoc County, Maine, and asks the Bath Probate Court to be appointed personal representative to marshal an estate valued at roughly $348677, pay valid claims, and distribute the remainder to the heirs and devisees.",
     "event_date": "2025-09-22",
     "docket_number": "SAG-PE-2026-935"
   },
@@ -33,62 +33,66 @@
       "last_name": "Ellsworth",
       "full_name": "Olivia B. Ellsworth",
       "role": "Decedent",
-      "date_of_birth": "1997-10-02"
+      "date_of_birth": "1997-10-02",
+      "ssn_last4": "1542"
     },
     "personal_representative": {
       "entity_type": "person",
-      "first_name": "Samuel",
+      "first_name": "Theodore",
       "middle_name": "B",
-      "last_name": "Danforth",
-      "full_name": "Samuel B. Danforth",
+      "last_name": "Kingsley",
+      "full_name": "Theodore B. Kingsley",
       "role": "Applicant / proposed personal representative",
       "address": "467 Spruce Avenue",
       "city": "Bangor",
       "state": "ME",
       "zip": "04005",
       "phone": "(207) 555-0111",
-      "email": "samuel.danforth@example.org",
-      "date_of_birth": "1975-02-05"
+      "email": "theodore.kingsley@example.org",
+      "date_of_birth": "1975-02-05",
+      "ssn_last4": "3943"
     },
     "attorney": {
       "entity_type": "person",
-      "first_name": "Marcus",
-      "middle_name": "W",
-      "last_name": "Poe",
-      "full_name": "Marcus W. Poe",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Jessup",
+      "full_name": "Maria Q. Jessup",
       "role": "Attorney for the client",
-      "address": "219 Pine Lane",
+      "address": "32 Meadowbrook Drive",
       "city": "Yarmouth",
       "state": "ME",
       "zip": "04029",
       "phone": "(207) 555-0180",
-      "email": "marcus.poe@example.net",
+      "email": "maria.jessup@example.net",
       "date_of_birth": "1964-02-01",
+      "ssn_last4": "9455",
       "bar_number": "7499",
       "organization_name": "Birchwood & Calloway LLP"
     },
     "client": {
       "entity_type": "person",
-      "first_name": "Samuel",
+      "first_name": "Theodore",
       "middle_name": "B",
-      "last_name": "Danforth",
-      "full_name": "Samuel B. Danforth",
+      "last_name": "Kingsley",
+      "full_name": "Theodore B. Kingsley",
       "role": "Applicant / proposed personal representative",
       "address": "467 Spruce Avenue",
       "city": "Bangor",
       "state": "ME",
       "zip": "04005",
       "phone": "(207) 555-0111",
-      "email": "samuel.danforth@example.org",
-      "date_of_birth": "1975-02-05"
+      "email": "theodore.kingsley@example.org",
+      "date_of_birth": "1975-02-05",
+      "ssn_last4": "3943"
     }
   },
   "fact_pattern": {
-    "summary": "Samuel B. Danforth applies for informal appointment of the estate of Olivia B. Ellsworth, who died on 2025-09-22 domiciled in Sagadahoc County, Maine, and asks the Bath Probate Court to be appointed personal representative to marshal an estate valued at roughly $348677, pay valid claims, and distribute the remainder to the heirs and devisees.",
-    "narrative": "Olivia B. Ellsworth died on 2025-09-22 while domiciled in Sagadahoc County, Maine. Samuel B. Danforth, the decedent's adult son, has the highest priority among those willing to serve and seeks appointment as personal representative through informal appointment so the estate can be administered without a contested formal proceeding.\n\nThe decedent left an estate valued at approximately $348677, consisting of bank and brokerage accounts, vehicles and personal property, and, where applicable, real property. There are roughly 2 heir(s) and devisee(s) to whom notice must be given. The applicant believes the estate is solvent and that administration can proceed informally.\n\nSamuel now asks the Probate Court to determine that the application is complete, to admit the will to informal probate if a valid will exists, and to appoint Samuel as personal representative with authority to collect assets, pay funeral expenses and valid creditor claims within the statutory period, and distribute the balance of the estate to those entitled under the will or, if there is no will, under the Maine intestacy statutes.",
+    "summary": "Theodore B. Kingsley applies for informal appointment of the estate of Olivia B. Ellsworth, who died on 2025-09-22 domiciled in Sagadahoc County, Maine, and asks the Bath Probate Court to be appointed personal representative to marshal an estate valued at roughly $348677, pay valid claims, and distribute the remainder to the heirs and devisees.",
+    "narrative": "Olivia B. Ellsworth died on 2025-09-22 while domiciled in Sagadahoc County, Maine. Theodore B. Kingsley, the decedent's adult son, has the highest priority among those willing to serve and seeks appointment as personal representative through informal appointment so the estate can be administered without a contested formal proceeding.\n\nThe decedent left an estate valued at approximately $348677, consisting of bank and brokerage accounts, vehicles and personal property, and, where applicable, real property. There are roughly 2 heir(s) and devisee(s) to whom notice must be given. The applicant believes the estate is solvent and that administration can proceed informally.\n\nTheodore now asks the Probate Court to determine that the application is complete, to admit the will to informal probate if a valid will exists, and to appoint Theodore as personal representative with authority to collect assets, pay funeral expenses and valid creditor claims within the statutory period, and distribute the balance of the estate to those entitled under the will or, if there is no will, under the Maine intestacy statutes.",
     "undisputed_facts": [
       "Olivia B. Ellsworth died on 2025-09-22 domiciled in Sagadahoc County, Maine.",
-      "Samuel B. Danforth is the decedent's adult son and applies to serve as personal representative.",
+      "Theodore B. Kingsley is the decedent's adult son and applies to serve as personal representative.",
       "The estate is valued at approximately $348677 and includes accounts and personal property to be marshaled and administered."
     ],
     "disputed_facts": [

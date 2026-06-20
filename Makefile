@@ -1,4 +1,4 @@
-.PHONY: help install list generate smoke test examples clean
+.PHONY: help install list generate fill compound probate smoke test examples clean
 
 help:
 	@echo "Mock Legal Matter Generator"
@@ -6,7 +6,9 @@ help:
 	@echo "  make install    Install Python dependencies"
 	@echo "  make list       List available scenarios"
 	@echo "  make generate   Generate one matter (SCENARIO=<id> SEED=<n>)"
-	@echo "  make smoke      Run the end-to-end smoke test across all scenarios"
+	@echo "  make fill       Fill a downstream form (FORM=<id>)"
+	@echo "  make compound   Summarize a compound universe (COMPOUND=<id>)"
+	@echo "  make smoke      Run the end-to-end smoke test (scenarios, fills, compounds)"
 	@echo "  make examples   Regenerate the committed examples/"
 	@echo "  make test       Run the pytest suite"
 	@echo "  make clean      Remove generated output and caches"
@@ -25,6 +27,21 @@ generate:
 
 smoke:
 	python3 tools/smoke.py --count 5
+
+# Usage: make fill FORM=FM-004
+FORM ?= FM-004
+fill:
+	python3 tools/fill.py $(FORM) --seed 1
+
+# Usage: make compound COMPOUND=death-cascade
+COMPOUND ?= death-cascade
+compound:
+	python3 tools/compound.py $(COMPOUND) --seed 1 --summary
+
+# Usage: make probate PFORM=DE-401
+PFORM ?= DE-401
+probate:
+	python3 tools/probate_case.py $(PFORM) --seed 7
 
 examples:
 	python3 tools/build_examples.py
