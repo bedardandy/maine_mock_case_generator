@@ -1,0 +1,593 @@
+{
+  "form_id": "PA-001",
+  "coverage": {
+    "total_fields": 80,
+    "filled_fields": 22,
+    "empty_fields": 58,
+    "percent": 27.5
+  },
+  "required": {
+    "keys": [
+      "parties.defendant.full_name",
+      "parties.plaintiff.full_name"
+    ],
+    "missing": [],
+    "ok": true
+  },
+  "entries": [
+    {
+      "field_id": "plaintiff",
+      "fact_key": "parties.plaintiff.full_name",
+      "value": "Olivia B. Ellsworth",
+      "filled": true
+    },
+    {
+      "field_id": "text34",
+      "fact_key": "parties.defendant.full_name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "undefinedtown",
+      "fact_key": "matter.court_location",
+      "value": "Portland",
+      "filled": true
+    },
+    {
+      "field_id": "location_town2",
+      "fact_key": "matter.docket_number",
+      "value": "CUM-PA-2026-796",
+      "filled": true
+    },
+    {
+      "field_id": "plaintiff_information",
+      "fact_key": "parties.plaintiff.full_name",
+      "value": "Olivia B. Ellsworth",
+      "filled": true
+    },
+    {
+      "field_id": "date_of_birth_mmddyyyy",
+      "fact_key": "parties.plaintiff.date_of_birth",
+      "value": "1969-04-20",
+      "filled": true
+    },
+    {
+      "field_id": "present_street_address_street_address_city_state_zip",
+      "fact_key": "parties.plaintiff.address",
+      "value": "39 Meadowbrook Drive",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_2",
+      "fact_key": "facts.mailing_address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "if_different_mailing_address",
+      "fact_key": "parties.plaintiff.phone",
+      "value": "(207) 555-0174",
+      "filled": true
+    },
+    {
+      "field_id": "if_you_left_your_residence_to_avoid_abuse_provide_your_former_address_street_address_city_state_zip",
+      "fact_key": "facts.former_address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "minors_name_1",
+      "fact_key": "parties.child_1.full_name",
+      "value": "Ingrid B. Kingsley",
+      "filled": true
+    },
+    {
+      "field_id": "mmddyyyy_1",
+      "fact_key": "parties.child_1.date_of_birth",
+      "value": "2013-01-26",
+      "filled": true
+    },
+    {
+      "field_id": "minors_name_2",
+      "fact_key": "parties.child_2.full_name",
+      "value": "Marcus W. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "mmddyyyy_2",
+      "fact_key": "parties.child_2.date_of_birth",
+      "value": "2021-05-29",
+      "filled": true
+    },
+    {
+      "field_id": "minors_name_3",
+      "fact_key": "parties.child_3.full_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "mmddyyyy_3",
+      "fact_key": "parties.child_3.date_of_birth",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "minors_name_4",
+      "fact_key": "parties.child_4.full_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "mmddyyyy_4",
+      "fact_key": "parties.child_4.date_of_birth",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "minors_name_5",
+      "fact_key": "parties.child_5.full_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "mmddyyyy_5",
+      "fact_key": "parties.child_5.date_of_birth",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "minors_name_6",
+      "fact_key": "parties.child_6.full_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "mmddyyyy_6",
+      "fact_key": "parties.child_6.date_of_birth",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "defendant_information",
+      "fact_key": "parties.defendant.full_name",
+      "value": "Maria Q. Fairbanks",
+      "filled": true
+    },
+    {
+      "field_id": "date_of_birth_mmddyyyy_if_unknown_enter_an_approximate_age",
+      "fact_key": "parties.defendant.date_of_birth",
+      "value": "1965-03-05",
+      "filled": true
+    },
+    {
+      "field_id": "present_street_address_street_address_city_state_zip_2",
+      "fact_key": "parties.defendant.address",
+      "value": "37 Cedar Way",
+      "filled": true
+    },
+    {
+      "field_id": "if_different_mailing_address_2",
+      "fact_key": "parties.defendant.phone",
+      "value": "(207) 555-0154",
+      "filled": true
+    },
+    {
+      "field_id": "defendants_military_service",
+      "fact_key": "parties.child_1.full_name",
+      "value": "Ingrid B. Kingsley",
+      "filled": true
+    },
+    {
+      "field_id": "approximate_age",
+      "fact_key": "parties.child_1.date_of_birth",
+      "value": "2013-01-26",
+      "filled": true
+    },
+    {
+      "field_id": "undefined_11",
+      "fact_key": "facts.relative_description",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "plaintiff_and_defendant_are_the_parents_of_the_following_minor_children",
+      "fact_key": "facts.relationship_description",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "1_4",
+      "fact_key": "parties.child_1.full_name",
+      "value": "Ingrid B. Kingsley",
+      "filled": true
+    },
+    {
+      "field_id": "1_5",
+      "fact_key": "parties.child_1.date_of_birth",
+      "value": "2013-01-26",
+      "filled": true
+    },
+    {
+      "field_id": "1_6",
+      "fact_key": "parties.child_1.address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "2_4",
+      "fact_key": "parties.child_2.full_name",
+      "value": "Marcus W. Roe",
+      "filled": true
+    },
+    {
+      "field_id": "2_5",
+      "fact_key": "parties.child_2.date_of_birth",
+      "value": "2021-05-29",
+      "filled": true
+    },
+    {
+      "field_id": "2_6",
+      "fact_key": "parties.child_2.address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "3_pa001",
+      "fact_key": "parties.child_3.full_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "3_2",
+      "fact_key": "parties.child_3.date_of_birth",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "3_3",
+      "fact_key": "parties.child_3.address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "4_pa001",
+      "fact_key": "parties.child_4.full_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "4_2",
+      "fact_key": "parties.child_4.date_of_birth",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "4_3",
+      "fact_key": "parties.child_4.address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "5",
+      "fact_key": "parties.child_5.full_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "5_2",
+      "fact_key": "parties.child_5.date_of_birth",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "5_3",
+      "fact_key": "parties.child_5.address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "6",
+      "fact_key": "parties.child_6.full_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "6_2",
+      "fact_key": "parties.child_6.date_of_birth",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "6_3",
+      "fact_key": "parties.child_6.address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "who_currently_has_primary_physical_residence_of_the_abovenamed_children_1",
+      "fact_key": "facts.primary_physical_residence",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "visitation_rights_with_respect_to_the_minor_children_1",
+      "fact_key": "facts.other_custody_visitation",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "1_7",
+      "fact_key": "facts.child_lived_with_person_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "party_1",
+      "fact_key": "facts.child_lived_with_person_address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "1_8",
+      "fact_key": "facts.child_lived_with_dates",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "1_9",
+      "fact_key": "facts.child_lived_with_town_state",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "mail_add_2_7",
+      "fact_key": "facts.child_lived_with_person_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "party_2",
+      "fact_key": "facts.child_lived_with_person_address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "2_8",
+      "fact_key": "facts.child_lived_with_dates",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "2_9",
+      "fact_key": "facts.child_lived_with_town_state",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "3_4",
+      "fact_key": "facts.child_lived_with_person_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "party_3",
+      "fact_key": "facts.child_lived_with_person_address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "3_5",
+      "fact_key": "facts.child_lived_with_dates",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "3_6",
+      "fact_key": "facts.child_lived_with_town_state",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "4_4",
+      "fact_key": "facts.child_lived_with_person_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "party_4",
+      "fact_key": "facts.child_lived_with_person_address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "4_5",
+      "fact_key": "facts.child_lived_with_dates",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "4_6",
+      "fact_key": "facts.child_lived_with_town_state",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "5_4",
+      "fact_key": "facts.child_lived_with_person_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "party_5",
+      "fact_key": "facts.child_lived_with_person_address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "5_5",
+      "fact_key": "facts.child_lived_with_dates",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "5_6",
+      "fact_key": "facts.child_lived_with_town_state",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "6_4",
+      "fact_key": "facts.child_lived_with_person_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "party_6",
+      "fact_key": "facts.child_lived_with_person_address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "6_5",
+      "fact_key": "facts.child_lived_with_dates",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "6_6",
+      "fact_key": "facts.child_lived_with_town_state",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "7",
+      "fact_key": "facts.child_lived_with_person_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "party_7",
+      "fact_key": "facts.child_lived_with_person_address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "7_2",
+      "fact_key": "facts.child_lived_with_dates",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "7_3",
+      "fact_key": "facts.child_lived_with_town_state",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "if_there_are_any_court_orders_awarding_custody_visitation_etc_for_the_children_any_court_orders_against_the",
+      "fact_key": "facts.other_case_description",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "defendant_or_any_actions_pending_against_either_the_plaintiff_or_the_defendant_give_details_1",
+      "fact_key": "facts.court_orders_details",
+      "value": null,
+      "filled": false
+    }
+  ],
+  "title": "Complaint for Protection from Abuse",
+  "repo": "maine-court-forms",
+  "profile": "canonical",
+  "case": {
+    "matter": {
+      "docket_number": "CUM-PA-2026-796",
+      "case_id": "MMC-2026-620528",
+      "court_county": "Cumberland",
+      "court_location": "Portland",
+      "court_type": "District Court",
+      "case_type": "protection_from_abuse",
+      "filing_date": "2026-02-13",
+      "event_date": "2026-05-21"
+    },
+    "parties": {
+      "plaintiff": {
+        "full_name": "Olivia B. Ellsworth",
+        "first_name": "Olivia",
+        "middle_name": "B",
+        "last_name": "Ellsworth",
+        "address": "39 Meadowbrook Drive",
+        "city": "Yarmouth",
+        "state": "ME",
+        "zip": "04047",
+        "phone": "(207) 555-0174",
+        "email": "olivia.ellsworth@example.com",
+        "date_of_birth": "1969-04-20"
+      },
+      "defendant": {
+        "full_name": "Maria Q. Fairbanks",
+        "first_name": "Maria",
+        "middle_name": "Q",
+        "last_name": "Fairbanks",
+        "address": "37 Cedar Way",
+        "city": "Falmouth",
+        "state": "ME",
+        "zip": "04071",
+        "phone": "(207) 555-0154",
+        "email": "maria.fairbanks@example.com",
+        "date_of_birth": "1965-03-05"
+      },
+      "child_1": {
+        "full_name": "Ingrid B. Kingsley",
+        "first_name": "Ingrid",
+        "middle_name": "B",
+        "last_name": "Kingsley",
+        "date_of_birth": "2013-01-26"
+      },
+      "child_2": {
+        "full_name": "Marcus W. Roe",
+        "first_name": "Marcus",
+        "middle_name": "W",
+        "last_name": "Roe",
+        "date_of_birth": "2021-05-29"
+      },
+      "attorney": {
+        "full_name": "Omar W. Loe",
+        "first_name": "Omar",
+        "middle_name": "W",
+        "last_name": "Loe",
+        "address": "62 Tidewater Lane",
+        "city": "Waterville",
+        "state": "ME",
+        "zip": "04072",
+        "phone": "(207) 555-0187",
+        "email": "omar.loe@example.com",
+        "date_of_birth": "1995-10-25",
+        "bar_number": "4078"
+      }
+    },
+    "party": {
+      "full_name": "Olivia B. Ellsworth",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20",
+      "signature": "Olivia B. Ellsworth"
+    },
+    "facts": {
+      "relationship": "current spouse",
+      "most_recent_incident_date": "2026-05-21",
+      "incident_location": "a public parking lot",
+      "prior_incidents": 2,
+      "firearms_present": true,
+      "requested_relief": "no contact and exclusive use of the residence",
+      "police_called": true
+    }
+  }
+}

@@ -1,12 +1,12 @@
 [
   {
     "universe_id": "UNIV-marital-breakdown-cascade-0007",
-    "matter_id": "MMC-2025-237630",
+    "matter_id": "MMC-2025-365540",
     "scenario_id": "family-divorce-cumberland",
     "canonical": {
       "matter": {
-        "docket_number": "CUM-FM-2025-810",
-        "case_id": "MMC-2025-237630",
+        "docket_number": "CUM-FM-2025-642",
+        "case_id": "MMC-2025-365540",
         "court_county": "Cumberland",
         "court_location": "Portland",
         "court_type": "District Court",
@@ -107,7 +107,23 @@
         "spousal_support_requested": true,
         "marital_home": "jointly owned single-family home",
         "num_minor_children": "2",
-        "primary_residence_parent": "Nadia P. Loe"
+        "primary_residence_parent": "Nadia P. Loe",
+        "employer_name": "Acadia Print Works",
+        "current_gross_pay": 1816,
+        "hourly_wage": 18,
+        "hours_worked": 32,
+        "last_year_earnings": 101612,
+        "expected_year_earnings": 125782,
+        "bonuses_income": 7636,
+        "commissions_tips_income": 3279,
+        "fringe_benefits": 4484,
+        "health_insurance_cost_self": 80,
+        "health_insurance_cost_children": 69,
+        "cash_bank_accounts_value": 14903,
+        "credit_cards_balance": 1305,
+        "mortgages_balance": 68569,
+        "loans_balance": 18470,
+        "other_assets_value": 19665
       }
     }
   },

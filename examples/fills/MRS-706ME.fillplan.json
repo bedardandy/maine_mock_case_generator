@@ -1,0 +1,399 @@
+{
+  "form_id": "MRS-706ME",
+  "coverage": {
+    "total_fields": 50,
+    "filled_fields": 20,
+    "empty_fields": 30,
+    "percent": 40.0
+  },
+  "required": {
+    "keys": [],
+    "missing": [],
+    "ok": true
+  },
+  "entries": [
+    {
+      "field_id": "decedent_first_name",
+      "fact_key": "parties.plaintiff.first_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "middle_initial_decedent",
+      "fact_key": "parties.plaintiff.middle_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "decedent_last_name",
+      "fact_key": "parties.plaintiff.last_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "domicile_at_date_of_death_street_address",
+      "fact_key": "parties.plaintiff.address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "domicile_city",
+      "fact_key": "parties.plaintiff.city",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "decedent_state",
+      "fact_key": "parties.plaintiff.state",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "decedent_zip_code",
+      "fact_key": "parties.plaintiff.zip",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "personal_rep_first_name",
+      "fact_key": "party.first_name",
+      "value": "Theodore",
+      "filled": true
+    },
+    {
+      "field_id": "middle_initial_personal_rep",
+      "fact_key": "party.middle_name",
+      "value": "B",
+      "filled": true
+    },
+    {
+      "field_id": "personal_rep_last_name",
+      "fact_key": "party.last_name",
+      "value": "Kingsley",
+      "filled": true
+    },
+    {
+      "field_id": "personal_rep_address",
+      "fact_key": "party.address",
+      "value": "467 Spruce Avenue",
+      "filled": true
+    },
+    {
+      "field_id": "personal_rep_city",
+      "fact_key": "party.city",
+      "value": "Bangor",
+      "filled": true
+    },
+    {
+      "field_id": "personal_rep_state",
+      "fact_key": "party.state",
+      "value": "ME",
+      "filled": true
+    },
+    {
+      "field_id": "personal_rep_zip_code",
+      "fact_key": "party.zip",
+      "value": "04005",
+      "filled": true
+    },
+    {
+      "field_id": "personal_rep_email",
+      "fact_key": "party.email",
+      "value": "theodore.kingsley@example.org",
+      "filled": true
+    },
+    {
+      "field_id": "estate_rep_first_name",
+      "fact_key": "parties.attorney.first_name",
+      "value": "Maria",
+      "filled": true
+    },
+    {
+      "field_id": "estate_rep_mi",
+      "fact_key": "parties.attorney.middle_name",
+      "value": "Q",
+      "filled": true
+    },
+    {
+      "field_id": "estate_rep_last_name",
+      "fact_key": "parties.attorney.last_name",
+      "value": "Jessup",
+      "filled": true
+    },
+    {
+      "field_id": "estate_rep_mailing_address",
+      "fact_key": "parties.attorney.address",
+      "value": "32 Meadowbrook Drive",
+      "filled": true
+    },
+    {
+      "field_id": "estate_rep_city",
+      "fact_key": "parties.attorney.city",
+      "value": "Yarmouth",
+      "filled": true
+    },
+    {
+      "field_id": "estate_rep_state",
+      "fact_key": "parties.attorney.state",
+      "value": "ME",
+      "filled": true
+    },
+    {
+      "field_id": "estate_rep_zip_code",
+      "fact_key": "parties.attorney.zip",
+      "value": "04029",
+      "filled": true
+    },
+    {
+      "field_id": "estate_rep_email",
+      "fact_key": "parties.attorney.email",
+      "value": "maria.jessup@example.net",
+      "filled": true
+    },
+    {
+      "field_id": "decedents_ssn_pg_2",
+      "fact_key": "facts.decedent_ssn",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "federal_taxable_estate",
+      "fact_key": "facts.federal_taxable_estate",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "maine_qualified_terminable_interest_property",
+      "fact_key": "facts.maine_qualified_terminable_interest_property",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "maine_elective_property",
+      "fact_key": "facts.maine_elective_property",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "value_of_gifts_included_in_fed_form_706",
+      "fact_key": "facts.value_of_gifts_included_in_federal_form_706",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "maine_taxable_estate",
+      "fact_key": "facts.maine_taxable_estate",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "apportionable_base",
+      "fact_key": "facts.apportionable_base",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "real_and_tangible_personal_property",
+      "fact_key": "facts.real_and_tangible_personal_property_in_maine",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "intangible_personal_property_included_in_line_6",
+      "fact_key": "facts.intangible_personal_property_included_in_line_6",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "resident_apportionment_factor",
+      "fact_key": "facts.resident_apportionment_factor",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "nonresident_apportionment_factor",
+      "fact_key": "facts.nonresident_apportionment_factor",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "gross_maine_estate_tax",
+      "fact_key": "facts.gross_maine_estate_tax",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "net_maine_estate_tax",
+      "fact_key": "facts.net_maine_estate_tax",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "payments",
+      "fact_key": "facts.payments_estimated_extension_paid_with_return",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "interest_and_penalty_amount",
+      "fact_key": "facts.interest_and_penalty_amounts",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "amount_due",
+      "fact_key": "facts.amount_due",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "refund_due",
+      "fact_key": "facts.refund_due",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "decedents_ssn_pg_3",
+      "fact_key": "facts.decedent_ssn",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "spouse_ssn",
+      "fact_key": "facts.spouse_ssn",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "signature_of_representative",
+      "fact_key": "party.signature",
+      "value": "Theodore B. Kingsley",
+      "filled": true
+    },
+    {
+      "field_id": "rep_month",
+      "fact_key": "today()",
+      "value": "2026-06-20",
+      "filled": true
+    },
+    {
+      "field_id": "preparer_ssn_or_ptin",
+      "fact_key": "facts.preparer_ptin",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "prep_month",
+      "fact_key": "today()",
+      "value": "2026-06-20",
+      "filled": true
+    },
+    {
+      "field_id": "firms_name_or_yours_if_selfemployed",
+      "fact_key": "facts.firm_name",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "preparers_address",
+      "fact_key": "facts.preparer_address",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "preparer_phone_number",
+      "fact_key": "facts.preparer_phone",
+      "value": null,
+      "filled": false
+    },
+    {
+      "field_id": "date_of_death",
+      "fact_key": "facts.date_of_death",
+      "value": "2025-04-24",
+      "filled": true
+    }
+  ],
+  "title": "Maine Estate Tax Return",
+  "repo": "transactional-tax-forms",
+  "profile": "canonical",
+  "case": {
+    "matter": {
+      "case_id": "MMC-2026-202163",
+      "court_county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Probate Court / IRS / Maine Revenue Services",
+      "case_type": "estate_tax",
+      "filing_date": "2026-05-31",
+      "event_date": "2025-04-24"
+    },
+    "parties": {
+      "decedent": {
+        "full_name": "Olivia B. Ellsworth",
+        "first_name": "Olivia",
+        "middle_name": "B",
+        "last_name": "Ellsworth",
+        "date_of_birth": "1997-10-02"
+      },
+      "personal_representative": {
+        "full_name": "Theodore B. Kingsley",
+        "first_name": "Theodore",
+        "middle_name": "B",
+        "last_name": "Kingsley",
+        "address": "467 Spruce Avenue",
+        "city": "Bangor",
+        "state": "ME",
+        "zip": "04005",
+        "phone": "(207) 555-0111",
+        "email": "theodore.kingsley@example.org",
+        "date_of_birth": "1975-02-05"
+      },
+      "attorney": {
+        "full_name": "Maria Q. Jessup",
+        "first_name": "Maria",
+        "middle_name": "Q",
+        "last_name": "Jessup",
+        "address": "32 Meadowbrook Drive",
+        "city": "Yarmouth",
+        "state": "ME",
+        "zip": "04029",
+        "phone": "(207) 555-0180",
+        "email": "maria.jessup@example.net",
+        "date_of_birth": "1964-02-01",
+        "bar_number": "7499"
+      }
+    },
+    "party": {
+      "full_name": "Theodore B. Kingsley",
+      "first_name": "Theodore",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "theodore.kingsley@example.org",
+      "date_of_birth": "1975-02-05",
+      "signature": "Theodore B. Kingsley"
+    },
+    "facts": {
+      "date_of_death": "2025-04-24",
+      "decedent_domicile_county": "Sagadahoc",
+      "decedent_state": "Maine",
+      "gross_estate_value": 8563055,
+      "real_property_value": 5269643,
+      "closely_held_business_value": 2234302,
+      "marketable_securities_value": 2929418,
+      "life_insurance_value": 1757996,
+      "debts_and_expenses": 402524,
+      "marital_deduction": true,
+      "charitable_deduction": false,
+      "alternate_valuation_elected": true,
+      "portability_election": true,
+      "num_beneficiaries": 5,
+      "prior_taxable_gifts": true,
+      "executor_name": "Theodore B. Kingsley",
+      "return_due_date": "2026-07-10"
+    }
+  }
+}

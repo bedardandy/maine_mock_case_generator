@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2026-360494",
+    "matter_id": "MMC-2026-223800",
     "practice_area": "family",
     "title": "Divorce of Olivia B. Ellsworth and Maria Q. Fairbanks",
     "jurisdiction": {
@@ -23,7 +23,7 @@
     "status": "pre_filing",
     "summary": "Olivia B. Ellsworth petitions to divorce Maria Q. Fairbanks in Cumberland County District Court, citing irreconcilable marital differences, and asks the court to resolve parental rights for three minor child(ren), child support, and division of marital property.",
     "event_date": "2025-04-20",
-    "docket_number": "CUM-FM-2026-913"
+    "docket_number": "CUM-FM-2026-624"
   },
   "parties": {
     "plaintiff": {
@@ -151,13 +151,25 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Northcoast Logistics LLC",
+      "name": "Acadia Print Works",
       "type": "employer",
       "role": "Plaintiff's employer",
       "relevance": "Source of income and benefits relevant to support calculations.",
       "contact": {
+        "phone": "(207) 555-0162",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Lighthouse Trust Company",
+      "type": "financial_institution",
+      "role": "Joint account holder bank",
+      "relevance": "Holds the marital checking, savings, and mortgage accounts.",
+      "contact": {
         "phone": "(207) 555-0173",
-        "city": "Belfast",
+        "city": "Lewiston",
         "state": "ME"
       }
     }
@@ -220,6 +232,16 @@
   },
   "issues": [
     {
+      "issue": "Entitlement to and amount of spousal support",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 951-A",
+      "sub_questions": [
+        "Is spousal support appropriate given the marriage length and incomes?"
+      ],
+      "strength": "weak",
+      "id": "iss1"
+    },
+    {
       "issue": "Allocation of parental rights and responsibilities for the minor children",
       "category": "family",
       "governing_law": "19-A M.R.S. § 1653",
@@ -229,7 +251,7 @@
       ],
       "strength": "moderate",
       "client_position": "Seeks shared parental rights with primary residence with Maria Q. Fairbanks.",
-      "id": "iss1"
+      "id": "iss2"
     },
     {
       "issue": "Responsibility for attorney fees",
@@ -239,17 +261,6 @@
         "Is a fee contribution warranted by the parties' relative resources?"
       ],
       "strength": "weak",
-      "id": "iss2"
-    },
-    {
-      "issue": "Division of marital property and debt",
-      "category": "family",
-      "governing_law": "19-A M.R.S. § 953",
-      "sub_questions": [
-        "Which assets are marital versus non-marital?",
-        "How should retirement accounts and home equity be divided?"
-      ],
-      "strength": "moderate",
       "id": "iss3"
     },
     {
@@ -265,13 +276,14 @@
       "id": "iss4"
     },
     {
-      "issue": "Entitlement to and amount of spousal support",
+      "issue": "Division of marital property and debt",
       "category": "family",
-      "governing_law": "19-A M.R.S. § 951-A",
+      "governing_law": "19-A M.R.S. § 953",
       "sub_questions": [
-        "Is spousal support appropriate given the marriage length and incomes?"
+        "Which assets are marital versus non-marital?",
+        "How should retirement accounts and home equity be divided?"
       ],
-      "strength": "weak",
+      "strength": "moderate",
       "id": "iss5"
     }
   ],
@@ -279,7 +291,19 @@
     {
       "id": "exp1",
       "expert": {
-        "name": "Wesley B. Fairbanks",
+        "name": "John R. Birchwood",
+        "field": "Vocational assessment",
+        "credentials": "MBA, CVA",
+        "retained_by": "defendant"
+      },
+      "topic": "Earning capacity",
+      "opinion": "The lower-earning spouse can return to full-time work within a year.",
+      "basis": "Work history and labor-market data."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Diego M. Ellsworth",
         "field": "Child custody / parenting evaluation",
         "credentials": "Ph.D.",
         "retained_by": "court"
@@ -291,24 +315,24 @@
   ],
   "evidence": [
     {
-      "title": "Text message log",
-      "type": "correspondence",
-      "party": "plaintiff",
-      "description": "Co-parenting communications relevant to the schedule dispute.",
+      "title": "Retirement account statements",
+      "type": "financial_record",
+      "party": "defendant",
+      "description": "Quarterly statements for both parties' retirement accounts.",
       "id": "ev1"
     },
     {
-      "title": "Deed to the marital home",
-      "type": "public_record",
+      "title": "Recent pay stubs",
+      "type": "financial_record",
       "party": "plaintiff",
-      "description": "Recorded deed showing joint ownership.",
+      "description": "Three months of pay stubs for income verification.",
       "id": "ev2"
     },
     {
-      "title": "Children's school records",
-      "type": "document",
+      "title": "Plaintiff's financial statement (FM-050)",
+      "type": "financial_record",
       "party": "plaintiff",
-      "description": "Enrollment and report cards showing the children's stable schooling.",
+      "description": "Court financial statement of income, expenses, assets, and debts.",
       "id": "ev3"
     }
   ],
@@ -316,19 +340,24 @@
     "currency": "USD",
     "amounts": [
       {
-        "label": "Defendant retirement account balance",
-        "amount": 145200,
-        "basis": "Most recent statement."
-      },
-      {
-        "label": "Plaintiff annual gross income",
-        "amount": 97795,
-        "basis": "W-2 wages."
+        "label": "Estimated marital home equity",
+        "amount": 210697,
+        "basis": "Estimated fair market value less mortgage."
       },
       {
         "label": "Joint credit card debt",
-        "amount": 4253,
+        "amount": 6238,
         "basis": "Combined balances."
+      },
+      {
+        "label": "Plaintiff annual gross income",
+        "amount": 70455,
+        "basis": "W-2 wages."
+      },
+      {
+        "label": "Defendant retirement account balance",
+        "amount": 119306,
+        "basis": "Most recent statement."
       }
     ]
   },
@@ -343,6 +372,22 @@
     "spousal_support_requested": false,
     "marital_home": "jointly owned condominium",
     "num_minor_children": "3",
-    "primary_residence_parent": "Maria Q. Fairbanks"
+    "primary_residence_parent": "Maria Q. Fairbanks",
+    "employer_name": "Acadia Print Works",
+    "current_gross_pay": 1436,
+    "hourly_wage": 61,
+    "hours_worked": 44,
+    "last_year_earnings": 65994,
+    "expected_year_earnings": 46728,
+    "bonuses_income": 9411,
+    "commissions_tips_income": 2459,
+    "fringe_benefits": 4302,
+    "health_insurance_cost_self": 293,
+    "health_insurance_cost_children": 225,
+    "cash_bank_accounts_value": 24402,
+    "credit_cards_balance": 14707,
+    "mortgages_balance": 150962,
+    "loans_balance": 19954,
+    "other_assets_value": 4797
   }
 }

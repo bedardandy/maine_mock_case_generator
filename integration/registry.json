@@ -1,5 +1,5 @@
 {
-  "description": "Registry of downstream forms wired for concrete fills. Each entry vendors the real mapping.json (field-id -> canonical fact-key) from the downstream repo and declares which namespace profile bridges a projected canonical case into that form's expected fact-keys. 'canonical' forms consume the court-forms namespace directly (matter/parties/party/facts); 'tax' forms need the tax adapter (entity/responsible_party/executor/facts).",
+  "description": "Registry of downstream forms wired for concrete fills. Each entry vendors the real mapping.json (field-id -> canonical fact-key) from the downstream repo and declares which namespace profile bridges a projected canonical case into that form's expected fact-keys. 'canonical' forms consume the court-forms namespace directly (matter/parties/party/facts); 'tax' forms need the tax adapter (entity/responsible_party/executor/decedent/trust); 'real_estate' forms need the real-estate adapter (property/transferor/transferee).",
   "forms": {
     "FM-004": {
       "title": "Complaint for Divorce",
@@ -9,6 +9,30 @@
       "practice_areas": ["family"],
       "best_scenario": "family-divorce-cumberland"
     },
+    "FM-006": {
+      "title": "Complaint for Parentage, Parental Rights and Responsibilities",
+      "repo": "maine-court-forms",
+      "dir": "integration/maine-court-forms/FM-006",
+      "profile": "canonical",
+      "practice_areas": ["family"],
+      "best_scenario": "pro-se-interstate-custody"
+    },
+    "FM-050": {
+      "title": "Child Support Affidavit",
+      "repo": "maine-court-forms",
+      "dir": "integration/maine-court-forms/FM-050",
+      "profile": "canonical",
+      "practice_areas": ["family"],
+      "best_scenario": "family-divorce-cumberland"
+    },
+    "PA-001": {
+      "title": "Complaint for Protection from Abuse",
+      "repo": "maine-court-forms",
+      "dir": "integration/maine-court-forms/PA-001",
+      "profile": "canonical",
+      "practice_areas": ["family"],
+      "best_scenario": "protection-from-abuse"
+    },
     "IRS-SS-4": {
       "title": "Application for Employer Identification Number (EIN)",
       "repo": "transactional-tax-forms",
@@ -16,6 +40,22 @@
       "profile": "tax",
       "practice_areas": ["business", "tax"],
       "best_scenario": "business-formation-scorp"
+    },
+    "IRS-2553": {
+      "title": "Election by a Small Business Corporation (S-corporation)",
+      "repo": "transactional-tax-forms",
+      "dir": "integration/transactional-tax-forms/IRS-2553",
+      "profile": "tax",
+      "practice_areas": ["business", "tax"],
+      "best_scenario": "business-formation-scorp"
+    },
+    "MRS-706ME": {
+      "title": "Maine Estate Tax Return",
+      "repo": "transactional-tax-forms",
+      "dir": "integration/transactional-tax-forms/MRS-706ME",
+      "profile": "canonical",
+      "practice_areas": ["tax", "probate"],
+      "best_scenario": "estate-tax-706"
     }
   }
 }

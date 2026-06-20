@@ -38,6 +38,23 @@ facts:
   marital_home: {pick: ["jointly owned single-family home", "jointly owned condominium", "rented apartment"]}
   num_minor_children: "{num_children}"
   primary_residence_parent: {pick: ["{plaintiff_full_name}", "{defendant_full_name}"]}
+  # Financial-affidavit / child-support facts (feed FM-050 Child Support Affidavit, FM-043)
+  employer_name: {pick: ["Northcoast Logistics LLC", "Acadia Print Works", "Pemaquid Software Co.", "Katahdin Outfitters Inc.", "Penobscot Maritime Supply"]}
+  current_gross_pay: {int_between: [700, 2800]}
+  hourly_wage: {int_between: [17, 62]}
+  hours_worked: {int_between: [32, 45]}
+  last_year_earnings: {int_between: [34000, 132000]}
+  expected_year_earnings: {int_between: [36000, 138000]}
+  bonuses_income: {int_between: [0, 12000]}
+  commissions_tips_income: {int_between: [0, 8000]}
+  fringe_benefits: {int_between: [0, 6000]}
+  health_insurance_cost_self: {int_between: [40, 300]}
+  health_insurance_cost_children: {int_between: [50, 420]}
+  cash_bank_accounts_value: {int_between: [500, 26000]}
+  credit_cards_balance: {int_between: [0, 18000]}
+  mortgages_balance: {int_between: [0, 285000]}
+  loans_balance: {int_between: [0, 30000]}
+  other_assets_value: {int_between: [0, 42000]}
 
 third_parties:
   count: {min: 1, max: 3}

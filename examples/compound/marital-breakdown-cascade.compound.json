@@ -106,7 +106,7 @@
         "seed": 7001
       },
       "matter": {
-        "matter_id": "MMC-2025-237630",
+        "matter_id": "MMC-2025-365540",
         "practice_area": "family",
         "title": "Divorce of Nadia P. Loe and Priya C. Roe",
         "jurisdiction": {
@@ -120,7 +120,7 @@
         "status": "pre_filing",
         "summary": "Nadia P. Loe petitions to divorce Priya C. Roe in Cumberland County District Court, citing irreconcilable marital differences, and asks the court to resolve parental rights for two minor child(ren), child support, and division of marital property.",
         "event_date": "2025-03-19",
-        "docket_number": "CUM-FM-2025-810",
+        "docket_number": "CUM-FM-2025-642",
         "universe_id": "UNIV-marital-breakdown-cascade-0007"
       },
       "parties": {
@@ -252,41 +252,27 @@
       "third_parties": [
         {
           "id": "tp1",
-          "name": "Lighthouse Trust Company",
-          "type": "financial_institution",
-          "role": "Joint account holder bank",
-          "relevance": "Holds the marital checking, savings, and mortgage accounts.",
+          "name": "John H. Inglewood",
+          "type": "healthcare_provider",
+          "role": "Family counselor",
+          "relevance": "Saw the parties for marriage counseling before separation.",
           "contact": {
-            "phone": "(207) 555-0187",
-            "city": "Falmouth",
-            "state": "ME"
+            "phone": "(207) 555-0136",
+            "city": "Belfast",
+            "state": "ME",
+            "email": "john.inglewood@example.net"
           }
         },
         {
           "id": "tp2",
-          "name": "Lillian E. Roe",
-          "type": "guardian_ad_litem",
-          "role": "Guardian ad litem",
-          "relevance": "May be appointed to represent the best interests of the minor children.",
+          "name": "Casco Bay Savings",
+          "type": "financial_institution",
+          "role": "Joint account holder bank",
+          "relevance": "Holds the marital checking, savings, and mortgage accounts.",
           "contact": {
-            "phone": "(207) 555-0172",
-            "city": "Farmington",
-            "state": "ME",
-            "email": "lillian.roe@example.net"
-          }
-        },
-        {
-          "id": "tp3",
-          "name": "Eleanor T. Roe",
-          "type": "family_member",
-          "role": "Plaintiff's mother",
-          "relationship": "Maternal grandmother",
-          "relevance": "Provides child care and may testify to parenting history.",
-          "contact": {
-            "phone": "(207) 555-0198",
-            "city": "Waterville",
-            "state": "ME",
-            "email": "eleanor.roe@example.net"
+            "phone": "(207) 555-0155",
+            "city": "Augusta",
+            "state": "ME"
           }
         }
       ],
@@ -333,7 +319,7 @@
           "A predictable, enforceable parenting schedule.",
           "Financial independence after the divorce."
         ],
-        "risk_tolerance": "moderate",
+        "risk_tolerance": "low",
         "desired_outcomes": [
           "Primary residence of the children with Nadia P. Loe and shared parental rights.",
           "Retention of a fair share of retirement savings and home equity."
@@ -348,6 +334,28 @@
       },
       "issues": [
         {
+          "issue": "Entitlement to and amount of spousal support",
+          "category": "family",
+          "governing_law": "19-A M.R.S. § 951-A",
+          "sub_questions": [
+            "Is spousal support appropriate given the marriage length and incomes?"
+          ],
+          "strength": "weak",
+          "id": "iss1"
+        },
+        {
+          "issue": "Allocation of parental rights and responsibilities for the minor children",
+          "category": "family",
+          "governing_law": "19-A M.R.S. § 1653",
+          "sub_questions": [
+            "Should parental rights be shared, allocated, or sole?",
+            "What primary residence and contact schedule serves the children's best interests?"
+          ],
+          "strength": "moderate",
+          "client_position": "Seeks shared parental rights with primary residence with Nadia P. Loe.",
+          "id": "iss2"
+        },
+        {
           "issue": "Child support under the Maine guidelines",
           "category": "family",
           "governing_law": "19-A M.R.S. § 2006",
@@ -357,26 +365,6 @@
           ],
           "strength": "strong",
           "client_position": "Seeks guideline child support based on accurate income figures.",
-          "id": "iss1"
-        },
-        {
-          "issue": "Entitlement to and amount of spousal support",
-          "category": "family",
-          "governing_law": "19-A M.R.S. § 951-A",
-          "sub_questions": [
-            "Is spousal support appropriate given the marriage length and incomes?"
-          ],
-          "strength": "weak",
-          "id": "iss2"
-        },
-        {
-          "issue": "Responsibility for attorney fees",
-          "category": "family",
-          "governing_law": "19-A M.R.S. § 105",
-          "sub_questions": [
-            "Is a fee contribution warranted by the parties' relative resources?"
-          ],
-          "strength": "weak",
           "id": "iss3"
         },
         {
@@ -391,24 +379,48 @@
           "id": "iss4"
         },
         {
-          "issue": "Allocation of parental rights and responsibilities for the minor children",
+          "issue": "Responsibility for attorney fees",
           "category": "family",
-          "governing_law": "19-A M.R.S. § 1653",
+          "governing_law": "19-A M.R.S. § 105",
           "sub_questions": [
-            "Should parental rights be shared, allocated, or sole?",
-            "What primary residence and contact schedule serves the children's best interests?"
+            "Is a fee contribution warranted by the parties' relative resources?"
           ],
-          "strength": "moderate",
-          "client_position": "Seeks shared parental rights with primary residence with Nadia P. Loe.",
+          "strength": "weak",
           "id": "iss5"
+        }
+      ],
+      "expert_opinions": [
+        {
+          "id": "exp1",
+          "expert": {
+            "name": "Desmond D. Moe",
+            "field": "Vocational assessment",
+            "credentials": "MBA, CVA",
+            "retained_by": "defendant"
+          },
+          "topic": "Earning capacity",
+          "opinion": "The lower-earning spouse can return to full-time work within a year.",
+          "basis": "Work history and labor-market data."
+        },
+        {
+          "id": "exp2",
+          "expert": {
+            "name": "Nadia M. Doe",
+            "field": "Child custody / parenting evaluation",
+            "credentials": "Ph.D.",
+            "retained_by": "court"
+          },
+          "topic": "Best interests and parenting capacity",
+          "opinion": "Both parents are fit; a primary-residence-with-shared-contact schedule best serves the children's stability.",
+          "basis": "Clinical interviews, home visits, and collateral contacts."
         }
       ],
       "evidence": [
         {
-          "title": "Marriage certificate",
-          "type": "public_record",
+          "title": "Recent pay stubs",
+          "type": "financial_record",
           "party": "plaintiff",
-          "description": "Certified copy establishing the date and place of marriage.",
+          "description": "Three months of pay stubs for income verification.",
           "id": "ev1"
         },
         {
@@ -433,42 +445,25 @@
           "id": "ev4"
         },
         {
-          "title": "Recent pay stubs",
-          "type": "financial_record",
+          "title": "Marriage certificate",
+          "type": "public_record",
           "party": "plaintiff",
-          "description": "Three months of pay stubs for income verification.",
+          "description": "Certified copy establishing the date and place of marriage.",
           "id": "ev5"
-        },
-        {
-          "title": "Text message log",
-          "type": "correspondence",
-          "party": "plaintiff",
-          "description": "Co-parenting communications relevant to the schedule dispute.",
-          "id": "ev6"
         }
       ],
       "financials": {
         "currency": "USD",
         "amounts": [
           {
-            "label": "Plaintiff retirement account balance",
-            "amount": 22279,
-            "basis": "Most recent statement."
-          },
-          {
-            "label": "Plaintiff annual gross income",
-            "amount": 86425,
-            "basis": "W-2 wages."
+            "label": "Joint credit card debt",
+            "amount": 2453,
+            "basis": "Combined balances."
           },
           {
             "label": "Estimated marital home equity",
-            "amount": 231383,
+            "amount": 311054,
             "basis": "Estimated fair market value less mortgage."
-          },
-          {
-            "label": "Joint credit card debt",
-            "amount": 10862,
-            "basis": "Combined balances."
           }
         ]
       },
@@ -483,7 +478,23 @@
         "spousal_support_requested": true,
         "marital_home": "jointly owned single-family home",
         "num_minor_children": "2",
-        "primary_residence_parent": "Nadia P. Loe"
+        "primary_residence_parent": "Nadia P. Loe",
+        "employer_name": "Acadia Print Works",
+        "current_gross_pay": 1816,
+        "hourly_wage": 18,
+        "hours_worked": 32,
+        "last_year_earnings": 101612,
+        "expected_year_earnings": 125782,
+        "bonuses_income": 7636,
+        "commissions_tips_income": 3279,
+        "fringe_benefits": 4484,
+        "health_insurance_cost_self": 80,
+        "health_insurance_cost_children": 69,
+        "cash_bank_accounts_value": 14903,
+        "credit_cards_balance": 1305,
+        "mortgages_balance": 68569,
+        "loans_balance": 18470,
+        "other_assets_value": 19665
       },
       "related_matters": [
         {
@@ -809,7 +820,7 @@
       "related_matters": [
         {
           "universe_id": "UNIV-marital-breakdown-cascade-0007",
-          "matter_id": "MMC-2025-237630",
+          "matter_id": "MMC-2025-365540",
           "scenario_id": "family-divorce-cumberland",
           "relationship": "relates_to",
           "description": "Arises between the same spouses; a protective order can shape the parenting schedule in the divorce."
@@ -1169,7 +1180,7 @@
       "related_matters": [
         {
           "universe_id": "UNIV-marital-breakdown-cascade-0007",
-          "matter_id": "MMC-2025-237630",
+          "matter_id": "MMC-2025-365540",
           "scenario_id": "family-divorce-cumberland",
           "relationship": "marital_asset_of",
           "description": "The business is a marital asset whose value is contested in the divorce."

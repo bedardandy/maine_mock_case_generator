@@ -36,7 +36,7 @@
     {
       "field_id": "docket_no",
       "fact_key": "matter.docket_number",
-      "value": "CUM-FM-2026-913",
+      "value": "CUM-FM-2026-624",
       "filled": true
     },
     {
@@ -417,8 +417,8 @@
   "profile": "canonical",
   "case": {
     "matter": {
-      "docket_number": "CUM-FM-2026-913",
-      "case_id": "MMC-2026-360494",
+      "docket_number": "CUM-FM-2026-624",
+      "case_id": "MMC-2026-223800",
       "court_county": "Cumberland",
       "court_location": "Portland",
       "court_type": "District Court",
@@ -514,7 +514,23 @@
       "spousal_support_requested": false,
       "marital_home": "jointly owned condominium",
       "num_minor_children": "3",
-      "primary_residence_parent": "Maria Q. Fairbanks"
+      "primary_residence_parent": "Maria Q. Fairbanks",
+      "employer_name": "Acadia Print Works",
+      "current_gross_pay": 1436,
+      "hourly_wage": 61,
+      "hours_worked": 44,
+      "last_year_earnings": 65994,
+      "expected_year_earnings": 46728,
+      "bonuses_income": 9411,
+      "commissions_tips_income": 2459,
+      "fringe_benefits": 4302,
+      "health_insurance_cost_self": 293,
+      "health_insurance_cost_children": 225,
+      "cash_bank_accounts_value": 24402,
+      "credit_cards_balance": 14707,
+      "mortgages_balance": 150962,
+      "loans_balance": 19954,
+      "other_assets_value": 4797
     }
   }
 }
