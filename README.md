@@ -93,6 +93,14 @@ The `complex-civil-litigation` scenario exercises the schema's `litigation` sect
 multi-party suit with multiple counts, affirmative defenses, counterclaims, cross-claims,
 a third-party complaint, discovery, motions, a chronological docket, and trial details.
 
+## Edge cases
+
+Two scenarios deliberately probe boundaries: `insolvent-estate` (a probate where claims
+always exceed assets, stressing claim-priority and allowance logic) and
+`pro-se-interstate-custody` (a self-represented parent — no attorney generated — with a
+cross-border UCCJEA jurisdiction question). `tests/test_edge.py` adds wide seed sweeps and
+boundary assertions (zero-children handling, no-counsel projection, multi-party rosters).
+
 ## Seed scenarios
 
 Seven archetypes spanning the three downstream repos. Add more by dropping a new
@@ -108,6 +116,8 @@ Seven archetypes spanning the three downstream repos. Add more by dropping a new
 | `business-formation-scorp` | business (incorporate + S-elect) | transactional-tax-forms |
 | `estate-tax-706` | tax (Form 706 / 706ME + 1041) | transactional-tax-forms |
 | `complex-civil-litigation` | civil (deep, multi-party litigation) | maine-court-forms |
+| `insolvent-estate` | probate (edge: claims exceed assets) | maine-probate-forms |
+| `pro-se-interstate-custody` | family (edge: pro se + UCCJEA jurisdiction) | maine-court-forms |
 
 Browse a worked sample of each under [`examples/`](examples/) (`*.matter.json` and the
 projected `*.canonical.json`).
