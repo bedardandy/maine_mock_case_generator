@@ -48,6 +48,13 @@
           "email": "nadia.danforth@example.net",
           "date_of_birth": "1970-04-29",
           "bar_number": "5753"
+        },
+        "plaintiff": {
+          "full_name": "Nadia P. Loe",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "date_of_birth": "1960-01-25"
         }
       },
       "party": {
@@ -126,6 +133,13 @@
           "email": "maria.kingsley@example.com",
           "date_of_birth": "1981-12-22",
           "bar_number": "6473"
+        },
+        "plaintiff": {
+          "full_name": "Nadia P. Loe",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "date_of_birth": "1960-01-25"
         }
       },
       "party": {

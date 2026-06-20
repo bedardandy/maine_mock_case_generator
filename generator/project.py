@@ -18,9 +18,14 @@ _CANONICAL_PARTY_FIELDS = (
 # since the canonical schema allows additional party keys.
 _SKIP_ROLES = ("client",)
 
-# When a strict downstream filler expects plaintiff/defendant, supply them from
-# the equivalent role without dropping the original.
-_ALIASES = {"plaintiff": "petitioner", "defendant": "respondent"}
+# When a strict downstream filler expects plaintiff/defendant, supply them from an
+# equivalent role without dropping the original. Each target lists candidate sources
+# tried in order. Estate forms (e.g. MRS-706ME) model the decedent as the primary
+# "plaintiff" party, so a decedent fills plaintiff when no literal plaintiff exists.
+_ALIASES = {
+    "plaintiff": ("petitioner", "decedent"),
+    "defendant": ("respondent",),
+}
 
 
 def _reduce_party(party: dict) -> dict:
@@ -60,9 +65,13 @@ def project_to_canonical(matter: dict) -> dict:
             continue
         canonical_parties[key] = _reduce_party(party)
     # Aliases so plaintiff/defendant exist for strict downstream fillers.
-    for target, source in _ALIASES.items():
-        if target not in canonical_parties and source in canonical_parties:
-            canonical_parties[target] = dict(canonical_parties[source])
+    for target, sources in _ALIASES.items():
+        if target in canonical_parties:
+            continue
+        for source in sources:
+            if source in canonical_parties:
+                canonical_parties[target] = dict(canonical_parties[source])
+                break
 
     case = {"matter": canonical_matter, "parties": canonical_parties}
 

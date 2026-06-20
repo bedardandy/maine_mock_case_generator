@@ -2,9 +2,9 @@
   "form_id": "MRS-706ME",
   "coverage": {
     "total_fields": 50,
-    "filled_fields": 20,
-    "empty_fields": 30,
-    "percent": 40.0
+    "filled_fields": 23,
+    "empty_fields": 27,
+    "percent": 46.0
   },
   "required": {
     "keys": [],
@@ -15,20 +15,20 @@
     {
       "field_id": "decedent_first_name",
       "fact_key": "parties.plaintiff.first_name",
-      "value": null,
-      "filled": false
+      "value": "Olivia",
+      "filled": true
     },
     {
       "field_id": "middle_initial_decedent",
       "fact_key": "parties.plaintiff.middle_name",
-      "value": null,
-      "filled": false
+      "value": "B",
+      "filled": true
     },
     {
       "field_id": "decedent_last_name",
       "fact_key": "parties.plaintiff.last_name",
-      "value": null,
-      "filled": false
+      "value": "Ellsworth",
+      "filled": true
     },
     {
       "field_id": "domicile_at_date_of_death_street_address",
@@ -360,6 +360,13 @@
         "email": "maria.jessup@example.net",
         "date_of_birth": "1964-02-01",
         "bar_number": "7499"
+      },
+      "plaintiff": {
+        "full_name": "Olivia B. Ellsworth",
+        "first_name": "Olivia",
+        "middle_name": "B",
+        "last_name": "Ellsworth",
+        "date_of_birth": "1997-10-02"
       }
     },
     "party": {

@@ -42,6 +42,13 @@
       "email": "maria.jessup@example.net",
       "date_of_birth": "1964-02-01",
       "bar_number": "7499"
+    },
+    "plaintiff": {
+      "full_name": "Olivia B. Ellsworth",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "date_of_birth": "1997-10-02"
     }
   },
   "party": {
