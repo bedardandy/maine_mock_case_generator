@@ -1,0 +1,96 @@
+{
+  "matter": {
+    "docket_number": "SAG-CV-2025-284",
+    "case_id": "MMC-2025-932967",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Superior Court",
+    "case_type": "real_property",
+    "filing_date": "2025-07-17",
+    "event_date": "2023-11-27"
+  },
+  "parties": {
+    "plaintiff": {
+      "full_name": "Riverbend Analytics LLC",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174"
+    },
+    "defendant": {
+      "full_name": "John G. Inglewood",
+      "first_name": "John",
+      "middle_name": "G",
+      "last_name": "Inglewood",
+      "address": "21 Maple Court",
+      "city": "Camden",
+      "state": "ME",
+      "zip": "04054",
+      "phone": "(207) 555-0108",
+      "email": "john.inglewood@example.com",
+      "date_of_birth": "1996-10-09"
+    },
+    "defendant_2": {
+      "full_name": "John D. Kingsley",
+      "first_name": "John",
+      "middle_name": "D",
+      "last_name": "Kingsley",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "john.kingsley@example.org",
+      "date_of_birth": "1998-04-24"
+    },
+    "other_party": {
+      "full_name": "Town of Harborwick",
+      "address": "287 Meadowbrook Drive",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153"
+    },
+    "attorney": {
+      "full_name": "Olivia D. Jessup",
+      "first_name": "Olivia",
+      "middle_name": "D",
+      "last_name": "Jessup",
+      "address": "294 Elm Terrace",
+      "city": "Windham",
+      "state": "ME",
+      "zip": "04014",
+      "phone": "(207) 555-0174",
+      "email": "olivia.jessup@example.net",
+      "date_of_birth": "1961-04-07",
+      "bar_number": "2596"
+    }
+  },
+  "party": {
+    "full_name": "Riverbend Analytics LLC",
+    "address": "422 Spruce Avenue",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "signature": "Riverbend Analytics LLC"
+  },
+  "facts": {
+    "property_setting": "an oceanfront condominium",
+    "platform": "Airbnb",
+    "str_start_date": "2023-11-27",
+    "declaration_restriction": "an HOA rule prohibiting transient/short-term rentals",
+    "nuisance_complaints": [
+      "a guest-caused fire-safety incident",
+      "occupancy exceeding limits",
+      "overflowing trash and parking violations",
+      "strangers and turnover disrupting the community"
+    ],
+    "nightly_rate": 1379,
+    "annual_str_revenue": 146799,
+    "town_str_ordinance": "zoning does not list short-term rentals as a permitted use",
+    "cease_and_desist_sent": true,
+    "permit_appeal_pending": true
+  }
+}

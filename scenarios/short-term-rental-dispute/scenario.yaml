@@ -1,0 +1,182 @@
+id: short-term-rental-dispute
+title: "{plaintiff_full_name} v. {defendant_full_name} et al. (short-term rental)"
+practice_area: civil
+case_type: real_property
+status: active
+docket_prefix: CV
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, CV-067]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+# A timely Maine short-term-rental (Airbnb/VRBO) dispute. A condominium / homeowners'
+# association sues a unit owner and the co-owner/manager who operate a transient rental,
+# seeking to enforce a recorded no-short-term-rental restriction (Maine Condominium Act,
+# 33 M.R.S. ch. 31) and to abate a private nuisance, while the town's STR ordinance and
+# zoning (30-A M.R.S. ch. 187) are also in play. Multi-pronged: covenant enforcement +
+# private nuisance + municipal land use, with the municipality joined as a party.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, entity: organization, label: "Plaintiff condominium/homeowners' association"}
+    - {key: defendant, label: "Defendant unit owner / STR operator"}
+    - {key: defendant_2, label: "Co-owner / property manager of the STR"}
+    - {key: other_party, entity: organization, name: "Town of Harborwick", label: "The municipality (STR ordinance / zoning)"}
+
+dates:
+  filing_date: {date_between: ["2025-05-01", "2026-03-01"]}
+  event_date: "{str_start_date}"
+
+facts:
+  property_setting: {pick: ["an oceanfront condominium", "a residential neighborhood with a homeowners' association", "a historic downtown condo conversion", "a lakeside cottage community"]}
+  platform: {pick: ["Airbnb", "VRBO", "both Airbnb and VRBO", "a mix of booking platforms"]}
+  str_start_date: {date_between: ["2023-05-01", "2024-10-31"]}
+  declaration_restriction: {pick: ["a recorded covenant limiting use to 'residential purposes' and barring rentals under 30 days", "an HOA rule prohibiting transient/short-term rentals", "an ambiguous 'single-family residential use' covenant"]}
+  nuisance_complaints: {pick_n: ["late-night noise and parties", "overflowing trash and parking violations", "strangers and turnover disrupting the community", "occupancy exceeding limits", "a guest-caused fire-safety incident"], n: {min: 2, max: 4}}
+  nightly_rate: {int_between: [180, 1400]}
+  annual_str_revenue: {int_between: [28000, 260000]}
+  town_str_ordinance: {pick: ["the town recently adopted an STR registration and cap ordinance", "the town denied the operator's STR permit", "zoning does not list short-term rentals as a permitted use", "no town STR ordinance yet exists"]}
+  cease_and_desist_sent: {pick: [true]}
+  permit_appeal_pending: {pick: [true, false]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: neighbor, name_kind: person, role: "Neighboring unit owner who complains", relevance: "Lives beside the rental and logged repeated complaints of noise, trash, and parking from the short-term guests."}
+    - {type: government_agency, name: "Town Code Enforcement Office", role: "Town code enforcement officer", relevance: "Administers the town's STR ordinance and zoning and holds the registration, permit, and violation records."}
+    - {type: business_entity, name_kind: organization, role: "Property management / cleaning company servicing the STR", relevance: "Manages bookings and turnovers for the rental and can speak to occupancy, frequency, and guest conduct."}
+    - {type: business_entity, name: "Airbnb, Inc.", role: "Booking platform", relevance: "Hosts the listing and holds the booking, payout, and review records for the short-term rental."}
+    - {type: business_entity, name_kind: organization, role: "Association's property manager", relevance: "Manages the association, enforces the rules, and maintains the complaint logs and assessment ledgers."}
+    - {type: government_agency, name: "Harborwick Police Department", role: "Local police on the noise calls", relevance: "Responded to noise and disturbance calls at the rental and holds the call and incident records."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name} sues unit owner {defendant_full_name} and co-owner/manager {defendant_2_full_name} to enforce {declaration_restriction_lower} against a short-term rental at {property_setting} listed on {platform}, to abate a private nuisance, and for declaratory and injunctive relief; {other_party_full_name} is joined because {town_str_ordinance_lower}."
+  narrative:
+    - "{defendant_full_name} and {defendant_2_full_name} own and operate a short-term rental at {property_setting} governed by {plaintiff_full_name}. Beginning on or about {str_start_date}, they listed the unit on {platform} for transient stays at roughly ${nightly_rate} per night, generating on the order of ${annual_str_revenue} in annual rental revenue."
+    - "The association points to {declaration_restriction_lower}, which it says the short-term-rental use violates. Neighboring owners have complained of recurring disturbances from the rotating guests, which the association characterizes as a private nuisance. The association sent the operators a cease-and-desist demand, but the rental has continued."
+    - "On the land-use side, {town_str_ordinance_lower}, and {other_party_full_name} is joined as a party so the court can sort out the interplay of the recorded restriction, the town's short-term-rental ordinance, and zoning. The association filed this action in {county} County Superior Court seeking to enforce the covenant, abate the nuisance, and obtain declaratory and injunctive relief stopping or strictly limiting the rental, plus its enforcement costs and attorney fees."
+  undisputed:
+    - "{defendant_full_name} owns a unit governed by {plaintiff_full_name} and has offered it for short-term rental on {platform} since on or about {str_start_date}."
+    - "{plaintiff_full_name}'s governing documents include {declaration_restriction_lower}."
+    - "The association sent a cease-and-desist demand and {other_party_full_name} has been joined as a party to the action."
+  disputed:
+    - "Whether the short-term-rental use violates the recorded restriction, or whether it is a permitted residential use of the property."
+    - "Whether the operation is a private nuisance and, if so, the appropriate abatement."
+    - "Whether the town's short-term-rental ordinance and zoning permit or bar the rental, and how they interact with the recorded covenant."
+    - "Whether the association has selectively or inconsistently enforced the restriction against this owner."
+  timeline:
+    - {date: "{str_start_date}", event: "{defendant_first} and {defendant_2_first} began listing the unit for short-term rental on {platform}."}
+    - {date: "{filing_date}", event: "Association's complaint filed in {court_location} Superior Court to enforce the covenant, abate the nuisance, and obtain injunctive relief."}
+
+interview:
+  interviewer: "Community Association Litigation Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "Role", question: "Who am I speaking with on behalf of the association?", answer: "I am the board president of the association for {property_setting}. The board voted to authorize this action against the owner who keeps short-term renting the unit."}
+    - {topic: "The restriction", question: "What do your governing documents say about rentals?", answer: "We have {declaration_restriction_lower}. We read that as barring exactly this kind of nightly, transient rental, but the owner insists it is just a permitted residential use."}
+    - {topic: "The problem", question: "What has the short-term rental actually done to the community?", answer: "Since about {str_start_date} they have been booking the unit on {platform} for around ${nightly_rate} a night. We have had a string of disturbances from the constant turnover of strangers, and the other owners are fed up."}
+    - {topic: "Steps taken", question: "What have you already tried?", answer: "We sent a cease-and-desist letter and asked them to stop, but the listing is still up. The town is part of the picture too, because {town_str_ordinance_lower}."}
+    - {topic: "The town", question: "How does the town's ordinance affect this?", answer: "It is tangled. {town_str_ordinance_lower}, so we joined the town to get a clear ruling on how the ordinance and zoning line up with our covenant."}
+    - {topic: "Goal", question: "What does a good outcome look like?", answer: "Stop or strictly limit the short-term rental, end the disturbances, get clear guidance under both our covenant and the town's rules, and recover our enforcement costs and attorney fees."}
+
+objectives:
+  goals:
+    - "Stop or strictly limit the short-term-rental use of the unit through enforcement of the recorded restriction."
+    - "Abate the private nuisance caused by the transient rental's noise, traffic, trash, and turnover."
+    - "Recover the association's enforcement costs and reasonable attorney fees."
+    - "Obtain a declaratory judgment clarifying the parties' rights under the covenant and the town's short-term-rental ordinance and zoning."
+  priorities:
+    - "Establishing that the short-term rental violates the recorded restriction."
+    - "Protecting the residential character and quiet enjoyment of the community."
+    - "Resolving the interplay of the covenant, the town ordinance, and zoning in one action."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "An injunction stopping or strictly limiting the short-term rental of the unit."
+    - "A declaratory judgment and an award of the association's enforcement costs and attorney fees."
+  non_starters:
+    - "Any resolution that lets the unrestricted short-term rental continue to the detriment of the other owners."
+  constraints:
+    budget: {pick: ["Funded by the association; the board wants a focused, cost-effective enforcement action.", "Adequate through trial, but the board prefers an enforceable settlement that stops the rental."]}
+    timeline: "Wants the rental enjoined or curtailed before the next peak booking season."
+
+issues:
+  count: {min: 4, max: 6}
+  pool:
+    - {issue: "Whether the short-term rental violates the recorded restrictive covenant limiting use to residential purposes", category: real_property, governing_law: "Recorded declaration; common law of restrictive covenants", sub_questions: ["Does a 'residential use' covenant bar transient, nightly rentals?", "Is the restriction clear enough to be enforced against the operator?"], strength: moderate, client_position: "The covenant bars short-term rentals, and the nightly transient use violates the residential-use restriction."}
+    - {issue: "The association's power to enforce the declaration and to lien for assessments and fines", category: real_property, governing_law: "33 M.R.S. § 1603-102 and § 1603-116", sub_questions: ["May the association enforce the use restriction on behalf of the owners?", "May it levy and lien fines and assessments for the violation?"], strength: strong, client_position: "The Condominium Act empowers the association to enforce the restriction and to lien for fines and assessments."}
+    - {issue: "Whether the short-term-rental operation is an actionable private nuisance", category: real_property, governing_law: "Common law of private nuisance", sub_questions: ["Do the noise, parking, trash, and turnover unreasonably interfere with the other owners' use and enjoyment?", "Is injunctive abatement warranted?"], strength: moderate, client_position: "The transient rental's recurring disturbances are an actionable private nuisance warranting abatement."}
+    - {issue: "Whether the town's short-term-rental ordinance and zoning permit or bar the rental", category: real_property, governing_law: "30-A M.R.S. § 4352", sub_questions: ["Is short-term transient rental a permitted use under the zoning ordinance?", "Does the town's STR registration or cap ordinance apply to this unit?"], strength: moderate, client_position: "The town's ordinance and zoning do not authorize this unpermitted transient use of the unit."}
+    - {issue: "Whether a Rule 80B appeal of the town's permit decision should be consolidated", category: administrative, governing_law: "30-A M.R.S. § 2691; M.R. Civ. P. 80B", sub_questions: ["Was a short-term-rental permit denied and timely appealed?", "Should any 80B appeal be consolidated with this enforcement action?"], strength: unknown, client_position: "Any 80B permit appeal should be coordinated or consolidated so the court resolves the related questions together."}
+    - {issue: "Entitlement to injunctive relief and attorney fees", category: real_property, governing_law: "14 M.R.S. § 6051; 33 M.R.S. § 1603-116", sub_questions: ["Are the requirements for a permanent injunction satisfied?", "Are the association's reasonable attorney fees recoverable?"], strength: moderate, client_position: "The association is entitled to an injunction against the rental and to recover its reasonable attorney fees."}
+    - {issue: "Whether the association selectively or inconsistently enforced the restriction", category: real_property, governing_law: "Common law; doctrines of waiver and acquiescence", sub_questions: ["Has the association permitted other short-term rentals?", "Has any waiver or acquiescence undermined enforcement here?"], strength: weak, client_position: "The association has enforced the restriction consistently and has not waived its right to enforce it."}
+
+experts:
+  count: {min: 0, max: 2}
+  pool:
+    - {field: "Land-use and municipal planning", credentials: "AICP", retained_by: other_party, topic: "Whether short-term rental is a permitted use under the town's ordinance and zoning", opinion: "Transient short-term rental is not an enumerated permitted use under the applicable zoning district and ordinance.", basis: "Review of the zoning ordinance, the STR ordinance, and the permit record."}
+    - {field: "Real estate appraisal", credentials: "MAI", retained_by: plaintiff, topic: "Impact of the short-term rental on neighboring property values", opinion: "The ongoing transient use measurably diminishes the value and marketability of the neighboring units.", basis: "Comparable-sales analysis and a study of the affected units and complaints."}
+    - {field: "Acoustics and noise", credentials: "INCE Bd. Cert.", retained_by: plaintiff, topic: "Noise levels generated by the short-term-rental guests", opinion: "Measured guest-generated noise exceeds the levels reasonably expected in the residential community.", basis: "On-site sound-level monitoring and analysis of the complaint and call records."}
+
+evidence:
+  count: {min: 4, max: 7}
+  pool:
+    - {title: "Recorded declaration, covenants, and HOA rules", type: public_record, party: plaintiff, description: "The recorded declaration and the association's rules containing the use restriction and the no-short-term-rental provision."}
+    - {title: "Screenshots of the Airbnb/VRBO listings and reviews", type: document, party: plaintiff, description: "Captures of the unit's short-term-rental listings, nightly rates, calendar, and guest reviews on {platform}."}
+    - {title: "Photographs and video of the disturbances", type: photo, party: plaintiff, description: "Photographs and video documenting noise, parking, trash, and occupancy problems from the short-term guests."}
+    - {title: "Neighbor complaint logs and police call records", type: public_record, party: plaintiff, description: "The association's complaint logs and the police call and incident records for the rental."}
+    - {title: "Cease-and-desist letters", type: correspondence, party: plaintiff, description: "The association's cease-and-desist demands to the operators and any responses."}
+    - {title: "Town short-term-rental ordinance and permit decision", type: public_record, party: other_party, description: "The text of the town's STR ordinance and zoning provisions and any registration or permit decision for the unit."}
+    - {title: "The short-term rental's revenue records", type: financial_record, party: defendant, description: "Booking and payout records showing the frequency of stays and the revenue from the rental."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Estimated annual short-term-rental revenue", amount: {int_between: [28000, 260000]}, basis: "Booking and payout records for the rental."}
+    - {label: "Association's enforcement and attorney-fee costs", amount: {int_between: [12000, 90000]}, basis: "Attorney fees and costs of enforcing the restriction and abating the nuisance."}
+    - {label: "Claimed diminution in neighboring property values", amount: {int_between: [10000, 120000]}, basis: "Appraiser's estimate of value loss to the affected units."}
+    - {label: "Fines accrued under the town ordinance", amount: {int_between: [1000, 40000]}, basis: "Per-violation fines under the town's short-term-rental ordinance."}
+    - {label: "Cost of the appraisal and planning experts", amount: {int_between: [6000, 45000]}, basis: "Retained appraisal and land-use planning experts."}
+
+litigation:
+  posture: pleadings
+  causes_of_action:
+    - {count: 1, claim: "Enforcement of the restrictive covenant barring short-term rentals", by: "{plaintiff_full_name}", against: "{defendant_full_name} and {defendant_2_full_name}", governing_law: "Recorded declaration; 33 M.R.S. § 1603-102", elements: ["A valid recorded restriction limiting use to residential purposes", "The owners' short-term-rental use of the unit", "That the transient use violates the restriction", "The association's right to enforce it"], relief_sought: "An order enforcing the covenant and prohibiting the short-term-rental use", strength: moderate}
+    - {count: 2, claim: "Private nuisance", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "Common law of private nuisance", elements: ["The other owners' interest in the use and enjoyment of their property", "An unreasonable and substantial interference from the transient rental", "Causation", "Resulting harm to the community"], relief_sought: "Abatement of the nuisance and damages", strength: moderate}
+    - {count: 3, claim: "Declaratory and injunctive relief to stop the short-term-rental use", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "14 M.R.S. § 6051; 14 M.R.S. § 5953", elements: ["An actual controversy over the rental's legality under the covenant and ordinance", "A clear legal right warranting injunctive relief", "Inadequate remedy at law", "A balance of equities favoring the association"], relief_sought: "A declaration of the parties' rights and an injunction stopping or strictly limiting the rental", strength: moderate}
+    - {count: 4, claim: "Enforcement of the association's assessment and fine lien", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "33 M.R.S. § 1603-116", elements: ["A perfected lien for assessments and fines", "Fines and assessments levied for the violation and unpaid", "The foreclosure is within the enforcement period"], relief_sought: "Judgment enforcing the lien for the unpaid fines and assessments, interest, and reasonable attorney fees", strength: moderate}
+  affirmative_defenses:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {defense: "Covenant does not clearly bar short-term rentals", by: "{defendant_full_name}", basis: "The recorded restriction does not unambiguously prohibit nightly or short-term rentals and must be construed in favor of the free use of property."}
+      - {defense: "Permitted residential use", by: "{defendant_full_name}", basis: "Renting a residence to occupants is a residential use of the property and does not violate a residential-use covenant."}
+      - {defense: "Selective or waived enforcement", by: "{defendant_full_name}", basis: "The association has permitted other short-term rentals and has waived or acquiesced in the practice it now seeks to enforce."}
+      - {defense: "Town ordinance permits the rental", by: "{defendant_2_full_name}", basis: "The town's ordinance and zoning allow the short-term rental, which is or may be registered or permitted. 30-A M.R.S. § 4352."}
+      - {defense: "No actionable nuisance", by: "{defendant_full_name}", basis: "Any disturbances are isolated and do not rise to a substantial and unreasonable interference constituting a private nuisance."}
+  counterclaims:
+    - {count: 1, claim: "Declaratory judgment that short-term rentals are permitted", by: "{defendant_full_name}", against: "{plaintiff_full_name}", relief: "A declaration that the recorded covenant and the town's ordinance permit the owners' short-term rental of the unit."}
+  motions:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {title: "Motion for a preliminary injunction", type: provisional, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-05-15", "2026-03-15"]}, status: opposed, relief: "An order enjoining the short-term rental of the unit while the action is pending."}
+      - {title: "Motion for summary judgment on the covenant's meaning", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-09-01", "2026-05-15"]}, status: under_advisement, relief: "A ruling that the recorded restriction bars short-term rentals as a matter of law."}
+      - {title: "Motion to consolidate with the Rule 80B permit appeal", type: procedural, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-06-01", "2026-04-15"]}, status: granted, relief: "Consolidation of the related 80B permit appeal with this enforcement action."}
+      - {title: "Motion to compel platform booking records", type: discovery, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-07-01", "2026-04-15"]}, status: filed, relief: "An order compelling production of the booking and payout records from the operators and the platform."}
+  docket:
+    - {date: {date_between: ["2025-05-01", "2025-05-20"]}, entry: "Complaint filed to enforce the covenant, abate the nuisance, and for declaratory and injunctive relief.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-06-01", "2025-06-20"]}, entry: "Motion for a preliminary injunction filed and set for hearing.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-07-01", "2025-07-20"]}, entry: "Defendants' answer and counterclaim for declaratory judgment filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-08-01", "2025-08-20"]}, entry: "Town's answer filed and order on the preliminary-injunction motion entered.", party: "{other_party_full_name}"}
+    - {date: {date_between: ["2025-09-01", "2025-09-20"]}, entry: "Scheduling order entered; the related 80B permit appeal consolidated.", party: "the court"}
+    - {date: {date_between: ["2025-10-01", "2025-10-20"]}, entry: "Order on the motion for summary judgment on the covenant's meaning entered.", party: "the court"}
+  trial:
+    jury: {pick: [true, false]}
+    estimated_days: {int_between: [2, 6]}
+    scheduled_date: {date_between: ["2026-08-01", "2027-03-01"]}

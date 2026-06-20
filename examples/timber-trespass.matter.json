@@ -1,0 +1,626 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "timber-trespass",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-575198",
+    "practice_area": "real_estate",
+    "title": "Roe v. Fairbanks et al. (Timber Trespass)",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court"
+    },
+    "case_type": "real_property",
+    "filing_date": "2025-06-17",
+    "status": "active",
+    "summary": "Grace C. Roe sues neighbor Maria Q. Fairbanks and logging contractor Coastal Outfitters LLC after the defendants cut and hauled away trees from a mature white pine and hemlock woodlot on Roe's land, seeking the value of the timber plus enhanced damages under Maine's timber-trespass statute and a determination of the true boundary.",
+    "event_date": "2024-05-31",
+    "docket_number": "SAG-RE-2025-470"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Plaintiff landowner (whose trees were cut)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "defendant": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Defendant neighbor (who ordered the clearing)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "defendant_2": {
+      "entity_type": "organization",
+      "organization_name": "Coastal Outfitters LLC",
+      "full_name": "Coastal Outfitters LLC",
+      "role": "Defendant logging contractor (cut the trees)",
+      "address": "115 Pine Lane",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "D",
+      "last_name": "Jessup",
+      "full_name": "Olivia D. Jessup",
+      "role": "Attorney for the client",
+      "address": "294 Elm Terrace",
+      "city": "Windham",
+      "state": "ME",
+      "zip": "04014",
+      "phone": "(207) 555-0174",
+      "email": "olivia.jessup@example.net",
+      "date_of_birth": "1961-04-07",
+      "ssn_last4": "6101",
+      "bar_number": "2596",
+      "organization_name": "Ellsworth Advocates PC"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Plaintiff landowner (whose trees were cut)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe sues neighbor Maria Q. Fairbanks and logging contractor Coastal Outfitters LLC after the defendants cut and hauled away trees from a mature white pine and hemlock woodlot on Roe's land, seeking the value of the timber plus enhanced damages under Maine's timber-trespass statute and a determination of the true boundary.",
+    "narrative": "Grace C. Roe owns a mature white pine and hemlock woodlot in Sagadahoc County, Maine. On or about 2024-05-31, a logging crew working for Coastal Outfitters LLC entered the property and cut roughly 589 trees, hauling the logs off to a sawmill for sale. The clearing was ordered by the adjoining neighbor, Maria Q. Fairbanks, who had hired Coastal Outfitters LLC to harvest timber along the parties' shared boundary.\n\nGrace never authorized any cutting. A consulting forester later appraised the stumpage value of the felled trees at roughly $165269 and estimated the cost to restore the woodlot at about $159501. The character of the harvest matters: ordinary woodlot, no shoreland issue. Coastal Outfitters LLC contends the trees stood on Fairbanks's side of the true line, which puts the location of the boundary squarely in dispute.\n\nGrace brings suit in Sagadahoc County Superior Court against both the neighbor who ordered the cutting and the contractor who carried it out. Grace seeks the value of the trees together with the enhanced double and treble damages Maine law allows for timber trespass, the cost of restoration, and a judgment quieting title and fixing the true boundary between the parcels.",
+    "undisputed_facts": [
+      "Trees on or near the parties' shared boundary were cut on or about 2024-05-31 and the logs were hauled to a sawmill.",
+      "Maria Q. Fairbanks hired Coastal Outfitters LLC to perform the harvest.",
+      "Grace C. Roe did not sign any written authorization for cutting on Roe's land."
+    ],
+    "disputed_facts": [
+      "Whether the cut trees stood on Roe's land or on Fairbanks's side of the true boundary.",
+      "Whether the cutting was intentional or knowing for purposes of treble damages under 14 M.R.S. § 7552.",
+      "The stumpage value of the trees and whether restoration cost or diminution in value is the proper measure of damages."
+    ],
+    "timeline": [
+      {
+        "date": "2024-05-31",
+        "event": "The logging crew cut and removed trees along the parties' shared boundary."
+      },
+      {
+        "date": "2025-06-17",
+        "event": "Complaint for timber trespass and to quiet title prepared for filing in Bath Superior Court."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Northstar Partners Corp.",
+      "type": "business_entity",
+      "role": "Timber buyer / sawmill",
+      "relevance": "Took delivery of the cut logs and holds the scale and delivery tickets.",
+      "contact": {
+        "phone": "(207) 555-0193",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Maine Forest Service",
+      "type": "government_agency",
+      "role": "State forestry regulator",
+      "relevance": "May review the unlicensed harvest and any forest-practices violations.",
+      "contact": {
+        "phone": "(207) 555-0165",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Wesley B. Fairbanks",
+      "type": "neighbor",
+      "role": "Adjoining neighbor",
+      "relevance": "Witnessed the crew cutting and hauling trees from the plaintiff's land.",
+      "contact": {
+        "phone": "(207) 555-0185",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "wesley.fairbanks@example.net"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Theodore S. Larkspur",
+      "type": "expert",
+      "role": "Licensed forester",
+      "relevance": "Appraised the stumpage and the damage to the woodlot.",
+      "contact": {
+        "phone": "(207) 555-0174",
+        "city": "Falmouth",
+        "state": "ME",
+        "email": "theodore.larkspur@example.org"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Intake Attorney",
+    "interviewee_role": "plaintiff",
+    "date": "2025-06-17",
+    "exchanges": [
+      {
+        "topic": "What happened",
+        "question": "Tell me what happened to your land.",
+        "answer": "I came up to the woodlot and found 589 of my trees cut and gone. Maria next door had hired a logging outfit, and they cut right across my line and hauled my timber off to a mill."
+      },
+      {
+        "topic": "Authorization",
+        "question": "Did you ever give anyone permission to cut on your property?",
+        "answer": "Never. Nobody asked me, and I never signed anything. The first I knew of it was the stumps and the skidder ruts."
+      },
+      {
+        "topic": "The boundary",
+        "question": "Is the property line between you and the neighbor in question?",
+        "answer": "They are claiming the trees were on Maria's side, but I do not believe it. I want a surveyor to establish the true line so this is settled for good."
+      },
+      {
+        "topic": "Value",
+        "question": "Do you have a sense of what the trees were worth?",
+        "answer": "A forester walked the cut and put the stumpage at around $165269, and restoring the lot could run about $159501. I understand the timber-trespass statute can multiply that."
+      },
+      {
+        "topic": "Who is responsible",
+        "question": "Who do you think should be held accountable?",
+        "answer": "Both of them. Maria ordered it, and the logging contractor is the one who actually cut my trees without checking the line. I want them both on the hook."
+      },
+      {
+        "topic": "Goal",
+        "question": "What outcome are you hoping for?",
+        "answer": "Full value of my trees with the enhanced damages, the cost to restore the woodlot, and a clear ruling on where the boundary really is."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Recover the full value of the cut trees plus the enhanced double or treble damages allowed under 14 M.R.S. § 7552.",
+      "Recover the cost to restore and replant the woodlot.",
+      "Establish the true boundary and hold both the neighbor and the logging contractor accountable."
+    ],
+    "priorities": [
+      "Maximizing the timber-trespass recovery, including the enhanced-damages multiplier.",
+      "A definitive determination of the boundary line so it cannot be relitigated.",
+      "Holding both the neighbor who ordered the cut and the contractor who did it responsible."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "A judgment for the value of the timber, doubled or trebled under the statute, plus restoration cost.",
+      "A quiet-title judgment fixing the true boundary in Roe's favor."
+    ],
+    "non_starters": [
+      "A resolution that leaves the boundary unsettled or excuses the contractor who cut the trees."
+    ],
+    "constraints": {
+      "budget": "Moderate; prefers a strong settlement but will try the enhanced-damages claim if needed.",
+      "timeline": "Wants the boundary fixed and the timber claim resolved before the next harvest season."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Shoreland-zoning buffer violation where the cut crossed a protected zone",
+      "category": "real_estate",
+      "governing_law": "38 M.R.S. § 438-A",
+      "sub_questions": [
+        "Did the cutting violate the shoreland buffer or timber-harvesting standards?",
+        "What municipal or state enforcement consequences follow?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Liability and enhanced damages for timber trespass under Maine's cutting-of-trees statute",
+      "category": "real_estate",
+      "governing_law": "14 M.R.S. § 7552",
+      "sub_questions": [
+        "May the owner recover the value of the trees plus double damages for the unauthorized cutting?",
+        "Was the cutting intentional or knowing so that up to treble damages apply?"
+      ],
+      "strength": "strong",
+      "client_position": "The cutting was unauthorized, so Grace is entitled to the value of the trees plus enhanced double, and up to treble, damages.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Whether restoration cost or diminution in value is the proper measure of damages",
+      "category": "real_estate",
+      "governing_law": "14 M.R.S. § 7552",
+      "sub_questions": [
+        "Is the cost of restoration the appropriate measure for the damage to the woodlot?",
+        "Does restoration cost exceed the diminution in the land's value?"
+      ],
+      "strength": "moderate",
+      "id": "iss3"
+    },
+    {
+      "issue": "Conversion of the cut timber once it was severed and hauled away",
+      "category": "real_estate",
+      "governing_law": "Common law conversion",
+      "sub_questions": [
+        "Did the defendants exercise dominion over the plaintiff's severed timber?",
+        "Is the sawmill that took delivery liable for converting the logs?"
+      ],
+      "strength": "moderate",
+      "client_position": "Once cut, the logs were Roe's personal property, and removing and selling them was conversion.",
+      "id": "iss4"
+    },
+    {
+      "issue": "Common-law trespass to real property by entering and cutting on the plaintiff's land",
+      "category": "real_estate",
+      "governing_law": "Common law trespass",
+      "sub_questions": [
+        "Did the defendants enter the plaintiff's land without permission?",
+        "What damages flow from the physical intrusion and disturbance of the soil?"
+      ],
+      "strength": "strong",
+      "client_position": "The crew entered and cut on Roe's land without authority, a plain trespass.",
+      "id": "iss5"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Beatrice M. Ellsworth",
+        "field": "Arboriculture",
+        "credentials": "Certified Arborist",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Value of ornamental and shade trees",
+      "opinion": "The destroyed ornamental and shade trees had appraised value well beyond their stumpage as sawlogs.",
+      "basis": "Trunk-formula appraisal of individual ornamental and shade trees."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Jane M. Greenhill",
+        "field": "Land surveying",
+        "credentials": "PLS",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Location of the true boundary line",
+      "opinion": "The deeds and monuments place the cut trees on the plaintiff's side of the true boundary.",
+      "basis": "Boundary survey, record deeds, and located monuments."
+    },
+    {
+      "id": "exp3",
+      "expert": {
+        "name": "Henry D. Larkspur",
+        "field": "Consulting forestry",
+        "credentials": "Licensed Forester",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Stumpage value and cost of restoration",
+      "opinion": "The felled trees carried substantial stumpage value and the woodlot can be restored only at significant cost.",
+      "basis": "Stump count and measurement, species and grade analysis, and stumpage pricing."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Deed and recorded plan",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "The recorded deed and plan establishing the plaintiff's title and the boundary.",
+      "id": "ev1"
+    },
+    {
+      "title": "Boundary survey",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "The surveyor's plan locating the true boundary between the parcels.",
+      "id": "ev2"
+    },
+    {
+      "title": "Photographs of the stumps and cleared area",
+      "type": "photo",
+      "party": "plaintiff",
+      "description": "Photographs of the cut stumps, skid trails, and the cleared portion of the woodlot.",
+      "id": "ev3"
+    },
+    {
+      "title": "Logging contract",
+      "type": "document",
+      "party": "defendant",
+      "description": "The harvesting contract between the neighbor and the logging contractor.",
+      "id": "ev4"
+    },
+    {
+      "title": "Sawmill scale and delivery tickets",
+      "type": "financial_record",
+      "party": "defendant_2",
+      "description": "The sawmill's scale slips and delivery tickets documenting the logs taken in.",
+      "id": "ev5"
+    },
+    {
+      "title": "Code-enforcement records",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "Municipal code-enforcement file on the shoreland buffer violation, where applicable.",
+      "id": "ev6"
+    },
+    {
+      "title": "Forester's stumpage and damage appraisal",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "The consulting forester's appraisal of stumpage value and restoration cost.",
+      "id": "ev7"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Boundary survey cost",
+        "amount": 9080,
+        "basis": "Cost of the boundary survey to locate the true line."
+      },
+      {
+        "label": "Stumpage value of the cut trees",
+        "amount": 147032,
+        "basis": "Forester's appraisal of the felled timber."
+      },
+      {
+        "label": "Estimated attorney fees",
+        "amount": 48416,
+        "basis": "Litigation budget through trial."
+      },
+      {
+        "label": "Double / treble enhanced damages",
+        "amount": 149577,
+        "basis": "Statutory multiplier on the value of the trees under 14 M.R.S. § 7552."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "pleadings",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Timber trespass with enhanced damages under 14 M.R.S. § 7552",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks and Coastal Outfitters LLC",
+        "governing_law": "14 M.R.S. § 7552",
+        "elements": [
+          "The plaintiff owned the trees",
+          "The defendants cut or caused the cutting without permission",
+          "The owner may recover the value of the trees plus double damages",
+          "Up to treble damages apply where the cutting was intentional or knowing"
+        ],
+        "relief_sought": "The value of the trees plus double damages, and up to treble damages for intentional or knowing cutting",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Common-law trespass to land",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "Common law trespass",
+        "elements": [
+          "The plaintiff owned or possessed the land",
+          "The defendant intentionally entered the land",
+          "The entry was without permission",
+          "Resulting injury to the land"
+        ],
+        "relief_sought": "Damages for the unauthorized entry and disturbance of the land",
+        "strength": "strong"
+      },
+      {
+        "count": 3,
+        "claim": "Conversion of the cut timber",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC and the sawmill",
+        "governing_law": "Common law conversion",
+        "elements": [
+          "The plaintiff owned the severed timber",
+          "The defendants exercised dominion over it",
+          "The exercise of dominion was wrongful",
+          "Resulting damages equal to the value of the timber"
+        ],
+        "relief_sought": "Damages equal to the value of the converted logs",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Quiet title and determination of the boundary",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "14 M.R.S. § 6651",
+        "elements": [
+          "The plaintiff holds record title to the parcel",
+          "An actual controversy exists over the boundary line",
+          "The deeds and monuments fix the true line",
+          "A judgment is needed to settle title and the boundary"
+        ],
+        "relief_sought": "A judgment quieting title and declaring the true boundary between the parcels",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Acquiescence in the boundary line",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The parties long acquiesced in a line that places the trees on the defendant's side."
+      },
+      {
+        "defense": "Comparative responsibility",
+        "by": "Maria Q. Fairbanks",
+        "basis": "Any damages should be reduced by the plaintiff's own failure to mark or maintain the boundary. 14 M.R.S. § 156."
+      },
+      {
+        "defense": "Good-faith reliance on a flagged line",
+        "by": "Coastal Outfitters LLC",
+        "basis": "The contractor reasonably and in good faith cut to a boundary line that had been flagged, negating any intentional or knowing cutting."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Declaratory judgment that the boundary favors the neighbor",
+        "by": "Maria Q. Fairbanks",
+        "against": "Grace C. Roe",
+        "relief": "A declaration that the true boundary lies so that the cut trees stood on the defendant's land."
+      }
+    ],
+    "discovery": [
+      {
+        "type": "subpoena",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "the sawmill",
+        "served_date": "2025-06-22",
+        "status": "served",
+        "description": "Subpoena to the sawmill for scale and delivery records."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Coastal Outfitters LLC",
+        "served_date": "2025-07-12",
+        "status": "outstanding",
+        "description": "Deposition of the logging contractor who cut the trees."
+      },
+      {
+        "type": "request_for_production",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Coastal Outfitters LLC",
+        "served_date": "2025-05-24",
+        "status": "served",
+        "description": "Requests for the logging contract and the sawmill scale tickets."
+      },
+      {
+        "type": "interrogatories",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Maria Q. Fairbanks",
+        "served_date": "2025-05-29",
+        "status": "served",
+        "description": "First set of interrogatories on the harvest and the boundary."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for the enhanced-damages multiplier",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-11-05",
+        "status": "opposed",
+        "relief": "An order applying the double or treble damages multiplier under 14 M.R.S. § 7552."
+      },
+      {
+        "title": "Motion for partial summary judgment on liability",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-09-19",
+        "status": "filed",
+        "relief": "Judgment that the unauthorized cutting establishes timber-trespass liability."
+      },
+      {
+        "title": "Motion in limine on valuation",
+        "type": "evidentiary",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2025-12-01",
+        "status": "filed",
+        "relief": "Exclusion of the plaintiff's restoration-cost valuation."
+      },
+      {
+        "title": "Motion to determine the boundary",
+        "type": "procedural",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-09-10",
+        "status": "under_advisement",
+        "relief": "A determination of the true boundary between the parcels."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2025-04-18",
+        "entry": "Complaint for timber trespass and to quiet title filed.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-05-27",
+        "entry": "Answers of the neighbor and the logging contractor filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-06-16",
+        "entry": "Counterclaim for declaratory judgment on the boundary filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-08-24",
+        "entry": "Scheduling order entered; discovery and survey deadlines set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-10-23",
+        "entry": "Hearing on partial summary judgment and the boundary held.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-12-15",
+        "entry": "Expert reports on stumpage value and the boundary served.",
+        "party": "Grace C. Roe"
+      }
+    ],
+    "trial": {
+      "jury": true,
+      "estimated_days": 7,
+      "scheduled_date": "2027-01-06"
+    }
+  },
+  "facts": {
+    "woodlot_type": "a mature white pine and hemlock woodlot",
+    "trees_cut": 589,
+    "cutting_date": "2024-05-31",
+    "stumpage_value": 165269,
+    "cutting_authorized": false,
+    "intentional_or_knowing": false,
+    "boundary_disputed": false,
+    "survey_exists": false,
+    "buffer_or_shoreland": "ordinary woodlot, no shoreland issue",
+    "restoration_cost": 159501
+  }
+}

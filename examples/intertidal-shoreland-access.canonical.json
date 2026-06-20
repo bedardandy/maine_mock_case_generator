@@ -1,0 +1,100 @@
+{
+  "matter": {
+    "docket_number": "SAG-RE-2025-913",
+    "case_id": "MMC-2025-360494",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Superior Court",
+    "case_type": "real_property",
+    "filing_date": "2025-07-17",
+    "event_date": "2025-05-15"
+  },
+  "parties": {
+    "plaintiff": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "defendant": {
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
+    },
+    "defendant_2": {
+      "full_name": "Ingrid B. Kingsley",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10"
+    },
+    "other_party": {
+      "full_name": "Town of Semaphore Cove",
+      "address": "216 Birch Street",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0139"
+    },
+    "attorney": {
+      "full_name": "Felix D. Moe",
+      "first_name": "Felix",
+      "middle_name": "D",
+      "last_name": "Moe",
+      "address": "299 Tidewater Lane",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04048",
+      "phone": "(207) 555-0112",
+      "email": "felix.moe@example.net",
+      "date_of_birth": "1956-02-02",
+      "bar_number": "1976"
+    }
+  },
+  "party": {
+    "full_name": "Grace C. Roe",
+    "first_name": "Grace",
+    "middle_name": "C",
+    "last_name": "Roe",
+    "address": "422 Spruce Avenue",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "email": "grace.roe@example.com",
+    "date_of_birth": "1969-04-20",
+    "signature": "Grace C. Roe"
+  },
+  "facts": {
+    "shorefront_type": "a rocky ledge shoreline and mudflats",
+    "disputed_use": "beachcombing and picnicking by the public",
+    "first_incident_date": "2025-05-15",
+    "deed_to_low_water": true,
+    "rods_to_low_water": "about 90 rods of flats",
+    "public_use_claimed": "a prescriptive right from decades of use",
+    "signage_posted": false,
+    "prior_confrontation": false,
+    "conservation_interest": "an abutting land trust parcel"
+  }
+}

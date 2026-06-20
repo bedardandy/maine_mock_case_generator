@@ -1,0 +1,88 @@
+{
+  "matter": {
+    "docket_number": "SAG-RE-2025-470",
+    "case_id": "MMC-2025-575198",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Superior Court",
+    "case_type": "real_property",
+    "filing_date": "2025-06-17",
+    "event_date": "2024-05-31"
+  },
+  "parties": {
+    "plaintiff": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "defendant": {
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
+    },
+    "defendant_2": {
+      "full_name": "Coastal Outfitters LLC",
+      "address": "115 Pine Lane",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153"
+    },
+    "attorney": {
+      "full_name": "Olivia D. Jessup",
+      "first_name": "Olivia",
+      "middle_name": "D",
+      "last_name": "Jessup",
+      "address": "294 Elm Terrace",
+      "city": "Windham",
+      "state": "ME",
+      "zip": "04014",
+      "phone": "(207) 555-0174",
+      "email": "olivia.jessup@example.net",
+      "date_of_birth": "1961-04-07",
+      "bar_number": "2596"
+    }
+  },
+  "party": {
+    "full_name": "Grace C. Roe",
+    "first_name": "Grace",
+    "middle_name": "C",
+    "last_name": "Roe",
+    "address": "422 Spruce Avenue",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "email": "grace.roe@example.com",
+    "date_of_birth": "1969-04-20",
+    "signature": "Grace C. Roe"
+  },
+  "facts": {
+    "woodlot_type": "a mature white pine and hemlock woodlot",
+    "trees_cut": 589,
+    "cutting_date": "2024-05-31",
+    "stumpage_value": 165269,
+    "cutting_authorized": false,
+    "intentional_or_knowing": false,
+    "boundary_disputed": false,
+    "survey_exists": false,
+    "buffer_or_shoreland": "ordinary woodlot, no shoreland issue",
+    "restoration_cost": 159501
+  }
+}

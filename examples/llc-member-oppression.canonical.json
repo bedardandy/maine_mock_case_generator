@@ -1,0 +1,105 @@
+{
+  "matter": {
+    "docket_number": "SAG-BCD-2025-394",
+    "case_id": "MMC-2025-570636",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Superior Court (Business and Consumer Docket)",
+    "case_type": "business",
+    "filing_date": "2025-05-17",
+    "event_date": "2025-03-22"
+  },
+  "parties": {
+    "plaintiff": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "defendant": {
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
+    },
+    "defendant_2": {
+      "full_name": "Ingrid B. Kingsley",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10"
+    },
+    "company": {
+      "full_name": "Riverbend Builders LLC",
+      "address": "294 Elm Terrace",
+      "city": "Windham",
+      "state": "ME",
+      "zip": "04014",
+      "phone": "(207) 555-0174"
+    },
+    "attorney": {
+      "full_name": "Rosa M. Noe",
+      "first_name": "Rosa",
+      "middle_name": "M",
+      "last_name": "Noe",
+      "address": "51 Spruce Avenue",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04073",
+      "phone": "(207) 555-0107",
+      "email": "rosa.noe@example.net",
+      "date_of_birth": "1988-09-11",
+      "bar_number": "8005"
+    }
+  },
+  "party": {
+    "full_name": "Grace C. Roe",
+    "first_name": "Grace",
+    "middle_name": "C",
+    "last_name": "Roe",
+    "address": "422 Spruce Avenue",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "email": "grace.roe@example.com",
+    "date_of_birth": "1969-04-20",
+    "signature": "Grace C. Roe"
+  },
+  "facts": {
+    "business_type": "a family restaurant group",
+    "plaintiff_ownership": "a 20% interest",
+    "company_value": 6766345,
+    "oppressive_conduct": [
+      "denial of distributions while the majority take large salaries",
+      "refusal to allow inspection of the books",
+      "diversion of company opportunities to a side entity",
+      "termination of the minority member's employment and salary"
+    ],
+    "freeze_out_date": "2025-03-22",
+    "operating_agreement_exists": true,
+    "distributions_suspended": true,
+    "buyout_offered": "no buyout has been offered",
+    "annual_distributions_withheld": 804878
+  }
+}
