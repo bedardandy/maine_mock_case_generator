@@ -53,7 +53,8 @@ Or via `make`: `make list`, `make generate SCENARIO=estate-tax-706 SEED=2`, `mak
 
 The generator doesn't stop at a canonical case — it pours matters into **real downstream
 form mappings** (vendored in `integration/`) so you can see exactly which PDF fields get
-populated. **Nine forms across all three repos and three fact-key namespaces** are wired:
+populated. **Ten forms across all three repos and three fact-key namespaces** are wired
+(the probate repo ships no fact-key mapping, so DE-301's was authored here from its schema):
 
 ```bash
 python tools/fill.py --list

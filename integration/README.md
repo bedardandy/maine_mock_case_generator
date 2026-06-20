@@ -15,8 +15,18 @@ canonical case into that form's expected fact-keys.
 integration/
   registry.json
   maine-court-forms/        FM-004, FM-006, FM-050, PA-001, CV-007   (profile: canonical)
+  maine-probate-forms/      DE-301   (canonical; mapping AUTHORED here from the schema)
   transactional-tax-forms/  IRS-SS-4, IRS-2553   (tax)  ·  MRS-706ME (canonical)  ·  ME-RETTD (real_estate)
 ```
+
+### Authored mappings
+
+The court and tax repos ship a `mapping.json` (field-id -> fact-key), so those are vendored
+as-is. The **probate** repo ships per-form field *schemas* but no fact-key mapping, so
+`maine-probate-forms/DE-301/mapping.json` was **authored in this repo** from the vendored
+`schema.json` (field ids + labels + data types). It is marked `"status": "authored-here"`
+and `mapping_authored_here: true` in the registry. This shows how to bring a downstream repo
+that lacks a canonical mapping into the same fill pipeline.
 
 ## Three namespaces
 
@@ -41,6 +51,7 @@ A `canonical` form fills natively from a projected canonical case; a `tax` or
 | FM-050 | maine-court-forms | canonical | family-divorce-cumberland |
 | PA-001 | maine-court-forms | canonical | protection-from-abuse |
 | CV-007 | maine-court-forms | canonical | residential-eviction |
+| DE-301 | maine-probate-forms | canonical (authored) | decedent-estate-informal |
 | IRS-SS-4 | transactional-tax-forms | tax | business-formation-scorp |
 | IRS-2553 | transactional-tax-forms | tax | business-formation-scorp |
 | MRS-706ME | transactional-tax-forms | canonical | estate-tax-706 |

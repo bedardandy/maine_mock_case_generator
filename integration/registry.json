@@ -41,6 +41,15 @@
       "practice_areas": ["civil"],
       "best_scenario": "residential-eviction"
     },
+    "DE-301": {
+      "title": "Petition for Formal Appointment of Special Administrator",
+      "repo": "maine-probate-forms",
+      "dir": "integration/maine-probate-forms/DE-301",
+      "profile": "canonical",
+      "practice_areas": ["probate"],
+      "best_scenario": "decedent-estate-informal",
+      "mapping_authored_here": true
+    },
     "IRS-SS-4": {
       "title": "Application for Employer Identification Number (EIN)",
       "repo": "transactional-tax-forms",
