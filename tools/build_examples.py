@@ -15,9 +15,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from generator import (  # noqa: E402
     fill_form,
     generate_compound,
+    generate_for_form,
     generate_matter,
     list_compounds,
     list_forms,
+    list_probate_forms,
     list_scenarios,
     load_form,
     project_compound,
@@ -83,6 +85,16 @@ def main() -> int:
             json.dumps(project_compound(compound), indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
         )
         print(f"wrote examples/compound/{cid}.compound.json ({len(compound['matters'])} matters)")
+
+    # Schema-driven probate fixtures (the maine-probate-forms native fill shape).
+    probate_dir = examples_dir / "probate"
+    probate_dir.mkdir(exist_ok=True)
+    for fid in list_probate_forms():
+        case = generate_for_form(fid, EXAMPLE_SEED)
+        (probate_dir / f"{fid}.seed{EXAMPLE_SEED}.json").write_text(
+            json.dumps(case, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        )
+        print(f"wrote examples/probate/{fid}.seed{EXAMPLE_SEED}.json")
 
     return 1 if failures else 0
 

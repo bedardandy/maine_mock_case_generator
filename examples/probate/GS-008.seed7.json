@@ -1,0 +1,23 @@
+{
+  "case_dict": {
+    "county": "Aroostook",
+    "location": "Mark P. Snow",
+    "docket_no": "2024-AROO-6469"
+  },
+  "narrative_facts": {},
+  "minor_record": {
+    "minor": "Daniel G. Goff"
+  },
+  "guardian_record": {
+    "guardian": "James D. Bennett"
+  },
+  "notary_record": {
+    "notary": "Mark T. Mercier"
+  },
+  "_meta": {
+    "form": "GS-008",
+    "seed": 7,
+    "stress": false,
+    "synthetic": true
+  }
+}

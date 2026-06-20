@@ -28,11 +28,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from generator import (  # noqa: E402
     fill_form,
     generate_compound,
+    generate_for_form,
     generate_matter,
     list_compounds,
     list_forms,
+    list_probate_forms,
     list_scenarios,
     load_form,
+    load_form_fields,
     project_to_canonical,
     validate_canonical,
     validate_compound,
@@ -169,7 +172,34 @@ def main() -> int:
         print("-" * 72)
         print(f"{len(compounds)} compound universe(s), {compound_fail} failure(s).")
 
-    return 0 if (total_fail == 0 and fill_fail == 0 and compound_fail == 0) else 1
+    # Schema-driven probate fixtures (the maine-probate-forms native fill shape).
+    probate_fail = 0
+    probate_forms = list_probate_forms()
+    if probate_forms:
+        print()
+        print(f"{'probate form':<14} {'fields':>7} {'filled':>7}  status")
+        print("-" * 72)
+        for fid in probate_forms:
+            ok = True
+            total = filled = 0
+            try:
+                for i in range(min(args.count, 3)):
+                    case = generate_for_form(fid, args.seed_base + i)
+                filled = (len(case.get("case_dict", {})) + len(case.get("narrative_facts", {}))
+                          + sum(len(v) for k, v in case.items() if k.endswith("_record") and isinstance(v, dict)))
+            except Exception as exc:
+                ok = False
+                print(f"{fid:<14} ERROR: {exc}")
+                continue
+            total = len(load_form_fields(fid))
+            if not ok:
+                probate_fail += 1
+            print(f"{fid:<14} {total:>7} {filled:>7}  {'PASS' if ok else 'FAIL'}")
+        print("-" * 72)
+        print(f"{len(probate_forms)} probate form(s), {probate_fail} failure(s).")
+
+    failed = total_fail or fill_fail or compound_fail or probate_fail
+    return 0 if not failed else 1
 
 
 if __name__ == "__main__":

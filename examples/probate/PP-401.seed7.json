@@ -1,0 +1,38 @@
+{
+  "case_dict": {
+    "county_name": "Aroostook",
+    "docket_no": "2024-AROO-6469"
+  },
+  "narrative_facts": {
+    "petitioner_info": "Not applicable",
+    "petitioner_relationship": "Not applicable",
+    "nominee_info": "Not applicable",
+    "respondent_info": "Not applicable",
+    "respondent_age": "Not applicable",
+    "nominee_relationship": "Not applicable",
+    "persons_to_notify": "Not applicable",
+    "emergency_conservator": "Not applicable",
+    "emergency_conservator_info": "Not applicable",
+    "conservatorship_type_explanation": "Not applicable",
+    "respondent_need_description": "Not applicable",
+    "nominee_justification": "Not applicable",
+    "respondent_attorney": "Not applicable",
+    "respondent_attorney_info": "Not applicable",
+    "respondent_property": "Not applicable",
+    "nominee_bankruptcy_explanation": "Not applicable",
+    "nominee_conviction_explanation": "Not applicable",
+    "incapacity_basis": "Not applicable"
+  },
+  "respondent_record": {
+    "respondent": "Mark P. Snow"
+  },
+  "attorney_record": {
+    "attorney": "Daniel G. Goff"
+  },
+  "_meta": {
+    "form": "PP-401",
+    "seed": 7,
+    "stress": false,
+    "synthetic": true
+  }
+}

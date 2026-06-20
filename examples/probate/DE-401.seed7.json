@@ -1,0 +1,27 @@
+{
+  "case_dict": {
+    "county_name": "Aroostook",
+    "docket_number": "2024-AROO-6469"
+  },
+  "narrative_facts": {
+    "decedent_death_date": "2024-01-03",
+    "real_estate_maine": "446,428.08",
+    "tangible_personal_property_maine": "248,092.70",
+    "intangible_personal_property": "436,060.72",
+    "non_mortgage_debts_expenses": "128,970.28",
+    "decedent_interest_maine_real_estate": "647,642.74",
+    "estimated_maine_estate_tax": "65,590.74",
+    "cash_collateral_deposited": "Not applicable",
+    "applicant_acknowledgment_name": "Robert T. Mercier",
+    "estate_tax_bond_amount": "122,584.39"
+  },
+  "decedent_record": {
+    "decedent": "Mark P. Snow"
+  },
+  "_meta": {
+    "form": "DE-401",
+    "seed": 7,
+    "stress": false,
+    "synthetic": true
+  }
+}

@@ -1,4 +1,4 @@
-.PHONY: help install list generate fill compound smoke test examples clean
+.PHONY: help install list generate fill compound probate smoke test examples clean
 
 help:
 	@echo "Mock Legal Matter Generator"
@@ -37,6 +37,11 @@ fill:
 COMPOUND ?= death-cascade
 compound:
 	python3 tools/compound.py $(COMPOUND) --seed 1 --summary
+
+# Usage: make probate PFORM=DE-401
+PFORM ?= DE-401
+probate:
+	python3 tools/probate_case.py $(PFORM) --seed 7
 
 examples:
 	python3 tools/build_examples.py

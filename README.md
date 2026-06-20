@@ -108,6 +108,23 @@ always exceed assets, stressing claim-priority and allowance logic) and
 cross-border UCCJEA jurisdiction question). `tests/test_edge.py` adds wide seed sweeps and
 boundary assertions (zero-children handling, no-counsel projection, multi-party rosters).
 
+## Probate fixtures (schema-driven path)
+
+The probate repo fills forms a different way — each `schema.json` field carries a
+`fill_strategy.source`. A second generator (`generator/schema_fill.py`) produces that
+pipeline's native case shape (`case_dict` / `<role>_record` / `narrative_facts`) directly
+from a form's annotated schema, with type-aware synthesis, coherent per-role identities, and
+a `--stress` overflow mode:
+
+```bash
+python tools/probate_case.py --list
+python tools/probate_case.py DE-401 --seed 7
+python tools/probate_case.py --all --seeds 0,1,2 --out out/probate
+python tools/fetch_probate_schemas.py --refresh    # add/update vendored probate schemas
+```
+
+See [`docs/probate-fixtures.md`](docs/probate-fixtures.md).
+
 ## Seed scenarios
 
 Sixteen archetypes spanning the three downstream repos and seven practice areas. Add more by dropping a new
@@ -171,5 +188,6 @@ tests/        pytest suite
 - [Data model](docs/data-model.md) — the schemas + the projection mapping
 - [Integration](docs/integration.md) — feeding the downstream form repos + concrete fills
 - [Compound matters](docs/compound.md) — intertwined matter universes
+- [Probate fixtures](docs/probate-fixtures.md) — schema-driven probate fill path
 - [Smoke testing](docs/smoke-testing.md) — CI and volume/fuzz testing
 - [Disclaimer](DISCLAIMER.md) — fictional-data guarantees and responsible use

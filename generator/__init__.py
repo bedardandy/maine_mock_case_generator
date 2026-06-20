@@ -15,6 +15,12 @@ from .formfill import fill_form, list_forms, load_form
 from .project import project_to_canonical
 from .scenarios import list_scenarios, load_scenario
 from .schema import validate_canonical, validate_compound, validate_matter
+from .schema_fill import (
+    generate_case,
+    generate_for_form,
+    list_probate_forms,
+    load_form_fields,
+)
 
 __all__ = [
     "generate_matter",
@@ -31,5 +37,9 @@ __all__ = [
     "list_compounds",
     "load_compound",
     "validate_compound",
+    "generate_case",
+    "generate_for_form",
+    "list_probate_forms",
+    "load_form_fields",
     "GENERATOR_VERSION",
 ]
