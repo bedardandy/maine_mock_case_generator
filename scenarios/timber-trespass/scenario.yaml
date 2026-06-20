@@ -1,0 +1,185 @@
+id: timber-trespass
+title: "{plaintiff_last} v. {defendant_last} et al. (Timber Trespass)"
+practice_area: real_estate
+case_type: real_property
+status: active
+docket_prefix: RE
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, RE-QT]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+# A distinctively Maine real-property suit: a landowner's trees were cut and hauled
+# away across the boundary. The neighbor who ordered the clearing and the logging
+# contractor who did the cutting are both defendants; the cutter claims the trees were
+# on his side, weaving a boundary dispute into a timber-trespass case. Maine's timber-
+# trespass statute, 14 M.R.S. § 7552, allows enhanced (double, and up to treble) damages.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, label: "Plaintiff landowner (whose trees were cut)"}
+    - {key: defendant, label: "Defendant neighbor (who ordered the clearing)"}
+    - {key: defendant_2, entity: organization, label: "Defendant logging contractor (cut the trees)"}
+
+dates:
+  filing_date: {date_between: ["2025-04-01", "2026-02-01"]}
+  event_date: "{cutting_date}"
+
+facts:
+  woodlot_type: {pick: ["a mature white pine and hemlock woodlot", "a stand of old-growth oak and maple", "a managed timber lot", "a wooded shorefront buffer"]}
+  trees_cut: {int_between: [12, 640]}
+  cutting_date: {date_between: ["2024-05-01", "2025-08-31"]}
+  stumpage_value: {int_between: [3000, 210000]}
+  cutting_authorized: {pick: [false]}
+  intentional_or_knowing: {pick: [true, false]}
+  boundary_disputed: {pick: [true, false]}
+  survey_exists: {pick: [true, false]}
+  buffer_or_shoreland: {pick: ["the cut violated a shoreland buffer zone", "ordinary woodlot, no shoreland issue", "the cut crossed into a conservation easement"]}
+  restoration_cost: {int_between: [6000, 180000]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: expert, name_kind: person, role: "Licensed forester", relevance: "Appraised the stumpage and the damage to the woodlot."}
+    - {type: business_entity, name_kind: organization, role: "Timber buyer / sawmill", relevance: "Took delivery of the cut logs and holds the scale and delivery tickets."}
+    - {type: expert, name_kind: person, role: "Licensed surveyor", relevance: "Surveyed the boundary line between the parties' parcels."}
+    - {type: government_agency, name: "Town Code Enforcement Office", role: "Municipal code enforcement officer", relevance: "Investigates the shoreland buffer violation where the cut crossed a protected zone."}
+    - {type: neighbor, name_kind: person, role: "Adjoining neighbor", relevance: "Witnessed the crew cutting and hauling trees from the plaintiff's land."}
+    - {type: government_agency, name: "Maine Forest Service", role: "State forestry regulator", relevance: "May review the unlicensed harvest and any forest-practices violations."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name} sues neighbor {defendant_full_name} and logging contractor {defendant_2_full_name} after the defendants cut and hauled away trees from {woodlot_type} on {plaintiff_last}'s land, seeking the value of the timber plus enhanced damages under Maine's timber-trespass statute and a determination of the true boundary."
+  narrative:
+    - "{plaintiff_full_name} owns {woodlot_type} in {county} County, Maine. On or about {cutting_date}, a logging crew working for {defendant_2_full_name} entered the property and cut roughly {trees_cut} trees, hauling the logs off to a sawmill for sale. The clearing was ordered by the adjoining neighbor, {defendant_full_name}, who had hired {defendant_2_full_name} to harvest timber along the parties' shared boundary."
+    - "{plaintiff_first} never authorized any cutting. A consulting forester later appraised the stumpage value of the felled trees at roughly ${stumpage_value} and estimated the cost to restore the woodlot at about ${restoration_cost}. The character of the harvest matters: {buffer_or_shoreland_lower}. {defendant_2_full_name} contends the trees stood on {defendant_last}'s side of the true line, which puts the location of the boundary squarely in dispute."
+    - "{plaintiff_first} brings suit in {county} County Superior Court against both the neighbor who ordered the cutting and the contractor who carried it out. {plaintiff_first} seeks the value of the trees together with the enhanced double and treble damages Maine law allows for timber trespass, the cost of restoration, and a judgment quieting title and fixing the true boundary between the parcels."
+  undisputed:
+    - "Trees on or near the parties' shared boundary were cut on or about {cutting_date} and the logs were hauled to a sawmill."
+    - "{defendant_full_name} hired {defendant_2_full_name} to perform the harvest."
+    - "{plaintiff_full_name} did not sign any written authorization for cutting on {plaintiff_last}'s land."
+  disputed:
+    - "Whether the cut trees stood on {plaintiff_last}'s land or on {defendant_last}'s side of the true boundary."
+    - "Whether the cutting was intentional or knowing for purposes of treble damages under 14 M.R.S. § 7552."
+    - "The stumpage value of the trees and whether restoration cost or diminution in value is the proper measure of damages."
+  timeline:
+    - {date: "{cutting_date}", event: "The logging crew cut and removed trees along the parties' shared boundary."}
+    - {date: "{filing_date}", event: "Complaint for timber trespass and to quiet title prepared for filing in {court_location} Superior Court."}
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "What happened", question: "Tell me what happened to your land.", answer: "I came up to the woodlot and found {trees_cut} of my trees cut and gone. {defendant_first} next door had hired a logging outfit, and they cut right across my line and hauled my timber off to a mill."}
+    - {topic: "Authorization", question: "Did you ever give anyone permission to cut on your property?", answer: "Never. Nobody asked me, and I never signed anything. The first I knew of it was the stumps and the skidder ruts."}
+    - {topic: "The boundary", question: "Is the property line between you and the neighbor in question?", answer: "They are claiming the trees were on {defendant_first}'s side, but I do not believe it. I want a surveyor to establish the true line so this is settled for good."}
+    - {topic: "Value", question: "Do you have a sense of what the trees were worth?", answer: "A forester walked the cut and put the stumpage at around ${stumpage_value}, and restoring the lot could run about ${restoration_cost}. I understand the timber-trespass statute can multiply that."}
+    - {topic: "Who is responsible", question: "Who do you think should be held accountable?", answer: "Both of them. {defendant_first} ordered it, and the logging contractor is the one who actually cut my trees without checking the line. I want them both on the hook."}
+    - {topic: "Goal", question: "What outcome are you hoping for?", answer: "Full value of my trees with the enhanced damages, the cost to restore the woodlot, and a clear ruling on where the boundary really is."}
+
+objectives:
+  goals:
+    - "Recover the full value of the cut trees plus the enhanced double or treble damages allowed under 14 M.R.S. § 7552."
+    - "Recover the cost to restore and replant the woodlot."
+    - "Establish the true boundary and hold both the neighbor and the logging contractor accountable."
+  priorities:
+    - "Maximizing the timber-trespass recovery, including the enhanced-damages multiplier."
+    - "A definitive determination of the boundary line so it cannot be relitigated."
+    - "Holding both the neighbor who ordered the cut and the contractor who did it responsible."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A judgment for the value of the timber, doubled or trebled under the statute, plus restoration cost."
+    - "A quiet-title judgment fixing the true boundary in {plaintiff_last}'s favor."
+  non_starters:
+    - "A resolution that leaves the boundary unsettled or excuses the contractor who cut the trees."
+  constraints:
+    budget: {pick: ["Moderate; willing to pay for a survey and a forester's appraisal to support the claim.", "Moderate; prefers a strong settlement but will try the enhanced-damages claim if needed."]}
+    timeline: "Wants the boundary fixed and the timber claim resolved before the next harvest season."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Liability and enhanced damages for timber trespass under Maine's cutting-of-trees statute", category: real_estate, governing_law: "14 M.R.S. § 7552", sub_questions: ["May the owner recover the value of the trees plus double damages for the unauthorized cutting?", "Was the cutting intentional or knowing so that up to treble damages apply?"], strength: strong, client_position: "The cutting was unauthorized, so {plaintiff_first} is entitled to the value of the trees plus enhanced double, and up to treble, damages."}
+    - {issue: "Common-law trespass to real property by entering and cutting on the plaintiff's land", category: real_estate, governing_law: "Common law trespass", sub_questions: ["Did the defendants enter the plaintiff's land without permission?", "What damages flow from the physical intrusion and disturbance of the soil?"], strength: strong, client_position: "The crew entered and cut on {plaintiff_last}'s land without authority, a plain trespass."}
+    - {issue: "Conversion of the cut timber once it was severed and hauled away", category: real_estate, governing_law: "Common law conversion", sub_questions: ["Did the defendants exercise dominion over the plaintiff's severed timber?", "Is the sawmill that took delivery liable for converting the logs?"], strength: moderate, client_position: "Once cut, the logs were {plaintiff_last}'s personal property, and removing and selling them was conversion."}
+    - {issue: "Quiet title and determination of the true boundary line where the cutter claims the trees were on his land", category: real_estate, governing_law: "14 M.R.S. § 6651", sub_questions: ["Where does the true boundary between the parcels lie?", "Do the deeds, monuments, and survey place the cut trees on the plaintiff's land?"], strength: moderate, client_position: "The deeds and a proper survey place the cut trees on {plaintiff_last}'s side of the true line."}
+    - {issue: "Whether restoration cost or diminution in value is the proper measure of damages", category: real_estate, governing_law: "14 M.R.S. § 7552", sub_questions: ["Is the cost of restoration the appropriate measure for the damage to the woodlot?", "Does restoration cost exceed the diminution in the land's value?"], strength: moderate}
+    - {issue: "Shoreland-zoning buffer violation where the cut crossed a protected zone", category: real_estate, governing_law: "38 M.R.S. § 438-A", sub_questions: ["Did the cutting violate the shoreland buffer or timber-harvesting standards?", "What municipal or state enforcement consequences follow?"], strength: moderate}
+
+experts:
+  count: {min: 1, max: 3}
+  pool:
+    - {field: "Consulting forestry", credentials: "Licensed Forester", retained_by: plaintiff, topic: "Stumpage value and cost of restoration", opinion: "The felled trees carried substantial stumpage value and the woodlot can be restored only at significant cost.", basis: "Stump count and measurement, species and grade analysis, and stumpage pricing."}
+    - {field: "Land surveying", credentials: "PLS", retained_by: plaintiff, topic: "Location of the true boundary line", opinion: "The deeds and monuments place the cut trees on the plaintiff's side of the true boundary.", basis: "Boundary survey, record deeds, and located monuments."}
+    - {field: "Arboriculture", credentials: "Certified Arborist", retained_by: plaintiff, topic: "Value of ornamental and shade trees", opinion: "The destroyed ornamental and shade trees had appraised value well beyond their stumpage as sawlogs.", basis: "Trunk-formula appraisal of individual ornamental and shade trees."}
+
+evidence:
+  count: {min: 4, max: 7}
+  pool:
+    - {title: "Deed and recorded plan", type: public_record, party: plaintiff, description: "The recorded deed and plan establishing the plaintiff's title and the boundary."}
+    - {title: "Boundary survey", type: document, party: plaintiff, description: "The surveyor's plan locating the true boundary between the parcels."}
+    - {title: "Photographs of the stumps and cleared area", type: photo, party: plaintiff, description: "Photographs of the cut stumps, skid trails, and the cleared portion of the woodlot."}
+    - {title: "Forester's stumpage and damage appraisal", type: document, party: plaintiff, description: "The consulting forester's appraisal of stumpage value and restoration cost."}
+    - {title: "Sawmill scale and delivery tickets", type: financial_record, party: defendant_2, description: "The sawmill's scale slips and delivery tickets documenting the logs taken in."}
+    - {title: "Logging contract", type: document, party: defendant, description: "The harvesting contract between the neighbor and the logging contractor."}
+    - {title: "Code-enforcement records", type: public_record, party: plaintiff, description: "Municipal code-enforcement file on the shoreland buffer violation, where applicable."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Stumpage value of the cut trees", amount: {int_between: [3000, 210000]}, basis: "Forester's appraisal of the felled timber."}
+    - {label: "Double / treble enhanced damages", amount: {int_between: [6000, 630000]}, basis: "Statutory multiplier on the value of the trees under 14 M.R.S. § 7552."}
+    - {label: "Restoration and replanting cost", amount: {int_between: [6000, 180000]}, basis: "Estimated cost to restore and replant the woodlot."}
+    - {label: "Boundary survey cost", amount: {int_between: [2500, 18000]}, basis: "Cost of the boundary survey to locate the true line."}
+    - {label: "Estimated attorney fees", amount: {int_between: [12000, 140000]}, basis: "Litigation budget through trial."}
+
+litigation:
+  posture: pleadings
+  causes_of_action:
+    - {count: 1, claim: "Timber trespass with enhanced damages under 14 M.R.S. § 7552", by: "{plaintiff_full_name}", against: "{defendant_full_name} and {defendant_2_full_name}", governing_law: "14 M.R.S. § 7552", elements: ["The plaintiff owned the trees", "The defendants cut or caused the cutting without permission", "The owner may recover the value of the trees plus double damages", "Up to treble damages apply where the cutting was intentional or knowing"], relief_sought: "The value of the trees plus double damages, and up to treble damages for intentional or knowing cutting", strength: strong}
+    - {count: 2, claim: "Common-law trespass to land", by: "{plaintiff_full_name}", against: "{defendant_2_full_name}", governing_law: "Common law trespass", elements: ["The plaintiff owned or possessed the land", "The defendant intentionally entered the land", "The entry was without permission", "Resulting injury to the land"], relief_sought: "Damages for the unauthorized entry and disturbance of the land", strength: strong}
+    - {count: 3, claim: "Conversion of the cut timber", by: "{plaintiff_full_name}", against: "{defendant_2_full_name} and the sawmill", governing_law: "Common law conversion", elements: ["The plaintiff owned the severed timber", "The defendants exercised dominion over it", "The exercise of dominion was wrongful", "Resulting damages equal to the value of the timber"], relief_sought: "Damages equal to the value of the converted logs", strength: moderate}
+    - {count: 4, claim: "Quiet title and determination of the boundary", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "14 M.R.S. § 6651", elements: ["The plaintiff holds record title to the parcel", "An actual controversy exists over the boundary line", "The deeds and monuments fix the true line", "A judgment is needed to settle title and the boundary"], relief_sought: "A judgment quieting title and declaring the true boundary between the parcels", strength: moderate}
+  affirmative_defenses:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {defense: "The trees were on the defendant's land", by: "{defendant_full_name}", basis: "The cut trees stood on {defendant_last}'s side of the true boundary, so no trespass occurred. 14 M.R.S. § 6651."}
+      - {defense: "Good-faith reliance on a flagged line", by: "{defendant_2_full_name}", basis: "The contractor reasonably and in good faith cut to a boundary line that had been flagged, negating any intentional or knowing cutting."}
+      - {defense: "Acquiescence in the boundary line", by: "{defendant_full_name}", basis: "The parties long acquiesced in a line that places the trees on the defendant's side."}
+      - {defense: "Comparative responsibility", by: "{defendant_full_name}", basis: "Any damages should be reduced by the plaintiff's own failure to mark or maintain the boundary. 14 M.R.S. § 156."}
+  counterclaims:
+    - {count: 1, claim: "Declaratory judgment that the boundary favors the neighbor", by: "{defendant_full_name}", against: "{plaintiff_full_name}", relief: "A declaration that the true boundary lies so that the cut trees stood on the defendant's land."}
+  discovery:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {type: interrogatories, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-05-15", "2025-06-15"]}, status: served, description: "First set of interrogatories on the harvest and the boundary."}
+      - {type: request_for_production, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_2_full_name}", served_date: {date_between: ["2025-05-15", "2025-06-15"]}, status: served, description: "Requests for the logging contract and the sawmill scale tickets."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-07-01", "2025-08-15"]}, status: outstanding, description: "Deposition of the neighbor who ordered the clearing."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_2_full_name}", served_date: {date_between: ["2025-07-01", "2025-08-15"]}, status: outstanding, description: "Deposition of the logging contractor who cut the trees."}
+      - {type: expert_disclosure, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-09-01", "2025-10-15"]}, status: served, description: "Plaintiff's forester and surveyor disclosures and reports."}
+      - {type: subpoena, propounding_party: "{plaintiff_full_name}", responding_party: "the sawmill", served_date: {date_between: ["2025-06-20", "2025-07-20"]}, status: served, description: "Subpoena to the sawmill for scale and delivery records."}
+  motions:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {title: "Motion for partial summary judgment on liability", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-09-01", "2025-10-15"]}, status: filed, relief: "Judgment that the unauthorized cutting establishes timber-trespass liability."}
+      - {title: "Motion for the enhanced-damages multiplier", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-10-20", "2025-11-30"]}, status: opposed, relief: "An order applying the double or treble damages multiplier under 14 M.R.S. § 7552."}
+      - {title: "Motion to determine the boundary", type: procedural, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-09-01", "2025-10-15"]}, status: under_advisement, relief: "A determination of the true boundary between the parcels."}
+      - {title: "Motion in limine on valuation", type: evidentiary, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-12-01", "2026-01-15"]}, status: filed, relief: "Exclusion of the plaintiff's restoration-cost valuation."}
+  docket:
+    - {date: {date_between: ["2025-04-05", "2025-04-25"]}, entry: "Complaint for timber trespass and to quiet title filed.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-05-10", "2025-05-30"]}, entry: "Answers of the neighbor and the logging contractor filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-06-05", "2025-06-25"]}, entry: "Counterclaim for declaratory judgment on the boundary filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-08-05", "2025-08-25"]}, entry: "Scheduling order entered; discovery and survey deadlines set.", party: "the court"}
+    - {date: {date_between: ["2025-10-05", "2025-10-25"]}, entry: "Hearing on partial summary judgment and the boundary held.", party: "the court"}
+    - {date: {date_between: ["2025-12-05", "2025-12-20"]}, entry: "Expert reports on stumpage value and the boundary served.", party: "{plaintiff_full_name}"}
+  trial:
+    jury: {pick: [true, false]}
+    estimated_days: {int_between: [3, 7]}
+    scheduled_date: {date_between: ["2026-08-01", "2027-03-01"]}

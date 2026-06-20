@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "short-term-rental-dispute",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-932967",
+    "practice_area": "civil",
+    "title": "Riverbend Analytics LLC v. John G. Inglewood et al. (short-term rental)",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court"
+    },
+    "case_type": "real_property",
+    "filing_date": "2025-07-17",
+    "status": "active",
+    "summary": "Riverbend Analytics LLC sues unit owner John G. Inglewood and co-owner/manager John D. Kingsley to enforce an hoa rule prohibiting transient/short-term rentals against a short-term rental at an oceanfront condominium listed on Airbnb, to abate a private nuisance, and for declaratory and injunctive relief; Town of Harborwick is joined because zoning does not list short-term rentals as a permitted use.",
+    "event_date": "2023-11-27",
+    "docket_number": "SAG-CV-2025-284"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "organization",
+      "organization_name": "Riverbend Analytics LLC",
+      "full_name": "Riverbend Analytics LLC",
+      "role": "Plaintiff condominium/homeowners' association",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174"
+    },
+    "defendant": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "G",
+      "last_name": "Inglewood",
+      "full_name": "John G. Inglewood",
+      "role": "Defendant unit owner / STR operator",
+      "address": "21 Maple Court",
+      "city": "Camden",
+      "state": "ME",
+      "zip": "04054",
+      "phone": "(207) 555-0108",
+      "email": "john.inglewood@example.com",
+      "date_of_birth": "1996-10-09",
+      "ssn_last4": "6955"
+    },
+    "defendant_2": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "D",
+      "last_name": "Kingsley",
+      "full_name": "John D. Kingsley",
+      "role": "Co-owner / property manager of the STR",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "john.kingsley@example.org",
+      "date_of_birth": "1998-04-24",
+      "ssn_last4": "0763"
+    },
+    "other_party": {
+      "entity_type": "organization",
+      "organization_name": "Town of Harborwick",
+      "full_name": "Town of Harborwick",
+      "role": "The municipality (STR ordinance / zoning)",
+      "address": "287 Meadowbrook Drive",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "D",
+      "last_name": "Jessup",
+      "full_name": "Olivia D. Jessup",
+      "role": "Attorney for the client",
+      "address": "294 Elm Terrace",
+      "city": "Windham",
+      "state": "ME",
+      "zip": "04014",
+      "phone": "(207) 555-0174",
+      "email": "olivia.jessup@example.net",
+      "date_of_birth": "1961-04-07",
+      "ssn_last4": "6101",
+      "bar_number": "2596",
+      "organization_name": "Ellsworth Advocates PC"
+    },
+    "client": {
+      "entity_type": "organization",
+      "organization_name": "Riverbend Analytics LLC",
+      "full_name": "Riverbend Analytics LLC",
+      "role": "Plaintiff condominium/homeowners' association",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Riverbend Analytics LLC sues unit owner John G. Inglewood and co-owner/manager John D. Kingsley to enforce an hoa rule prohibiting transient/short-term rentals against a short-term rental at an oceanfront condominium listed on Airbnb, to abate a private nuisance, and for declaratory and injunctive relief; Town of Harborwick is joined because zoning does not list short-term rentals as a permitted use.",
+    "narrative": "John G. Inglewood and John D. Kingsley own and operate a short-term rental at an oceanfront condominium governed by Riverbend Analytics LLC. Beginning on or about 2023-11-27, they listed the unit on Airbnb for transient stays at roughly $1379 per night, generating on the order of $146799 in annual rental revenue.\n\nThe association points to an hoa rule prohibiting transient/short-term rentals, which it says the short-term-rental use violates. Neighboring owners have complained of recurring disturbances from the rotating guests, which the association characterizes as a private nuisance. The association sent the operators a cease-and-desist demand, but the rental has continued.\n\nOn the land-use side, zoning does not list short-term rentals as a permitted use, and Town of Harborwick is joined as a party so the court can sort out the interplay of the recorded restriction, the town's short-term-rental ordinance, and zoning. The association filed this action in Sagadahoc County Superior Court seeking to enforce the covenant, abate the nuisance, and obtain declaratory and injunctive relief stopping or strictly limiting the rental, plus its enforcement costs and attorney fees.",
+    "undisputed_facts": [
+      "John G. Inglewood owns a unit governed by Riverbend Analytics LLC and has offered it for short-term rental on Airbnb since on or about 2023-11-27.",
+      "Riverbend Analytics LLC's governing documents include an hoa rule prohibiting transient/short-term rentals.",
+      "The association sent a cease-and-desist demand and Town of Harborwick has been joined as a party to the action."
+    ],
+    "disputed_facts": [
+      "Whether the short-term-rental use violates the recorded restriction, or whether it is a permitted residential use of the property.",
+      "Whether the operation is a private nuisance and, if so, the appropriate abatement.",
+      "Whether the town's short-term-rental ordinance and zoning permit or bar the rental, and how they interact with the recorded covenant.",
+      "Whether the association has selectively or inconsistently enforced the restriction against this owner."
+    ],
+    "timeline": [
+      {
+        "date": "2023-11-27",
+        "event": "John and John began listing the unit for short-term rental on Airbnb."
+      },
+      {
+        "date": "2025-07-17",
+        "event": "Association's complaint filed in Bath Superior Court to enforce the covenant, abate the nuisance, and obtain injunctive relief."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Town Code Enforcement Office",
+      "type": "government_agency",
+      "role": "Town code enforcement officer",
+      "relevance": "Administers the town's STR ordinance and zoning and holds the registration, permit, and violation records.",
+      "contact": {
+        "phone": "(207) 555-0143",
+        "city": "Waterville",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Maria T. Coe",
+      "type": "neighbor",
+      "role": "Neighboring unit owner who complains",
+      "relevance": "Lives beside the rental and logged repeated complaints of noise, trash, and parking from the short-term guests.",
+      "contact": {
+        "phone": "(207) 555-0153",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "maria.coe@example.org"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Riverbend Analytics LLC",
+      "type": "business_entity",
+      "role": "Property management / cleaning company servicing the STR",
+      "relevance": "Manages bookings and turnovers for the rental and can speak to occupancy, frequency, and guest conduct.",
+      "contact": {
+        "phone": "(207) 555-0197",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Airbnb, Inc.",
+      "type": "business_entity",
+      "role": "Booking platform",
+      "relevance": "Hosts the listing and holds the booking, payout, and review records for the short-term rental.",
+      "contact": {
+        "phone": "(207) 555-0188",
+        "city": "Belfast",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Harborwick Police Department",
+      "type": "government_agency",
+      "role": "Local police on the noise calls",
+      "relevance": "Responded to noise and disturbance calls at the rental and holds the call and incident records.",
+      "contact": {
+        "phone": "(207) 555-0158",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Community Association Litigation Attorney",
+    "interviewee_role": "plaintiff",
+    "date": "2025-07-17",
+    "exchanges": [
+      {
+        "topic": "Role",
+        "question": "Who am I speaking with on behalf of the association?",
+        "answer": "I am the board president of the association for an oceanfront condominium. The board voted to authorize this action against the owner who keeps short-term renting the unit."
+      },
+      {
+        "topic": "The restriction",
+        "question": "What do your governing documents say about rentals?",
+        "answer": "We have an hoa rule prohibiting transient/short-term rentals. We read that as barring exactly this kind of nightly, transient rental, but the owner insists it is just a permitted residential use."
+      },
+      {
+        "topic": "The problem",
+        "question": "What has the short-term rental actually done to the community?",
+        "answer": "Since about 2023-11-27 they have been booking the unit on Airbnb for around $1379 a night. We have had a string of disturbances from the constant turnover of strangers, and the other owners are fed up."
+      },
+      {
+        "topic": "Steps taken",
+        "question": "What have you already tried?",
+        "answer": "We sent a cease-and-desist letter and asked them to stop, but the listing is still up. The town is part of the picture too, because zoning does not list short-term rentals as a permitted use."
+      },
+      {
+        "topic": "The town",
+        "question": "How does the town's ordinance affect this?",
+        "answer": "It is tangled. zoning does not list short-term rentals as a permitted use, so we joined the town to get a clear ruling on how the ordinance and zoning line up with our covenant."
+      },
+      {
+        "topic": "Goal",
+        "question": "What does a good outcome look like?",
+        "answer": "Stop or strictly limit the short-term rental, end the disturbances, get clear guidance under both our covenant and the town's rules, and recover our enforcement costs and attorney fees."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Stop or strictly limit the short-term-rental use of the unit through enforcement of the recorded restriction.",
+      "Abate the private nuisance caused by the transient rental's noise, traffic, trash, and turnover.",
+      "Recover the association's enforcement costs and reasonable attorney fees.",
+      "Obtain a declaratory judgment clarifying the parties' rights under the covenant and the town's short-term-rental ordinance and zoning."
+    ],
+    "priorities": [
+      "Establishing that the short-term rental violates the recorded restriction.",
+      "Protecting the residential character and quiet enjoyment of the community.",
+      "Resolving the interplay of the covenant, the town ordinance, and zoning in one action."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "An injunction stopping or strictly limiting the short-term rental of the unit.",
+      "A declaratory judgment and an award of the association's enforcement costs and attorney fees."
+    ],
+    "non_starters": [
+      "Any resolution that lets the unrestricted short-term rental continue to the detriment of the other owners."
+    ],
+    "constraints": {
+      "budget": "Adequate through trial, but the board prefers an enforceable settlement that stops the rental.",
+      "timeline": "Wants the rental enjoined or curtailed before the next peak booking season."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Entitlement to injunctive relief and attorney fees",
+      "category": "real_property",
+      "governing_law": "14 M.R.S. § 6051; 33 M.R.S. § 1603-116",
+      "sub_questions": [
+        "Are the requirements for a permanent injunction satisfied?",
+        "Are the association's reasonable attorney fees recoverable?"
+      ],
+      "strength": "moderate",
+      "client_position": "The association is entitled to an injunction against the rental and to recover its reasonable attorney fees.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Whether the short-term rental violates the recorded restrictive covenant limiting use to residential purposes",
+      "category": "real_property",
+      "governing_law": "Recorded declaration; common law of restrictive covenants",
+      "sub_questions": [
+        "Does a 'residential use' covenant bar transient, nightly rentals?",
+        "Is the restriction clear enough to be enforced against the operator?"
+      ],
+      "strength": "moderate",
+      "client_position": "The covenant bars short-term rentals, and the nightly transient use violates the residential-use restriction.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Whether the association selectively or inconsistently enforced the restriction",
+      "category": "real_property",
+      "governing_law": "Common law; doctrines of waiver and acquiescence",
+      "sub_questions": [
+        "Has the association permitted other short-term rentals?",
+        "Has any waiver or acquiescence undermined enforcement here?"
+      ],
+      "strength": "weak",
+      "client_position": "The association has enforced the restriction consistently and has not waived its right to enforce it.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Whether the short-term-rental operation is an actionable private nuisance",
+      "category": "real_property",
+      "governing_law": "Common law of private nuisance",
+      "sub_questions": [
+        "Do the noise, parking, trash, and turnover unreasonably interfere with the other owners' use and enjoyment?",
+        "Is injunctive abatement warranted?"
+      ],
+      "strength": "moderate",
+      "client_position": "The transient rental's recurring disturbances are an actionable private nuisance warranting abatement.",
+      "id": "iss4"
+    },
+    {
+      "issue": "Whether the town's short-term-rental ordinance and zoning permit or bar the rental",
+      "category": "real_property",
+      "governing_law": "30-A M.R.S. § 4352",
+      "sub_questions": [
+        "Is short-term transient rental a permitted use under the zoning ordinance?",
+        "Does the town's STR registration or cap ordinance apply to this unit?"
+      ],
+      "strength": "moderate",
+      "client_position": "The town's ordinance and zoning do not authorize this unpermitted transient use of the unit.",
+      "id": "iss5"
+    },
+    {
+      "issue": "The association's power to enforce the declaration and to lien for assessments and fines",
+      "category": "real_property",
+      "governing_law": "33 M.R.S. § 1603-102 and § 1603-116",
+      "sub_questions": [
+        "May the association enforce the use restriction on behalf of the owners?",
+        "May it levy and lien fines and assessments for the violation?"
+      ],
+      "strength": "strong",
+      "client_position": "The Condominium Act empowers the association to enforce the restriction and to lien for fines and assessments.",
+      "id": "iss6"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Grace A. Danforth",
+        "field": "Acoustics and noise",
+        "credentials": "INCE Bd. Cert.",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Noise levels generated by the short-term-rental guests",
+      "opinion": "Measured guest-generated noise exceeds the levels reasonably expected in the residential community.",
+      "basis": "On-site sound-level monitoring and analysis of the complaint and call records."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Photographs and video of the disturbances",
+      "type": "photo",
+      "party": "plaintiff",
+      "description": "Photographs and video documenting noise, parking, trash, and occupancy problems from the short-term guests.",
+      "id": "ev1"
+    },
+    {
+      "title": "Screenshots of the Airbnb/VRBO listings and reviews",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "Captures of the unit's short-term-rental listings, nightly rates, calendar, and guest reviews on Airbnb.",
+      "id": "ev2"
+    },
+    {
+      "title": "Cease-and-desist letters",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "The association's cease-and-desist demands to the operators and any responses.",
+      "id": "ev3"
+    },
+    {
+      "title": "Recorded declaration, covenants, and HOA rules",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "The recorded declaration and the association's rules containing the use restriction and the no-short-term-rental provision.",
+      "id": "ev4"
+    },
+    {
+      "title": "Town short-term-rental ordinance and permit decision",
+      "type": "public_record",
+      "party": "other_party",
+      "description": "The text of the town's STR ordinance and zoning provisions and any registration or permit decision for the unit.",
+      "id": "ev5"
+    },
+    {
+      "title": "Neighbor complaint logs and police call records",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "The association's complaint logs and the police call and incident records for the rental.",
+      "id": "ev6"
+    },
+    {
+      "title": "The short-term rental's revenue records",
+      "type": "financial_record",
+      "party": "defendant",
+      "description": "Booking and payout records showing the frequency of stays and the revenue from the rental.",
+      "id": "ev7"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Association's enforcement and attorney-fee costs",
+        "amount": 77078,
+        "basis": "Attorney fees and costs of enforcing the restriction and abating the nuisance."
+      },
+      {
+        "label": "Cost of the appraisal and planning experts",
+        "amount": 11280,
+        "basis": "Retained appraisal and land-use planning experts."
+      },
+      {
+        "label": "Fines accrued under the town ordinance",
+        "amount": 11902,
+        "basis": "Per-violation fines under the town's short-term-rental ordinance."
+      },
+      {
+        "label": "Claimed diminution in neighboring property values",
+        "amount": 68875,
+        "basis": "Appraiser's estimate of value loss to the affected units."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "pleadings",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Enforcement of the restrictive covenant barring short-term rentals",
+        "by": "Riverbend Analytics LLC",
+        "against": "John G. Inglewood and John D. Kingsley",
+        "governing_law": "Recorded declaration; 33 M.R.S. § 1603-102",
+        "elements": [
+          "A valid recorded restriction limiting use to residential purposes",
+          "The owners' short-term-rental use of the unit",
+          "That the transient use violates the restriction",
+          "The association's right to enforce it"
+        ],
+        "relief_sought": "An order enforcing the covenant and prohibiting the short-term-rental use",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Private nuisance",
+        "by": "Riverbend Analytics LLC",
+        "against": "John G. Inglewood",
+        "governing_law": "Common law of private nuisance",
+        "elements": [
+          "The other owners' interest in the use and enjoyment of their property",
+          "An unreasonable and substantial interference from the transient rental",
+          "Causation",
+          "Resulting harm to the community"
+        ],
+        "relief_sought": "Abatement of the nuisance and damages",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Declaratory and injunctive relief to stop the short-term-rental use",
+        "by": "Riverbend Analytics LLC",
+        "against": "John G. Inglewood",
+        "governing_law": "14 M.R.S. § 6051; 14 M.R.S. § 5953",
+        "elements": [
+          "An actual controversy over the rental's legality under the covenant and ordinance",
+          "A clear legal right warranting injunctive relief",
+          "Inadequate remedy at law",
+          "A balance of equities favoring the association"
+        ],
+        "relief_sought": "A declaration of the parties' rights and an injunction stopping or strictly limiting the rental",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Enforcement of the association's assessment and fine lien",
+        "by": "Riverbend Analytics LLC",
+        "against": "John G. Inglewood",
+        "governing_law": "33 M.R.S. § 1603-116",
+        "elements": [
+          "A perfected lien for assessments and fines",
+          "Fines and assessments levied for the violation and unpaid",
+          "The foreclosure is within the enforcement period"
+        ],
+        "relief_sought": "Judgment enforcing the lien for the unpaid fines and assessments, interest, and reasonable attorney fees",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "No actionable nuisance",
+        "by": "John G. Inglewood",
+        "basis": "Any disturbances are isolated and do not rise to a substantial and unreasonable interference constituting a private nuisance."
+      },
+      {
+        "defense": "Selective or waived enforcement",
+        "by": "John G. Inglewood",
+        "basis": "The association has permitted other short-term rentals and has waived or acquiesced in the practice it now seeks to enforce."
+      },
+      {
+        "defense": "Covenant does not clearly bar short-term rentals",
+        "by": "John G. Inglewood",
+        "basis": "The recorded restriction does not unambiguously prohibit nightly or short-term rentals and must be construed in favor of the free use of property."
+      },
+      {
+        "defense": "Permitted residential use",
+        "by": "John G. Inglewood",
+        "basis": "Renting a residence to occupants is a residential use of the property and does not violate a residential-use covenant."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Declaratory judgment that short-term rentals are permitted",
+        "by": "John G. Inglewood",
+        "against": "Riverbend Analytics LLC",
+        "relief": "A declaration that the recorded covenant and the town's ordinance permit the owners' short-term rental of the unit."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to consolidate with the Rule 80B permit appeal",
+        "type": "procedural",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-12-12",
+        "status": "granted",
+        "relief": "Consolidation of the related 80B permit appeal with this enforcement action."
+      },
+      {
+        "title": "Motion to compel platform booking records",
+        "type": "discovery",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-10-27",
+        "status": "filed",
+        "relief": "An order compelling production of the booking and payout records from the operators and the platform."
+      },
+      {
+        "title": "Motion for summary judgment on the covenant's meaning",
+        "type": "dispositive",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-11-17",
+        "status": "under_advisement",
+        "relief": "A ruling that the recorded restriction bars short-term rentals as a matter of law."
+      },
+      {
+        "title": "Motion for a preliminary injunction",
+        "type": "provisional",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-06-26",
+        "status": "opposed",
+        "relief": "An order enjoining the short-term rental of the unit while the action is pending."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2025-05-06",
+        "entry": "Complaint filed to enforce the covenant, abate the nuisance, and for declaratory and injunctive relief.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-06-05",
+        "entry": "Motion for a preliminary injunction filed and set for hearing.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-07-08",
+        "entry": "Defendants' answer and counterclaim for declaratory judgment filed.",
+        "party": "John G. Inglewood"
+      },
+      {
+        "date": "2025-08-08",
+        "entry": "Town's answer filed and order on the preliminary-injunction motion entered.",
+        "party": "Town of Harborwick"
+      },
+      {
+        "date": "2025-09-01",
+        "entry": "Scheduling order entered; the related 80B permit appeal consolidated.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-10-16",
+        "entry": "Order on the motion for summary judgment on the covenant's meaning entered.",
+        "party": "the court"
+      }
+    ],
+    "trial": {
+      "jury": true,
+      "estimated_days": 4,
+      "scheduled_date": "2026-10-12"
+    }
+  },
+  "facts": {
+    "property_setting": "an oceanfront condominium",
+    "platform": "Airbnb",
+    "str_start_date": "2023-11-27",
+    "declaration_restriction": "an HOA rule prohibiting transient/short-term rentals",
+    "nuisance_complaints": [
+      "a guest-caused fire-safety incident",
+      "occupancy exceeding limits",
+      "overflowing trash and parking violations",
+      "strangers and turnover disrupting the community"
+    ],
+    "nightly_rate": 1379,
+    "annual_str_revenue": 146799,
+    "town_str_ordinance": "zoning does not list short-term rentals as a permitted use",
+    "cease_and_desist_sent": true,
+    "permit_appeal_pending": true
+  }
+}

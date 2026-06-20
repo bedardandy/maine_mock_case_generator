@@ -1,0 +1,198 @@
+id: medical-malpractice
+title: "{plaintiff_full_name} v. {defendant_full_name}, M.D. et al."
+practice_area: civil
+case_type: medical_malpractice
+status: active
+docket_prefix: CV
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, CV-067]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+dates:
+  filing_date: {date_between: ["2025-02-01", "2025-11-01"]}
+  event_date: "{negligence_date}"
+
+# A Maine medical-malpractice (professional-negligence) action with its distinctive
+# procedural wrinkle: the mandatory prelitigation screening panel. An injured patient
+# sues the treating physician and the hospital/health system for a negligent
+# diagnosis or treatment, and impleads a consulting/second provider. Exercises the
+# deep litigation block in a professional-liability posture under 24 M.R.S. ch. 21.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, label: "Plaintiff patient"}
+    - {key: defendant, label: "Defendant physician"}
+    - {key: defendant_2, entity: organization, label: "Defendant hospital / health system"}
+    - {key: third_party_defendant, label: "Defendant consulting/second provider"}
+
+facts:
+  specialty: {pick: ["emergency medicine", "orthopedic surgery", "obstetrics", "internal medicine", "radiology", "general surgery"]}
+  alleged_negligence: {pick: ["a missed/delayed diagnosis", "a surgical error", "a medication dosing error", "failure to obtain informed consent", "a delayed response to a complication", "misread imaging"]}
+  negligence_date: {date_between: ["2022-09-01", "2024-03-31"]}
+  injury: {pick: ["a permanent disability", "a worsened condition requiring further surgery", "a serious infection", "a long-term loss of function", "a wrongful-death claim by the estate"]}
+  notice_of_claim_served: {pick: [true]}
+  screening_panel_stage: {pick: ["the prelitigation screening panel is pending", "the screening panel found for the plaintiff on negligence", "the screening panel was unable to reach unanimity", "the panel proceeding has concluded and suit is filed"]}
+  standard_of_care_breached: {pick: [true]}
+  informed_consent_issue: {pick: [true, false]}
+  statute_of_limitations_concern: {pick: [true, false]}
+  economic_damages: {int_between: [60000, 2800000]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: healthcare_provider, name_kind: person, role: "Plaintiff's subsequent treating physician", relevance: "Provided the corrective care after the alleged negligence and can testify to the injury, causation, and the deviation from the standard of care."}
+    - {type: business_entity, name_kind: organization, role: "Hospital risk management department", relevance: "Maintains the incident reports, peer-review materials, and credentialing file for the defendant physician."}
+    - {type: insurer, name_kind: organization, role: "Physician's medical-malpractice insurer", relevance: "Carries the physician's professional-liability policy and controls the defense and any settlement within limits."}
+    - {type: witness, name_kind: person, role: "Nurse or technician present during care", relevance: "Was present during the treatment at issue and documented the events in the medical record."}
+    - {type: government_agency, name: "Maine Board of Licensure in Medicine", role: "State physician licensing board", relevance: "Holds the physician's licensure and any complaint or disciplinary history relevant to credentialing."}
+    - {type: witness, name_kind: person, role: "Prelitigation screening panel chair", relevance: "Presided over the mandatory prelitigation screening panel and issued its findings under 24 M.R.S. § 2851."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name} sues physician {defendant_full_name} and {defendant_2_full_name} for medical malpractice, alleging that {alleged_negligence_lower} in the course of {specialty} care departed from the standard of care and caused {injury_lower}."
+  narrative:
+    - "{plaintiff_full_name} received {specialty} care from {defendant_full_name} at {defendant_2_full_name} on or about {negligence_date}. {plaintiff_first} alleges that the care involved {alleged_negligence} that fell below the accepted standard of care for the specialty."
+    - "As a proximate result, {plaintiff_first} alleges {injury}, requiring corrective care from a subsequent treating provider and producing significant past and future losses. {plaintiff_first} contends that {defendant_first} breached the standard of care, that {defendant_2_full_name} is vicariously liable for its providers and independently negligent in credentialing and supervision, and that a consulting provider, {third_party_defendant_full_name}, also departed from the standard of care."
+    - "Before filing, {plaintiff_first} served a notice of claim and submitted the matter to the mandatory prelitigation screening panel required for malpractice claims in Maine. As of filing in {county} County Superior Court, {screening_panel_stage}. The matter is in active discovery, with the standard of care, causation, and the admissibility of the panel findings squarely in dispute."
+  undisputed:
+    - "{plaintiff_full_name} received care from {defendant_full_name} at {defendant_2_full_name} on or about {negligence_date}."
+    - "{plaintiff_first} served a notice of claim and the matter was submitted to the mandatory prelitigation screening panel before suit."
+    - "{plaintiff_first} received subsequent corrective care after the treatment at issue."
+  disputed:
+    - "Whether {defendant_first}'s care met the applicable standard of care for {specialty}, and whether any breach proximately caused the injury."
+    - "Whether the injury was a known risk or complication of the procedure rather than the result of negligence."
+    - "Whether and to what extent the prelitigation screening panel findings are admissible at trial."
+    - "The amount of past and future medical, life-care, and economic damages, and whether the plaintiff's own conduct contributed."
+  timeline:
+    - {date: "{negligence_date}", event: "{plaintiff_first} received the {specialty} care at issue from {defendant_first} at {defendant_2_full_name}."}
+    - {date: "{filing_date}", event: "Complaint for professional negligence filed in {court_location} Superior Court after the screening-panel process."}
+
+interview:
+  interviewer: "Medical Malpractice Litigation Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "What happened", question: "Tell me about the care that went wrong.", answer: "I was being treated in {specialty} by Dr. {defendant_last} at {defendant_2_full_name}. What happened was {alleged_negligence}, and I trusted them to get it right. Instead I ended up with {injury}."}
+    - {topic: "The injury", question: "How has the injury affected you, and what care did you need afterward?", answer: "It led to {injury}, and I had to get corrective care from another doctor. I am still dealing with the consequences and I am worried about what I will need going forward."}
+    - {topic: "Informed consent", question: "Did anyone explain the risks to you before the treatment?", answer: "Not really, or not in a way I understood. If I had known this could happen, I would have asked a lot more questions before going ahead."}
+    - {topic: "The screening panel", question: "What do you understand about the screening panel process?", answer: "My lawyer explained that in Maine we have to go through a prelitigation screening panel before we can really fight it out in court. Right now, {screening_panel_stage}."}
+    - {topic: "Damages", question: "How has this affected you financially?", answer: "The medical bills and lost income are already around ${economic_damages}, and my experts say there will be more for future care. It has been overwhelming."}
+    - {topic: "Goal", question: "What outcome are you hoping for?", answer: "I want full and fair compensation for the harm and the care I will still need, and I want them held accountable so it does not happen to someone else. I will settle if the offer is fair, but I am prepared to see it through."}
+
+objectives:
+  goals:
+    - "Recover full compensation for the injury, including past and future medical and life-care costs and lost earning capacity."
+    - "Establish that the physician and hospital departed from the standard of care and proximately caused the injury."
+    - "Hold the providers and health system accountable for the negligent care."
+  priorities:
+    - "Proving the standard of care, breach, and causation through qualified experts."
+    - "Navigating the prelitigation screening panel and protecting against the statute-of-limitations bar."
+    - "Documenting the full economic and non-economic loss, including future care."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A judgment or settlement compensating the plaintiff's full damages, including future care."
+    - "A favorable screening-panel posture and a clear liability picture on the standard of care and causation."
+  non_starters:
+    - "A nuisance-value settlement that ignores the cost of future medical and life care."
+  constraints:
+    budget: {pick: ["Contingency-fee representation; expert and panel costs advanced and recovered from any judgment.", "Cost-conscious but committed to funding the experts required to prove the standard of care and causation."]}
+    timeline: "Wants the matter resolved efficiently while preserving the claim against the statute of limitations and the screening-panel prerequisites."
+
+issues:
+  count: {min: 4, max: 6}
+  pool:
+    - {issue: "Whether the defendant's care departed from the applicable standard of care and proximately caused the injury", category: medical_malpractice, governing_law: "Professional negligence; expert testimony required to establish the standard of care, breach, and causation", sub_questions: ["What is the applicable standard of care for the specialty, and did the defendant breach it?", "Did the breach proximately cause the claimed injury rather than the underlying condition?"], strength: strong, client_position: "The care fell below the standard for {specialty} and proximately caused {injury_lower}."}
+    - {issue: "Whether the plaintiff satisfied the mandatory prelitigation screening panel process and the admissibility of its findings", category: procedure, governing_law: "Mandatory prelitigation screening panel, 24 M.R.S. § 2851; admissibility of panel findings, 24 M.R.S. § 2853", sub_questions: ["Was the claim properly submitted to and concluded before the screening panel?", "Are the panel's findings admissible at trial, and on what terms?"], strength: moderate, client_position: "The screening-panel prerequisite was satisfied and any findings should come in on terms favorable to the plaintiff."}
+    - {issue: "Whether the plaintiff complied with the notice-of-claim requirement", category: procedure, governing_law: "Notice of claim, 24 M.R.S. § 2903", sub_questions: ["Was a timely notice of claim served before suit?", "Does the notice satisfy the statutory content requirements?"], strength: strong, client_position: "A timely and sufficient notice of claim was served before filing."}
+    - {issue: "Whether the action was commenced within the three-year statute of limitations for professional negligence", category: procedure, governing_law: "Three-year limitations period for professional-negligence claims, 24 M.R.S. § 2902", sub_questions: ["When did the cause of action accrue?", "Does any tolling, including the screening-panel process, preserve the claim?"], strength: moderate, client_position: "The action is timely, with the screening-panel process tolling the limitations period."}
+    - {issue: "Whether the hospital is vicariously liable for its providers and independently negligent in credentialing and supervision", category: medical_malpractice, governing_law: "Vicarious liability (respondeat superior) and corporate/credentialing negligence", sub_questions: ["Were the providers acting as agents or employees of the hospital?", "Did the hospital negligently credential, supervise, or retain the providers?"], strength: moderate, client_position: "The hospital is vicariously liable for its providers and independently negligent in credentialing and supervision."}
+    - {issue: "Whether the defendant obtained the plaintiff's informed consent to the treatment", category: medical_malpractice, governing_law: "Informed consent; the duty to disclose material risks and alternatives", sub_questions: ["Did the provider disclose the material risks and alternatives?", "Would a reasonable patient have declined the treatment had the risks been disclosed?"], strength: weak, client_position: "The provider failed to disclose material risks and the plaintiff would have chosen differently."}
+
+experts:
+  count: {min: 2, max: 4}
+  pool:
+    - {field: "Same-specialty standard of care", credentials: "M.D.", retained_by: plaintiff, topic: "The applicable standard of care and the defendant's departure from it", opinion: "The defendant's care fell below the standard of care for the specialty and a competent practitioner would have acted differently.", basis: "Review of the complete medical records, imaging, and the relevant professional standards."}
+    - {field: "Medical causation", credentials: "M.D.", retained_by: plaintiff, topic: "Causal link between the breach and the injury", opinion: "The departure from the standard of care, to a reasonable degree of medical certainty, proximately caused the plaintiff's injury.", basis: "The medical records, the subsequent-care course, and the differential between expected and actual outcomes."}
+    - {field: "Life-care planning and economics", credentials: "Ph.D., CLCP", retained_by: plaintiff, topic: "Future medical and life-care needs and lost earning capacity", opinion: "The plaintiff will require substantial future medical and life care and has sustained a quantifiable loss of earning capacity.", basis: "A life-care plan, treatment projections, wage records, and present-value modeling."}
+    - {field: "Defense standard of care", credentials: "M.D.", retained_by: defendant, topic: "Compliance with the standard of care", opinion: "The defendant's care conformed to the standard of care and the outcome reflects a known risk rather than negligence.", basis: "The medical records, imaging, and the range of accepted practice for the specialty."}
+
+evidence:
+  count: {min: 5, max: 8}
+  pool:
+    - {title: "Complete medical records and imaging", type: medical_record, party: plaintiff, description: "The full inpatient and outpatient records and diagnostic imaging from the care at issue."}
+    - {title: "Hospital policies and credentialing file", type: document, party: defendant_2, description: "The hospital's clinical policies and the defendant physician's credentialing and privileging file."}
+    - {title: "Informed-consent form", type: document, party: defendant, description: "The signed informed-consent documentation, or the absence of it, for the treatment."}
+    - {title: "Notice of claim and screening-panel submissions and findings", type: document, party: plaintiff, description: "The statutory notice of claim, the parties' prelitigation screening panel submissions, and the panel's findings."}
+    - {title: "Subsequent-care records documenting the injury", type: medical_record, party: plaintiff, description: "The records of the corrective treatment that document the nature and extent of the injury."}
+    - {title: "Expert reports", type: affidavit, party: plaintiff, description: "The standard-of-care, causation, and life-care/economic expert reports."}
+    - {title: "Economic-loss and life-care documentation", type: financial_record, party: plaintiff, description: "Wage records, billing, and the life-care plan supporting the damages claim."}
+    - {title: "Incident and risk-management reports", type: document, party: defendant_2, description: "The hospital's incident reports and risk-management materials concerning the event."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Past medical specials", amount: {int_between: [20000, 600000]}, basis: "Itemized past medical bills for the injury and corrective care."}
+    - {label: "Projected future medical and life-care costs", amount: {int_between: [50000, 3500000]}, basis: "Life-care plan and future-treatment projections."}
+    - {label: "Lost earnings and loss of earning capacity", amount: {int_between: [15000, 900000]}, basis: "Past lost wages and the present value of diminished earning capacity."}
+    - {label: "Pain-and-suffering and general-damages demand", amount: {int_between: [50000, 1500000]}, basis: "Non-economic loss demand."}
+    - {label: "Estimated expert and panel costs", amount: {int_between: [40000, 350000]}, basis: "Retained medical and economic experts and the screening-panel proceeding."}
+
+litigation:
+  posture: discovery
+  causes_of_action:
+    - {count: 1, claim: "Professional negligence (departure from the standard of care)", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "Professional negligence; 24 M.R.S. § 2902; expert testimony required", elements: ["A physician-patient relationship and a duty to meet the standard of care", "A breach of the applicable standard of care", "Proximate causation", "Damages"], relief_sought: "Compensatory damages for past and future medical care, lost earning capacity, and pain and suffering", strength: strong}
+    - {count: 2, claim: "Vicarious liability and corporate negligence", by: "{plaintiff_full_name}", against: "{defendant_2_full_name}", governing_law: "Respondeat superior; corporate/credentialing negligence", elements: ["An agency or employment relationship with the providers", "Negligence within the scope of that relationship", "Independent negligence in credentialing, supervision, or retention", "Resulting damages"], relief_sought: "Compensatory damages against the hospital and health system", strength: moderate}
+    - {count: 3, claim: "Negligence of the consulting provider", by: "{plaintiff_full_name}", against: "{third_party_defendant_full_name}", governing_law: "Professional negligence; expert testimony required", elements: ["A duty to meet the standard of care", "A breach of that standard by the consulting provider", "Proximate causation", "Damages"], relief_sought: "Compensatory damages against the consulting provider", strength: moderate}
+    - {count: 4, claim: "Lack of informed consent", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "Informed consent; the duty to disclose material risks and alternatives", elements: ["A duty to disclose material risks and alternatives", "Failure to disclose", "A reasonable patient would have declined the treatment", "Resulting injury"], relief_sought: "Compensatory damages for the consequences of the undisclosed risk", strength: weak}
+  affirmative_defenses:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {defense: "Care met the standard of care", by: "{defendant_full_name}", basis: "The treatment conformed to the accepted standard of care for the specialty."}
+      - {defense: "Known risk or complication", by: "{defendant_full_name}", basis: "The injury was a recognized risk or complication of the procedure, not the result of negligence."}
+      - {defense: "Comparative negligence of the patient", by: "{defendant_full_name}", basis: "The plaintiff failed to follow instructions or disclose history, contributing to the outcome. 14 M.R.S. § 156."}
+      - {defense: "Statute of limitations", by: "{defendant_full_name}", basis: "The action was not commenced within the three-year limitations period. 24 M.R.S. § 2902."}
+      - {defense: "Intervening or superseding cause", by: "{defendant_full_name}", basis: "An independent intervening cause, not the defendant's care, produced the injury."}
+      - {defense: "Failure to satisfy the screening-panel prerequisite", by: "{defendant_full_name}", basis: "The claim did not properly complete the mandatory prelitigation screening panel process. 24 M.R.S. § 2851."}
+  counterclaims: []
+  cross_claims:
+    - {claim: "Indemnification and contribution", by: "{defendant_2_full_name}", against: "{defendant_full_name}", basis: "If the hospital is liable, the physician must indemnify it for his own departures from the standard of care."}
+  third_party_claims:
+    - {claim: "Contribution and professional negligence", by: "{defendant_full_name}", against: "{third_party_defendant_full_name}", basis: "The consulting provider's negligence caused or contributed to any injury."}
+  discovery:
+    n: {min: 4, max: 6}
+    pick_n:
+      - {type: interrogatories, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-15", "2025-05-15"]}, status: responded, description: "First set of interrogatories on the treatment, the providers, and the standard of care."}
+      - {type: request_for_production, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_2_full_name}", served_date: {date_between: ["2025-04-15", "2025-05-15"]}, status: objected, description: "Requests for the complete records, clinical policies, and the credentialing file."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-06-01", "2025-07-15"]}, status: outstanding, description: "Deposition of the defendant physician on the care and decision-making."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "the nurse or technician present during care", served_date: {date_between: ["2025-07-20", "2025-08-20"]}, status: served, description: "Deposition of the nurse or technician who documented the events."}
+      - {type: deposition, propounding_party: "{defendant_full_name}", responding_party: "the plaintiff's standard-of-care expert", served_date: {date_between: ["2025-09-01", "2025-09-30"]}, status: served, description: "Deposition of the plaintiff's retained standard-of-care expert."}
+      - {type: independent_examination, propounding_party: "{defendant_full_name}", responding_party: "{plaintiff_full_name}", served_date: {date_between: ["2025-08-05", "2025-09-01"]}, status: served, description: "Defense medical examination of the plaintiff's current condition."}
+      - {type: expert_disclosure, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-09-15", "2025-10-15"]}, status: served, description: "Plaintiff's expert designations and reports on the standard of care, causation, and damages."}
+      - {type: subpoena, propounding_party: "{plaintiff_full_name}", responding_party: "the subsequent treating provider", served_date: {date_between: ["2025-05-20", "2025-06-20"]}, status: served, description: "Subpoena to the subsequent treating provider for the corrective-care records."}
+  motions:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {title: "Motion regarding the admissibility of the screening-panel findings", type: evidentiary, movant: "{defendant_full_name}", filed_date: {date_between: ["2026-01-15", "2026-02-28"]}, status: filed, relief: "An order on whether and how the prelitigation screening panel findings are admissible. 24 M.R.S. § 2853."}
+      - {title: "Motion to compel the credentialing file", type: discovery, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-06-01", "2025-07-01"]}, status: granted, relief: "An order compelling production of the defendant physician's credentialing and privileging file."}
+      - {title: "Motion for partial summary judgment on informed consent", type: dispositive, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-10-01", "2025-11-15"]}, status: under_advisement, relief: "Judgment that the informed-consent claim fails as a matter of law."}
+      - {title: "Motion in limine to exclude a plaintiff expert", type: evidentiary, movant: "{defendant_full_name}", filed_date: {date_between: ["2026-02-01", "2026-03-15"]}, status: opposed, relief: "Exclusion of an unreliable expert opinion under Daubert and M.R.E. 702."}
+      - {title: "Motion to bifurcate liability and damages", type: trial, movant: "{defendant_full_name}", filed_date: {date_between: ["2026-03-01", "2026-04-01"]}, status: filed, relief: "Separate trials on liability and damages."}
+  docket:
+    - {date: {date_between: ["2024-08-01", "2024-09-15"]}, entry: "Notice of claim served, initiating the mandatory prelitigation screening panel process.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2024-11-01", "2024-12-15"]}, entry: "Prelitigation screening panel convened; chair appointed and submissions ordered.", party: "the court"}
+    - {date: {date_between: ["2025-02-01", "2025-02-20"]}, entry: "Complaint and demand for jury trial filed after the screening-panel process.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-03-01", "2025-03-20"]}, entry: "Answers, cross-claim, and third-party complaint against the consulting provider filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-04-01", "2025-04-20"]}, entry: "Scheduling order entered; discovery and expert deadlines set.", party: "the court"}
+    - {date: {date_between: ["2025-07-01", "2025-07-20"]}, entry: "Order compelling production of the credentialing file.", party: "the court"}
+    - {date: {date_between: ["2025-11-20", "2025-12-10"]}, entry: "Expert disclosures exchanged; discovery continues toward trial.", party: "the court"}
+  trial:
+    jury: {pick: [true]}
+    estimated_days: {int_between: [6, 15]}
+    scheduled_date: {date_between: ["2026-09-01", "2027-05-01"]}

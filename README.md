@@ -89,6 +89,7 @@ python tools/compound.py business-dispute-cascade --seed 1 --summary  # formatio
 | `death-cascade` | probate + estate-tax + guardianship | one decedent; estate value feeds the 706; the minor heir is the ward |
 | `marital-breakdown-cascade` | divorce + protection-from-abuse + business | same spouses & children; the marital business is contested |
 | `business-dispute-cascade` | formation + complex civil litigation | the company formed in one matter is the defendant in the other |
+| `elder-exploitation-cascade` | improvident transfer + conservatorship + will contest | one elder (transferor → ward → decedent); same exploiter & protective relative |
 
 The same party objects appear across matters, so identities stay consistent everywhere.
 Each constituent is an independently-valid Mock Matter and projects to its own canonical
@@ -127,7 +128,7 @@ See [`docs/probate-fixtures.md`](docs/probate-fixtures.md).
 
 ## Seed scenarios
 
-Twenty-five archetypes spanning the three downstream repos and eight practice areas. Add more by dropping a new
+Thirty-one archetypes spanning the three downstream repos and eight practice areas. Add more by dropping a new
 `scenarios/<id>/scenario.yaml` — no code changes required.
 
 | Scenario | Practice area | Downstream repo |
@@ -157,6 +158,12 @@ Twenty-five archetypes spanning the three downstream repos and eight practice ar
 | `arbitration-award-dispute` | civil (confirm/vacate award) | maine-court-forms |
 | `improvident-transfer` | probate (elder undue-influence deed) | maine-court-forms |
 | `divorce-hidden-crypto` | family (concealed crypto assets) | maine-court-forms |
+| `timber-trespass` | real estate (tree cutting, treble damages § 7552) | maine-court-forms |
+| `intertidal-shoreland-access` | real estate (intertidal / colonial ordinance) | maine-court-forms |
+| `will-contest` | probate (capacity / undue influence / execution) | maine-probate-forms |
+| `llc-member-oppression` | business (minority freeze-out, § 1595) | maine-court-forms |
+| `short-term-rental-dispute` | civil (STR covenant / nuisance / zoning) | maine-court-forms |
+| `medical-malpractice` | civil (§ 2851 screening panel) | maine-court-forms |
 
 Browse a worked sample of each under [`examples/`](examples/) (`*.matter.json` and the
 projected `*.canonical.json`).

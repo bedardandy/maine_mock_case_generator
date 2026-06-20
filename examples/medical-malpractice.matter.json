@@ -1,0 +1,644 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "medical-malpractice",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-738539",
+    "practice_area": "civil",
+    "title": "Grace C. Roe v. Maria Q. Fairbanks, M.D. et al.",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Superior Court"
+    },
+    "case_type": "medical_malpractice",
+    "filing_date": "2025-04-19",
+    "status": "active",
+    "summary": "Grace C. Roe sues physician Maria Q. Fairbanks and Coastal Outfitters LLC for medical malpractice, alleging that a surgical error in the course of obstetrics care departed from the standard of care and caused a worsened condition requiring further surgery.",
+    "event_date": "2023-03-04",
+    "docket_number": "SAG-CV-2025-174"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Plaintiff patient",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "defendant": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Defendant physician",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "defendant_2": {
+      "entity_type": "organization",
+      "organization_name": "Coastal Outfitters LLC",
+      "full_name": "Coastal Outfitters LLC",
+      "role": "Defendant hospital / health system",
+      "address": "115 Pine Lane",
+      "city": "Gorham",
+      "state": "ME",
+      "zip": "04038",
+      "phone": "(207) 555-0153"
+    },
+    "third_party_defendant": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "D",
+      "last_name": "Jessup",
+      "full_name": "Olivia D. Jessup",
+      "role": "Defendant consulting/second provider",
+      "address": "294 Elm Terrace",
+      "city": "Windham",
+      "state": "ME",
+      "zip": "04014",
+      "phone": "(207) 555-0174",
+      "email": "olivia.jessup@example.net",
+      "date_of_birth": "1961-04-07",
+      "ssn_last4": "6101"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Samuel",
+      "middle_name": "C",
+      "last_name": "Jessup",
+      "full_name": "Samuel C. Jessup",
+      "role": "Attorney for the client",
+      "address": "290 Pine Lane",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04064",
+      "phone": "(207) 555-0187",
+      "email": "samuel.jessup@example.net",
+      "date_of_birth": "1974-06-10",
+      "ssn_last4": "7628",
+      "bar_number": "8424",
+      "organization_name": "Greenhill Law Offices"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Plaintiff patient",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe sues physician Maria Q. Fairbanks and Coastal Outfitters LLC for medical malpractice, alleging that a surgical error in the course of obstetrics care departed from the standard of care and caused a worsened condition requiring further surgery.",
+    "narrative": "Grace C. Roe received obstetrics care from Maria Q. Fairbanks at Coastal Outfitters LLC on or about 2023-03-04. Grace alleges that the care involved a surgical error that fell below the accepted standard of care for the specialty.\n\nAs a proximate result, Grace alleges a worsened condition requiring further surgery, requiring corrective care from a subsequent treating provider and producing significant past and future losses. Grace contends that Maria breached the standard of care, that Coastal Outfitters LLC is vicariously liable for its providers and independently negligent in credentialing and supervision, and that a consulting provider, Olivia D. Jessup, also departed from the standard of care.\n\nBefore filing, Grace served a notice of claim and submitted the matter to the mandatory prelitigation screening panel required for malpractice claims in Maine. As of filing in Sagadahoc County Superior Court, the screening panel was unable to reach unanimity. The matter is in active discovery, with the standard of care, causation, and the admissibility of the panel findings squarely in dispute.",
+    "undisputed_facts": [
+      "Grace C. Roe received care from Maria Q. Fairbanks at Coastal Outfitters LLC on or about 2023-03-04.",
+      "Grace served a notice of claim and the matter was submitted to the mandatory prelitigation screening panel before suit.",
+      "Grace received subsequent corrective care after the treatment at issue."
+    ],
+    "disputed_facts": [
+      "Whether Maria's care met the applicable standard of care for obstetrics, and whether any breach proximately caused the injury.",
+      "Whether the injury was a known risk or complication of the procedure rather than the result of negligence.",
+      "Whether and to what extent the prelitigation screening panel findings are admissible at trial.",
+      "The amount of past and future medical, life-care, and economic damages, and whether the plaintiff's own conduct contributed."
+    ],
+    "timeline": [
+      {
+        "date": "2023-03-04",
+        "event": "Grace received the obstetrics care at issue from Maria at Coastal Outfitters LLC."
+      },
+      {
+        "date": "2025-04-19",
+        "event": "Complaint for professional negligence filed in Bath Superior Court after the screening-panel process."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Maine Board of Licensure in Medicine",
+      "type": "government_agency",
+      "role": "State physician licensing board",
+      "relevance": "Holds the physician's licensure and any complaint or disciplinary history relevant to credentialing.",
+      "contact": {
+        "phone": "(207) 555-0196",
+        "city": "Belfast",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "John W. Poe",
+      "type": "witness",
+      "role": "Nurse or technician present during care",
+      "relevance": "Was present during the treatment at issue and documented the events in the medical record.",
+      "contact": {
+        "phone": "(207) 555-0173",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "john.poe@example.net"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Cobblestone Partners Co.",
+      "type": "business_entity",
+      "role": "Hospital risk management department",
+      "relevance": "Maintains the incident reports, peer-review materials, and credentialing file for the defendant physician.",
+      "contact": {
+        "phone": "(207) 555-0108",
+        "city": "Augusta",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Medical Malpractice Litigation Attorney",
+    "interviewee_role": "plaintiff",
+    "date": "2025-04-19",
+    "exchanges": [
+      {
+        "topic": "What happened",
+        "question": "Tell me about the care that went wrong.",
+        "answer": "I was being treated in obstetrics by Dr. Fairbanks at Coastal Outfitters LLC. What happened was a surgical error, and I trusted them to get it right. Instead I ended up with a worsened condition requiring further surgery."
+      },
+      {
+        "topic": "The injury",
+        "question": "How has the injury affected you, and what care did you need afterward?",
+        "answer": "It led to a worsened condition requiring further surgery, and I had to get corrective care from another doctor. I am still dealing with the consequences and I am worried about what I will need going forward."
+      },
+      {
+        "topic": "Informed consent",
+        "question": "Did anyone explain the risks to you before the treatment?",
+        "answer": "Not really, or not in a way I understood. If I had known this could happen, I would have asked a lot more questions before going ahead."
+      },
+      {
+        "topic": "The screening panel",
+        "question": "What do you understand about the screening panel process?",
+        "answer": "My lawyer explained that in Maine we have to go through a prelitigation screening panel before we can really fight it out in court. Right now, the screening panel was unable to reach unanimity."
+      },
+      {
+        "topic": "Damages",
+        "question": "How has this affected you financially?",
+        "answer": "The medical bills and lost income are already around $1267698, and my experts say there will be more for future care. It has been overwhelming."
+      },
+      {
+        "topic": "Goal",
+        "question": "What outcome are you hoping for?",
+        "answer": "I want full and fair compensation for the harm and the care I will still need, and I want them held accountable so it does not happen to someone else. I will settle if the offer is fair, but I am prepared to see it through."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Recover full compensation for the injury, including past and future medical and life-care costs and lost earning capacity.",
+      "Establish that the physician and hospital departed from the standard of care and proximately caused the injury.",
+      "Hold the providers and health system accountable for the negligent care."
+    ],
+    "priorities": [
+      "Proving the standard of care, breach, and causation through qualified experts.",
+      "Navigating the prelitigation screening panel and protecting against the statute-of-limitations bar.",
+      "Documenting the full economic and non-economic loss, including future care."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "A judgment or settlement compensating the plaintiff's full damages, including future care.",
+      "A favorable screening-panel posture and a clear liability picture on the standard of care and causation."
+    ],
+    "non_starters": [
+      "A nuisance-value settlement that ignores the cost of future medical and life care."
+    ],
+    "constraints": {
+      "budget": "Contingency-fee representation; expert and panel costs advanced and recovered from any judgment.",
+      "timeline": "Wants the matter resolved efficiently while preserving the claim against the statute of limitations and the screening-panel prerequisites."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Whether the defendant obtained the plaintiff's informed consent to the treatment",
+      "category": "medical_malpractice",
+      "governing_law": "Informed consent; the duty to disclose material risks and alternatives",
+      "sub_questions": [
+        "Did the provider disclose the material risks and alternatives?",
+        "Would a reasonable patient have declined the treatment had the risks been disclosed?"
+      ],
+      "strength": "weak",
+      "client_position": "The provider failed to disclose material risks and the plaintiff would have chosen differently.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Whether the plaintiff complied with the notice-of-claim requirement",
+      "category": "procedure",
+      "governing_law": "Notice of claim, 24 M.R.S. § 2903",
+      "sub_questions": [
+        "Was a timely notice of claim served before suit?",
+        "Does the notice satisfy the statutory content requirements?"
+      ],
+      "strength": "strong",
+      "client_position": "A timely and sufficient notice of claim was served before filing.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Whether the action was commenced within the three-year statute of limitations for professional negligence",
+      "category": "procedure",
+      "governing_law": "Three-year limitations period for professional-negligence claims, 24 M.R.S. § 2902",
+      "sub_questions": [
+        "When did the cause of action accrue?",
+        "Does any tolling, including the screening-panel process, preserve the claim?"
+      ],
+      "strength": "moderate",
+      "client_position": "The action is timely, with the screening-panel process tolling the limitations period.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Whether the plaintiff satisfied the mandatory prelitigation screening panel process and the admissibility of its findings",
+      "category": "procedure",
+      "governing_law": "Mandatory prelitigation screening panel, 24 M.R.S. § 2851; admissibility of panel findings, 24 M.R.S. § 2853",
+      "sub_questions": [
+        "Was the claim properly submitted to and concluded before the screening panel?",
+        "Are the panel's findings admissible at trial, and on what terms?"
+      ],
+      "strength": "moderate",
+      "client_position": "The screening-panel prerequisite was satisfied and any findings should come in on terms favorable to the plaintiff.",
+      "id": "iss4"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Lillian F. Danforth",
+        "field": "Defense standard of care",
+        "credentials": "M.D.",
+        "retained_by": "defendant"
+      },
+      "topic": "Compliance with the standard of care",
+      "opinion": "The defendant's care conformed to the standard of care and the outcome reflects a known risk rather than negligence.",
+      "basis": "The medical records, imaging, and the range of accepted practice for the specialty."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Desmond S. Coe",
+        "field": "Life-care planning and economics",
+        "credentials": "Ph.D., CLCP",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Future medical and life-care needs and lost earning capacity",
+      "opinion": "The plaintiff will require substantial future medical and life care and has sustained a quantifiable loss of earning capacity.",
+      "basis": "A life-care plan, treatment projections, wage records, and present-value modeling."
+    },
+    {
+      "id": "exp3",
+      "expert": {
+        "name": "John K. Noe",
+        "field": "Medical causation",
+        "credentials": "M.D.",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Causal link between the breach and the injury",
+      "opinion": "The departure from the standard of care, to a reasonable degree of medical certainty, proximately caused the plaintiff's injury.",
+      "basis": "The medical records, the subsequent-care course, and the differential between expected and actual outcomes."
+    },
+    {
+      "id": "exp4",
+      "expert": {
+        "name": "Olivia P. Boe",
+        "field": "Same-specialty standard of care",
+        "credentials": "M.D.",
+        "retained_by": "plaintiff"
+      },
+      "topic": "The applicable standard of care and the defendant's departure from it",
+      "opinion": "The defendant's care fell below the standard of care for the specialty and a competent practitioner would have acted differently.",
+      "basis": "Review of the complete medical records, imaging, and the relevant professional standards."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Incident and risk-management reports",
+      "type": "document",
+      "party": "defendant_2",
+      "description": "The hospital's incident reports and risk-management materials concerning the event.",
+      "id": "ev1"
+    },
+    {
+      "title": "Complete medical records and imaging",
+      "type": "medical_record",
+      "party": "plaintiff",
+      "description": "The full inpatient and outpatient records and diagnostic imaging from the care at issue.",
+      "id": "ev2"
+    },
+    {
+      "title": "Hospital policies and credentialing file",
+      "type": "document",
+      "party": "defendant_2",
+      "description": "The hospital's clinical policies and the defendant physician's credentialing and privileging file.",
+      "id": "ev3"
+    },
+    {
+      "title": "Notice of claim and screening-panel submissions and findings",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "The statutory notice of claim, the parties' prelitigation screening panel submissions, and the panel's findings.",
+      "id": "ev4"
+    },
+    {
+      "title": "Subsequent-care records documenting the injury",
+      "type": "medical_record",
+      "party": "plaintiff",
+      "description": "The records of the corrective treatment that document the nature and extent of the injury.",
+      "id": "ev5"
+    },
+    {
+      "title": "Informed-consent form",
+      "type": "document",
+      "party": "defendant",
+      "description": "The signed informed-consent documentation, or the absence of it, for the treatment.",
+      "id": "ev6"
+    },
+    {
+      "title": "Expert reports",
+      "type": "affidavit",
+      "party": "plaintiff",
+      "description": "The standard-of-care, causation, and life-care/economic expert reports.",
+      "id": "ev7"
+    },
+    {
+      "title": "Economic-loss and life-care documentation",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "Wage records, billing, and the life-care plan supporting the damages claim.",
+      "id": "ev8"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Estimated expert and panel costs",
+        "amount": 228099,
+        "basis": "Retained medical and economic experts and the screening-panel proceeding."
+      },
+      {
+        "label": "Lost earnings and loss of earning capacity",
+        "amount": 730887,
+        "basis": "Past lost wages and the present value of diminished earning capacity."
+      },
+      {
+        "label": "Pain-and-suffering and general-damages demand",
+        "amount": 847843,
+        "basis": "Non-economic loss demand."
+      },
+      {
+        "label": "Projected future medical and life-care costs",
+        "amount": 1017841,
+        "basis": "Life-care plan and future-treatment projections."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "discovery",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Professional negligence (departure from the standard of care)",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "Professional negligence; 24 M.R.S. § 2902; expert testimony required",
+        "elements": [
+          "A physician-patient relationship and a duty to meet the standard of care",
+          "A breach of the applicable standard of care",
+          "Proximate causation",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages for past and future medical care, lost earning capacity, and pain and suffering",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Vicarious liability and corporate negligence",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "Respondeat superior; corporate/credentialing negligence",
+        "elements": [
+          "An agency or employment relationship with the providers",
+          "Negligence within the scope of that relationship",
+          "Independent negligence in credentialing, supervision, or retention",
+          "Resulting damages"
+        ],
+        "relief_sought": "Compensatory damages against the hospital and health system",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Negligence of the consulting provider",
+        "by": "Grace C. Roe",
+        "against": "Olivia D. Jessup",
+        "governing_law": "Professional negligence; expert testimony required",
+        "elements": [
+          "A duty to meet the standard of care",
+          "A breach of that standard by the consulting provider",
+          "Proximate causation",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages against the consulting provider",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Lack of informed consent",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "Informed consent; the duty to disclose material risks and alternatives",
+        "elements": [
+          "A duty to disclose material risks and alternatives",
+          "Failure to disclose",
+          "A reasonable patient would have declined the treatment",
+          "Resulting injury"
+        ],
+        "relief_sought": "Compensatory damages for the consequences of the undisclosed risk",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Care met the standard of care",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The treatment conformed to the accepted standard of care for the specialty."
+      },
+      {
+        "defense": "Known risk or complication",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The injury was a recognized risk or complication of the procedure, not the result of negligence."
+      },
+      {
+        "defense": "Intervening or superseding cause",
+        "by": "Maria Q. Fairbanks",
+        "basis": "An independent intervening cause, not the defendant's care, produced the injury."
+      }
+    ],
+    "counterclaims": [],
+    "cross_claims": [
+      {
+        "claim": "Indemnification and contribution",
+        "by": "Coastal Outfitters LLC",
+        "against": "Maria Q. Fairbanks",
+        "basis": "If the hospital is liable, the physician must indemnify it for his own departures from the standard of care."
+      }
+    ],
+    "third_party_claims": [
+      {
+        "claim": "Contribution and professional negligence",
+        "by": "Maria Q. Fairbanks",
+        "against": "Olivia D. Jessup",
+        "basis": "The consulting provider's negligence caused or contributed to any injury."
+      }
+    ],
+    "discovery": [
+      {
+        "type": "deposition",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "the nurse or technician present during care",
+        "served_date": "2025-07-31",
+        "status": "served",
+        "description": "Deposition of the nurse or technician who documented the events."
+      },
+      {
+        "type": "interrogatories",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Maria Q. Fairbanks",
+        "served_date": "2025-04-23",
+        "status": "responded",
+        "description": "First set of interrogatories on the treatment, the providers, and the standard of care."
+      },
+      {
+        "type": "subpoena",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "the subsequent treating provider",
+        "served_date": "2025-06-07",
+        "status": "served",
+        "description": "Subpoena to the subsequent treating provider for the corrective-care records."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Maria Q. Fairbanks",
+        "responding_party": "the plaintiff's standard-of-care expert",
+        "served_date": "2025-09-01",
+        "status": "served",
+        "description": "Deposition of the plaintiff's retained standard-of-care expert."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion in limine to exclude a plaintiff expert",
+        "type": "evidentiary",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-03-09",
+        "status": "opposed",
+        "relief": "Exclusion of an unreliable expert opinion under Daubert and M.R.E. 702."
+      },
+      {
+        "title": "Motion for partial summary judgment on informed consent",
+        "type": "dispositive",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2025-10-21",
+        "status": "under_advisement",
+        "relief": "Judgment that the informed-consent claim fails as a matter of law."
+      },
+      {
+        "title": "Motion to bifurcate liability and damages",
+        "type": "trial",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-03-09",
+        "status": "filed",
+        "relief": "Separate trials on liability and damages."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2024-09-14",
+        "entry": "Notice of claim served, initiating the mandatory prelitigation screening panel process.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2024-12-03",
+        "entry": "Prelitigation screening panel convened; chair appointed and submissions ordered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-02-20",
+        "entry": "Complaint and demand for jury trial filed after the screening-panel process.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-03-02",
+        "entry": "Answers, cross-claim, and third-party complaint against the consulting provider filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-04-15",
+        "entry": "Scheduling order entered; discovery and expert deadlines set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-07-18",
+        "entry": "Order compelling production of the credentialing file.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-12-02",
+        "entry": "Expert disclosures exchanged; discovery continues toward trial.",
+        "party": "the court"
+      }
+    ],
+    "trial": {
+      "jury": true,
+      "estimated_days": 12,
+      "scheduled_date": "2026-12-10"
+    }
+  },
+  "facts": {
+    "specialty": "obstetrics",
+    "alleged_negligence": "a surgical error",
+    "negligence_date": "2023-03-04",
+    "injury": "a worsened condition requiring further surgery",
+    "notice_of_claim_served": true,
+    "screening_panel_stage": "the screening panel was unable to reach unanimity",
+    "standard_of_care_breached": true,
+    "informed_consent_issue": false,
+    "statute_of_limitations_concern": false,
+    "economic_damages": 1267698
+  }
+}

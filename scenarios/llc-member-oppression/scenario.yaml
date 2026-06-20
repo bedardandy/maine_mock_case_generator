@@ -1,0 +1,191 @@
+id: llc-member-oppression
+title: "{plaintiff_full_name} v. {defendant_full_name} et al. (member oppression / {company_full_name})"
+practice_area: business
+case_type: business
+status: active
+docket_prefix: BCD
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, CV-067]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Superior Court (Business and Consumer Docket)"
+
+dates:
+  filing_date: {date_between: ["2025-03-01", "2025-12-01"]}
+  event_date: "{freeze_out_date}"
+
+# A closely-held Maine LLC freeze-out: a minority member, cut off from distributions,
+# information, and management while the majority pay themselves, sues for oppression,
+# breach of fiduciary duty, and judicial dissolution or a fair-value buyout.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, label: "Plaintiff minority member"}
+    - {key: defendant, label: "Defendant majority/managing member"}
+    - {key: defendant_2, label: "Defendant co-manager member"}
+    - {key: company, entity: organization, label: "The LLC (nominal defendant)"}
+
+facts:
+  business_type: {pick: ["a craft brewery and taproom", "a coastal property-management company", "a software consultancy", "a family restaurant group", "a marine services company", "a cannabis cultivation business"]}
+  plaintiff_ownership: {pick: ["a 25% membership interest", "a one-third interest", "a 40% minority interest", "a 20% interest"]}
+  company_value: {int_between: [700000, 12000000]}
+  oppressive_conduct: {pick_n: ["termination of the minority member's employment and salary", "denial of distributions while the majority take large salaries", "exclusion from management and company records", "dilution of the minority member's interest", "diversion of company opportunities to a side entity", "refusal to allow inspection of the books"], n: {min: 3, max: 5}}
+  freeze_out_date: {date_between: ["2024-06-01", "2025-06-30"]}
+  operating_agreement_exists: {pick: [true]}
+  distributions_suspended: {pick: [true]}
+  buyout_offered: {pick: ["a lowball buyout offer was made", "no buyout has been offered", "the parties disagree on valuation"]}
+  annual_distributions_withheld: {int_between: [40000, 900000]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: witness, name_kind: person, role: "The LLC's outside accountant", relevance: "Prepared the company's books, tax returns, and distribution records and can testify to how the majority paid themselves."}
+    - {type: financial_institution, name_kind: bank, role: "The company's bank", relevance: "Holds the LLC's operating accounts; records trace distributions, payroll, and transfers to the side entity."}
+    - {type: business_entity, name_kind: organization, role: "Business-valuation firm", relevance: "Retained to determine the fair value of the minority member's interest for a buyout or dissolution."}
+    - {type: witness, name_kind: person, role: "Former employee with knowledge of the diversion", relevance: "Worked at the company and observed opportunities and assets being diverted to the majority's side entity."}
+    - {type: business_entity, name_kind: organization, role: "The side entity allegedly receiving diverted opportunities", relevance: "An entity controlled by the majority that allegedly received company opportunities and assets."}
+    - {type: government_agency, name: "Maine Secretary of State", role: "State filing office", relevance: "Maintains the LLC's formation filings, annual reports, and registered-agent records."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name}, who holds {plaintiff_ownership} in {company_full_name}, {business_type}, alleges that the controlling members {defendant_full_name} and {defendant_2_full_name} have frozen the minority member out, and sues for oppression, breach of fiduciary duty, and judicial dissolution or a fair-value buyout."
+  narrative:
+    - "{plaintiff_full_name} holds {plaintiff_ownership} in {company_full_name}, {business_type} organized as a Maine limited liability company. {defendant_full_name} and {defendant_2_full_name} are the controlling, managing members. The members operate under a written operating agreement, and for years the company made regular distributions to all of its members."
+    - "Beginning on or about {freeze_out_date}, {plaintiff_first} alleges the majority began a coordinated freeze-out, excluding the minority member from management and the company's records and squeezing the minority member out of the business. Distributions to the minority member were suspended even as the controlling members continued to pay themselves substantial salaries, and roughly ${annual_distributions_withheld} in distributions has been withheld. On the question of an exit, {buyout_offered_lower}."
+    - "{plaintiff_first} now sues {defendant_first} and {defendant_2_first} in the Business and Consumer Docket, with the LLC named as a nominal defendant. The complaint seeks judicial dissolution or, in the alternative, a court-ordered buyout at fair value, an accounting for diverted company assets, restored distributions, and access to the company's books and records. The company is valued at roughly ${company_value}."
+  undisputed:
+    - "{plaintiff_full_name} holds {plaintiff_ownership} in {company_full_name}."
+    - "{defendant_full_name} and {defendant_2_full_name} are the controlling, managing members of the LLC."
+    - "The members operate under a written operating agreement."
+    - "Distributions to the minority member have been suspended since on or about {freeze_out_date}."
+  disputed:
+    - "Whether the majority's conduct was oppressive and unfairly prejudicial or instead a legitimate exercise of business judgment."
+    - "Whether the controlling members breached the fiduciary duties of loyalty and care owed to the LLC and its members."
+    - "The fair value of the minority member's interest and whether a buyout or dissolution is the appropriate remedy."
+    - "Whether company opportunities and assets were improperly diverted to the majority's side entity."
+  timeline:
+    - {date: "{freeze_out_date}", event: "{plaintiff_first} is excluded from management and distributions to the minority member are suspended."}
+    - {date: "{filing_date}", event: "Complaint for member oppression and judicial dissolution prepared for filing in the {court_location} Business and Consumer Docket."}
+
+interview:
+  interviewer: "Litigation Partner"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "The company", question: "Tell me about the company and your stake in it.", answer: "It's {business_type}, set up as a Maine LLC. I own {plaintiff_ownership}, and {defendant_first} and {defendant_2_first} are the ones running it. We have a written operating agreement, and for years everybody got paid distributions."}
+    - {topic: "The freeze-out", question: "What changed, and when?", answer: "Around {freeze_out_date} they pushed me out. They stopped my distributions while they kept paying themselves big salaries, cut me off from the books, and shut me out of any say in the business."}
+    - {topic: "The diversion", question: "What makes you think company opportunities are being diverted?", answer: "A former employee told me they've been routing work and assets to a side company that {defendant_first} controls. I've been asking to see the books to confirm it, and they keep refusing."}
+    - {topic: "The buyout", question: "Has there been any offer to buy you out?", answer: "On that front, {buyout_offered_lower}. Either way, by my math they've withheld around ${annual_distributions_withheld} in distributions that should have come to me."}
+    - {topic: "Goal", question: "What outcome are you looking for?", answer: "I want a fair-value buyout of my interest, or dissolution if it comes to that, plus an accounting for whatever they diverted and my distributions restored. I'd settle on fair terms, but I'm prepared to litigate."}
+
+objectives:
+  goals:
+    - "Obtain a court-ordered buyout of the minority interest at fair value, or judicial dissolution of the LLC."
+    - "Recover an accounting and damages for company opportunities and assets diverted to the majority's side entity."
+    - "Restore the suspended distributions owed to the minority member."
+    - "Secure full access to the LLC's books and records."
+  priorities:
+    - "Establishing the oppressive freeze-out and the controlling members' fiduciary breaches."
+    - "Pinning down the fair value of the minority interest."
+    - "Tracing the distributions and diverted funds."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A fair-value buyout of the plaintiff's interest or dissolution with a fair distribution of value."
+    - "An accounting for diverted funds, restored distributions, and access to the company's books."
+  non_starters:
+    - "A forced exit at a lowball valuation that ignores the diverted value."
+  constraints:
+    budget: {pick: ["Funded through trial, but a fair buyout settlement is strongly preferred.", "Substantial but monitored; the client wants staged budgets keyed to the valuation and discovery phases."]}
+    timeline: "Wants the freeze-out addressed promptly and the case trial-ready within roughly eighteen months of filing."
+
+issues:
+  count: {min: 4, max: 6}
+  pool:
+    - {issue: "Whether the controlling members have acted in a manner that is illegal, oppressive, fraudulent, or unfairly prejudicial so as to warrant judicial dissolution", category: business, governing_law: "31 M.R.S. § 1595", sub_questions: ["Does the freeze-out amount to oppressive or unfairly prejudicial conduct?", "Is dissolution or a lesser remedy such as a buyout appropriate?"], strength: moderate, client_position: "The freeze-out is oppressive and unfairly prejudicial conduct supporting dissolution or a fair-value buyout."}
+    - {issue: "Whether the managing members breached the fiduciary duties of loyalty and care owed to the LLC and its members", category: business, governing_law: "31 M.R.S. § 1559", sub_questions: ["Did the majority self-deal or usurp company opportunities?", "Did paying themselves while denying distributions breach the duty of loyalty?"], strength: moderate, client_position: "Paying themselves while freezing out the minority and diverting opportunities breaches the duties of loyalty and care."}
+    - {issue: "Whether the plaintiff was wrongfully denied the right to inspect the LLC's books and records", category: business, governing_law: "31 M.R.S. § 1545", sub_questions: ["Did the plaintiff make a proper demand to inspect?", "Was the refusal to allow inspection lawful?"], strength: strong, client_position: "A proper demand was made and the majority's refusal to allow inspection violates the member's statutory inspection rights."}
+    - {issue: "Whether the suspension of distributions and the majority's compensation constitute improper distributions", category: business, governing_law: "31 M.R.S. § 1546 and § 1547", sub_questions: ["Were distributions withheld from the minority while the majority took disguised distributions as salary?", "Were any distributions improper under the Act?"], strength: moderate, client_position: "The majority took disguised distributions through salary while improperly withholding distributions from the minority."}
+    - {issue: "Whether a buyout at fair value is available as an alternative remedy to dissolution", category: business, governing_law: "31 M.R.S. § 1595; equitable buyout remedy", sub_questions: ["May the court order the majority to purchase the minority interest at fair value?", "What is the fair value of the minority interest?"], strength: moderate, client_position: "A court-ordered buyout at fair value is an appropriate alternative to dissolution."}
+    - {issue: "Whether the plaintiff may pursue a derivative claim on behalf of the LLC for the diversion of company assets", category: business, governing_law: "31 M.R.S. § 1631 et seq.", sub_questions: ["Are the diversion claims derivative, direct, or both?", "Have the prerequisites for a derivative action been satisfied?"], strength: moderate, client_position: "The diversion of company opportunities supports a derivative claim brought on behalf of the LLC."}
+
+experts:
+  count: {min: 1, max: 3}
+  pool:
+    - {field: "Business valuation", credentials: "ASA, CVA", retained_by: plaintiff, topic: "Fair value of the minority membership interest", opinion: "The fair value of the minority interest substantially exceeds the majority's buyout offer once diverted value is restored.", basis: "Income and market approaches applied to the company's corrected financials."}
+    - {field: "Forensic accounting", credentials: "CPA, CFF", retained_by: plaintiff, topic: "Tracing distributions and diverted funds", opinion: "Company funds and opportunities were diverted to a related side entity and disguised distributions were paid through salary.", basis: "General ledger, bank records, payroll records, and the side entity's filings."}
+    - {field: "Reasonable compensation", credentials: "CPA", retained_by: plaintiff, topic: "Reasonableness of the majority members' salaries", opinion: "The controlling members' compensation exceeds reasonable levels and operated as a disguised distribution to themselves.", basis: "Comparable-compensation data and the company's financial results."}
+
+evidence:
+  count: {min: 5, max: 8}
+  pool:
+    - {title: "Operating agreement", type: contract, party: plaintiff, description: "The LLC's written operating agreement governing management, distributions, and member rights."}
+    - {title: "Company financial statements and tax returns", type: financial_record, party: company, description: "The LLC's financial statements and federal and Maine tax returns for the relevant years."}
+    - {title: "Distribution and payroll records", type: financial_record, party: company, description: "Records of member distributions and the salaries paid to the controlling members."}
+    - {title: "Member meeting minutes and resolutions", type: document, party: company, description: "Minutes and written resolutions reflecting management decisions and the exclusion of the minority member."}
+    - {title: "Records-inspection demand and refusal", type: correspondence, party: plaintiff, description: "The plaintiff's demand to inspect the books and the majority's refusal."}
+    - {title: "Emails showing the freeze-out and diversion", type: correspondence, party: defendant, description: "Internal emails reflecting the exclusion of the minority member and the diversion of opportunities."}
+    - {title: "Lowball buyout offer", type: document, party: defendant, description: "The majority's written offer to purchase the minority interest."}
+    - {title: "Bank records", type: financial_record, party: plaintiff, description: "Bank records tracing distributions, salaries, and transfers to the side entity."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Estimated company value", amount: {int_between: [700000, 12000000]}, basis: "Estimated enterprise value of the LLC."}
+    - {label: "Fair value of the plaintiff's minority interest", amount: {int_between: [150000, 4000000]}, basis: "Pro rata fair value of the membership interest before discounts."}
+    - {label: "Distributions withheld from the minority member", amount: {int_between: [40000, 900000]}, basis: "Distributions suspended since the freeze-out."}
+    - {label: "Excess compensation paid to the majority", amount: {int_between: [50000, 1200000]}, basis: "Compensation above reasonable levels, alleged as a disguised distribution."}
+    - {label: "Estimated cost of the valuation and accounting experts", amount: {int_between: [40000, 350000]}, basis: "Retained plaintiff-side experts."}
+
+litigation:
+  posture: discovery
+  causes_of_action:
+    - {count: 1, claim: "Member oppression and judicial dissolution", by: "{plaintiff_full_name}", against: "{defendant_full_name} and {defendant_2_full_name}", governing_law: "31 M.R.S. § 1595", elements: ["Membership in the LLC", "Conduct by the controlling members that is illegal, oppressive, fraudulent, or unfairly prejudicial", "Harm to the minority member", "Entitlement to dissolution or an alternative remedy"], relief_sought: "Judicial dissolution or, in the alternative, a court-ordered buyout at fair value", strength: moderate}
+    - {count: 2, claim: "Breach of fiduciary duty", by: "{plaintiff_full_name}", against: "{defendant_full_name} and {defendant_2_full_name}", governing_law: "31 M.R.S. § 1559", elements: ["A fiduciary duty of loyalty or care owed to the LLC and its members", "Breach of that duty", "Causation", "Damages"], relief_sought: "Compensatory damages, disgorgement, and an accounting", strength: moderate}
+    - {count: 3, claim: "Breach of the operating agreement", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "31 M.R.S. § 1521; common law", elements: ["A valid operating agreement", "Performance by the plaintiff", "Breach by the controlling member", "Resulting damages"], relief_sought: "Compensatory damages and specific enforcement of the agreement", strength: moderate}
+    - {count: 4, claim: "Derivative claim for diversion of company assets", by: "{plaintiff_full_name}, derivatively on behalf of {company_full_name}", against: "{defendant_full_name}", governing_law: "31 M.R.S. § 1631 et seq.", elements: ["Standing to sue derivatively", "Diversion of company opportunities or assets", "Harm to the LLC", "Recoverable damages on behalf of the company"], relief_sought: "Restitution and disgorgement to the LLC", strength: moderate}
+    - {count: 5, claim: "Demand for inspection of books and records", by: "{plaintiff_full_name}", against: "{company_full_name}", governing_law: "31 M.R.S. § 1545", elements: ["Member status", "A proper demand to inspect", "A purpose reasonably related to the member's interest", "Wrongful refusal"], relief_sought: "An order compelling inspection of the books and records", strength: strong}
+  affirmative_defenses:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {defense: "Business judgment", by: "{defendant_full_name}", basis: "The challenged decisions were legitimate, good-faith exercises of business judgment."}
+      - {defense: "Authorization under the operating agreement", by: "{defendant_full_name}", basis: "The operating agreement authorized the management decisions and compensation at issue."}
+      - {defense: "Unclean hands / prior breach", by: "{defendant_full_name}", basis: "The plaintiff breached first and comes to equity with unclean hands."}
+      - {defense: "Fair buyout offer", by: "{defendant_full_name}", basis: "The buyout offered to the plaintiff was fair and reasonable."}
+      - {defense: "Claims are derivative, not direct", by: "{defendant_full_name}", basis: "The asserted injuries are to the LLC and may be pursued only derivatively."}
+  counterclaims:
+    - {count: 1, claim: "Breach of fiduciary duty and the operating agreement by the minority member", by: "{defendant_full_name}", against: "{plaintiff_full_name}", relief: "Damages for the minority member's own alleged misconduct and breaches."}
+  discovery:
+    n: {min: 4, max: 6}
+    pick_n:
+      - {type: interrogatories, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-01", "2025-05-01"]}, status: responded, description: "Interrogatories on management, distributions, and the majority's compensation."}
+      - {type: request_for_production, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-04-01", "2025-05-01"]}, status: objected, description: "Requests for the company's financials, distribution records, and the side entity's records."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-06-01", "2025-07-15"]}, status: outstanding, description: "Deposition of the managing member."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_2_full_name}", served_date: {date_between: ["2025-06-01", "2025-07-15"]}, status: outstanding, description: "Deposition of the co-manager member."}
+      - {type: deposition, propounding_party: "{plaintiff_full_name}", responding_party: "the LLC's outside accountant", served_date: {date_between: ["2025-07-20", "2025-08-20"]}, status: served, description: "Deposition of the company's outside accountant."}
+      - {type: expert_disclosure, propounding_party: "{plaintiff_full_name}", responding_party: "{defendant_full_name}", served_date: {date_between: ["2025-09-01", "2025-10-01"]}, status: served, description: "Plaintiff's valuation and forensic-accounting expert disclosures."}
+      - {type: subpoena, propounding_party: "{plaintiff_full_name}", responding_party: "the company's bank", served_date: {date_between: ["2025-05-05", "2025-06-01"]}, status: served, description: "Subpoena to the bank for the LLC's account records."}
+  motions:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {title: "Motion to compel inspection of books and records", type: discovery, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-04-15", "2025-05-15"]}, status: granted, relief: "An order compelling inspection of the LLC's books and records."}
+      - {title: "Motion to appoint a receiver or custodian", type: provisional, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-05-20", "2025-06-20"]}, status: under_advisement, relief: "Appointment of a receiver or custodian to protect company assets."}
+      - {title: "Motion for a buyout / fair-value determination", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-10-01", "2025-11-15"]}, status: filed, relief: "An order setting a buyout of the minority interest at fair value."}
+      - {title: "Motion for partial summary judgment on the fiduciary-duty claim", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-11-20", "2025-12-20"]}, status: opposed, relief: "Judgment that the controlling members breached their fiduciary duties."}
+      - {title: "Motion to compel production of the diversion records", type: discovery, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-06-25", "2025-07-25"]}, status: granted_in_part, relief: "An order compelling production of records relating to the side entity."}
+  docket:
+    - {date: {date_between: ["2025-03-01", "2025-03-12"]}, entry: "Complaint for member oppression and judicial dissolution filed in the Business and Consumer Docket.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-03-20", "2025-04-05"]}, entry: "Defendants' answer and counterclaim filed; the LLC appears as a nominal defendant.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-04-15", "2025-04-30"]}, entry: "Scheduling order entered; discovery deadlines set.", party: "the court"}
+    - {date: {date_between: ["2025-05-10", "2025-05-25"]}, entry: "Order granting the motion to compel inspection of books and records.", party: "the court"}
+    - {date: {date_between: ["2025-07-01", "2025-07-20"]}, entry: "Order granting in part production of the side entity's records.", party: "the court"}
+    - {date: {date_between: ["2025-09-05", "2025-09-25"]}, entry: "Plaintiff's valuation and forensic-accounting expert reports served; discovery continues.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-10-15", "2025-11-05"]}, entry: "Motion for a buyout / fair-value determination filed.", party: "{plaintiff_full_name}"}
+  trial:
+    jury: {pick: [true, false]}
+    estimated_days: {int_between: [4, 10]}
+    scheduled_date: {date_between: ["2026-07-01", "2027-03-01"]}

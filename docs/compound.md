@@ -39,6 +39,7 @@ compound/death-cascade/compound.yaml
 | `death-cascade` | probate + estate tax + guardianship | One death; the estate inventory feeds the 706, the minor heir becomes a ward |
 | `marital-breakdown-cascade` | divorce + protection-from-abuse + business | Same spouses and children; the marital business is a contested asset |
 | `business-dispute-cascade` | business formation + complex civil litigation | The company formed in one matter is the defendant in the other; the founder is applicant then defendant |
+| `elder-exploitation-cascade` | improvident transfer + adult conservatorship + will contest | One elder is the transferor, then the ward, then the decedent; the exploiter is the deed transferee then the will proponent |
 
 ## Generate one
 

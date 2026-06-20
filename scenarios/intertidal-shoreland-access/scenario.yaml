@@ -1,0 +1,175 @@
+id: intertidal-shoreland-access
+title: "{plaintiff_last} v. {defendant_full_name} et al. (Intertidal / Shoreland Access)"
+practice_area: real_estate
+case_type: real_property
+status: active
+docket_prefix: RE
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001, RE-QT]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Superior Court
+
+# A uniquely-Maine coastal dispute over the INTERTIDAL ZONE -- the flats between the
+# high- and low-water marks. Under Maine's colonial ordinance the upland owner owns the
+# flats to the low-water mark (up to 100 rods), subject to a public easement reserved for
+# "fishing, fowling, and navigation" (Bell v. Town of Wells -- the Moody Beach case). A
+# shorefront owner sues to stop others using the flats; the defendants assert public,
+# prescriptive, or customary rights. The disputed use (e.g. commercial rockweed harvesting,
+# see Ross v. Acadian Seaplants) may or may not fall within that narrow public easement.
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, label: "Plaintiff shorefront/upland owner"}
+    - {key: defendant, label: "Defendant (a user of the flats: harvester/tour operator)"}
+    - {key: defendant_2, label: "Defendant (an abutting owner claiming a right of access)"}
+    - {key: other_party, entity: organization, name: "Town of Semaphore Cove", label: "The municipality / public interest"}
+
+dates:
+  filing_date: {date_between: ["2025-05-01", "2026-03-01"]}
+  event_date: "{first_incident_date}"
+
+facts:
+  shorefront_type: {pick: ["a sandy beach and tidal flats", "a rocky ledge shoreline and mudflats", "a cove with clam flats", "a salt marsh and intertidal frontage"]}
+  disputed_use: {pick: ["commercial rockweed (seaweed) harvesting on the flats", "a kayak and paddleboard tour landing on the beach", "clam digging on the flats", "beachcombing and picnicking by the public", "a neighbor crossing the flats to launch a boat"]}
+  first_incident_date: {date_between: ["2024-06-01", "2025-09-30"]}
+  deed_to_low_water: {pick: [true]}
+  rods_to_low_water: {pick: ["roughly 40 rods of flats", "about 90 rods of flats", "the full 100-rod limit"]}
+  public_use_claimed: {pick: ["fishing, fowling, and navigation under the colonial ordinance", "a prescriptive right from decades of use", "customary public recreational use"]}
+  signage_posted: {pick: [true, false]}
+  prior_confrontation: {pick: [true, false]}
+  conservation_interest: {pick: ["a town shoreland access point nearby", "an abutting land trust parcel", "no nearby public access"]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: expert, name_kind: person, role: "Marine biologist / rockweed expert", relevance: "Speaks to the nature and ecological effect of harvesting or use on the intertidal flats."}
+    - {type: government_agency, name: "Maine Department of Marine Resources", role: "State marine resources regulator", relevance: "Licenses harvesting and regulates activity in the intertidal zone."}
+    - {type: business_entity, name_kind: organization, role: "Local land trust", relevance: "Holds or stewards an abutting conserved parcel and has an interest in shoreland access."}
+    - {type: neighbor, name_kind: person, role: "Longtime townsperson who has used the flats", relevance: "Testifies to decades of public use of the flats supporting a prescriptive or customary claim."}
+    - {type: expert, name_kind: person, role: "Title abstractor", relevance: "Traced the chain of title and the colonial-ordinance grant of the flats."}
+    - {type: government_agency, name_kind: person, role: "Harbormaster", relevance: "Speaks to navigation, mooring, and access along the shore."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name}, owner of {shorefront_type}, sues {defendant_full_name} and abutter {defendant_2_full_name} to confirm ownership of the intertidal flats to the low-water mark and to stop {disputed_use}, which the defendants defend as {public_use_claimed}."
+  narrative:
+    - "{plaintiff_full_name} owns shorefront property consisting of {shorefront_type} on the coast of {county} County, Maine. Under Maine's colonial ordinance and the deed in the chain of title, the plaintiff claims ownership of the intertidal flats seaward to the low-water mark -- here {rods_to_low_water} -- subject only to the public's reserved easement for fishing, fowling, and navigation recognized in the Moody Beach case."
+    - "The dispute centers on {disputed_use}. {defendant_full_name} carries on that activity across the plaintiff's flats, and the abutting owner, {defendant_2_full_name}, claims a separate right of access over the flats. The defendants assert that the use is permitted as {public_use_claimed}. {plaintiff_first} contends the activity exceeds the narrow public easement -- which is limited to fishing, fowling, and navigation -- and is an unlawful intrusion onto privately owned intertidal land."
+    - "Matters came to a head around {first_incident_date}. The Town of Semaphore Cove has an interest in the public's rights and the status of {conservation_interest}. {plaintiff_first} now seeks a declaration of ownership of the flats to the low-water mark, an order quieting title against the abutter's claimed access, and an injunction barring the disputed use, while respecting any genuine fishing, fowling, and navigation rights of the public."
+  undisputed:
+    - "{plaintiff_full_name} owns shorefront property consisting of {shorefront_type} on the coast of {county} County."
+    - "The defendants engage in {disputed_use} on or across the intertidal flats fronting the plaintiff's land."
+    - "The colonial ordinance reserves to the public an easement for fishing, fowling, and navigation over privately owned intertidal flats."
+  disputed:
+    - "Whether the plaintiff's title under the colonial ordinance reaches the flats to the low-water mark, up to the 100-rod limit."
+    - "Whether {disputed_use} falls within the public's reserved fishing, fowling, and navigation easement or exceeds it as a trespass to the privately owned flats."
+    - "Whether the defendants hold a prescriptive easement or customary public right to use or cross the flats."
+  timeline:
+    - {date: "{event_date}", event: "The disputed use of the flats first led to confrontation between the parties."}
+    - {date: "{filing_date}", event: "Complaint to quiet title and for declaratory and injunctive relief prepared for filing in {court_location} Superior Court."}
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "Goal", question: "What are you hoping to accomplish?", answer: "I want it confirmed that I own the flats out to the low-water mark, and I want {disputed_use} to stop. I am not trying to keep anyone from fishing, fowling, or navigating -- just from treating my flats as their own."}
+    - {topic: "The property", question: "Tell me about your shorefront.", answer: "It is {shorefront_type}. My deed and the old colonial ordinance run my ownership down to the low-water mark -- the survey says {rods_to_low_water}. I have owned and paid taxes on it for years."}
+    - {topic: "The disputed use", question: "What exactly are the defendants doing?", answer: "Mostly {disputed_use}. One of them is an abutter, {defendant_2_first}, who says he has a right to cross my flats. They claim it is all allowed as {public_use_claimed}."}
+    - {topic: "History", question: "How long has this been going on, and was there any confrontation?", answer: "It came to a head around {first_incident_date}. I have tried to handle it neighborly, but it keeps happening across my flats, almost every low tide in season."}
+    - {topic: "The public and the town", question: "Where does the Town fit in?", answer: "The Town of Semaphore Cove cares about public access -- there is {conservation_interest}. I respect real fishing, fowling, and navigation rights; I just do not think this use qualifies."}
+    - {topic: "Approach", question: "How do you want to handle it?", answer: "I would rather settle than wage war on the neighbors, but I need clear lines: my title to the low-water mark confirmed, the unwanted use stopped, and the public easement honored where it really applies."}
+
+objectives:
+  goals:
+    - "Confirm the plaintiff's ownership of the intertidal flats to the low-water mark under the colonial ordinance."
+    - "Stop {disputed_use} to the extent it exceeds the public's fishing, fowling, and navigation easement."
+    - "Quiet title against the abutter {defendant_2_full_name}'s claimed right of access over the flats."
+  priorities:
+    - "A clear adjudication that the flats are privately owned to the low-water mark."
+    - "An injunction that stops the unwanted use without trampling genuine public rights."
+    - "Preserving good relations with the Town and lawful fishing, fowling, and navigation."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A declaratory and quiet-title judgment confirming ownership of the flats to the low-water mark and rejecting the abutter's claimed access."
+    - "An injunction barring the disputed use to the extent it exceeds the public easement, while respecting fishing, fowling, and navigation."
+  non_starters:
+    - "Any ruling that treats the privately owned flats as open to general public recreation beyond fishing, fowling, and navigation."
+  constraints:
+    budget: {pick: ["Moderate; willing to pay for the survey and title work but prefers to settle the access dispute.", "Moderate; cost-conscious but committed to confirming title to the flats."]}
+    timeline: "Wants ownership of the flats and the scope of the public easement settled before the next harvesting and tourist season."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Whether the plaintiff owns the intertidal flats to the low-water mark under the colonial ordinance", category: real_estate, governing_law: "Bell v. Town of Wells (Moody Beach); the colonial ordinance", sub_questions: ["Does the chain of title carry ownership seaward to the low-water mark?", "Is ownership of the flats limited to 100 rods from the high-water mark?"], strength: strong, client_position: "Under the colonial ordinance the upland deed conveys the flats to the low-water mark, up to the 100-rod limit."}
+    - {issue: "Whether the disputed use falls within or outside the public's reserved fishing, fowling, and navigation easement", category: real_estate, governing_law: "Bell v. Town of Wells; Ross v. Acadian Seaplants", sub_questions: ["Is the disputed use one of fishing, fowling, or navigation?", "Does commercial rockweed harvesting or general recreation exceed the reserved easement?"], strength: moderate, client_position: "The disputed use exceeds the narrow public easement and intrudes on the privately owned flats."}
+    - {issue: "Whether the defendants hold a prescriptive easement or customary public right over the flats", category: real_estate, governing_law: "14 M.R.S. § 812", sub_questions: ["Was the use open, notorious, and continuous for the prescriptive period?", "Does any customary public right reach beyond fishing, fowling, and navigation?"], strength: weak, client_position: "No prescriptive easement or customary right has ripened over the plaintiff's flats."}
+    - {issue: "Trespass to the privately owned intertidal flats", category: real_estate, governing_law: "Common law trespass", sub_questions: ["Does the activity intrude on land the plaintiff owns to the low-water mark?", "Is the intrusion privileged by the public easement?"], strength: moderate, client_position: "Use exceeding fishing, fowling, and navigation is a trespass to the plaintiff's flats."}
+    - {issue: "Declaratory judgment and quiet title as to ownership of the flats and the scope of public rights", category: real_estate, governing_law: "14 M.R.S. § 6651; 14 M.R.S. § 5951 et seq.", sub_questions: ["Is a declaration appropriate to fix the boundary at the low-water mark and the easement's scope?", "Should title be quieted against the abutter's claimed access?"], strength: moderate}
+
+experts:
+  count: {min: 1, max: 3}
+  pool:
+    - {field: "Coastal / marine resources", credentials: "Ph.D., Marine Biology", retained_by: defendant, topic: "The nature and effect of the use on the intertidal flats", opinion: "The activity is a customary marine use consistent with fishing, fowling, and navigation in the intertidal zone.", basis: "Field observation of the flats and study of the harvesting or access activity."}
+    - {field: "Title examination / colonial-ordinance chain of title", credentials: "Licensed Title Abstractor", retained_by: plaintiff, topic: "The chain of title and the colonial-ordinance grant of the flats", opinion: "The chain of title conveys the intertidal flats to the low-water mark to the plaintiff under the colonial ordinance.", basis: "Examination of the deeds and the colonial-ordinance grant in the chain of title."}
+    - {field: "Land surveying", credentials: "PLS", retained_by: plaintiff, topic: "Location of the high- and low-water marks and the 100-rod limit", opinion: "The survey fixes the high- and low-water marks and shows the flats lie within the 100-rod limit of the upland.", basis: "Tidal datum survey of the high- and low-water marks tied to monuments and the deed."}
+
+evidence:
+  count: {min: 4, max: 7}
+  pool:
+    - {title: "Deed and chain of title to the low-water mark", type: public_record, party: plaintiff, description: "The recorded deeds carrying ownership of the flats to the low-water mark under the colonial ordinance."}
+    - {title: "Survey of the high- and low-water lines and the 100-rod limit", type: document, party: plaintiff, description: "A tidal survey showing the high- and low-water marks and the 100-rod limit of the flats."}
+    - {title: "Photographs of the disputed activity on the flats", type: photo, party: plaintiff, description: "Photographs of the disputed use taking place on the intertidal flats."}
+    - {title: "Photographs of the posted no-trespassing signage", type: photo, party: plaintiff, description: "Photographs of the no-trespassing signs posted at the shorefront."}
+    - {title: "Historical records of public use of the flats", type: document, party: defendant, description: "Historical records and accounts of longstanding public use supporting a prescriptive or customary claim."}
+    - {title: "Cease-and-desist correspondence", type: correspondence, party: plaintiff, description: "Cease-and-desist letters and correspondence demanding that the disputed use stop."}
+    - {title: "DMR licensing records for harvesting", type: public_record, party: defendant, description: "Department of Marine Resources licensing records for any harvesting on the flats."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 1, max: 3}
+  amounts:
+    - {label: "Diminution in the property's value", amount: {int_between: [10000, 120000]}, basis: "Estimated effect of the disputed use and access claim on the shorefront's market value."}
+    - {label: "Cost of survey and title work", amount: {int_between: [4000, 30000]}, basis: "Cost of the tidal boundary survey and the colonial-ordinance title abstract."}
+    - {label: "Claimed harvesting revenue at stake", amount: {int_between: [5000, 60000]}, basis: "Estimated annual revenue from the disputed harvesting on the flats."}
+
+litigation:
+  posture: pleadings
+  causes_of_action:
+    - {count: 1, claim: "Declaratory judgment that the plaintiff owns the flats to the low-water mark and the disputed use exceeds the public easement", by: "{plaintiff_full_name}", against: "{defendant_full_name}, {defendant_2_full_name}, and the Town of Semaphore Cove", governing_law: "Bell v. Town of Wells; the colonial ordinance; 14 M.R.S. § 5951 et seq.", elements: ["Ownership of the upland and the flats to the low-water mark under the colonial ordinance", "A public easement limited to fishing, fowling, and navigation", "The disputed use exceeds that reserved easement", "An actual controversy ripe for declaration"], relief_sought: "A declaration that the plaintiff owns the flats to the low-water mark and that the disputed use exceeds the public easement", strength: strong}
+    - {count: 2, claim: "Trespass to the intertidal land", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "Common law trespass", elements: ["The plaintiff owns the flats to the low-water mark", "The defendant intruded on the privately owned flats", "The intrusion is not privileged by fishing, fowling, or navigation", "Resulting injury to the plaintiff's possession"], relief_sought: "Damages and an order ending the trespass to the intertidal flats", strength: moderate}
+    - {count: 3, claim: "Quiet title against the abutter's claimed access", by: "{plaintiff_full_name}", against: "{defendant_2_full_name}", governing_law: "14 M.R.S. § 6651", elements: ["The plaintiff owns the flats to the low-water mark", "The abutter asserts an adverse claim of access over the flats", "The adverse claim is without basis in the record title", "Title should be quieted against the claim"], relief_sought: "A judgment quieting title against the abutter's claimed right of access over the flats", strength: moderate}
+    - {count: 4, claim: "Injunction barring the disputed use", by: "{plaintiff_full_name}", against: "{defendant_full_name}", governing_law: "14 M.R.S. § 6051", elements: ["The plaintiff owns the flats and the use exceeds the public easement", "The continuing use causes irreparable harm", "The balance of harms favors the plaintiff", "There is no adequate remedy at law"], relief_sought: "An order enjoining the disputed use of the flats to the extent it exceeds the public easement", strength: moderate}
+  affirmative_defenses:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {defense: "The use is protected fishing, fowling, or navigation under the colonial ordinance", by: "{defendant_full_name}", basis: "The disputed activity falls within the public easement for fishing, fowling, and navigation reserved by the colonial ordinance. Bell v. Town of Wells."}
+      - {defense: "Prescriptive or customary public right", by: "{defendant_full_name}", basis: "Decades of open and continuous public use of the flats establish a prescriptive easement or a customary public right. 14 M.R.S. § 812."}
+      - {defense: "The activity is below the low-water mark", by: "{defendant_full_name}", basis: "The disputed use occurs seaward of the low-water mark, beyond the plaintiff's ownership of the flats."}
+      - {defense: "The plaintiff's title does not reach the flats", by: "{defendant_2_full_name}", basis: "The chain of title does not convey the intertidal flats to the low-water mark to the plaintiff under the colonial ordinance."}
+  counterclaims:
+    - {count: 1, claim: "Declaration of a public or prescriptive right to use the flats", by: "{defendant_full_name}", against: "{plaintiff_full_name}", relief: "A declaration that the defendants and the public hold a fishing/fowling/navigation, prescriptive, or customary right to use the intertidal flats."}
+  motions:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {title: "Motion for a preliminary injunction", type: procedural, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-06-01", "2025-07-15"]}, status: granted_in_part, relief: "A preliminary injunction limiting the disputed use of the flats pending judgment."}
+      - {title: "Motion for summary judgment on title", type: dispositive, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-09-01", "2025-10-15"]}, status: opposed, relief: "Summary judgment that the plaintiff owns the flats to the low-water mark under the colonial ordinance."}
+      - {title: "Motion to join the State and Town as necessary parties", type: procedural, movant: "{defendant_full_name}", filed_date: {date_between: ["2025-07-20", "2025-08-25"]}, status: filed, relief: "An order joining the State and the Town as necessary parties on the public's rights."}
+      - {title: "Motion for a view of the property", type: procedural, movant: "{plaintiff_full_name}", filed_date: {date_between: ["2025-10-20", "2025-12-01"]}, status: under_advisement, relief: "An order for the court to take a view of the shorefront and the flats at low tide."}
+  docket:
+    - {date: {date_between: ["2025-05-05", "2025-05-20"]}, entry: "Complaint to quiet title and for declaratory and injunctive relief filed.", party: "{plaintiff_full_name}"}
+    - {date: {date_between: ["2025-06-05", "2025-06-25"]}, entry: "Answer and counterclaim asserting public and prescriptive rights filed.", party: "{defendant_full_name}"}
+    - {date: {date_between: ["2025-07-10", "2025-07-30"]}, entry: "Answer of the abutting owner on the claimed access filed.", party: "{defendant_2_full_name}"}
+    - {date: {date_between: ["2025-08-15", "2025-09-05"]}, entry: "Order on the motion for a preliminary injunction entered.", party: "the court"}
+    - {date: {date_between: ["2025-10-01", "2025-10-25"]}, entry: "Scheduling order entered and the Town appears on the public's rights.", party: "the court"}
+    - {date: {date_between: ["2025-11-10", "2025-12-05"]}, entry: "Hearing held on summary judgment as to title to the flats.", party: "the court"}
+  trial:
+    jury: false
+    estimated_days: {int_between: [2, 5]}
+    scheduled_date: {date_between: ["2026-08-01", "2027-03-01"]}
