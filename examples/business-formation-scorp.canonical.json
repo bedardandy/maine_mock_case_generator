@@ -1,0 +1,68 @@
+{
+  "matter": {
+    "case_id": "MMC-2025-691783",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Maine Secretary of State / IRS (filing offices)",
+    "case_type": "entity_formation",
+    "filing_date": "2025-12-09",
+    "event_date": "2026-01-07"
+  },
+  "parties": {
+    "company": {
+      "full_name": "Coastal Logistics Co.",
+      "address": "216 Maple Court",
+      "city": "Orono",
+      "state": "ME",
+      "zip": "04012",
+      "phone": "(207) 555-0170"
+    },
+    "attorney": {
+      "full_name": "Omar D. Roe",
+      "first_name": "Omar",
+      "middle_name": "D",
+      "last_name": "Roe",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "omar.roe@example.org",
+      "date_of_birth": "1998-04-24",
+      "bar_number": "1763"
+    }
+  },
+  "party": {
+    "full_name": "Grace C. Roe",
+    "first_name": "Grace",
+    "middle_name": "C",
+    "last_name": "Roe",
+    "address": "422 Spruce Avenue",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "email": "grace.roe@example.com",
+    "date_of_birth": "1969-04-20"
+  },
+  "facts": {
+    "entity_name": "Coastal Logistics Co.",
+    "entity_type": "C corporation electing S status",
+    "state_of_incorporation": "Maine",
+    "incorporation_date": "2026-01-07",
+    "ein_applied": false,
+    "s_corp_election": true,
+    "election_effective_date": "2026-02-08",
+    "tax_year": "calendar year",
+    "fiscal_year_end": "December 31",
+    "num_shareholders": 2,
+    "num_employees": 1,
+    "first_payroll_date": "2026-03-30",
+    "accounting_method": "cash",
+    "naics_code": "722511",
+    "principal_activity": "software development",
+    "expected_first_year_revenue": 654351,
+    "responsible_party_name": "Grace C. Roe",
+    "reasonable_compensation": 43229
+  }
+}

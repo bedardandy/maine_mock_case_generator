@@ -1,0 +1,344 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "decedent-estate-informal",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-687472",
+    "practice_area": "probate",
+    "title": "Estate of Olivia B. Ellsworth: informal appointment and appointment of Samuel B. Danforth",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Probate Court"
+    },
+    "case_type": "decedent_estate",
+    "filing_date": "2026-05-31",
+    "status": "pre_filing",
+    "summary": "Samuel B. Danforth applies for informal appointment of the estate of Olivia B. Ellsworth, who died on 2025-09-22 domiciled in Sagadahoc County, Maine, and asks the Bath Probate Court to be appointed personal representative to marshal an estate valued at roughly $348677, pay valid claims, and distribute the remainder to the heirs and devisees.",
+    "event_date": "2025-09-22",
+    "docket_number": "SAG-PE-2026-935"
+  },
+  "parties": {
+    "decedent": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Decedent",
+      "date_of_birth": "1997-10-02"
+    },
+    "personal_representative": {
+      "entity_type": "person",
+      "first_name": "Samuel",
+      "middle_name": "B",
+      "last_name": "Danforth",
+      "full_name": "Samuel B. Danforth",
+      "role": "Applicant / proposed personal representative",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "samuel.danforth@example.org",
+      "date_of_birth": "1975-02-05"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Marcus",
+      "middle_name": "W",
+      "last_name": "Poe",
+      "full_name": "Marcus W. Poe",
+      "role": "Attorney for the client",
+      "address": "219 Pine Lane",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04029",
+      "phone": "(207) 555-0180",
+      "email": "marcus.poe@example.net",
+      "date_of_birth": "1964-02-01",
+      "bar_number": "7499",
+      "organization_name": "Birchwood & Calloway LLP"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Samuel",
+      "middle_name": "B",
+      "last_name": "Danforth",
+      "full_name": "Samuel B. Danforth",
+      "role": "Applicant / proposed personal representative",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "samuel.danforth@example.org",
+      "date_of_birth": "1975-02-05"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Samuel B. Danforth applies for informal appointment of the estate of Olivia B. Ellsworth, who died on 2025-09-22 domiciled in Sagadahoc County, Maine, and asks the Bath Probate Court to be appointed personal representative to marshal an estate valued at roughly $348677, pay valid claims, and distribute the remainder to the heirs and devisees.",
+    "narrative": "Olivia B. Ellsworth died on 2025-09-22 while domiciled in Sagadahoc County, Maine. Samuel B. Danforth, the decedent's adult son, has the highest priority among those willing to serve and seeks appointment as personal representative through informal appointment so the estate can be administered without a contested formal proceeding.\n\nThe decedent left an estate valued at approximately $348677, consisting of bank and brokerage accounts, vehicles and personal property, and, where applicable, real property. There are roughly 2 heir(s) and devisee(s) to whom notice must be given. The applicant believes the estate is solvent and that administration can proceed informally.\n\nSamuel now asks the Probate Court to determine that the application is complete, to admit the will to informal probate if a valid will exists, and to appoint Samuel as personal representative with authority to collect assets, pay funeral expenses and valid creditor claims within the statutory period, and distribute the balance of the estate to those entitled under the will or, if there is no will, under the Maine intestacy statutes.",
+    "undisputed_facts": [
+      "Olivia B. Ellsworth died on 2025-09-22 domiciled in Sagadahoc County, Maine.",
+      "Samuel B. Danforth is the decedent's adult son and applies to serve as personal representative.",
+      "The estate is valued at approximately $348677 and includes accounts and personal property to be marshaled and administered."
+    ],
+    "disputed_facts": [
+      "Whether the will (if any) was validly executed and is entitled to informal probate, or whether the estate passes by intestacy.",
+      "The validity and priority of creditor claims presented against the estate, including final medical and funeral expenses.",
+      "Whether a bond should be required of the personal representative and in what amount."
+    ],
+    "timeline": [
+      {
+        "date": "2022-06-27",
+        "event": "Decedent executed the will offered for informal probate, if a valid will exists."
+      },
+      {
+        "date": "2025-09-22",
+        "event": "Olivia B. Ellsworth died domiciled in Sagadahoc County, Maine."
+      },
+      {
+        "date": "2026-05-31",
+        "event": "Application for informal appointment and appointment of a personal representative prepared for filing in the Bath Probate Court."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Samuel C. Jessup",
+      "type": "beneficiary",
+      "role": "Adult child of the decedent",
+      "relationship": "Heir at law",
+      "relevance": "An heir and potential devisee who is entitled to notice and to a distributive share of the estate.",
+      "contact": {
+        "phone": "(207) 555-0172",
+        "city": "Bangor",
+        "state": "ME",
+        "email": "samuel.jessup@example.net"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Felix L. Fairbanks",
+      "type": "beneficiary",
+      "role": "Surviving spouse of the decedent",
+      "relationship": "Surviving spouse",
+      "relevance": "A statutory beneficiary entitled to an intestate share, homestead allowance, and any family allowance; must receive notice of the proceeding.",
+      "contact": {
+        "phone": "(207) 555-0159",
+        "city": "Auburn",
+        "state": "ME",
+        "email": "felix.fairbanks@example.com"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Henry C. Boe",
+      "type": "beneficiary",
+      "role": "Devisee named in the will",
+      "relationship": "Named devisee",
+      "relevance": "A person named to take under the will; entitled to notice and to receive the devise if the will is admitted.",
+      "contact": {
+        "phone": "(207) 555-0173",
+        "city": "Belfast",
+        "state": "ME",
+        "email": "henry.boe@example.net"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Downeast Federal Savings",
+      "type": "financial_institution",
+      "role": "Bank holding the decedent's accounts",
+      "relevance": "Holds the decedent's checking, savings, and brokerage accounts that the personal representative must marshal and administer.",
+      "contact": {
+        "phone": "(207) 555-0136",
+        "city": "Yarmouth",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Intake Attorney",
+    "interviewee_role": "personal_representative",
+    "date": "2026-05-31",
+    "exchanges": [
+      {
+        "topic": "Relationship",
+        "question": "What was your relationship to the person who passed away, and when did they die?",
+        "answer": "I am the decedent's adult son. Olivia passed away on 2025-09-22. I am the one the family is looking to handle the estate, and I want to be appointed so I can take care of things properly."
+      },
+      {
+        "topic": "Will",
+        "question": "Did the decedent leave a will, and do you have the original?",
+        "answer": "We have looked carefully for any will. If there is a valid will, I want it admitted so we can follow the decedent's wishes; if there is no will, I understand the estate would pass to the heirs under Maine law. Either way, I would like to handle it informally if we can."
+      },
+      {
+        "topic": "Assets",
+        "question": "What does the estate consist of?",
+        "answer": "There are bank and brokerage accounts, a vehicle and personal belongings, and, depending on the situation, real property. All told it is worth somewhere around $348677. I need authority to get the accounts released and to deal with the property."
+      },
+      {
+        "topic": "Heirs",
+        "question": "Who are the heirs or the people named to inherit?",
+        "answer": "There are about 2 people who would inherit, including close family. I want to make sure everyone entitled to notice gets it and that the estate is divided fairly and correctly."
+      },
+      {
+        "topic": "Needs",
+        "question": "What do you most need to be able to do once you are appointed?",
+        "answer": "I need the legal authority to act for the estate: to pay the funeral bill and the valid debts, to collect and protect the assets, to transfer or sell property if needed, and ultimately to distribute what is left to the heirs and devisees. I would rather avoid a formal, contested proceeding if at all possible."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Be appointed personal representative of the estate through informal appointment.",
+      "Marshal, inventory, and protect the assets of the estate.",
+      "Pay funeral expenses and valid creditor claims in the order of priority required by law.",
+      "Distribute the remaining estate to the heirs and devisees entitled to it."
+    ],
+    "priorities": [
+      "Obtaining clear authority to act for the estate without delay.",
+      "Protecting estate assets and keeping the estate solvent.",
+      "Treating all heirs and devisees fairly and avoiding family conflict."
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "Appointment as personal representative and, if a valid will exists, admission of the will to informal probate.",
+      "Orderly payment of valid claims and distribution of the estate to those entitled under the will or by intestacy."
+    ],
+    "non_starters": [
+      "A contested formal probate proceeding, if it can reasonably be avoided.",
+      "Any distribution that ignores a valid will or shortchanges an heir entitled to a share."
+    ],
+    "constraints": {
+      "budget": "Moderate; paid from estate funds, with a preference for resolving claims by agreement.",
+      "timeline": "Wants appointment promptly so accounts can be released and time-sensitive claims and bills addressed."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Timeliness of commencing the probate proceeding",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 3-108",
+      "sub_questions": [
+        "Is the application brought within the period allowed to commence probate?",
+        "Do any exceptions to the limitation period apply?"
+      ],
+      "strength": "strong",
+      "client_position": "Files well within the limitation period for commencing probate after the decedent's death.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Presentation and limitation of creditor claims against the estate",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 3-803",
+      "sub_questions": [
+        "Within what period must creditors present claims before they are barred?",
+        "Are the medical and funeral claims valid, and in what order are they paid?"
+      ],
+      "strength": "moderate",
+      "client_position": "Intends to give notice to creditors and pay only timely, valid claims in their statutory order of priority.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Priority for appointment of the personal representative",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 3-203",
+      "sub_questions": [
+        "Does the applicant have priority for appointment among those willing to serve?",
+        "Have persons with equal or higher priority been given notice or renounced?"
+      ],
+      "strength": "strong",
+      "client_position": "Asserts priority for appointment as the decedent's adult son and that no person with higher priority objects.",
+      "id": "iss3"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "John W. Poe",
+        "field": "Estate accounting",
+        "credentials": "CPA",
+        "retained_by": "personal_representative"
+      },
+      "topic": "Inventory, accounting, and solvency of the estate",
+      "opinion": "The estate is solvent, and the proposed inventory and accounting fairly reflect its assets, debts, and distributions.",
+      "basis": "Review of account statements, claims presented, and the preliminary inventory of assets."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Preliminary inventory of assets",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "description": "Schedule of the estate's real and personal property with date-of-death values.",
+      "id": "ev1"
+    },
+    {
+      "title": "Funeral bill and other claims",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "description": "Funeral and burial invoice and other creditor claims presented against the estate.",
+      "id": "ev2"
+    },
+    {
+      "title": "Bank and brokerage statements",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "description": "Account statements documenting the decedent's cash and investment accounts.",
+      "id": "ev3"
+    },
+    {
+      "title": "Recorded deed to real property",
+      "type": "public_record",
+      "party": "personal_representative",
+      "description": "Recorded deed evidencing the decedent's interest in real property, where applicable.",
+      "id": "ev4"
+    },
+    {
+      "title": "Original last will and testament",
+      "type": "document",
+      "party": "personal_representative",
+      "description": "The decedent's original will, dated 2022-06-27, offered for informal probate if a valid will exists.",
+      "id": "ev5"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Real property value",
+        "amount": 368564,
+        "basis": "Estimated date-of-death fair market value of the decedent's real property."
+      },
+      {
+        "label": "Bank and brokerage accounts",
+        "amount": 44078,
+        "basis": "Date-of-death balances of the decedent's cash and investment accounts."
+      }
+    ]
+  },
+  "facts": {
+    "date_of_death": "2025-09-22",
+    "will_exists": true,
+    "will_date": "2022-06-27",
+    "decedent_domicile_county": "Sagadahoc",
+    "relationship_to_decedent": "adult son",
+    "approximate_estate_value": 348677,
+    "real_property": false,
+    "num_heirs": 2,
+    "bond_required": true,
+    "probate_type": "informal appointment"
+  }
+}

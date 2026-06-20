@@ -1,0 +1,133 @@
+id: family-divorce-cumberland
+title: "Divorce of {plaintiff_full_name} and {defendant_full_name}"
+practice_area: family
+case_type: family_matters
+status: pre_filing
+docket_prefix: FM
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [FM-040, FM-050, CV-001]
+
+jurisdiction:
+  state: ME
+  county: Cumberland
+  court_type: District Court
+
+dates:
+  filing_date: {date_between: ["2025-09-01", "2026-06-01"]}
+  event_date: "{separation_date}"
+
+parties:
+  client_role: plaintiff
+  attorney: true
+  children: {min: 1, max: 3}
+  roles:
+    - {key: plaintiff, label: "Plaintiff (filing spouse)"}
+    - {key: defendant, label: "Defendant (responding spouse)"}
+
+facts:
+  marriage_date: {date_between: ["2006-01-01", "2019-12-31"]}
+  marriage_place: {pick: ["Portland, Maine", "Brunswick, Maine", "Bar Harbor, Maine", "Camden, Maine"]}
+  separation_date: {date_between: ["2025-01-01", "2025-08-31"]}
+  grounds: {pick: ["Irreconcilable differences", "Irreconcilable marital differences"]}
+  residency_months: {int_between: [7, 60]}
+  spousal_support_requested: {pick: [true, false]}
+  marital_home: {pick: ["jointly owned single-family home", "jointly owned condominium", "rented apartment"]}
+  num_minor_children: "{num_children}"
+  primary_residence_parent: {pick: ["{plaintiff_full_name}", "{defendant_full_name}"]}
+
+third_parties:
+  count: {min: 1, max: 3}
+  pool:
+    - {type: guardian_ad_litem, role: "Guardian ad litem", name_kind: person, relevance: "May be appointed to represent the best interests of the minor children."}
+    - {type: employer, name_kind: employer, role: "Plaintiff's employer", relevance: "Source of income and benefits relevant to support calculations."}
+    - {type: financial_institution, name_kind: bank, role: "Joint account holder bank", relevance: "Holds the marital checking, savings, and mortgage accounts."}
+    - {type: family_member, name_kind: person, role: "Plaintiff's mother", relationship: "Maternal grandmother", relevance: "Provides child care and may testify to parenting history."}
+    - {type: healthcare_provider, name_kind: person, role: "Family counselor", relevance: "Saw the parties for marriage counseling before separation."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name} petitions to divorce {defendant_full_name} in {county} County District Court, citing {grounds_lower}, and asks the court to resolve parental rights for {num_children_words} minor child(ren), child support, and division of marital property."
+  narrative:
+    - "{plaintiff_full_name} and {defendant_full_name} were married on {marriage_date} in {marriage_place}. The parties have {num_children_words} minor child(ren) together: {children_names}. After several years of growing conflict and a period of unsuccessful counseling, the parties separated on {separation_date}."
+    - "Since separation, the children have lived primarily with {primary_residence_parent}, while the other parent has exercised weekend contact. The parties jointly own or rent a {marital_home} and share several financial accounts. They disagree about a long-term parenting schedule and about how to divide retirement savings accumulated during the marriage."
+    - "{plaintiff_first} has resided in {county} County, Maine for approximately {residency_months} months, satisfying the residency requirement to file. {plaintiff_first} now seeks a divorce on the ground of {grounds_lower}, a workable parental rights and responsibilities order, child support consistent with the Maine guidelines, and an equitable division of marital property and debt."
+  undisputed:
+    - "The parties were married on {marriage_date} in {marriage_place}."
+    - "The parties have {num_children_words} minor child(ren) of the marriage."
+    - "The parties separated on {separation_date} and have lived apart since."
+  disputed:
+    - "The long-term allocation of parental rights and responsibilities and the primary residence of the children."
+    - "The characterization and division of retirement accounts and the equity in the {marital_home}."
+    - "Whether spousal support is appropriate and, if so, in what amount and for how long."
+  timeline:
+    - {date: "{marriage_date}", event: "{plaintiff_first} and {defendant_first} married in {marriage_place}."}
+    - {date: "{separation_date}", event: "The parties separated."}
+    - {date: "{filing_date}", event: "Complaint for divorce prepared for filing in {court_location} District Court."}
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "Goal", question: "What outcome are you hoping for?", answer: "I want a fair parenting schedule where our children are primarily with me, reasonable child support, and a clean split of what we built together. I am not trying to punish {defendant_first}."}
+    - {topic: "Children", question: "How are the children doing, and what is the current schedule?", answer: "They are doing okay given everything. They are mostly with {primary_residence_parent} during the week and see the other parent on weekends. I want to keep their school and routine stable."}
+    - {topic: "Finances", question: "Tell me about the marital finances.", answer: "We have a {marital_home}, two retirement accounts, a joint checking and savings, and some credit card debt. I do not have full visibility into {defendant_first}'s retirement balances."}
+    - {topic: "Safety", question: "Are there any safety concerns or history of abuse?", answer: "No physical abuse. There were some heated arguments, but nothing that needed police involvement."}
+    - {topic: "Timeline", question: "Is there any urgency to filing?", answer: "I would like to get this moving this season so we have orders in place before the next school year."}
+
+objectives:
+  goals:
+    - "Obtain a parental rights and responsibilities order with the children's primary residence with {primary_residence_parent}."
+    - "Establish child support consistent with the Maine child support guidelines."
+    - "Achieve an equitable division of marital property and debt."
+  priorities:
+    - "Stability and routine for the minor children."
+    - "A predictable, enforceable parenting schedule."
+    - "Financial independence after the divorce."
+  risk_tolerance: {pick: [low, moderate]}
+  desired_outcomes:
+    - "Primary residence of the children with {primary_residence_parent} and shared parental rights."
+    - "Retention of a fair share of retirement savings and home equity."
+  non_starters:
+    - "Any arrangement that destabilizes the children's schooling."
+  constraints:
+    budget: {pick: ["Limited; prefers settlement over a prolonged trial.", "Moderate; willing to mediate but will litigate parenting if needed."]}
+    timeline: "Wants temporary orders before the next school year."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Allocation of parental rights and responsibilities for the minor children", category: family, governing_law: "19-A M.R.S. § 1653", sub_questions: ["Should parental rights be shared, allocated, or sole?", "What primary residence and contact schedule serves the children's best interests?"], strength: moderate, client_position: "Seeks shared parental rights with primary residence with {primary_residence_parent}."}
+    - {issue: "Child support under the Maine guidelines", category: family, governing_law: "19-A M.R.S. § 2006", sub_questions: ["What are each party's gross incomes?", "Who pays for health insurance and child care?"], strength: strong, client_position: "Seeks guideline child support based on accurate income figures."}
+    - {issue: "Division of marital property and debt", category: family, governing_law: "19-A M.R.S. § 953", sub_questions: ["Which assets are marital versus non-marital?", "How should retirement accounts and home equity be divided?"], strength: moderate}
+    - {issue: "Entitlement to and amount of spousal support", category: family, governing_law: "19-A M.R.S. § 951-A", sub_questions: ["Is spousal support appropriate given the marriage length and incomes?"], strength: weak}
+    - {issue: "Responsibility for attorney fees", category: family, governing_law: "19-A M.R.S. § 105", sub_questions: ["Is a fee contribution warranted by the parties' relative resources?"], strength: weak}
+
+experts:
+  count: {min: 0, max: 2}
+  pool:
+    - {field: "Child custody / parenting evaluation", credentials: "Ph.D.", retained_by: court, topic: "Best interests and parenting capacity", opinion: "Both parents are fit; a primary-residence-with-shared-contact schedule best serves the children's stability.", basis: "Clinical interviews, home visits, and collateral contacts."}
+    - {field: "Forensic accounting", credentials: "CPA", retained_by: plaintiff, topic: "Tracing and valuation of marital accounts", opinion: "Retirement contributions during the marriage are marital and total a divisible balance.", basis: "Account statements and contribution histories."}
+    - {field: "Vocational assessment", credentials: "MBA, CVA", retained_by: defendant, topic: "Earning capacity", opinion: "The lower-earning spouse can return to full-time work within a year.", basis: "Work history and labor-market data."}
+
+evidence:
+  count: {min: 3, max: 6}
+  pool:
+    - {title: "Marriage certificate", type: public_record, party: plaintiff, description: "Certified copy establishing the date and place of marriage."}
+    - {title: "Plaintiff's financial statement (FM-050)", type: financial_record, party: plaintiff, description: "Court financial statement of income, expenses, assets, and debts."}
+    - {title: "Recent pay stubs", type: financial_record, party: plaintiff, description: "Three months of pay stubs for income verification."}
+    - {title: "Retirement account statements", type: financial_record, party: defendant, description: "Quarterly statements for both parties' retirement accounts."}
+    - {title: "Deed to the marital home", type: public_record, party: plaintiff, description: "Recorded deed showing joint ownership."}
+    - {title: "Children's school records", type: document, party: plaintiff, description: "Enrollment and report cards showing the children's stable schooling."}
+    - {title: "Text message log", type: correspondence, party: plaintiff, description: "Co-parenting communications relevant to the schedule dispute."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 2, max: 4}
+  amounts:
+    - {label: "Estimated marital home equity", amount: {int_between: [60000, 340000]}, basis: "Estimated fair market value less mortgage."}
+    - {label: "Plaintiff retirement account balance", amount: {int_between: [15000, 180000]}, basis: "Most recent statement."}
+    - {label: "Defendant retirement account balance", amount: {int_between: [15000, 220000]}, basis: "Most recent statement."}
+    - {label: "Joint credit card debt", amount: {int_between: [2000, 28000]}, basis: "Combined balances."}
+    - {label: "Plaintiff annual gross income", amount: {int_between: [38000, 110000]}, basis: "W-2 wages."}

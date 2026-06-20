@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bedardandy/maine_mock_case_generator/catalog/canonical_case.schema.json",
+  "title": "Canonical Case (downstream contract)",
+  "description": "VENDORED COPY of the canonical fact object consumed by the downstream form-filling repos (maine-court-forms, maine-probate-forms, transactional-tax-forms). A Mock Matter projects to this shape via tools/project_canonical.py. Keep in sync with upstream catalog/canonical_case.schema.json in maine-court-forms. The reference filler can derive name components from full_name when the parts are omitted.",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "matter": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "docket_number": { "type": "string" },
+        "case_number": { "type": "string" },
+        "case_id": { "type": "string" },
+        "court_county": { "type": "string" },
+        "court_location": { "type": "string" },
+        "court_type": { "type": "string" },
+        "case_type": { "type": "string" },
+        "filing_date": { "type": "string", "description": "ISO yyyy-mm-dd." },
+        "event_date": { "type": "string", "description": "ISO yyyy-mm-dd." }
+      }
+    },
+    "parties": {
+      "type": "object",
+      "description": "Parties keyed by canonical role. Children use child_1, child_2, ... Use other_party for opponent roles where the filer side is not predetermined.",
+      "additionalProperties": { "$ref": "#/$defs/party" },
+      "properties": {
+        "plaintiff": { "$ref": "#/$defs/party" },
+        "defendant": { "$ref": "#/$defs/party" },
+        "attorney": { "$ref": "#/$defs/party" },
+        "other_party": { "$ref": "#/$defs/party" }
+      },
+      "patternProperties": {
+        "^child_[0-9]+$": { "$ref": "#/$defs/party" }
+      }
+    },
+    "party": {
+      "$ref": "#/$defs/party",
+      "description": "The signing filer when role is not predetermined."
+    },
+    "facts": {
+      "type": "object",
+      "description": "Form-specific key-value pairs; values are scalars, numbers, booleans, arrays, or null.",
+      "additionalProperties": true
+    },
+    "generic": { "type": "boolean", "description": "Marks placeholder samples." },
+    "generic_reason": { "type": "string" },
+    "case_id": { "type": "string", "description": "Deprecated top-level fallback; prefer matter.case_id." },
+    "filing_date": { "type": "string", "description": "Deprecated top-level fallback; prefer matter.filing_date." },
+    "event_date": { "type": "string", "description": "Deprecated top-level fallback; prefer matter.event_date." }
+  },
+  "$defs": {
+    "party": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "full_name": { "type": "string" },
+        "first_name": { "type": "string" },
+        "middle_name": { "type": "string" },
+        "last_name": { "type": "string" },
+        "address": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "zip": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "date_of_birth": { "type": "string", "description": "ISO yyyy-mm-dd." },
+        "signature": { "type": "string" },
+        "bar_number": { "type": "string" }
+      }
+    }
+  }
+}

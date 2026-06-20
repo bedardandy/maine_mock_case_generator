@@ -1,0 +1,81 @@
+"""Project a rich Mock Matter down to the downstream canonical case object.
+
+This is the seam into the form-filling repos (maine-court-forms, maine-probate-forms,
+transactional-tax-forms): they consume the canonical fact object, and this function
+produces it from a Mock Matter. Validate the result with schema.validate_canonical().
+"""
+from __future__ import annotations
+
+_CANONICAL_PARTY_FIELDS = (
+    "full_name", "first_name", "middle_name", "last_name",
+    "address", "city", "state", "zip", "phone", "email",
+    "date_of_birth", "signature", "bar_number",
+)
+
+# Roles carried into the canonical object. "client" is intentionally excluded
+# because it aliases another role and becomes the signing `party` instead.
+_PROJECTED_ROLES = (
+    "plaintiff", "defendant", "petitioner", "respondent",
+    "decedent", "personal_representative", "attorney", "other_party", "company",
+)
+
+# When a strict downstream filler expects plaintiff/defendant, supply them from
+# the equivalent role without dropping the original.
+_ALIASES = {"plaintiff": "petitioner", "defendant": "respondent"}
+
+
+def _reduce_party(party: dict) -> dict:
+    out = {k: party[k] for k in _CANONICAL_PARTY_FIELDS if party.get(k) not in (None, "")}
+    # Organizations carry their name in organization_name; mirror to full_name.
+    if "full_name" not in out and party.get("organization_name"):
+        out["full_name"] = party["organization_name"]
+    return out
+
+
+def project_to_canonical(matter: dict) -> dict:
+    matter_meta = matter.get("matter", {})
+    jurisdiction = matter_meta.get("jurisdiction", {})
+
+    canonical_matter = {}
+    if matter_meta.get("docket_number"):
+        canonical_matter["docket_number"] = matter_meta["docket_number"]
+    if matter_meta.get("matter_id"):
+        canonical_matter["case_id"] = matter_meta["matter_id"]
+    if jurisdiction.get("county"):
+        canonical_matter["court_county"] = jurisdiction["county"]
+    if jurisdiction.get("court_location"):
+        canonical_matter["court_location"] = jurisdiction["court_location"]
+    if jurisdiction.get("court_type"):
+        canonical_matter["court_type"] = jurisdiction["court_type"]
+    if matter_meta.get("case_type"):
+        canonical_matter["case_type"] = matter_meta["case_type"]
+    if matter_meta.get("filing_date"):
+        canonical_matter["filing_date"] = matter_meta["filing_date"]
+    if matter_meta.get("event_date"):
+        canonical_matter["event_date"] = matter_meta["event_date"]
+
+    src_parties = matter.get("parties", {})
+    canonical_parties: dict = {}
+    for key, party in src_parties.items():
+        if key in _PROJECTED_ROLES or key.startswith("child_"):
+            canonical_parties[key] = _reduce_party(party)
+    # Aliases so plaintiff/defendant exist for strict downstream fillers.
+    for target, source in _ALIASES.items():
+        if target not in canonical_parties and source in canonical_parties:
+            canonical_parties[target] = dict(canonical_parties[source])
+
+    case = {"matter": canonical_matter, "parties": canonical_parties}
+
+    # Signing filer (`party`): the represented client, else plaintiff/petitioner.
+    signer_source = None
+    for key in ("client", "plaintiff", "petitioner", "personal_representative"):
+        if key in src_parties:
+            signer_source = src_parties[key]
+            break
+    if signer_source is not None:
+        case["party"] = _reduce_party(signer_source)
+
+    if matter.get("facts"):
+        case["facts"] = dict(matter["facts"])
+
+    return case

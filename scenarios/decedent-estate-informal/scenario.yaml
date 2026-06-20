@@ -1,0 +1,136 @@
+id: decedent-estate-informal
+title: "Estate of {decedent_full_name}: {probate_type} and appointment of {personal_representative_full_name}"
+practice_area: probate
+case_type: decedent_estate
+status: pre_filing
+docket_prefix: PE
+assign_docket: true
+
+downstream:
+  repo: maine-probate-forms
+  example_forms: [DE-101, DE-201, DE-301, PP-107]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Probate Court
+
+dates:
+  filing_date: {date_between: ["2025-10-01", "2026-06-01"]}
+  event_date: "{date_of_death}"
+
+parties:
+  client_role: personal_representative
+  attorney: true
+  roles:
+    - {key: decedent, label: "Decedent", with_contact: false, with_dob: true}
+    - {key: personal_representative, label: "Applicant / proposed personal representative", with_dob: true}
+
+facts:
+  date_of_death: {date_between: ["2025-06-01", "2026-03-31"]}
+  will_exists: {pick: [true, false]}
+  will_date: {date_between: ["2010-01-01", "2024-12-31"]}
+  decedent_domicile_county: "{county}"
+  relationship_to_decedent: {pick: ["surviving spouse", "adult son", "adult daughter", "sibling", "nephew"]}
+  approximate_estate_value: {int_between: [45000, 850000]}
+  real_property: {pick: [true, false]}
+  num_heirs: {int_between: [1, 5]}
+  bond_required: {pick: [true, false]}
+  probate_type: {pick: ["informal probate", "informal appointment"]}
+
+third_parties:
+  count: {min: 2, max: 4}
+  pool:
+    - {type: beneficiary, name_kind: person, role: "Surviving spouse of the decedent", relationship: "Surviving spouse", relevance: "A statutory beneficiary entitled to an intestate share, homestead allowance, and any family allowance; must receive notice of the proceeding."}
+    - {type: beneficiary, name_kind: person, role: "Adult child of the decedent", relationship: "Heir at law", relevance: "An heir and potential devisee who is entitled to notice and to a distributive share of the estate."}
+    - {type: creditor, name_kind: organization, name: "Coastal Maine Medical Center", role: "Medical creditor of the estate", relevance: "Holds an unpaid claim for the decedent's final medical care that must be presented within the statutory claims period."}
+    - {type: financial_institution, name_kind: bank, role: "Bank holding the decedent's accounts", relevance: "Holds the decedent's checking, savings, and brokerage accounts that the personal representative must marshal and administer."}
+    - {type: creditor, name_kind: organization, name: "Evergreen Funeral Home", role: "Funeral and burial creditor", relevance: "Holds a claim for funeral and burial expenses, which are a priority charge against the estate."}
+    - {type: beneficiary, name_kind: person, role: "Devisee named in the will", relationship: "Named devisee", relevance: "A person named to take under the will; entitled to notice and to receive the devise if the will is admitted."}
+
+fact_pattern:
+  summary: "{personal_representative_full_name} applies for {probate_type} of the estate of {decedent_full_name}, who died on {date_of_death} domiciled in {decedent_domicile_county} County, Maine, and asks the {court_location} Probate Court to be appointed personal representative to marshal an estate valued at roughly ${approximate_estate_value}, pay valid claims, and distribute the remainder to the heirs and devisees."
+  narrative:
+    - "{decedent_full_name} died on {date_of_death} while domiciled in {decedent_domicile_county} County, Maine. {personal_representative_full_name}, the decedent's {relationship_to_decedent}, has the highest priority among those willing to serve and seeks appointment as personal representative through {probate_type} so the estate can be administered without a contested formal proceeding."
+    - "The decedent left an estate valued at approximately ${approximate_estate_value}, consisting of bank and brokerage accounts, vehicles and personal property, and, where applicable, real property. There are roughly {num_heirs} heir(s) and devisee(s) to whom notice must be given. The applicant believes the estate is solvent and that administration can proceed informally."
+    - "{personal_representative_first} now asks the Probate Court to determine that the application is complete, to admit the will to informal probate if a valid will exists, and to appoint {personal_representative_first} as personal representative with authority to collect assets, pay funeral expenses and valid creditor claims within the statutory period, and distribute the balance of the estate to those entitled under the will or, if there is no will, under the Maine intestacy statutes."
+  undisputed:
+    - "{decedent_full_name} died on {date_of_death} domiciled in {decedent_domicile_county} County, Maine."
+    - "{personal_representative_full_name} is the decedent's {relationship_to_decedent} and applies to serve as personal representative."
+    - "The estate is valued at approximately ${approximate_estate_value} and includes accounts and personal property to be marshaled and administered."
+  disputed:
+    - "Whether the will (if any) was validly executed and is entitled to informal probate, or whether the estate passes by intestacy."
+    - "The validity and priority of creditor claims presented against the estate, including final medical and funeral expenses."
+    - "Whether a bond should be required of the personal representative and in what amount."
+  timeline:
+    - {date: "{will_date}", event: "Decedent executed the will offered for informal probate, if a valid will exists."}
+    - {date: "{date_of_death}", event: "{decedent_full_name} died domiciled in {decedent_domicile_county} County, Maine."}
+    - {date: "{filing_date}", event: "Application for {probate_type} and appointment of a personal representative prepared for filing in the {court_location} Probate Court."}
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: personal_representative
+  exchanges:
+    - {topic: "Relationship", question: "What was your relationship to the person who passed away, and when did they die?", answer: "I am the decedent's {relationship_to_decedent}. {decedent_first} passed away on {date_of_death}. I am the one the family is looking to handle the estate, and I want to be appointed so I can take care of things properly."}
+    - {topic: "Will", question: "Did the decedent leave a will, and do you have the original?", answer: "We have looked carefully for any will. If there is a valid will, I want it admitted so we can follow the decedent's wishes; if there is no will, I understand the estate would pass to the heirs under Maine law. Either way, I would like to handle it informally if we can."}
+    - {topic: "Assets", question: "What does the estate consist of?", answer: "There are bank and brokerage accounts, a vehicle and personal belongings, and, depending on the situation, real property. All told it is worth somewhere around ${approximate_estate_value}. I need authority to get the accounts released and to deal with the property."}
+    - {topic: "Heirs", question: "Who are the heirs or the people named to inherit?", answer: "There are about {num_heirs} people who would inherit, including close family. I want to make sure everyone entitled to notice gets it and that the estate is divided fairly and correctly."}
+    - {topic: "Needs", question: "What do you most need to be able to do once you are appointed?", answer: "I need the legal authority to act for the estate: to pay the funeral bill and the valid debts, to collect and protect the assets, to transfer or sell property if needed, and ultimately to distribute what is left to the heirs and devisees. I would rather avoid a formal, contested proceeding if at all possible."}
+
+objectives:
+  goals:
+    - "Be appointed personal representative of the estate through {probate_type}."
+    - "Marshal, inventory, and protect the assets of the estate."
+    - "Pay funeral expenses and valid creditor claims in the order of priority required by law."
+    - "Distribute the remaining estate to the heirs and devisees entitled to it."
+  priorities:
+    - "Obtaining clear authority to act for the estate without delay."
+    - "Protecting estate assets and keeping the estate solvent."
+    - "Treating all heirs and devisees fairly and avoiding family conflict."
+  risk_tolerance: low
+  desired_outcomes:
+    - "Appointment as personal representative and, if a valid will exists, admission of the will to informal probate."
+    - "Orderly payment of valid claims and distribution of the estate to those entitled under the will or by intestacy."
+  non_starters:
+    - "A contested formal probate proceeding, if it can reasonably be avoided."
+    - "Any distribution that ignores a valid will or shortchanges an heir entitled to a share."
+  constraints:
+    budget: {pick: ["Limited; the applicant prefers an efficient informal administration over costly litigation.", "Moderate; paid from estate funds, with a preference for resolving claims by agreement."]}
+    timeline: "Wants appointment promptly so accounts can be released and time-sensitive claims and bills addressed."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Sufficiency of the application for informal probate and appointment", category: probate, governing_law: "18-C M.R.S. § 3-301", sub_questions: ["Does the application contain all statements required for informal probate or informal appointment?", "Is venue proper in the county of the decedent's domicile at death?"], strength: strong, client_position: "Contends the application is complete and properly venued in {decedent_domicile_county} County so {probate_type} may proceed."}
+    - {issue: "Priority for appointment of the personal representative", category: probate, governing_law: "18-C M.R.S. § 3-203", sub_questions: ["Does the applicant have priority for appointment among those willing to serve?", "Have persons with equal or higher priority been given notice or renounced?"], strength: strong, client_position: "Asserts priority for appointment as the decedent's {relationship_to_decedent} and that no person with higher priority objects."}
+    - {issue: "Presentation and limitation of creditor claims against the estate", category: probate, governing_law: "18-C M.R.S. § 3-803", sub_questions: ["Within what period must creditors present claims before they are barred?", "Are the medical and funeral claims valid, and in what order are they paid?"], strength: moderate, client_position: "Intends to give notice to creditors and pay only timely, valid claims in their statutory order of priority."}
+    - {issue: "Intestate share if the decedent died without a valid will", category: probate, governing_law: "18-C M.R.S. § 2-102", sub_questions: ["If there is no will, what share passes to the surviving spouse?", "How is the balance distributed among the decedent's heirs?"], strength: moderate, client_position: "If no valid will exists, seeks distribution to the surviving spouse and heirs as the intestacy statutes direct."}
+    - {issue: "Determination of heirs and their shares by intestate succession", category: probate, governing_law: "18-C M.R.S. § 2-103", sub_questions: ["Who are the decedent's heirs as a matter of law?", "What fractional share does each heir take?"], strength: moderate, client_position: "Seeks an accurate determination of the {num_heirs} heir(s) and their respective shares."}
+    - {issue: "Homestead allowance for the surviving spouse", category: probate, governing_law: "18-C M.R.S. § 2-402", sub_questions: ["Is a surviving spouse entitled to the statutory homestead allowance?", "How does the allowance affect the shares of other claimants and heirs?"], strength: moderate, client_position: "Acknowledges any homestead allowance owed to a surviving spouse before general distribution."}
+    - {issue: "Timeliness of commencing the probate proceeding", category: probate, governing_law: "18-C M.R.S. § 3-108", sub_questions: ["Is the application brought within the period allowed to commence probate?", "Do any exceptions to the limitation period apply?"], strength: strong, client_position: "Files well within the limitation period for commencing probate after the decedent's death."}
+
+experts:
+  count: {min: 0, max: 2}
+  pool:
+    - {field: "Real estate appraisal", credentials: "MAI", retained_by: personal_representative, topic: "Date-of-death value of the decedent's real property", opinion: "The decedent's real property had a fair market value as of the date of death within the appraised range used for the inventory.", basis: "Inspection of the property and analysis of comparable sales in the county."}
+    - {field: "Estate accounting", credentials: "CPA", retained_by: personal_representative, topic: "Inventory, accounting, and solvency of the estate", opinion: "The estate is solvent, and the proposed inventory and accounting fairly reflect its assets, debts, and distributions.", basis: "Review of account statements, claims presented, and the preliminary inventory of assets."}
+
+evidence:
+  count: {min: 3, max: 6}
+  pool:
+    - {title: "Certified death certificate", type: public_record, party: personal_representative, description: "Certified copy of the decedent's death certificate establishing the date and place of death."}
+    - {title: "Original last will and testament", type: document, party: personal_representative, description: "The decedent's original will, dated {will_date}, offered for informal probate if a valid will exists."}
+    - {title: "Preliminary inventory of assets", type: financial_record, party: personal_representative, description: "Schedule of the estate's real and personal property with date-of-death values."}
+    - {title: "Bank and brokerage statements", type: financial_record, party: personal_representative, description: "Account statements documenting the decedent's cash and investment accounts."}
+    - {title: "Recorded deed to real property", type: public_record, party: personal_representative, description: "Recorded deed evidencing the decedent's interest in real property, where applicable."}
+    - {title: "Funeral bill and other claims", type: financial_record, party: personal_representative, description: "Funeral and burial invoice and other creditor claims presented against the estate."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 2, max: 4}
+  amounts:
+    - {label: "Real property value", amount: {int_between: [120000, 500000]}, basis: "Estimated date-of-death fair market value of the decedent's real property."}
+    - {label: "Bank and brokerage accounts", amount: {int_between: [10000, 300000]}, basis: "Date-of-death balances of the decedent's cash and investment accounts."}
+    - {label: "Vehicle and personal property", amount: {int_between: [3000, 40000]}, basis: "Estimated value of the decedent's vehicle and tangible personal property."}
+    - {label: "Outstanding debts and claims", amount: {int_between: [2000, 60000]}, basis: "Funeral expenses, final medical bills, and other creditor claims presented against the estate."}

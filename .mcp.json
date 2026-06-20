@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "mock-case-generator": {
+      "command": "python3",
+      "args": ["tools/mcp_server.py"],
+      "description": "Generate and validate fictional mock legal matters for pipeline smoke testing."
+    }
+  }
+}

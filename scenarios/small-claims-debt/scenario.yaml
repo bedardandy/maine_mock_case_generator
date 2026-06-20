@@ -1,0 +1,129 @@
+id: small-claims-debt
+title: "Small Claims of {plaintiff_full_name} v. {defendant_full_name}"
+practice_area: civil
+case_type: small_claims
+status: pre_filing
+docket_prefix: SC
+assign_docket: true
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [SC-001, SC-013, CV-001]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: District Court
+
+dates:
+  filing_date: {date_between: ["2025-09-01", "2026-06-01"]}
+  event_date: "{services_completed_date}"
+
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - {key: plaintiff, label: "Plaintiff (creditor / business owner)"}
+    - {key: defendant, label: "Defendant (customer who owes the debt)"}
+
+facts:
+  business_name: {pick: ["a landscaping business", "a home-repair business", "an auto-repair shop", "a catering business", "a freelance web-design practice"]}
+  debt_origin: {pick: ["unpaid invoice for completed services", "unpaid invoice for goods delivered", "a defaulted personal loan", "unpaid rent for equipment"]}
+  services_completed_date: {date_between: ["2025-01-01", "2025-08-31"]}
+  invoice_amount: {int_between: [900, 6000]}
+  amount_paid: {int_between: [0, 800]}
+  demand_letter_date: {date_between: ["2025-09-15", "2025-12-31"]}
+  written_contract: {pick: [true, false]}
+  interest_claimed: {pick: [true, false]}
+  contract_status: {pick: ["governed by a signed written contract", "based on a written work order the customer signed", "based on an oral agreement confirmed by email and text", "an informal arrangement with no signed contract"]}
+
+third_parties:
+  count: {min: 1, max: 3}
+  pool:
+    - {type: business_entity, name_kind: organization, role: "Collections agency", relevance: "The plaintiff consulted this agency about recovering the unpaid balance before deciding to file in small claims court."}
+    - {type: financial_institution, name_kind: bank, role: "Bank where the check was drawn", relevance: "The bank on which the defendant's returned check was drawn; can confirm the check was dishonored for insufficient funds."}
+    - {type: witness, name_kind: person, role: "Employee who performed the work", relationship: "Plaintiff's employee", relevance: "Performed the work for the defendant and can testify that the services were completed as agreed."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name}, the sole proprietor of {business_name}, brings a small claims action in {county} County District Court against a former customer, {defendant_full_name}, to collect the unpaid balance arising from {debt_origin}; the claim is within the $6,000 Maine small claims limit."
+  narrative:
+    - "{plaintiff_full_name} owns and operates {business_name} as a sole proprietor in {county} County, Maine. In early 2025 the business agreed to perform work for {defendant_full_name}, a customer, and completed that work on {services_completed_date}. The matter arises from {debt_origin}."
+    - "The business billed {defendant_first} an invoice amount of ${invoice_amount} for the work. {defendant_first} paid only ${amount_paid} toward that bill and then stopped responding, leaving the unpaid balance (the invoice amount less the amount paid) outstanding. {plaintiff_first} sent a written demand for payment on {demand_letter_date}, but {defendant_first} neither paid the balance nor disputed the underlying charges in writing."
+    - "{plaintiff_first} now seeks a small claims judgment for the unpaid balance, together with court costs and post-judgment interest. Because the total amount in controversy is at or below $6,000, the claim falls within the jurisdiction of the Maine District Court small claims docket under 14 M.R.S. § 7482, and {plaintiff_first} intends to file in {court_location}."
+  undisputed:
+    - "{plaintiff_full_name} operates {business_name} as a sole proprietor."
+    - "The work was completed on {services_completed_date} and {defendant_full_name} was billed ${invoice_amount}."
+    - "{defendant_full_name} paid ${amount_paid} and a balance remains unpaid."
+    - "{plaintiff_first} sent a written demand for payment on {demand_letter_date}."
+  disputed:
+    - "Whether the full invoiced amount was actually owed, or whether {defendant_first} claims the work was incomplete or defective."
+    - "Whether the parties ever agreed on the price and scope of the work, given that the engagement was {contract_status}."
+    - "Whether {plaintiff_first} is entitled to the claimed pre-judgment interest in addition to the unpaid balance."
+  timeline:
+    - {date: "{services_completed_date}", event: "{plaintiff_first} completed the work for {defendant_first} and issued the invoice for ${invoice_amount}."}
+    - {date: "{demand_letter_date}", event: "{plaintiff_first} sent a written demand letter for the unpaid balance."}
+    - {date: "{filing_date}", event: "Statement of Claim (SC-001) prepared for filing in {court_location} District Court."}
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "What is owed", question: "How much does the customer owe you, and how did the debt come about?", answer: "I run {business_name}. I billed {defendant_first} ${invoice_amount} for the work, they only paid ${amount_paid}, and the rest of the balance is still unpaid. This all comes out of {debt_origin}."}
+    - {topic: "The agreement", question: "What did the two of you agree to, and is any of it in writing?", answer: "We agreed on the work and the price up front. The job was {contract_status}, and either way I have the invoice and our messages back and forth, so the terms are clear."}
+    - {topic: "Collection attempts", question: "What have you done so far to try to collect?", answer: "I called and emailed several times, then I sent a written demand letter on {demand_letter_date}. I even talked to a collections agency, but {defendant_first} just went quiet and never paid the balance."}
+    - {topic: "Interest and costs", question: "Are you looking for anything beyond the unpaid balance itself?", answer: "I want the balance, my filing fee back, and post-judgment interest. Whether I can add the pre-judgment interest I figured is up to you, but I do not want to be out of pocket for taking them to court."}
+    - {topic: "Desired outcome", question: "What does a good resolution look like for you?", answer: "Honestly, I just want to be paid what I am actually owed. I am not going to keep spending money chasing this forever, but I am not willing to simply write off the whole debt either."}
+
+objectives:
+  goals:
+    - "Obtain a small claims judgment for the unpaid balance owed by {defendant_full_name}."
+    - "Recover court costs, including the filing fee, from the defendant."
+    - "Resolve the matter efficiently without spending more than the debt is worth."
+  priorities:
+    - "Being made whole on the unpaid balance."
+    - "Keeping collection costs proportionate to the amount in dispute."
+    - "A clean, enforceable judgment that supports later collection if needed."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A money judgment for the unpaid balance plus allowable court costs and post-judgment interest."
+    - "Prompt payment, or a realistic payment plan, from {defendant_first}."
+  non_starters:
+    - "Writing off the full debt and walking away with nothing."
+  constraints:
+    budget: {pick: ["Limited; unwilling to spend more on collection than the debt is worth.", "Modest; prefers the streamlined small claims process over a full civil suit."]}
+    timeline: "Wants to file and obtain a judgment within the current court term."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Small claims jurisdiction and the $6,000 monetary limit", category: civil, governing_law: "14 M.R.S. § 7482", sub_questions: ["Is the total amount in controversy at or below the $6,000 small claims limit?", "Should any claimed interest or costs be counted toward that limit?"], strength: strong, client_position: "The unpaid balance is within the $6,000 limit, so the District Court small claims docket has jurisdiction."}
+    - {issue: "Breach of the agreement to pay for the work", category: civil, governing_law: "Breach of contract (Maine common law)", sub_questions: ["Did the parties form an enforceable agreement on price and scope?", "Did the plaintiff perform and the defendant fail to pay?"], strength: moderate, client_position: "The plaintiff performed the agreed work and the defendant breached by failing to pay the balance."}
+    - {issue: "Account stated for the unpaid invoice", category: civil, governing_law: "Account stated (Maine common law)", sub_questions: ["Was an invoice rendered and retained without timely objection?", "Does the defendant's partial payment acknowledge the debt?"], strength: moderate, client_position: "The invoice was rendered, partially paid, and never disputed, establishing an account stated."}
+    - {issue: "Statute of limitations for a contract claim", category: civil, governing_law: "14 M.R.S. § 752", sub_questions: ["Did the claim accrue within the six-year limitations period?", "Does the recent completion date keep the action timely?"], strength: strong, client_position: "The debt arose in 2025, well within the six-year limitations period, so the action is timely."}
+    - {issue: "Entitlement to post-judgment interest and costs", category: civil, governing_law: "14 M.R.S. § 1602-C", sub_questions: ["Is the plaintiff entitled to post-judgment interest on the award?", "Are the filing fee and service costs recoverable?"], strength: moderate, client_position: "The plaintiff is entitled to post-judgment interest and to recover allowable court costs."}
+    - {issue: "Compliance with the Maine Rules of Small Claims Procedure", category: civil, governing_law: "Maine Rules of Small Claims Procedure", sub_questions: ["Is the Statement of Claim complete and properly served?", "Is the defendant a proper party amenable to service in the county?"], strength: strong, client_position: "The plaintiff will file a complete Statement of Claim and effect proper service under the rules."}
+
+experts:
+  count: {min: 0, max: 1}
+  pool:
+    - {field: "Accounting / damages", credentials: "CPA", retained_by: plaintiff, topic: "Authentication of the account ledger and computation of the balance due", opinion: "The ledger accurately reflects the invoiced charges and partial payment, leaving the claimed unpaid balance.", basis: "Review of the invoice, the account ledger, and the record of payments received."}
+
+evidence:
+  count: {min: 3, max: 6}
+  pool:
+    - {title: "Written contract / signed work order", type: contract, party: plaintiff, description: "The written agreement or work order describing the agreed scope and price of the work."}
+    - {title: "Unpaid invoice", type: financial_record, party: plaintiff, description: "The invoice billed to the defendant for ${invoice_amount} that remains unpaid."}
+    - {title: "Account / payment ledger", type: financial_record, party: plaintiff, description: "The business ledger showing the charge, the ${amount_paid} partial payment, and the outstanding balance."}
+    - {title: "Demand letter", type: correspondence, party: plaintiff, description: "The written demand for payment sent to the defendant on {demand_letter_date}."}
+    - {title: "Email and text exchanges acknowledging the debt", type: correspondence, party: plaintiff, description: "Messages in which the defendant discusses the work and acknowledges owing for it."}
+    - {title: "Returned / bounced check", type: financial_record, party: plaintiff, description: "A check from the defendant that was returned by the bank for insufficient funds."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 2, max: 4}
+  amounts:
+    - {label: "Invoice amount billed", amount: {int_between: [900, 6000]}, basis: "Total charged to the defendant for the work."}
+    - {label: "Amount already paid by defendant", amount: {int_between: [0, 800]}, basis: "Partial payment received before the customer stopped paying."}
+    - {label: "Claimed pre-judgment interest", amount: {int_between: [0, 400]}, basis: "Interest claimed on the overdue balance, if allowed."}
+    - {label: "Court filing fee", amount: {int_between: [50, 150]}, basis: "Small claims filing fee paid to the District Court."}

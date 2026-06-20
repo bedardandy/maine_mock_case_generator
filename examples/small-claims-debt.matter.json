@@ -1,0 +1,361 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "small-claims-debt",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-490487",
+    "practice_area": "civil",
+    "title": "Small Claims of Grace C. Roe v. John Q. Poe",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "District Court"
+    },
+    "case_type": "small_claims",
+    "filing_date": "2025-11-17",
+    "status": "pre_filing",
+    "summary": "Grace C. Roe, the sole proprietor of a home-repair business, brings a small claims action in Sagadahoc County District Court against a former customer, John Q. Poe, to collect the unpaid balance arising from unpaid invoice for completed services; the claim is within the $6,000 Maine small claims limit.",
+    "event_date": "2025-05-27",
+    "docket_number": "SAG-SC-2025-199"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Plaintiff (creditor / business owner)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "defendant": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "Q",
+      "last_name": "Poe",
+      "full_name": "John Q. Poe",
+      "role": "Defendant (customer who owes the debt)",
+      "address": "216 Maple Court",
+      "city": "Orono",
+      "state": "ME",
+      "zip": "04012",
+      "phone": "(207) 555-0170",
+      "email": "john.poe@example.org",
+      "date_of_birth": "1998-10-17"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Samuel",
+      "middle_name": "B",
+      "last_name": "Boe",
+      "full_name": "Samuel B. Boe",
+      "role": "Attorney for the client",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "samuel.boe@example.com",
+      "date_of_birth": "1966-03-10",
+      "bar_number": "5744",
+      "organization_name": "Kingsley & Associates"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Plaintiff (creditor / business owner)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe, the sole proprietor of a home-repair business, brings a small claims action in Sagadahoc County District Court against a former customer, John Q. Poe, to collect the unpaid balance arising from unpaid invoice for completed services; the claim is within the $6,000 Maine small claims limit.",
+    "narrative": "Grace C. Roe owns and operates a home-repair business as a sole proprietor in Sagadahoc County, Maine. In early 2025 the business agreed to perform work for John Q. Poe, a customer, and completed that work on 2025-05-27. The matter arises from unpaid invoice for completed services.\n\nThe business billed John an invoice amount of $3427 for the work. John paid only $573 toward that bill and then stopped responding, leaving the unpaid balance (the invoice amount less the amount paid) outstanding. Grace sent a written demand for payment on 2025-12-28, but John neither paid the balance nor disputed the underlying charges in writing.\n\nGrace now seeks a small claims judgment for the unpaid balance, together with court costs and post-judgment interest. Because the total amount in controversy is at or below $6,000, the claim falls within the jurisdiction of the Maine District Court small claims docket under 14 M.R.S. § 7482, and Grace intends to file in Bath.",
+    "undisputed_facts": [
+      "Grace C. Roe operates a home-repair business as a sole proprietor.",
+      "The work was completed on 2025-05-27 and John Q. Poe was billed $3427.",
+      "John Q. Poe paid $573 and a balance remains unpaid.",
+      "Grace sent a written demand for payment on 2025-12-28."
+    ],
+    "disputed_facts": [
+      "Whether the full invoiced amount was actually owed, or whether John claims the work was incomplete or defective.",
+      "Whether the parties ever agreed on the price and scope of the work, given that the engagement was based on a written work order the customer signed.",
+      "Whether Grace is entitled to the claimed pre-judgment interest in addition to the unpaid balance."
+    ],
+    "timeline": [
+      {
+        "date": "2025-05-27",
+        "event": "Grace completed the work for John and issued the invoice for $3427."
+      },
+      {
+        "date": "2025-11-17",
+        "event": "Statement of Claim (SC-001) prepared for filing in Bath District Court."
+      },
+      {
+        "date": "2025-12-28",
+        "event": "Grace sent a written demand letter for the unpaid balance."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Desmond S. Noe",
+      "type": "witness",
+      "role": "Employee who performed the work",
+      "relationship": "Plaintiff's employee",
+      "relevance": "Performed the work for the defendant and can testify that the services were completed as agreed.",
+      "contact": {
+        "phone": "(207) 555-0187",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "desmond.noe@example.net"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Lighthouse Studios Corp.",
+      "type": "business_entity",
+      "role": "Collections agency",
+      "relevance": "The plaintiff consulted this agency about recovering the unpaid balance before deciding to file in small claims court.",
+      "contact": {
+        "phone": "(207) 555-0131",
+        "city": "Orono",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Lighthouse Trust Company",
+      "type": "financial_institution",
+      "role": "Bank where the check was drawn",
+      "relevance": "The bank on which the defendant's returned check was drawn; can confirm the check was dishonored for insufficient funds.",
+      "contact": {
+        "phone": "(207) 555-0138",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Intake Attorney",
+    "interviewee_role": "plaintiff",
+    "date": "2025-11-17",
+    "exchanges": [
+      {
+        "topic": "What is owed",
+        "question": "How much does the customer owe you, and how did the debt come about?",
+        "answer": "I run a home-repair business. I billed John $3427 for the work, they only paid $573, and the rest of the balance is still unpaid. This all comes out of unpaid invoice for completed services."
+      },
+      {
+        "topic": "The agreement",
+        "question": "What did the two of you agree to, and is any of it in writing?",
+        "answer": "We agreed on the work and the price up front. The job was based on a written work order the customer signed, and either way I have the invoice and our messages back and forth, so the terms are clear."
+      },
+      {
+        "topic": "Collection attempts",
+        "question": "What have you done so far to try to collect?",
+        "answer": "I called and emailed several times, then I sent a written demand letter on 2025-12-28. I even talked to a collections agency, but John just went quiet and never paid the balance."
+      },
+      {
+        "topic": "Interest and costs",
+        "question": "Are you looking for anything beyond the unpaid balance itself?",
+        "answer": "I want the balance, my filing fee back, and post-judgment interest. Whether I can add the pre-judgment interest I figured is up to you, but I do not want to be out of pocket for taking them to court."
+      },
+      {
+        "topic": "Desired outcome",
+        "question": "What does a good resolution look like for you?",
+        "answer": "Honestly, I just want to be paid what I am actually owed. I am not going to keep spending money chasing this forever, but I am not willing to simply write off the whole debt either."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Obtain a small claims judgment for the unpaid balance owed by John Q. Poe.",
+      "Recover court costs, including the filing fee, from the defendant.",
+      "Resolve the matter efficiently without spending more than the debt is worth."
+    ],
+    "priorities": [
+      "Being made whole on the unpaid balance.",
+      "Keeping collection costs proportionate to the amount in dispute.",
+      "A clean, enforceable judgment that supports later collection if needed."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "A money judgment for the unpaid balance plus allowable court costs and post-judgment interest.",
+      "Prompt payment, or a realistic payment plan, from John."
+    ],
+    "non_starters": [
+      "Writing off the full debt and walking away with nothing."
+    ],
+    "constraints": {
+      "budget": "Modest; prefers the streamlined small claims process over a full civil suit.",
+      "timeline": "Wants to file and obtain a judgment within the current court term."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Entitlement to post-judgment interest and costs",
+      "category": "civil",
+      "governing_law": "14 M.R.S. § 1602-C",
+      "sub_questions": [
+        "Is the plaintiff entitled to post-judgment interest on the award?",
+        "Are the filing fee and service costs recoverable?"
+      ],
+      "strength": "moderate",
+      "client_position": "The plaintiff is entitled to post-judgment interest and to recover allowable court costs.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Small claims jurisdiction and the $6,000 monetary limit",
+      "category": "civil",
+      "governing_law": "14 M.R.S. § 7482",
+      "sub_questions": [
+        "Is the total amount in controversy at or below the $6,000 small claims limit?",
+        "Should any claimed interest or costs be counted toward that limit?"
+      ],
+      "strength": "strong",
+      "client_position": "The unpaid balance is within the $6,000 limit, so the District Court small claims docket has jurisdiction.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Compliance with the Maine Rules of Small Claims Procedure",
+      "category": "civil",
+      "governing_law": "Maine Rules of Small Claims Procedure",
+      "sub_questions": [
+        "Is the Statement of Claim complete and properly served?",
+        "Is the defendant a proper party amenable to service in the county?"
+      ],
+      "strength": "strong",
+      "client_position": "The plaintiff will file a complete Statement of Claim and effect proper service under the rules.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Account stated for the unpaid invoice",
+      "category": "civil",
+      "governing_law": "Account stated (Maine common law)",
+      "sub_questions": [
+        "Was an invoice rendered and retained without timely objection?",
+        "Does the defendant's partial payment acknowledge the debt?"
+      ],
+      "strength": "moderate",
+      "client_position": "The invoice was rendered, partially paid, and never disputed, establishing an account stated.",
+      "id": "iss4"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Nadia S. Loe",
+        "field": "Accounting / damages",
+        "credentials": "CPA",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Authentication of the account ledger and computation of the balance due",
+      "opinion": "The ledger accurately reflects the invoiced charges and partial payment, leaving the claimed unpaid balance.",
+      "basis": "Review of the invoice, the account ledger, and the record of payments received."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Written contract / signed work order",
+      "type": "contract",
+      "party": "plaintiff",
+      "description": "The written agreement or work order describing the agreed scope and price of the work.",
+      "id": "ev1"
+    },
+    {
+      "title": "Returned / bounced check",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "A check from the defendant that was returned by the bank for insufficient funds.",
+      "id": "ev2"
+    },
+    {
+      "title": "Account / payment ledger",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "The business ledger showing the charge, the $573 partial payment, and the outstanding balance.",
+      "id": "ev3"
+    },
+    {
+      "title": "Unpaid invoice",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "The invoice billed to the defendant for $3427 that remains unpaid.",
+      "id": "ev4"
+    },
+    {
+      "title": "Demand letter",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "The written demand for payment sent to the defendant on 2025-12-28.",
+      "id": "ev5"
+    },
+    {
+      "title": "Email and text exchanges acknowledging the debt",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "Messages in which the defendant discusses the work and acknowledges owing for it.",
+      "id": "ev6"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Court filing fee",
+        "amount": 110,
+        "basis": "Small claims filing fee paid to the District Court."
+      },
+      {
+        "label": "Invoice amount billed",
+        "amount": 1432,
+        "basis": "Total charged to the defendant for the work."
+      },
+      {
+        "label": "Claimed pre-judgment interest",
+        "amount": 31,
+        "basis": "Interest claimed on the overdue balance, if allowed."
+      },
+      {
+        "label": "Amount already paid by defendant",
+        "amount": 748,
+        "basis": "Partial payment received before the customer stopped paying."
+      }
+    ]
+  },
+  "facts": {
+    "business_name": "a home-repair business",
+    "debt_origin": "unpaid invoice for completed services",
+    "services_completed_date": "2025-05-27",
+    "invoice_amount": 3427,
+    "amount_paid": 573,
+    "demand_letter_date": "2025-12-28",
+    "written_contract": true,
+    "interest_claimed": true,
+    "contract_status": "based on a written work order the customer signed"
+  }
+}

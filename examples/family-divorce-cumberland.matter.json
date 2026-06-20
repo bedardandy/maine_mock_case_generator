@@ -1,0 +1,364 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "family-divorce-cumberland",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-691783",
+    "practice_area": "family",
+    "title": "Divorce of Olivia B. Ellsworth and John Q. Poe",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Cumberland",
+      "court_location": "Portland",
+      "court_type": "District Court"
+    },
+    "case_type": "family_matters",
+    "filing_date": "2026-02-13",
+    "status": "pre_filing",
+    "summary": "Olivia B. Ellsworth petitions to divorce John Q. Poe in Cumberland County District Court, citing irreconcilable differences, and asks the court to resolve parental rights for one minor child(ren), child support, and division of marital property.",
+    "event_date": "2025-05-29",
+    "docket_number": "CUM-FM-2026-161"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Plaintiff (filing spouse)",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "defendant": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "Q",
+      "last_name": "Poe",
+      "full_name": "John Q. Poe",
+      "role": "Defendant (responding spouse)",
+      "address": "216 Maple Court",
+      "city": "Orono",
+      "state": "ME",
+      "zip": "04012",
+      "phone": "(207) 555-0170",
+      "email": "john.poe@example.org",
+      "date_of_birth": "1998-10-17"
+    },
+    "child_1": {
+      "entity_type": "person",
+      "first_name": "Marcus",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Marcus B. Kingsley",
+      "role": "Minor child",
+      "date_of_birth": "2013-01-26"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Marcus",
+      "middle_name": "W",
+      "last_name": "Roe",
+      "full_name": "Marcus W. Roe",
+      "role": "Attorney for the client",
+      "address": "441 Birch Street",
+      "city": "Waterville",
+      "state": "ME",
+      "zip": "04054",
+      "phone": "(207) 555-0118",
+      "email": "marcus.roe@example.net",
+      "date_of_birth": "1994-10-20",
+      "bar_number": "6054",
+      "organization_name": "Ellsworth Advocates PC"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Plaintiff (filing spouse)",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Olivia B. Ellsworth petitions to divorce John Q. Poe in Cumberland County District Court, citing irreconcilable differences, and asks the court to resolve parental rights for one minor child(ren), child support, and division of marital property.",
+    "narrative": "Olivia B. Ellsworth and John Q. Poe were married on 2010-01-20 in Portland, Maine. The parties have one minor child(ren) together: Marcus B. Kingsley. After several years of growing conflict and a period of unsuccessful counseling, the parties separated on 2025-05-29.\n\nSince separation, the children have lived primarily with Olivia B. Ellsworth, while the other parent has exercised weekend contact. The parties jointly own or rent a rented apartment and share several financial accounts. They disagree about a long-term parenting schedule and about how to divide retirement savings accumulated during the marriage.\n\nOlivia has resided in Cumberland County, Maine for approximately 30 months, satisfying the residency requirement to file. Olivia now seeks a divorce on the ground of irreconcilable differences, a workable parental rights and responsibilities order, child support consistent with the Maine guidelines, and an equitable division of marital property and debt.",
+    "undisputed_facts": [
+      "The parties were married on 2010-01-20 in Portland, Maine.",
+      "The parties have one minor child(ren) of the marriage.",
+      "The parties separated on 2025-05-29 and have lived apart since."
+    ],
+    "disputed_facts": [
+      "The long-term allocation of parental rights and responsibilities and the primary residence of the children.",
+      "The characterization and division of retirement accounts and the equity in the rented apartment.",
+      "Whether spousal support is appropriate and, if so, in what amount and for how long."
+    ],
+    "timeline": [
+      {
+        "date": "2010-01-20",
+        "event": "Olivia and John married in Portland, Maine."
+      },
+      {
+        "date": "2025-05-29",
+        "event": "The parties separated."
+      },
+      {
+        "date": "2026-02-13",
+        "event": "Complaint for divorce prepared for filing in Portland District Court."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Penobscot Maritime Supply",
+      "type": "employer",
+      "role": "Plaintiff's employer",
+      "relevance": "Source of income and benefits relevant to support calculations.",
+      "contact": {
+        "phone": "(207) 555-0154",
+        "city": "Bath",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Lillian K. Danforth",
+      "type": "family_member",
+      "role": "Plaintiff's mother",
+      "relationship": "Maternal grandmother",
+      "relevance": "Provides child care and may testify to parenting history.",
+      "contact": {
+        "phone": "(207) 555-0131",
+        "city": "Orono",
+        "state": "ME",
+        "email": "lillian.danforth@example.net"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Granite State Credit Union",
+      "type": "financial_institution",
+      "role": "Joint account holder bank",
+      "relevance": "Holds the marital checking, savings, and mortgage accounts.",
+      "contact": {
+        "phone": "(207) 555-0167",
+        "city": "Bath",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Intake Attorney",
+    "interviewee_role": "plaintiff",
+    "date": "2026-02-13",
+    "exchanges": [
+      {
+        "topic": "Goal",
+        "question": "What outcome are you hoping for?",
+        "answer": "I want a fair parenting schedule where our children are primarily with me, reasonable child support, and a clean split of what we built together. I am not trying to punish John."
+      },
+      {
+        "topic": "Children",
+        "question": "How are the children doing, and what is the current schedule?",
+        "answer": "They are doing okay given everything. They are mostly with Olivia B. Ellsworth during the week and see the other parent on weekends. I want to keep their school and routine stable."
+      },
+      {
+        "topic": "Finances",
+        "question": "Tell me about the marital finances.",
+        "answer": "We have a rented apartment, two retirement accounts, a joint checking and savings, and some credit card debt. I do not have full visibility into John's retirement balances."
+      },
+      {
+        "topic": "Safety",
+        "question": "Are there any safety concerns or history of abuse?",
+        "answer": "No physical abuse. There were some heated arguments, but nothing that needed police involvement."
+      },
+      {
+        "topic": "Timeline",
+        "question": "Is there any urgency to filing?",
+        "answer": "I would like to get this moving this season so we have orders in place before the next school year."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Obtain a parental rights and responsibilities order with the children's primary residence with Olivia B. Ellsworth.",
+      "Establish child support consistent with the Maine child support guidelines.",
+      "Achieve an equitable division of marital property and debt."
+    ],
+    "priorities": [
+      "Stability and routine for the minor children.",
+      "A predictable, enforceable parenting schedule.",
+      "Financial independence after the divorce."
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "Primary residence of the children with Olivia B. Ellsworth and shared parental rights.",
+      "Retention of a fair share of retirement savings and home equity."
+    ],
+    "non_starters": [
+      "Any arrangement that destabilizes the children's schooling."
+    ],
+    "constraints": {
+      "budget": "Limited; prefers settlement over a prolonged trial.",
+      "timeline": "Wants temporary orders before the next school year."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Entitlement to and amount of spousal support",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 951-A",
+      "sub_questions": [
+        "Is spousal support appropriate given the marriage length and incomes?"
+      ],
+      "strength": "weak",
+      "id": "iss1"
+    },
+    {
+      "issue": "Child support under the Maine guidelines",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 2006",
+      "sub_questions": [
+        "What are each party's gross incomes?",
+        "Who pays for health insurance and child care?"
+      ],
+      "strength": "strong",
+      "client_position": "Seeks guideline child support based on accurate income figures.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Responsibility for attorney fees",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 105",
+      "sub_questions": [
+        "Is a fee contribution warranted by the parties' relative resources?"
+      ],
+      "strength": "weak",
+      "id": "iss3"
+    },
+    {
+      "issue": "Allocation of parental rights and responsibilities for the minor children",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 1653",
+      "sub_questions": [
+        "Should parental rights be shared, allocated, or sole?",
+        "What primary residence and contact schedule serves the children's best interests?"
+      ],
+      "strength": "moderate",
+      "client_position": "Seeks shared parental rights with primary residence with Olivia B. Ellsworth.",
+      "id": "iss4"
+    },
+    {
+      "issue": "Division of marital property and debt",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 953",
+      "sub_questions": [
+        "Which assets are marital versus non-marital?",
+        "How should retirement accounts and home equity be divided?"
+      ],
+      "strength": "moderate",
+      "id": "iss5"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Malik W. Poe",
+        "field": "Child custody / parenting evaluation",
+        "credentials": "Ph.D.",
+        "retained_by": "court"
+      },
+      "topic": "Best interests and parenting capacity",
+      "opinion": "Both parents are fit; a primary-residence-with-shared-contact schedule best serves the children's stability.",
+      "basis": "Clinical interviews, home visits, and collateral contacts."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Recent pay stubs",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "Three months of pay stubs for income verification.",
+      "id": "ev1"
+    },
+    {
+      "title": "Children's school records",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "Enrollment and report cards showing the children's stable schooling.",
+      "id": "ev2"
+    },
+    {
+      "title": "Text message log",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "Co-parenting communications relevant to the schedule dispute.",
+      "id": "ev3"
+    },
+    {
+      "title": "Retirement account statements",
+      "type": "financial_record",
+      "party": "defendant",
+      "description": "Quarterly statements for both parties' retirement accounts.",
+      "id": "ev4"
+    },
+    {
+      "title": "Deed to the marital home",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "Recorded deed showing joint ownership.",
+      "id": "ev5"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Estimated marital home equity",
+        "amount": 308564,
+        "basis": "Estimated fair market value less mortgage."
+      },
+      {
+        "label": "Plaintiff annual gross income",
+        "amount": 46519,
+        "basis": "W-2 wages."
+      },
+      {
+        "label": "Plaintiff retirement account balance",
+        "amount": 30904,
+        "basis": "Most recent statement."
+      }
+    ]
+  },
+  "facts": {
+    "marriage_date": "2010-01-20",
+    "marriage_place": "Portland, Maine",
+    "separation_date": "2025-05-29",
+    "grounds": "Irreconcilable differences",
+    "residency_months": 30,
+    "spousal_support_requested": true,
+    "marital_home": "rented apartment",
+    "num_minor_children": "1",
+    "primary_residence_parent": "Olivia B. Ellsworth"
+  }
+}

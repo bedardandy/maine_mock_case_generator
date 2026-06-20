@@ -1,0 +1,58 @@
+{
+  "description": "Maps practice areas to the downstream form-filling repositories that consume the projected canonical case object. Used for routing smoke-test fixtures into the right pipeline.",
+  "downstream_repos": {
+    "maine-court-forms": {
+      "url": "https://github.com/bedardandy/maine-court-forms",
+      "consumes": "catalog/canonical_case.schema.json",
+      "practice_areas": ["family", "civil", "criminal"]
+    },
+    "maine-probate-forms": {
+      "url": "https://github.com/bedardandy/maine-probate-forms",
+      "consumes": "repo/forms/<ID>/schema.json + canonical facts",
+      "practice_areas": ["probate"]
+    },
+    "transactional-tax-forms": {
+      "url": "https://github.com/bedardandy/transactional-tax-forms",
+      "consumes": "forms/<ID>/mapping.json + sample_case.json",
+      "practice_areas": ["tax", "business", "real_estate"]
+    }
+  },
+  "practice_areas": {
+    "family": {
+      "label": "Family matters",
+      "downstream_repo": "maine-court-forms",
+      "example_forms": ["FM-040", "FM-050", "CV-001"],
+      "common_case_types": ["family_matters", "divorce", "parental_rights", "protection_from_abuse"]
+    },
+    "civil": {
+      "label": "Civil litigation / small claims",
+      "downstream_repo": "maine-court-forms",
+      "example_forms": ["SC-001", "CV-001"],
+      "common_case_types": ["small_claims", "civil"]
+    },
+    "probate": {
+      "label": "Probate, estates, and guardianship",
+      "downstream_repo": "maine-probate-forms",
+      "example_forms": ["DE-101", "DE-301", "PP-107", "GS-008"],
+      "common_case_types": ["decedent_estate", "guardianship", "conservatorship"]
+    },
+    "tax": {
+      "label": "Tax (federal + Maine)",
+      "downstream_repo": "transactional-tax-forms",
+      "example_forms": ["IRS-706", "MRS-706ME", "IRS-1041", "MRS-1041ME"],
+      "common_case_types": ["estate_tax", "fiduciary_income_tax"]
+    },
+    "business": {
+      "label": "Business formation and entity tax",
+      "downstream_repo": "transactional-tax-forms",
+      "example_forms": ["IRS-SS-4", "IRS-2553", "MRS-1120ME", "MRS-941ME"],
+      "common_case_types": ["entity_formation", "s_corp_election"]
+    },
+    "real_estate": {
+      "label": "Real estate transfer",
+      "downstream_repo": "transactional-tax-forms",
+      "example_forms": ["ME-RETTD"],
+      "common_case_types": ["real_estate_transfer"]
+    }
+  }
+}

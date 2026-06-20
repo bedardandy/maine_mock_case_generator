@@ -1,0 +1,365 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "estate-tax-706",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-202163",
+    "practice_area": "tax",
+    "title": "Estate of Olivia B. Ellsworth: federal estate tax return (Form 706) and Maine estate tax return (706ME), with Samuel B. Danforth as executor",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Probate Court / IRS / Maine Revenue Services"
+    },
+    "case_type": "estate_tax",
+    "filing_date": "2026-05-31",
+    "status": "intake",
+    "summary": "Samuel B. Danforth is the executor of the estate of Olivia B. Ellsworth, who died on 2025-04-24 domiciled in Sagadahoc County, Maine, leaving a gross estate of roughly $8563055; counsel and the executor must prepare a timely, accurate federal estate tax return (Form 706) and Maine estate tax return (706ME), file Form 56 fiduciary notice, and handle fiduciary income tax (Forms 1041 and 1041ME) during administration.",
+    "event_date": "2025-04-24"
+  },
+  "parties": {
+    "decedent": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Decedent",
+      "date_of_birth": "1997-10-02"
+    },
+    "personal_representative": {
+      "entity_type": "person",
+      "first_name": "Samuel",
+      "middle_name": "B",
+      "last_name": "Danforth",
+      "full_name": "Samuel B. Danforth",
+      "role": "Executor / personal representative (fiduciary)",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "samuel.danforth@example.org",
+      "date_of_birth": "1975-02-05"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Marcus",
+      "middle_name": "W",
+      "last_name": "Poe",
+      "full_name": "Marcus W. Poe",
+      "role": "Attorney for the client",
+      "address": "219 Pine Lane",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04029",
+      "phone": "(207) 555-0180",
+      "email": "marcus.poe@example.net",
+      "date_of_birth": "1964-02-01",
+      "bar_number": "7499",
+      "organization_name": "Birchwood & Calloway LLP"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Samuel",
+      "middle_name": "B",
+      "last_name": "Danforth",
+      "full_name": "Samuel B. Danforth",
+      "role": "Executor / personal representative (fiduciary)",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "samuel.danforth@example.org",
+      "date_of_birth": "1975-02-05"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Samuel B. Danforth is the executor of the estate of Olivia B. Ellsworth, who died on 2025-04-24 domiciled in Sagadahoc County, Maine, leaving a gross estate of roughly $8563055; counsel and the executor must prepare a timely, accurate federal estate tax return (Form 706) and Maine estate tax return (706ME), file Form 56 fiduciary notice, and handle fiduciary income tax (Forms 1041 and 1041ME) during administration.",
+    "narrative": "Olivia B. Ellsworth died on 2025-04-24 while domiciled in Sagadahoc County, Maine. Samuel B. Danforth has been appointed executor and personal representative of the estate and, as fiduciary, is responsible for filing the decedent's final returns and the estate's transfer- and income-tax returns. Because the gross estate is valued at approximately $8563055, it exceeds the federal basic exclusion amount, so a federal estate tax return (Form 706) is required under IRC § 6018, and a Maine estate tax return (Form 706ME) is required under 36 M.R.S. § 4062 et seq.\n\nThe gross estate is composed of several asset classes that must be valued as of the date of death (or, if the executor elects, the alternate valuation date six months later under IRC § 2032): real property of roughly $5269643, a closely-held business interest of roughly $2234302, marketable securities of roughly $2929418, and life insurance proceeds of roughly $1757996 that are includible under IRC § 2042. Debts of the decedent, funeral expenses, and administration expenses totaling about $402524 are deductible under IRC § 2053. The estate names approximately 5 beneficiary(ies), which may include a surviving spouse (marital deduction under IRC § 2056), a charity (charitable deduction under IRC § 2055), and one or more children.\n\nSamuel must file Form 56 to notify the IRS of the fiduciary relationship, prepare and file the Form 706 and Form 706ME by the return due date of 2026-07-10 (nine months after death, extendable six months under IRC § 6075), claim every available deduction, and decide whether to elect portability of the decedent's unused exclusion (the DSUE amount) under IRC § 2010(c). During administration the estate will also earn income, requiring fiduciary income tax returns on Form 1041 and Form 1041ME under IRC § 641. Counsel will engage qualified appraisers to support the reported values and minimize audit exposure.",
+    "undisputed_facts": [
+      "Olivia B. Ellsworth died on 2025-04-24 domiciled in Sagadahoc County, Maine.",
+      "Samuel B. Danforth is the duly appointed executor and fiduciary of the estate.",
+      "The gross estate is valued at approximately $8563055, exceeding the federal filing threshold and requiring a Form 706 and a Form 706ME.",
+      "The estate's federal estate tax return is due approximately nine months after death, on 2026-07-10, subject to a six-month extension."
+    ],
+    "disputed_facts": [
+      "The date-of-death fair market value of the closely-held business interest and the real property, and whether to elect alternate valuation under IRC § 2032.",
+      "The amount of the marital and charitable deductions and the resulting size of the taxable estate.",
+      "Whether to elect portability of the decedent's unused applicable exclusion (DSUE) for the benefit of a surviving spouse."
+    ],
+    "timeline": [
+      {
+        "date": "2025-04-24",
+        "event": "Olivia B. Ellsworth died domiciled in Sagadahoc County, Maine; the estate's nine-month estate-tax clock begins."
+      },
+      {
+        "date": "2026-05-31",
+        "event": "Samuel B. Danforth engages counsel to prepare the Form 706, Form 706ME, Form 56, and the fiduciary income tax returns."
+      },
+      {
+        "date": "2026-07-10",
+        "event": "Form 706 and Form 706ME due (nine months after death), absent a six-month extension."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Internal Revenue Service",
+      "type": "government_agency",
+      "role": "Federal taxing authority",
+      "relevance": "Reviews and may audit the Form 706 federal estate tax return and the Form 1041 fiduciary income tax return filed for the estate.",
+      "contact": {
+        "phone": "(207) 555-0179",
+        "city": "Camden",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Lillian R. Kingsley",
+      "type": "beneficiary",
+      "role": "Surviving spouse and beneficiary",
+      "relationship": "Surviving spouse",
+      "relevance": "Property passing to the surviving spouse qualifies for the unlimited marital deduction under IRC § 2056 and drives whether a portability (DSUE) election is worthwhile.",
+      "contact": {
+        "phone": "(207) 555-0146",
+        "city": "Windham",
+        "state": "ME",
+        "email": "lillian.kingsley@example.com"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Summit Holdings Co.",
+      "type": "insurer",
+      "role": "Life insurance company",
+      "relevance": "Pays the life insurance proceeds includible in the gross estate under IRC § 2042 and furnishes the Form 712 statement supporting the reported value.",
+      "contact": {
+        "phone": "(207) 555-0143",
+        "city": "Waterville",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Maine Revenue Services",
+      "type": "government_agency",
+      "role": "State taxing authority",
+      "relevance": "Administers the Maine estate tax under 36 M.R.S. § 4062 et seq. and receives the Form 706ME and Form 1041ME returns for the estate.",
+      "contact": {
+        "phone": "(207) 555-0109",
+        "city": "Camden",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Intake Tax Attorney",
+    "interviewee_role": "personal_representative",
+    "date": "2026-05-31",
+    "exchanges": [
+      {
+        "topic": "Role and assets",
+        "question": "You are serving as executor. Can you walk me through the decedent's assets and roughly what the estate is worth?",
+        "answer": "Yes, I am the executor. The estate is worth around $8563055 all told. There is real property, a closely-held business interest, a brokerage account of marketable securities, and a life insurance policy. Some of it was held in Olivia's revocable trust. I need to get accurate values as of the date of death so we report everything correctly."
+      },
+      {
+        "topic": "Deductions",
+        "question": "Who inherits? In particular, is there a surviving spouse or any charitable bequest?",
+        "answer": "There are about 5 beneficiaries. I want to make sure that anything passing to the surviving spouse gets the marital deduction and that any gift to charity is deducted, because that should reduce what the estate owes. I would rather not overpay the tax."
+      },
+      {
+        "topic": "Appraisals",
+        "question": "The business and the real estate will need defensible valuations. Have you arranged appraisals?",
+        "answer": "Not yet. I know the business interest is the hard one to value, and the real property needs a proper appraisal too. I want appraisals we can stand behind if the IRS or Maine Revenue Services questions the numbers. I do not want an unsupported valuation."
+      },
+      {
+        "topic": "Prior gifts",
+        "question": "Did the decedent make any large lifetime gifts or file gift tax returns?",
+        "answer": "I believe there may have been some sizable gifts in earlier years, and I think gift tax returns were filed. I will gather any Form 709s so they can be taken into account in computing the estate tax and the remaining exclusion."
+      },
+      {
+        "topic": "Deadlines and portability",
+        "question": "Finally, are you aware of the deadline, and do you want us to consider portability?",
+        "answer": "I understand the federal return is due about nine months after the death, on 2026-07-10, and that we can extend it six months if needed. I do not want to miss that deadline. Please also advise me on electing portability so any unused exclusion can be preserved for the surviving spouse."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Prepare and file an accurate, timely federal estate tax return (Form 706) and Maine estate tax return (Form 706ME) by 2026-07-10.",
+      "Maximize the marital deduction under IRC § 2056 and the charitable deduction under IRC § 2055 to minimize the taxable estate.",
+      "Preserve portability of the decedent's unused applicable exclusion (DSUE) for the surviving spouse under IRC § 2010(c).",
+      "Obtain defensible date-of-death appraisals of the closely-held business interest and the real property.",
+      "File Form 56 fiduciary notice and the estate's fiduciary income tax returns (Form 1041 and Form 1041ME) during administration."
+    ],
+    "priorities": [
+      "Meeting the nine-month filing deadline (or properly extending it) so no late-filing penalty accrues.",
+      "Supporting every reported value with a defensible appraisal to limit audit and adjustment risk.",
+      "Capturing all available deductions and elections to minimize federal and Maine estate tax."
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "Timely, fully-supported Form 706 and Form 706ME accepted without adjustment.",
+      "Full marital and charitable deductions claimed and, where beneficial, a valid portability election preserving the DSUE amount."
+    ],
+    "non_starters": [
+      "Missing the Form 706 filing deadline and incurring late-filing or late-payment penalties.",
+      "Reporting an asset at an unsupported value that cannot be defended on audit."
+    ],
+    "constraints": {
+      "budget": "Moderate and paid from the estate, with a strong preference for defensible valuations and timely filing.",
+      "timeline": "The federal and Maine estate tax returns are due approximately nine months after death, on 2026-07-10, with a six-month extension available."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Fiduciary income tax during administration",
+      "category": "tax",
+      "governing_law": "IRC § 641",
+      "sub_questions": [
+        "Does the estate's income during administration require Form 1041 and Form 1041ME?",
+        "Which fiscal year and deductions should the fiduciary elect?"
+      ],
+      "strength": "moderate",
+      "client_position": "Will file Form 1041 and Form 1041ME for income earned by the estate during administration under IRC § 641.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Maine estate tax and the Maine exclusion amount",
+      "category": "tax",
+      "governing_law": "36 M.R.S. § 4062 et seq.",
+      "sub_questions": [
+        "Does the estate exceed the Maine exclusion amount so that a Form 706ME is required?",
+        "How is the Maine taxable estate computed for a Maine-domiciled decedent?"
+      ],
+      "strength": "moderate",
+      "client_position": "Acknowledges that the Maine estate exceeds the Maine exclusion and will file a Form 706ME computing the Maine estate tax.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Composition and valuation of the gross estate",
+      "category": "tax",
+      "governing_law": "IRC § 2031; IRC §§ 2033-2044",
+      "sub_questions": [
+        "What property is includible in the gross estate, including probate assets, the revocable trust, and life insurance?",
+        "What is the date-of-death fair market value of each asset, particularly the closely-held business interest?"
+      ],
+      "strength": "moderate",
+      "client_position": "Contends the gross estate of roughly $8563055 should be reported at defensible, appraisal-supported date-of-death values.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Deductibility of debts, funeral, and administration expenses",
+      "category": "tax",
+      "governing_law": "IRC § 2053",
+      "sub_questions": [
+        "Which debts of the decedent and administration expenses are deductible?",
+        "Should expenses be claimed on the Form 706 or the estate's Form 1041?"
+      ],
+      "strength": "strong",
+      "client_position": "Seeks to deduct roughly $402524 in valid debts, funeral, and administration expenses under IRC § 2053.",
+      "id": "iss4"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Rosa L. Calloway",
+        "field": "Estate and fiduciary tax",
+        "credentials": "CPA",
+        "retained_by": "personal_representative"
+      },
+      "topic": "Preparation of the Form 706, Form 706ME, and the estate's fiduciary income tax returns",
+      "opinion": "The reported gross estate, deductions, and tax are computed correctly, and the recommended elections minimize the combined federal and Maine tax.",
+      "basis": "Review of the estate inventory, appraisals, account statements, and prior gift tax returns."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Life insurance Form 712 statements",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "description": "Insurer-provided Form 712 statements substantiating the life insurance proceeds includible in the gross estate.",
+      "id": "ev1"
+    },
+    {
+      "title": "Brokerage and bank statements",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "description": "Account statements documenting the date-of-death value of marketable securities and cash held by the decedent and the estate.",
+      "id": "ev2"
+    },
+    {
+      "title": "Estate inventory",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "description": "Schedule of the estate's assets and date-of-death values used to prepare the Form 706 and Form 706ME.",
+      "id": "ev3"
+    },
+    {
+      "title": "Prior gift tax returns (Form 709)",
+      "type": "document",
+      "party": "personal_representative",
+      "description": "The decedent's prior federal gift tax returns reflecting taxable gifts that affect the remaining applicable exclusion.",
+      "id": "ev4"
+    },
+    {
+      "title": "Certified death certificate",
+      "type": "public_record",
+      "party": "personal_representative",
+      "description": "Certified copy of the decedent's death certificate establishing the date and place of death.",
+      "id": "ev5"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Closely-held business interest",
+        "amount": 1017864,
+        "basis": "Appraised date-of-death value of the decedent's closely-held business interest."
+      },
+      {
+        "label": "Marketable securities",
+        "amount": 6633409,
+        "basis": "Date-of-death value of the decedent's brokerage and investment accounts."
+      },
+      {
+        "label": "Gross estate value",
+        "amount": 17388699,
+        "basis": "Total date-of-death fair market value of all property includible in the gross estate."
+      }
+    ]
+  },
+  "facts": {
+    "date_of_death": "2025-04-24",
+    "decedent_domicile_county": "Sagadahoc",
+    "decedent_state": "Maine",
+    "gross_estate_value": 8563055,
+    "real_property_value": 5269643,
+    "closely_held_business_value": 2234302,
+    "marketable_securities_value": 2929418,
+    "life_insurance_value": 1757996,
+    "debts_and_expenses": 402524,
+    "marital_deduction": true,
+    "charitable_deduction": false,
+    "alternate_valuation_elected": true,
+    "portability_election": true,
+    "num_beneficiaries": 5,
+    "prior_taxable_gifts": true,
+    "executor_name": "Samuel B. Danforth",
+    "return_due_date": "2026-07-10"
+  }
+}

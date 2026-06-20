@@ -1,0 +1,7 @@
+# Core runtime dependencies for the mock case generator.
+jsonschema>=4.0
+PyYAML>=6.0
+
+# Optional: expose the generator as MCP tools (tools/mcp_server.py).
+# Install with:  pip install "mcp[cli]>=1.2"
+# mcp[cli]>=1.2

@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "protection-from-abuse",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-490487",
+    "practice_area": "family",
+    "title": "Protection From Abuse: Olivia B. Ellsworth v. John Q. Poe",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Cumberland",
+      "court_location": "Portland",
+      "court_type": "District Court"
+    },
+    "case_type": "protection_from_abuse",
+    "filing_date": "2026-02-13",
+    "status": "pre_filing",
+    "summary": "Olivia B. Ellsworth petitions the Portland District Court for a protection from abuse order against John Q. Poe, a former spouse, seeking no contact and stay-away order following a course of conduct that includes a most recent incident on 2026-05-19 at the shared residence.",
+    "event_date": "2026-05-19",
+    "docket_number": "CUM-PA-2026-199"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Plaintiff (person seeking protection)",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "defendant": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "Q",
+      "last_name": "Poe",
+      "full_name": "John Q. Poe",
+      "role": "Defendant (person to be restrained)",
+      "address": "216 Maple Court",
+      "city": "Orono",
+      "state": "ME",
+      "zip": "04012",
+      "phone": "(207) 555-0170",
+      "email": "john.poe@example.org",
+      "date_of_birth": "1998-10-17"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Marcus",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Marcus B. Kingsley",
+      "role": "Attorney for the client",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "marcus.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "bar_number": "5744",
+      "organization_name": "Kingsley & Associates"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Plaintiff (person seeking protection)",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Olivia B. Ellsworth petitions the Portland District Court for a protection from abuse order against John Q. Poe, a former spouse, seeking no contact and stay-away order following a course of conduct that includes a most recent incident on 2026-05-19 at the shared residence.",
+    "narrative": "Olivia B. Ellsworth and John Q. Poe are connected as a former spouse. Over time, the plaintiff reports an escalating pattern of conduct by the defendant that has caused the plaintiff to fear for safety. The most recent incident occurred on 2026-05-19 at the shared residence.\n\nThe plaintiff describes prior incidents over the relationship, estimated at 5 in number, ranging from threatening statements to attempts to control the plaintiff's movements and contacts. The plaintiff seeks the court's intervention to stop the contact and establish clear, enforceable boundaries.\n\nOlivia now asks the court for no contact and stay-away order under the Maine protection from abuse statute. The plaintiff is prepared to request temporary relief on an expedited basis given the recency of the most recent incident and the ongoing concern for safety.",
+    "undisputed_facts": [
+      "Olivia B. Ellsworth and John Q. Poe share a relationship as a former spouse.",
+      "Olivia B. Ellsworth has filed, or is preparing to file, a complaint for protection from abuse in Cumberland County District Court."
+    ],
+    "disputed_facts": [
+      "Whether the defendant's conduct meets the statutory definition of abuse warranting a protection order.",
+      "The scope of relief, including whether exclusive use of the residence and temporary parental rights are warranted.",
+      "The defendant's account of the incident on 2026-05-19 at the shared residence."
+    ],
+    "timeline": [
+      {
+        "date": "2026-02-13",
+        "event": "Complaint for protection from abuse prepared for filing in Portland District Court."
+      },
+      {
+        "date": "2026-05-19",
+        "event": "Most recent reported incident at the shared residence."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Desmond S. Noe",
+      "type": "witness",
+      "role": "Responding police officer",
+      "relevance": "Responded to a reported incident and may testify to observations and statements made at the scene.",
+      "contact": {
+        "phone": "(207) 555-0187",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "desmond.noe@example.net"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Lillian K. Danforth",
+      "type": "healthcare_provider",
+      "role": "Domestic-violence advocate",
+      "relevance": "Assists the plaintiff with safety planning and connecting to community resources.",
+      "contact": {
+        "phone": "(207) 555-0131",
+        "city": "Orono",
+        "state": "ME",
+        "email": "lillian.danforth@example.net"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Pemaquid Software Co.",
+      "type": "employer",
+      "role": "Plaintiff's employer",
+      "relevance": "Aware of a workplace incident and relevant to a workplace stay-away provision.",
+      "contact": {
+        "phone": "(207) 555-0167",
+        "city": "Bath",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Intake Attorney",
+    "interviewee_role": "plaintiff",
+    "date": "2026-02-13",
+    "exchanges": [
+      {
+        "topic": "Immediate safety",
+        "question": "Right now, are you and anyone in your household safe, and do you have a place to stay tonight?",
+        "answer": "I am safe at the moment. I am staying somewhere the defendant does not have access to, but I am worried about what happens next, which is why I came in today."
+      },
+      {
+        "topic": "Most recent incident",
+        "question": "Without going into more detail than you are comfortable with, what happened most recently?",
+        "answer": "The most recent incident was on 2026-05-19 at the shared residence. I felt threatened and afraid for my safety, and that is when I decided I needed a court order."
+      },
+      {
+        "topic": "Children",
+        "question": "Are there children involved, and do you have concerns about their safety?",
+        "answer": "I want the order to cover anyone in my household who needs protection, and if the court can address temporary parenting arrangements, I would like that addressed too."
+      },
+      {
+        "topic": "Firearms",
+        "question": "Are you aware of any firearms the defendant has access to?",
+        "answer": "I have told you what I know about whether there are firearms. I understand the court can order the defendant to surrender any firearms while the order is in place, and I would want that if it applies."
+      },
+      {
+        "topic": "Relief sought",
+        "question": "What outcome do you need from the court?",
+        "answer": "I need no contact and stay-away order. Most of all I want the contact to stop and to feel safe day to day."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Obtain a protection from abuse order with no contact and a stay-away provision.",
+      "Secure protection for any household members, including the children, who need it.",
+      "Where applicable, obtain exclusive use of the residence so the plaintiff can remain safely at home."
+    ],
+    "priorities": [
+      "Personal safety and an immediate stop to all contact.",
+      "Protection of the children and other household members.",
+      "A clear, enforceable order the plaintiff can rely on day to day."
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "A granted protection order providing no contact and stay-away order.",
+      "Surrender of any firearms by the defendant for the duration of the order."
+    ],
+    "non_starters": [
+      "Any resolution that requires ongoing direct contact with the defendant.",
+      "Any arrangement that leaves household members unprotected."
+    ],
+    "constraints": {
+      "budget": "Limited; safety is the priority and the plaintiff may qualify for fee assistance.",
+      "timeline": "Seeks a temporary order promptly, with a hearing on a final order to follow."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Enforcement and consequences of any violation",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 4011",
+      "sub_questions": [
+        "What conduct would violate the order?",
+        "What enforcement mechanisms and penalties apply to a violation?"
+      ],
+      "strength": "strong",
+      "client_position": "Seeks clear terms so any violation can be enforced by law enforcement and the court.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Firearms prohibition and surrender during the order",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 4007(1)(A-1)",
+      "sub_questions": [
+        "Should the order prohibit the defendant from possessing firearms?",
+        "What surrender and verification terms are appropriate?"
+      ],
+      "strength": "moderate",
+      "client_position": "Asks the court to prohibit firearm possession and order surrender for the duration of the order.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Entitlement to relief on a protection from abuse complaint",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 4007",
+      "sub_questions": [
+        "Does the alleged conduct constitute abuse under the statute?",
+        "Which forms of relief (no contact, stay-away, residence, parental rights) are appropriate?"
+      ],
+      "strength": "moderate",
+      "client_position": "Seeks no contact and stay-away order based on the pattern of conduct and the most recent incident.",
+      "id": "iss3"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Wesley B. Fairbanks",
+        "field": "Domestic violence dynamics",
+        "credentials": "LCSW",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Patterns of coercive control and risk",
+      "opinion": "The described conduct is consistent with a recognized pattern of coercive and controlling behavior that elevates safety risk.",
+      "basis": "Clinical literature on intimate-partner violence and review of the reported history."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Witness statement affidavit",
+      "type": "affidavit",
+      "party": "plaintiff",
+      "description": "Sworn statement from a witness corroborating the plaintiff's account.",
+      "id": "ev1"
+    },
+    {
+      "title": "Prior protection order",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "Copy of any prior protection order involving the parties, if one exists.",
+      "id": "ev2"
+    },
+    {
+      "title": "Threatening text messages",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "Screenshots of messages from the defendant relevant to the no-contact request.",
+      "id": "ev3"
+    }
+  ],
+  "facts": {
+    "relationship": "former spouse",
+    "most_recent_incident_date": "2026-05-19",
+    "incident_location": "the shared residence",
+    "prior_incidents": 5,
+    "firearms_present": true,
+    "requested_relief": "no contact and stay-away order",
+    "police_called": true
+  }
+}

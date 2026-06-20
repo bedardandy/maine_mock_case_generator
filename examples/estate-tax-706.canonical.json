@@ -1,0 +1,79 @@
+{
+  "matter": {
+    "case_id": "MMC-2026-202163",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Probate Court / IRS / Maine Revenue Services",
+    "case_type": "estate_tax",
+    "filing_date": "2026-05-31",
+    "event_date": "2025-04-24"
+  },
+  "parties": {
+    "decedent": {
+      "full_name": "Olivia B. Ellsworth",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "date_of_birth": "1997-10-02"
+    },
+    "personal_representative": {
+      "full_name": "Samuel B. Danforth",
+      "first_name": "Samuel",
+      "middle_name": "B",
+      "last_name": "Danforth",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "samuel.danforth@example.org",
+      "date_of_birth": "1975-02-05"
+    },
+    "attorney": {
+      "full_name": "Marcus W. Poe",
+      "first_name": "Marcus",
+      "middle_name": "W",
+      "last_name": "Poe",
+      "address": "219 Pine Lane",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04029",
+      "phone": "(207) 555-0180",
+      "email": "marcus.poe@example.net",
+      "date_of_birth": "1964-02-01",
+      "bar_number": "7499"
+    }
+  },
+  "party": {
+    "full_name": "Samuel B. Danforth",
+    "first_name": "Samuel",
+    "middle_name": "B",
+    "last_name": "Danforth",
+    "address": "467 Spruce Avenue",
+    "city": "Bangor",
+    "state": "ME",
+    "zip": "04005",
+    "phone": "(207) 555-0111",
+    "email": "samuel.danforth@example.org",
+    "date_of_birth": "1975-02-05"
+  },
+  "facts": {
+    "date_of_death": "2025-04-24",
+    "decedent_domicile_county": "Sagadahoc",
+    "decedent_state": "Maine",
+    "gross_estate_value": 8563055,
+    "real_property_value": 5269643,
+    "closely_held_business_value": 2234302,
+    "marketable_securities_value": 2929418,
+    "life_insurance_value": 1757996,
+    "debts_and_expenses": 402524,
+    "marital_deduction": true,
+    "charitable_deduction": false,
+    "alternate_valuation_elected": true,
+    "portability_election": true,
+    "num_beneficiaries": 5,
+    "prior_taxable_gifts": true,
+    "executor_name": "Samuel B. Danforth",
+    "return_due_date": "2026-07-10"
+  }
+}

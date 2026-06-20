@@ -1,0 +1,347 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "business-formation-scorp",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2025-691783",
+    "practice_area": "business",
+    "title": "Formation of Coastal Logistics Co. and S-Corporation Election by Grace C. Roe",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Maine Secretary of State / IRS (filing offices)"
+    },
+    "case_type": "entity_formation",
+    "filing_date": "2025-12-09",
+    "status": "intake",
+    "summary": "Grace C. Roe is forming Coastal Logistics Co., a Maine corporation engaged in software development, and electing S-corporation status effective 2026-01-07; the engagement covers the Articles of Incorporation, the EIN application (Form SS-4), the timely S-election (Form 2553), and Maine corporate and payroll-withholding registration.",
+    "event_date": "2026-01-07"
+  },
+  "parties": {
+    "applicant": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Founder / responsible party",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "company": {
+      "entity_type": "organization",
+      "organization_name": "Coastal Logistics Co.",
+      "full_name": "Coastal Logistics Co.",
+      "role": "Newly formed Maine corporation",
+      "address": "216 Maple Court",
+      "city": "Orono",
+      "state": "ME",
+      "zip": "04012",
+      "phone": "(207) 555-0170"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Omar",
+      "middle_name": "D",
+      "last_name": "Roe",
+      "full_name": "Omar D. Roe",
+      "role": "Attorney for the client",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "omar.roe@example.org",
+      "date_of_birth": "1998-04-24",
+      "bar_number": "1763",
+      "organization_name": "Ellsworth Advocates PC"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Founder / responsible party",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe is forming Coastal Logistics Co., a Maine corporation engaged in software development, and electing S-corporation status effective 2026-01-07; the engagement covers the Articles of Incorporation, the EIN application (Form SS-4), the timely S-election (Form 2553), and Maine corporate and payroll-withholding registration.",
+    "narrative": "Grace C. Roe is the founder and IRS responsible party for Coastal Logistics Co., a new C corporation electing S status being organized in Maine to carry on software development. Articles of Incorporation were filed with the Maine Secretary of State with an incorporation date of 2026-01-07, and the corporation will have 2 shareholder(s) at formation.\n\nThe founder intends to elect S-corporation treatment under Subchapter S so that the corporation's income passes through to the shareholders, electing on a calendar year basis with a fiscal year end of December 31 and effective on 2026-01-07. The corporation expects 1 employee(s) and plans to begin payroll on or about 2026-03-30, using the cash method of accounting and reporting under NAICS code 722511.\n\nBecause S-corporation owner-employees must be paid reasonable wages, the founder plans owner compensation of approximately $43229 per year and projects first-year revenue near $654351. The remaining work is to obtain an EIN on Form SS-4, file Form 2553 within the statutory window so the election is timely, register with Maine Revenue Services for corporate income tax and employer withholding, and set up payroll so the first Maine wage filings are correct.",
+    "undisputed_facts": [
+      "Coastal Logistics Co. is being organized as a corporation in Maine with an incorporation date of 2026-01-07.",
+      "Grace C. Roe is the founder and the IRS responsible party for the corporation.",
+      "The corporation intends to elect S-corporation status effective 2026-01-07.",
+      "The corporation expects 2 shareholder(s) and approximately 1 employee(s) in its first year."
+    ],
+    "disputed_facts": [
+      "Whether owner compensation of approximately $43229 satisfies the reasonable-compensation standard for an S-corporation owner-employee given the activity and revenue.",
+      "Whether the Form 2553 election will be filed within the statutory window so that S status is effective on 2026-01-07 without needing late-election relief.",
+      "Whether the cash method of accounting is the appropriate choice for the corporation's first tax year."
+    ],
+    "timeline": [
+      {
+        "date": "2025-12-09",
+        "event": "EIN application (Form SS-4) and S-election (Form 2553) prepared for filing with the IRS for Coastal Logistics Co.."
+      },
+      {
+        "date": "2026-01-07",
+        "event": "Articles of Incorporation for Coastal Logistics Co. filed with the Maine Secretary of State."
+      },
+      {
+        "date": "2026-03-30",
+        "event": "Corporation begins payroll for its owner-employee and any staff, triggering Maine withholding obligations."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Internal Revenue Service",
+      "type": "government_agency",
+      "role": "Federal tax authority",
+      "relevance": "Issues the EIN on Form SS-4 and processes the Form 2553 S-corporation election.",
+      "contact": {
+        "phone": "(207) 555-0163",
+        "city": "Camden",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Lillian R. Kingsley",
+      "type": "witness",
+      "role": "Co-founder and shareholder",
+      "relationship": "Fellow shareholder of the corporation",
+      "relevance": "A second shareholder whose eligibility affects the S-corporation election and who must consent on Form 2553.",
+      "contact": {
+        "phone": "(207) 555-0146",
+        "city": "Windham",
+        "state": "ME",
+        "email": "lillian.kingsley@example.com"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Intake Attorney",
+    "interviewee_role": "applicant",
+    "date": "2025-12-09",
+    "exchanges": [
+      {
+        "topic": "The business",
+        "question": "Tell me about the business and why you want a corporation with an S-election.",
+        "answer": "I'm starting Coastal Logistics Co. to do software development. I want the liability protection of a corporation, but I'd rather have the profits pass through to me instead of being taxed at the corporate level, so an S-election makes sense."
+      },
+      {
+        "topic": "Owners",
+        "question": "Who owns the company, and is everyone eligible to hold S-corporation stock?",
+        "answer": "There are 2 of us on the cap table. We're all individuals and U.S. persons, so I believe we all qualify, and everyone is on board with making the S-election."
+      },
+      {
+        "topic": "Employees and payroll",
+        "question": "Will the company have employees, and what are your payroll plans?",
+        "answer": "We expect about 1 employee(s) to start, and I plan to put myself on payroll as an owner-employee. I'd like to run the first payroll around 2026-03-30, and I want to make sure we withhold Maine taxes correctly."
+      },
+      {
+        "topic": "Banking and EIN",
+        "question": "Where do things stand on the EIN and the business bank account?",
+        "answer": "I still need the EIN before I can open the company's bank account, so getting Form SS-4 done is my first priority. Once the EIN comes through I'll open the operating account at the business bank."
+      },
+      {
+        "topic": "Goals",
+        "question": "What does a successful setup look like for you?",
+        "answer": "Limited liability, pass-through taxation with a reasonable salary for myself, a clean EIN and payroll setup, and being fully registered in Maine. Above all, I cannot afford to miss the S-election deadline."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Form Coastal Logistics Co. as a Maine corporation with limited liability for its shareholders.",
+      "Make a timely and effective S-corporation election so income passes through to the shareholders.",
+      "Obtain the EIN and set up compliant federal and Maine payroll, including owner reasonable compensation.",
+      "Complete Maine registration for corporate income tax and employer withholding."
+    ],
+    "priorities": [
+      "Filing Form 2553 within the statutory window so the S-election is effective on 2026-01-07.",
+      "Paying the owner-employee reasonable compensation that withstands IRS scrutiny.",
+      "Proper EIN, payroll, and Maine withholding setup from the first payroll."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "An approved Maine corporation with an effective S-election as of 2026-01-07.",
+      "An issued EIN, a funded operating account, and correct first-year federal and Maine payroll filings."
+    ],
+    "non_starters": [
+      "Blowing the S-election deadline and losing pass-through treatment for the first year."
+    ],
+    "constraints": {
+      "budget": "Modest startup budget; wants the formation and elections done right the first time.",
+      "timeline": "Needs the EIN and Form 2553 filed in time for the election to be effective on the incorporation date."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Reasonable compensation for the S-corporation owner-employee",
+      "category": "business",
+      "governing_law": "Reasonable compensation doctrine (IRS guidance; Rev. Rul. 74-44)",
+      "sub_questions": [
+        "Is the planned $43229 owner salary reasonable for the services performed?",
+        "How should wages and distributions be allocated to withstand reclassification?"
+      ],
+      "strength": "moderate",
+      "client_position": "Planned owner compensation of approximately $43229 reflects the value of services and is intended to satisfy the reasonable-compensation standard.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Maine corporate registration and employer withholding obligations",
+      "category": "business",
+      "governing_law": "13-C M.R.S. (formation); 36 M.R.S. § 5102 et seq. and § 5250 (income tax and withholding)",
+      "sub_questions": [
+        "Are the Articles of Incorporation compliant with the Maine Business Corporation Act?",
+        "When must the corporation register for and begin Maine income-tax withholding on wages?"
+      ],
+      "strength": "strong",
+      "client_position": "The corporation will file compliant Articles and register with Maine Revenue Services for corporate income tax and employer withholding before the first payroll.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Obtaining an Employer Identification Number on Form SS-4",
+      "category": "business",
+      "governing_law": "IRC § 6109; Form SS-4 instructions",
+      "sub_questions": [
+        "Who is the responsible party for the EIN application?",
+        "What entity classification and principal activity should be reported?"
+      ],
+      "strength": "strong",
+      "client_position": "Grace C. Roe is the responsible party and will apply for the EIN reporting the corporation's principal activity of software development.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Making a timely and valid S-corporation election on Form 2553",
+      "category": "business",
+      "governing_law": "IRC § 1362",
+      "sub_questions": [
+        "Will Form 2553 be filed within 2 months and 15 days of the effective date?",
+        "Have all shareholders consented to the election?"
+      ],
+      "strength": "moderate",
+      "client_position": "The founder intends to file Form 2553 within the statutory window with all shareholder consents so the election is effective on 2026-01-07.",
+      "id": "iss4"
+    },
+    {
+      "issue": "Pass-through treatment and owner fringe-benefit rules",
+      "category": "business",
+      "governing_law": "IRC § 1366 and § 1372",
+      "sub_questions": [
+        "How do items of income, loss, and deduction pass through to the shareholders?",
+        "Which fringe benefits are limited for more-than-2% shareholder-employees?"
+      ],
+      "strength": "moderate",
+      "client_position": "The founder seeks full pass-through treatment and to structure any owner fringe benefits in light of the 2% shareholder-employee rules.",
+      "id": "iss5"
+    }
+  ],
+  "expert_opinions": [
+    {
+      "id": "exp1",
+      "expert": {
+        "name": "Samuel Q. Inglewood",
+        "field": "Tax / S-corporation planning",
+        "credentials": "CPA",
+        "retained_by": "applicant"
+      },
+      "topic": "S-election timing, reasonable compensation, and payroll setup",
+      "opinion": "The corporation qualifies for the S-election, and the planned owner compensation and payroll structure are consistent with IRS guidance.",
+      "basis": "Review of the cap table, projected revenue, and comparable owner-compensation data."
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Initial capitalization / cap table",
+      "type": "financial_record",
+      "party": "company",
+      "description": "The cap table showing the 2 shareholder(s) and their initial capital contributions.",
+      "id": "ev1"
+    },
+    {
+      "title": "IRS Form SS-4 application",
+      "type": "document",
+      "party": "applicant",
+      "description": "The Application for Employer Identification Number identifying Grace C. Roe as the responsible party.",
+      "id": "ev2"
+    },
+    {
+      "title": "Corporate bylaws",
+      "type": "document",
+      "party": "company",
+      "description": "The corporation's adopted bylaws governing its internal affairs.",
+      "id": "ev3"
+    },
+    {
+      "title": "IRS Form 2553 S-election",
+      "type": "document",
+      "party": "company",
+      "description": "The Election by a Small Business Corporation, with shareholder consents, electing S status effective 2026-01-07.",
+      "id": "ev4"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Expected first-year revenue",
+        "amount": 665184,
+        "basis": "Projected gross receipts for the corporation's first tax year."
+      },
+      {
+        "label": "Planned owner reasonable compensation",
+        "amount": 110107,
+        "basis": "Annual W-2 wages planned for the owner-employee."
+      },
+      {
+        "label": "Estimated first-year payroll",
+        "amount": 206856,
+        "basis": "Total projected wages for all employees in the first year."
+      }
+    ]
+  },
+  "facts": {
+    "entity_name": "Coastal Logistics Co.",
+    "entity_type": "C corporation electing S status",
+    "state_of_incorporation": "Maine",
+    "incorporation_date": "2026-01-07",
+    "ein_applied": false,
+    "s_corp_election": true,
+    "election_effective_date": "2026-02-08",
+    "tax_year": "calendar year",
+    "fiscal_year_end": "December 31",
+    "num_shareholders": 2,
+    "num_employees": 1,
+    "first_payroll_date": "2026-03-30",
+    "accounting_method": "cash",
+    "naics_code": "722511",
+    "principal_activity": "software development",
+    "expected_first_year_revenue": 654351,
+    "responsible_party_name": "Grace C. Roe",
+    "reasonable_compensation": 43229
+  }
+}

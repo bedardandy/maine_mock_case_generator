@@ -1,0 +1,116 @@
+id: protection-from-abuse
+title: "Protection From Abuse: {plaintiff_full_name} v. {defendant_full_name}"
+practice_area: family
+case_type: protection_from_abuse
+status: pre_filing
+docket_prefix: PA
+assign_docket: true
+
+downstream:
+  repo: maine-court-forms
+  example_forms: [PA-001, PA-003, FM-040]
+
+jurisdiction:
+  state: ME
+  county: Cumberland
+  court_type: District Court
+
+dates:
+  filing_date: {date_between: ["2025-09-01", "2026-06-01"]}
+  event_date: "{most_recent_incident_date}"
+
+parties:
+  client_role: plaintiff
+  attorney: true
+  children: {min: 0, max: 2}
+  roles:
+    - {key: plaintiff, label: "Plaintiff (person seeking protection)"}
+    - {key: defendant, label: "Defendant (person to be restrained)"}
+
+facts:
+  relationship: {pick: ["current spouse", "former spouse", "dating partner", "former dating partner", "household member"]}
+  most_recent_incident_date: {date_between: ["2026-01-01", "2026-06-01"]}
+  incident_location: {pick: ["the shared residence", "the plaintiff's workplace", "a public parking lot"]}
+  prior_incidents: {int_between: [1, 8]}
+  firearms_present: {pick: [true, false]}
+  requested_relief: {pick: ["no contact and stay-away order", "no contact, stay-away, and temporary parental rights", "no contact and exclusive use of the residence"]}
+  police_called: {pick: [true, false]}
+
+third_parties:
+  count: {min: 1, max: 3}
+  pool:
+    - {type: witness, name_kind: person, role: "Responding police officer", relevance: "Responded to a reported incident and may testify to observations and statements made at the scene."}
+    - {type: neighbor, name_kind: person, role: "Neighbor who witnessed an incident", relevance: "Personally observed an incident and can corroborate the plaintiff's account."}
+    - {type: healthcare_provider, name_kind: person, role: "Domestic-violence advocate", relevance: "Assists the plaintiff with safety planning and connecting to community resources."}
+    - {type: employer, name_kind: employer, role: "Plaintiff's employer", relevance: "Aware of a workplace incident and relevant to a workplace stay-away provision."}
+
+fact_pattern:
+  summary: "{plaintiff_full_name} petitions the {court_location} District Court for a protection from abuse order against {defendant_full_name}, a {relationship}, seeking {requested_relief_lower} following a course of conduct that includes a most recent incident on {most_recent_incident_date} at {incident_location}."
+  narrative:
+    - "{plaintiff_full_name} and {defendant_full_name} are connected as a {relationship}. Over time, the plaintiff reports an escalating pattern of conduct by the defendant that has caused the plaintiff to fear for safety. The most recent incident occurred on {most_recent_incident_date} at {incident_location}."
+    - "The plaintiff describes prior incidents over the relationship, estimated at {prior_incidents} in number, ranging from threatening statements to attempts to control the plaintiff's movements and contacts. The plaintiff seeks the court's intervention to stop the contact and establish clear, enforceable boundaries."
+    - "{plaintiff_first} now asks the court for {requested_relief_lower} under the Maine protection from abuse statute. The plaintiff is prepared to request temporary relief on an expedited basis given the recency of the most recent incident and the ongoing concern for safety."
+  undisputed:
+    - "{plaintiff_full_name} and {defendant_full_name} share a relationship as a {relationship}."
+    - "{plaintiff_full_name} has filed, or is preparing to file, a complaint for protection from abuse in {county} County District Court."
+  disputed:
+    - "Whether the defendant's conduct meets the statutory definition of abuse warranting a protection order."
+    - "The scope of relief, including whether exclusive use of the residence and temporary parental rights are warranted."
+    - "The defendant's account of the incident on {most_recent_incident_date} at {incident_location}."
+  timeline:
+    - {date: "{most_recent_incident_date}", event: "Most recent reported incident at {incident_location}."}
+    - {date: "{filing_date}", event: "Complaint for protection from abuse prepared for filing in {court_location} District Court."}
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "Immediate safety", question: "Right now, are you and anyone in your household safe, and do you have a place to stay tonight?", answer: "I am safe at the moment. I am staying somewhere the defendant does not have access to, but I am worried about what happens next, which is why I came in today."}
+    - {topic: "Most recent incident", question: "Without going into more detail than you are comfortable with, what happened most recently?", answer: "The most recent incident was on {most_recent_incident_date} at {incident_location}. I felt threatened and afraid for my safety, and that is when I decided I needed a court order."}
+    - {topic: "Children", question: "Are there children involved, and do you have concerns about their safety?", answer: "I want the order to cover anyone in my household who needs protection, and if the court can address temporary parenting arrangements, I would like that addressed too."}
+    - {topic: "Firearms", question: "Are you aware of any firearms the defendant has access to?", answer: "I have told you what I know about whether there are firearms. I understand the court can order the defendant to surrender any firearms while the order is in place, and I would want that if it applies."}
+    - {topic: "Relief sought", question: "What outcome do you need from the court?", answer: "I need {requested_relief_lower}. Most of all I want the contact to stop and to feel safe day to day."}
+
+objectives:
+  goals:
+    - "Obtain a protection from abuse order with no contact and a stay-away provision."
+    - "Secure protection for any household members, including the children, who need it."
+    - "Where applicable, obtain exclusive use of the residence so the plaintiff can remain safely at home."
+  priorities:
+    - "Personal safety and an immediate stop to all contact."
+    - "Protection of the children and other household members."
+    - "A clear, enforceable order the plaintiff can rely on day to day."
+  risk_tolerance: low
+  desired_outcomes:
+    - "A granted protection order providing {requested_relief_lower}."
+    - "Surrender of any firearms by the defendant for the duration of the order."
+  non_starters:
+    - "Any resolution that requires ongoing direct contact with the defendant."
+    - "Any arrangement that leaves household members unprotected."
+  constraints:
+    budget: {pick: ["Limited; safety is the priority and the plaintiff may qualify for fee assistance.", "Modest; the plaintiff wants an efficient path to a protective order."]}
+    timeline: "Seeks a temporary order promptly, with a hearing on a final order to follow."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Entitlement to relief on a protection from abuse complaint", category: family, governing_law: "19-A M.R.S. § 4007", sub_questions: ["Does the alleged conduct constitute abuse under the statute?", "Which forms of relief (no contact, stay-away, residence, parental rights) are appropriate?"], strength: moderate, client_position: "Seeks {requested_relief_lower} based on the pattern of conduct and the most recent incident."}
+    - {issue: "Availability of a temporary order pending hearing", category: family, governing_law: "19-A M.R.S. § 4006", sub_questions: ["Do the facts show an immediate and present danger of abuse?", "What temporary terms should issue before the full hearing?"], strength: moderate, client_position: "Requests temporary relief given the recency of the most recent incident."}
+    - {issue: "Standing and commencement of the protection action", category: family, governing_law: "19-A M.R.S. § 4005", sub_questions: ["Does the plaintiff's relationship to the defendant qualify under the statute?", "Is venue in {county} County proper?"], strength: strong, client_position: "Qualifies to file as a {relationship} and brings the action in the proper county."}
+    - {issue: "Firearms prohibition and surrender during the order", category: family, governing_law: "19-A M.R.S. § 4007(1)(A-1)", sub_questions: ["Should the order prohibit the defendant from possessing firearms?", "What surrender and verification terms are appropriate?"], strength: moderate, client_position: "Asks the court to prohibit firearm possession and order surrender for the duration of the order."}
+    - {issue: "Enforcement and consequences of any violation", category: family, governing_law: "19-A M.R.S. § 4011", sub_questions: ["What conduct would violate the order?", "What enforcement mechanisms and penalties apply to a violation?"], strength: strong, client_position: "Seeks clear terms so any violation can be enforced by law enforcement and the court."}
+
+experts:
+  count: {min: 0, max: 1}
+  pool:
+    - {field: "Domestic violence dynamics", credentials: "LCSW", retained_by: plaintiff, topic: "Patterns of coercive control and risk", opinion: "The described conduct is consistent with a recognized pattern of coercive and controlling behavior that elevates safety risk.", basis: "Clinical literature on intimate-partner violence and review of the reported history."}
+
+evidence:
+  count: {min: 3, max: 6}
+  pool:
+    - {title: "Police incident report", type: public_record, party: plaintiff, description: "Report documenting law-enforcement response to a reported incident."}
+    - {title: "Photographs of injuries and property damage", type: photo, party: plaintiff, description: "Dated photographs the plaintiff offers to corroborate the reported incidents."}
+    - {title: "Threatening text messages", type: correspondence, party: plaintiff, description: "Screenshots of messages from the defendant relevant to the no-contact request."}
+    - {title: "Emergency department medical record", type: medical_record, party: plaintiff, description: "Record from an ER visit relevant to a reported incident."}
+    - {title: "Witness statement affidavit", type: affidavit, party: plaintiff, description: "Sworn statement from a witness corroborating the plaintiff's account."}
+    - {title: "Prior protection order", type: public_record, party: plaintiff, description: "Copy of any prior protection order involving the parties, if one exists."}

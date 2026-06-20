@@ -1,0 +1,144 @@
+id: business-formation-scorp
+title: "Formation of {company_full_name} and S-Corporation Election by {applicant_full_name}"
+practice_area: business
+case_type: entity_formation
+status: intake
+docket_prefix: BU
+assign_docket: false
+
+downstream:
+  repo: transactional-tax-forms
+  example_forms: [IRS-SS-4, IRS-2553, MRS-1120ME, MRS-941ME, MRS-W4ME]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Maine Secretary of State / IRS (filing offices)"
+
+dates:
+  filing_date: {date_between: ["2025-11-01", "2026-06-01"]}
+  event_date: "{incorporation_date}"
+
+parties:
+  client_role: applicant
+  attorney: true
+  roles:
+    - {key: applicant, label: "Founder / responsible party"}
+    - {key: company, entity: organization, label: "Newly formed Maine corporation"}
+
+facts:
+  entity_name: "{company_full_name}"
+  entity_type: {pick: ["C corporation electing S status", "corporation"]}
+  state_of_incorporation: "Maine"
+  incorporation_date: {date_between: ["2025-12-01", "2026-03-31"]}
+  ein_applied: {pick: [true, false]}
+  s_corp_election: {pick: [true]}
+  election_effective_date: {date_between: ["2025-12-01", "2026-03-31"]}
+  tax_year: {pick: ["calendar year"]}
+  fiscal_year_end: {pick: ["December 31"]}
+  num_shareholders: {int_between: [1, 4]}
+  num_employees: {int_between: [0, 12]}
+  first_payroll_date: {date_between: ["2026-01-15", "2026-04-30"]}
+  accounting_method: {pick: ["cash", "accrual"]}
+  naics_code: {pick: ["541511", "238220", "722511", "561730", "453998"]}
+  principal_activity: {pick: ["software development", "plumbing and HVAC services", "a full-service restaurant", "landscaping services", "retail of specialty goods"]}
+  expected_first_year_revenue: {int_between: [80000, 750000]}
+  responsible_party_name: "{applicant_full_name}"
+  reasonable_compensation: {int_between: [35000, 120000]}
+
+third_parties:
+  count: {min: 2, max: 4}
+  pool:
+    - {type: business_entity, name_kind: organization, role: "Registered agent for the corporation", relevance: "Serves as the corporation's registered agent for service of process and official Maine Secretary of State correspondence."}
+    - {type: witness, name_kind: person, role: "Co-founder and shareholder", relationship: "Fellow shareholder of the corporation", relevance: "A second shareholder whose eligibility affects the S-corporation election and who must consent on Form 2553."}
+    - {type: witness, name_kind: person, role: "Accountant", relationship: "Company's CPA", relevance: "Advises on the S-election, reasonable compensation, payroll setup, and prepares the corporation's federal and Maine tax filings."}
+    - {type: financial_institution, name_kind: bank, role: "Business bank", relevance: "Holds the corporation's operating account, which is opened using the new EIN once issued."}
+    - {type: government_agency, name: "Internal Revenue Service", role: "Federal tax authority", relevance: "Issues the EIN on Form SS-4 and processes the Form 2553 S-corporation election."}
+    - {type: government_agency, name: "Maine Secretary of State", role: "State filing office", relevance: "Receives and approves the Articles of Incorporation under the Maine Business Corporation Act."}
+
+fact_pattern:
+  summary: "{applicant_full_name} is forming {company_full_name}, a Maine corporation engaged in {principal_activity}, and electing S-corporation status effective {incorporation_date}; the engagement covers the Articles of Incorporation, the EIN application (Form SS-4), the timely S-election (Form 2553), and Maine corporate and payroll-withholding registration."
+  narrative:
+    - "{applicant_full_name} is the founder and IRS responsible party for {company_full_name}, a new {entity_type} being organized in {state_of_incorporation} to carry on {principal_activity}. Articles of Incorporation were filed with the Maine Secretary of State with an incorporation date of {incorporation_date}, and the corporation will have {num_shareholders} shareholder(s) at formation."
+    - "The founder intends to elect S-corporation treatment under Subchapter S so that the corporation's income passes through to the shareholders, electing on a {tax_year} basis with a fiscal year end of {fiscal_year_end} and effective on {incorporation_date}. The corporation expects {num_employees} employee(s) and plans to begin payroll on or about {first_payroll_date}, using the {accounting_method} method of accounting and reporting under NAICS code {naics_code}."
+    - "Because S-corporation owner-employees must be paid reasonable wages, the founder plans owner compensation of approximately ${reasonable_compensation} per year and projects first-year revenue near ${expected_first_year_revenue}. The remaining work is to obtain an EIN on Form SS-4, file Form 2553 within the statutory window so the election is timely, register with Maine Revenue Services for corporate income tax and employer withholding, and set up payroll so the first Maine wage filings are correct."
+  undisputed:
+    - "{company_full_name} is being organized as a corporation in {state_of_incorporation} with an incorporation date of {incorporation_date}."
+    - "{applicant_full_name} is the founder and the IRS responsible party for the corporation."
+    - "The corporation intends to elect S-corporation status effective {incorporation_date}."
+    - "The corporation expects {num_shareholders} shareholder(s) and approximately {num_employees} employee(s) in its first year."
+  disputed:
+    - "Whether owner compensation of approximately ${reasonable_compensation} satisfies the reasonable-compensation standard for an S-corporation owner-employee given the activity and revenue."
+    - "Whether the Form 2553 election will be filed within the statutory window so that S status is effective on {incorporation_date} without needing late-election relief."
+    - "Whether the {accounting_method} method of accounting is the appropriate choice for the corporation's first tax year."
+  timeline:
+    - {date: "{incorporation_date}", event: "Articles of Incorporation for {company_full_name} filed with the Maine Secretary of State."}
+    - {date: "{first_payroll_date}", event: "Corporation begins payroll for its owner-employee and any staff, triggering Maine withholding obligations."}
+    - {date: "{filing_date}", event: "EIN application (Form SS-4) and S-election (Form 2553) prepared for filing with the IRS for {company_full_name}."}
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: applicant
+  exchanges:
+    - {topic: "The business", question: "Tell me about the business and why you want a corporation with an S-election.", answer: "I'm starting {company_full_name} to do {principal_activity}. I want the liability protection of a corporation, but I'd rather have the profits pass through to me instead of being taxed at the corporate level, so an S-election makes sense."}
+    - {topic: "Owners", question: "Who owns the company, and is everyone eligible to hold S-corporation stock?", answer: "There are {num_shareholders} of us on the cap table. We're all individuals and U.S. persons, so I believe we all qualify, and everyone is on board with making the S-election."}
+    - {topic: "Employees and payroll", question: "Will the company have employees, and what are your payroll plans?", answer: "We expect about {num_employees} employee(s) to start, and I plan to put myself on payroll as an owner-employee. I'd like to run the first payroll around {first_payroll_date}, and I want to make sure we withhold Maine taxes correctly."}
+    - {topic: "Banking and EIN", question: "Where do things stand on the EIN and the business bank account?", answer: "I still need the EIN before I can open the company's bank account, so getting Form SS-4 done is my first priority. Once the EIN comes through I'll open the operating account at the business bank."}
+    - {topic: "Goals", question: "What does a successful setup look like for you?", answer: "Limited liability, pass-through taxation with a reasonable salary for myself, a clean EIN and payroll setup, and being fully registered in Maine. Above all, I cannot afford to miss the S-election deadline."}
+
+objectives:
+  goals:
+    - "Form {company_full_name} as a Maine corporation with limited liability for its shareholders."
+    - "Make a timely and effective S-corporation election so income passes through to the shareholders."
+    - "Obtain the EIN and set up compliant federal and Maine payroll, including owner reasonable compensation."
+    - "Complete Maine registration for corporate income tax and employer withholding."
+  priorities:
+    - "Filing Form 2553 within the statutory window so the S-election is effective on {incorporation_date}."
+    - "Paying the owner-employee reasonable compensation that withstands IRS scrutiny."
+    - "Proper EIN, payroll, and Maine withholding setup from the first payroll."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "An approved Maine corporation with an effective S-election as of {incorporation_date}."
+    - "An issued EIN, a funded operating account, and correct first-year federal and Maine payroll filings."
+  non_starters:
+    - "Blowing the S-election deadline and losing pass-through treatment for the first year."
+  constraints:
+    budget: {pick: ["Modest startup budget; wants the formation and elections done right the first time.", "Limited; prefers to handle routine filings in-house with counsel reviewing the elections."]}
+    timeline: "Needs the EIN and Form 2553 filed in time for the election to be effective on the incorporation date."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Eligibility of the corporation and its shareholders to elect S status", category: business, governing_law: "IRC § 1361", sub_questions: ["Are all shareholders eligible (individuals, estates, or qualifying trusts) and within the 100-shareholder limit?", "Does the corporation have only one class of stock as required?"], strength: strong, client_position: "The corporation has eligible individual shareholders and a single class of stock, so it qualifies as a small business corporation."}
+    - {issue: "Making a timely and valid S-corporation election on Form 2553", category: business, governing_law: "IRC § 1362", sub_questions: ["Will Form 2553 be filed within 2 months and 15 days of the effective date?", "Have all shareholders consented to the election?"], strength: moderate, client_position: "The founder intends to file Form 2553 within the statutory window with all shareholder consents so the election is effective on {incorporation_date}."}
+    - {issue: "Reasonable compensation for the S-corporation owner-employee", category: business, governing_law: "Reasonable compensation doctrine (IRS guidance; Rev. Rul. 74-44)", sub_questions: ["Is the planned ${reasonable_compensation} owner salary reasonable for the services performed?", "How should wages and distributions be allocated to withstand reclassification?"], strength: moderate, client_position: "Planned owner compensation of approximately ${reasonable_compensation} reflects the value of services and is intended to satisfy the reasonable-compensation standard."}
+    - {issue: "Obtaining an Employer Identification Number on Form SS-4", category: business, governing_law: "IRC § 6109; Form SS-4 instructions", sub_questions: ["Who is the responsible party for the EIN application?", "What entity classification and principal activity should be reported?"], strength: strong, client_position: "{applicant_full_name} is the responsible party and will apply for the EIN reporting the corporation's principal activity of {principal_activity}."}
+    - {issue: "Maine corporate registration and employer withholding obligations", category: business, governing_law: "13-C M.R.S. (formation); 36 M.R.S. § 5102 et seq. and § 5250 (income tax and withholding)", sub_questions: ["Are the Articles of Incorporation compliant with the Maine Business Corporation Act?", "When must the corporation register for and begin Maine income-tax withholding on wages?"], strength: strong, client_position: "The corporation will file compliant Articles and register with Maine Revenue Services for corporate income tax and employer withholding before the first payroll."}
+    - {issue: "Pass-through treatment and owner fringe-benefit rules", category: business, governing_law: "IRC § 1366 and § 1372", sub_questions: ["How do items of income, loss, and deduction pass through to the shareholders?", "Which fringe benefits are limited for more-than-2% shareholder-employees?"], strength: moderate, client_position: "The founder seeks full pass-through treatment and to structure any owner fringe benefits in light of the 2% shareholder-employee rules."}
+
+experts:
+  count: {min: 0, max: 2}
+  pool:
+    - {field: "Tax / S-corporation planning", credentials: "CPA", retained_by: applicant, topic: "S-election timing, reasonable compensation, and payroll setup", opinion: "The corporation qualifies for the S-election, and the planned owner compensation and payroll structure are consistent with IRS guidance.", basis: "Review of the cap table, projected revenue, and comparable owner-compensation data."}
+    - {field: "Business valuation", credentials: "CVA", retained_by: applicant, topic: "Valuation support for owner compensation and initial capitalization", opinion: "The planned owner salary falls within a defensible range for the services rendered and the corporation's projected operations.", basis: "Market compensation data, the business plan, and the initial capitalization."}
+
+evidence:
+  count: {min: 3, max: 6}
+  pool:
+    - {title: "Articles of Incorporation filed with the Maine Secretary of State", type: public_record, party: company, description: "The filed Articles establishing {company_full_name} as a Maine corporation."}
+    - {title: "Corporate bylaws", type: document, party: company, description: "The corporation's adopted bylaws governing its internal affairs."}
+    - {title: "IRS Form SS-4 application", type: document, party: applicant, description: "The Application for Employer Identification Number identifying {applicant_full_name} as the responsible party."}
+    - {title: "IRS Form 2553 S-election", type: document, party: company, description: "The Election by a Small Business Corporation, with shareholder consents, electing S status effective {incorporation_date}."}
+    - {title: "Shareholder agreement", type: contract, party: company, description: "The agreement among the shareholders covering ownership, transfer restrictions, and the S-election."}
+    - {title: "IRS EIN confirmation letter (CP 575)", type: correspondence, party: applicant, description: "The IRS notice confirming the assigned Employer Identification Number for the corporation."}
+    - {title: "Initial capitalization / cap table", type: financial_record, party: company, description: "The cap table showing the {num_shareholders} shareholder(s) and their initial capital contributions."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 2, max: 4}
+  amounts:
+    - {label: "Expected first-year revenue", amount: {int_between: [80000, 750000]}, basis: "Projected gross receipts for the corporation's first tax year."}
+    - {label: "Initial capital contributed", amount: {int_between: [5000, 150000]}, basis: "Total cash and property contributed by the shareholders at formation."}
+    - {label: "Planned owner reasonable compensation", amount: {int_between: [35000, 120000]}, basis: "Annual W-2 wages planned for the owner-employee."}
+    - {label: "Estimated first-year payroll", amount: {int_between: [0, 250000]}, basis: "Total projected wages for all employees in the first year."}

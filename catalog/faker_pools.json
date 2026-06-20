@@ -1,0 +1,66 @@
+{
+  "description": "Curated pools of CLEARLY FICTIONAL values for deterministic generation. Phone numbers use the 555-01xx range reserved for fiction; emails use example.com/example.org reserved domains; street addresses are invented. County and court-location names are real Maine values so that downstream routing works, but no real person is implied.",
+  "first_names": [
+    "Jane", "John", "Maria", "Samuel", "Olivia", "Henry", "Priya", "Marcus",
+    "Eleanor", "Diego", "Nadia", "Theodore", "Grace", "Omar", "Lillian", "Wesley",
+    "Carmen", "Felix", "Rosa", "Desmond", "Ingrid", "Malik", "Beatrice", "Quentin"
+  ],
+  "last_names": [
+    "Doe", "Roe", "Poe", "Coe", "Loe", "Moe", "Noe", "Boe",
+    "Ashford", "Birchwood", "Calloway", "Danforth", "Ellsworth", "Fairbanks",
+    "Greenhill", "Hawthorne", "Inglewood", "Jessup", "Kingsley", "Larkspur"
+  ],
+  "middle_initials": ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "P", "Q", "R", "S", "T", "W"],
+  "street_names": [
+    "Pine Lane", "Maple Court", "Birch Street", "Cedar Way", "Elm Terrace",
+    "Harbor Road", "Lighthouse Drive", "Old Mill Road", "Spruce Avenue", "Tidewater Lane",
+    "Granite Ridge Road", "Willow Bend", "Quarry Street", "Meadowbrook Drive"
+  ],
+  "maine_counties": [
+    "Cumberland", "York", "Penobscot", "Kennebec", "Androscoggin", "Aroostook",
+    "Hancock", "Knox", "Lincoln", "Oxford", "Sagadahoc", "Somerset", "Waldo", "Washington", "Franklin", "Piscataquis"
+  ],
+  "court_locations_by_county": {
+    "Cumberland": "Portland",
+    "York": "Biddeford",
+    "Penobscot": "Bangor",
+    "Kennebec": "Augusta",
+    "Androscoggin": "Lewiston",
+    "Aroostook": "Caribou",
+    "Hancock": "Ellsworth",
+    "Knox": "Rockland",
+    "Lincoln": "Wiscasset",
+    "Oxford": "South Paris",
+    "Sagadahoc": "Bath",
+    "Somerset": "Skowhegan",
+    "Waldo": "Belfast",
+    "Washington": "Machias",
+    "Franklin": "Farmington",
+    "Piscataquis": "Dover-Foxcroft"
+  },
+  "cities": [
+    "Portland", "Brunswick", "Falmouth", "Yarmouth", "Gorham", "Windham",
+    "Bangor", "Orono", "Augusta", "Waterville", "Lewiston", "Auburn",
+    "Ellsworth", "Camden", "Bath", "Belfast", "Farmington"
+  ],
+  "zip_prefix": "040",
+  "phone_area_code": "207",
+  "phone_fiction_prefix": "555-01",
+  "email_domains": ["example.com", "example.org", "example.net"],
+  "bank_names": [
+    "Pine Tree Community Bank", "Casco Bay Savings", "Granite State Credit Union",
+    "Downeast Federal Savings", "Lighthouse Trust Company"
+  ],
+  "employers": [
+    "Northcoast Logistics LLC", "Acadia Print Works", "Pemaquid Software Co.",
+    "Katahdin Outfitters Inc.", "Penobscot Maritime Supply", "Mooselook Cafe Group"
+  ],
+  "business_words_a": ["Coastal", "Summit", "Harbor", "Evergreen", "Northstar", "Cobblestone", "Riverbend", "Lighthouse"],
+  "business_words_b": ["Analytics", "Logistics", "Builders", "Provisions", "Holdings", "Studios", "Outfitters", "Partners"],
+  "business_suffixes": ["LLC", "Inc.", "Corp.", "Co."],
+  "expert_credentials": ["Ph.D.", "CPA", "ASA", "MD", "MAI", "CFP", "MBA, CVA"],
+  "law_firms": [
+    "Birchwood & Calloway LLP", "Hawthorne Legal Group", "Greenhill Law Offices",
+    "Kingsley & Associates", "Ellsworth Advocates PC"
+  ]
+}

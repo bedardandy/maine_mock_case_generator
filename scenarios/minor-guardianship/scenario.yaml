@@ -1,0 +1,124 @@
+id: minor-guardianship
+title: "Petition for Guardianship of a Minor by {petitioner_full_name}"
+practice_area: probate
+case_type: guardianship
+status: pre_filing
+docket_prefix: GC
+assign_docket: true
+
+downstream:
+  repo: maine-probate-forms
+  example_forms: [GS-008, GS-014, PP-107]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Probate Court
+
+dates:
+  filing_date: {date_between: ["2025-10-01", "2026-06-01"]}
+
+parties:
+  client_role: petitioner
+  attorney: true
+  children: {min: 1, max: 2}
+  roles:
+    - {key: petitioner, label: "Petitioner (proposed guardian)"}
+    - {key: respondent, label: "Respondent parent"}
+
+facts:
+  petitioner_relationship: {pick: ["maternal grandmother", "paternal grandfather", "maternal grandparent", "aunt", "uncle", "adult sibling"]}
+  reason_for_guardianship: {pick: ["a parent's serious illness and hospitalization", "a parent's substance use treatment", "a parent's incarceration", "both parents being unavailable to provide care", "a parent's military deployment"]}
+  parental_consent: {pick: [true, false]}
+  guardianship_type: {pick: ["full guardianship of a minor", "temporary guardianship"]}
+  current_living_arrangement: {pick: ["the child already lives with the petitioner", "the child splits time between relatives"]}
+  duration: {pick: ["until the minor reaches 18 or further court order", "for a temporary period subject to review"]}
+  minor_count: "{num_children}"
+
+third_parties:
+  count: {min: 2, max: 4}
+  pool:
+    - {type: family_member, name_kind: person, role: "Biological mother", relationship: "Mother of the minor", relevance: "Holds parental rights; her consent to or objection to the guardianship is central, and she is entitled to notice."}
+    - {type: family_member, name_kind: person, role: "Biological father", relationship: "Father of the minor", relevance: "Holds parental rights; his consent to or objection to the guardianship is central, and he is entitled to notice."}
+    - {type: government_agency, name: "Maine Department of Health and Human Services", role: "DHHS caseworker", relevance: "Caseworker familiar with the family's situation who may provide information relevant to the child's safety and best interests."}
+    - {type: witness, name_kind: person, role: "Child's school counselor", relevance: "Knows the child's day-to-day functioning and adjustment at school and can speak to stability and continuity."}
+    - {type: healthcare_provider, name_kind: person, role: "Child's pediatrician", relevance: "Oversees the child's routine medical care and can speak to ongoing health needs and the authority required to address them."}
+
+fact_pattern:
+  summary: "{petitioner_full_name}, the {petitioner_relationship} of {num_children_words} minor child(ren) ({children_names}), petitions the {court_location} Probate Court for {guardianship_type_lower} because of {reason_for_guardianship_lower}, and asks the court to authorize the petitioner to make day-to-day, school, and medical decisions for the child(ren)."
+  narrative:
+    - "{petitioner_full_name} is the {petitioner_relationship} of {num_children_words} minor child(ren): {children_names}. Because of {reason_for_guardianship_lower}, the child(ren)'s parent or parents are temporarily unable to provide full-time care, and {petitioner_first} has stepped in to ensure the child(ren) are safe, supported, and able to stay in their routine."
+    - "At present, {current_living_arrangement}. Without a guardianship order, {petitioner_first} lacks clear legal authority to enroll the child(ren) in school activities, consent to medical care, and handle the ordinary decisions of daily life. {petitioner_first} seeks {guardianship_type_lower} to provide that authority and a stable home."
+    - "{petitioner_first} now petitions the {court_location} Probate Court under the Maine Probate Code for appointment as guardian of the minor child(ren), to remain in effect {duration}. The petition will be served on the child(ren)'s parents and other interested persons as the statute requires, and {petitioner_first} asks the court to find that the appointment is in the child(ren)'s best interests."
+  undisputed:
+    - "{petitioner_full_name} is the {petitioner_relationship} of {num_children_words} minor child(ren)."
+    - "The child(ren)'s parent or parents are, for the time being, unable to provide full-time care because of {reason_for_guardianship_lower}."
+    - "{petitioner_full_name} is seeking appointment as guardian of the minor child(ren) in {county} County Probate Court."
+  disputed:
+    - "Whether the statutory basis for appointing a guardian of the minor is satisfied, including consent of the parents or a clear-and-convincing showing in the absence of consent."
+    - "Whether all parents and interested persons have received the notice the statute requires."
+    - "Whether the proposed guardianship, and its scope and duration, serves the best interests of the child(ren)."
+  timeline:
+    - {date: "{filing_date}", event: "Petition for guardianship of a minor prepared for filing in {court_location} Probate Court."}
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: petitioner
+  exchanges:
+    - {topic: "Relationship to the child", question: "How are you related to the child or children, and how long have you been involved in their lives?", answer: "I am the {petitioner_relationship}. I have been closely involved with the child(ren) for a long time, and lately I have been the one making sure they are cared for day to day."}
+    - {topic: "Why now", question: "What has changed that makes a guardianship necessary right now?", answer: "Because of {reason_for_guardianship_lower}, the parent or parents cannot provide full-time care at the moment. I want to make sure the child(ren) stay safe and settled while that is worked out."}
+    - {topic: "Where the parents stand", question: "Do the parents support this, or do you expect any objection?", answer: "I have talked with the family about it. The court will need to know whether the parents consent or object, and I want the parents to receive proper notice either way so this is done correctly."}
+    - {topic: "Current situation", question: "Where are the children living now, and how are they doing?", answer: "Right now, {current_living_arrangement}. They are doing as well as can be expected, and my goal is to keep their home, school, and routine as steady as possible."}
+    - {topic: "Authority needed", question: "What specifically do you need to be able to do for the children?", answer: "I need clear authority to handle school enrollment and activities and to consent to medical care and appointments. Without an order, people keep telling me they cannot deal with me because I am not the legal guardian."}
+
+objectives:
+  goals:
+    - "Obtain legal authority to make school and medical decisions for the minor child(ren)."
+    - "Provide the child(ren) with a safe, stable home for as long as the parents are unable to do so."
+    - "Ensure all parents and interested persons receive proper notice so any resulting order is sound."
+  priorities:
+    - "The safety and best interests of the child(ren)."
+    - "Minimizing disruption to the child(ren)'s home, school, and routine."
+    - "A clear, enforceable order that lets the petitioner act for the child(ren)."
+  risk_tolerance: low
+  desired_outcomes:
+    - "Appointment of {petitioner_first} as guardian with authority over the child(ren)'s school and medical decisions."
+    - "An order, effective {duration}, that keeps the child(ren) in a stable placement."
+  non_starters:
+    - "Any arrangement that endangers the child(ren) or compromises their safety."
+  constraints:
+    budget: {pick: ["Limited; the petitioner is acting for the child(ren)'s sake and may qualify for fee assistance.", "Modest; the petitioner wants an efficient, low-conflict path to a guardianship order."]}
+    timeline: "Wants authority in place promptly so school and medical decisions are not delayed."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Statutory basis for appointing a guardian of a minor", category: probate, governing_law: "18-C M.R.S. § 5-204", sub_questions: ["Are the parents unable or unavailable to provide care so that a guardian is needed?", "Do the facts support appointment of the petitioner as guardian?"], strength: moderate, client_position: "The petitioner is an appropriate guardian and the statutory grounds for appointment are met."}
+    - {issue: "Parental consent versus the clear-and-convincing showing required without it", category: probate, governing_law: "18-C M.R.S. § 5-204(2)", sub_questions: ["Have the parents consented to the guardianship?", "If a parent objects, can the petitioner show by clear and convincing evidence that appointment is warranted?"], strength: unknown, client_position: "Where the parents consent, the petitioner relies on that consent; where they do not, the petitioner is prepared to make the heightened showing the statute requires."}
+    - {issue: "Notice to parents and other interested persons", category: probate, governing_law: "18-C M.R.S. § 5-205", sub_questions: ["Who must be served with the petition and notice of hearing?", "Has notice been given in the manner and time the statute requires?"], strength: strong, client_position: "The petitioner will provide notice to the parents and all interested persons as required before any hearing."}
+    - {issue: "Hearing and findings required for appointment", category: probate, governing_law: "18-C M.R.S. § 5-207", sub_questions: ["What findings must the court make to appoint a guardian?", "What scope and limits should the letters of guardianship include?"], strength: moderate, client_position: "The record supports the findings needed for appointment with authority over the child(ren)'s care, schooling, and medical decisions."}
+    - {issue: "Best interests of the child as the governing standard", category: probate, governing_law: "18-C M.R.S. § 5-204", sub_questions: ["How does the proposed guardianship serve the child(ren)'s best interests?", "Does it preserve stability and continuity for the child(ren)?"], strength: moderate, client_position: "Appointing the petitioner as guardian is in the child(ren)'s best interests and keeps them safe and settled."}
+
+experts:
+  count: {min: 0, max: 1}
+  pool:
+    - {field: "Child psychology / best interests", credentials: "Ph.D.", retained_by: court, topic: "Best interests, stability, and the child's needs", opinion: "Continuity of caregiving with the proposed guardian supports the child's stability and best interests.", basis: "Clinical interviews, review of records, and collateral contacts."}
+
+evidence:
+  count: {min: 3, max: 6}
+  pool:
+    - {title: "Certified birth certificate of the minor", type: public_record, party: petitioner, description: "Certified record establishing the child's identity, date of birth, and parentage."}
+    - {title: "Signed parental consent / affidavit", type: affidavit, party: petitioner, description: "Sworn consent of a parent to the guardianship, where consent is given."}
+    - {title: "Child's school records", type: document, party: petitioner, description: "Enrollment and progress records showing the child's schooling and the need for decision-making authority."}
+    - {title: "Child's medical records", type: medical_record, party: petitioner, description: "Records reflecting the child's ongoing health needs and care."}
+    - {title: "Proposed guardian's background-check results", type: document, party: petitioner, description: "Background screening of the proposed guardian relevant to suitability."}
+    - {title: "Statement of the proposed guardian's home and resources", type: affidavit, party: petitioner, description: "Sworn description of the petitioner's home, household, and resources available to care for the child."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 1, max: 3}
+  amounts:
+    - {label: "Child's estimated monthly expenses", amount: {int_between: [600, 2200]}, basis: "Estimated monthly cost of the child's food, clothing, school, and activities."}
+    - {label: "Survivor / Social Security benefits received for the child", amount: {int_between: [0, 1400]}, basis: "Monthly benefits, if any, received on the child's behalf."}
+    - {label: "Proposed guardian's monthly household income", amount: {int_between: [2500, 7000]}, basis: "Monthly income available to support the household."}

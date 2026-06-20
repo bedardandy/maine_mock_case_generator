@@ -1,0 +1,152 @@
+id: estate-tax-706
+title: "Estate of {decedent_full_name}: federal estate tax return (Form 706) and Maine estate tax return (706ME), with {personal_representative_full_name} as executor"
+practice_area: tax
+case_type: estate_tax
+status: intake
+docket_prefix: ET
+assign_docket: false
+
+downstream:
+  repo: transactional-tax-forms
+  example_forms: [IRS-706, MRS-706ME, IRS-1041, MRS-1041ME, IRS-56]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Probate Court / IRS / Maine Revenue Services"
+
+dates:
+  filing_date: {date_between: ["2025-10-01", "2026-06-01"]}
+  event_date: "{date_of_death}"
+
+parties:
+  client_role: personal_representative
+  attorney: true
+  roles:
+    - {key: decedent, label: "Decedent", with_contact: false, with_dob: true}
+    - {key: personal_representative, label: "Executor / personal representative (fiduciary)", with_dob: true}
+
+facts:
+  date_of_death: {date_between: ["2025-01-01", "2025-12-31"]}
+  decedent_domicile_county: "{county}"
+  decedent_state: "Maine"
+  gross_estate_value: {int_between: [7000000, 28000000]}
+  real_property_value: {int_between: [600000, 6000000]}
+  closely_held_business_value: {int_between: [0, 9000000]}
+  marketable_securities_value: {int_between: [500000, 8000000]}
+  life_insurance_value: {int_between: [0, 4000000]}
+  debts_and_expenses: {int_between: [100000, 1500000]}
+  marital_deduction: {pick: [true, false]}
+  charitable_deduction: {pick: [true, false]}
+  alternate_valuation_elected: {pick: [true, false]}
+  portability_election: {pick: [true, false]}
+  num_beneficiaries: {int_between: [1, 6]}
+  prior_taxable_gifts: {pick: [true, false]}
+  executor_name: "{personal_representative_full_name}"
+  return_due_date: {date_between: ["2026-01-01", "2026-09-30"]}
+
+third_parties:
+  count: {min: 2, max: 4}
+  pool:
+    - {type: beneficiary, name_kind: person, role: "Surviving spouse and beneficiary", relationship: "Surviving spouse", relevance: "Property passing to the surviving spouse qualifies for the unlimited marital deduction under IRC § 2056 and drives whether a portability (DSUE) election is worthwhile."}
+    - {type: beneficiary, name_kind: person, role: "Adult child and residuary beneficiary", relationship: "Adult child / heir", relevance: "Takes a residuary share of the estate and is among the beneficiaries to whom estate property and any fiduciary-income K-1 distributions are reported."}
+    - {type: beneficiary, name_kind: organization, role: "Charitable beneficiary", relevance: "A bequest to this qualified charity is deductible from the gross estate under IRC § 2055, reducing the taxable estate."}
+    - {type: fiduciary, name_kind: person, role: "Trustee of the decedent's revocable trust", relationship: "Successor trustee", relevance: "Assets in the decedent's revocable living trust are includible in the gross estate under IRC § 2038 and must be reported on the 706 alongside probate assets."}
+    - {type: insurer, name_kind: organization, role: "Life insurance company", relevance: "Pays the life insurance proceeds includible in the gross estate under IRC § 2042 and furnishes the Form 712 statement supporting the reported value."}
+    - {type: government_agency, name: "Internal Revenue Service", role: "Federal taxing authority", relevance: "Reviews and may audit the Form 706 federal estate tax return and the Form 1041 fiduciary income tax return filed for the estate."}
+    - {type: government_agency, name: "Maine Revenue Services", role: "State taxing authority", relevance: "Administers the Maine estate tax under 36 M.R.S. § 4062 et seq. and receives the Form 706ME and Form 1041ME returns for the estate."}
+
+fact_pattern:
+  summary: "{personal_representative_full_name} is the executor of the estate of {decedent_full_name}, who died on {date_of_death} domiciled in {decedent_domicile_county} County, {decedent_state}, leaving a gross estate of roughly ${gross_estate_value}; counsel and the executor must prepare a timely, accurate federal estate tax return (Form 706) and Maine estate tax return (706ME), file Form 56 fiduciary notice, and handle fiduciary income tax (Forms 1041 and 1041ME) during administration."
+  narrative:
+    - "{decedent_full_name} died on {date_of_death} while domiciled in {decedent_domicile_county} County, {decedent_state}. {personal_representative_full_name} has been appointed executor and personal representative of the estate and, as fiduciary, is responsible for filing the decedent's final returns and the estate's transfer- and income-tax returns. Because the gross estate is valued at approximately ${gross_estate_value}, it exceeds the federal basic exclusion amount, so a federal estate tax return (Form 706) is required under IRC § 6018, and a Maine estate tax return (Form 706ME) is required under 36 M.R.S. § 4062 et seq."
+    - "The gross estate is composed of several asset classes that must be valued as of the date of death (or, if the executor elects, the alternate valuation date six months later under IRC § 2032): real property of roughly ${real_property_value}, a closely-held business interest of roughly ${closely_held_business_value}, marketable securities of roughly ${marketable_securities_value}, and life insurance proceeds of roughly ${life_insurance_value} that are includible under IRC § 2042. Debts of the decedent, funeral expenses, and administration expenses totaling about ${debts_and_expenses} are deductible under IRC § 2053. The estate names approximately {num_beneficiaries} beneficiary(ies), which may include a surviving spouse (marital deduction under IRC § 2056), a charity (charitable deduction under IRC § 2055), and one or more children."
+    - "{personal_representative_first} must file Form 56 to notify the IRS of the fiduciary relationship, prepare and file the Form 706 and Form 706ME by the return due date of {return_due_date} (nine months after death, extendable six months under IRC § 6075), claim every available deduction, and decide whether to elect portability of the decedent's unused exclusion (the DSUE amount) under IRC § 2010(c). During administration the estate will also earn income, requiring fiduciary income tax returns on Form 1041 and Form 1041ME under IRC § 641. Counsel will engage qualified appraisers to support the reported values and minimize audit exposure."
+  undisputed:
+    - "{decedent_full_name} died on {date_of_death} domiciled in {decedent_domicile_county} County, {decedent_state}."
+    - "{personal_representative_full_name} is the duly appointed executor and fiduciary of the estate."
+    - "The gross estate is valued at approximately ${gross_estate_value}, exceeding the federal filing threshold and requiring a Form 706 and a Form 706ME."
+    - "The estate's federal estate tax return is due approximately nine months after death, on {return_due_date}, subject to a six-month extension."
+  disputed:
+    - "The date-of-death fair market value of the closely-held business interest and the real property, and whether to elect alternate valuation under IRC § 2032."
+    - "The amount of the marital and charitable deductions and the resulting size of the taxable estate."
+    - "Whether to elect portability of the decedent's unused applicable exclusion (DSUE) for the benefit of a surviving spouse."
+  timeline:
+    - {date: "{date_of_death}", event: "{decedent_full_name} died domiciled in {decedent_domicile_county} County, {decedent_state}; the estate's nine-month estate-tax clock begins."}
+    - {date: "{filing_date}", event: "{personal_representative_full_name} engages counsel to prepare the Form 706, Form 706ME, Form 56, and the fiduciary income tax returns."}
+    - {date: "{return_due_date}", event: "Form 706 and Form 706ME due (nine months after death), absent a six-month extension."}
+
+interview:
+  interviewer: "Intake Tax Attorney"
+  interviewee_role: personal_representative
+  exchanges:
+    - {topic: "Role and assets", question: "You are serving as executor. Can you walk me through the decedent's assets and roughly what the estate is worth?", answer: "Yes, I am the executor. The estate is worth around ${gross_estate_value} all told. There is real property, a closely-held business interest, a brokerage account of marketable securities, and a life insurance policy. Some of it was held in {decedent_first}'s revocable trust. I need to get accurate values as of the date of death so we report everything correctly."}
+    - {topic: "Deductions", question: "Who inherits? In particular, is there a surviving spouse or any charitable bequest?", answer: "There are about {num_beneficiaries} beneficiaries. I want to make sure that anything passing to the surviving spouse gets the marital deduction and that any gift to charity is deducted, because that should reduce what the estate owes. I would rather not overpay the tax."}
+    - {topic: "Appraisals", question: "The business and the real estate will need defensible valuations. Have you arranged appraisals?", answer: "Not yet. I know the business interest is the hard one to value, and the real property needs a proper appraisal too. I want appraisals we can stand behind if the IRS or Maine Revenue Services questions the numbers. I do not want an unsupported valuation."}
+    - {topic: "Prior gifts", question: "Did the decedent make any large lifetime gifts or file gift tax returns?", answer: "I believe there may have been some sizable gifts in earlier years, and I think gift tax returns were filed. I will gather any Form 709s so they can be taken into account in computing the estate tax and the remaining exclusion."}
+    - {topic: "Deadlines and portability", question: "Finally, are you aware of the deadline, and do you want us to consider portability?", answer: "I understand the federal return is due about nine months after the death, on {return_due_date}, and that we can extend it six months if needed. I do not want to miss that deadline. Please also advise me on electing portability so any unused exclusion can be preserved for the surviving spouse."}
+
+objectives:
+  goals:
+    - "Prepare and file an accurate, timely federal estate tax return (Form 706) and Maine estate tax return (Form 706ME) by {return_due_date}."
+    - "Maximize the marital deduction under IRC § 2056 and the charitable deduction under IRC § 2055 to minimize the taxable estate."
+    - "Preserve portability of the decedent's unused applicable exclusion (DSUE) for the surviving spouse under IRC § 2010(c)."
+    - "Obtain defensible date-of-death appraisals of the closely-held business interest and the real property."
+    - "File Form 56 fiduciary notice and the estate's fiduciary income tax returns (Form 1041 and Form 1041ME) during administration."
+  priorities:
+    - "Meeting the nine-month filing deadline (or properly extending it) so no late-filing penalty accrues."
+    - "Supporting every reported value with a defensible appraisal to limit audit and adjustment risk."
+    - "Capturing all available deductions and elections to minimize federal and Maine estate tax."
+  risk_tolerance: low
+  desired_outcomes:
+    - "Timely, fully-supported Form 706 and Form 706ME accepted without adjustment."
+    - "Full marital and charitable deductions claimed and, where beneficial, a valid portability election preserving the DSUE amount."
+  non_starters:
+    - "Missing the Form 706 filing deadline and incurring late-filing or late-payment penalties."
+    - "Reporting an asset at an unsupported value that cannot be defended on audit."
+  constraints:
+    budget: {pick: ["Funded from estate assets; the executor prefers thorough appraisal and compliance work over the risk of penalties.", "Moderate and paid from the estate, with a strong preference for defensible valuations and timely filing."]}
+    timeline: "The federal and Maine estate tax returns are due approximately nine months after death, on {return_due_date}, with a six-month extension available."
+
+issues:
+  count: {min: 3, max: 6}
+  pool:
+    - {issue: "Composition and valuation of the gross estate", category: tax, governing_law: "IRC § 2031; IRC §§ 2033-2044", sub_questions: ["What property is includible in the gross estate, including probate assets, the revocable trust, and life insurance?", "What is the date-of-death fair market value of each asset, particularly the closely-held business interest?"], strength: moderate, client_position: "Contends the gross estate of roughly ${gross_estate_value} should be reported at defensible, appraisal-supported date-of-death values."}
+    - {issue: "Election of the alternate valuation date", category: tax, governing_law: "IRC § 2032", sub_questions: ["Would valuing the estate six months after death reduce both the gross estate and the estate tax?", "Are the requirements for a valid alternate valuation election satisfied?"], strength: unknown, client_position: "Will elect alternate valuation under IRC § 2032 only if it lowers both the value of the gross estate and the estate tax due."}
+    - {issue: "Marital deduction for property passing to the surviving spouse", category: tax, governing_law: "IRC § 2056", sub_questions: ["Does the property passing to the surviving spouse qualify for the unlimited marital deduction?", "Is a QTIP election needed for any terminable interest?"], strength: strong, client_position: "Asserts that qualifying property passing to the surviving spouse is fully deductible under IRC § 2056."}
+    - {issue: "Charitable deduction for bequests to qualified charities", category: tax, governing_law: "IRC § 2055", sub_questions: ["Is the charitable beneficiary a qualified organization?", "Is the charitable bequest properly documented and deductible?"], strength: strong, client_position: "Asserts the bequest to the qualified charity is deductible from the gross estate under IRC § 2055."}
+    - {issue: "Applicable exclusion and portability of the DSUE amount", category: tax, governing_law: "IRC § 2010(c)", sub_questions: ["What is the decedent's remaining applicable exclusion after prior taxable gifts?", "Should the executor elect portability to transfer the unused exclusion (DSUE) to the surviving spouse?"], strength: moderate, client_position: "Intends to elect portability under IRC § 2010(c) where it preserves valuable unused exclusion for the surviving spouse."}
+    - {issue: "Deductibility of debts, funeral, and administration expenses", category: tax, governing_law: "IRC § 2053", sub_questions: ["Which debts of the decedent and administration expenses are deductible?", "Should expenses be claimed on the Form 706 or the estate's Form 1041?"], strength: strong, client_position: "Seeks to deduct roughly ${debts_and_expenses} in valid debts, funeral, and administration expenses under IRC § 2053."}
+    - {issue: "Maine estate tax and the Maine exclusion amount", category: tax, governing_law: "36 M.R.S. § 4062 et seq.", sub_questions: ["Does the estate exceed the Maine exclusion amount so that a Form 706ME is required?", "How is the Maine taxable estate computed for a Maine-domiciled decedent?"], strength: moderate, client_position: "Acknowledges that the Maine estate exceeds the Maine exclusion and will file a Form 706ME computing the Maine estate tax."}
+    - {issue: "Fiduciary income tax during administration", category: tax, governing_law: "IRC § 641", sub_questions: ["Does the estate's income during administration require Form 1041 and Form 1041ME?", "Which fiscal year and deductions should the fiduciary elect?"], strength: moderate, client_position: "Will file Form 1041 and Form 1041ME for income earned by the estate during administration under IRC § 641."}
+    - {issue: "Form 706 filing requirement and the nine-month due date", category: tax, governing_law: "IRC § 6018; IRC § 6075", sub_questions: ["Is a Form 706 required because the gross estate exceeds the filing threshold?", "Is the return timely filed within nine months of death or a properly extended date?"], strength: strong, client_position: "Recognizes a Form 706 is required under IRC § 6018 and will file by the nine-month due date of {return_due_date} under IRC § 6075 or a valid extension."}
+
+experts:
+  count: {min: 1, max: 3}
+  pool:
+    - {field: "Closely-held business valuation", credentials: "ASA", retained_by: personal_representative, topic: "Date-of-death fair market value of the decedent's closely-held business interest", opinion: "The closely-held business interest had a fair market value as of the date of death within the appraised range, after appropriate discounts for lack of marketability and control.", basis: "Review of the company's financial statements, comparable transactions, and applicable valuation discounts."}
+    - {field: "Real estate appraisal", credentials: "MAI", retained_by: personal_representative, topic: "Date-of-death value of the decedent's real property", opinion: "The decedent's real property had a fair market value as of the date of death within the appraised range used on the Form 706.", basis: "Inspection of the property and analysis of comparable sales in the county."}
+    - {field: "Estate and fiduciary tax", credentials: "CPA", retained_by: personal_representative, topic: "Preparation of the Form 706, Form 706ME, and the estate's fiduciary income tax returns", opinion: "The reported gross estate, deductions, and tax are computed correctly, and the recommended elections minimize the combined federal and Maine tax.", basis: "Review of the estate inventory, appraisals, account statements, and prior gift tax returns."}
+
+evidence:
+  count: {min: 3, max: 6}
+  pool:
+    - {title: "Certified death certificate", type: public_record, party: personal_representative, description: "Certified copy of the decedent's death certificate establishing the date and place of death."}
+    - {title: "Last will and revocable trust instrument", type: document, party: personal_representative, description: "The decedent's will and any revocable living trust, identifying beneficiaries, bequests, and assets includible in the gross estate."}
+    - {title: "Date-of-death appraisals of real estate and business interests", type: financial_record, party: personal_representative, description: "Qualified appraisals supporting the reported date-of-death fair market values of the real property and the closely-held business interest."}
+    - {title: "Brokerage and bank statements", type: financial_record, party: personal_representative, description: "Account statements documenting the date-of-death value of marketable securities and cash held by the decedent and the estate."}
+    - {title: "Life insurance Form 712 statements", type: financial_record, party: personal_representative, description: "Insurer-provided Form 712 statements substantiating the life insurance proceeds includible in the gross estate."}
+    - {title: "Prior gift tax returns (Form 709)", type: document, party: personal_representative, description: "The decedent's prior federal gift tax returns reflecting taxable gifts that affect the remaining applicable exclusion."}
+    - {title: "Estate inventory", type: financial_record, party: personal_representative, description: "Schedule of the estate's assets and date-of-death values used to prepare the Form 706 and Form 706ME."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  count: {min: 3, max: 5}
+  amounts:
+    - {label: "Gross estate value", amount: {int_between: [7000000, 28000000]}, basis: "Total date-of-death fair market value of all property includible in the gross estate."}
+    - {label: "Real property value", amount: {int_between: [600000, 6000000]}, basis: "Appraised date-of-death fair market value of the decedent's real property."}
+    - {label: "Closely-held business interest", amount: {int_between: [0, 9000000]}, basis: "Appraised date-of-death value of the decedent's closely-held business interest."}
+    - {label: "Marketable securities", amount: {int_between: [500000, 8000000]}, basis: "Date-of-death value of the decedent's brokerage and investment accounts."}
+    - {label: "Life insurance proceeds", amount: {int_between: [0, 4000000]}, basis: "Death benefit includible in the gross estate under IRC § 2042, per the Form 712 statement."}
+    - {label: "Debts and administration expenses", amount: {int_between: [100000, 1500000]}, basis: "Deductible debts of the decedent, funeral expenses, and administration expenses under IRC § 2053."}
