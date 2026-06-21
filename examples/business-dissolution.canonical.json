@@ -1,0 +1,85 @@
+{
+  "matter": {
+    "case_id": "MMC-2026-674351",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Maine Secretary of State / Maine Revenue Services",
+    "case_type": "entity_dissolution",
+    "filing_date": "2026-02-08",
+    "event_date": "2025-10-31"
+  },
+  "parties": {
+    "authorized_person": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "company": {
+      "full_name": "Summit Outfitters Co.",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154"
+    },
+    "attorney": {
+      "full_name": "John D. Kingsley",
+      "first_name": "John",
+      "middle_name": "D",
+      "last_name": "Kingsley",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "john.kingsley@example.org",
+      "date_of_birth": "1998-04-24",
+      "bar_number": "3181"
+    }
+  },
+  "_provenance": {
+    "fixture_id": "93330ab717296c5af8ab",
+    "scenario_id": "business-dissolution",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
+  "party": {
+    "full_name": "Grace C. Roe",
+    "first_name": "Grace",
+    "middle_name": "C",
+    "last_name": "Roe",
+    "address": "422 Spruce Avenue",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "email": "grace.roe@example.com",
+    "date_of_birth": "1969-04-20",
+    "signature": "Grace C. Roe"
+  },
+  "facts": {
+    "entity_name": "Summit Outfitters Co.",
+    "entity_type": "limited liability company",
+    "charter_number": "20211234DC",
+    "formation_date": "2020-02-16",
+    "cessation_date": "2025-10-31",
+    "dissolution_reason": "continued operation is no longer economical",
+    "approval_method": "board and shareholder approval",
+    "known_creditors": 2,
+    "employees_at_closing": 9,
+    "final_payroll_date": "2026-03-27",
+    "assets_to_distribute": 201997,
+    "liabilities_to_pay": 98621,
+    "final_return_required": true,
+    "tax_clearance_requested": true
+  }
+}

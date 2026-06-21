@@ -150,7 +150,7 @@ See [`docs/probate-fixtures.md`](docs/probate-fixtures.md).
 
 ## Seed scenarios
 
-Thirty-one archetypes spanning the three downstream repos and eight practice areas. Add more by dropping a new
+Thirty-six archetypes spanning the downstream ecosystem and eight practice areas. Add more by dropping a new
 `scenarios/<id>/scenario.yaml` — no code changes required.
 
 | Scenario | Practice area | Downstream repo |
@@ -186,6 +186,11 @@ Thirty-one archetypes spanning the three downstream repos and eight practice are
 | `llc-member-oppression` | business (minority freeze-out, § 1595) | maine-court-forms |
 | `short-term-rental-dispute` | civil (STR covenant / nuisance / zoning) | maine-court-forms |
 | `medical-malpractice` | civil (§ 2851 screening panel) | maine-court-forms |
+| `business-dissolution` | business (corporation / LLC / nonprofit wind-down) | maine-corporation-forms + transactional-tax-forms |
+| `llc-formation` | business (Maine LLC + EIN / classification) | maine-corporation-forms + transactional-tax-forms |
+| `nonprofit-formation` | business (Maine nonprofit + charitable governance) | maine-corporation-forms |
+| `full-estate-administration` | probate (inventory through accounting and closure) | maine-probate-forms + transactional-tax-forms |
+| `emergency-guardianship` | probate (expedited temporary protection) | maine-probate-forms |
 
 Browse a worked sample of each under [`examples/`](examples/) (`*.matter.json` and the
 projected `*.canonical.json`).

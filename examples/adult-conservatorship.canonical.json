@@ -76,6 +76,13 @@
       "date_of_birth": "1965-03-05"
     }
   },
+  "_provenance": {
+    "fixture_id": "96ea9ff96732ed408ec5",
+    "scenario_id": "adult-conservatorship",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
   "party": {
     "full_name": "Grace C. Roe",
     "first_name": "Grace",

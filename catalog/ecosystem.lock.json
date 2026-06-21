@@ -47,8 +47,14 @@
   },
   "workflows": {
     "estate-administration": {"forms": ["DE-301", "MRS-706ME"]},
+    "full-estate-administration": {"forms": ["DE-301", "MRS-706ME"]},
     "entity-formation": {"forms": ["IRS-SS-4", "IRS-2553"]},
+    "llc-formation": {"forms": ["IRS-SS-4"]},
+    "nonprofit-formation": {"forms": ["IRS-SS-4"]},
+    "business-dissolution": {"forms": []},
+    "emergency-guardianship": {"forms": []},
     "real-estate-transfer": {"forms": ["ME-RETTD"]},
+    "estate-property-sale": {"forms": ["DE-301", "ME-RETTD", "MRS-706ME"]},
     "family-matter": {"forms": ["FM-004", "FM-006", "FM-050"]},
     "protection-from-abuse": {"forms": ["PA-001"]},
     "civil-litigation": {"forms": ["CV-001", "CV-007"]}

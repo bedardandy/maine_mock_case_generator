@@ -1,0 +1,76 @@
+id: emergency-guardianship
+title: "Emergency protection proceeding for {respondent_full_name}"
+practice_area: probate
+case_type: emergency_guardianship_conservatorship
+status: pre_filing
+docket_prefix: GC
+assign_docket: true
+downstream:
+  repo: maine-probate-forms
+  example_forms: [PP-507, PP-201, PP-401, PP-505, PP-506]
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Probate Court
+dates:
+  filing_date: {date_between: ["2026-01-01", "2026-06-01"]}
+  event_date: "{crisis_date}"
+parties:
+  client_role: petitioner
+  attorney: true
+  roles:
+    - {key: petitioner, label: "Emergency petitioner / proposed fiduciary"}
+    - {key: respondent, label: "Adult requiring immediate protection"}
+facts:
+  crisis_date: {date_between: ["2025-12-01", "2026-05-31"]}
+  emergency_basis: {pick: ["immediate risk of financial exploitation", "unsafe discharge from a hospital", "loss of essential housing and care", "rapid dissipation of assets by an unauthorized caregiver"]}
+  alleged_condition: {pick: ["acute delirium with dementia", "severe cognitive impairment after a stroke", "traumatic brain injury", "advanced dementia"]}
+  requested_emergency_role: {pick: ["emergency guardian", "emergency conservator", "emergency guardian and conservator"]}
+  notice_impracticable: {pick: [true, false]}
+  immediate_asset_risk: {int_between: [10000, 750000]}
+  existing_agent_unavailable: {pick: [true, false]}
+  physician_report_available: {pick: [true, false]}
+  full_petition_to_follow: true
+fact_pattern:
+  summary: "{petitioner_full_name} seeks appointment as {requested_emergency_role} for {respondent_full_name} because {emergency_basis}, alleging {alleged_condition_lower} and immediate exposure of approximately ${immediate_asset_risk}."
+  narrative:
+    - "On {crisis_date}, the family learned of {emergency_basis}. {respondent_full_name} is experiencing {alleged_condition_lower} and cannot safely manage the immediate crisis."
+    - "{petitioner_full_name} requests narrowly tailored emergency authority to stabilize care and assets while a full petition, physician report, visitor investigation, notice, and hearing proceed."
+    - "The requested order is temporary and must preserve the respondent's rights and independence to the greatest extent possible."
+  undisputed: ["An immediate protective decision is required.", "A full proceeding and due-process protections must follow."]
+  disputed:
+    - "Whether the facts rise to the statutory emergency threshold."
+    - "Whether notice can safely be provided before temporary relief."
+    - "Whether a narrower protective arrangement would suffice."
+  timeline:
+    - {date: "{crisis_date}", event: "The emergency condition or exploitation risk became known."}
+    - {date: "{filing_date}", event: "Emergency affidavit and petition prepared."}
+objectives:
+  goals: ["Stop immediate harm", "Preserve assets and essential care", "Transition promptly to a full least-restrictive proceeding"]
+  priorities: ["Immediate safety", "Narrow temporary authority", "Prompt notice and hearing"]
+  risk_tolerance: low
+  desired_outcomes: ["Temporary emergency order", "Stable care and protected funds pending full adjudication"]
+  non_starters: ["Open-ended emergency authority without prompt review"]
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Emergency statutory threshold", category: probate, governing_law: "18-C M.R.S. art. 5", strength: moderate}
+    - {issue: "Scope and duration of temporary authority", category: probate, governing_law: "18-C M.R.S. art. 5", strength: strong}
+    - {issue: "Notice, counsel, and prompt-hearing rights", category: probate, governing_law: "18-C M.R.S. art. 5", strength: strong}
+    - {issue: "Least restrictive emergency alternative", category: probate, governing_law: "18-C M.R.S. art. 5", strength: moderate}
+    - {issue: "Protection and tracing of assets", category: probate, governing_law: "18-C M.R.S. art. 5", strength: moderate}
+evidence:
+  count: {min: 3, max: 6}
+  pool:
+    - {title: "Emergency petitioner affidavit", type: affidavit, party: petitioner}
+    - {title: "Hospital or physician report", type: medical_record, party: petitioner}
+    - {title: "Bank alerts and recent account statements", type: financial_record, party: petitioner}
+    - {title: "Adult Protective Services referral", type: public_record, party: petitioner}
+    - {title: "Proposed temporary protective plan", type: document, party: petitioner}
+    - {title: "Existing power of attorney", type: document, party: respondent}
+financials:
+  currency: USD
+  count: 2
+  amounts:
+    - {label: "Assets immediately at risk", amount: {int_between: [10000, 750000]}}
+    - {label: "Monthly essential care and housing costs", amount: {int_between: [1500, 15000]}}

@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.2.0",
+    "scenario_id": "nonprofit-formation",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "fixture_id": "c61947c54b545b935dae",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc"
+    }
+  },
+  "matter": {
+    "matter_id": "MMC-2026-955770",
+    "practice_area": "business",
+    "title": "Formation of Summit Outfitters Co., a Maine nonprofit",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Maine Secretary of State / IRS"
+    },
+    "case_type": "nonprofit_formation",
+    "filing_date": "2026-02-08",
+    "status": "intake",
+    "summary": "Grace C. Roe is forming Summit Outfitters Co., a Maine nonprofit devoted to coastal conservation education, with 7 initial directors and a no statutory members governance structure.",
+    "event_date": "2026-04-18"
+  },
+  "parties": {
+    "incorporator": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Incorporator / initial director",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "company": {
+      "entity_type": "organization",
+      "organization_name": "Summit Outfitters Co.",
+      "full_name": "Summit Outfitters Co.",
+      "role": "New Maine nonprofit corporation",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "D",
+      "last_name": "Kingsley",
+      "full_name": "John D. Kingsley",
+      "role": "Attorney for the client",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "john.kingsley@example.org",
+      "date_of_birth": "1998-04-24",
+      "ssn_last4": "0763",
+      "bar_number": "3181",
+      "organization_name": "Greenhill Law Offices"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Incorporator / initial director",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe is forming Summit Outfitters Co., a Maine nonprofit devoted to coastal conservation education, with 7 initial directors and a no statutory members governance structure.",
+    "narrative": "Summit Outfitters Co. will pursue coastal conservation education and is intended to qualify as a public charity.\n\nThe incorporator must file nonprofit articles containing suitable purpose and dissolution provisions, appoint the initial board, obtain an EIN, adopt bylaws and a conflict policy, and prepare the federal exemption application.\n\nThe organization expects first-year donations near $308736 and will operate with no statutory members.",
+    "undisputed_facts": [
+      "The organization will be nonprofit and charitable.",
+      "No earnings may inure to private persons."
+    ],
+    "disputed_facts": [
+      "Whether the articles and bylaws properly distinguish board and member authority.",
+      "Whether planned activities fit the requested federal exemption."
+    ],
+    "timeline": [
+      {
+        "date": "2026-02-08",
+        "event": "State formation and federal setup package prepared."
+      },
+      {
+        "date": "2026-04-18",
+        "event": "Nonprofit articles become effective."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Form the Maine nonprofit",
+      "Obtain an EIN",
+      "Adopt compliant governance documents",
+      "Prepare for federal tax exemption"
+    ],
+    "priorities": [
+      "Charitable-purpose clarity",
+      "Independent governance",
+      "Fundraising readiness"
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "Accepted nonprofit articles",
+      "Organized board and compliant exemption package"
+    ],
+    "non_starters": [
+      "Private-benefit arrangements inconsistent with charitable status"
+    ]
+  },
+  "issues": [
+    {
+      "issue": "Charitable purpose and private benefit",
+      "category": "tax",
+      "governing_law": "IRC § 501(c)(3)",
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Required nonprofit articles provisions",
+      "category": "business",
+      "governing_law": "13-B M.R.S.",
+      "strength": "strong",
+      "id": "iss2"
+    },
+    {
+      "issue": "Board and member governance",
+      "category": "business",
+      "governing_law": "13-B M.R.S.",
+      "strength": "moderate",
+      "id": "iss3"
+    },
+    {
+      "issue": "Conflict-of-interest controls",
+      "category": "business",
+      "governing_law": "State fiduciary duties and IRS governance guidance",
+      "strength": "moderate",
+      "id": "iss4"
+    },
+    {
+      "issue": "Dissolution dedication of charitable assets",
+      "category": "tax",
+      "governing_law": "IRC § 501(c)(3)",
+      "strength": "strong",
+      "id": "iss5"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "First-year program budget",
+      "type": "financial_record",
+      "party": "company",
+      "id": "ev1"
+    },
+    {
+      "title": "Articles of Incorporation",
+      "type": "public_record",
+      "party": "company",
+      "id": "ev2"
+    },
+    {
+      "title": "Conflict-of-interest policy",
+      "type": "document",
+      "party": "company",
+      "id": "ev3"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Expected first-year donations",
+        "amount": 275264
+      },
+      {
+        "label": "Expected program expenses",
+        "amount": 366725
+      }
+    ]
+  },
+  "facts": {
+    "entity_name": "Summit Outfitters Co.",
+    "formation_date": "2026-04-18",
+    "charitable_purpose": "coastal conservation education",
+    "membership_structure": "no statutory members",
+    "num_initial_directors": 7,
+    "public_charity_expected": true,
+    "tax_exemption_application_planned": true,
+    "conflict_policy_adopted": false,
+    "dissolution_clause_included": true,
+    "expected_donations": 308736,
+    "responsible_party_name": "Grace C. Roe"
+  }
+}

@@ -82,6 +82,13 @@
           "bar_number": "9018"
         }
       },
+      "_provenance": {
+        "fixture_id": "f9460a5c828b1a02e5fe",
+        "scenario_id": "family-divorce-cumberland",
+        "seed": 7001,
+        "reference_date": "2026-01-01",
+        "generator_version": "0.2.0"
+      },
       "party": {
         "full_name": "Nadia P. Loe",
         "first_name": "Nadia",
@@ -210,6 +217,13 @@
           "bar_number": "6473"
         }
       },
+      "_provenance": {
+        "fixture_id": "0f2020b8a4c2174ad311",
+        "scenario_id": "protection-from-abuse",
+        "seed": 7002,
+        "reference_date": "2026-01-01",
+        "generator_version": "0.2.0"
+      },
       "party": {
         "full_name": "Nadia P. Loe",
         "first_name": "Nadia",
@@ -285,6 +299,13 @@
           "date_of_birth": "1980-11-18",
           "bar_number": "5106"
         }
+      },
+      "_provenance": {
+        "fixture_id": "429a96dd48ff04b6f4ea",
+        "scenario_id": "business-formation-scorp",
+        "seed": 7003,
+        "reference_date": "2026-01-01",
+        "generator_version": "0.2.0"
       },
       "party": {
         "full_name": "Priya C. Roe",

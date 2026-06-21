@@ -13,6 +13,13 @@ _PLACEHOLDER = re.compile(r"\{[a-z][a-z0-9_]*\}")
 
 def test_scenarios_exist():
     assert SCENARIOS, "no scenarios were discovered"
+    assert {
+        "business-dissolution",
+        "llc-formation",
+        "nonprofit-formation",
+        "full-estate-administration",
+        "emergency-guardianship",
+    } <= set(SCENARIOS)
 
 
 @pytest.mark.parametrize("scenario", SCENARIOS)

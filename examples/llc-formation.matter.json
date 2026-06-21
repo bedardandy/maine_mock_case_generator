@@ -1,0 +1,236 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.2.0",
+    "scenario_id": "llc-formation",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "fixture_id": "273359c308a022780304",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc"
+    }
+  },
+  "matter": {
+    "matter_id": "MMC-2026-709851",
+    "practice_area": "business",
+    "title": "Formation of Summit Outfitters Co., a Maine LLC",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Maine Secretary of State / IRS"
+    },
+    "case_type": "entity_formation",
+    "filing_date": "2026-02-08",
+    "status": "intake",
+    "summary": "Grace C. Roe is organizing Summit Outfitters Co. as a member-managed Maine LLC for food services, with 5 member(s), initial capital of about $48376, and federal tax classification as a partnership.",
+    "event_date": "2026-04-18"
+  },
+  "parties": {
+    "organizer": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Organizer / responsible party",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "company": {
+      "entity_type": "organization",
+      "organization_name": "Summit Outfitters Co.",
+      "full_name": "Summit Outfitters Co.",
+      "role": "New Maine limited liability company",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "D",
+      "last_name": "Kingsley",
+      "full_name": "John D. Kingsley",
+      "role": "Attorney for the client",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "john.kingsley@example.org",
+      "date_of_birth": "1998-04-24",
+      "ssn_last4": "0763",
+      "bar_number": "3181",
+      "organization_name": "Greenhill Law Offices"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Organizer / responsible party",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe is organizing Summit Outfitters Co. as a member-managed Maine LLC for food services, with 5 member(s), initial capital of about $48376, and federal tax classification as a partnership.",
+    "narrative": "Summit Outfitters Co. will be a member-managed Maine LLC with 5 member(s), organized to conduct food services.\n\nThe organizer must file the Certificate of Formation, appoint a commercial registered agent, obtain an EIN, adopt an operating agreement, and confirm whether Form 8832 is needed for the intended partnership treatment.\n\nThe company expects 10 employee(s) and initial capitalization near $48376.",
+    "undisputed_facts": [
+      "The entity will be formed as a Maine LLC.",
+      "Grace C. Roe is the organizer and IRS responsible party."
+    ],
+    "disputed_facts": [
+      "Whether the intended tax classification requires an affirmative Form 8832 election.",
+      "Whether the operating agreement adequately addresses management, transfers, and member exits."
+    ],
+    "timeline": [
+      {
+        "date": "2026-02-08",
+        "event": "Formation, EIN, and classification package prepared."
+      },
+      {
+        "date": "2026-04-18",
+        "event": "Certificate of Formation becomes effective."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Form the LLC",
+      "Obtain an EIN",
+      "Document management and ownership",
+      "Select the intended federal tax classification"
+    ],
+    "priorities": [
+      "Liability protection",
+      "Clean ownership records",
+      "Correct tax classification"
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "Accepted Certificate of Formation",
+      "Signed operating agreement and issued EIN"
+    ],
+    "non_starters": [
+      "Accidentally electing corporate tax treatment"
+    ]
+  },
+  "issues": [
+    {
+      "issue": "Member-managed versus manager-managed authority",
+      "category": "business",
+      "governing_law": "31 M.R.S. ch. 21",
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Default or elected federal tax classification",
+      "category": "tax",
+      "governing_law": "Treas. Reg. § 301.7701-3",
+      "strength": "moderate",
+      "id": "iss2"
+    },
+    {
+      "issue": "Sufficiency of the Certificate of Formation",
+      "category": "business",
+      "governing_law": "31 M.R.S. § 1531",
+      "strength": "strong",
+      "id": "iss3"
+    },
+    {
+      "issue": "Operating agreement governance and transfer restrictions",
+      "category": "business",
+      "governing_law": "31 M.R.S. ch. 21",
+      "strength": "moderate",
+      "id": "iss4"
+    },
+    {
+      "issue": "Employer withholding registration",
+      "category": "tax",
+      "governing_law": "36 M.R.S. § 5250",
+      "strength": "strong",
+      "id": "iss5"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Operating agreement",
+      "type": "contract",
+      "party": "company",
+      "id": "ev1"
+    },
+    {
+      "title": "IRS Form SS-4",
+      "type": "document",
+      "party": "organizer",
+      "id": "ev2"
+    },
+    {
+      "title": "Initial member ledger",
+      "type": "financial_record",
+      "party": "company",
+      "id": "ev3"
+    },
+    {
+      "title": "Draft Form 8832 if required",
+      "type": "document",
+      "party": "company",
+      "id": "ev4"
+    },
+    {
+      "title": "Certificate of Formation",
+      "type": "public_record",
+      "party": "company",
+      "id": "ev5"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Expected first-year revenue",
+        "amount": 404146
+      },
+      {
+        "label": "Initial capital",
+        "amount": 79582
+      }
+    ]
+  },
+  "facts": {
+    "entity_name": "Summit Outfitters Co.",
+    "entity_type": "Maine limited liability company",
+    "formation_date": "2026-04-18",
+    "management": "member-managed",
+    "num_members": 5,
+    "registered_agent_type": "commercial registered agent",
+    "principal_activity": "food services",
+    "tax_classification": "partnership",
+    "classification_election_required": true,
+    "employees_expected": 10,
+    "initial_capital": 48376,
+    "operating_agreement_signed": true,
+    "responsible_party_name": "Grace C. Roe"
+  }
+}

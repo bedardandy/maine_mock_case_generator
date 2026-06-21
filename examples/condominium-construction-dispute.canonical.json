@@ -62,6 +62,13 @@
       "bar_number": "4078"
     }
   },
+  "_provenance": {
+    "fixture_id": "eec21383df3b3b8b6739",
+    "scenario_id": "condominium-construction-dispute",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
   "party": {
     "full_name": "Riverbend Analytics LLC",
     "address": "422 Spruce Avenue",

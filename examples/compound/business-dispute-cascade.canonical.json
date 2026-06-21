@@ -50,6 +50,13 @@
           "bar_number": "5753"
         }
       },
+      "_provenance": {
+        "fixture_id": "899fdad50f9cfa3e8e3f",
+        "scenario_id": "business-formation-scorp",
+        "seed": 7001,
+        "reference_date": "2026-01-01",
+        "generator_version": "0.2.0"
+      },
       "party": {
         "full_name": "Nadia P. Loe",
         "first_name": "Nadia",
@@ -171,6 +178,13 @@
           "date_of_birth": "1981-12-22",
           "bar_number": "6473"
         }
+      },
+      "_provenance": {
+        "fixture_id": "c22265634cfd1a248f26",
+        "scenario_id": "complex-civil-litigation",
+        "seed": 7002,
+        "reference_date": "2026-01-01",
+        "generator_version": "0.2.0"
       },
       "party": {
         "full_name": "Felix B. Fairbanks",

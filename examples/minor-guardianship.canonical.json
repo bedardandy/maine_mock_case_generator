@@ -83,6 +83,13 @@
       "date_of_birth": "1965-03-05"
     }
   },
+  "_provenance": {
+    "fixture_id": "75945a160a9ff8976a05",
+    "scenario_id": "minor-guardianship",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
   "party": {
     "full_name": "Olivia B. Ellsworth",
     "first_name": "Olivia",

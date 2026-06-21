@@ -4,7 +4,7 @@
     "mock": true,
     "fictional": true,
     "generator": "compound-engine",
-    "generator_version": "0.1.0",
+    "generator_version": "0.2.0",
     "compound_id": "business-dispute-cascade",
     "seed": 7
   },
@@ -89,9 +89,15 @@
         "mock": true,
         "fictional": true,
         "generator": "deterministic-engine",
-        "generator_version": "0.1.0",
+        "generator_version": "0.2.0",
         "scenario_id": "business-formation-scorp",
-        "seed": 7001
+        "seed": 7001,
+        "reference_date": "2026-01-01",
+        "fixture_id": "899fdad50f9cfa3e8e3f",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Kennebec"
+        }
       },
       "matter": {
         "matter_id": "MMC-2026-560900",
@@ -423,9 +429,15 @@
         "mock": true,
         "fictional": true,
         "generator": "deterministic-engine",
-        "generator_version": "0.1.0",
+        "generator_version": "0.2.0",
         "scenario_id": "complex-civil-litigation",
-        "seed": 7002
+        "seed": 7002,
+        "reference_date": "2026-01-01",
+        "fixture_id": "c22265634cfd1a248f26",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Cumberland"
+        }
       },
       "matter": {
         "matter_id": "MMC-2025-462859",

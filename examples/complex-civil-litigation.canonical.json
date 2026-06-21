@@ -80,6 +80,13 @@
       "bar_number": "5919"
     }
   },
+  "_provenance": {
+    "fixture_id": "fd4a3b6c12c5671ad958",
+    "scenario_id": "complex-civil-litigation",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
   "party": {
     "full_name": "Grace C. Roe",
     "first_name": "Grace",

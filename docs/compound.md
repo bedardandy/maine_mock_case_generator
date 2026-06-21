@@ -40,6 +40,7 @@ compound/death-cascade/compound.yaml
 | `marital-breakdown-cascade` | divorce + protection-from-abuse + business | Same spouses and children; the marital business is a contested asset |
 | `business-dispute-cascade` | business formation + complex civil litigation | The company formed in one matter is the defendant in the other; the founder is applicant then defendant |
 | `elder-exploitation-cascade` | improvident transfer + adult conservatorship + will contest | One elder is the transferor, then the ward, then the decedent; the exploiter is the deed transferee then the will proponent |
+| `estate-property-sale` | full estate administration + real-estate transfer | The personal representative sells estate property; sale proceeds return to the probate account |
 
 ## Generate one
 

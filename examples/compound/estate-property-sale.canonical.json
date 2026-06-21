@@ -1,0 +1,193 @@
+[
+  {
+    "universe_id": "UNIV-estate-property-sale-0007",
+    "matter_id": "MMC-2026-139762",
+    "scenario_id": "full-estate-administration",
+    "canonical": {
+      "matter": {
+        "docket_number": "KEN-PE-2026-980",
+        "case_id": "MMC-2026-139762",
+        "court_county": "Kennebec",
+        "court_location": "Augusta",
+        "court_type": "Probate Court",
+        "case_type": "estate_administration",
+        "filing_date": "2026-03-30",
+        "event_date": "2025-06-07"
+      },
+      "parties": {
+        "decedent": {
+          "full_name": "Nadia P. Loe",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "date_of_birth": "1960-01-25"
+        },
+        "personal_representative": {
+          "full_name": "Felix M. Coe",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03"
+        },
+        "attorney": {
+          "full_name": "Nadia E. Danforth",
+          "first_name": "Nadia",
+          "middle_name": "E",
+          "last_name": "Danforth",
+          "address": "341 Harbor Road",
+          "city": "Yarmouth",
+          "state": "ME",
+          "zip": "04046",
+          "phone": "(207) 555-0124",
+          "email": "nadia.danforth@example.net",
+          "date_of_birth": "1970-04-29",
+          "bar_number": "5753"
+        },
+        "plaintiff": {
+          "full_name": "Nadia P. Loe",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "date_of_birth": "1960-01-25"
+        }
+      },
+      "_provenance": {
+        "fixture_id": "049377555c232f3e1cdb",
+        "scenario_id": "full-estate-administration",
+        "seed": 7001,
+        "reference_date": "2026-01-01",
+        "generator_version": "0.2.0"
+      },
+      "party": {
+        "full_name": "Felix M. Coe",
+        "first_name": "Felix",
+        "middle_name": "M",
+        "last_name": "Coe",
+        "address": "300 Pine Lane",
+        "city": "Farmington",
+        "state": "ME",
+        "zip": "04028",
+        "phone": "(207) 555-0104",
+        "email": "felix.coe@example.com",
+        "date_of_birth": "1974-08-03",
+        "signature": "Felix M. Coe"
+      },
+      "facts": {
+        "date_of_death": "2025-06-07",
+        "will_exists": false,
+        "administration_type": "formal administration",
+        "estate_ein_obtained": true,
+        "inventory_filed": true,
+        "bond_required": true,
+        "creditor_claims_count": 2,
+        "disputed_claim_exists": true,
+        "real_property": true,
+        "real_property_value": 751398,
+        "personal_property_value": 43282,
+        "estate_income": 4242,
+        "distributions_made": false,
+        "accounting_period_end": "2026-08-23",
+        "closing_method": "sworn statement"
+      }
+    }
+  },
+  {
+    "universe_id": "UNIV-estate-property-sale-0007",
+    "matter_id": "MMC-2025-755876",
+    "scenario_id": "real-estate-transfer",
+    "canonical": {
+      "matter": {
+        "case_id": "MMC-2025-755876",
+        "court_county": "Cumberland",
+        "court_location": "Portland",
+        "court_type": "Maine Registry of Deeds / Maine Revenue Services",
+        "case_type": "real_estate_transfer",
+        "filing_date": "2025-10-19",
+        "event_date": "2026-02-28"
+      },
+      "parties": {
+        "transferor": {
+          "full_name": "Felix M. Coe",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03"
+        },
+        "transferee": {
+          "full_name": "Marcus W. Poe",
+          "first_name": "Marcus",
+          "middle_name": "W",
+          "last_name": "Poe",
+          "address": "219 Pine Lane",
+          "city": "Yarmouth",
+          "state": "ME",
+          "zip": "04029",
+          "phone": "(207) 555-0180",
+          "email": "marcus.poe@example.net",
+          "date_of_birth": "1964-02-01"
+        },
+        "attorney": {
+          "full_name": "Malik K. Kingsley",
+          "first_name": "Malik",
+          "middle_name": "K",
+          "last_name": "Kingsley",
+          "address": "231 Meadowbrook Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04002",
+          "phone": "(207) 555-0135",
+          "email": "malik.kingsley@example.com",
+          "date_of_birth": "1981-12-22",
+          "bar_number": "6473"
+        }
+      },
+      "_provenance": {
+        "fixture_id": "064cea856b53f2e3a82d",
+        "scenario_id": "real-estate-transfer",
+        "seed": 7002,
+        "reference_date": "2026-01-01",
+        "generator_version": "0.2.0"
+      },
+      "party": {
+        "full_name": "Marcus W. Poe",
+        "first_name": "Marcus",
+        "middle_name": "W",
+        "last_name": "Poe",
+        "address": "219 Pine Lane",
+        "city": "Yarmouth",
+        "state": "ME",
+        "zip": "04029",
+        "phone": "(207) 555-0180",
+        "email": "marcus.poe@example.net",
+        "date_of_birth": "1964-02-01",
+        "signature": "Marcus W. Poe"
+      },
+      "facts": {
+        "property_address": "8 Harbor Road",
+        "property_town": "Camden",
+        "property_county": "Cumberland",
+        "property_map_block_lot": "Map 4, Block 1, Lot 22",
+        "purchase_price": 981539,
+        "transfer_date": "2026-02-28",
+        "property_type": "single-family residential",
+        "adjusted_assessed_value": 233473,
+        "special_circumstances_explanation": "Transfer includes seller-financing",
+        "deed_type": "quitclaim deed with covenant",
+        "financing": "cash",
+        "transfer_tax_exemption": true
+      }
+    }
+  }
+]

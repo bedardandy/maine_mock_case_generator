@@ -45,6 +45,13 @@
       "bar_number": "3181"
     }
   },
+  "_provenance": {
+    "fixture_id": "ed39225e186a6db8ac6c",
+    "scenario_id": "business-formation-scorp",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
   "party": {
     "full_name": "Grace C. Roe",
     "first_name": "Grace",

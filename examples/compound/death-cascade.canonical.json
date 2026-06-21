@@ -57,6 +57,13 @@
           "date_of_birth": "1960-01-25"
         }
       },
+      "_provenance": {
+        "fixture_id": "8c29edb5d068c61b5213",
+        "scenario_id": "decedent-estate-informal",
+        "seed": 7001,
+        "reference_date": "2026-01-01",
+        "generator_version": "0.2.0"
+      },
       "party": {
         "full_name": "Felix M. Coe",
         "first_name": "Felix",
@@ -141,6 +148,13 @@
           "last_name": "Loe",
           "date_of_birth": "1960-01-25"
         }
+      },
+      "_provenance": {
+        "fixture_id": "e3bbc49fc4651c141b65",
+        "scenario_id": "estate-tax-706",
+        "seed": 7002,
+        "reference_date": "2026-01-01",
+        "generator_version": "0.2.0"
       },
       "party": {
         "full_name": "Felix M. Coe",
@@ -271,6 +285,13 @@
           "email": "felix.coe@example.com",
           "date_of_birth": "1974-08-03"
         }
+      },
+      "_provenance": {
+        "fixture_id": "40db702798d431b59eb7",
+        "scenario_id": "minor-guardianship",
+        "seed": 7003,
+        "reference_date": "2026-01-01",
+        "generator_version": "0.2.0"
       },
       "party": {
         "full_name": "Diego F. Jessup",

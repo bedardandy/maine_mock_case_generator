@@ -45,3 +45,11 @@ def test_ecosystem_report_formats():
     assert report.runs
     assert "Ecosystem smoke report" in report_markdown(report)
     assert "<testsuite" in report_junit(report)
+
+
+def test_new_workflow_scenarios_route_to_expected_contracts():
+    llc = route_and_plan(generate_matter("llc-formation", 2))
+    assert any(item["workflow_id"] == "llc-formation" for item in llc["workflows"])
+    estate_sale = route_and_plan(generate_matter("full-estate-administration", 2))
+    assert any(item["workflow_id"] in {"full-estate-administration", "estate-property-sale"}
+               for item in estate_sale["workflows"])

@@ -4,9 +4,15 @@
     "mock": true,
     "fictional": true,
     "generator": "deterministic-engine",
-    "generator_version": "0.1.0",
+    "generator_version": "0.2.0",
     "scenario_id": "intertidal-shoreland-access",
-    "seed": 7
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "fixture_id": "b6b21a8c9728fe234a8c",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc"
+    }
   },
   "matter": {
     "matter_id": "MMC-2025-360494",

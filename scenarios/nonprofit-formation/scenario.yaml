@@ -1,0 +1,75 @@
+id: nonprofit-formation
+title: "Formation of {company_full_name}, a Maine nonprofit"
+practice_area: business
+case_type: nonprofit_formation
+status: intake
+assign_docket: false
+downstream:
+  repo: maine-corporation-forms
+  example_forms: [NP_MNPCA-6, IRS-SS-4]
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Maine Secretary of State / IRS"
+dates:
+  filing_date: {date_between: ["2026-01-01", "2026-06-01"]}
+  event_date: "{formation_date}"
+parties:
+  client_role: incorporator
+  attorney: true
+  roles:
+    - {key: incorporator, label: "Incorporator / initial director"}
+    - {key: company, entity: organization, label: "New Maine nonprofit corporation"}
+facts:
+  entity_name: "{company_full_name}"
+  formation_date: {date_between: ["2026-01-01", "2026-05-31"]}
+  charitable_purpose: {pick: ["food security and community meals", "coastal conservation education", "housing stabilization", "youth arts education", "legal aid outreach"]}
+  membership_structure: {pick: ["no statutory members", "voting members"]}
+  num_initial_directors: {int_between: [3, 7]}
+  public_charity_expected: true
+  tax_exemption_application_planned: true
+  conflict_policy_adopted: {pick: [true, false]}
+  dissolution_clause_included: true
+  expected_donations: {int_between: [15000, 500000]}
+  responsible_party_name: "{incorporator_full_name}"
+fact_pattern:
+  summary: "{incorporator_full_name} is forming {company_full_name}, a Maine nonprofit devoted to {charitable_purpose}, with {num_initial_directors} initial directors and a {membership_structure} governance structure."
+  narrative:
+    - "{company_full_name} will pursue {charitable_purpose} and is intended to qualify as a public charity."
+    - "The incorporator must file nonprofit articles containing suitable purpose and dissolution provisions, appoint the initial board, obtain an EIN, adopt bylaws and a conflict policy, and prepare the federal exemption application."
+    - "The organization expects first-year donations near ${expected_donations} and will operate with {membership_structure}."
+  undisputed: ["The organization will be nonprofit and charitable.", "No earnings may inure to private persons."]
+  disputed:
+    - "Whether the articles and bylaws properly distinguish board and member authority."
+    - "Whether planned activities fit the requested federal exemption."
+  timeline:
+    - {date: "{formation_date}", event: "Nonprofit articles become effective."}
+    - {date: "{filing_date}", event: "State formation and federal setup package prepared."}
+objectives:
+  goals: ["Form the Maine nonprofit", "Obtain an EIN", "Adopt compliant governance documents", "Prepare for federal tax exemption"]
+  priorities: ["Charitable-purpose clarity", "Independent governance", "Fundraising readiness"]
+  risk_tolerance: low
+  desired_outcomes: ["Accepted nonprofit articles", "Organized board and compliant exemption package"]
+  non_starters: ["Private-benefit arrangements inconsistent with charitable status"]
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Required nonprofit articles provisions", category: business, governing_law: "13-B M.R.S.", strength: strong}
+    - {issue: "Charitable purpose and private benefit", category: tax, governing_law: "IRC § 501(c)(3)", strength: moderate}
+    - {issue: "Board and member governance", category: business, governing_law: "13-B M.R.S.", strength: moderate}
+    - {issue: "Conflict-of-interest controls", category: business, governing_law: "State fiduciary duties and IRS governance guidance", strength: moderate}
+    - {issue: "Dissolution dedication of charitable assets", category: tax, governing_law: "IRC § 501(c)(3)", strength: strong}
+evidence:
+  count: {min: 3, max: 5}
+  pool:
+    - {title: "Articles of Incorporation", type: public_record, party: company}
+    - {title: "Nonprofit bylaws", type: document, party: company}
+    - {title: "Conflict-of-interest policy", type: document, party: company}
+    - {title: "Initial board consent", type: document, party: incorporator}
+    - {title: "First-year program budget", type: financial_record, party: company}
+financials:
+  currency: USD
+  count: 2
+  amounts:
+    - {label: "Expected first-year donations", amount: {int_between: [15000, 500000]}}
+    - {label: "Expected program expenses", amount: {int_between: [10000, 400000]}}

@@ -1,0 +1,84 @@
+{
+  "matter": {
+    "case_id": "MMC-2026-709851",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Maine Secretary of State / IRS",
+    "case_type": "entity_formation",
+    "filing_date": "2026-02-08",
+    "event_date": "2026-04-18"
+  },
+  "parties": {
+    "organizer": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "company": {
+      "full_name": "Summit Outfitters Co.",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154"
+    },
+    "attorney": {
+      "full_name": "John D. Kingsley",
+      "first_name": "John",
+      "middle_name": "D",
+      "last_name": "Kingsley",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "john.kingsley@example.org",
+      "date_of_birth": "1998-04-24",
+      "bar_number": "3181"
+    }
+  },
+  "_provenance": {
+    "fixture_id": "273359c308a022780304",
+    "scenario_id": "llc-formation",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
+  "party": {
+    "full_name": "Grace C. Roe",
+    "first_name": "Grace",
+    "middle_name": "C",
+    "last_name": "Roe",
+    "address": "422 Spruce Avenue",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "email": "grace.roe@example.com",
+    "date_of_birth": "1969-04-20",
+    "signature": "Grace C. Roe"
+  },
+  "facts": {
+    "entity_name": "Summit Outfitters Co.",
+    "entity_type": "Maine limited liability company",
+    "formation_date": "2026-04-18",
+    "management": "member-managed",
+    "num_members": 5,
+    "registered_agent_type": "commercial registered agent",
+    "principal_activity": "food services",
+    "tax_classification": "partnership",
+    "classification_election_required": true,
+    "employees_expected": 10,
+    "initial_capital": 48376,
+    "operating_agreement_signed": true,
+    "responsible_party_name": "Grace C. Roe"
+  }
+}
