@@ -90,7 +90,7 @@ def generate_compound(compound_id: str, seed: int = 0) -> dict:
     for i, mspec in enumerate(matter_specs):
         overrides = {role: cast[cid] for role, cid in mspec.get("roles", {}).items() if cid in cast}
         matter_seed = seed * 1000 + i + 1
-        matter = generate_matter(mspec["scenario"], matter_seed, overrides)
+        matter = generate_matter(mspec["scenario"], matter_seed, overrides=overrides)
         matter["matter"]["universe_id"] = universe_id
         matters_by_local[mspec["id"]] = matter
 

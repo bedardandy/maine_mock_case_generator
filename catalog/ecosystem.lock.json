@@ -1,0 +1,56 @@
+{
+  "contract_version": "1.0",
+  "description": "Pinned repository contracts used by ecosystem smoke tests.",
+  "repositories": {
+    "maine-forms-router": {
+      "url": "https://github.com/bedardandy/maine-forms-router.git",
+      "ref": "main",
+      "commit": "486b413f29722cb4f13b99523c3eec0ec9970d51",
+      "integration_manifest": "integration-manifest.json",
+      "fixture_forms": []
+    },
+    "maine-forms-engine": {
+      "url": "https://github.com/bedardandy/maine-forms-engine.git",
+      "ref": "main",
+      "commit": "6c1d95e96da8c484991c7f66f0ec5323519cf453",
+      "integration_manifest": "integration-manifest.json",
+      "fixture_forms": []
+    },
+    "maine-court-forms": {
+      "url": "https://github.com/bedardandy/maine-court-forms.git",
+      "ref": "main",
+      "commit": "8590e75a0d09415ac36c058cdbb93b22da281449",
+      "integration_manifest": "integration-manifest.json",
+      "fixture_forms": ["CV-001", "CV-007", "FM-004", "FM-006", "FM-050", "PA-001"]
+    },
+    "maine-probate-forms": {
+      "url": "https://github.com/bedardandy/maine-probate-forms.git",
+      "ref": "main",
+      "commit": "9ac23e5209f56899af88de39c6cbad5f285e2770",
+      "integration_manifest": "integration-manifest.json",
+      "fixture_forms": ["DE-301"]
+    },
+    "maine-corporation-forms": {
+      "url": "https://github.com/bedardandy/maine-corporation-forms.git",
+      "ref": "main",
+      "commit": "dc63462397a8257256abd362285d71c81afda780",
+      "integration_manifest": "integration-manifest.json",
+      "fixture_forms": []
+    },
+    "transactional-tax-forms": {
+      "url": "https://github.com/bedardandy/transactional-tax-forms.git",
+      "ref": "main",
+      "commit": "335e5ceb2f6613a32ee59889ed6ca885b785e409",
+      "integration_manifest": "integration-manifest.json",
+      "fixture_forms": ["IRS-2553", "IRS-SS-4", "ME-RETTD", "MRS-706ME"]
+    }
+  },
+  "workflows": {
+    "estate-administration": {"forms": ["DE-301", "MRS-706ME"]},
+    "entity-formation": {"forms": ["IRS-SS-4", "IRS-2553"]},
+    "real-estate-transfer": {"forms": ["ME-RETTD"]},
+    "family-matter": {"forms": ["FM-004", "FM-006", "FM-050"]},
+    "protection-from-abuse": {"forms": ["PA-001"]},
+    "civil-litigation": {"forms": ["CV-001", "CV-007"]}
+  }
+}

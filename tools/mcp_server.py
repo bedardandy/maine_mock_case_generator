@@ -32,6 +32,8 @@ from generator import (  # noqa: E402
     project_to_canonical as _project,
     validate_matter as _validate,
 )
+from generator.ecosystem import SmokeConfig, load_catalog_lock, route_and_plan, run_ecosystem_smoke
+from generator.formfill import fill_form, load_form
 
 mcp = FastMCP("mock-case-generator")
 
@@ -58,6 +60,49 @@ def project_canonical(scenario: str, seed: int = 0) -> dict:
 def validate_matter(matter: dict) -> list[str]:
     """Validate a Mock Matter against the schema; returns errors (empty == valid)."""
     return _validate(matter)
+
+
+@mcp.tool()
+def list_workflows() -> dict:
+    """Return pinned cross-repository workflow fixtures."""
+    return load_catalog_lock().get("workflows", {})
+
+
+@mcp.tool()
+def generate_for_form(form_id: str, seed: int = 0) -> dict:
+    """Generate the best fixture and deterministic fill plan for a form."""
+    form = load_form(form_id)
+    matter = _generate(form["meta"]["best_scenario"], seed)
+    return {"matter": matter, "fill_plan": fill_form(matter, form_id)}
+
+
+@mcp.tool()
+def generate_for_workflow(workflow: str, seed: int = 0) -> dict:
+    """Generate fixtures for every locally wired form in a workflow."""
+    workflows = load_catalog_lock().get("workflows", {})
+    if workflow not in workflows:
+        return {"ok": False, "error": f"Unknown workflow: {workflow}"}
+    results = []
+    for form_id in workflows[workflow]["forms"]:
+        try:
+            results.append(generate_for_form(form_id, seed))
+        except KeyError:
+            results.append({"form_id": form_id, "status": "external-only"})
+    return {"ok": True, "workflow": workflow, "results": results}
+
+
+@mcp.tool()
+def plan_ecosystem_fill(scenario: str, seed: int = 0) -> dict:
+    """Generate a fixture and return deterministic cross-repository routing suggestions."""
+    matter = _generate(scenario, seed)
+    return {"matter": matter, "plan": route_and_plan(matter)}
+
+
+@mcp.tool()
+def run_smoke_test(scenario: str = "", seed: int = 0) -> dict:
+    """Run a read-only ecosystem contract smoke test."""
+    config = SmokeConfig(scenarios=[scenario] if scenario else [], seeds=[seed])
+    return run_ecosystem_smoke(config).to_dict()
 
 
 if __name__ == "__main__":

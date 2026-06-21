@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bedardandy/maine_mock_case_generator/catalog/repository-capabilities.schema.json",
+  "title": "Maine Forms Repository Integration Manifest",
+  "type": "object",
+  "required": ["contract_version", "repository", "mapping_dialect", "fill_strategy", "case_namespace", "trust_model", "required_artifacts", "operations"],
+  "additionalProperties": true,
+  "properties": {
+    "contract_version": {"const": "1.0"},
+    "repository": {"type": "string"},
+    "mapping_dialect": {"type": "string"},
+    "fill_strategy": {"type": "string"},
+    "case_namespace": {"type": "string"},
+    "trust_model": {"type": "string"},
+    "required_artifacts": {"type": "array", "items": {"type": "string"}},
+    "operations": {"type": "array", "items": {"type": "string"}}
+  }
+}

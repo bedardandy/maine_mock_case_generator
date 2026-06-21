@@ -11,9 +11,11 @@ from .compound import (
     project_compound,
 )
 from .engine import GENERATOR_VERSION, generate_matter
+from .ecosystem import SmokeConfig, route_and_plan, run_ecosystem_smoke
+from .mutations import MUTATIONS, mutate_fixture
 from .formfill import fill_form, list_forms, load_form
 from .project import project_to_canonical
-from .scenarios import list_scenarios, load_scenario
+from .scenarios import list_scenarios, load_scenario, scenario_metadata
 from .schema import validate_canonical, validate_compound, validate_matter
 from .schema_fill import (
     generate_case,
@@ -42,4 +44,10 @@ __all__ = [
     "list_probate_forms",
     "load_form_fields",
     "GENERATOR_VERSION",
+    "route_and_plan",
+    "run_ecosystem_smoke",
+    "SmokeConfig",
+    "mutate_fixture",
+    "MUTATIONS",
+    "scenario_metadata",
 ]

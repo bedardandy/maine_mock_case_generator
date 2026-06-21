@@ -35,6 +35,7 @@ def main() -> int:
     ap.add_argument("--count", type=int, default=1, help="Number of matters, seeds seed..seed+count-1.")
     ap.add_argument("--out", help="Output file (count==1) or directory (count>1). Default: stdout.")
     ap.add_argument("--canonical", action="store_true", help="Emit the projected canonical case instead of the full matter.")
+    ap.add_argument("--reference-date", help="Deterministic ISO reference date (default: 2026-01-01).")
     ap.add_argument("--no-validate", action="store_true", help="Skip schema validation.")
     ap.add_argument("--list", action="store_true", help="List available scenarios and exit.")
     args = ap.parse_args()
@@ -52,7 +53,7 @@ def main() -> int:
 
     for i in range(args.count):
         seed = args.seed + i
-        matter = generate_matter(args.scenario, seed)
+        matter = generate_matter(args.scenario, seed, reference_date=args.reference_date)
         if not args.no_validate:
             errors = validate_matter(matter)
             if errors:

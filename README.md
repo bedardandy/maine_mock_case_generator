@@ -1,5 +1,8 @@
 # Maine Mock Case Generator
 
+[![smoke](https://github.com/bedardandy/maine_mock_case_generator/actions/workflows/smoke.yml/badge.svg)](https://github.com/bedardandy/maine_mock_case_generator/actions/workflows/smoke.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+
 Generate — or guide the detailed generation of — **fictional US legal matters** for
 **smoke-testing an end-to-end legal workflow pipeline**. Each generated matter is a rich,
 internally-consistent package (fact pattern, intake interview, client objectives, third
@@ -34,6 +37,25 @@ deterministically and at volume, and projects them into the exact shape the fill
 | **Reproducible?** | Yes — `(scenario, seed)` | No |
 
 Both emit the same [`mock_matter.schema.json`](catalog/mock_matter.schema.json) shape.
+
+## Ecosystem test hub
+
+The `mmcg` command is the stable interface for deterministic fixtures, mutation
+testing, routing plans, catalog verification, and cross-repository smoke reports:
+
+```bash
+pip install -e ".[test]"
+mmcg generate family-divorce-cumberland --seed 1 --reference-date 2026-01-01
+mmcg mutate family-divorce-cumberland unicode --seed 1
+mmcg route estate-tax-706
+mmcg catalog verify
+mmcg ecosystem-smoke --out out/ecosystem
+```
+
+`catalog/ecosystem.lock.json` pins the repository contracts used by integration
+runs. Vendored mappings under `integration/` are retained only as small immutable
+offline regression fixtures; sibling repositories remain authoritative for live
+schemas, mappings, trust metadata, preflight rules, and PDF filling.
 
 ## Quick start
 
