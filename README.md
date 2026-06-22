@@ -50,12 +50,28 @@ mmcg mutate family-divorce-cumberland unicode --seed 1
 mmcg route estate-tax-706
 mmcg catalog verify
 mmcg ecosystem-smoke --out out/ecosystem
+mmcg documents full-estate-administration --seed 7 --out output/pdf/client-pack
 ```
 
 `catalog/ecosystem.lock.json` pins the repository contracts used by integration
 runs. Vendored mappings under `integration/` are retained only as small immutable
 offline regression fixtures; sibling repositories remain authoritative for live
 schemas, mappings, trust metadata, preflight rules, and PDF filling.
+
+## Synthetic client documents
+
+`mmcg documents` generates linked, clearly watermarked test records including death
+certificates, deeds, bank statements, pay stubs, federal and Maine tax statements,
+and stock certificates. Each recipe writes:
+
+- a pristine source PDF;
+- a rotated, blurred, noisy, raster-only scan PDF with no embedded text layer;
+- JSON ground truth for classification, OCR, extraction, redaction, and accuracy tests;
+- SHA-256 hashes and a document-pack manifest.
+
+Every identifier is fictional. Phone numbers use the reserved `555-01xx` range,
+emails use reserved `example.*` domains, taxpayer IDs use invalid `900-00-xxxx`
+test values, and every page says `SYNTHETIC TEST DOCUMENT - NOT VALID`.
 
 ## Quick start
 

@@ -18,6 +18,7 @@ from .ecosystem import (
 )
 from .formfill import fill_form, load_form
 from .mutations import MUTATIONS, mutate_fixture
+from .documents import DOCUMENT_TYPES, generate_document_pack
 
 
 def _json(value) -> str:
@@ -84,6 +85,13 @@ def build_parser() -> argparse.ArgumentParser:
     smoke.add_argument("--catalog-lock")
     smoke.add_argument("--out")
 
+    documents = sub.add_parser("documents")
+    documents.add_argument("scenario", choices=list_scenarios())
+    documents.add_argument("--seed", type=int, default=0)
+    documents.add_argument("--reference-date")
+    documents.add_argument("--type", action="append", choices=DOCUMENT_TYPES)
+    documents.add_argument("--out", required=True)
+
     catalog = sub.add_parser("catalog")
     catalog_sub = catalog.add_subparsers(dest="catalog_command", required=True)
     for name in ("verify", "refresh"):
@@ -111,6 +119,12 @@ def main(argv=None) -> int:
         scenario = args.scenario or form["meta"]["best_scenario"]
         matter = generate_matter(scenario, args.seed, reference_date=args.reference_date)
         print(_json(fill_form(matter, args.form_id)))
+        return 0
+    if args.command == "documents":
+        manifest = generate_document_pack(
+            _matter(args), args.out, args.seed, document_types=args.type
+        )
+        print(_json(manifest))
         return 0
     if args.command in {"test-workflow", "ecosystem-smoke"}:
         workflows = [args.workflow] if args.command == "test-workflow" else args.workflow

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bedardandy/maine_mock_case_generator/catalog/synthetic_document.schema.json",
+  "title": "Synthetic Client Document Ground Truth",
+  "type": "object",
+  "required": ["document_id", "document_type", "synthetic", "matter_fixture_id", "fields", "expected_classification", "scan"],
+  "properties": {
+    "document_id": {"type": "string"},
+    "document_type": {"type": "string"},
+    "synthetic": {"const": true},
+    "matter_fixture_id": {"type": "string"},
+    "fields": {"type": "object"},
+    "expected_classification": {"type": "string"},
+    "scan": {
+      "type": "object",
+      "required": ["embedded_text_expected", "ocr_required", "seed"],
+      "properties": {
+        "embedded_text_expected": {"const": false},
+        "ocr_required": {"const": true},
+        "seed": {"type": "integer"}
+      }
+    }
+  }
+}

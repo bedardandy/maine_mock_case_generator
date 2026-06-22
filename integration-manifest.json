@@ -5,7 +5,7 @@
   "catalog": "catalog/ecosystem.lock.json",
   "schemas": ["catalog/mock_matter.schema.json", "catalog/canonical_case.schema.json"],
   "case_namespaces": ["canonical", "tax", "real_estate", "corporation", "probate"],
-  "operations": ["generate", "mutate", "route", "plan", "smoke-test"],
+  "operations": ["generate", "mutate", "route", "plan", "smoke-test", "synthetic-documents"],
   "cli": "mmcg",
   "mcp": "tools/mcp_server.py",
   "trust_model": "fictional-test-data"

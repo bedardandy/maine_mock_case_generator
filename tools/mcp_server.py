@@ -34,6 +34,7 @@ from generator import (  # noqa: E402
 )
 from generator.ecosystem import SmokeConfig, load_catalog_lock, route_and_plan, run_ecosystem_smoke
 from generator.formfill import fill_form, load_form
+from generator.documents import DOCUMENT_TYPES, generate_document_pack
 
 mcp = FastMCP("mock-case-generator")
 
@@ -103,6 +104,18 @@ def run_smoke_test(scenario: str = "", seed: int = 0) -> dict:
     """Run a read-only ecosystem contract smoke test."""
     config = SmokeConfig(scenarios=[scenario] if scenario else [], seeds=[seed])
     return run_ecosystem_smoke(config).to_dict()
+
+
+@mcp.tool()
+def generate_client_documents(
+    scenario: str, out_dir: str, seed: int = 0, document_types: list[str] | None = None
+) -> dict:
+    """Generate clearly fictional pristine and raster-only client-document fixtures."""
+    invalid = sorted(set(document_types or []) - set(DOCUMENT_TYPES))
+    if invalid:
+        return {"ok": False, "error": f"Unknown document types: {', '.join(invalid)}"}
+    matter = _generate(scenario, seed)
+    return {"ok": True, **generate_document_pack(matter, out_dir, seed, document_types)}
 
 
 if __name__ == "__main__":
