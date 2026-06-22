@@ -4,7 +4,9 @@ from __future__ import annotations
 import hashlib
 import io
 import json
+import os
 import random
+import textwrap
 from email.message import EmailMessage
 from email.policy import SMTP
 from dataclasses import asdict, dataclass
@@ -18,6 +20,15 @@ DOCUMENT_TYPES = (
     "appraisal", "property_tax_bill", "credit_card_statement", "payment_app_statement",
     "signed_will", "signed_power_of_attorney", "retail_receipt", "contract",
     "court_cover_letter", "opposing_counsel_letter",
+    "medical_record", "medical_bill", "insurance_declarations", "insurance_eob",
+    "mortgage_statement", "loan_statement", "brokerage_statement", "retirement_statement",
+    "utility_bill", "lease", "rent_ledger", "security_deposit_accounting",
+    "employment_offer", "termination_letter", "timesheet", "wage_history",
+    "invoice", "repair_estimate", "work_order", "purchase_order",
+    "business_profit_loss", "business_balance_sheet", "general_ledger",
+    "trust_instrument", "beneficiary_designation", "funeral_invoice",
+    "title_commitment", "closing_statement", "lien_release",
+    "incident_report", "demand_letter", "settlement_offer", "affidavit",
 )
 
 COMMUNICATION_TYPES = (
@@ -233,6 +244,306 @@ def _fixture_fields(matter: dict, document_type: str, rng: random.Random) -> dic
             "response_deadline": meta.get("filing_date", "2026-04-01"),
             "signature": matter.get("parties", {}).get("attorney", {}).get("full_name", "Counsel Q. Example"),
         },
+        "medical_record": {
+            "title": "Synthetic Clinical Visit Summary",
+            "patient": person.get("full_name", base["name"]),
+            "provider": "Example Medical Group",
+            "visit_date": meta.get("event_date", "2025-03-15"),
+            "chief_complaint": facts.get("injury_type", facts.get("alleged_condition", "Pain and functional limitation")),
+            "assessment": "Synthetic diagnosis for ingestion testing only",
+            "plan": "Follow-up, conservative care, and records review",
+        },
+        "medical_bill": {
+            "title": "Synthetic Medical Billing Statement",
+            "patient": person.get("full_name", base["name"]),
+            "provider": "Example Medical Group",
+            "account_number": f"MED-TEST-{rng.randint(100000,999999)}",
+            "service_date": meta.get("event_date", "2025-03-15"),
+            "charges": _money(facts.get("medical_specials", rng.randint(500, 35000))),
+            "insurance_adjustment": _money(rng.randint(100, 5000)),
+            "patient_balance": _money(rng.randint(50, 9000)),
+        },
+        "insurance_declarations": {
+            "title": "Synthetic Insurance Declarations",
+            "named_insured": signer.get("full_name", base["name"]),
+            "carrier": "Example Mutual Insurance",
+            "policy_number": f"TEST-POL-{rng.randint(100000,999999)}",
+            "policy_period": "2025-01-01 through 2026-01-01",
+            "coverage": "Liability and property coverage",
+            "limit": _money(facts.get("policy_limits", rng.randint(100000, 1000000))),
+        },
+        "insurance_eob": {
+            "title": "Synthetic Explanation of Benefits",
+            "member": person.get("full_name", base["name"]),
+            "plan": "Example Health Plan",
+            "claim_number": f"TEST-CLM-{rng.randint(100000,999999)}",
+            "provider_charge": _money(rng.randint(500, 18000)),
+            "plan_paid": _money(rng.randint(300, 15000)),
+            "member_responsibility": _money(rng.randint(25, 3500)),
+        },
+        "mortgage_statement": {
+            "title": "Synthetic Mortgage Statement",
+            "borrower": signer.get("full_name", base["name"]),
+            "servicer": "Example Home Lending",
+            "loan_number": account,
+            "principal_balance": _money(rng.randint(80000, 700000)),
+            "monthly_payment": _money(rng.randint(700, 5200)),
+            "escrow_balance": _money(rng.randint(500, 9000)),
+            "due_date": meta.get("filing_date", "2026-04-01"),
+        },
+        "loan_statement": {
+            "title": "Synthetic Loan Statement",
+            "borrower": signer.get("full_name", base["name"]),
+            "lender": "Example Community Lending",
+            "loan_number": account,
+            "original_principal": _money(rng.randint(5000, 250000)),
+            "current_balance": _money(rng.randint(1000, 220000)),
+            "interest_rate": f"{rng.uniform(3.5, 12.5):.2f}%",
+            "payment_due": _money(rng.randint(100, 3000)),
+        },
+        "brokerage_statement": {
+            "title": "Synthetic Brokerage Account Statement",
+            "account_owner": signer.get("full_name", base["name"]),
+            "firm": "Example Securities",
+            "account_number": account,
+            "stocks": _money(rng.randint(10000, 400000)),
+            "bonds": _money(rng.randint(0, 180000)),
+            "cash": _money(rng.randint(500, 40000)),
+            "total_value": _money(rng.randint(15000, 600000)),
+        },
+        "retirement_statement": {
+            "title": "Synthetic Retirement Plan Statement",
+            "participant": signer.get("full_name", base["name"]),
+            "plan": "Example Employer 401(k) Plan",
+            "account_number": account,
+            "employee_contributions": _money(rng.randint(5000, 180000)),
+            "employer_contributions": _money(rng.randint(1000, 90000)),
+            "vested_balance": _money(rng.randint(10000, 500000)),
+        },
+        "utility_bill": {
+            "title": "Synthetic Utility Bill",
+            "customer": signer.get("full_name", base["name"]),
+            "service_address": facts.get("premises_address", facts.get("property_address", "100 Example Lane")),
+            "account_number": account,
+            "billing_period": "2026-03-01 through 2026-03-31",
+            "usage": f"{rng.randint(300, 1800)} kWh",
+            "amount_due": _money(rng.randint(75, 650)),
+        },
+        "lease": {
+            "title": "Synthetic Residential Lease",
+            "landlord": _party(matter, "plaintiff").get("full_name", "Landlord Q. Example"),
+            "tenant": _party(matter, "defendant").get("full_name", signer.get("full_name", base["name"])),
+            "premises": facts.get("premises_address", "100 Example Lane"),
+            "term": "January 1, 2025 through December 31, 2025",
+            "monthly_rent": _money(facts.get("monthly_rent", rng.randint(900, 3200))),
+            "signatures": "Landlord Q. Example / Tenant Q. Example",
+        },
+        "rent_ledger": {
+            "title": "Synthetic Rent Ledger",
+            "tenant": _party(matter, "defendant").get("full_name", signer.get("full_name", base["name"])),
+            "premises": facts.get("premises_address", "100 Example Lane"),
+            "monthly_rent": _money(facts.get("monthly_rent", rng.randint(900, 3200))),
+            "charges": _money(rng.randint(3000, 12000)),
+            "payments": _money(rng.randint(1000, 9000)),
+            "balance": _money(facts.get("total_rent_owed", rng.randint(500, 7000))),
+        },
+        "security_deposit_accounting": {
+            "title": "Synthetic Security Deposit Accounting",
+            "tenant": _party(matter, "defendant").get("full_name", base["name"]),
+            "deposit_received": _money(rng.randint(800, 3500)),
+            "cleaning": _money(rng.randint(0, 700)),
+            "repairs": _money(rng.randint(0, 1800)),
+            "refund": _money(rng.randint(0, 2500)),
+            "mailing_date": meta.get("filing_date", "2026-04-01"),
+        },
+        "employment_offer": {
+            "title": "Synthetic Employment Offer",
+            "employer": company.get("full_name", "Example Employer LLC"),
+            "employee": person.get("full_name", base["name"]),
+            "position": "Operations Manager",
+            "start_date": facts.get("hire_date", "2024-01-15"),
+            "salary": _money(facts.get("annual_salary", rng.randint(45000, 145000))),
+            "signature": "Hiring Manager Q. Example",
+        },
+        "termination_letter": {
+            "title": "Synthetic Employment Termination Letter",
+            "employer": company.get("full_name", "Example Employer LLC"),
+            "employee": person.get("full_name", base["name"]),
+            "termination_date": facts.get("termination_date", meta.get("event_date", "2025-06-30")),
+            "stated_reason": facts.get("adverse_action", "Position eliminated"),
+            "final_pay": "Regular wages plus accrued paid leave",
+            "signature": "Human Resources Q. Example",
+        },
+        "timesheet": {
+            "title": "Synthetic Employee Timesheet",
+            "employee": person.get("full_name", base["name"]),
+            "employer": company.get("full_name", "Example Employer LLC"),
+            "regular_hours": str(rng.randint(35, 40)),
+            "overtime_hours": str(rng.randint(0, 18)),
+            "hourly_rate": _money(facts.get("hourly_wage", rng.randint(18, 65))),
+            "supervisor_approval": "Supervisor Q. Example",
+        },
+        "wage_history": {
+            "title": "Synthetic Wage History",
+            "employee": person.get("full_name", base["name"]),
+            "employer": company.get("full_name", "Example Employer LLC"),
+            "prior_year_wages": _money(facts.get("last_year_earnings", rng.randint(35000, 150000))),
+            "current_ytd_wages": _money(facts.get("expected_year_earnings", rng.randint(25000, 130000))),
+            "bonuses": _money(facts.get("bonuses_income", rng.randint(0, 25000))),
+        },
+        "invoice": {
+            "title": "Synthetic Commercial Invoice",
+            "vendor": company.get("full_name", "Example Services LLC"),
+            "customer": signer.get("full_name", base["name"]),
+            "invoice_number": f"TEST-INV-{rng.randint(10000,99999)}",
+            "description": facts.get("goods", "Services and materials"),
+            "amount": _money(facts.get("invoice_amount", rng.randint(500, 50000))),
+            "due_date": meta.get("filing_date", "2026-04-01"),
+        },
+        "repair_estimate": {
+            "title": "Synthetic Repair Estimate",
+            "customer": signer.get("full_name", base["name"]),
+            "contractor": "Example Repair Company",
+            "property_or_item": facts.get("project", facts.get("property_address", "Disputed property")),
+            "scope": facts.get("primary_defect", "Repair documented damage"),
+            "labor": _money(rng.randint(500, 18000)),
+            "materials": _money(rng.randint(300, 25000)),
+            "estimate_total": _money(facts.get("repair_cost_estimate", rng.randint(1000, 42000))),
+        },
+        "work_order": {
+            "title": "Synthetic Work Order",
+            "customer": signer.get("full_name", base["name"]),
+            "vendor": company.get("full_name", "Example Service Company"),
+            "work_order_number": f"TEST-WO-{rng.randint(10000,99999)}",
+            "requested_work": facts.get("project", "Inspection and repair work"),
+            "status": "Completed with customer dispute noted",
+            "authorized_by": signer.get("full_name", base["name"]),
+        },
+        "purchase_order": {
+            "title": "Synthetic Purchase Order",
+            "buyer": signer.get("full_name", base["name"]),
+            "supplier": company.get("full_name", "Example Supply Company"),
+            "po_number": f"TEST-PO-{rng.randint(10000,99999)}",
+            "items": facts.get("goods", "Materials and equipment"),
+            "total": _money(facts.get("contract_value", rng.randint(1000, 75000))),
+            "approval": "Authorized Purchaser Q. Example",
+        },
+        "business_profit_loss": {
+            "title": "Synthetic Profit and Loss Statement",
+            "business": company.get("full_name", "Example Business LLC"),
+            "period": "Year ended December 31, 2025",
+            "revenue": _money(facts.get("expected_first_year_revenue", rng.randint(100000, 1200000))),
+            "cost_of_sales": _money(rng.randint(30000, 500000)),
+            "operating_expenses": _money(rng.randint(25000, 450000)),
+            "net_income": _money(rng.randint(-50000, 300000)),
+        },
+        "business_balance_sheet": {
+            "title": "Synthetic Balance Sheet",
+            "business": company.get("full_name", "Example Business LLC"),
+            "cash": _money(rng.randint(5000, 300000)),
+            "receivables": _money(rng.randint(0, 250000)),
+            "fixed_assets": _money(rng.randint(10000, 600000)),
+            "liabilities": _money(rng.randint(5000, 500000)),
+            "equity": _money(rng.randint(-50000, 650000)),
+        },
+        "general_ledger": {
+            "title": "Synthetic General Ledger Extract",
+            "business": company.get("full_name", "Example Business LLC"),
+            "entry_1": f"1000 Cash - debit {_money(rng.randint(1000,20000))}",
+            "entry_2": f"4000 Revenue - credit {_money(rng.randint(1000,30000))}",
+            "entry_3": f"6100 Legal expense - debit {_money(rng.randint(500,10000))}",
+            "period": "Synthetic test period 2025",
+        },
+        "trust_instrument": {
+            "title": "Synthetic Revocable Trust",
+            "settlor": person.get("full_name", base["name"]),
+            "trustee": signer.get("full_name", base["name"]),
+            "trust_date": "2023-05-01",
+            "beneficiaries": "The settlor during life, then descendants",
+            "trustee_signature": signer.get("full_name", base["name"]),
+            "notary": "Taylor Q. Example, Test Notary",
+        },
+        "beneficiary_designation": {
+            "title": "Synthetic Beneficiary Designation",
+            "owner": person.get("full_name", base["name"]),
+            "account": account,
+            "primary_beneficiary": signer.get("full_name", "Jordan Q. Example"),
+            "share": "100%",
+            "effective_date": "2024-05-15",
+            "owner_signature": person.get("full_name", base["name"]),
+        },
+        "funeral_invoice": {
+            "title": "Synthetic Funeral Home Invoice",
+            "decedent": _party(matter, "decedent").get("full_name", person.get("full_name", base["name"])),
+            "customer": signer.get("full_name", base["name"]),
+            "services": "Professional services, transportation, and burial arrangements",
+            "invoice_number": f"TEST-FH-{rng.randint(10000,99999)}",
+            "total": _money(rng.randint(3500, 18000)),
+            "balance_due": _money(rng.randint(500, 18000)),
+        },
+        "title_commitment": {
+            "title": "Synthetic Title Commitment",
+            "proposed_insured": _party(matter, "transferee").get("full_name", signer.get("full_name", base["name"])),
+            "property": facts.get("property_address", "100 Example Lane"),
+            "commitment_number": f"TEST-TITLE-{rng.randint(10000,99999)}",
+            "estate": "Fee simple",
+            "exceptions": "Taxes, utility easements, and recorded restrictions",
+            "proposed_policy": _money(facts.get("purchase_price", rng.randint(180000, 900000))),
+        },
+        "closing_statement": {
+            "title": "Synthetic Real Estate Closing Statement",
+            "seller": _party(matter, "transferor").get("full_name", signer.get("full_name", base["name"])),
+            "buyer": _party(matter, "transferee").get("full_name", "Buyer Q. Example"),
+            "property": facts.get("property_address", "100 Example Lane"),
+            "purchase_price": _money(facts.get("purchase_price", rng.randint(180000, 900000))),
+            "seller_proceeds": _money(rng.randint(50000, 700000)),
+            "buyer_cash_due": _money(rng.randint(5000, 180000)),
+        },
+        "lien_release": {
+            "title": "Synthetic Lien Release",
+            "creditor": company.get("full_name", "Example Creditor LLC"),
+            "debtor": signer.get("full_name", base["name"]),
+            "property": facts.get("property_address", "100 Example Lane"),
+            "original_amount": _money(rng.randint(5000, 250000)),
+            "release_date": meta.get("filing_date", "2026-04-01"),
+            "authorized_signature": "Creditor Representative Q. Example",
+        },
+        "incident_report": {
+            "title": "Synthetic Incident Report",
+            "report_number": f"TEST-IR-{rng.randint(100000,999999)}",
+            "reporting_person": person.get("full_name", base["name"]),
+            "incident_date": meta.get("event_date", "2025-03-15"),
+            "location": facts.get("collision_location", facts.get("incident_location", "Example location")),
+            "summary": meta.get("summary", "Synthetic incident narrative"),
+            "prepared_by": "Reporting Officer Q. Example",
+        },
+        "demand_letter": {
+            "title": "Synthetic Pre-Litigation Demand Letter",
+            "from": matter.get("parties", {}).get("attorney", {}).get("full_name", "Counsel Q. Example"),
+            "to": _party(matter, "defendant", "respondent").get("full_name", "Other Party Q. Example"),
+            "matter": meta.get("title", "Synthetic dispute"),
+            "demand": _money(facts.get("amount_owed", facts.get("repair_cost_estimate", rng.randint(5000, 150000)))),
+            "response_deadline": meta.get("filing_date", "2026-04-01"),
+            "preservation_notice": "Preserve communications, account records, and electronically stored information",
+        },
+        "settlement_offer": {
+            "title": "Synthetic Settlement Offer",
+            "offeror": _party(matter, "defendant", "respondent").get("full_name", "Other Party Q. Example"),
+            "offeree": signer.get("full_name", base["name"]),
+            "matter": meta.get("title", "Synthetic dispute"),
+            "offer_amount": _money(rng.randint(1000, 120000)),
+            "terms": "Mutual release, no admission, and confidentiality subject to law",
+            "expiration": meta.get("filing_date", "2026-04-01"),
+        },
+        "affidavit": {
+            "title": "Synthetic Affidavit",
+            "affiant": signer.get("full_name", base["name"]),
+            "matter": meta.get("title", "Synthetic matter"),
+            "statement_1": "I have personal knowledge of the facts stated here.",
+            "statement_2": meta.get("summary", "This is a fictional statement for testing."),
+            "affiant_signature": signer.get("full_name", base["name"]),
+            "notary": "Taylor Q. Example, Test Notary",
+        },
     }
     return base | variants[document_type]
 
@@ -258,10 +569,13 @@ def _draw_source_pdf(path: Path, fields: dict) -> None:
         label = key.replace("_", " ").title()
         c.setFont("Helvetica-Bold", 9)
         c.drawString(55, y, label)
-        c.setFont("Helvetica", 10)
-        c.drawString(210, y, str(value))
-        c.line(205, y - 3, width - 55, y - 3)
-        y -= 27
+        c.setFont("Helvetica", 9)
+        lines = textwrap.wrap(str(value), width=65) or [""]
+        for index, line in enumerate(lines):
+            c.drawString(210, y - index * 12, line)
+        bottom = y - (len(lines) - 1) * 12
+        c.line(205, bottom - 3, width - 55, bottom - 3)
+        y = bottom - 27
         if y < 100:
             c.showPage()
             y = height - 70
@@ -304,9 +618,19 @@ def _scan_pdf(fields: dict, scanned_pdf: Path, seed: int, dpi: int = 150) -> Non
             continue
         label = key.replace("_", " ").title()
         draw.text((100, y), label, fill=(0, 0, 0), font=bold)
-        draw.text((410, y), str(value), fill=(0, 0, 0), font=regular)
-        draw.line((400, y + 25, width - 100, y + 25), fill=(90, 90, 90), width=1)
-        y += 52
+        words, lines, line = str(value).split(), [], ""
+        for word in words:
+            trial = f"{line} {word}".strip()
+            if draw.textlength(trial, font=regular) > width - 530:
+                lines.append(line); line = word
+            else:
+                line = trial
+        lines.append(line)
+        for index, text in enumerate(lines):
+            draw.text((410, y + index * 25), text, fill=(0, 0, 0), font=regular)
+        bottom = y + (len(lines) - 1) * 25
+        draw.line((400, bottom + 25, width - 100, bottom + 25), fill=(90, 90, 90), width=1)
+        y = bottom + 52
     image = image.rotate(rng.uniform(-0.8, 0.8), resample=Image.Resampling.BICUBIC,
                          expand=True, fillcolor=(244, 242, 236))
     image = ImageEnhance.Contrast(image).enhance(rng.uniform(.9, 1.08))
@@ -521,6 +845,8 @@ def _write_eml(path: Path, messages: list[dict], kind: str) -> None:
 
 def _export_outlook_msg(eml_path: Path, msg_path: Path) -> bool:
     """Best-effort true Outlook MSG export; unavailable on CI/non-Outlook systems."""
+    if os.environ.get("MMCG_EXPORT_MSG") != "1":
+        return False
     try:
         import win32com.client
         outlook = win32com.client.Dispatch("Outlook.Application")

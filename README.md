@@ -78,10 +78,18 @@ Additional recipes include appraisals, property-tax bills, credit-card and
 peer-to-peer-payment statements, signed wills and powers of attorney, receipts,
 contracts, and court/opposing-counsel cover letters.
 
+The broader evidence library also covers medical records and bills, insurance
+declarations/EOBs, mortgage and loan statements, brokerage and retirement
+statements, utilities, leases and rent ledgers, employment records, invoices and
+repair estimates, business financial statements and ledgers, trusts and beneficiary
+designations, funeral invoices, title and closing records, incident reports,
+demands, settlement offers, lien releases, and affidavits.
+
 `mmcg communications` creates iPhone/Android-style text screenshots and email
 threads for clients, opposing parties, counsel, witnesses, and experts. Email is
 always emitted as standards-compliant `.eml`; a genuine Outlook `.msg` is also
-exported when Microsoft Outlook and `pywin32` are available. The generator never
+exported when Microsoft Outlook and `pywin32` are available and
+`MMCG_EXPORT_MSG=1` is explicitly set. The generator never
 creates a fake `.msg` by merely renaming another format.
 
 ## Quick start
