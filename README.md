@@ -51,6 +51,7 @@ mmcg route estate-tax-706
 mmcg catalog verify
 mmcg ecosystem-smoke --out out/ecosystem
 mmcg documents full-estate-administration --seed 7 --out output/pdf/client-pack
+mmcg communications commercial-contract-dispute --seed 7 --out output/communications
 ```
 
 `catalog/ecosystem.lock.json` pins the repository contracts used by integration
@@ -72,6 +73,16 @@ and stock certificates. Each recipe writes:
 Every identifier is fictional. Phone numbers use the reserved `555-01xx` range,
 emails use reserved `example.*` domains, taxpayer IDs use invalid `900-00-xxxx`
 test values, and every page says `SYNTHETIC TEST DOCUMENT - NOT VALID`.
+
+Additional recipes include appraisals, property-tax bills, credit-card and
+peer-to-peer-payment statements, signed wills and powers of attorney, receipts,
+contracts, and court/opposing-counsel cover letters.
+
+`mmcg communications` creates iPhone/Android-style text screenshots and email
+threads for clients, opposing parties, counsel, witnesses, and experts. Email is
+always emitted as standards-compliant `.eml`; a genuine Outlook `.msg` is also
+exported when Microsoft Outlook and `pywin32` are available. The generator never
+creates a fake `.msg` by merely renaming another format.
 
 ## Quick start
 

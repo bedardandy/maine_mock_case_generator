@@ -16,6 +16,7 @@ dependencies = ["jsonschema>=4.23,<5", "PyYAML>=6.0.2,<7"]
 test = ["pytest>=8.3,<9", "hypothesis>=6.125,<7"]
 mcp = ["mcp[cli]>=1.2,<2"]
 documents = ["reportlab>=4.2,<5", "Pillow>=11,<13", "pypdf>=5,<7"]
+outlook = ["pywin32>=308; platform_system == 'Windows'"]
 dev = ["pytest>=8.3,<9", "hypothesis>=6.125,<7", "mcp[cli]>=1.2,<2", "reportlab>=4.2,<5", "Pillow>=11,<13", "pypdf>=5,<7", "build>=1.2,<2", "ruff>=0.9,<1"]
 
 [project.scripts]

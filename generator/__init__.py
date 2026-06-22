@@ -13,7 +13,14 @@ from .compound import (
 from .engine import GENERATOR_VERSION, generate_matter
 from .ecosystem import SmokeConfig, route_and_plan, run_ecosystem_smoke
 from .mutations import MUTATIONS, mutate_fixture
-from .documents import DOCUMENT_TYPES, generate_document, generate_document_pack, pdf_embedded_text
+from .documents import (
+    COMMUNICATION_TYPES,
+    DOCUMENT_TYPES,
+    generate_communication_pack,
+    generate_document,
+    generate_document_pack,
+    pdf_embedded_text,
+)
 from .formfill import fill_form, list_forms, load_form
 from .project import project_to_canonical
 from .scenarios import list_scenarios, load_scenario, scenario_metadata
@@ -55,4 +62,6 @@ __all__ = [
     "generate_document",
     "generate_document_pack",
     "pdf_embedded_text",
+    "COMMUNICATION_TYPES",
+    "generate_communication_pack",
 ]

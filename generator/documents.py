@@ -5,13 +5,24 @@ import hashlib
 import io
 import json
 import random
+from email.message import EmailMessage
+from email.policy import SMTP
 from dataclasses import asdict, dataclass
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Callable
 
 DOCUMENT_TYPES = (
     "death_certificate", "signed_deed", "bank_statement", "pay_stub",
     "federal_tax_statement", "maine_tax_statement", "stock_certificate",
+    "appraisal", "property_tax_bill", "credit_card_statement", "payment_app_statement",
+    "signed_will", "signed_power_of_attorney", "retail_receipt", "contract",
+    "court_cover_letter", "opposing_counsel_letter",
+)
+
+COMMUNICATION_TYPES = (
+    "client_other_party_texts", "client_counsel_email", "opposing_counsel_email",
+    "witness_email", "expert_email",
 )
 
 
@@ -130,6 +141,97 @@ def _fixture_fields(matter: dict, document_type: str, rng: random.Random) -> dic
             "shares": str(rng.randint(10, 1000)),
             "certificate_number": f"TEST-{rng.randint(1000,9999)}",
             "signature": signer.get("full_name", base["name"]),
+        },
+        "appraisal": {
+            "title": "Synthetic Appraisal Summary",
+            "property": facts.get("property_address", "100 Example Lane"),
+            "owner": signer.get("full_name", base["name"]),
+            "effective_date": meta.get("event_date", "2025-01-15"),
+            "appraised_value": _money(facts.get("real_property_value", rng.randint(180000, 900000))),
+            "approach": "Sales comparison and cost approach",
+            "appraiser": "Morgan Q. Example, TEST-MAI",
+        },
+        "property_tax_bill": {
+            "title": "Synthetic Municipal Property Tax Bill",
+            "taxpayer": signer.get("full_name", base["name"]),
+            "property": facts.get("property_address", "100 Example Lane"),
+            "account_number": f"TEST-{rng.randint(100000,999999)}",
+            "assessed_value": _money(facts.get("adjusted_assessed_value", rng.randint(150000, 800000))),
+            "tax_due": _money(rng.randint(1800, 12000)),
+            "due_date": meta.get("filing_date", "2026-04-01"),
+        },
+        "credit_card_statement": {
+            "title": "Synthetic Credit Card Statement",
+            "cardholder": signer.get("full_name", base["name"]),
+            "account_number": account,
+            "previous_balance": _money(rng.randint(500, 12000)),
+            "purchases": _money(rng.randint(300, 7000)),
+            "payments": _money(rng.randint(200, 6000)),
+            "new_balance": _money(rng.randint(500, 14000)),
+            "minimum_due": _money(rng.randint(35, 500)),
+        },
+        "payment_app_statement": {
+            "title": "Synthetic Peer-to-Peer Payment Statement",
+            "account_holder": signer.get("full_name", base["name"]),
+            "handle": f"@test-{rng.randint(1000,9999)}",
+            "payment_1": f"{_money(rng.randint(50,1200))} to Alex Q. Example - shared expense",
+            "payment_2": f"{_money(rng.randint(50,1200))} from Casey Q. Example - reimbursement",
+            "payment_3": f"{_money(rng.randint(50,1200))} to Jordan Q. Example - materials",
+        },
+        "signed_will": {
+            "title": "Synthetic Last Will and Testament",
+            "testator": _party(matter, "decedent").get("full_name", base["name"]),
+            "execution_date": facts.get("will_date", facts.get("contested_will_date", "2024-03-15")),
+            "personal_representative": signer.get("full_name", base["name"]),
+            "beneficiary_clause": "Equal shares to the testator's descendants, per stirpes",
+            "testator_signature": _party(matter, "decedent").get("full_name", base["name"]),
+            "witnesses": "Alex Q. Example and Casey Q. Example",
+        },
+        "signed_power_of_attorney": {
+            "title": "Synthetic Durable Power of Attorney",
+            "principal": person.get("full_name", base["name"]),
+            "agent": signer.get("full_name", "Jordan Q. Example"),
+            "execution_date": "2024-06-15",
+            "powers": "Banking, real property, taxes, and claims",
+            "principal_signature": person.get("full_name", base["name"]),
+            "notary": "Taylor Q. Example, Test Notary",
+        },
+        "retail_receipt": {
+            "title": "Synthetic Retail Receipt",
+            "store": "Example Home Supply",
+            "receipt_number": f"TEST-{rng.randint(100000,999999)}",
+            "item_1": f"Building materials - {_money(rng.randint(100,1200))}",
+            "item_2": f"Equipment rental - {_money(rng.randint(50,600))}",
+            "sales_tax": _money(rng.randint(10, 130)),
+            "total": _money(rng.randint(200, 1900)),
+            "payment": f"Test card ending {rng.randint(1000,9999)}",
+        },
+        "contract": {
+            "title": "Synthetic Services Contract",
+            "client": signer.get("full_name", base["name"]),
+            "contractor": company.get("full_name", "Example Services LLC"),
+            "effective_date": facts.get("contract_date", "2025-04-15"),
+            "scope": facts.get("contract_type", "Professional and project services"),
+            "contract_price": _money(facts.get("contract_value", rng.randint(5000, 150000))),
+            "signature_client": signer.get("full_name", base["name"]),
+            "signature_contractor": "Alex Q. Example",
+        },
+        "court_cover_letter": {
+            "title": "Synthetic Court Filing Cover Letter",
+            "from": matter.get("parties", {}).get("attorney", {}).get("full_name", "Counsel Q. Example"),
+            "to": f"Clerk, {meta.get('jurisdiction', {}).get('court_location', 'Portland')} Court",
+            "re": meta.get("title", "Synthetic Matter"),
+            "enclosures": "Original filing, service copies, and test filing fee",
+            "signature": matter.get("parties", {}).get("attorney", {}).get("full_name", "Counsel Q. Example"),
+        },
+        "opposing_counsel_letter": {
+            "title": "Synthetic Pre-Litigation Counsel Letter",
+            "from": matter.get("parties", {}).get("attorney", {}).get("full_name", "Counsel Q. Example"),
+            "to": "Opposing Counsel Q. Example",
+            "re": meta.get("title", "Synthetic Matter"),
+            "position": "Demand to preserve evidence and discuss resolution before filing",
+            "response_deadline": meta.get("filing_date", "2026-04-01"),
+            "signature": matter.get("parties", {}).get("attorney", {}).get("full_name", "Counsel Q. Example"),
         },
     }
     return base | variants[document_type]
@@ -287,4 +389,191 @@ def generate_document_pack(
     }
     path = Path(out_dir) / "document-pack.manifest.json"
     path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    return manifest
+
+
+def _communication_participants(matter: dict, kind: str) -> tuple[dict, dict]:
+    client = _party(matter, "client", "plaintiff", "personal_representative", "petitioner")
+    attorney = matter.get("parties", {}).get("attorney", {})
+    other = _party(matter, "defendant", "respondent", "transferee")
+    third = (matter.get("third_parties") or [{}])[0]
+    expert = (matter.get("expert_opinions") or [{}])[0].get("expert", {})
+    pairs = {
+        "client_other_party_texts": (client, other),
+        "client_counsel_email": (client, attorney),
+        "opposing_counsel_email": (attorney, {"full_name": "Opposing Counsel Q. Example"}),
+        "witness_email": (attorney, {"full_name": third.get("name", "Witness Q. Example")}),
+        "expert_email": (attorney, {"full_name": expert.get("name", "Expert Q. Example")}),
+    }
+    return pairs[kind]
+
+
+def _comm_address(person: dict, fallback: str) -> str:
+    if person.get("email"):
+        return person["email"]
+    name = person.get("full_name", fallback).lower().replace(" ", ".")
+    return "".join(ch for ch in name if ch.isalnum() or ch == ".") + "@example.com"
+
+
+def _comm_messages(matter: dict, kind: str, seed: int) -> list[dict]:
+    rng = random.Random(f"{matter.get('provenance', {}).get('fixture_id')}:{kind}:{seed}")
+    left, right = _communication_participants(matter, kind)
+    left_name = left.get("full_name", "Jordan Q. Example")
+    right_name = right.get("full_name", "Alex Q. Example")
+    summary = matter.get("matter", {}).get("summary", "the disputed matter")
+    base_time = datetime(2026, 1, 15, 14, 30, tzinfo=timezone.utc) + timedelta(days=rng.randint(0, 100))
+    if kind == "client_other_party_texts":
+        texts = [
+            "I found the documents we discussed. The numbers do not match what you told me.",
+            "You're missing the context. I paid several expenses directly.",
+            "Please send the receipts and the account statements by Friday.",
+            "I can send what I have, but I disagree that I owe the amount you're claiming.",
+        ]
+    elif kind == "client_counsel_email":
+        texts = [
+            f"I need advice about {summary}. I attached the records I have.",
+            "Thank you. Please do not contact the other side directly while we review the evidence.",
+        ]
+    elif kind == "opposing_counsel_email":
+        texts = [
+            "Our client disputes liability but is willing to discuss preservation and an early exchange of records.",
+            "We agree to preserve relevant communications. Please identify the categories you believe are missing.",
+        ]
+    elif kind == "witness_email":
+        texts = [
+            "I witnessed the meeting and can describe who was present and what was said.",
+            "Please preserve your original messages and do not edit or annotate them. We will follow up about an interview.",
+        ]
+    else:
+        texts = [
+            "I have completed a preliminary review. My opinions may change after I receive the missing source records.",
+            "Understood. Please identify each missing item and keep draft work product separate from the final report.",
+        ]
+    participants = [left_name, right_name]
+    messages = []
+    current = base_time
+    for i, body in enumerate(texts):
+        if i:
+            current += timedelta(minutes=rng.randint(3, 18))
+        messages.append({
+            "from": participants[i % 2], "to": participants[(i + 1) % 2],
+            "timestamp": current.isoformat(), "body": body,
+        })
+    return messages
+
+
+def _draw_text_screenshot(path: Path, messages: list[dict], platform: str) -> None:
+    Image, _, _, _, _, _ = _deps()
+    from PIL import ImageDraw, ImageFont
+    width, height = 720, 1280
+    bg = (245, 245, 247) if platform == "iphone" else (250, 250, 250)
+    image = Image.new("RGB", (width, height), bg)
+    draw = ImageDraw.Draw(image)
+    regular = ImageFont.truetype("arial.ttf", 24)
+    bold = ImageFont.truetype("arialbd.ttf", 25)
+    draw.rectangle((0, 0, width, 90), fill=(235, 235, 238))
+    draw.text((25, 25), "SYNTHETIC TEST CONVERSATION", fill=(170, 0, 0), font=bold)
+    first_sender = messages[0]["from"]
+    y = 125
+    for message in messages:
+        outgoing = message["from"] == first_sender
+        x1, x2 = (250, 690) if outgoing else (30, 470)
+        color = (45, 125, 245) if outgoing and platform == "iphone" else (
+            (45, 145, 95) if outgoing else (225, 225, 230)
+        )
+        body = message["body"]
+        words, lines, line = body.split(), [], ""
+        for word in words:
+            trial = f"{line} {word}".strip()
+            if draw.textlength(trial, font=regular) > 390:
+                lines.append(line); line = word
+            else:
+                line = trial
+        lines.append(line)
+        box_height = 38 * len(lines) + 45
+        draw.rounded_rectangle((x1, y, x2, y + box_height), radius=25, fill=color)
+        text_color = (255, 255, 255) if outgoing else (20, 20, 20)
+        for idx, text in enumerate(lines):
+            draw.text((x1 + 20, y + 15 + idx * 36), text, fill=text_color, font=regular)
+        draw.text((x1, y + box_height + 5), message["timestamp"][11:16],
+                  fill=(100, 100, 100), font=regular)
+        y += box_height + 55
+    image.save(path, "PNG")
+
+
+def _write_eml(path: Path, messages: list[dict], kind: str) -> None:
+    first = messages[0]
+    msg = EmailMessage()
+    msg["From"] = f"{first['from']} <sender@example.com>"
+    msg["To"] = f"{first['to']} <recipient@example.com>"
+    msg["Date"] = first["timestamp"]
+    msg["Message-ID"] = f"<synthetic-{kind}@example.com>"
+    msg["Subject"] = f"SYNTHETIC TEST - {kind.replace('_', ' ').title()}"
+    body = [
+        "SYNTHETIC TEST COMMUNICATION - NOT A REAL MESSAGE",
+        "",
+    ]
+    for item in messages:
+        body.extend([f"{item['timestamp']} - {item['from']} to {item['to']}:", item["body"], ""])
+    msg.set_content("\n".join(body))
+    path.write_bytes(msg.as_bytes(policy=SMTP))
+
+
+def _export_outlook_msg(eml_path: Path, msg_path: Path) -> bool:
+    """Best-effort true Outlook MSG export; unavailable on CI/non-Outlook systems."""
+    try:
+        import win32com.client
+        outlook = win32com.client.Dispatch("Outlook.Application")
+        item = outlook.Session.OpenSharedItem(str(eml_path.resolve()))
+        item.SaveAs(str(msg_path.resolve()), 3)
+        return msg_path.exists()
+    except Exception:
+        return False
+
+
+def generate_communication_pack(
+    matter: dict, out_dir: str | Path, seed: int = 0, communication_types=None
+) -> dict:
+    out = Path(out_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    kinds = communication_types or COMMUNICATION_TYPES
+    artifacts = []
+    for index, kind in enumerate(kinds):
+        if kind not in COMMUNICATION_TYPES:
+            raise ValueError(f"Unknown communication type '{kind}'")
+        folder = out / kind
+        folder.mkdir(parents=True, exist_ok=True)
+        messages = _comm_messages(matter, kind, seed)
+        truth = folder / f"{kind}.ground-truth.json"
+        truth.write_text(json.dumps({
+            "synthetic": True, "communication_type": kind, "messages": messages,
+            "expected_classification": kind,
+            "legal_context": {
+                "privileged_expected": kind in {"client_counsel_email", "expert_email"},
+                "third_party": kind in {"witness_email", "expert_email"},
+                "pre_litigation": True,
+            },
+        }, indent=2) + "\n", encoding="utf-8")
+        files = {"ground_truth": str(truth)}
+        if kind == "client_other_party_texts":
+            platform = "iphone" if seed % 2 else "android"
+            screenshot = folder / f"{kind}.{platform}.png"
+            _draw_text_screenshot(screenshot, messages, platform)
+            files["screenshot"] = str(screenshot)
+        else:
+            eml = folder / f"{kind}.eml"
+            msg = folder / f"{kind}.msg"
+            _write_eml(eml, messages, kind)
+            files["eml"] = str(eml)
+            files["msg"] = str(msg) if _export_outlook_msg(eml, msg) else None
+            files["msg_export_status"] = "created" if files["msg"] else "outlook-unavailable"
+        artifacts.append({"communication_type": kind, "files": files})
+    manifest = {
+        "schema_version": "1.0", "synthetic": True,
+        "fixture_id": matter.get("provenance", {}).get("fixture_id"),
+        "artifacts": artifacts,
+    }
+    (out / "communication-pack.manifest.json").write_text(
+        json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
+    )
     return manifest

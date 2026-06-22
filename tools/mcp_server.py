@@ -34,7 +34,9 @@ from generator import (  # noqa: E402
 )
 from generator.ecosystem import SmokeConfig, load_catalog_lock, route_and_plan, run_ecosystem_smoke
 from generator.formfill import fill_form, load_form
-from generator.documents import DOCUMENT_TYPES, generate_document_pack
+from generator.documents import (
+    COMMUNICATION_TYPES, DOCUMENT_TYPES, generate_communication_pack, generate_document_pack
+)
 
 mcp = FastMCP("mock-case-generator")
 
@@ -116,6 +118,18 @@ def generate_client_documents(
         return {"ok": False, "error": f"Unknown document types: {', '.join(invalid)}"}
     matter = _generate(scenario, seed)
     return {"ok": True, **generate_document_pack(matter, out_dir, seed, document_types)}
+
+
+@mcp.tool()
+def generate_client_communications(
+    scenario: str, out_dir: str, seed: int = 0, communication_types: list[str] | None = None
+) -> dict:
+    """Generate synthetic text screenshots and standards-compliant email fixtures."""
+    invalid = sorted(set(communication_types or []) - set(COMMUNICATION_TYPES))
+    if invalid:
+        return {"ok": False, "error": f"Unknown communication types: {', '.join(invalid)}"}
+    matter = _generate(scenario, seed)
+    return {"ok": True, **generate_communication_pack(matter, out_dir, seed, communication_types)}
 
 
 if __name__ == "__main__":

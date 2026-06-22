@@ -18,7 +18,12 @@ from .ecosystem import (
 )
 from .formfill import fill_form, load_form
 from .mutations import MUTATIONS, mutate_fixture
-from .documents import DOCUMENT_TYPES, generate_document_pack
+from .documents import (
+    COMMUNICATION_TYPES,
+    DOCUMENT_TYPES,
+    generate_communication_pack,
+    generate_document_pack,
+)
 
 
 def _json(value) -> str:
@@ -92,6 +97,13 @@ def build_parser() -> argparse.ArgumentParser:
     documents.add_argument("--type", action="append", choices=DOCUMENT_TYPES)
     documents.add_argument("--out", required=True)
 
+    communications = sub.add_parser("communications")
+    communications.add_argument("scenario", choices=list_scenarios())
+    communications.add_argument("--seed", type=int, default=0)
+    communications.add_argument("--reference-date")
+    communications.add_argument("--type", action="append", choices=COMMUNICATION_TYPES)
+    communications.add_argument("--out", required=True)
+
     catalog = sub.add_parser("catalog")
     catalog_sub = catalog.add_subparsers(dest="catalog_command", required=True)
     for name in ("verify", "refresh"):
@@ -123,6 +135,12 @@ def main(argv=None) -> int:
     if args.command == "documents":
         manifest = generate_document_pack(
             _matter(args), args.out, args.seed, document_types=args.type
+        )
+        print(_json(manifest))
+        return 0
+    if args.command == "communications":
+        manifest = generate_communication_pack(
+            _matter(args), args.out, args.seed, communication_types=args.type
         )
         print(_json(manifest))
         return 0
