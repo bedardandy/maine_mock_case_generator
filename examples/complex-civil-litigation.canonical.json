@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-875",
-    "case_id": "MMC-2025-272975",
+    "docket_number": "SAG-CV-2025-140",
+    "case_id": "MMC-2025-542182",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
@@ -105,23 +105,27 @@
     "demand_made": true,
     "class_action": true,
     "auditor_role": "issued the audited financial statements relied upon in the offering",
-    "relief_requested": "rescission, disgorgement, and compensatory damages"
+    "relief_requested": "rescission, disgorgement, and compensatory damages",
+    "governmental_codefendant": false,
+    "accrual_theory": "the date the misstatement was discovered",
+    "discovery_rule_invoked": true,
+    "general_tort_sol_years": 6
   },
   "litigation": {
     "posture": "discovery",
     "docket": [
       {
         "date": "2025-01-19",
-        "entry": "Complaint filed and served on the defendants.",
-        "party": "us"
-      },
-      {
-        "date": "2025-01-20",
         "entry": "Complaint and demand for jury trial filed.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-02-11",
+        "date": "2025-01-19",
+        "entry": "Complaint filed and served on the defendants.",
+        "party": "us"
+      },
+      {
+        "date": "2025-02-05",
         "entry": "Defendants' answer, counterclaims, and cross-claim filed.",
         "party": "Coastal Outfitters LLC"
       },
@@ -131,7 +135,7 @@
         "party": "opposing"
       },
       {
-        "date": "2025-02-20",
+        "date": "2025-02-21",
         "entry": "Third-party complaint against the auditor filed.",
         "party": "Coastal Outfitters LLC"
       },
@@ -146,22 +150,22 @@
         "party": "opposing"
       },
       {
-        "date": "2025-04-02",
-        "entry": "Order denying the motion to dismiss.",
-        "party": "the court"
-      },
-      {
         "date": "2025-04-07",
         "entry": "Client reports the defendants are liquidating the disputed inventory and moving sale proceeds offshore, threatening to defeat any judgment.",
         "party": "client"
       },
       {
-        "date": "2025-06-04",
+        "date": "2025-04-10",
+        "entry": "Order denying the motion to dismiss.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-06-07",
         "entry": "Order compelling production of the audit workpapers.",
         "party": "the court"
       },
       {
-        "date": "2025-09-15",
+        "date": "2025-09-05",
         "entry": "Plaintiffs' expert reports served; discovery continues.",
         "party": "Grace C. Roe"
       }
@@ -213,44 +217,28 @@
     ],
     "motions": [
       {
-        "title": "Motion in limine to exclude the damages expert",
-        "type": "evidentiary",
-        "movant": "Coastal Outfitters LLC",
-        "filed_date": "2026-02-26",
-        "status": "filed",
-        "relief": "Exclusion of the plaintiffs' damages model."
-      },
-      {
-        "title": "Motion to amend to add a punitive damages claim",
-        "type": "pleading",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-09-26",
-        "status": "opposed",
-        "relief": "Leave to add a punitive damages demand."
-      },
-      {
         "title": "Motion to dismiss for failure to state a claim",
         "type": "dispositive",
         "movant": "Coastal Outfitters LLC",
-        "filed_date": "2025-02-27",
+        "filed_date": "2025-03-04",
         "status": "denied",
         "relief": "Dismissal of the fraud and UTPA counts."
+      },
+      {
+        "title": "Motion in limine to exclude the damages expert",
+        "type": "evidentiary",
+        "movant": "Coastal Outfitters LLC",
+        "filed_date": "2026-02-07",
+        "status": "filed",
+        "relief": "Exclusion of the plaintiffs' damages model."
       },
       {
         "title": "Motion to compel production of audit workpapers",
         "type": "discovery",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-05-07",
+        "filed_date": "2025-05-24",
         "status": "granted",
         "relief": "An order compelling the auditor's workpapers."
-      },
-      {
-        "title": "Motion for a protective order",
-        "type": "discovery",
-        "movant": "Coastal Outfitters LLC",
-        "filed_date": "2025-05-31",
-        "status": "granted_in_part",
-        "relief": "Protection of trade-secret financial information."
       }
     ],
     "counterclaims": [
@@ -361,24 +349,19 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "Waiver and estoppel",
-        "by": "Coastal Outfitters LLC",
-        "basis": "The plaintiffs ratified the transaction by accepting later disclosures."
-      },
-      {
-        "defense": "Failure to state a claim",
-        "by": "Coastal Outfitters LLC",
-        "basis": "The complaint does not plead fraud with particularity. M.R. Civ. P. 9(b)."
-      },
-      {
-        "defense": "Comparative fault",
-        "by": "Coastal Outfitters LLC",
-        "basis": "The plaintiffs were sophisticated and failed to conduct due diligence. 14 M.R.S. § 156."
+        "defense": "Business judgment rule",
+        "by": "Olivia D. Jessup",
+        "basis": "The challenged decisions were informed, good-faith business judgments."
       },
       {
         "defense": "Statute of frauds",
         "by": "Coastal Outfitters LLC",
         "basis": "Any oral representations are unenforceable."
+      },
+      {
+        "defense": "Statute of limitations",
+        "by": "Coastal Outfitters LLC",
+        "basis": "Claims accrued more than six years before filing. 14 M.R.S. § 752."
       }
     ]
   }

@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-208061",
+    "matter_id": "MMC-2025-698951",
     "practice_area": "family",
     "title": "Grace C. Roe v. Maria Q. Fairbanks (interstate custody)",
     "jurisdiction": {
@@ -23,7 +23,7 @@
     "status": "pre_filing",
     "summary": "Grace C. Roe, appearing without a lawyer, asks a Maine District Court to modify an existing out-of-state order for one child(ren), raising a threshold UCCJEA question because the other parent is in Massachusetts and the child's home state may be Maine.",
     "event_date": "2025-05-29",
-    "docket_number": "SAG-FM-2025-695"
+    "docket_number": "SAG-FM-2025-754"
   },
   "parties": {
     "plaintiff": {
@@ -101,54 +101,29 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Family Division of the other state's court",
-      "type": "government_agency",
-      "role": "Sister-state court",
-      "relevance": "May already have or claim jurisdiction over the child custody determination.",
-      "contact": {
-        "phone": "(207) 555-0172",
-        "city": "Bangor",
-        "state": "ME"
-      }
-    },
-    {
-      "id": "tp2",
-      "name": "Malik Q. Jessup",
+      "name": "Felix B. Poe",
       "type": "family_member",
       "role": "Maternal grandparent",
       "relationship": "Grandparent",
       "relevance": "Has provided care during the child's time in Maine.",
       "contact": {
-        "phone": "(207) 555-0199",
-        "city": "Bath",
+        "phone": "(207) 555-0179",
+        "city": "Camden",
         "state": "ME",
-        "email": "malik.jessup@example.org"
+        "email": "felix.poe@example.org"
       }
     },
     {
-      "id": "tp3",
-      "name": "Marcus H. Moe",
+      "id": "tp2",
+      "name": "Rosa M. Greenhill",
       "type": "witness",
       "role": "Child's out-of-state teacher",
       "relevance": "Can attest to where the child has actually been living and attending school.",
       "contact": {
-        "phone": "(207) 555-0110",
-        "city": "Farmington",
+        "phone": "(207) 555-0138",
+        "city": "Windham",
         "state": "ME",
-        "email": "marcus.moe@example.org"
-      }
-    },
-    {
-      "id": "tp4",
-      "name": "Quentin K. Greenhill",
-      "type": "healthcare_provider",
-      "role": "Child's pediatrician",
-      "relevance": "Records show the child's primary residence and continuity of care.",
-      "contact": {
-        "phone": "(207) 555-0177",
-        "city": "Farmington",
-        "state": "ME",
-        "email": "quentin.greenhill@example.com"
+        "email": "rosa.greenhill@example.com"
       }
     }
   ],
@@ -210,14 +185,25 @@
   },
   "issues": [
     {
-      "issue": "Initial versus modification jurisdiction over the custody determination",
+      "issue": "Registration and enforcement of an out-of-state custody order",
       "category": "family",
-      "governing_law": "19-A M.R.S. § 1748; § 1751",
+      "governing_law": "19-A M.R.S. § 1761",
       "sub_questions": [
-        "Is there an existing order entitled to continuing jurisdiction in another state?"
+        "Must any existing out-of-state order be registered before enforcement?"
       ],
       "strength": "moderate",
       "id": "iss1"
+    },
+    {
+      "issue": "Temporary emergency jurisdiction",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 1748(4)",
+      "sub_questions": [
+        "Is the child present in Maine and is emergency protection necessary?"
+      ],
+      "strength": "weak",
+      "client_position": "Asserts an emergency basis only if the child is at risk.",
+      "id": "iss2"
     },
     {
       "issue": "Inconvenient-forum and simultaneous-proceeding analysis",
@@ -228,44 +214,36 @@
         "Is a proceeding already pending elsewhere?"
       ],
       "strength": "moderate",
-      "id": "iss2"
-    },
-    {
-      "issue": "Registration and enforcement of an out-of-state custody order",
-      "category": "family",
-      "governing_law": "19-A M.R.S. § 1761",
-      "sub_questions": [
-        "Must any existing out-of-state order be registered before enforcement?"
-      ],
-      "strength": "moderate",
       "id": "iss3"
-    },
+    }
+  ],
+  "expert_opinions": [
     {
-      "issue": "Home-state determination for initial child-custody jurisdiction",
-      "category": "family",
-      "governing_law": "19-A M.R.S. § 1745; § 1748",
-      "sub_questions": [
-        "Where has the child lived for the six consecutive months before filing?",
-        "If no home state, does a significant-connection basis apply?"
-      ],
-      "strength": "moderate",
-      "client_position": "Contends Maine is, or has become, the child's home state.",
-      "id": "iss4"
+      "id": "exp1",
+      "expert": {
+        "name": "Quentin K. Greenhill",
+        "field": "Child custody / parenting evaluation",
+        "credentials": "LCSW",
+        "retained_by": "court"
+      },
+      "topic": "Best interests and stability",
+      "opinion": "Continuity of the child's schooling and caregivers favors a stable primary residence.",
+      "basis": "Records review and interviews."
     }
   ],
   "evidence": [
     {
-      "title": "Existing out-of-state custody order",
+      "title": "Children's certified birth certificates",
       "type": "public_record",
-      "party": "defendant",
-      "description": "Any prior order whose state may retain jurisdiction.",
+      "party": "plaintiff",
+      "description": "Establish parentage.",
       "id": "ev1"
     },
     {
-      "title": "Co-parenting message history",
-      "type": "correspondence",
+      "title": "Pediatric and medical records",
+      "type": "medical_record",
       "party": "plaintiff",
-      "description": "Communications about the relocation and schedule.",
+      "description": "Continuity-of-care records reflecting the child's primary residence.",
       "id": "ev2"
     },
     {
@@ -274,29 +252,15 @@
       "party": "plaintiff",
       "description": "The plaintiff's record of where the child has lived month to month.",
       "id": "ev3"
-    },
-    {
-      "title": "Pediatric and medical records",
-      "type": "medical_record",
-      "party": "plaintiff",
-      "description": "Continuity-of-care records reflecting the child's primary residence.",
-      "id": "ev4"
-    },
-    {
-      "title": "School enrollment and attendance records",
-      "type": "document",
-      "party": "plaintiff",
-      "description": "Show where the child has actually been attending school (key to home-state).",
-      "id": "ev5"
     }
   ],
   "financials": {
     "currency": "USD",
     "amounts": [
       {
-        "label": "Estimated travel costs for interstate exchanges",
-        "amount": 8938,
-        "basis": "Flights or mileage between states."
+        "label": "Court filing and service fees",
+        "amount": 138,
+        "basis": "Filing and out-of-state service."
       }
     ]
   },

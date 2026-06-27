@@ -174,3 +174,125 @@ procedure:
     urgent: true
     deadline_days: 0
     deadline_rule: "19-A M.R.S. § 904 / M.R. Civ. P. 65 — emergency motion for interim parental rights and to freeze marital assets pending hearing."
+
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY family-law issues layered on the
+# primary divorce. Most matters draw ZERO (the weights keep a clean matter the
+# common case); any one exotic issue is rare. Each confounder injects coherent
+# ground-truth facts + a spotted issue + (where apt) an affirmative defense, and
+# carries its Maine grounding + a confidence flag. Sources are AI-assembled
+# research verified against legislature.maine.gov, NOT legal advice (see
+# DISCLAIMER.md); each overbroad-application risk is stated inline so the oracle
+# is the CORRECT Maine rule, not a naive over-claim.
+confounders:
+  count: {weights: [60, 26, 11, 3]} # ~60% of matters stay clean
+  pool:
+    # divorce residency / subject-matter jurisdiction (four alternative bases)
+    - id: divorce-jurisdiction-and-personal-jurisdiction
+      weight: 3
+      confidence: "High — § 901's four alternative bases are well-settled; personal jurisdiction over a non-resident spouse is a separate, fact-specific question"
+      source: "19-A M.R.S. § 901 (four alternative jurisdiction bases); 14 M.R.S. § 704-A (long-arm)"
+      facts:
+        petitioner_residency_basis_satisfied: true
+        defendant_resides_out_of_state: true
+        defendant_other_state: {pick: ["New Hampshire", "Massachusetts", "Florida"]}
+        married_in_maine: true
+        personal_jurisdiction_over_defendant_question: true
+      issue:
+        issue: "Divorce subject-matter jurisdiction under the four alternative § 901 bases, and personal jurisdiction over an out-of-state spouse"
+        category: family
+        governing_law: "19-A M.R.S. § 901; 14 M.R.S. § 704-A"
+        sub_questions:
+          - "Which of § 901's four ALTERNATIVE bases supplies jurisdiction — the plaintiff'§ 6-month residency is only one of them, so a complaint is not defeated merely because that track is doubtful?"
+          - "Does Maine have personal jurisdiction over the non-resident spouse for in personam support/property relief, or only status jurisdiction to grant the divorce itself?"
+        strength: moderate
+        notes: "Overbroad-risk: do NOT hardcode the 6-month residency track as exclusive — bases (1)(B)-(D) (married in Maine, cause accrued here, or the defendant is a Maine resident) each suffice; § 901 resolves subject-matter jurisdiction only and does NOT establish personal jurisdiction over the defendant."
+      defense:
+        defense: "Lack of personal jurisdiction over the non-resident spouse for support and property orders"
+        by: "{defendant_full_name}"
+        basis: "Maine has divorce subject-matter jurisdiction under 19-A M.R.S. § 901, but in personam support/property relief requires Maine long-arm contacts under 14 M.R.S. § 704-A. NOTE (overbroad-risk): § 901's four bases are ALTERNATIVE and the status divorce can proceed on the plaintiff's residency even without personal jurisdiction over the defendant — absence of personal jurisdiction limits monetary/property relief, it does not defeat the divorce."
+    # child-support guideline deviation (written-findings requirement)
+    - id: child-support-guideline-deviation
+      weight: 4
+      confidence: "High (statute); Medium (factor weighting is case-specific)"
+      source: "19-A M.R.S. § 2006 (income-shares guidelines + worksheet); § 2007 (deviation; written proposed findings; ~17 factors)"
+      facts:
+        deviation_proposed: true
+        substantially_equal_parenting: {pick: [true, false]}
+        deviation_factor: {pick: ["extraordinary transportation costs exceeding 15% of the yearly support obligation", "a substantially equal parenting arrangement", "the child's standard of living during the marriage"]}
+        written_deviation_findings_required: true
+      issue:
+        issue: "Child-support guideline deviation and the mandatory written-findings requirement"
+        category: family
+        governing_law: "19-A M.R.S. § 2006; § 2007"
+        sub_questions:
+          - "Does the § 2006 worksheet apply directly, or does a substantially-equal-parenting analysis change the base calculation first?"
+          - "If a deviation is sought, are the § 2007 written proposed findings prepared, or does the order silently adjust the number?"
+        strength: moderate
+        notes: "Overbroad-risk: a deviation requires an EXPLICIT written-findings block under § 2007 — silently adjusting the guideline number produces a defective order; the § 2006 substantially-equal-parenting analysis must precede the base table."
+    # marital vs non-marital classification, tracing, active appreciation
+    - id: marital-vs-nonmarital-classification
+      weight: 4
+      confidence: "High (framework); Medium (the active-role boundary is UNSETTLED at the margins)"
+      source: "19-A M.R.S. § 953 (marital presumption + four § 953(2) exclusions); Doucette v. Washburn, 2001 ME 38 (tracing); Hedges v. Pitcher, 2008 ME 55 (routine reinvestment is not a substantial active role)"
+      facts:
+        nonmarital_claim_asset: {pick: ["an inheritance received during the marriage", "a home owned before the marriage", "a gift from a family member"]}
+        property_source: {pick: ["inherited", "premarital", "gift"]}
+        appreciation_during_marriage: true
+        active_management_by_spouse: {pick: [true, false]}
+        premarital_agreement_present: false
+        tracing_required: true
+      issue:
+        issue: "Marital versus non-marital classification, tracing, and the active-appreciation rule"
+        category: family
+        governing_law: "19-A M.R.S. § 953; Doucette v. Washburn, 2001 ME 38; Hedges v. Pitcher, 2008 ME 55"
+        sub_questions:
+          - "Does the claimed asset trace to a § 953(2) exclusion (gift, bequest, exchange for separate property, post-separation acquisition, or a valid agreement)?"
+          - "Did a spouse take a 'substantial active role' in managing or improving the asset, converting its appreciation to marital, or is the gain passive market appreciation that stays separate?"
+        strength: moderate
+        notes: "Overbroad-risk: § 953(1) presumes property acquired during the marriage MARITAL regardless of title — the claimant bears the tracing burden; appreciation of non-marital property stays non-marital ONLY absent a substantial active role; and Maine is EQUITABLE DISTRIBUTION (not community property), so a non-marital label sets the asset apart but does not wholly remove it from the equitable analysis."
+      defense:
+        defense: "The disputed asset is non-marital separate property"
+        by: "{defendant_full_name}"
+        basis: "The asset traces to a § 953(2) exclusion and is separate property. NOTE (overbroad-risk): the § 953(1) presumption makes property acquired during the marriage marital regardless of title; the party claiming an exclusion bears the burden of tracing, and a spouse's substantial active role in managing or improving the asset can transmute its appreciation into marital property (Hedges v. Pitcher, 2008 ME 55)."
+    # retirement/pension division + QDRO sub-document (coverture UNVERIFIED)
+    - id: pension-division-qdro-subdocument
+      weight: 3
+      confidence: "High that pension division OFTEN requires a separate plan-compliant order in ADDITION to judgment language — a federally compliant QDRO for a private ERISA plan, or a MainePERS/governmental-plan-compliant division order for a non-ERISA public plan; the required instrument depends on the plan type. UNVERIFIED / EXPERIMENTAL that the coverture-fraction marital-portion formula is explicit Maine STATUTORY text (it is derived from plan practice / the MainePERS model DRO, not a statute)"
+      source: "19-A M.R.S. § 953 (division); 5 M.R.S. § 17059 (MainePERS division-order regime); a private ERISA plan requires a separate federally compliant QDRO, while a MainePERS or other governmental/church plan is not an ERISA QDRO plan and takes its own plan-compliant order; coverture fraction per MainePERS model DRO (NOT a statute)"
+      facts:
+        pension_present: true
+        pension_type: {pick: ["an ERISA-governed private retirement plan", "a MainePERS public pension", "a 401(k) plan", "a federal civil-service pension"]}
+        qdro_required: true
+        qdro_drafted: false
+        marital_portion_method: "coverture fraction (plan-practice convention, not a Maine statute)"
+      issue:
+        issue: "Pension division often needs a separate plan-compliant order (a federally compliant QDRO for ERISA plans; a MainePERS-compliant order for non-ERISA public plans) in addition to the judgment, depending on plan type"
+        category: family
+        governing_law: "19-A M.R.S. § 953; 5 M.R.S. § 17059 (MainePERS)"
+        sub_questions:
+          - "Is the plan a private ERISA plan (needs a separate federally compliant QDRO) or a MainePERS / other governmental or church plan (which is NOT an ERISA QDRO plan and instead takes its own plan-compliant order — for MainePERS, an order the chief executive officer must deem qualified under 5 M.R.S. § 17059)?"
+          - "Has the plan-appropriate division order been drafted, pre-approved by the plan administrator, and entered with or after the judgment?"
+        strength: moderate
+        notes: "Overbroad-risk: not every plan needs a federal QDRO — a private ERISA plan generally requires a federally compliant QDRO, while MainePERS and other governmental plans are non-ERISA and require their OWN compliant division order or plan-approved language; for an ERISA plan the judgment alone CANNOT transfer benefits and missing the order before the participant retires or dies can extinguish the alternate payee's rights. The coverture-fraction marital-portion formula is plan practice, NOT verified Maine statutory text (UNVERIFIED / EXPERIMENTAL) — rely on the § 953 division hook and the plan's model order."
+    # parental relocation notice / 60-mile trigger / DV court-routed branch
+    - id: parental-relocation-notice
+      weight: 2
+      confidence: "High (the 30-day notice and 60-mile presumption are explicit); Medium (rebuttal standards are case-specific)"
+      source: "19-A M.R.S. § 1653(14); § 1657 (relocation notice; DV safety exception routes notice through the court)"
+      facts:
+        relocation_contemplated: true
+        relocation_distance_miles: {int_between: [12, 240]}
+        relocation_crosses_state_line: {pick: [true, false]}
+        days_notice_required: 30
+        dv_safety_concern: false
+        notice_route: "direct 30-day notice to the other parent (no DV-safety concern in this matter); a DV-safety concern would route notice through the court instead"
+      issue:
+        issue: "Parental relocation: the 30-day notice, the 60-mile presumption, and the motion-to-modify vehicle"
+        category: family
+        governing_law: "19-A M.R.S. § 1653(14); § 1657"
+        sub_questions:
+          - "Is the move more than 60 miles from either party's residence, raising the rebuttable presumption of disrupted parent-child contact?"
+          - "Is relief sought by a motion to MODIFY the existing order rather than a new complaint, and has the 30-day notice been given correctly?"
+        strength: moderate
+        notes: "Overbroad-risk: the 60-mile trigger is a REBUTTABLE PRESUMPTION of substantial change, not a ban; the vehicle is a motion to modify, not a new complaint; and where notice would endanger the relocating parent or child, notice routes through the COURT (which provides safe notice) — direct 30-day notice must NEVER be hardcoded in a DV case."

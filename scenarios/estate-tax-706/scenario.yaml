@@ -150,3 +150,72 @@ financials:
     - {label: "Marketable securities", amount: {int_between: [500000, 8000000]}, basis: "Date-of-death value of the decedent's brokerage and investment accounts."}
     - {label: "Life insurance proceeds", amount: {int_between: [0, 4000000]}, basis: "Death benefit includible in the gross estate under IRC § 2042, per the Form 712 statement."}
     - {label: "Debts and administration expenses", amount: {int_between: [100000, 1500000]}, basis: "Deductible debts of the decedent, funeral expenses, and administration expenses under IRC § 2053."}
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING -- confounding SECONDARY Maine-probate issues that bear on
+# the federal/Maine estate-tax computation. Grounded in 18-C M.R.S. per
+# (IRC sections are those already established in this
+# scenario). AI-assembled research, NOT legal advice (see DISCLAIMER.md).
+confounders:
+  count: {weights: [60, 27, 10, 3]} # ~60% of matters stay clean
+  pool:
+    # elective share / augmented estate vs the marital deduction
+    - id: elective-share-vs-marital-deduction
+      weight: 3
+      requires: {marital_deduction: true}
+      confidence: "§ 2-301 High; augmented-estate elective-share formula Medium (multi-step §§ 2-203 to 2-210)"
+      source: "18-C M.R.S. § 2-202; § 2-203; § 2-211; § 2-301"
+      facts:
+        surviving_spouse_may_elect: true
+        outside_provision_for_spouse: false
+        marriage_length_years: {int_between: [2, 40]}
+        election_petition_date: {date_between: ["2026-01-01", "2026-09-30"]}
+      issue:
+        issue: "Surviving spouse's elective share and its effect on the marital deduction"
+        category: tax
+        governing_law: "18-C M.R.S. § 2-202; § 2-211; IRC § 2056"
+        sub_questions:
+          - "If the surviving spouse elects against the will, how much of the augmented estate passes to the spouse, and does that change the property qualifying for the unlimited marital deduction under IRC § 2056?"
+          - "Is the § 2-211 election timely -- filed by the LATER of 9 months after death or 6 months after probate?"
+          - "OVERBROAD-RISK / correct rule: the Maine elective share is NOT a flat one-third -- under § 2-202 it is 50% of the marital-property portion of the augmented estate, scaling with marriage length (§§ 2-203 ff.); do not compute the marital deduction off a pre-2019 flat fraction."
+        strength: moderate
+        notes: "Coordinate the MUPC augmented-estate elective share with the IRC § 2056 marital deduction; mind the dual § 2-211 deadline."
+    # ancillary administration + nonclaim bar on deductible debts
+    - id: ancillary-administration-and-nonclaim
+      weight: 2
+      confidence: "well-settled (§ 3-803 nonclaim timing unambiguous; out-of-state real property is governed by the situs state's probate/ancillary procedures)"
+      source: "18-C M.R.S. § 3-803 (Maine nonclaim bar); the situs state's probate/ancillary administration law (for the out-of-state real property)"
+      facts:
+        out_of_state_real_property: true
+        maine_real_property: true
+        notice_published: true
+        notice_first_publication_date: {date_between: ["2025-06-01", "2026-01-01"]}
+      issue:
+        issue: "Ancillary administration of out-of-state real property and the nonclaim bar on deductible debts"
+        category: tax
+        governing_law: "18-C M.R.S. § 3-803 (Maine nonclaim); the situs state's probate/ancillary procedures (out-of-state real property); IRC § 2053"
+        sub_questions:
+          - "Does real property the Maine-domiciled decedent owned in another state require attention to that SITUS state's probate/ancillary administration procedures (which govern transfer of realty where it sits), even though the Maine domiciliary estate governs personalty?"
+          - "Is a creditor claim barred under the § 3-803 nonclaim period, and if barred is it still a deductible 'claim against the estate' under IRC § 2053?"
+          - "OVERBROAD-RISK / correct rule: do NOT route out-of-state real property solely through the Maine domiciliary estate -- the situs state's law governs ancillary administration of realty there. The § 3-803 bar runs from the EARLIER of 9 months after death or 4 months after published notice."
+        strength: moderate
+        notes: "Out-of-state real property is administered under the situs state's procedures, not 18-C M.R.S. § 4-207 (which is Maine's own ancillary / foreign-personal-representative provision and does not itself require ancillary administration of a Maine decedent's out-of-state realty); the IRC § 2053 deductibility of a § 3-803-barred claim is fact-specific."
+    # nonprobate assets that escape probate but remain in the gross estate
+    - id: nonprobate-assets-in-the-gross-estate
+      weight: 2
+      confidence: "High that nonprobate assets are includible in the federal gross estate under the IRC; probate-vs-nonprobate routing fact-specific (Medium)"
+      source: "IRC §§ 2031-2044 (gross-estate inclusion: § 2033 probate property, §§ 2036-2038 retained interests/transfers, § 2040 joint interests, § 2042 life insurance); 18-C M.R.S. § 2-606, § 3-902 (Maine probate routing/abatement only, not gross-estate inclusion)"
+      facts:
+        trust_funded: true
+        nonprobate_assets_pct: {int_between: [40, 95]}
+        joint_tenancy_assets: true
+        pod_beneficiaries_named: true
+        pour_over_will: {pick: [true, false]}
+      issue:
+        issue: "Nonprobate assets that pass outside probate but remain includible in the gross estate"
+        category: tax
+        governing_law: "IRC §§ 2031-2044 (gross-estate inclusion); 18-C M.R.S. § 2-606, § 3-902 (Maine probate routing/abatement only)"
+        sub_questions:
+          - "If most assets pass nonprobate (a funded revocable trust, joint tenancy, POD/TOD), is a probate administration even required -- yet the Form 706 must still report those assets as includible in the gross estate under IRC §§ 2031-2044?"
+          - "OVERBROAD-RISK / correct rule: gross-estate inclusion is governed by the FEDERAL Internal Revenue Code, not the Maine probate statutes -- probate property falls under IRC § 2033, a funded revocable trust and other retained-interest transfers under IRC §§ 2036-2038, joint interests under IRC § 2040, and life insurance under IRC § 2042; the MUPC ademption/abatement rules (18-C M.R.S. § 2-606, § 3-902) bear only on how property is ROUTED among takers, not on whether it is in the gross estate."
+        strength: moderate
+        notes: "Gross-estate inclusion is a federal IRC question (§§ 2031-2044); the Maine probate statutes (18-C M.R.S. § 2-606 ademption, § 3-902 abatement) address probate routing only, and a nonprobate transfer does not reduce the federal taxable estate."

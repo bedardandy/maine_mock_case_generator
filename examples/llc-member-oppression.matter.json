@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-570636",
+    "matter_id": "MMC-2025-738539",
     "practice_area": "business",
     "title": "Grace C. Roe v. Maria Q. Fairbanks et al. (member oppression / Riverbend Builders LLC)",
     "jurisdiction": {
@@ -23,7 +23,7 @@
     "status": "active",
     "summary": "Grace C. Roe, who holds a 20% interest in Riverbend Builders LLC, a family restaurant group, alleges that the controlling members Maria Q. Fairbanks and Ingrid B. Kingsley have frozen the minority member out, and sues for oppression, breach of fiduciary duty, and judicial dissolution or a fair-value buyout.",
     "event_date": "2025-03-22",
-    "docket_number": "SAG-BCD-2025-394"
+    "docket_number": "SAG-BCD-2025-174"
   },
   "parties": {
     "plaintiff": {
@@ -150,63 +150,38 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Olivia Q. Hawthorne",
-      "type": "witness",
-      "role": "The LLC's outside accountant",
-      "relevance": "Prepared the company's books, tax returns, and distribution records and can testify to how the majority paid themselves.",
-      "contact": {
-        "phone": "(207) 555-0105",
-        "city": "Lewiston",
-        "state": "ME",
-        "email": "olivia.hawthorne@example.net"
-      }
-    },
-    {
-      "id": "tp2",
-      "name": "Maine Secretary of State",
-      "type": "government_agency",
-      "role": "State filing office",
-      "relevance": "Maintains the LLC's formation filings, annual reports, and registered-agent records.",
-      "contact": {
-        "phone": "(207) 555-0144",
-        "city": "Bath",
-        "state": "ME"
-      }
-    },
-    {
-      "id": "tp3",
-      "name": "Maria S. Ashford",
-      "type": "witness",
-      "role": "Former employee with knowledge of the diversion",
-      "relevance": "Worked at the company and observed opportunities and assets being diverted to the majority's side entity.",
-      "contact": {
-        "phone": "(207) 555-0189",
-        "city": "Brunswick",
-        "state": "ME",
-        "email": "maria.ashford@example.net"
-      }
-    },
-    {
-      "id": "tp4",
-      "name": "Northstar Partners Corp.",
+      "name": "Cobblestone Builders Co.",
       "type": "business_entity",
       "role": "The side entity allegedly receiving diverted opportunities",
       "relevance": "An entity controlled by the majority that allegedly received company opportunities and assets.",
       "contact": {
-        "phone": "(207) 555-0191",
-        "city": "Auburn",
+        "phone": "(207) 555-0153",
+        "city": "Falmouth",
         "state": "ME"
       }
     },
     {
-      "id": "tp5",
-      "name": "Downeast Federal Savings",
+      "id": "tp2",
+      "name": "Felix L. Kingsley",
+      "type": "witness",
+      "role": "Former employee with knowledge of the diversion",
+      "relevance": "Worked at the company and observed opportunities and assets being diverted to the majority's side entity.",
+      "contact": {
+        "phone": "(207) 555-0143",
+        "city": "Belfast",
+        "state": "ME",
+        "email": "felix.kingsley@example.org"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Pine Tree Community Bank",
       "type": "financial_institution",
       "role": "The company's bank",
       "relevance": "Holds the LLC's operating accounts; records trace distributions, payroll, and transfers to the side entity.",
       "contact": {
-        "phone": "(207) 555-0145",
-        "city": "Yarmouth",
+        "phone": "(207) 555-0111",
+        "city": "Falmouth",
         "state": "ME"
       }
     }
@@ -264,35 +239,11 @@
       "A forced exit at a lowball valuation that ignores the diverted value."
     ],
     "constraints": {
-      "budget": "Funded through trial, but a fair buyout settlement is strongly preferred.",
+      "budget": "Substantial but monitored; the client wants staged budgets keyed to the valuation and discovery phases.",
       "timeline": "Wants the freeze-out addressed promptly and the case trial-ready within roughly eighteen months of filing."
     }
   },
   "issues": [
-    {
-      "issue": "Whether the plaintiff was wrongfully denied the right to inspect the LLC's books and records",
-      "category": "business",
-      "governing_law": "31 M.R.S. § 1545",
-      "sub_questions": [
-        "Did the plaintiff make a proper demand to inspect?",
-        "Was the refusal to allow inspection lawful?"
-      ],
-      "strength": "strong",
-      "client_position": "A proper demand was made and the majority's refusal to allow inspection violates the member's statutory inspection rights.",
-      "id": "iss1"
-    },
-    {
-      "issue": "Whether the managing members breached the fiduciary duties of loyalty and care owed to the LLC and its members",
-      "category": "business",
-      "governing_law": "31 M.R.S. § 1559",
-      "sub_questions": [
-        "Did the majority self-deal or usurp company opportunities?",
-        "Did paying themselves while denying distributions breach the duty of loyalty?"
-      ],
-      "strength": "moderate",
-      "client_position": "Paying themselves while freezing out the minority and diverting opportunities breaches the duties of loyalty and care.",
-      "id": "iss2"
-    },
     {
       "issue": "Whether a buyout at fair value is available as an alternative remedy to dissolution",
       "category": "business",
@@ -303,7 +254,7 @@
       ],
       "strength": "moderate",
       "client_position": "A court-ordered buyout at fair value is an appropriate alternative to dissolution.",
-      "id": "iss3"
+      "id": "iss1"
     },
     {
       "issue": "Whether the suspension of distributions and the majority's compensation constitute improper distributions",
@@ -315,14 +266,62 @@
       ],
       "strength": "moderate",
       "client_position": "The majority took disguised distributions through salary while improperly withholding distributions from the minority.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Whether the plaintiff was wrongfully denied the right to inspect the LLC's books and records",
+      "category": "business",
+      "governing_law": "31 M.R.S. § 1545",
+      "sub_questions": [
+        "Did the plaintiff make a proper demand to inspect?",
+        "Was the refusal to allow inspection lawful?"
+      ],
+      "strength": "strong",
+      "client_position": "A proper demand was made and the majority's refusal to allow inspection violates the member's statutory inspection rights.",
+      "id": "iss3"
+    },
+    {
+      "issue": "Whether the plaintiff may pursue a derivative claim on behalf of the LLC for the diversion of company assets",
+      "category": "business",
+      "governing_law": "31 M.R.S. § 1631 et seq.",
+      "sub_questions": [
+        "Are the diversion claims derivative, direct, or both?",
+        "Have the prerequisites for a derivative action been satisfied?"
+      ],
+      "strength": "moderate",
+      "client_position": "The diversion of company opportunities supports a derivative claim brought on behalf of the LLC.",
       "id": "iss4"
+    },
+    {
+      "issue": "Whether the managing members breached the fiduciary duties of loyalty and care owed to the LLC and its members",
+      "category": "business",
+      "governing_law": "31 M.R.S. § 1559",
+      "sub_questions": [
+        "Did the majority self-deal or usurp company opportunities?",
+        "Did paying themselves while denying distributions breach the duty of loyalty?"
+      ],
+      "strength": "moderate",
+      "client_position": "Paying themselves while freezing out the minority and diverting opportunities breaches the duties of loyalty and care.",
+      "id": "iss5"
+    },
+    {
+      "issue": "Whether the controlling members have acted in a manner that is illegal, oppressive, fraudulent, or unfairly prejudicial so as to warrant judicial dissolution",
+      "category": "business",
+      "governing_law": "31 M.R.S. § 1595",
+      "sub_questions": [
+        "Does the freeze-out amount to oppressive or unfairly prejudicial conduct?",
+        "Is dissolution or a lesser remedy such as a buyout appropriate?"
+      ],
+      "strength": "moderate",
+      "client_position": "The freeze-out is oppressive and unfairly prejudicial conduct supporting dissolution or a fair-value buyout.",
+      "id": "iss6"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
       "expert": {
-        "name": "Henry P. Greenhill",
+        "name": "Theodore D. Moe",
         "field": "Forensic accounting",
         "credentials": "CPA, CFF",
         "retained_by": "plaintiff"
@@ -330,75 +329,63 @@
       "topic": "Tracing distributions and diverted funds",
       "opinion": "Company funds and opportunities were diverted to a related side entity and disguised distributions were paid through salary.",
       "basis": "General ledger, bank records, payroll records, and the side entity's filings."
-    },
-    {
-      "id": "exp2",
-      "expert": {
-        "name": "Felix E. Ashford",
-        "field": "Business valuation",
-        "credentials": "ASA, CVA",
-        "retained_by": "plaintiff"
-      },
-      "topic": "Fair value of the minority membership interest",
-      "opinion": "The fair value of the minority interest substantially exceeds the majority's buyout offer once diverted value is restored.",
-      "basis": "Income and market approaches applied to the company's corrected financials."
     }
   ],
   "evidence": [
-    {
-      "title": "Records-inspection demand and refusal",
-      "type": "correspondence",
-      "party": "plaintiff",
-      "description": "The plaintiff's demand to inspect the books and the majority's refusal.",
-      "id": "ev1"
-    },
-    {
-      "title": "Emails showing the freeze-out and diversion",
-      "type": "correspondence",
-      "party": "defendant",
-      "description": "Internal emails reflecting the exclusion of the minority member and the diversion of opportunities.",
-      "id": "ev2"
-    },
-    {
-      "title": "Member meeting minutes and resolutions",
-      "type": "document",
-      "party": "company",
-      "description": "Minutes and written resolutions reflecting management decisions and the exclusion of the minority member.",
-      "id": "ev3"
-    },
-    {
-      "title": "Distribution and payroll records",
-      "type": "financial_record",
-      "party": "company",
-      "description": "Records of member distributions and the salaries paid to the controlling members.",
-      "id": "ev4"
-    },
-    {
-      "title": "Lowball buyout offer",
-      "type": "document",
-      "party": "defendant",
-      "description": "The majority's written offer to purchase the minority interest.",
-      "id": "ev5"
-    },
     {
       "title": "Operating agreement",
       "type": "contract",
       "party": "plaintiff",
       "description": "The LLC's written operating agreement governing management, distributions, and member rights.",
-      "id": "ev6"
-    },
-    {
-      "title": "Bank records",
-      "type": "financial_record",
-      "party": "plaintiff",
-      "description": "Bank records tracing distributions, salaries, and transfers to the side entity.",
-      "id": "ev7"
+      "id": "ev1"
     },
     {
       "title": "Company financial statements and tax returns",
       "type": "financial_record",
       "party": "company",
       "description": "The LLC's financial statements and federal and Maine tax returns for the relevant years.",
+      "id": "ev2"
+    },
+    {
+      "title": "Distribution and payroll records",
+      "type": "financial_record",
+      "party": "company",
+      "description": "Records of member distributions and the salaries paid to the controlling members.",
+      "id": "ev3"
+    },
+    {
+      "title": "Lowball buyout offer",
+      "type": "document",
+      "party": "defendant",
+      "description": "The majority's written offer to purchase the minority interest.",
+      "id": "ev4"
+    },
+    {
+      "title": "Records-inspection demand and refusal",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "The plaintiff's demand to inspect the books and the majority's refusal.",
+      "id": "ev5"
+    },
+    {
+      "title": "Member meeting minutes and resolutions",
+      "type": "document",
+      "party": "company",
+      "description": "Minutes and written resolutions reflecting management decisions and the exclusion of the minority member.",
+      "id": "ev6"
+    },
+    {
+      "title": "Emails showing the freeze-out and diversion",
+      "type": "correspondence",
+      "party": "defendant",
+      "description": "Internal emails reflecting the exclusion of the minority member and the diversion of opportunities.",
+      "id": "ev7"
+    },
+    {
+      "title": "Bank records",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "Bank records tracing distributions, salaries, and transfers to the side entity.",
       "id": "ev8"
     }
   ],
@@ -407,18 +394,18 @@
     "amounts": [
       {
         "label": "Fair value of the plaintiff's minority interest",
-        "amount": 1128682,
+        "amount": 2454518,
         "basis": "Pro rata fair value of the membership interest before discounts."
       },
       {
-        "label": "Estimated cost of the valuation and accounting experts",
-        "amount": 46324,
-        "basis": "Retained plaintiff-side experts."
+        "label": "Excess compensation paid to the majority",
+        "amount": 632670,
+        "basis": "Compensation above reasonable levels, alleged as a disguised distribution."
       },
       {
-        "label": "Distributions withheld from the minority member",
-        "amount": 548520,
-        "basis": "Distributions suspended since the freeze-out."
+        "label": "Estimated cost of the valuation and accounting experts",
+        "amount": 111788,
+        "basis": "Retained plaintiff-side experts."
       }
     ]
   },
@@ -503,9 +490,9 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "Authorization under the operating agreement",
+        "defense": "Claims are derivative, not direct",
         "by": "Maria Q. Fairbanks",
-        "basis": "The operating agreement authorized the management decisions and compensation at issue."
+        "basis": "The asserted injuries are to the LLC and may be pursued only derivatively."
       },
       {
         "defense": "Unclean hands / prior breach",
@@ -513,19 +500,14 @@
         "basis": "The plaintiff breached first and comes to equity with unclean hands."
       },
       {
-        "defense": "Claims are derivative, not direct",
-        "by": "Maria Q. Fairbanks",
-        "basis": "The asserted injuries are to the LLC and may be pursued only derivatively."
-      },
-      {
-        "defense": "Business judgment",
-        "by": "Maria Q. Fairbanks",
-        "basis": "The challenged decisions were legitimate, good-faith exercises of business judgment."
-      },
-      {
         "defense": "Fair buyout offer",
         "by": "Maria Q. Fairbanks",
         "basis": "The buyout offered to the plaintiff was fair and reasonable."
+      },
+      {
+        "defense": "Authorization under the operating agreement",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The operating agreement authorized the management decisions and compensation at issue."
       }
     ],
     "counterclaims": [
@@ -539,42 +521,42 @@
     ],
     "discovery": [
       {
-        "type": "deposition",
-        "propounding_party": "Grace C. Roe",
-        "responding_party": "the LLC's outside accountant",
-        "served_date": "2025-07-23",
-        "status": "served",
-        "description": "Deposition of the company's outside accountant."
-      },
-      {
-        "type": "deposition",
-        "propounding_party": "Grace C. Roe",
-        "responding_party": "Maria Q. Fairbanks",
-        "served_date": "2025-06-30",
-        "status": "outstanding",
-        "description": "Deposition of the managing member."
-      },
-      {
-        "type": "subpoena",
-        "propounding_party": "Grace C. Roe",
-        "responding_party": "the company's bank",
-        "served_date": "2025-06-01",
-        "status": "served",
-        "description": "Subpoena to the bank for the LLC's account records."
-      },
-      {
         "type": "expert_disclosure",
         "propounding_party": "Grace C. Roe",
         "responding_party": "Maria Q. Fairbanks",
-        "served_date": "2025-09-25",
+        "served_date": "2025-09-06",
         "status": "served",
         "description": "Plaintiff's valuation and forensic-accounting expert disclosures."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Ingrid B. Kingsley",
+        "served_date": "2025-06-10",
+        "status": "outstanding",
+        "description": "Deposition of the co-manager member."
+      },
+      {
+        "type": "request_for_production",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Maria Q. Fairbanks",
+        "served_date": "2025-04-08",
+        "status": "objected",
+        "description": "Requests for the company's financials, distribution records, and the side entity's records."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "the LLC's outside accountant",
+        "served_date": "2025-08-03",
+        "status": "served",
+        "description": "Deposition of the company's outside accountant."
       },
       {
         "type": "interrogatories",
         "propounding_party": "Grace C. Roe",
         "responding_party": "Maria Q. Fairbanks",
-        "served_date": "2025-05-01",
+        "served_date": "2025-04-01",
         "status": "responded",
         "description": "Interrogatories on management, distributions, and the majority's compensation."
       }
@@ -584,84 +566,76 @@
         "title": "Motion to compel production of the diversion records",
         "type": "discovery",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-06-28",
+        "filed_date": "2025-06-25",
         "status": "granted_in_part",
         "relief": "An order compelling production of records relating to the side entity."
-      },
-      {
-        "title": "Motion for partial summary judgment on the fiduciary-duty claim",
-        "type": "dispositive",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-12-05",
-        "status": "opposed",
-        "relief": "Judgment that the controlling members breached their fiduciary duties."
       },
       {
         "title": "Motion to appoint a receiver or custodian",
         "type": "provisional",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-06-14",
+        "filed_date": "2025-05-29",
         "status": "under_advisement",
         "relief": "Appointment of a receiver or custodian to protect company assets."
+      },
+      {
+        "title": "Motion for partial summary judgment on the fiduciary-duty claim",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-12-03",
+        "status": "opposed",
+        "relief": "Judgment that the controlling members breached their fiduciary duties."
       },
       {
         "title": "Motion for a buyout / fair-value determination",
         "type": "dispositive",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-10-04",
+        "filed_date": "2025-11-04",
         "status": "filed",
         "relief": "An order setting a buyout of the minority interest at fair value."
-      },
-      {
-        "title": "Motion to compel inspection of books and records",
-        "type": "discovery",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-04-21",
-        "status": "granted",
-        "relief": "An order compelling inspection of the LLC's books and records."
       }
     ],
     "docket": [
       {
-        "date": "2025-03-02",
+        "date": "2025-03-06",
         "entry": "Complaint for member oppression and judicial dissolution filed in the Business and Consumer Docket.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-03-26",
+        "date": "2025-03-30",
         "entry": "Defendants' answer and counterclaim filed; the LLC appears as a nominal defendant.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-04-29",
+        "date": "2025-04-19",
         "entry": "Scheduling order entered; discovery deadlines set.",
         "party": "the court"
       },
       {
-        "date": "2025-05-15",
+        "date": "2025-05-11",
         "entry": "Order granting the motion to compel inspection of books and records.",
         "party": "the court"
       },
       {
-        "date": "2025-07-04",
+        "date": "2025-07-15",
         "entry": "Order granting in part production of the side entity's records.",
         "party": "the court"
       },
       {
-        "date": "2025-09-15",
+        "date": "2025-09-22",
         "entry": "Plaintiff's valuation and forensic-accounting expert reports served; discovery continues.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-11-03",
+        "date": "2025-10-27",
         "entry": "Motion for a buyout / fair-value determination filed.",
         "party": "Grace C. Roe"
       }
     ],
     "trial": {
-      "jury": true,
-      "estimated_days": 4,
-      "scheduled_date": "2026-07-01"
+      "jury": false,
+      "estimated_days": 7,
+      "scheduled_date": "2026-10-09"
     }
   },
   "facts": {

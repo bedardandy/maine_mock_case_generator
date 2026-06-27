@@ -93,7 +93,7 @@
         "seed": 7001
       },
       "matter": {
-        "matter_id": "MMC-2026-385699",
+        "matter_id": "MMC-2026-129936",
         "practice_area": "probate",
         "title": "Estate of Nadia P. Loe: informal probate and appointment of Felix M. Coe",
         "jurisdiction": {
@@ -107,7 +107,7 @@
         "status": "pre_filing",
         "summary": "Felix M. Coe applies for informal probate of the estate of Nadia P. Loe, who died on 2025-11-03 domiciled in Kennebec County, Maine, and asks the Augusta Probate Court to be appointed personal representative to marshal an estate valued at roughly $786360, pay valid claims, and distribute the remainder to the heirs and devisees.",
         "event_date": "2025-11-03",
-        "docket_number": "KEN-PE-2026-117",
+        "docket_number": "KEN-PE-2026-628",
         "universe_id": "UNIV-death-cascade-0007"
       },
       "parties": {
@@ -203,25 +203,53 @@
       "third_parties": [
         {
           "id": "tp1",
-          "name": "Evergreen Funeral Home",
-          "type": "creditor",
-          "role": "Funeral and burial creditor",
-          "relevance": "Holds a claim for funeral and burial expenses, which are a priority charge against the estate.",
+          "name": "Downeast Federal Savings",
+          "type": "financial_institution",
+          "role": "Bank holding the decedent's accounts",
+          "relevance": "Holds the decedent's checking, savings, and brokerage accounts that the personal representative must marshal and administer.",
           "contact": {
-            "phone": "(207) 555-0151",
-            "city": "Brunswick",
+            "phone": "(207) 555-0105",
+            "city": "Waterville",
             "state": "ME"
           }
         },
         {
           "id": "tp2",
-          "name": "Pine Tree Community Bank",
-          "type": "financial_institution",
-          "role": "Bank holding the decedent's accounts",
-          "relevance": "Holds the decedent's checking, savings, and brokerage accounts that the personal representative must marshal and administer.",
+          "name": "Carmen T. Ellsworth",
+          "type": "beneficiary",
+          "role": "Devisee named in the will",
+          "relationship": "Named devisee",
+          "relevance": "A person named to take under the will; entitled to notice and to receive the devise if the will is admitted.",
           "contact": {
-            "phone": "(207) 555-0198",
-            "city": "Waterville",
+            "phone": "(207) 555-0132",
+            "city": "Orono",
+            "state": "ME",
+            "email": "carmen.ellsworth@example.org"
+          }
+        },
+        {
+          "id": "tp3",
+          "name": "Jane S. Larkspur",
+          "type": "beneficiary",
+          "role": "Surviving spouse of the decedent",
+          "relationship": "Surviving spouse",
+          "relevance": "A statutory beneficiary entitled to an intestate share, homestead allowance, and any family allowance; must receive notice of the proceeding.",
+          "contact": {
+            "phone": "(207) 555-0117",
+            "city": "Bangor",
+            "state": "ME",
+            "email": "jane.larkspur@example.org"
+          }
+        },
+        {
+          "id": "tp4",
+          "name": "Evergreen Funeral Home",
+          "type": "creditor",
+          "role": "Funeral and burial creditor",
+          "relevance": "Holds a claim for funeral and burial expenses, which are a priority charge against the estate.",
+          "contact": {
+            "phone": "(207) 555-0138",
+            "city": "Bangor",
             "state": "ME"
           }
         }
@@ -286,28 +314,16 @@
       },
       "issues": [
         {
-          "issue": "Presentation and limitation of creditor claims against the estate",
+          "issue": "Intestate share if the decedent died without a valid will",
           "category": "probate",
-          "governing_law": "18-C M.R.S. § 3-803",
+          "governing_law": "18-C M.R.S. § 2-102",
           "sub_questions": [
-            "Within what period must creditors present claims before they are barred?",
-            "Are the medical and funeral claims valid, and in what order are they paid?"
+            "If there is no will, what share passes to the surviving spouse?",
+            "How is the balance distributed among the decedent's heirs?"
           ],
           "strength": "moderate",
-          "client_position": "Intends to give notice to creditors and pay only timely, valid claims in their statutory order of priority.",
+          "client_position": "If no valid will exists, seeks distribution to the surviving spouse and heirs as the intestacy statutes direct.",
           "id": "iss1"
-        },
-        {
-          "issue": "Sufficiency of the application for informal probate and appointment",
-          "category": "probate",
-          "governing_law": "18-C M.R.S. § 3-301",
-          "sub_questions": [
-            "Does the application contain all statements required for informal probate or informal appointment?",
-            "Is venue proper in the county of the decedent's domicile at death?"
-          ],
-          "strength": "strong",
-          "client_position": "Contends the application is complete and properly venued in Kennebec County so informal probate may proceed.",
-          "id": "iss2"
         },
         {
           "issue": "Determination of heirs and their shares by intestate succession",
@@ -319,38 +335,26 @@
           ],
           "strength": "moderate",
           "client_position": "Seeks an accurate determination of the 2 heir(s) and their respective shares.",
-          "id": "iss3"
+          "id": "iss2"
         },
         {
-          "issue": "Priority for appointment of the personal representative",
+          "issue": "Timeliness of commencing the probate proceeding",
           "category": "probate",
-          "governing_law": "18-C M.R.S. § 3-203",
+          "governing_law": "18-C M.R.S. § 3-108",
           "sub_questions": [
-            "Does the applicant have priority for appointment among those willing to serve?",
-            "Have persons with equal or higher priority been given notice or renounced?"
+            "Is the application brought within the period allowed to commence probate?",
+            "Do any exceptions to the limitation period apply?"
           ],
           "strength": "strong",
-          "client_position": "Asserts priority for appointment as the decedent's adult daughter and that no person with higher priority objects.",
-          "id": "iss4"
-        },
-        {
-          "issue": "Intestate share if the decedent died without a valid will",
-          "category": "probate",
-          "governing_law": "18-C M.R.S. § 2-102",
-          "sub_questions": [
-            "If there is no will, what share passes to the surviving spouse?",
-            "How is the balance distributed among the decedent's heirs?"
-          ],
-          "strength": "moderate",
-          "client_position": "If no valid will exists, seeks distribution to the surviving spouse and heirs as the intestacy statutes direct.",
-          "id": "iss5"
+          "client_position": "Files well within the limitation period for commencing probate after the decedent's death.",
+          "id": "iss3"
         }
       ],
       "expert_opinions": [
         {
           "id": "exp1",
           "expert": {
-            "name": "Desmond E. Hawthorne",
+            "name": "Desmond D. Moe",
             "field": "Real estate appraisal",
             "credentials": "MAI",
             "retained_by": "personal_representative"
@@ -358,21 +362,33 @@
           "topic": "Date-of-death value of the decedent's real property",
           "opinion": "The decedent's real property had a fair market value as of the date of death within the appraised range used for the inventory.",
           "basis": "Inspection of the property and analysis of comparable sales in the county."
+        },
+        {
+          "id": "exp2",
+          "expert": {
+            "name": "Nadia M. Doe",
+            "field": "Estate accounting",
+            "credentials": "CPA",
+            "retained_by": "personal_representative"
+          },
+          "topic": "Inventory, accounting, and solvency of the estate",
+          "opinion": "The estate is solvent, and the proposed inventory and accounting fairly reflect its assets, debts, and distributions.",
+          "basis": "Review of account statements, claims presented, and the preliminary inventory of assets."
         }
       ],
       "evidence": [
-        {
-          "title": "Bank and brokerage statements",
-          "type": "financial_record",
-          "party": "personal_representative",
-          "description": "Account statements documenting the decedent's cash and investment accounts.",
-          "id": "ev1"
-        },
         {
           "title": "Preliminary inventory of assets",
           "type": "financial_record",
           "party": "personal_representative",
           "description": "Schedule of the estate's real and personal property with date-of-death values.",
+          "id": "ev1"
+        },
+        {
+          "title": "Bank and brokerage statements",
+          "type": "financial_record",
+          "party": "personal_representative",
+          "description": "Account statements documenting the decedent's cash and investment accounts.",
           "id": "ev2"
         },
         {
@@ -388,6 +404,13 @@
           "party": "personal_representative",
           "description": "Certified copy of the decedent's death certificate establishing the date and place of death.",
           "id": "ev4"
+        },
+        {
+          "title": "Funeral bill and other claims",
+          "type": "financial_record",
+          "party": "personal_representative",
+          "description": "Funeral and burial invoice and other creditor claims presented against the estate.",
+          "id": "ev5"
         }
       ],
       "financials": {
@@ -395,13 +418,23 @@
         "amounts": [
           {
             "label": "Outstanding debts and claims",
-            "amount": 28287,
+            "amount": 57718,
             "basis": "Funeral expenses, final medical bills, and other creditor claims presented against the estate."
           },
           {
             "label": "Real property value",
-            "amount": 395155,
+            "amount": 202087,
             "basis": "Estimated date-of-death fair market value of the decedent's real property."
+          },
+          {
+            "label": "Vehicle and personal property",
+            "amount": 34874,
+            "basis": "Estimated value of the decedent's vehicle and tangible personal property."
+          },
+          {
+            "label": "Bank and brokerage accounts",
+            "amount": 276907,
+            "basis": "Date-of-death balances of the decedent's cash and investment accounts."
           }
         ]
       },
@@ -422,7 +455,7 @@
       "related_matters": [
         {
           "universe_id": "UNIV-death-cascade-0007",
-          "matter_id": "MMC-2026-444016",
+          "matter_id": "MMC-2026-915489",
           "scenario_id": "estate-tax-706",
           "relationship": "feeds",
           "description": "The estate inventory and date-of-death values feed the Form 706 and 706ME filings."
@@ -447,7 +480,7 @@
         "seed": 7002
       },
       "matter": {
-        "matter_id": "MMC-2026-444016",
+        "matter_id": "MMC-2026-915489",
         "practice_area": "tax",
         "title": "Estate of Nadia P. Loe: federal estate tax return (Form 706) and Maine estate tax return (706ME), with Felix M. Coe as executor",
         "jurisdiction": {
@@ -806,7 +839,7 @@
       "related_matters": [
         {
           "universe_id": "UNIV-death-cascade-0007",
-          "matter_id": "MMC-2026-385699",
+          "matter_id": "MMC-2026-129936",
           "scenario_id": "decedent-estate-informal",
           "relationship": "arises_from",
           "description": "The estate tax returns arise from the same decedent's estate being probated."
@@ -1139,7 +1172,7 @@
       "related_matters": [
         {
           "universe_id": "UNIV-death-cascade-0007",
-          "matter_id": "MMC-2026-385699",
+          "matter_id": "MMC-2026-129936",
           "scenario_id": "decedent-estate-informal",
           "relationship": "relates_to",
           "description": "The ward is a beneficiary of the decedent's estate."

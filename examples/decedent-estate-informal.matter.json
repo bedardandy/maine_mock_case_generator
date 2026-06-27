@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2026-698646",
+    "matter_id": "MMC-2026-687472",
     "practice_area": "probate",
     "title": "Estate of Olivia B. Ellsworth: informal probate and appointment of Theodore B. Kingsley",
     "jurisdiction": {
@@ -23,7 +23,7 @@
     "status": "pre_filing",
     "summary": "Theodore B. Kingsley applies for informal probate of the estate of Olivia B. Ellsworth, who died on 2025-09-22 domiciled in Sagadahoc County, Maine, and asks the Bath Probate Court to be appointed personal representative to marshal an estate valued at roughly $628705, pay valid claims, and distribute the remainder to the heirs and devisees.",
     "event_date": "2025-09-22",
-    "docket_number": "SAG-PE-2026-415"
+    "docket_number": "SAG-PE-2026-935"
   },
   "parties": {
     "decedent": {
@@ -118,55 +118,55 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Rosa M. Noe",
-      "type": "beneficiary",
-      "role": "Devisee named in the will",
-      "relationship": "Named devisee",
-      "relevance": "A person named to take under the will; entitled to notice and to receive the devise if the will is admitted.",
-      "contact": {
-        "phone": "(207) 555-0112",
-        "city": "Falmouth",
-        "state": "ME",
-        "email": "rosa.noe@example.com"
-      }
-    },
-    {
-      "id": "tp2",
-      "name": "Desmond S. Noe",
+      "name": "Samuel C. Jessup",
       "type": "beneficiary",
       "role": "Adult child of the decedent",
       "relationship": "Heir at law",
       "relevance": "An heir and potential devisee who is entitled to notice and to a distributive share of the estate.",
       "contact": {
-        "phone": "(207) 555-0187",
-        "city": "Lewiston",
+        "phone": "(207) 555-0172",
+        "city": "Bangor",
         "state": "ME",
-        "email": "desmond.noe@example.net"
+        "email": "samuel.jessup@example.net"
       }
     },
     {
-      "id": "tp3",
-      "name": "Lillian K. Danforth",
+      "id": "tp2",
+      "name": "Felix L. Fairbanks",
       "type": "beneficiary",
       "role": "Surviving spouse of the decedent",
       "relationship": "Surviving spouse",
       "relevance": "A statutory beneficiary entitled to an intestate share, homestead allowance, and any family allowance; must receive notice of the proceeding.",
       "contact": {
-        "phone": "(207) 555-0131",
-        "city": "Orono",
+        "phone": "(207) 555-0159",
+        "city": "Auburn",
         "state": "ME",
-        "email": "lillian.danforth@example.net"
+        "email": "felix.fairbanks@example.com"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Henry C. Boe",
+      "type": "beneficiary",
+      "role": "Devisee named in the will",
+      "relationship": "Named devisee",
+      "relevance": "A person named to take under the will; entitled to notice and to receive the devise if the will is admitted.",
+      "contact": {
+        "phone": "(207) 555-0173",
+        "city": "Belfast",
+        "state": "ME",
+        "email": "henry.boe@example.net"
       }
     },
     {
       "id": "tp4",
-      "name": "Coastal Maine Medical Center",
-      "type": "creditor",
-      "role": "Medical creditor of the estate",
-      "relevance": "Holds an unpaid claim for the decedent's final medical care that must be presented within the statutory claims period.",
+      "name": "Downeast Federal Savings",
+      "type": "financial_institution",
+      "role": "Bank holding the decedent's accounts",
+      "relevance": "Holds the decedent's checking, savings, and brokerage accounts that the personal representative must marshal and administer.",
       "contact": {
-        "phone": "(207) 555-0138",
-        "city": "Lewiston",
+        "phone": "(207) 555-0136",
+        "city": "Yarmouth",
         "state": "ME"
       }
     }
@@ -231,88 +231,90 @@
   },
   "issues": [
     {
-      "issue": "Determination of heirs and their shares by intestate succession",
+      "issue": "Timeliness of commencing the probate proceeding",
       "category": "probate",
-      "governing_law": "18-C M.R.S. § 2-103",
+      "governing_law": "18-C M.R.S. § 3-108",
       "sub_questions": [
-        "Who are the decedent's heirs as a matter of law?",
-        "What fractional share does each heir take?"
+        "Is the application brought within the period allowed to commence probate?",
+        "Do any exceptions to the limitation period apply?"
       ],
-      "strength": "moderate",
-      "client_position": "Seeks an accurate determination of the 3 heir(s) and their respective shares.",
+      "strength": "strong",
+      "client_position": "Files well within the limitation period for commencing probate after the decedent's death.",
       "id": "iss1"
     },
     {
-      "issue": "Sufficiency of the application for informal probate and appointment",
+      "issue": "Presentation and limitation of creditor claims against the estate",
       "category": "probate",
-      "governing_law": "18-C M.R.S. § 3-301",
+      "governing_law": "18-C M.R.S. § 3-803",
       "sub_questions": [
-        "Does the application contain all statements required for informal probate or informal appointment?",
-        "Is venue proper in the county of the decedent's domicile at death?"
+        "Within what period must creditors present claims before they are barred?",
+        "Are the medical and funeral claims valid, and in what order are they paid?"
       ],
-      "strength": "strong",
-      "client_position": "Contends the application is complete and properly venued in Sagadahoc County so informal probate may proceed.",
+      "strength": "moderate",
+      "client_position": "Intends to give notice to creditors and pay only timely, valid claims in their statutory order of priority.",
       "id": "iss2"
     },
     {
-      "issue": "Homestead allowance for the surviving spouse",
+      "issue": "Priority for appointment of the personal representative",
       "category": "probate",
-      "governing_law": "18-C M.R.S. § 2-402",
+      "governing_law": "18-C M.R.S. § 3-203",
       "sub_questions": [
-        "Is a surviving spouse entitled to the statutory homestead allowance?",
-        "How does the allowance affect the shares of other claimants and heirs?"
+        "Does the applicant have priority for appointment among those willing to serve?",
+        "Have persons with equal or higher priority been given notice or renounced?"
       ],
-      "strength": "moderate",
-      "client_position": "Acknowledges any homestead allowance owed to a surviving spouse before general distribution.",
+      "strength": "strong",
+      "client_position": "Asserts priority for appointment as the decedent's surviving spouse and that no person with higher priority objects.",
       "id": "iss3"
-    },
+    }
+  ],
+  "expert_opinions": [
     {
-      "issue": "Intestate share if the decedent died without a valid will",
-      "category": "probate",
-      "governing_law": "18-C M.R.S. § 2-102",
-      "sub_questions": [
-        "If there is no will, what share passes to the surviving spouse?",
-        "How is the balance distributed among the decedent's heirs?"
-      ],
-      "strength": "moderate",
-      "client_position": "If no valid will exists, seeks distribution to the surviving spouse and heirs as the intestacy statutes direct.",
-      "id": "iss4"
+      "id": "exp1",
+      "expert": {
+        "name": "John W. Poe",
+        "field": "Estate accounting",
+        "credentials": "CPA",
+        "retained_by": "personal_representative"
+      },
+      "topic": "Inventory, accounting, and solvency of the estate",
+      "opinion": "The estate is solvent, and the proposed inventory and accounting fairly reflect its assets, debts, and distributions.",
+      "basis": "Review of account statements, claims presented, and the preliminary inventory of assets."
     }
   ],
   "evidence": [
     {
-      "title": "Original last will and testament",
-      "type": "document",
+      "title": "Preliminary inventory of assets",
+      "type": "financial_record",
       "party": "personal_representative",
-      "description": "The decedent's original will, dated 2012-08-22, offered for informal probate if a valid will exists.",
+      "description": "Schedule of the estate's real and personal property with date-of-death values.",
       "id": "ev1"
+    },
+    {
+      "title": "Funeral bill and other claims",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "description": "Funeral and burial invoice and other creditor claims presented against the estate.",
+      "id": "ev2"
     },
     {
       "title": "Bank and brokerage statements",
       "type": "financial_record",
       "party": "personal_representative",
       "description": "Account statements documenting the decedent's cash and investment accounts.",
-      "id": "ev2"
+      "id": "ev3"
     },
     {
       "title": "Recorded deed to real property",
       "type": "public_record",
       "party": "personal_representative",
       "description": "Recorded deed evidencing the decedent's interest in real property, where applicable.",
-      "id": "ev3"
-    },
-    {
-      "title": "Certified death certificate",
-      "type": "public_record",
-      "party": "personal_representative",
-      "description": "Certified copy of the decedent's death certificate establishing the date and place of death.",
       "id": "ev4"
     },
     {
-      "title": "Preliminary inventory of assets",
-      "type": "financial_record",
+      "title": "Original last will and testament",
+      "type": "document",
       "party": "personal_representative",
-      "description": "Schedule of the estate's real and personal property with date-of-death values.",
+      "description": "The decedent's original will, dated 2012-08-22, offered for informal probate if a valid will exists.",
       "id": "ev5"
     }
   ],
@@ -320,24 +322,14 @@
     "currency": "USD",
     "amounts": [
       {
-        "label": "Vehicle and personal property",
-        "amount": 32897,
-        "basis": "Estimated value of the decedent's vehicle and tangible personal property."
+        "label": "Real property value",
+        "amount": 368564,
+        "basis": "Estimated date-of-death fair market value of the decedent's real property."
       },
       {
         "label": "Bank and brokerage accounts",
-        "amount": 46051,
+        "amount": 44078,
         "basis": "Date-of-death balances of the decedent's cash and investment accounts."
-      },
-      {
-        "label": "Outstanding debts and claims",
-        "amount": 57048,
-        "basis": "Funeral expenses, final medical bills, and other creditor claims presented against the estate."
-      },
-      {
-        "label": "Real property value",
-        "amount": 169071,
-        "basis": "Estimated date-of-death fair market value of the decedent's real property."
       }
     ]
   },

@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-BCD-2025-394",
-    "case_id": "MMC-2025-570636",
+    "docket_number": "SAG-BCD-2025-174",
+    "case_id": "MMC-2025-738539",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court (Business and Consumer Docket)",
@@ -107,37 +107,37 @@
     "posture": "discovery",
     "docket": [
       {
-        "date": "2025-03-02",
+        "date": "2025-03-06",
         "entry": "Complaint for member oppression and judicial dissolution filed in the Business and Consumer Docket.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-03-26",
+        "date": "2025-03-30",
         "entry": "Defendants' answer and counterclaim filed; the LLC appears as a nominal defendant.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-04-29",
+        "date": "2025-04-19",
         "entry": "Scheduling order entered; discovery deadlines set.",
         "party": "the court"
       },
       {
-        "date": "2025-05-15",
+        "date": "2025-05-11",
         "entry": "Order granting the motion to compel inspection of books and records.",
         "party": "the court"
       },
       {
-        "date": "2025-07-04",
+        "date": "2025-07-15",
         "entry": "Order granting in part production of the side entity's records.",
         "party": "the court"
       },
       {
-        "date": "2025-09-15",
+        "date": "2025-09-22",
         "entry": "Plaintiff's valuation and forensic-accounting expert reports served; discovery continues.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-11-03",
+        "date": "2025-10-27",
         "entry": "Motion for a buyout / fair-value determination filed.",
         "party": "Grace C. Roe"
       }
@@ -147,41 +147,33 @@
         "title": "Motion to compel production of the diversion records",
         "type": "discovery",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-06-28",
+        "filed_date": "2025-06-25",
         "status": "granted_in_part",
         "relief": "An order compelling production of records relating to the side entity."
-      },
-      {
-        "title": "Motion for partial summary judgment on the fiduciary-duty claim",
-        "type": "dispositive",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-12-05",
-        "status": "opposed",
-        "relief": "Judgment that the controlling members breached their fiduciary duties."
       },
       {
         "title": "Motion to appoint a receiver or custodian",
         "type": "provisional",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-06-14",
+        "filed_date": "2025-05-29",
         "status": "under_advisement",
         "relief": "Appointment of a receiver or custodian to protect company assets."
+      },
+      {
+        "title": "Motion for partial summary judgment on the fiduciary-duty claim",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-12-03",
+        "status": "opposed",
+        "relief": "Judgment that the controlling members breached their fiduciary duties."
       },
       {
         "title": "Motion for a buyout / fair-value determination",
         "type": "dispositive",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-10-04",
+        "filed_date": "2025-11-04",
         "status": "filed",
         "relief": "An order setting a buyout of the minority interest at fair value."
-      },
-      {
-        "title": "Motion to compel inspection of books and records",
-        "type": "discovery",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-04-21",
-        "status": "granted",
-        "relief": "An order compelling inspection of the LLC's books and records."
       }
     ],
     "counterclaims": [
@@ -272,9 +264,9 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "Authorization under the operating agreement",
+        "defense": "Claims are derivative, not direct",
         "by": "Maria Q. Fairbanks",
-        "basis": "The operating agreement authorized the management decisions and compensation at issue."
+        "basis": "The asserted injuries are to the LLC and may be pursued only derivatively."
       },
       {
         "defense": "Unclean hands / prior breach",
@@ -282,19 +274,14 @@
         "basis": "The plaintiff breached first and comes to equity with unclean hands."
       },
       {
-        "defense": "Claims are derivative, not direct",
-        "by": "Maria Q. Fairbanks",
-        "basis": "The asserted injuries are to the LLC and may be pursued only derivatively."
-      },
-      {
-        "defense": "Business judgment",
-        "by": "Maria Q. Fairbanks",
-        "basis": "The challenged decisions were legitimate, good-faith exercises of business judgment."
-      },
-      {
         "defense": "Fair buyout offer",
         "by": "Maria Q. Fairbanks",
         "basis": "The buyout offered to the plaintiff was fair and reasonable."
+      },
+      {
+        "defense": "Authorization under the operating agreement",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The operating agreement authorized the management decisions and compensation at issue."
       }
     ]
   }

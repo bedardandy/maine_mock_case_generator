@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-174",
-    "case_id": "MMC-2025-738539",
+    "docket_number": "SAG-CV-2025-268",
+    "case_id": "MMC-2025-538433",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
@@ -96,71 +96,91 @@
     "standard_of_care_breached": true,
     "informed_consent_issue": false,
     "statute_of_limitations_concern": false,
-    "economic_damages": 1267698
+    "economic_damages": 1267698,
+    "general_752_sol_applies": false,
+    "medmal_specific_sol_applies": true,
+    "verify_medmal_sol_period": true,
+    "accrual_question": "discovery of a foreign object"
   },
   "litigation": {
     "posture": "discovery",
     "docket": [
       {
-        "date": "2024-09-14",
+        "date": "2024-08-26",
         "entry": "Notice of claim served, initiating the mandatory prelitigation screening panel process.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2024-12-03",
+        "date": "2024-11-04",
         "entry": "Prelitigation screening panel convened; chair appointed and submissions ordered.",
         "party": "the court"
       },
       {
-        "date": "2025-02-20",
+        "date": "2025-02-07",
         "entry": "Complaint and demand for jury trial filed after the screening-panel process.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-03-02",
+        "date": "2025-03-03",
         "entry": "Answers, cross-claim, and third-party complaint against the consulting provider filed.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-04-15",
+        "date": "2025-04-07",
         "entry": "Scheduling order entered; discovery and expert deadlines set.",
         "party": "the court"
       },
       {
-        "date": "2025-07-18",
+        "date": "2025-07-15",
         "entry": "Order compelling production of the credentialing file.",
         "party": "the court"
       },
       {
-        "date": "2025-12-02",
+        "date": "2025-11-25",
         "entry": "Expert disclosures exchanged; discovery continues toward trial.",
         "party": "the court"
       }
     ],
     "motions": [
       {
-        "title": "Motion in limine to exclude a plaintiff expert",
+        "title": "Motion to bifurcate liability and damages",
+        "type": "trial",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-03-26",
+        "status": "filed",
+        "relief": "Separate trials on liability and damages."
+      },
+      {
+        "title": "Motion regarding the admissibility of the screening-panel findings",
         "type": "evidentiary",
         "movant": "Maria Q. Fairbanks",
-        "filed_date": "2026-03-09",
-        "status": "opposed",
-        "relief": "Exclusion of an unreliable expert opinion under Daubert and M.R.E. 702."
+        "filed_date": "2026-02-09",
+        "status": "filed",
+        "relief": "An order on whether and how the prelitigation screening panel findings are admissible. 24 M.R.S. § 2853."
+      },
+      {
+        "title": "Motion to compel the credentialing file",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-06-04",
+        "status": "granted",
+        "relief": "An order compelling production of the defendant physician's credentialing and privileging file."
       },
       {
         "title": "Motion for partial summary judgment on informed consent",
         "type": "dispositive",
         "movant": "Maria Q. Fairbanks",
-        "filed_date": "2025-10-21",
+        "filed_date": "2025-10-31",
         "status": "under_advisement",
         "relief": "Judgment that the informed-consent claim fails as a matter of law."
       },
       {
-        "title": "Motion to bifurcate liability and damages",
-        "type": "trial",
+        "title": "Motion in limine to exclude a plaintiff expert",
+        "type": "evidentiary",
         "movant": "Maria Q. Fairbanks",
-        "filed_date": "2026-03-09",
-        "status": "filed",
-        "relief": "Separate trials on liability and damages."
+        "filed_date": "2026-03-13",
+        "status": "opposed",
+        "relief": "Exclusion of an unreliable expert opinion under Daubert and M.R.E. 702."
       }
     ],
     "causes_of_action": [
@@ -232,14 +252,19 @@
         "basis": "The treatment conformed to the accepted standard of care for the specialty."
       },
       {
+        "defense": "Statute of limitations",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The action was not commenced within the three-year limitations period. 24 M.R.S. § 2902."
+      },
+      {
         "defense": "Known risk or complication",
         "by": "Maria Q. Fairbanks",
         "basis": "The injury was a recognized risk or complication of the procedure, not the result of negligence."
       },
       {
-        "defense": "Intervening or superseding cause",
+        "defense": "Statute of limitations (med-mal-specific period)",
         "by": "Maria Q. Fairbanks",
-        "basis": "An independent intervening cause, not the defendant's care, produced the injury."
+        "basis": "The action was not commenced within the med-mal-specific limitations period of 24 M.R.S. ch. 21; the general 14 M.R.S. § 752 6-year period does not apply. NOTE: the exact period and accrual rule should be verified against current statute."
       }
     ]
   }

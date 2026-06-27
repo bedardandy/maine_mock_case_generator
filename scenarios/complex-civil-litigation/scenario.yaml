@@ -45,6 +45,87 @@ facts:
   # Pleading relief (feed litigation__pleading): the matter-specific relief the
   # prayer requests.
   relief_requested: {pick: ["compensatory damages, prejudgment interest, and costs", "rescission, disgorgement, and compensatory damages", "compensatory and punitive damages, attorney fees, and costs"]}
+  # Whether a governmental / quasi-public entity (e.g., a public economic-development
+  # authority that co-invested in and promoted the offering) is also a defendant — the
+  # discriminator the MTCA confounder gates on. Rare; most matters are purely private.
+  governmental_codefendant: {pick: [false, false, false, false, true]}
+
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues layered on the primary
+# fraud / fiduciary-duty claims. Most matters draw ZERO. Each entry injects
+# coherent ground-truth facts + a spotted issue + (where apt) an affirmative
+# defense, with its Maine grounding and a confidence flag. AI-assembled research,
+# NOT legal advice (see DISCLAIMER.md). Overbroad-application risk is stated
+# inline so the oracle is the CORRECT Maine rule, not a naive over-claim.
+confounders:
+  count: {weights: [60, 26, 11, 3]} # ~60% of matters stay clean
+  pool:
+    # MTCA: only where a governmental/quasi-public co-defendant fits.
+    - id: governmental-codefendant-mtca
+      weight: 2
+      requires: {governmental_codefendant: true}
+      confidence: "VERIFIED — 14 M.R.S. § 8103 immunity, § 8104-A exceptions, § 8105 $400K cap, § 8107 365-day notice; exception application fact-intensive"
+      source: "14 M.R.S. § 8103 (governmental immunity); § 8104-A (four exception categories — motor vehicles, public buildings, pollutant discharge, road construction); § 8105 ($400,000 per-occurrence cap); § 8107 (365-day pre-suit notice of claim)"
+      facts:
+        governmental_codefendant_present: true
+        governmental_entity_type: {pick: [state, municipality, county]}
+        mtca_notice_days: 365
+        mtca_damages_cap: 400000
+        immunity_exception_fits: false
+      issue:
+        issue: "Governmental co-defendant — MTCA immunity, the 365-day notice, and the $400,000 cap"
+        category: procedure
+        governing_law: "14 M.R.S. § 8103; § 8104-A; § 8105; § 8107"
+        sub_questions:
+          - "A public economic-development authority pursued on the negligent-misrepresentation count is immune under 14 M.R.S. § 8103 unless one of the four § 8104-A categories (motor vehicles, public buildings, pollutant discharge, road construction) fits — none plainly reaches a financial-disclosure tort, so the tort count may be barred outright."
+          - "A 365-day written notice of claim (14 M.R.S. § 8107) is a hard pre-suit condition, and the $400,000 per-occurrence cap (§ 8105) applies regardless of the multimillion-dollar claim."
+        strength: moderate
+        notes: "Overbroad-risk: MTCA notice is 365 DAYS (14 M.R.S. § 8107), not 180; the $400,000 cap (§ 8105) is per occurrence, not per plaintiff, so a multi-investor loss against one public entity is capped and apportioned, not multiplied. Immunity is the default; the § 8104-A exceptions are narrow and must be pleaded."
+      defense:
+        defense: "Governmental immunity / untimely MTCA notice / damages cap"
+        by: "the governmental co-defendant"
+        basis: "The negligent-misrepresentation claim against the public entity is barred by 14 M.R.S. § 8103 absent a § 8104-A exception and a timely 365-day notice (§ 8107), and is in any event capped at $400,000 (§ 8105). NOTE: none of the four § 8104-A categories plainly reaches a securities/financial-disclosure tort."
+    # limitations theory selection across the pleaded theories.
+    - id: sol-theory-selection
+      weight: 3
+      confidence: "VERIFIED — 14 M.R.S. § 752 6-year general period; discovery-rule accrual for fraud is fact-specific/EXPERIMENTAL"
+      source: "14 M.R.S. § 752 (6-year general civil limitations); accrual/discovery-rule application is fact-specific; a UTPA theory (5 M.R.S. § 213) or a governmental theory (14 M.R.S. § 8107, 365-day notice) carries a different and shorter clock"
+      facts:
+        accrual_theory: {pick: ["the transaction (investment) date", "the date the misstatement was discovered"]}
+        discovery_rule_invoked: true
+        general_tort_sol_years: 6
+      issue:
+        issue: "Statute of limitations — when the claims accrued and which theory's clock governs"
+        category: procedure
+        governing_law: "14 M.R.S. § 752"
+        sub_questions:
+          - "Do the fraud and breach claims accrue at {accrual_theory}? The 14 M.R.S. § 752 6-year clock runs from accrual, and whether a discovery rule defers accrual for concealed fraud is contested."
+          - "A claim recast as a UTPA violation (5 M.R.S. § 213) or against a governmental defendant (14 M.R.S. § 8107, 365 days) is governed by a different, shorter deadline than § 752."
+        strength: weak
+        notes: "Overbroad-risk: do NOT assume 14 M.R.S. § 752'§ 6 years covers every theory uniformly — accrual is theory- and fact-specific, and a UTPA or governmental overlay shortens the operative deadline."
+    # common-law statute of frauds: oral side-promises / suretyship.
+    - id: statute-of-frauds-suretyship
+      weight: 2
+      confidence: "High on the enumerated § 51 categories; Medium on the main-purpose/estoppel exception (fact-intensive)"
+      source: "33 M.R.S. § 51 (signed writing required — § 51(2) a promise to answer for another's debt (suretyship); § 51(5) an agreement not to be performed within one year); 'main purpose / leading object' rule can enforce an oral guaranty made primarily for the surety's own benefit"
+      facts:
+        oral_side_agreement_alleged: true
+        oral_guaranty_by_officer: {pick: [true, false]}
+        surety_main_purpose_own_benefit: {pick: [true, false]}
+        signed_writing_exists: false
+      issue:
+        issue: "Statute of frauds — whether an oral side-promise or personal guaranty is enforceable"
+        category: contract
+        governing_law: "33 M.R.S. § 51(2), (5)"
+        sub_questions:
+          - "If the CEO orally guaranteed the investment or a buy-back, 33 M.R.S. § 51(2) requires a signed writing — unless the 'main purpose / leading object' rule applies because the guaranty primarily served the CEO's own benefit."
+          - "Any side agreement not capable of performance within one year (§ 51(5)) likewise needs a signed writing, independent of the parties' other claims."
+        strength: weak
+        notes: "Overbroad-risk: the statute of frauds defeats only the oral promise it covers — consideration need not appear in the writing, the main-purpose exception or part performance can still enforce an oral guaranty, and it does not erase the written-contract or tort theories."
+      defense:
+        defense: "Statute of frauds"
+        by: "{defendant_2_full_name}"
+        basis: "Any oral guaranty or side-promise is unenforceable absent a signed writing under 33 M.R.S. § 51(2) and (5). NOTE: the main-purpose/leading-object rule and part performance are exceptions; the bar reaches only the oral promise, not the written agreement."
 
 third_parties:
   count: {min: 3, max: 5}

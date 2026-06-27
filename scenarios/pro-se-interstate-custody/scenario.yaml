@@ -124,3 +124,74 @@ financials:
     - {label: "Estimated travel costs for interstate exchanges", amount: {int_between: [1200, 9000]}, basis: "Flights or mileage between states."}
     - {label: "Court filing and service fees", amount: {int_between: [100, 350]}, basis: "Filing and out-of-state service."}
     - {label: "Lost income for court appearances", amount: {int_between: [400, 4000]}, basis: "Time away from work, self-represented."}
+
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues within the interstate
+# custody matter. Most matters draw ZERO. Each confounder injects coherent facts
+# + a spotted issue with its Maine grounding and a confidence flag; AI-assembled
+# research verified against legislature.maine.gov, NOT legal advice (see
+# DISCLAIMER.md). Overbroad-risk is stated inline so the oracle is the CORRECT
+# rule. UNVERIFIED case pinpoints are flagged and yield to the verified statute.
+confounders:
+  count: {weights: [60, 26, 11, 3]} # ~60% of matters stay clean
+  pool:
+    # UCCJEA home-state determination + the required § 1743 affidavit
+    - id: uccjea-home-state-and-affidavit
+      weight: 5
+      confidence: "High — the home-state rule is well-settled"
+      source: "19-A M.R.S. § 1745 (initial jurisdiction); § 1732(7) (home state = 6 consecutive months); § 1743 (required UCCJEA affidavit); In re Amberley D., 2001 ME 87 (home-state priority)"
+      facts:
+        uccjea_affidavit_required: true
+        child_five_year_residence_history_required: true
+        home_state_clock_months: 6
+        temporary_absences_count_toward_home_state: true
+      issue:
+        issue: "UCCJEA home-state determination and the required child-residence-history affidavit"
+        category: family
+        governing_law: "19-A M.R.S. § 1745; § 1732(7); § 1743; In re Amberley D., 2001 ME 87"
+        sub_questions:
+          - "Where has the child lived with a parent for the 6 consecutive months immediately before filing (temporary absences count)?"
+          - "Has the mandatory § 1743 UCCJEA affidavit (the child'§ 5-year residence history, custody claimants, and other proceedings) been prepared and filed?"
+        strength: moderate
+        notes: "Overbroad-risk: do NOT assign Maine UCCJEA jurisdiction on the petitioner's residency alone — the child'§ 6-month home-state clock controls; significant-connection jurisdiction (§ 1745(1)(B)) applies ONLY when no state is the home state; the § 1743 affidavit is a mandatory sub-document, and absent home-state jurisdiction Maine may resolve support/property but cannot enter an enforceable custody order."
+    # no-home-state / out-of-country edge (Seekins v. Hamm UNVERIFIED)
+    - id: uccjea-no-home-state-edge
+      weight: 2
+      requires: {relief_sought: "establish initial parental rights and a contact schedule"}
+      confidence: "UNVERIFIED / EXPERIMENTAL — Seekins v. Hamm (cited ~2015) is partially verified only; rely on the verified statutory hooks (§ 1745, § 1732(7)) and In re Amberley D., 2001 ME 87, not the unpinned Seekins pinpoint"
+      source: "19-A M.R.S. § 1745(1)(B) (significant connection, only when no home state); § 1732(7); cf. Seekins v. Hamm (UNVERIFIED pinpoint)"
+      facts:
+        no_home_state_question_raised: true
+        child_resided_abroad_possibility: {pick: [true, false]}
+        significant_connection_fallback_considered: true
+      issue:
+        issue: "Whether any state qualifies as the child's home state (the no-home-state and out-of-country edge)"
+        category: family
+        governing_law: "19-A M.R.S. § 1745(1)(B); § 1732(7); In re Amberley D., 2001 ME 87"
+        sub_questions:
+          - "If no state meets the 6-month home-state test, does significant-connection jurisdiction under § 1745(1)(B) apply?"
+          - "If the child resided outside any U.S. state, does Maine have UCCJEA jurisdiction at all?"
+        strength: unknown
+        notes: "Overbroad-risk: significant-connection jurisdiction is available ONLY when NO state is the home state; where a child resided outside any U.S. state Maine may lack UCCJEA jurisdiction entirely. The Seekins v. Hamm pinpoint is UNVERIFIED (EXPERIMENTAL) — the § 1745 / § 1732(7) statutory text and In re Amberley D. control."
+    # interstate relocation: 30-day notice / 60-mile / DV court-routed branch
+    - id: interstate-relocation-and-uccjea
+      weight: 3
+      requires: {existing_order: ["a prior order from another state exists", "a temporary Maine order exists"]}
+      confidence: "High (the 30-day notice and 60-mile presumption are explicit); Medium (rebuttal standards are case-specific); an interstate move requires CHECKING UCCJEA jurisdiction but does not by itself create or revive it"
+      source: "19-A M.R.S. § 1653(14); § 1657 (relocation notice; DV safety exception routes notice through the court); the UCCJEA, 19-A M.R.S. ch. 58 (an interstate relocation requires checking Maine's continuing / modification jurisdiction, including the § 1745 home-state and significant-connection analysis; it does not by itself create or revive jurisdiction)"
+      facts:
+        relocation_distance_miles: {int_between: [40, 600]}
+        relocation_crosses_state_line: true
+        days_notice_required: 30
+        dv_safety_concern: {pick: [true, false]}
+        notice_route: "30-day notice to the other parent; where notice would endanger the relocating parent or child, notice instead goes to the COURT, which provides safe notice"
+        modification_is_motion_not_new_complaint: true
+      issue:
+        issue: "Interstate relocation: 30-day notice, the 60-mile presumption, the motion-to-modify vehicle, the DV-safety court-routed-notice branch, and confirming UCCJEA jurisdiction"
+        category: family
+        governing_law: "19-A M.R.S. § 1653(14); § 1657; the UCCJEA, 19-A M.R.S. ch. 58 (incl. § 1745)"
+        sub_questions:
+          - "Is the move more than 60 miles from either party's residence, raising the rebuttable presumption of disrupted contact, and has Maine's continuing / modification jurisdiction under the UCCJEA (19-A M.R.S. ch. 58) been confirmed — the home-state and significant-connection analysis — since an interstate move does not by itself create or revive jurisdiction?"
+          - "Is relief sought by a motion to MODIFY the existing order, with notice given correctly — through the court where a DV-safety concern exists?"
+        strength: moderate
+        notes: "Overbroad-risk: the 60-mile trigger is a REBUTTABLE PRESUMPTION of substantial change, not a ban; the vehicle is a motion to modify, not a new complaint; where notice would endanger the relocating parent or child, notice routes through the COURT (which provides safe notice) — direct notice to the other parent must NEVER be hardcoded in a DV case; and an interstate relocation does NOT automatically 're-activate' or revive UCCJEA jurisdiction — it requires CHECKING Maine's continuing / modification jurisdiction under the UCCJEA (19-A M.R.S. ch. 58), including the home-state and significant-connection analysis."

@@ -1,12 +1,12 @@
 [
   {
     "universe_id": "UNIV-death-cascade-0007",
-    "matter_id": "MMC-2026-385699",
+    "matter_id": "MMC-2026-129936",
     "scenario_id": "decedent-estate-informal",
     "canonical": {
       "matter": {
-        "docket_number": "KEN-PE-2026-117",
-        "case_id": "MMC-2026-385699",
+        "docket_number": "KEN-PE-2026-628",
+        "case_id": "MMC-2026-129936",
         "court_county": "Kennebec",
         "court_location": "Augusta",
         "court_type": "Probate Court",
@@ -89,11 +89,11 @@
   },
   {
     "universe_id": "UNIV-death-cascade-0007",
-    "matter_id": "MMC-2026-444016",
+    "matter_id": "MMC-2026-915489",
     "scenario_id": "estate-tax-706",
     "canonical": {
       "matter": {
-        "case_id": "MMC-2026-444016",
+        "case_id": "MMC-2026-915489",
         "court_county": "Cumberland",
         "court_location": "Portland",
         "court_type": "Probate Court / IRS / Maine Revenue Services",

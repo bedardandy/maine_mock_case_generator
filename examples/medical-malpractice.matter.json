@@ -6,10 +6,13 @@
     "generator": "deterministic-engine",
     "generator_version": "0.1.0",
     "scenario_id": "medical-malpractice",
-    "seed": 7
+    "seed": 7,
+    "confounders": [
+      "medmal-specific-sol"
+    ]
   },
   "matter": {
-    "matter_id": "MMC-2025-738539",
+    "matter_id": "MMC-2025-538433",
     "practice_area": "civil",
     "title": "Grace C. Roe v. Maria Q. Fairbanks, M.D. et al.",
     "jurisdiction": {
@@ -23,7 +26,7 @@
     "status": "active",
     "summary": "Grace C. Roe sues physician Maria Q. Fairbanks and Coastal Outfitters LLC for medical malpractice, alleging that a surgical error in the course of obstetrics care departed from the standard of care and caused a worsened condition requiring further surgery.",
     "event_date": "2023-03-04",
-    "docket_number": "SAG-CV-2025-174"
+    "docket_number": "SAG-CV-2025-268"
   },
   "parties": {
     "plaintiff": {
@@ -148,39 +151,52 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Maine Board of Licensure in Medicine",
-      "type": "government_agency",
-      "role": "State physician licensing board",
-      "relevance": "Holds the physician's licensure and any complaint or disciplinary history relevant to credentialing.",
+      "name": "Summit Studios Corp.",
+      "type": "business_entity",
+      "role": "Hospital risk management department",
+      "relevance": "Maintains the incident reports, peer-review materials, and credentialing file for the defendant physician.",
       "contact": {
-        "phone": "(207) 555-0196",
+        "phone": "(207) 555-0188",
         "city": "Belfast",
         "state": "ME"
       }
     },
     {
       "id": "tp2",
-      "name": "John W. Poe",
+      "name": "Lillian C. Poe",
       "type": "witness",
       "role": "Nurse or technician present during care",
       "relevance": "Was present during the treatment at issue and documented the events in the medical record.",
       "contact": {
-        "phone": "(207) 555-0173",
-        "city": "Lewiston",
+        "phone": "(207) 555-0134",
+        "city": "Falmouth",
         "state": "ME",
-        "email": "john.poe@example.net"
+        "email": "lillian.poe@example.net"
       }
     },
     {
       "id": "tp3",
-      "name": "Cobblestone Partners Co.",
-      "type": "business_entity",
-      "role": "Hospital risk management department",
-      "relevance": "Maintains the incident reports, peer-review materials, and credentialing file for the defendant physician.",
+      "name": "Maine Board of Licensure in Medicine",
+      "type": "government_agency",
+      "role": "State physician licensing board",
+      "relevance": "Holds the physician's licensure and any complaint or disciplinary history relevant to credentialing.",
       "contact": {
-        "phone": "(207) 555-0108",
-        "city": "Augusta",
+        "phone": "(207) 555-0189",
+        "city": "Bath",
         "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Beatrice M. Ellsworth",
+      "type": "healthcare_provider",
+      "role": "Plaintiff's subsequent treating physician",
+      "relevance": "Provided the corrective care after the alleged negligence and can testify to the injury, causation, and the deviation from the standard of care.",
+      "contact": {
+        "phone": "(207) 555-0102",
+        "city": "Windham",
+        "state": "ME",
+        "email": "beatrice.ellsworth@example.com"
       }
     }
   ],
@@ -241,21 +257,21 @@
       "A nuisance-value settlement that ignores the cost of future medical and life care."
     ],
     "constraints": {
-      "budget": "Contingency-fee representation; expert and panel costs advanced and recovered from any judgment.",
+      "budget": "Cost-conscious but committed to funding the experts required to prove the standard of care and causation.",
       "timeline": "Wants the matter resolved efficiently while preserving the claim against the statute of limitations and the screening-panel prerequisites."
     }
   },
   "issues": [
     {
-      "issue": "Whether the defendant obtained the plaintiff's informed consent to the treatment",
-      "category": "medical_malpractice",
-      "governing_law": "Informed consent; the duty to disclose material risks and alternatives",
+      "issue": "Whether the plaintiff satisfied the mandatory prelitigation screening panel process and the admissibility of its findings",
+      "category": "procedure",
+      "governing_law": "Mandatory prelitigation screening panel, 24 M.R.S. § 2851; admissibility of panel findings, 24 M.R.S. § 2853",
       "sub_questions": [
-        "Did the provider disclose the material risks and alternatives?",
-        "Would a reasonable patient have declined the treatment had the risks been disclosed?"
+        "Was the claim properly submitted to and concluded before the screening panel?",
+        "Are the panel's findings admissible at trial, and on what terms?"
       ],
-      "strength": "weak",
-      "client_position": "The provider failed to disclose material risks and the plaintiff would have chosen differently.",
+      "strength": "moderate",
+      "client_position": "The screening-panel prerequisite was satisfied and any findings should come in on terms favorable to the plaintiff.",
       "id": "iss1"
     },
     {
@@ -271,35 +287,47 @@
       "id": "iss2"
     },
     {
-      "issue": "Whether the action was commenced within the three-year statute of limitations for professional negligence",
-      "category": "procedure",
-      "governing_law": "Three-year limitations period for professional-negligence claims, 24 M.R.S. § 2902",
+      "issue": "Whether the defendant obtained the plaintiff's informed consent to the treatment",
+      "category": "medical_malpractice",
+      "governing_law": "Informed consent; the duty to disclose material risks and alternatives",
       "sub_questions": [
-        "When did the cause of action accrue?",
-        "Does any tolling, including the screening-panel process, preserve the claim?"
+        "Did the provider disclose the material risks and alternatives?",
+        "Would a reasonable patient have declined the treatment had the risks been disclosed?"
       ],
-      "strength": "moderate",
-      "client_position": "The action is timely, with the screening-panel process tolling the limitations period.",
+      "strength": "weak",
+      "client_position": "The provider failed to disclose material risks and the plaintiff would have chosen differently.",
       "id": "iss3"
     },
     {
-      "issue": "Whether the plaintiff satisfied the mandatory prelitigation screening panel process and the admissibility of its findings",
-      "category": "procedure",
-      "governing_law": "Mandatory prelitigation screening panel, 24 M.R.S. § 2851; admissibility of panel findings, 24 M.R.S. § 2853",
+      "issue": "Whether the hospital is vicariously liable for its providers and independently negligent in credentialing and supervision",
+      "category": "medical_malpractice",
+      "governing_law": "Vicarious liability (respondeat superior) and corporate/credentialing negligence",
       "sub_questions": [
-        "Was the claim properly submitted to and concluded before the screening panel?",
-        "Are the panel's findings admissible at trial, and on what terms?"
+        "Were the providers acting as agents or employees of the hospital?",
+        "Did the hospital negligently credential, supervise, or retain the providers?"
       ],
       "strength": "moderate",
-      "client_position": "The screening-panel prerequisite was satisfied and any findings should come in on terms favorable to the plaintiff.",
+      "client_position": "The hospital is vicariously liable for its providers and independently negligent in credentialing and supervision.",
       "id": "iss4"
+    },
+    {
+      "issue": "Statute of limitations — the med-mal-specific period, NOT the general 6-year tort clock",
+      "category": "procedure",
+      "governing_law": "24 M.R.S. ch. 21 (med-mal-specific limitations; the matter pleads § 2902); 14 M.R.S. § 752 expressly does NOT govern",
+      "sub_questions": [
+        "A claim that would be timely under the general 14 M.R.S. § 752 6-year period can be time-barred under the shorter med-mal-specific period — verify the exact number and accrual rule against current 24 M.R.S. ch. 21.",
+        "Does accrual run from discovery of a foreign object, and does the prelitigation screening-panel process toll it?"
+      ],
+      "strength": "moderate",
+      "notes": "Overbroad-risk / EXPERIMENTAL: do NOT assume 14 M.R.S. § 752'§ 6 years covers med-mal — it carries its own shorter period with distinct accrual (foreign-object, continuing-treatment, minors). Treat the exact figure as to-be-verified, not settled. [confounder:medmal-specific-sol; EXPERIMENTAL on the exact period/accrual — anchored on the VERIFIED hook that 14 M.R.S. § 752'§ 6 years does NOT govern med-mal]",
+      "id": "iss5"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
       "expert": {
-        "name": "Lillian F. Danforth",
+        "name": "Wesley F. Poe",
         "field": "Defense standard of care",
         "credentials": "M.D.",
         "retained_by": "defendant"
@@ -311,19 +339,7 @@
     {
       "id": "exp2",
       "expert": {
-        "name": "Desmond S. Coe",
-        "field": "Life-care planning and economics",
-        "credentials": "Ph.D., CLCP",
-        "retained_by": "plaintiff"
-      },
-      "topic": "Future medical and life-care needs and lost earning capacity",
-      "opinion": "The plaintiff will require substantial future medical and life care and has sustained a quantifiable loss of earning capacity.",
-      "basis": "A life-care plan, treatment projections, wage records, and present-value modeling."
-    },
-    {
-      "id": "exp3",
-      "expert": {
-        "name": "John K. Noe",
+        "name": "Lillian W. Ellsworth",
         "field": "Medical causation",
         "credentials": "M.D.",
         "retained_by": "plaintiff"
@@ -331,100 +347,81 @@
       "topic": "Causal link between the breach and the injury",
       "opinion": "The departure from the standard of care, to a reasonable degree of medical certainty, proximately caused the plaintiff's injury.",
       "basis": "The medical records, the subsequent-care course, and the differential between expected and actual outcomes."
-    },
-    {
-      "id": "exp4",
-      "expert": {
-        "name": "Olivia P. Boe",
-        "field": "Same-specialty standard of care",
-        "credentials": "M.D.",
-        "retained_by": "plaintiff"
-      },
-      "topic": "The applicable standard of care and the defendant's departure from it",
-      "opinion": "The defendant's care fell below the standard of care for the specialty and a competent practitioner would have acted differently.",
-      "basis": "Review of the complete medical records, imaging, and the relevant professional standards."
     }
   ],
   "evidence": [
-    {
-      "title": "Incident and risk-management reports",
-      "type": "document",
-      "party": "defendant_2",
-      "description": "The hospital's incident reports and risk-management materials concerning the event.",
-      "id": "ev1"
-    },
-    {
-      "title": "Complete medical records and imaging",
-      "type": "medical_record",
-      "party": "plaintiff",
-      "description": "The full inpatient and outpatient records and diagnostic imaging from the care at issue.",
-      "id": "ev2"
-    },
-    {
-      "title": "Hospital policies and credentialing file",
-      "type": "document",
-      "party": "defendant_2",
-      "description": "The hospital's clinical policies and the defendant physician's credentialing and privileging file.",
-      "id": "ev3"
-    },
-    {
-      "title": "Notice of claim and screening-panel submissions and findings",
-      "type": "document",
-      "party": "plaintiff",
-      "description": "The statutory notice of claim, the parties' prelitigation screening panel submissions, and the panel's findings.",
-      "id": "ev4"
-    },
-    {
-      "title": "Subsequent-care records documenting the injury",
-      "type": "medical_record",
-      "party": "plaintiff",
-      "description": "The records of the corrective treatment that document the nature and extent of the injury.",
-      "id": "ev5"
-    },
     {
       "title": "Informed-consent form",
       "type": "document",
       "party": "defendant",
       "description": "The signed informed-consent documentation, or the absence of it, for the treatment.",
-      "id": "ev6"
-    },
-    {
-      "title": "Expert reports",
-      "type": "affidavit",
-      "party": "plaintiff",
-      "description": "The standard-of-care, causation, and life-care/economic expert reports.",
-      "id": "ev7"
+      "id": "ev1"
     },
     {
       "title": "Economic-loss and life-care documentation",
       "type": "financial_record",
       "party": "plaintiff",
       "description": "Wage records, billing, and the life-care plan supporting the damages claim.",
-      "id": "ev8"
+      "id": "ev2"
+    },
+    {
+      "title": "Notice of claim and screening-panel submissions and findings",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "The statutory notice of claim, the parties' prelitigation screening panel submissions, and the panel's findings.",
+      "id": "ev3"
+    },
+    {
+      "title": "Subsequent-care records documenting the injury",
+      "type": "medical_record",
+      "party": "plaintiff",
+      "description": "The records of the corrective treatment that document the nature and extent of the injury.",
+      "id": "ev4"
+    },
+    {
+      "title": "Incident and risk-management reports",
+      "type": "document",
+      "party": "defendant_2",
+      "description": "The hospital's incident reports and risk-management materials concerning the event.",
+      "id": "ev5"
+    },
+    {
+      "title": "Expert reports",
+      "type": "affidavit",
+      "party": "plaintiff",
+      "description": "The standard-of-care, causation, and life-care/economic expert reports.",
+      "id": "ev6"
+    },
+    {
+      "title": "Hospital policies and credentialing file",
+      "type": "document",
+      "party": "defendant_2",
+      "description": "The hospital's clinical policies and the defendant physician's credentialing and privileging file.",
+      "id": "ev7"
     }
   ],
   "financials": {
     "currency": "USD",
     "amounts": [
       {
-        "label": "Estimated expert and panel costs",
-        "amount": 228099,
-        "basis": "Retained medical and economic experts and the screening-panel proceeding."
-      },
-      {
-        "label": "Lost earnings and loss of earning capacity",
-        "amount": 730887,
-        "basis": "Past lost wages and the present value of diminished earning capacity."
-      },
-      {
         "label": "Pain-and-suffering and general-damages demand",
-        "amount": 847843,
+        "amount": 419555,
         "basis": "Non-economic loss demand."
       },
       {
         "label": "Projected future medical and life-care costs",
-        "amount": 1017841,
+        "amount": 684591,
         "basis": "Life-care plan and future-treatment projections."
+      },
+      {
+        "label": "Past medical specials",
+        "amount": 263224,
+        "basis": "Itemized past medical bills for the injury and corrective care."
+      },
+      {
+        "label": "Lost earnings and loss of earning capacity",
+        "amount": 705504,
+        "basis": "Past lost wages and the present value of diminished earning capacity."
       }
     ]
   },
@@ -499,14 +496,19 @@
         "basis": "The treatment conformed to the accepted standard of care for the specialty."
       },
       {
+        "defense": "Statute of limitations",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The action was not commenced within the three-year limitations period. 24 M.R.S. § 2902."
+      },
+      {
         "defense": "Known risk or complication",
         "by": "Maria Q. Fairbanks",
         "basis": "The injury was a recognized risk or complication of the procedure, not the result of negligence."
       },
       {
-        "defense": "Intervening or superseding cause",
+        "defense": "Statute of limitations (med-mal-specific period)",
         "by": "Maria Q. Fairbanks",
-        "basis": "An independent intervening cause, not the defendant's care, produced the injury."
+        "basis": "The action was not commenced within the med-mal-specific limitations period of 24 M.R.S. ch. 21; the general 14 M.R.S. § 752 6-year period does not apply. NOTE: the exact period and accrual rule should be verified against current statute."
       }
     ],
     "counterclaims": [],
@@ -529,104 +531,128 @@
     "discovery": [
       {
         "type": "deposition",
-        "propounding_party": "Grace C. Roe",
-        "responding_party": "the nurse or technician present during care",
-        "served_date": "2025-07-31",
+        "propounding_party": "Maria Q. Fairbanks",
+        "responding_party": "the plaintiff's standard-of-care expert",
+        "served_date": "2025-09-20",
         "status": "served",
-        "description": "Deposition of the nurse or technician who documented the events."
+        "description": "Deposition of the plaintiff's retained standard-of-care expert."
       },
       {
         "type": "interrogatories",
         "propounding_party": "Grace C. Roe",
         "responding_party": "Maria Q. Fairbanks",
-        "served_date": "2025-04-23",
+        "served_date": "2025-05-03",
         "status": "responded",
         "description": "First set of interrogatories on the treatment, the providers, and the standard of care."
       },
       {
-        "type": "subpoena",
+        "type": "request_for_production",
         "propounding_party": "Grace C. Roe",
-        "responding_party": "the subsequent treating provider",
-        "served_date": "2025-06-07",
-        "status": "served",
-        "description": "Subpoena to the subsequent treating provider for the corrective-care records."
+        "responding_party": "Coastal Outfitters LLC",
+        "served_date": "2025-04-25",
+        "status": "objected",
+        "description": "Requests for the complete records, clinical policies, and the credentialing file."
       },
       {
         "type": "deposition",
-        "propounding_party": "Maria Q. Fairbanks",
-        "responding_party": "the plaintiff's standard-of-care expert",
-        "served_date": "2025-09-01",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "the nurse or technician present during care",
+        "served_date": "2025-07-28",
         "status": "served",
-        "description": "Deposition of the plaintiff's retained standard-of-care expert."
+        "description": "Deposition of the nurse or technician who documented the events."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Maria Q. Fairbanks",
+        "served_date": "2025-07-15",
+        "status": "outstanding",
+        "description": "Deposition of the defendant physician on the care and decision-making."
       }
     ],
     "motions": [
       {
-        "title": "Motion in limine to exclude a plaintiff expert",
+        "title": "Motion to bifurcate liability and damages",
+        "type": "trial",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-03-26",
+        "status": "filed",
+        "relief": "Separate trials on liability and damages."
+      },
+      {
+        "title": "Motion regarding the admissibility of the screening-panel findings",
         "type": "evidentiary",
         "movant": "Maria Q. Fairbanks",
-        "filed_date": "2026-03-09",
-        "status": "opposed",
-        "relief": "Exclusion of an unreliable expert opinion under Daubert and M.R.E. 702."
+        "filed_date": "2026-02-09",
+        "status": "filed",
+        "relief": "An order on whether and how the prelitigation screening panel findings are admissible. 24 M.R.S. § 2853."
+      },
+      {
+        "title": "Motion to compel the credentialing file",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-06-04",
+        "status": "granted",
+        "relief": "An order compelling production of the defendant physician's credentialing and privileging file."
       },
       {
         "title": "Motion for partial summary judgment on informed consent",
         "type": "dispositive",
         "movant": "Maria Q. Fairbanks",
-        "filed_date": "2025-10-21",
+        "filed_date": "2025-10-31",
         "status": "under_advisement",
         "relief": "Judgment that the informed-consent claim fails as a matter of law."
       },
       {
-        "title": "Motion to bifurcate liability and damages",
-        "type": "trial",
+        "title": "Motion in limine to exclude a plaintiff expert",
+        "type": "evidentiary",
         "movant": "Maria Q. Fairbanks",
-        "filed_date": "2026-03-09",
-        "status": "filed",
-        "relief": "Separate trials on liability and damages."
+        "filed_date": "2026-03-13",
+        "status": "opposed",
+        "relief": "Exclusion of an unreliable expert opinion under Daubert and M.R.E. 702."
       }
     ],
     "docket": [
       {
-        "date": "2024-09-14",
+        "date": "2024-08-26",
         "entry": "Notice of claim served, initiating the mandatory prelitigation screening panel process.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2024-12-03",
+        "date": "2024-11-04",
         "entry": "Prelitigation screening panel convened; chair appointed and submissions ordered.",
         "party": "the court"
       },
       {
-        "date": "2025-02-20",
+        "date": "2025-02-07",
         "entry": "Complaint and demand for jury trial filed after the screening-panel process.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-03-02",
+        "date": "2025-03-03",
         "entry": "Answers, cross-claim, and third-party complaint against the consulting provider filed.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-04-15",
+        "date": "2025-04-07",
         "entry": "Scheduling order entered; discovery and expert deadlines set.",
         "party": "the court"
       },
       {
-        "date": "2025-07-18",
+        "date": "2025-07-15",
         "entry": "Order compelling production of the credentialing file.",
         "party": "the court"
       },
       {
-        "date": "2025-12-02",
+        "date": "2025-11-25",
         "entry": "Expert disclosures exchanged; discovery continues toward trial.",
         "party": "the court"
       }
     ],
     "trial": {
       "jury": true,
-      "estimated_days": 12,
-      "scheduled_date": "2026-12-10"
+      "estimated_days": 11,
+      "scheduled_date": "2027-02-01"
     }
   },
   "facts": {
@@ -639,6 +665,10 @@
     "standard_of_care_breached": true,
     "informed_consent_issue": false,
     "statute_of_limitations_concern": false,
-    "economic_damages": 1267698
+    "economic_damages": 1267698,
+    "general_752_sol_applies": false,
+    "medmal_specific_sol_applies": true,
+    "verify_medmal_sol_period": true,
+    "accrual_question": "discovery of a foreign object"
   }
 }

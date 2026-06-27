@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-161",
-    "case_id": "MMC-2025-691783",
+    "docket_number": "SAG-CV-2025-310",
+    "case_id": "MMC-2025-749078",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
@@ -99,40 +99,32 @@
         "party": "Maria Q. Jessup"
       },
       {
-        "date": "2025-07-14",
+        "date": "2025-07-24",
         "entry": "Application and motion to confirm the award filed.",
         "party": "Riverbend Analytics LLC"
       },
       {
-        "date": "2025-08-22",
+        "date": "2025-08-12",
         "entry": "Cross-motion to vacate the award filed.",
         "party": "Coastal Provisions LLC"
       },
       {
-        "date": "2025-09-18",
+        "date": "2025-09-22",
         "entry": "Briefing on the cross-applications completed.",
         "party": "Riverbend Analytics LLC"
       },
       {
-        "date": "2025-11-15",
+        "date": "2025-11-14",
         "entry": "Hearing / oral argument on the cross-motions held.",
         "party": "the court"
       }
     ],
     "motions": [
       {
-        "title": "Motion for entry of judgment and post-award interest",
-        "type": "procedural",
-        "movant": "Riverbend Analytics LLC",
-        "filed_date": "2026-01-30",
-        "status": "filed",
-        "relief": "Entry of judgment on the confirmed award with interest under 14 M.R.S. § 5943."
-      },
-      {
         "title": "Motion to seal the arbitration record",
         "type": "procedural",
         "movant": "Coastal Provisions LLC",
-        "filed_date": "2026-01-06",
+        "filed_date": "2025-07-15",
         "status": "granted_in_part",
         "relief": "An order sealing confidential portions of the arbitration record filed with the court."
       },
@@ -140,17 +132,17 @@
         "title": "Motion to confirm the arbitration award",
         "type": "dispositive",
         "movant": "Riverbend Analytics LLC",
-        "filed_date": "2026-03-23",
+        "filed_date": "2025-10-04",
         "status": "filed",
         "relief": "An order confirming the award under 14 M.R.S. § 5937."
       },
       {
-        "title": "Motion to modify or correct the award",
+        "title": "Cross-motion to vacate the arbitration award",
         "type": "dispositive",
         "movant": "Coastal Provisions LLC",
-        "filed_date": "2025-11-04",
-        "status": "under_advisement",
-        "relief": "Modification or correction of the award under 14 M.R.S. § 5939."
+        "filed_date": "2025-11-09",
+        "status": "opposed",
+        "relief": "An order vacating the award under 14 M.R.S. § 5938."
       }
     ],
     "causes_of_action": [
@@ -198,19 +190,14 @@
     ],
     "affirmative_defenses": [
       {
+        "defense": "The dispute was not arbitrable",
+        "by": "Coastal Provisions LLC",
+        "basis": "No valid agreement to arbitrate this dispute existed, so there was no arbitral authority. 14 M.R.S. § 5928."
+      },
+      {
         "defense": "Evident partiality / failure to disclose",
         "by": "Coastal Provisions LLC",
         "basis": "An arbitrator failed to disclose a conflict, showing evident partiality. 14 M.R.S. § 5938(1)(B)."
-      },
-      {
-        "defense": "Refusal to hear material evidence",
-        "by": "Coastal Provisions LLC",
-        "basis": "The panel refused to hear evidence material to the controversy, prejudicing the respondent. 14 M.R.S. § 5938(1)(D)."
-      },
-      {
-        "defense": "The arbitrators exceeded their powers",
-        "by": "Coastal Provisions LLC",
-        "basis": "The award granted relief outside the parties' agreement and the matters submitted. 14 M.R.S. § 5938(1)(C)."
       }
     ]
   }

@@ -24,7 +24,7 @@
     {
       "field_id": "docket_no",
       "fact_key": "matter.docket_number",
-      "value": "SAG-PE-2026-415",
+      "value": "SAG-PE-2026-935",
       "filled": true
     },
     {
@@ -279,8 +279,8 @@
   "profile": "canonical",
   "case": {
     "matter": {
-      "docket_number": "SAG-PE-2026-415",
-      "case_id": "MMC-2026-698646",
+      "docket_number": "SAG-PE-2026-935",
+      "case_id": "MMC-2026-687472",
       "court_county": "Sagadahoc",
       "court_location": "Bath",
       "court_type": "Probate Court",

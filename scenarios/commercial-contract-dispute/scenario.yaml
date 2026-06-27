@@ -220,3 +220,130 @@ procedure:
     produces: [litigation__opposition]
     deadline_days: 21
     deadline_rule: "M.R. Civ. P. 56(c) / 7(b) — opposition and opposing statement of material facts within 21 days."
+
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues layered on the primary
+# breach-of-supply-contract claim. Most matters draw ZERO. Each entry injects
+# coherent ground-truth facts + a spotted issue and, where apt, an affirmative
+# defense the supplier/guarantor raises; each carries its Maine grounding + a
+# confidence flag, with the overbroad caveat inline (issue.notes / defense.basis)
+# so the oracle is the CORRECT Maine rule. The base contract is a signed B2B
+# GOODS supply/distribution deal worth well over $500, so the confounders attach
+# to add-on orders, classification, conditions, damages clauses, and the UTPA
+# scope question without contradicting the signed-contract narrative. Sources are
+# AI-assembled research, NOT legal advice (see DISCLAIMER.md).
+confounders:
+  count: {weights: [60, 24, 11, 4, 1]} # ~60% of matters stay clean
+  pool:
+    # UCC statute of frauds, attached to a DISPUTED add-on/modified order
+    # (the base contract is signed/undisputed, so the writing fight is the add-on).
+    - id: ucc-statute-of-frauds-addon-order
+      weight: 4
+      confidence: "High — well-settled"
+      source: "11 M.R.S. § 2-201(1) (sale of goods of $500 or more needs a signed record, enforceable to the quantity shown); § 2-201(2) (merchant confirmatory memo binds a non-objecting merchant within 10 days); § 2-201(3) exceptions"
+      facts:
+        both_parties_merchants: true
+        disputed_addon_order_oral: {pick: [true, false]}
+        confirmatory_memo_sent: {pick: [true, false]}
+        disputed_quantity_in_record: {pick: [true, false]}
+        specially_manufactured: {pick: [true, false]}
+      issue:
+        issue: "UCC statute of frauds for a disputed additional or modified order of goods"
+        category: contract
+        governing_law: "11 M.R.S. § 2-201"
+        sub_questions:
+          - "Is the disputed add-on/modified order of goods of $500 or more supported by a signed record showing the quantity (§ 2-201(1)), or by a merchant confirmatory memo the other merchant did not object to within 10 days (§ 2-201(2))?"
+          - "Does a § 2-201(3) exception apply — specially-manufactured goods, an admission, or goods received and accepted / payment made and accepted?"
+        strength: moderate
+        notes: "Overbroad-risk: § 2-201 applies only to goods; run the predominant-purpose test first (it does not reach a service-dominant mixed deal), and quantity is the one term the record must get right."
+      defense:
+        defense: "Statute of frauds (UCC) as to the disputed additional quantity"
+        by: "{defendant_full_name}"
+        basis: "Any add-on/modified order of goods of $500 or more is unenforceable beyond the quantity in a signed record. 11 M.R.S. § 2-201(1). NOTE (overbroad-risk): a merchant confirmatory memo can satisfy § 2-201(2), and receipt-and-acceptance or part payment removes the bar to that extent; the defense does not reach the signed base contract."
+    # goods-vs-services predominant-purpose routing fork (UCC vs common law).
+    - id: predominant-purpose-goods-vs-services
+      weight: 4
+      confidence: "Medium — test settled, application fact-intensive"
+      source: "Smith v. Urethane Installations, Inc., 492 A.2d 1266 (Me. 1985); Dehahn v. Innes, 356 A.2d 711 (Me. 1976); Pearl Investments, LLC v. Standard I/O, Inc., 257 F. Supp. 2d 326 (D. Me. 2003)"
+      facts:
+        deal_character: {pick: [goods-predominant, mixed, services-component-significant]}
+        services_component: {pick: ["installation and setup", "territory management and marketing", "none of note"]}
+        real_property_also_involved: false
+        applicable_regime: "the predominant-purpose test decides UCC Article 2 vs. common law"
+      issue:
+        issue: "Whether the agreement is goods-predominant (UCC Article 2) or services-predominant (common law)"
+        category: contract
+        governing_law: "Smith v. Urethane Installations, Inc., 492 A.2d 1266 (Me. 1985); Dehahn v. Innes, 356 A.2d 711 (Me. 1976)"
+        sub_questions:
+          - "Under the predominant-feature test, is the deal goods-predominant (UCC Article 2: implied warranties under 11 M.R.S. § 2-314/§ 2-315, the § 2-201 writing rule, and the § 2-725 four-year limitations period) or services-predominant (common law: no implied merchantability, the § 51 statute of frauds, and a six-year limitations period under 14 M.R.S. § 752)?"
+          - "Does any real-property or equipment component drag the deal into the UCC, as in Dehahn v. Innes?"
+        strength: moderate
+        notes: "Overbroad-risk: routing any contract that involves physical materials to a goods template imports UCC warranties and § 2-201 into a service-dominant deal."
+      defense:
+        defense: "The agreement is services-predominant and outside UCC Article 2"
+        by: "{defendant_full_name}"
+        basis: "The predominant feature is distribution/services, so the common law governs and there are no implied warranties of merchantability or fitness. Smith v. Urethane Installations, Inc., 492 A.2d 1266 (Me. 1985). NOTE (overbroad-risk): the test is fact-intensive and a significant equipment/goods component can place the deal under the UCC (Dehahn v. Innes)."
+    # express conditions precedent (notice/cure) and waiver by conduct.
+    - id: conditions-precedent-and-waiver
+      weight: 3
+      confidence: "High on the strict-compliance rule; Medium on waiver (fact-intensive)"
+      source: "Associated Builders, Inc. v. Coggins, 1999 ME 12 (short payment delay not material; non-breaching party waived forfeiture); Pelletier v. Dwyer, 334 A.2d 867 (Me. 1975) (no reasonable notice of tender = no tender)"
+      facts:
+        cure_notice_was_express_condition: {pick: [true, false]}
+        time_of_essence_clause: {pick: [true, false]}
+        waiver_by_conduct: {pick: [true, false]}
+        deadline_missed_by_days: {int_between: [1, 20]}
+      issue:
+        issue: "Whether the notice/cure provision was an express condition strictly construed, or was waived by conduct"
+        category: contract
+        governing_law: "Associated Builders, Inc. v. Coggins, 1999 ME 12; Pelletier v. Dwyer, 334 A.2d 867 (Me. 1975)"
+        sub_questions:
+          - "Is the default-notice/cure provision an express condition (strict compliance required) or a covenant (only substantial performance), and did a time-of-the-essence clause elevate the deadline to a condition?"
+          - "Did the non-breaching party waive a missed deadline by conduct despite any written-waiver clause, and was timely notice of non-satisfaction given (untimely notice may be deemed satisfaction)?"
+        strength: moderate
+        notes: "Overbroad-risk: applying substantial-performance doctrine to an EXPRESS contingency wrongly excuses non-satisfaction; conversely, a short, non-material delay may be waived and not forfeit the contract (Coggins)."
+    # liquidated-damages vs unenforceable penalty (e.g., shortfall/late fees).
+    - id: liquidated-damages-vs-penalty
+      weight: 3
+      confidence: "High for goods under § 2-718; Medium for services (limited appellate law)"
+      source: "11 M.R.S. § 2-718(1) (LD valid only if reasonable in light of anticipated/actual harm, proof difficulty, and remedy inadequacy; an unreasonably large term is void as a penalty); § 2-718(2) (buyer restitution cap absent a valid LD clause); Sisters of Charity Health System, Inc. v. Farrago, 2011 ME 62"
+      facts:
+        liquidated_damages_clause: {pick: [true, false]}
+        ld_clause_type: {pick: ["minimum-purchase shortfall fee", "per-diem late fee", "early-termination fee"]}
+        per_diem_late_fee: {pick: [true, false]}
+        ld_reasonableness_disputed: true
+      issue:
+        issue: "Whether a liquidated-damages clause is enforceable or an unenforceable penalty"
+        category: remedies
+        governing_law: "11 M.R.S. § 2-718; Sisters of Charity Health System, Inc. v. Farrago, 2011 ME 62"
+        sub_questions:
+          - "For goods, does the clause satisfy the § 2-718(1) three-factor reasonableness test (anticipated or actual harm, difficulty of proof, inadequacy of other remedy), tested at both formation and breach?"
+          - "If the clause is void as a penalty, the claim reverts to proof of actual damages; and absent a valid LD clause, does the § 2-718(2) buyer-restitution cap apply?"
+        strength: moderate
+        notes: "Overbroad-risk: do not treat every pre-set damages figure as valid (penalties courts will void), nor treat all as suspect (under-counts legitimate hard-to-estimate clauses); per-diem late fees are high-risk penalty candidates."
+      defense:
+        defense: "The liquidated-damages clause is an unenforceable penalty"
+        by: "{defendant_full_name}"
+        basis: "The stipulated charge bears no reasonable relation to anticipated or actual harm and is void under 11 M.R.S. § 2-718(1); recovery reverts to proof of actual damages. NOTE (overbroad-risk): a clause that is a reasonable forecast of hard-to-estimate harm is enforceable (Sisters of Charity Health System, Inc. v. Farrago, 2011 ME 62)."
+    # UTPA overlay: this is a B2B/resale deal, so the consumer-only UTPA
+    # does NOT apply. Encode the CORRECT (negative) rule; do NOT over-apply.
+    - id: utpa-scope-not-a-consumer-transaction
+      weight: 2
+      confidence: "High on § 207/§ 213 text; Medium on what counts as unfair/deceptive"
+      source: "5 M.R.S. § 207 (unfair/deceptive acts unlawful); § 213 (private action for a personal/family/household-use purchaser; mandatory fees; 30-day written pre-suit demand); § 206 (defines 'trade or commerce')"
+      facts:
+        consumer_transaction: false
+        purchaser_use: "resale / commercial distribution"
+        utpa_applies: false
+        deceptive_act_alleged: false
+        utpa_30day_demand_required: false
+      issue:
+        issue: "Whether the Maine UTPA reaches this commercial (B2B) supply dispute"
+        category: contract
+        governing_law: "5 M.R.S. § 207; § 213; § 206"
+        sub_questions:
+          - "The § 213 private right of action is limited to a purchaser of goods/services for personal, family, or household use — does it reach this commercial reseller/distributor? It does not, so no § 213 30-day pre-suit demand letter is generated here."
+          - "Even in a consumer transaction, does a pure breach without an affirmative § 207 deceptive act support UTPA? It does not."
+        strength: weak
+        client_position: "Counsel confirms the UTPA does not apply: the buyer is a commercial reseller, not a § 213 consumer, and the claim is breach, not a deceptive act."
+        notes: "Overbroad-risk: do NOT generate a § 213 30-day demand sub-document for a B2B/resale dispute or for a pure breach with no § 207 deceptive act — the UTPA private action is a consumer-transaction remedy."

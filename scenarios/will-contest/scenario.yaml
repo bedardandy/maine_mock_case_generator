@@ -190,3 +190,101 @@ litigation:
     jury: {pick: [true, false]}
     estimated_days: {int_between: [3, 8]}
     scheduled_date: {date_between: ["2026-08-01", "2027-04-01"]}
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING -- confounding SECONDARY probate issues layered on the
+# primary capacity / undue-influence / execution contest. Most matters draw ZERO.
+# Grounded in 18-C M.R.S. (legislature.maine.gov)..07;
+# AI-assembled research, NOT legal advice (see DISCLAIMER.md). Each entry states
+# its overbroad-application risk inline so the oracle is the CORRECT Maine rule.
+confounders:
+  count: {weights: [60, 27, 10, 3]} # ~60% of matters stay clean
+  pool:
+    # will execution validity (witnessed/holographic; interested witness)
+    - id: execution-validity-interested-witness
+      weight: 4
+      confidence: "well-settled (§ 2-502 precise; 18-C abrogated the pre-2019 interested-witness purging rule)"
+      source: "18-C M.R.S. § 2-502; § 2-503; § 2-504"
+      facts:
+        will_type: witnessed
+        is_self_proved: false
+        interested_witness: true
+        witness_in_conscious_presence: false
+        applicable_code: "18-C"
+        execution_date: "{contested_will_date}"
+      issue:
+        issue: "Execution formalities and the effect of an interested witness on the contested will"
+        category: probate
+        governing_law: "18-C M.R.S. § 2-502; § 2-503; § 2-504"
+        sub_questions:
+          - "Was the will signed by the testator (or by proxy in the testator's conscious presence) and attested by at least two witnesses each signing within a reasonable time under § 2-502?"
+          - "Because the will is not self-proved (§ 2-503), must the proponent prove due execution through the attesting witnesses' live testimony?"
+          - "OVERBROAD-RISK / correct rule: a beneficiary serving as a witness does NOT void the will or purge the gift under 18-C M.R.S. § 2-504 -- the pre-2019 Title 18-A purging rule does not apply to a will executed after 2019-09-01, so 'interested witness' alone is not a ground to deny probate."
+        strength: moderate
+        notes: "Apply the 18-C code year; do not import the repealed 18-A § 2-504 interested-witness purging rule."
+      defense:
+        defense: "The will was duly executed under 18-C M.R.S. § 2-502 and an interested witness does not invalidate it"
+        by: "{defendant_full_name}"
+        basis: "The will satisfies the § 2-502 formalities; under 18-C M.R.S. § 2-504 a beneficiary-witness neither voids the will nor forfeits the devise (the pre-2019 18-A purging rule was abrogated). The absence of a § 2-503 self-proving affidavit only means execution is proven through the attesting witnesses."
+    # testamentary capacity + undue influence (burden allocation)
+    - id: undue-influence-burden-allocation
+      weight: 4
+      confidence: "well-settled (§ 3-407 burden; In re Estate of Lewis, 2001 ME 74 -- inference, not presumption, in will contests)"
+      source: "18-C M.R.S. § 3-407; In re Estate of Lewis, 2001 ME 74"
+      facts:
+        confidential_relationship: true
+        beneficiary_drafted_will: {pick: [true, false]}
+        proceeding_type: formal
+        contest_filed: true
+      issue:
+        issue: "Allocation of the undue-influence burden and the effect of a confidential relationship"
+        category: probate
+        governing_law: "18-C M.R.S. § 3-407; In re Estate of Lewis, 2001 ME 74"
+        sub_questions:
+          - "In this formal proceeding under § 3-407, once the proponent proves due execution, do the contestants carry the burden of proving undue influence by clear and convincing evidence?"
+          - "OVERBROAD-RISK / correct rule: in a Maine WILL contest a confidential relationship raises only an INFERENCE of undue influence, not the rebuttable presumption that applies to inter vivos transfers (In re Estate of Lewis) -- contestants must still prove moral coercion that destroyed the testator's free agency."
+        strength: moderate
+        notes: "Do not apply the inter vivos confidential-relationship presumption (Title 33) to a testamentary instrument."
+    # ademption / abatement + nonprobate routing
+    - id: ademption-nonprobate-routing
+      weight: 2
+      confidence: "§ 2-606 well-settled (MUPC intent theory); wrong-instrument / nonprobate routing fact-specific (Medium)"
+      source: "18-C M.R.S. § 2-606; § 3-902"
+      facts:
+        specific_devise_present: true
+        devised_property_still_in_estate: false
+        conservator_or_agent_sold_property: true
+        nonprobate_assets_pct: {int_between: [35, 80]}
+        joint_tenancy_assets: true
+        pod_beneficiaries_named: true
+      issue:
+        issue: "Ademption of a specific devise and the reach of the will over nonprobate assets"
+        category: probate
+        governing_law: "18-C M.R.S. § 2-606; § 3-902"
+        sub_questions:
+          - "A specifically devised asset was sold before death by an agent under a durable power of attorney -- does the devisee take a general pecuniary devise equal to the net sale price under § 2-606(c) rather than nothing?"
+          - "If a large share of the estate passed nonprobate (joint tenancy, POD/TOD, a funded revocable trust), does the contested will control those assets at all?"
+          - "OVERBROAD-RISK / correct rule: do NOT apply pre-MUPC identity-theory ademption (asset gone = devise fails); § 2-606 follows an intent theory and § 2-606(c) substitutes a pecuniary devise where a conservator or agent sold the property."
+        strength: moderate
+        notes: "MUPC intent-theory ademption controls; nonprobate assets pass outside the will regardless of the contest's outcome."
+    # intestate share formula on will failure (no prior will to fall back on)
+    - id: intestacy-share-on-will-failure
+      weight: 2
+      requires: {prior_will_existed: false}
+      confidence: "well-settled (MUPC § 2-102 four-scenario spouse share is unambiguous; the blended-family branch is the trap)"
+      source: "18-C M.R.S. § 2-101; § 2-102; § 2-103"
+      facts:
+        will_present: true
+        will_valid: false
+        full_vs_partial_intestacy: full
+        surviving_spouse: true
+        surviving_parent: false
+        all_descendants_joint: false
+      issue:
+        issue: "Intestate shares if the contested will is denied and no prior will controls"
+        category: probate
+        governing_law: "18-C M.R.S. § 2-101; § 2-102; § 2-103"
+        sub_questions:
+          - "If the contested will is denied probate and there is no prior will, does the entire estate pass by intestacy under § 2-101 et seq.?"
+          - "OVERBROAD-RISK / correct rule: the surviving spouse does NOT automatically take 100% -- under § 2-102 the spouse takes only a flat one-half where any surviving descendant is not also the spouse's descendant (blended family); the § 2-102 thresholds are inflation-adjusted under § 1-108."
+        strength: moderate
+        notes: "Apply the correct § 2-102 branch on blended-family facts; the balance passes to descendants per capita at each generation under § 2-103."

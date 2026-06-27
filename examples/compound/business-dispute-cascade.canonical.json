@@ -1,11 +1,11 @@
 [
   {
     "universe_id": "UNIV-business-dispute-cascade-0007",
-    "matter_id": "MMC-2026-560900",
+    "matter_id": "MMC-2026-237139",
     "scenario_id": "business-formation-scorp",
     "canonical": {
       "matter": {
-        "case_id": "MMC-2026-560900",
+        "case_id": "MMC-2026-237139",
         "court_county": "Kennebec",
         "court_location": "Augusta",
         "court_type": "Maine Secretary of State / IRS (filing offices)",
@@ -82,18 +82,23 @@
         "principal_activity": "retail of specialty goods",
         "expected_first_year_revenue": 162577,
         "responsible_party_name": "Nadia P. Loe",
-        "reasonable_compensation": 39970
+        "reasonable_compensation": 39970,
+        "entity_mislabeled_as_scorp_type": true,
+        "governing_act": "13-C M.R.S. (Maine Business Corporation Act)",
+        "internal_governance_instrument": "bylaws and a shareholder agreement",
+        "llc_operating_agreement_applies": false,
+        "s_corp_is_federal_tax_election": true
       }
     }
   },
   {
     "universe_id": "UNIV-business-dispute-cascade-0007",
-    "matter_id": "MMC-2025-539254",
+    "matter_id": "MMC-2025-748380",
     "scenario_id": "complex-civil-litigation",
     "canonical": {
       "matter": {
-        "docket_number": "CUM-CV-2025-616",
-        "case_id": "MMC-2025-539254",
+        "docket_number": "CUM-CV-2025-740",
+        "case_id": "MMC-2025-748380",
         "court_county": "Cumberland",
         "court_location": "Portland",
         "court_type": "Superior Court",
@@ -197,7 +202,8 @@
         "demand_made": true,
         "class_action": true,
         "auditor_role": "issued the audited financial statements relied upon in the offering",
-        "relief_requested": "rescission, disgorgement, and compensatory damages"
+        "relief_requested": "rescission, disgorgement, and compensatory damages",
+        "governmental_codefendant": false
       },
       "litigation": {
         "posture": "discovery",
