@@ -78,6 +78,16 @@ variants:
     covenant_type: release
     grantor_capacity: trustee
     grantor_authority: "as Trustee under the trust instrument, exercising the trustee's power of sale under 18-B M.R.S. § 816"
+    # The trustee deed names the specific trust and its instrument date; the trustee
+    # IS the transferor/grantor, conveying in a fiduciary capacity (no personal
+    # warranty). Without these a trustee's deed (33 M.R.S. § 775 Form 3) cannot recite
+    # its authority. trust_date predates the sale (the trust held the property first).
+    trust_name: "the {transferor_full_name} Revocable Living Trust"
+    trust_instrument: "Declaration of Trust"
+    trust_date: {date_between: ["1998-01-01", "2020-12-31"]}
+    trustee_name: "{transferor_full_name}"
+    fiduciary_name: "{transferor_full_name}"
+    fiduciary_capacity: "Trustee"
 
 # ---------------------------------------------------------------------------
 # LEGAL-ISSUE TIERING — confounding SECONDARY issues layered on the deed/covenant
