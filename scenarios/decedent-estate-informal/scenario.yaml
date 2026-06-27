@@ -46,11 +46,26 @@ variants:
     will_exists: true
     will_date: {date_between: ["2010-01-01", "2024-12-31"]}
     probate_type: "informal probate"
+    proceeding_type: informal
   - weight: 2
     testacy: intestate
     will_exists: false
     will_date: null
     probate_type: "informal appointment"
+    proceeding_type: informal
+  # EDGE CASE (plausible, uncommon): informal probate is NOT available, forcing a
+  # formal proceeding. Decision point: a minor/incapacitated heir, an objection or
+  # a competing will, a missing/lost original, or a demand for formal proceedings
+  # all require a formal petition adjudicated by the court (18-C M.R.S. § 3-401 et
+  # seq.) rather than the registrar's informal track (§ 3-301). The PR's authority
+  # and any heirship affidavit must reflect the formal posture.
+  - weight: 1
+    testacy: testate
+    will_exists: true
+    will_date: {date_between: ["2010-01-01", "2024-12-31"]}
+    probate_type: "formal testacy proceeding"
+    proceeding_type: formal
+    formal_reason: {pick: ["a minor heir requires a guardian ad litem", "an interested person demanded formal proceedings under 18-C M.R.S. § 3-401", "the original will cannot be located and a copy is offered", "a competing later will has surfaced"]}
 
 third_parties:
   count: {min: 2, max: 4}

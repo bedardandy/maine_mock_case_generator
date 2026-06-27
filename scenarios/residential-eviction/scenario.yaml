@@ -34,7 +34,6 @@ facts:
   monthly_rent: {int_between: [950, 2600]}
   notice_to_quit_date: {date_between: ["2025-10-01", "2026-04-15"]}
   other_attachment: {pick: ["", "Copy of the written lease attached", "Rent ledger attached"]}
-  section8_tenancy: {pick: [false, false, true]}
 
 # Coherent eviction bundles. The quit ground, the notice it requires under 14
 # M.R.S. § 6002, the tenancy it presupposes, and the arrears must agree — an
@@ -51,6 +50,7 @@ variants:
     months_in_arrears: {int_between: [1, 6]}
     total_rent_owed: {mul: ["{monthly_rent}", "{months_in_arrears}"]}
     other_eviction_basis: ""
+    section8_tenancy: false
   # termination of a tenancy at will — 30-day notice, § 6002(1); no rent claim
   - weight: 2
     quit_ground: at_will
@@ -60,6 +60,7 @@ variants:
     months_in_arrears: 0
     total_rent_owed: 0
     other_eviction_basis: ""
+    section8_tenancy: false
   # material lease violation — 7-day notice, § 6002(1)(B)
   - weight: 1
     quit_ground: lease_violation
@@ -69,6 +70,22 @@ variants:
     months_in_arrears: 0
     total_rent_owed: 0
     other_eviction_basis: {pick: ["Repeated disturbances affecting other tenants", "Unauthorized occupants in the unit"]}
+    section8_tenancy: false
+  # EDGE CASE (plausible, uncommon): a Section 8 voucher tenant. A no-cause
+  # at-will termination is NOT available — federal law (24 C.F.R. § 982.310) and
+  # the HAP contract require GOOD CAUSE and the longer of the lease/voucher notice
+  # periods, and the housing authority must be notified. Decision point: the
+  # landlord cannot use the ordinary 30-day no-cause path. nonpayment here is the
+  # tenant's share only.
+  - weight: 1
+    quit_ground: nonpayment_section8
+    eviction_basis: "nonpayment of the tenant's share of rent under a Section 8 Housing Choice Voucher tenancy"
+    notice_type: "notice to quit for nonpayment with good cause, copied to the housing authority"
+    tenancy_type: "a Section 8 Housing Choice Voucher tenancy under a HAP contract"
+    months_in_arrears: {int_between: [1, 3]}
+    total_rent_owed: {mul: ["{monthly_rent}", "{months_in_arrears}"]}
+    other_eviction_basis: "Good cause required; housing authority notified under the HAP contract"
+    section8_tenancy: true
 
 third_parties:
   count: {min: 2, max: 4}
