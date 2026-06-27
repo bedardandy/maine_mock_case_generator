@@ -38,9 +38,26 @@ facts:
   property_type: {pick: ["single-family residential", "residential condominium", "two-unit residential", "vacant residential land"]}
   adjusted_assessed_value: {int_between: [150000, 1100000]}
   special_circumstances_explanation: {pick: ["None", "Partial-interest transfer between family members", "Transfer includes seller-financing", "Short sale approved by lender"]}
-  deed_type: {pick: ["warranty deed", "quitclaim deed with covenant"]}
   financing: {pick: ["conventional mortgage", "cash", "seller financing", "FHA mortgage"]}
   transfer_tax_exemption: {pick: [false, false, true]}
+  # A living owner conveys in their own right, so the deed recites no fiduciary
+  # capacity. Emitted as ground truth so the deed templates stop guessing between
+  # individual / personal_representative / trustee.
+  grantor_capacity: individual
+
+# The deed the parties choose fixes the covenant the instrument gives. Rolling
+# deed_type and covenant_type independently let the warranty/quitclaim labels
+# disagree (the recurring covenant_type split). Bundle them: a warranty deed
+# (33 M.R.S. § 763) gives full covenants; a quitclaim deed with covenant
+# (33 M.R.S. § 765) covenants only against the grantor's own acts. covenant_type
+# is the ground-truth discriminator value.
+variants:
+  - weight: 1
+    deed_type: "warranty deed"
+    covenant_type: warranty
+  - weight: 1
+    deed_type: "quitclaim deed with covenant"
+    covenant_type: quitclaim_covenant
 
 third_parties:
   count: {min: 2, max: 4}

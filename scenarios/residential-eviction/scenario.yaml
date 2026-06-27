@@ -31,16 +31,44 @@ parties:
 facts:
   premises_address: {pick: ["22 Tidewater Lane, Apt 3", "108 Birch Street, Unit B", "5 Quarry Street, Apt 2", "76 Spruce Avenue, Unit 4"]}
   premises_city: {pick: ["Portland", "Lewiston", "Bangor", "Biddeford", "Augusta"]}
-  tenancy_type: {pick: ["a written one-year lease", "a month-to-month tenancy at will", "an expired lease continuing month-to-month"]}
   monthly_rent: {int_between: [950, 2600]}
-  months_in_arrears: {int_between: [1, 6]}
-  total_rent_owed: {int_between: [950, 15000]}
-  notice_type: {pick: ["7-day notice to quit for nonpayment of rent", "30-day notice to terminate a tenancy at will"]}
   notice_to_quit_date: {date_between: ["2025-10-01", "2026-04-15"]}
-  eviction_basis: {pick: ["nonpayment of rent", "material lease violation", "termination of a tenancy at will"]}
-  other_eviction_basis: {pick: ["", "Repeated disturbances affecting other tenants", "Unauthorized occupants in the unit"]}
   other_attachment: {pick: ["", "Copy of the written lease attached", "Rent ledger attached"]}
   section8_tenancy: {pick: [false, false, true]}
+
+# Coherent eviction bundles. The quit ground, the notice it requires under 14
+# M.R.S. § 6002, the tenancy it presupposes, and the arrears must agree — an
+# at-will termination is a 30-day notice with no rent claim; a nonpayment quit is
+# a 7-day notice whose owed amount tracks the rent and months behind. quit_ground
+# is emitted as the ground-truth discriminator value the fillers were guessing.
+variants:
+  # nonpayment of rent — 7-day notice, § 6002(1) (most common)
+  - weight: 4
+    quit_ground: nonpayment
+    eviction_basis: "nonpayment of rent"
+    notice_type: "7-day notice to quit for nonpayment of rent"
+    tenancy_type: {pick: ["a written one-year lease", "a month-to-month tenancy at will", "an expired lease continuing month-to-month"]}
+    months_in_arrears: {int_between: [1, 6]}
+    total_rent_owed: {mul: ["{monthly_rent}", "{months_in_arrears}"]}
+    other_eviction_basis: ""
+  # termination of a tenancy at will — 30-day notice, § 6002(1); no rent claim
+  - weight: 2
+    quit_ground: at_will
+    eviction_basis: "termination of a tenancy at will"
+    notice_type: "30-day notice to terminate a tenancy at will"
+    tenancy_type: "a month-to-month tenancy at will"
+    months_in_arrears: 0
+    total_rent_owed: 0
+    other_eviction_basis: ""
+  # material lease violation — 7-day notice, § 6002(1)(B)
+  - weight: 1
+    quit_ground: lease_violation
+    eviction_basis: "material lease violation"
+    notice_type: "7-day notice to quit for a material lease violation"
+    tenancy_type: {pick: ["a written one-year lease", "an expired lease continuing month-to-month"]}
+    months_in_arrears: 0
+    total_rent_owed: 0
+    other_eviction_basis: {pick: ["Repeated disturbances affecting other tenants", "Unauthorized occupants in the unit"]}
 
 third_parties:
   count: {min: 2, max: 4}

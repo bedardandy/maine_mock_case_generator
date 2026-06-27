@@ -7,6 +7,9 @@ A *spec* is any JSON/YAML value. Resolution rules:
 * ``{"pick_n": [...], "n": N}``   -> N random elements (N may be int or {min,max})
 * ``{"date_between": [iso, iso]}``-> a random ISO date in [start, end]
 * ``{"int_between": [lo, hi]}``   -> a random integer in [lo, hi]
+* ``{"mul": [a, b, ...]}``        -> product of the operands (each resolved first),
+                                     for coherent derived amounts (e.g. rent owed =
+                                     monthly_rent * months_in_arrears)
 * ``{"template": "..."}``         -> explicit template format (same as a bare str)
 * ``dict`` / ``list``             -> resolved recursively
 
@@ -26,6 +29,17 @@ class _SafeDict(dict):
 
 def safe_format(text: str, ctx: dict) -> str:
     return string.Formatter().vformat(text, (), _SafeDict(ctx))
+
+
+def _as_number(value) -> float:
+    """Coerce a resolved operand (possibly a '$1,200' style string) to a number."""
+    if isinstance(value, (int, float)):
+        return float(value)
+    cleaned = str(value).replace(",", "").replace("$", "").strip()
+    try:
+        return float(cleaned)
+    except ValueError:
+        return 0.0
 
 
 def _date_between(start: str, end: str, rng: random.Random) -> str:
@@ -73,6 +87,11 @@ def resolve(spec, ctx: dict, rng: random.Random):
         if "int_between" in spec and len(spec) == 1:
             lo, hi = spec["int_between"]
             return rng.randint(int(lo), int(hi))
+        if "mul" in spec and len(spec) == 1:
+            prod = 1.0
+            for operand in spec["mul"]:
+                prod *= _as_number(resolve(operand, ctx, rng))
+            return int(prod) if float(prod).is_integer() else round(prod, 2)
         if "template" in spec and len(spec) == 1:
             return safe_format(spec["template"], ctx)
         return {key: resolve(value, ctx, rng) for key, value in spec.items()}

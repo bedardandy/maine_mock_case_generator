@@ -27,6 +27,44 @@ def _random_recent_date(rng: random.Random) -> str:
     return (start + timedelta(days=rng.randint(0, 380))).isoformat()
 
 
+def _pick_variant(variants: list[dict], rng: random.Random) -> dict:
+    """Weighted, deterministic choice of one coherent fact-bundle."""
+    weights = [max(0.0, float(v.get("weight", 1))) for v in variants]
+    total = sum(weights) or float(len(variants))
+    threshold = rng.random() * total
+    upto = 0.0
+    for variant, weight in zip(variants, weights):
+        upto += weight or 1.0
+        if threshold <= upto:
+            return variant
+    return variants[-1]
+
+
+def _merge_variant(variant: dict, facts: dict, ctx: dict, rng: random.Random) -> None:
+    """Resolve a chosen variant key-by-key, merging into facts and ctx so later
+    keys (e.g. a derived amount) may reference earlier ones in the same bundle.
+    Keys whose value resolves to None are omitted entirely (e.g. will_date in an
+    intestate variant) so the matter stays internally consistent."""
+    for key, spec in variant.items():
+        if key in ("weight", "_label"):
+            continue
+        value = dsl.resolve(spec, ctx, rng)
+        if value is None:
+            # An absent fact (e.g. will_date in an intestate estate) is dropped
+            # from facts and bound to "" in ctx so any narrative/timeline/evidence
+            # reference renders empty instead of leaking a {placeholder}; an
+            # empty-string date is also filtered out of the timeline downstream.
+            facts.pop(key, None)
+            ctx[key] = ""
+            ctx[f"{key}_lower"] = ""
+            continue
+        facts[key] = value
+        if isinstance(value, (str, int, float)):
+            ctx[key] = value
+        if isinstance(value, str):
+            ctx[f"{key}_lower"] = value.lower()
+
+
 def _ctx_for_party(ctx: dict, key: str, party: dict) -> None:
     ctx[f"{key}_full_name"] = party.get("full_name", "")
     ctx[f"{key}_first"] = party.get("first_name", "")
@@ -99,7 +137,9 @@ def _build_parties(scenario: dict, ctx: dict, rng: random.Random, pools: Pools,
             party = copy.deepcopy(overrides[key])
             party.setdefault("role", role.get("label", ""))
         elif role.get("entity") == "organization":
-            party = build_organization(pools, name=role.get("name", ""), role=role.get("label", ""))
+            party = build_organization(pools, name=role.get("name", ""),
+                                       role=role.get("label", ""),
+                                       kind=role.get("entity_kind", ""))
         else:
             party = build_person(
                 pools,
@@ -277,6 +317,14 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
             ctx[key] = value
         if isinstance(value, str):
             ctx[f"{key}_lower"] = value.lower()
+
+    # Coherent variant bundle: pick one correlated set of facts and merge it so
+    # discriminating facts (notice_type<->quit_ground, will_exists<->testacy, ...)
+    # can never contradict each other. The downstream fillers then have a single
+    # consistent ground truth instead of an independently-rolled contradiction.
+    variants = scenario.get("variants")
+    if variants:
+        _merge_variant(_pick_variant(variants, rng), facts, ctx, rng)
 
     # event_date may reference a resolved fact (e.g. date_of_death)
     event_date = dsl.resolve(dates_spec["event_date"], ctx, rng) if dates_spec.get("event_date") else None
