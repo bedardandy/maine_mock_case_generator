@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-310",
-    "case_id": "MMC-2025-749078",
+    "docket_number": "SAG-CV-2025-796",
+    "case_id": "MMC-2025-620528",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
@@ -73,6 +73,223 @@
     "amount_owed": 264326,
     "guaranty_signed": true,
     "notice_of_default_date": "2025-06-16",
-    "cure_period_expired": true
+    "cure_period_expired": true,
+    "demand_recipient": "Coastal Provisions LLC",
+    "response_deadline_days": 30,
+    "relief_requested": "compensatory damages, prejudgment interest, and costs"
+  },
+  "litigation": {
+    "posture": "discovery",
+    "docket": [
+      {
+        "date": "2025-03-16",
+        "entry": "Complaint and demand for jury trial filed.",
+        "party": "Harbor Outfitters LLC"
+      },
+      {
+        "date": "2025-04-15",
+        "entry": "Answer and counterclaims filed.",
+        "party": "Coastal Provisions LLC"
+      },
+      {
+        "date": "2025-05-09",
+        "entry": "Scheduling order entered; discovery deadline set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-06-06",
+        "entry": "Order denying the motion to dismiss.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-07-19",
+        "entry": "Order compelling production of the defendant's financials.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-17",
+        "entry": "Cross-motions for summary judgment on the guaranty briefed.",
+        "party": "Harbor Outfitters LLC"
+      },
+      {
+        "date": "2025-10-29",
+        "entry": "Complaint for breach of contract and unjust enrichment filed and served.",
+        "party": "us"
+      },
+      {
+        "date": "2025-11-17",
+        "entry": "Discovery continues; expert disclosures exchanged.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-11-21",
+        "entry": "Defendant served its Answer and a Counterclaim alleging the plaintiff breached first and failed to mitigate.",
+        "party": "opposing"
+      },
+      {
+        "date": "2026-02-01",
+        "entry": "Defendant moved for summary judgment under M.R. Civ. P. 56, with a statement of material facts.",
+        "party": "opposing"
+      }
+    ],
+    "procedure": [
+      {
+        "date": "2025-10-29",
+        "day": 0,
+        "actor": "us",
+        "event": "Complaint for breach of contract and unjust enrichment filed and served.",
+        "produces": [
+          "litigation__pleading"
+        ]
+      },
+      {
+        "date": "2025-11-21",
+        "day": 23,
+        "actor": "opposing",
+        "event": "Defendant served its Answer and a Counterclaim alleging the plaintiff breached first and failed to mitigate.",
+        "produces": [
+          "litigation__reply"
+        ],
+        "response_deadline": "2025-12-12",
+        "deadline_rule": "M.R. Civ. P. 7(a) / 12(a) — reply to a counterclaim within 21 days."
+      },
+      {
+        "date": "2026-02-01",
+        "day": 95,
+        "actor": "opposing",
+        "event": "Defendant moved for summary judgment under M.R. Civ. P. 56, with a statement of material facts.",
+        "produces": [
+          "litigation__opposition"
+        ],
+        "response_deadline": "2026-02-22",
+        "deadline_rule": "M.R. Civ. P. 56(c) / 7(b) — opposition and opposing statement of material facts within 21 days."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for partial summary judgment on the guaranty",
+        "type": "dispositive",
+        "movant": "Harbor Outfitters LLC",
+        "filed_date": "2025-09-10",
+        "status": "under_advisement",
+        "relief": "Judgment that the personal guaranty is enforceable against the guarantor."
+      },
+      {
+        "title": "Motion for a protective order",
+        "type": "discovery",
+        "movant": "Coastal Provisions LLC",
+        "filed_date": "2025-06-14",
+        "status": "granted_in_part",
+        "relief": "Protection of confidential pricing and customer information."
+      },
+      {
+        "title": "Motion to dismiss for failure to state a claim",
+        "type": "dispositive",
+        "movant": "Coastal Provisions LLC",
+        "filed_date": "2025-04-18",
+        "status": "denied",
+        "relief": "Dismissal of the warranty and account-stated counts."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Breach of contract by the plaintiff",
+        "by": "Coastal Provisions LLC",
+        "against": "Harbor Outfitters LLC",
+        "relief": "Damages for the plaintiff's nonpayment and failure to take agreed quantities."
+      },
+      {
+        "count": 2,
+        "claim": "Wrongful rejection of conforming goods",
+        "by": "Coastal Provisions LLC",
+        "against": "Harbor Outfitters LLC",
+        "relief": "Damages for the price of goods wrongfully rejected and resale losses."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Breach of contract",
+        "by": "Harbor Outfitters LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "Common law; 11 M.R.S. § 2-301",
+        "elements": [
+          "A valid contract",
+          "Performance by the plaintiff",
+          "Material breach by the defendant",
+          "Resulting damages"
+        ],
+        "relief_sought": "Compensatory damages of approximately $264326 plus cover and lost-profit damages",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Breach of the implied warranties of merchantability and fitness",
+        "by": "Harbor Outfitters LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "11 M.R.S. § 2-314 and § 2-315",
+        "elements": [
+          "A sale of goods by a merchant",
+          "Goods that were not merchantable or fit for purpose",
+          "Notice of the breach",
+          "Resulting damages"
+        ],
+        "relief_sought": "Damages for the defective goods and consequential loss",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Account stated",
+        "by": "Harbor Outfitters LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "Common law account stated",
+        "elements": [
+          "An account between the parties",
+          "An agreed balance due",
+          "A promise, express or implied, to pay",
+          "Nonpayment"
+        ],
+        "relief_sought": "Judgment for the agreed unpaid balance",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Enforcement of personal guaranty",
+        "by": "Harbor Outfitters LLC",
+        "against": "Maria Q. Jessup",
+        "governing_law": "Suretyship; common law of guaranty",
+        "elements": [
+          "A valid, signed guaranty",
+          "Default by the principal obligor",
+          "Consideration",
+          "Amount due under the guaranty"
+        ],
+        "relief_sought": "Judgment against the guarantor for the guaranteed debt",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Failure to mitigate",
+        "by": "Coastal Provisions LLC",
+        "basis": "The plaintiff's cover purchases were unreasonable and inflated the claimed loss."
+      },
+      {
+        "defense": "Setoff and recoupment",
+        "by": "Coastal Provisions LLC",
+        "basis": "Any amount owed is offset by the plaintiff's own breaches and chargebacks."
+      },
+      {
+        "defense": "Statute of limitations",
+        "by": "Coastal Provisions LLC",
+        "basis": "The claims accrued more than four years before filing. 11 M.R.S. § 2-725."
+      },
+      {
+        "defense": "Accord and satisfaction",
+        "by": "Coastal Provisions LLC",
+        "basis": "The parties resolved the disputed amounts by a later agreement and payment."
+      }
+    ]
   }
 }

@@ -7,7 +7,7 @@
     "court_type": "District Court",
     "case_type": "divorce",
     "filing_date": "2025-06-17",
-    "event_date": "2025-06-08"
+    "event_date": "2025-08-31"
   },
   "parties": {
     "plaintiff": {
@@ -81,7 +81,8 @@
   },
   "facts": {
     "marriage_date": "2009-02-03",
-    "separation_date": "2025-06-08",
+    "marriage_place": "Brunswick, Maine",
+    "separation_date": "2025-08-31",
     "grounds": "irreconcilable differences",
     "marital_estate_value": 1599941,
     "suspected_crypto_value": 2676314,
@@ -92,5 +93,143 @@
     "forensic_expert_retained": true,
     "discovery_noncompliance": true,
     "disclosed_on_financial_statement": false
+  },
+  "litigation": {
+    "posture": "discovery",
+    "docket": [
+      {
+        "date": "2025-04-20",
+        "entry": "Complaint for divorce filed with a demand for full financial disclosure.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-05-10",
+        "entry": "Defendant's family financial statement (FM-043) filed; plaintiff disputes its completeness.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-06-23",
+        "entry": "Order compelling disclosure of digital assets entered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-07-29",
+        "entry": "Neutral forensic examiner appointed to image devices.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-01",
+        "entry": "Plaintiff's forensic report and motion for sanctions served.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-10-14",
+        "entry": "Motion for sanctions and an adverse inference taken under advisement.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-11-28",
+        "entry": "Pretrial conference held; valuation-date dispute reserved for trial.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for sanctions and an adverse inference",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-09-22",
+        "status": "under_advisement",
+        "relief": "An adverse inference and attorney fees for the concealment."
+      },
+      {
+        "title": "Motion to freeze and preserve the cryptocurrency",
+        "type": "injunctive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-05-19",
+        "status": "opposed",
+        "relief": "An order preserving and freezing the identified digital assets."
+      },
+      {
+        "title": "Motion to compel disclosure of digital assets",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-06-15",
+        "status": "granted",
+        "relief": "An order compelling full disclosure of wallets, keys, and exchange accounts."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Equitable division of the marital estate including the concealed cryptocurrency",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "19-A M.R.S. § 953",
+        "elements": [
+          "A valid marriage",
+          "Property acquired during the marriage",
+          "Classification of marital versus non-marital property",
+          "An equitable division"
+        ],
+        "relief_sought": "An equitable division that captures the plaintiff's share of the cryptocurrency",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "A finding of dissipation and economic misconduct adjusting the division",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "19-A M.R.S. § 953",
+        "elements": [
+          "Marital assets",
+          "Concealment or dissipation by a spouse",
+          "Loss to the marital estate",
+          "An adjustment to the division"
+        ],
+        "relief_sought": "An unequal division favoring the plaintiff to account for the misconduct",
+        "strength": "strong"
+      },
+      {
+        "count": 3,
+        "claim": "An order compelling full disclosure and an accounting of all digital assets",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "M.R. Civ. P. 26; FM-043 disclosure duty",
+        "elements": [
+          "A duty of full financial disclosure",
+          "An incomplete or false disclosure",
+          "Materiality of the omitted assets"
+        ],
+        "relief_sought": "A sworn, complete accounting of all wallets, keys, and exchange accounts",
+        "strength": "strong"
+      },
+      {
+        "count": 4,
+        "claim": "Discovery sanctions and an adverse inference for concealment",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "M.R. Civ. P. 37",
+        "elements": [
+          "A discovery obligation",
+          "Non-compliance or concealment",
+          "Prejudice to the plaintiff"
+        ],
+        "relief_sought": "An adverse inference, attorney fees, and preclusion",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "The keys or coins are genuinely lost",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The private keys are irretrievably lost and the coins cannot be produced or valued."
+      },
+      {
+        "defense": "The claimed value is overstated",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The plaintiff's valuation of the holdings is speculative and inflated."
+      }
+    ]
   }
 }

@@ -6,10 +6,13 @@
     "generator": "deterministic-engine",
     "generator_version": "0.1.0",
     "scenario_id": "real-estate-transfer",
-    "seed": 7
+    "seed": 7,
+    "confounders": [
+      "spousal-no-joinder-trap"
+    ]
   },
   "matter": {
-    "matter_id": "MMC-2025-846702",
+    "matter_id": "MMC-2025-657549",
     "practice_area": "real_estate",
     "title": "Sale of 129 Old Mill Road from Grace C. Roe to Maria Q. Fairbanks",
     "jurisdiction": {
@@ -94,7 +97,7 @@
   },
   "fact_pattern": {
     "summary": "Maria Q. Fairbanks is purchasing residential condominium at 129 Old Mill Road, Portland, Maine from Grace C. Roe for $831933, requiring a Maine Real Estate Transfer Tax Declaration at recording.",
-    "narrative": "Grace C. Roe has agreed to sell, and Maria Q. Fairbanks to buy, the residential condominium property at 129 Old Mill Road in Portland, Sagadahoc County, Maine. The agreed purchase price is $831933, with closing set for about 2026-03-17.\n\nThe buyer is financing the purchase through conventional mortgage, and title will pass by quitclaim deed with covenant. At recording in the Sagadahoc County Registry of Deeds, the parties must file a Real Estate Transfer Tax Declaration (RETTD) reporting the price, the property, and the transferor and transferee, and pay the Maine transfer tax unless an exemption applies.\n\nCounsel is handling the closing, confirming clear title, prorating taxes, and preparing the deed and the transfer tax declaration for the parties' signatures.",
+    "narrative": "Grace C. Roe has agreed to sell, and Maria Q. Fairbanks to buy, the residential condominium property at 129 Old Mill Road in Portland, Sagadahoc County, Maine. The agreed purchase price is $831933, with closing set for about 2026-03-17.\n\nThe buyer is financing the purchase through seller financing, and title will pass by quitclaim deed with covenant. At recording in the Sagadahoc County Registry of Deeds, the parties must file a Real Estate Transfer Tax Declaration (RETTD) reporting the price, the property, and the transferor and transferee, and pay the Maine transfer tax unless an exemption applies.\n\nCounsel is handling the closing, confirming clear title, prorating taxes, and preparing the deed and the transfer tax declaration for the parties' signatures.",
     "undisputed_facts": [
       "The property at 129 Old Mill Road, Portland is being transferred from Grace C. Roe to Maria Q. Fairbanks.",
       "The stated purchase price is $831933.",
@@ -108,25 +111,37 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "County Registry of Deeds",
-      "type": "government_agency",
-      "role": "Recording office",
-      "relevance": "Records the deed and the transfer tax declaration.",
+      "name": "Lighthouse Studios Corp.",
+      "type": "business_entity",
+      "role": "Real estate brokerage",
+      "relevance": "Represented the parties in the transaction.",
       "contact": {
-        "phone": "(207) 555-0179",
-        "city": "Camden",
+        "phone": "(207) 555-0131",
+        "city": "Orono",
         "state": "ME"
       }
     },
     {
       "id": "tp2",
-      "name": "Lighthouse Partners Corp.",
-      "type": "business_entity",
-      "role": "Title insurance company",
-      "relevance": "Issues the owner's and lender's title policies at closing.",
+      "name": "Maine Revenue Services",
+      "type": "government_agency",
+      "role": "Transfer tax authority",
+      "relevance": "Collects the real estate transfer tax via the RETTD.",
       "contact": {
-        "phone": "(207) 555-0138",
-        "city": "Windham",
+        "phone": "(207) 555-0173",
+        "city": "Belfast",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "County Registry of Deeds",
+      "type": "government_agency",
+      "role": "Recording office",
+      "relevance": "Records the deed and the transfer tax declaration.",
+      "contact": {
+        "phone": "(207) 555-0193",
+        "city": "Falmouth",
         "state": "ME"
       }
     }
@@ -144,7 +159,7 @@
       {
         "topic": "Financing",
         "question": "How are you paying?",
-        "answer": "Through conventional mortgage. We expect to close around 2026-03-17."
+        "answer": "Through seller financing. We expect to close around 2026-03-17."
       },
       {
         "topic": "Title",
@@ -187,6 +202,16 @@
   },
   "issues": [
     {
+      "issue": "Proper recording of the deed and declaration",
+      "category": "real_estate",
+      "governing_law": "33 M.R.S. § 651",
+      "sub_questions": [
+        "Is the deed in recordable form with the RETTD attached?"
+      ],
+      "strength": "strong",
+      "id": "iss1"
+    },
+    {
       "issue": "Calculation of the Maine real estate transfer tax",
       "category": "tax",
       "governing_law": "36 M.R.S. § 4641-A",
@@ -195,7 +220,17 @@
         "How is the tax split between transferor and transferee?"
       ],
       "strength": "strong",
-      "id": "iss1"
+      "id": "iss2"
+    },
+    {
+      "issue": "Availability of a transfer tax exemption",
+      "category": "tax",
+      "governing_law": "36 M.R.S. § 4641-C",
+      "sub_questions": [
+        "Does any statutory exemption apply to this transfer?"
+      ],
+      "strength": "moderate",
+      "id": "iss3"
     },
     {
       "issue": "Marketability and insurability of title",
@@ -205,36 +240,48 @@
         "Are there liens, easements, or encumbrances of record?"
       ],
       "strength": "moderate",
-      "id": "iss2"
+      "id": "iss4"
+    },
+    {
+      "issue": "Spousal joinder is NOT required on this inter-vivos deed (the over-import trap) — the real exposure is the elective share at death",
+      "category": "real_estate",
+      "governing_law": "18-C M.R.S. § 2-111; § 2-202; § 2-207",
+      "sub_questions": [
+        "Because dower/curtesy are abolished, a non-titled spouse need NOT join a deed of property the other spouse owns solely — a template that forces a joinder/release line here is WRONG for Maine.",
+        "The uncompensated lifetime transfer can instead be pulled into the augmented estate for the surviving spouse's elective share — a future claim, not a present joinder defect."
+      ],
+      "strength": "moderate",
+      "notes": "[confounder:spousal-no-joinder-trap; HIGH on dower/curtesy abolition + elective share; the 'no joinder required' generalization is fact-specific to vesting. OVERBROAD-IMPORT TRAP — do NOT require spousal joinder on a Maine inter-vivos deed of solely-owned property.]",
+      "id": "iss5"
     }
   ],
   "evidence": [
-    {
-      "title": "Property tax assessment",
-      "type": "public_record",
-      "party": "transferee",
-      "description": "The municipal assessment supporting adjusted assessed value.",
-      "id": "ev1"
-    },
     {
       "title": "Settlement statement",
       "type": "financial_record",
       "party": "transferee",
       "description": "Closing disclosure with prorations and the transfer tax.",
-      "id": "ev2"
+      "id": "ev1"
     },
     {
-      "title": "Title commitment",
-      "type": "document",
+      "title": "Purchase and sale agreement",
+      "type": "contract",
       "party": "transferee",
-      "description": "The title company's commitment and exceptions.",
-      "id": "ev3"
+      "description": "The executed agreement setting price and terms.",
+      "id": "ev2"
     },
     {
       "title": "Proposed deed",
       "type": "document",
       "party": "transferor",
       "description": "The deed prepared for the conveyance.",
+      "id": "ev3"
+    },
+    {
+      "title": "Property tax assessment",
+      "type": "public_record",
+      "party": "transferee",
+      "description": "The municipal assessment supporting adjusted assessed value.",
       "id": "ev4"
     }
   ],
@@ -242,19 +289,24 @@
     "currency": "USD",
     "amounts": [
       {
-        "label": "Purchase price",
-        "amount": 530950,
-        "basis": "Agreed consideration."
-      },
-      {
-        "label": "Adjusted assessed value",
-        "amount": 943919,
-        "basis": "Municipal assessment."
+        "label": "Mortgage amount",
+        "amount": 608064,
+        "basis": "Buyer's financing."
       },
       {
         "label": "Estimated Maine transfer tax",
-        "amount": 3602,
+        "amount": 4537,
         "basis": "$2.20 per $500 of value, split between the parties."
+      },
+      {
+        "label": "Adjusted assessed value",
+        "amount": 222103,
+        "basis": "Municipal assessment."
+      },
+      {
+        "label": "Purchase price",
+        "amount": 381285,
+        "basis": "Agreed consideration."
       }
     ]
   },
@@ -268,8 +320,17 @@
     "property_type": "residential condominium",
     "adjusted_assessed_value": 258061,
     "special_circumstances_explanation": "Partial-interest transfer between family members",
+    "financing": "seller financing",
+    "transfer_tax_exemption": false,
+    "record_return_to": "the Grantee at the property address",
+    "earnest_money": 6614,
     "deed_type": "quitclaim deed with covenant",
-    "financing": "conventional mortgage",
-    "transfer_tax_exemption": true
+    "covenant_type": "quitclaim_covenant",
+    "grantor_capacity": "individual",
+    "grantor_marital_status": "married",
+    "title_vesting": "sole_grantor",
+    "non_titled_spouse_joinder_required": false,
+    "non_titled_spouse_joined": false,
+    "elective_share_pullback_risk": true
   }
 }

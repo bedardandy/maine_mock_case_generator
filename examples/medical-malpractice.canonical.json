@@ -97,5 +97,150 @@
     "informed_consent_issue": false,
     "statute_of_limitations_concern": false,
     "economic_damages": 1267698
+  },
+  "litigation": {
+    "posture": "discovery",
+    "docket": [
+      {
+        "date": "2024-09-14",
+        "entry": "Notice of claim served, initiating the mandatory prelitigation screening panel process.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2024-12-03",
+        "entry": "Prelitigation screening panel convened; chair appointed and submissions ordered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-02-20",
+        "entry": "Complaint and demand for jury trial filed after the screening-panel process.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-03-02",
+        "entry": "Answers, cross-claim, and third-party complaint against the consulting provider filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-04-15",
+        "entry": "Scheduling order entered; discovery and expert deadlines set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-07-18",
+        "entry": "Order compelling production of the credentialing file.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-12-02",
+        "entry": "Expert disclosures exchanged; discovery continues toward trial.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion in limine to exclude a plaintiff expert",
+        "type": "evidentiary",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-03-09",
+        "status": "opposed",
+        "relief": "Exclusion of an unreliable expert opinion under Daubert and M.R.E. 702."
+      },
+      {
+        "title": "Motion for partial summary judgment on informed consent",
+        "type": "dispositive",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2025-10-21",
+        "status": "under_advisement",
+        "relief": "Judgment that the informed-consent claim fails as a matter of law."
+      },
+      {
+        "title": "Motion to bifurcate liability and damages",
+        "type": "trial",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-03-09",
+        "status": "filed",
+        "relief": "Separate trials on liability and damages."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Professional negligence (departure from the standard of care)",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "Professional negligence; 24 M.R.S. § 2902; expert testimony required",
+        "elements": [
+          "A physician-patient relationship and a duty to meet the standard of care",
+          "A breach of the applicable standard of care",
+          "Proximate causation",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages for past and future medical care, lost earning capacity, and pain and suffering",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Vicarious liability and corporate negligence",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "Respondeat superior; corporate/credentialing negligence",
+        "elements": [
+          "An agency or employment relationship with the providers",
+          "Negligence within the scope of that relationship",
+          "Independent negligence in credentialing, supervision, or retention",
+          "Resulting damages"
+        ],
+        "relief_sought": "Compensatory damages against the hospital and health system",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Negligence of the consulting provider",
+        "by": "Grace C. Roe",
+        "against": "Olivia D. Jessup",
+        "governing_law": "Professional negligence; expert testimony required",
+        "elements": [
+          "A duty to meet the standard of care",
+          "A breach of that standard by the consulting provider",
+          "Proximate causation",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages against the consulting provider",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Lack of informed consent",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "Informed consent; the duty to disclose material risks and alternatives",
+        "elements": [
+          "A duty to disclose material risks and alternatives",
+          "Failure to disclose",
+          "A reasonable patient would have declined the treatment",
+          "Resulting injury"
+        ],
+        "relief_sought": "Compensatory damages for the consequences of the undisclosed risk",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Care met the standard of care",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The treatment conformed to the accepted standard of care for the specialty."
+      },
+      {
+        "defense": "Known risk or complication",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The injury was a recognized risk or complication of the procedure, not the result of negligence."
+      },
+      {
+        "defense": "Intervening or superseding cause",
+        "by": "Maria Q. Fairbanks",
+        "basis": "An independent intervening cause, not the defendant's care, produced the injury."
+      }
+    ]
   }
 }

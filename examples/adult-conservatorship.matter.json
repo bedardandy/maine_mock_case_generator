@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-691783",
+    "matter_id": "MMC-2025-548363",
     "practice_area": "probate",
     "title": "Petition for Guardianship and/or Conservatorship of Maria Q. Fairbanks",
     "jurisdiction": {
@@ -22,7 +22,7 @@
     "filing_date": "2025-11-08",
     "status": "pre_filing",
     "summary": "Grace C. Roe petitions the Bath Probate Court for appointment as guardian and/or conservator of Maria Q. Fairbanks, the petitioner's mother, who is alleged to be incapacitated by a serious developmental disability, and asks the court for both guardianship and conservatorship limited to the authority the respondent's situation actually requires.",
-    "docket_number": "SAG-GC-2025-161"
+    "docket_number": "SAG-GC-2025-895"
   },
   "parties": {
     "petitioner": {
@@ -115,65 +115,53 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Rosa M. Greenhill",
-      "type": "witness",
-      "role": "Court visitor / guardian ad litem",
-      "relevance": "Appointed to meet with the respondent, investigate the petition, and report to the court on the respondent's circumstances and wishes.",
-      "contact": {
-        "phone": "(207) 555-0138",
-        "city": "Windham",
-        "state": "ME",
-        "email": "rosa.greenhill@example.com"
-      }
-    },
-    {
-      "id": "tp2",
-      "name": "Maria K. Kingsley",
+      "name": "Diego F. Boe",
       "type": "family_member",
       "role": "Adult sibling of the petitioner",
       "relationship": "Another adult child of the respondent",
       "relevance": "An interested family member entitled to notice who may support or object to the petition or the choice of fiduciary.",
       "contact": {
-        "phone": "(207) 555-0167",
-        "city": "Bath",
+        "phone": "(207) 555-0189",
+        "city": "Falmouth",
         "state": "ME",
-        "email": "maria.kingsley@example.net"
+        "email": "diego.boe@example.org"
       }
     },
     {
-      "id": "tp3",
+      "id": "tp2",
       "name": "Maine Adult Protective Services",
       "type": "government_agency",
       "role": "Adult Protective Services",
       "relevance": "State agency that may hold information about the respondent's safety and well-being and is an interested party in protective proceedings.",
       "contact": {
-        "phone": "(207) 555-0109",
-        "city": "Camden",
+        "phone": "(207) 555-0167",
+        "city": "Bath",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Summit Logistics Co.",
+      "type": "healthcare_provider",
+      "role": "Long-term care facility",
+      "relevance": "Facility where the respondent may reside and that can speak to day-to-day care needs and supervision.",
+      "contact": {
+        "phone": "(207) 555-0121",
+        "city": "Gorham",
         "state": "ME"
       }
     },
     {
       "id": "tp4",
-      "name": "Cobblestone Builders Co.",
-      "type": "healthcare_provider",
-      "role": "Long-term care facility",
-      "relevance": "Facility where the respondent may reside and that can speak to day-to-day care needs and supervision.",
+      "name": "Omar C. Roe",
+      "type": "witness",
+      "role": "Court visitor / guardian ad litem",
+      "relevance": "Appointed to meet with the respondent, investigate the petition, and report to the court on the respondent's circumstances and wishes.",
       "contact": {
-        "phone": "(207) 555-0153",
-        "city": "Falmouth",
-        "state": "ME"
-      }
-    },
-    {
-      "id": "tp5",
-      "name": "Lighthouse Trust Company",
-      "type": "financial_institution",
-      "role": "Bank holding the respondent's accounts",
-      "relevance": "Holds the respondent's deposit and investment accounts that any conservatorship would be charged with protecting.",
-      "contact": {
-        "phone": "(207) 555-0173",
+        "phone": "(207) 555-0197",
         "city": "Lewiston",
-        "state": "ME"
+        "state": "ME",
+        "email": "omar.roe@example.net"
       }
     }
   ],
@@ -386,6 +374,11 @@
     "monthly_income": 4250,
     "existing_poa": true,
     "care_setting": "lives with the petitioner",
-    "physician_evaluation_obtained": true
+    "physician_evaluation_obtained": true,
+    "agent_address": "42 Ocean Avenue, Portland, ME 04103",
+    "successor_agent_name": "Daniel R. Pelletier",
+    "successor_agent_address": "301 Elm Street, Waterville, ME 04901",
+    "poa_effectiveness": "springing",
+    "effectiveness_recital": "effective upon the principal's incapacity as certified by a licensed physician (18-C M.R.S. § 5-909(1))"
   }
 }

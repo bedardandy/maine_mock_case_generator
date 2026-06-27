@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-SC-2025-199",
-    "case_id": "MMC-2025-490487",
+    "docket_number": "SAG-SC-2025-660",
+    "case_id": "MMC-2025-202163",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "District Court",
@@ -74,6 +74,8 @@
     "demand_letter_date": "2025-12-28",
     "written_contract": true,
     "interest_claimed": true,
-    "contract_status": "based on a written work order the customer signed"
+    "contract_status": "based on a written work order the customer signed",
+    "demand_recipient": "Maria Q. Fairbanks",
+    "response_deadline_days": 21
   }
 }

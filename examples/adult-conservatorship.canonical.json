@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-GC-2025-161",
-    "case_id": "MMC-2025-691783",
+    "docket_number": "SAG-GC-2025-895",
+    "case_id": "MMC-2025-548363",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Probate Court",
@@ -100,6 +100,11 @@
     "monthly_income": 4250,
     "existing_poa": true,
     "care_setting": "lives with the petitioner",
-    "physician_evaluation_obtained": true
+    "physician_evaluation_obtained": true,
+    "agent_address": "42 Ocean Avenue, Portland, ME 04103",
+    "successor_agent_name": "Daniel R. Pelletier",
+    "successor_agent_address": "301 Elm Street, Waterville, ME 04901",
+    "poa_effectiveness": "springing",
+    "effectiveness_recital": "effective upon the principal's incapacity as certified by a licensed physician (18-C M.R.S. § 5-909(1))"
   }
 }

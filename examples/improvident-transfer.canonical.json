@@ -103,5 +103,174 @@
     "competency_questioned": true,
     "transfer_date": "2024-08-11",
     "medical_condition": "cognitive decline after a stroke"
+  },
+  "litigation": {
+    "posture": "pleadings",
+    "docket": [
+      {
+        "date": "2025-04-23",
+        "entry": "Complaint to void the transfer and demand for relief filed.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-05-20",
+        "entry": "Answer and counterclaim for the value of care filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-06-09",
+        "entry": "Order appointing a guardian ad litem for the transferor entered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-07-21",
+        "entry": "Order compelling the transferor's medical records entered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-24",
+        "entry": "Court-ordered capacity evaluation completed and report served.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-11-25",
+        "entry": "Hearing held on the motion establishing the statutory presumption.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for a constructive trust and lis pendens",
+        "type": "provisional",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-05-02",
+        "status": "filed",
+        "relief": "A constructive trust and a recorded lis pendens preserving the property pending judgment."
+      },
+      {
+        "title": "Motion for appointment of a guardian ad litem",
+        "type": "procedural",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-04-26",
+        "status": "granted",
+        "relief": "Appointment of a guardian ad litem to protect the transferor's interests."
+      },
+      {
+        "title": "Motion to compel the transferor's medical records",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-07-04",
+        "status": "granted",
+        "relief": "An order compelling production of the transferor's medical and cognitive records."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Quantum meruit for the value of care provided",
+        "by": "Maria Q. Fairbanks",
+        "against": "Grace C. Roe",
+        "relief": "Compensation for the reasonable value of care and services furnished to the transferor if the deed is set aside."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Improvident transfer / statutory presumption of undue influence",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "33 M.R.S. § 1022; 33 M.R.S. § 1021",
+        "elements": [
+          "The transferor was an elderly dependent person",
+          "Who made a major transfer of property for less than full consideration",
+          "In a confidential or fiduciary relationship and without independent counsel",
+          "Triggering a presumption of undue influence the transferee must rebut"
+        ],
+        "relief_sought": "Rescission of the deed and an order setting the transfer aside under 33 M.R.S. § 1023",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Common-law undue influence",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks and Ingrid B. Kingsley",
+        "governing_law": "Common law undue influence",
+        "elements": [
+          "A relationship of trust and confidence",
+          "Susceptibility of the transferor to influence",
+          "Opportunity and disposition to exert influence",
+          "A transfer that reflects the influence rather than the transferor's free will"
+        ],
+        "relief_sought": "An order voiding the deed as the product of undue influence",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Lack of capacity to convey",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "Common law; capacity to execute a deed",
+        "elements": [
+          "The transferor executed the deed",
+          "While lacking the mental capacity to understand its nature and effect",
+          "Due to the transferor's cognitive condition",
+          "Rendering the conveyance voidable"
+        ],
+        "relief_sought": "A declaration that the deed is void for want of capacity",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Imposition of a constructive trust",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks and Ingrid B. Kingsley",
+        "governing_law": "33 M.R.S. § 1023; common law",
+        "elements": [
+          "The transferee holds title obtained through an improvident transfer",
+          "Retention of the property would unjustly enrich the transferee",
+          "Equity requires the property be held for the transferor",
+          "A constructive trust is the appropriate remedy"
+        ],
+        "relief_sought": "Imposition of a constructive trust and an order returning the property to the transferor",
+        "strength": "moderate"
+      },
+      {
+        "count": 5,
+        "claim": "Conversion of personal property",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "Common law conversion",
+        "elements": [
+          "The transferor owned personal property and funds",
+          "The transferee exercised dominion over them",
+          "Without authorization and inconsistent with the transferor's rights",
+          "Causing the transferor loss"
+        ],
+        "relief_sought": "Damages for the value of personal property and funds converted",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Full and fair consideration through years of care",
+        "by": "Maria Q. Fairbanks",
+        "basis": "Years of care and support furnished by the transferee were full and fair consideration for the transfer."
+      },
+      {
+        "defense": "Ratification",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The transferor ratified and confirmed the conveyance after it was made."
+      },
+      {
+        "defense": "Competent and freely given gift",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The transferor competently and voluntarily intended the conveyance as a gift."
+      },
+      {
+        "defense": "The transferor understood the transaction",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The transferor understood the nature and effect of the deed and was advised of the transaction. 33 M.R.S. § 1022."
+      }
+    ]
   }
 }

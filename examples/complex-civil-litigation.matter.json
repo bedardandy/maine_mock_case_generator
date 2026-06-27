@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-538433",
+    "matter_id": "MMC-2025-272975",
     "practice_area": "civil",
     "title": "Roe et al. v. Coastal Outfitters LLC et al.",
     "jurisdiction": {
@@ -23,7 +23,7 @@
     "status": "active",
     "summary": "Grace C. Roe and Maria Q. Fairbanks invested in a Series A preferred round of Coastal Outfitters LLC and now sue the company, its CEO Olivia D. Jessup, and (by third-party complaint) its outside auditor, alleging the offering misrepresented the status of a flagship contract.",
     "event_date": "2023-06-03",
-    "docket_number": "SAG-CV-2025-268"
+    "docket_number": "SAG-CV-2025-875"
   },
   "parties": {
     "plaintiff": {
@@ -608,6 +608,11 @@
     ],
     "docket": [
       {
+        "date": "2025-01-19",
+        "entry": "Complaint filed and served on the defendants.",
+        "party": "us"
+      },
+      {
         "date": "2025-01-20",
         "entry": "Complaint and demand for jury trial filed.",
         "party": "Grace C. Roe"
@@ -616,6 +621,11 @@
         "date": "2025-02-11",
         "entry": "Defendants' answer, counterclaims, and cross-claim filed.",
         "party": "Coastal Outfitters LLC"
+      },
+      {
+        "date": "2025-02-12",
+        "entry": "Defendants served their Answer asserting affirmative defenses and a Counterclaim for breach of contract and tortious interference.",
+        "party": "opposing"
       },
       {
         "date": "2025-02-20",
@@ -628,9 +638,19 @@
         "party": "the court"
       },
       {
+        "date": "2025-03-12",
+        "entry": "Defendants filed a Motion to Dismiss Count III (negligent misrepresentation) under M.R. Civ. P. 12(b)(6).",
+        "party": "opposing"
+      },
+      {
         "date": "2025-04-02",
         "entry": "Order denying the motion to dismiss.",
         "party": "the court"
+      },
+      {
+        "date": "2025-04-07",
+        "entry": "Client reports the defendants are liquidating the disputed inventory and moving sale proceeds offshore, threatening to defeat any judgment.",
+        "party": "client"
       },
       {
         "date": "2025-06-04",
@@ -647,7 +667,52 @@
       "jury": true,
       "estimated_days": 6,
       "scheduled_date": "2026-11-27"
-    }
+    },
+    "procedure": [
+      {
+        "date": "2025-01-19",
+        "day": 0,
+        "actor": "us",
+        "event": "Complaint filed and served on the defendants.",
+        "produces": [
+          "litigation__pleading"
+        ]
+      },
+      {
+        "date": "2025-02-12",
+        "day": 24,
+        "actor": "opposing",
+        "event": "Defendants served their Answer asserting affirmative defenses and a Counterclaim for breach of contract and tortious interference.",
+        "produces": [
+          "litigation__reply"
+        ],
+        "response_deadline": "2025-03-05",
+        "deadline_rule": "M.R. Civ. P. 7(a) / 12(a) — reply to a counterclaim within 21 days of service."
+      },
+      {
+        "date": "2025-03-12",
+        "day": 52,
+        "actor": "opposing",
+        "event": "Defendants filed a Motion to Dismiss Count III (negligent misrepresentation) under M.R. Civ. P. 12(b)(6).",
+        "produces": [
+          "litigation__opposition"
+        ],
+        "response_deadline": "2025-04-02",
+        "deadline_rule": "M.R. Civ. P. 7(b)(1)(A) — opposition to a motion within 21 days."
+      },
+      {
+        "date": "2025-04-07",
+        "day": 78,
+        "actor": "client",
+        "event": "Client reports the defendants are liquidating the disputed inventory and moving sale proceeds offshore, threatening to defeat any judgment.",
+        "produces": [
+          "litigation__emergency_motion"
+        ],
+        "response_deadline": "2025-04-07",
+        "deadline_rule": "M.R. Civ. P. 65 — motion for a temporary restraining order / preliminary injunction; attachment under M.R. Civ. P. 4A/4B.",
+        "urgent": true
+      }
+    ]
   },
   "facts": {
     "company_name": "Coastal Outfitters LLC",
@@ -659,6 +724,7 @@
     "amount_in_controversy": 1628106,
     "demand_made": true,
     "class_action": true,
-    "auditor_role": "issued the audited financial statements relied upon in the offering"
+    "auditor_role": "issued the audited financial statements relied upon in the offering",
+    "relief_requested": "rescission, disgorgement, and compensatory damages"
   }
 }

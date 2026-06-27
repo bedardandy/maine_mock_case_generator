@@ -24,7 +24,7 @@
     {
       "field_id": "docket_no",
       "fact_key": "matter.docket_number",
-      "value": "SAG-PE-2026-935",
+      "value": "SAG-PE-2026-415",
       "filled": true
     },
     {
@@ -279,8 +279,8 @@
   "profile": "canonical",
   "case": {
     "matter": {
-      "docket_number": "SAG-PE-2026-935",
-      "case_id": "MMC-2026-687472",
+      "docket_number": "SAG-PE-2026-415",
+      "case_id": "MMC-2026-698646",
       "court_county": "Sagadahoc",
       "court_location": "Bath",
       "court_type": "Probate Court",
@@ -347,15 +347,17 @@
     },
     "facts": {
       "date_of_death": "2025-09-22",
-      "will_exists": true,
-      "will_date": "2022-06-27",
       "decedent_domicile_county": "Sagadahoc",
-      "relationship_to_decedent": "adult son",
-      "approximate_estate_value": 348677,
-      "real_property": false,
-      "num_heirs": 2,
-      "bond_required": true,
-      "probate_type": "informal appointment"
+      "relationship_to_decedent": "surviving spouse",
+      "approximate_estate_value": 628705,
+      "real_property": true,
+      "num_heirs": 3,
+      "bond_required": false,
+      "testacy": "testate",
+      "will_exists": true,
+      "will_date": "2012-08-22",
+      "probate_type": "informal probate",
+      "proceeding_type": "informal"
     }
   }
 }

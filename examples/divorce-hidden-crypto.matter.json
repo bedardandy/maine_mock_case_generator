@@ -22,7 +22,7 @@
     "filing_date": "2025-06-17",
     "status": "active",
     "summary": "Grace C. Roe petitions to divorce Maria Q. Fairbanks in Sagadahoc County District Court on the ground of irreconcilable differences and asks the court to find, value, and equitably divide the marital estate, including roughly $2676314 in cryptocurrency the plaintiff alleges Maria concealed by routing funds through a foreign exchange.",
-    "event_date": "2025-06-08",
+    "event_date": "2025-08-31",
     "docket_number": "SAG-FM-2025-354"
   },
   "parties": {
@@ -113,9 +113,9 @@
   },
   "fact_pattern": {
     "summary": "Grace C. Roe petitions to divorce Maria Q. Fairbanks in Sagadahoc County District Court on the ground of irreconcilable differences and asks the court to find, value, and equitably divide the marital estate, including roughly $2676314 in cryptocurrency the plaintiff alleges Maria concealed by routing funds through a foreign exchange.",
-    "narrative": "Grace C. Roe and Maria Q. Fairbanks were married on 2009-02-03 and separated on 2025-06-08. Over the marriage the parties built a substantial estate worth an estimated $1599941, including the value generated through a consulting llc. Grace now seeks a divorce on the ground of irreconcilable differences and an equitable division of all marital property.\n\nGrace alleges that Maria has hidden a significant share of the marital wealth in cryptocurrency, specifically bitcoin and ethereum across several wallets, worth roughly $2676314. The plaintiff contends Maria concealed these holdings by routing funds through a foreign exchange and that the digital assets never appeared on the defendant's sworn family financial statement (FM-043).\n\nAfter the defendant's incomplete disclosures, Grace retained a blockchain forensic analyst and a forensic accountant, subpoenaed records from the Binance.US account, and now asks the court to compel full disclosure of all digital assets, to treat the dissipated or concealed crypto as marital property in the division, and to impose discovery sanctions and an adverse inference for the concealment.",
+    "narrative": "Grace C. Roe and Maria Q. Fairbanks were married on 2009-02-03 and separated on 2025-08-31. Over the marriage the parties built a substantial estate worth an estimated $1599941, including the value generated through a consulting llc. Grace now seeks a divorce on the ground of irreconcilable differences and an equitable division of all marital property.\n\nGrace alleges that Maria has hidden a significant share of the marital wealth in cryptocurrency, specifically bitcoin and ethereum across several wallets, worth roughly $2676314. The plaintiff contends Maria concealed these holdings by routing funds through a foreign exchange and that the digital assets never appeared on the defendant's sworn family financial statement (FM-043).\n\nAfter the defendant's incomplete disclosures, Grace retained a blockchain forensic analyst and a forensic accountant, subpoenaed records from the Binance.US account, and now asks the court to compel full disclosure of all digital assets, to treat the dissipated or concealed crypto as marital property in the division, and to impose discovery sanctions and an adverse inference for the concealment.",
     "undisputed_facts": [
-      "The parties were married on 2009-02-03 and separated on 2025-06-08.",
+      "The parties were married on 2009-02-03 and separated on 2025-08-31.",
       "The defendant filed a family financial statement (FM-043) in the divorce.",
       "The plaintiff retained a blockchain forensic analyst and a forensic accountant to investigate the marital estate."
     ],
@@ -131,12 +131,12 @@
         "event": "Grace and Maria married."
       },
       {
-        "date": "2025-06-08",
-        "event": "The parties separated."
-      },
-      {
         "date": "2025-06-17",
         "event": "Complaint for divorce filed in Bath District Court; full financial disclosure demanded."
+      },
+      {
+        "date": "2025-08-31",
+        "event": "The parties separated."
       }
     ]
   },
@@ -601,7 +601,8 @@
   },
   "facts": {
     "marriage_date": "2009-02-03",
-    "separation_date": "2025-06-08",
+    "marriage_place": "Brunswick, Maine",
+    "separation_date": "2025-08-31",
     "grounds": "irreconcilable differences",
     "marital_estate_value": 1599941,
     "suspected_crypto_value": 2676314,

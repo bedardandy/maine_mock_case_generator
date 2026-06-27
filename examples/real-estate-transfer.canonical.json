@@ -1,6 +1,6 @@
 {
   "matter": {
-    "case_id": "MMC-2025-846702",
+    "case_id": "MMC-2025-657549",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Maine Registry of Deeds / Maine Revenue Services",
@@ -74,8 +74,17 @@
     "property_type": "residential condominium",
     "adjusted_assessed_value": 258061,
     "special_circumstances_explanation": "Partial-interest transfer between family members",
+    "financing": "seller financing",
+    "transfer_tax_exemption": false,
+    "record_return_to": "the Grantee at the property address",
+    "earnest_money": 6614,
     "deed_type": "quitclaim deed with covenant",
-    "financing": "conventional mortgage",
-    "transfer_tax_exemption": true
+    "covenant_type": "quitclaim_covenant",
+    "grantor_capacity": "individual",
+    "grantor_marital_status": "married",
+    "title_vesting": "sole_grantor",
+    "non_titled_spouse_joinder_required": false,
+    "non_titled_spouse_joined": false,
+    "elective_share_pullback_risk": true
   }
 }

@@ -51,23 +51,23 @@
     },
     "company": {
       "full_name": "Riverbend Builders LLC",
-      "address": "294 Elm Terrace",
-      "city": "Windham",
+      "address": "278 Maple Court",
+      "city": "Waterville",
       "state": "ME",
-      "zip": "04014",
-      "phone": "(207) 555-0174"
+      "zip": "04072",
+      "phone": "(207) 555-0187"
     },
     "attorney": {
-      "full_name": "Rosa M. Noe",
-      "first_name": "Rosa",
-      "middle_name": "M",
-      "last_name": "Noe",
-      "address": "51 Spruce Avenue",
+      "full_name": "Henry G. Coe",
+      "first_name": "Henry",
+      "middle_name": "G",
+      "last_name": "Coe",
+      "address": "192 Maple Court",
       "city": "Falmouth",
       "state": "ME",
       "zip": "04073",
       "phone": "(207) 555-0107",
-      "email": "rosa.noe@example.net",
+      "email": "henry.coe@example.net",
       "date_of_birth": "1988-09-11",
       "bar_number": "8005"
     }
@@ -87,6 +87,7 @@
     "signature": "Grace C. Roe"
   },
   "facts": {
+    "entity_kind": "llc",
     "business_type": "a family restaurant group",
     "plaintiff_ownership": "a 20% interest",
     "company_value": 6766345,
@@ -101,5 +102,200 @@
     "distributions_suspended": true,
     "buyout_offered": "no buyout has been offered",
     "annual_distributions_withheld": 804878
+  },
+  "litigation": {
+    "posture": "discovery",
+    "docket": [
+      {
+        "date": "2025-03-02",
+        "entry": "Complaint for member oppression and judicial dissolution filed in the Business and Consumer Docket.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-03-26",
+        "entry": "Defendants' answer and counterclaim filed; the LLC appears as a nominal defendant.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-04-29",
+        "entry": "Scheduling order entered; discovery deadlines set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-05-15",
+        "entry": "Order granting the motion to compel inspection of books and records.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-07-04",
+        "entry": "Order granting in part production of the side entity's records.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-15",
+        "entry": "Plaintiff's valuation and forensic-accounting expert reports served; discovery continues.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-11-03",
+        "entry": "Motion for a buyout / fair-value determination filed.",
+        "party": "Grace C. Roe"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to compel production of the diversion records",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-06-28",
+        "status": "granted_in_part",
+        "relief": "An order compelling production of records relating to the side entity."
+      },
+      {
+        "title": "Motion for partial summary judgment on the fiduciary-duty claim",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-12-05",
+        "status": "opposed",
+        "relief": "Judgment that the controlling members breached their fiduciary duties."
+      },
+      {
+        "title": "Motion to appoint a receiver or custodian",
+        "type": "provisional",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-06-14",
+        "status": "under_advisement",
+        "relief": "Appointment of a receiver or custodian to protect company assets."
+      },
+      {
+        "title": "Motion for a buyout / fair-value determination",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-10-04",
+        "status": "filed",
+        "relief": "An order setting a buyout of the minority interest at fair value."
+      },
+      {
+        "title": "Motion to compel inspection of books and records",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-04-21",
+        "status": "granted",
+        "relief": "An order compelling inspection of the LLC's books and records."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Breach of fiduciary duty and the operating agreement by the minority member",
+        "by": "Maria Q. Fairbanks",
+        "against": "Grace C. Roe",
+        "relief": "Damages for the minority member's own alleged misconduct and breaches."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Member oppression and judicial dissolution",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks and Ingrid B. Kingsley",
+        "governing_law": "31 M.R.S. § 1595",
+        "elements": [
+          "Membership in the LLC",
+          "Conduct by the controlling members that is illegal, oppressive, fraudulent, or unfairly prejudicial",
+          "Harm to the minority member",
+          "Entitlement to dissolution or an alternative remedy"
+        ],
+        "relief_sought": "Judicial dissolution or, in the alternative, a court-ordered buyout at fair value",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Breach of fiduciary duty",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks and Ingrid B. Kingsley",
+        "governing_law": "31 M.R.S. § 1559",
+        "elements": [
+          "A fiduciary duty of loyalty or care owed to the LLC and its members",
+          "Breach of that duty",
+          "Causation",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages, disgorgement, and an accounting",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Breach of the operating agreement",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "31 M.R.S. § 1521; common law",
+        "elements": [
+          "A valid operating agreement",
+          "Performance by the plaintiff",
+          "Breach by the controlling member",
+          "Resulting damages"
+        ],
+        "relief_sought": "Compensatory damages and specific enforcement of the agreement",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Derivative claim for diversion of company assets",
+        "by": "Grace C. Roe, derivatively on behalf of Riverbend Builders LLC",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "31 M.R.S. § 1631 et seq.",
+        "elements": [
+          "Standing to sue derivatively",
+          "Diversion of company opportunities or assets",
+          "Harm to the LLC",
+          "Recoverable damages on behalf of the company"
+        ],
+        "relief_sought": "Restitution and disgorgement to the LLC",
+        "strength": "moderate"
+      },
+      {
+        "count": 5,
+        "claim": "Demand for inspection of books and records",
+        "by": "Grace C. Roe",
+        "against": "Riverbend Builders LLC",
+        "governing_law": "31 M.R.S. § 1545",
+        "elements": [
+          "Member status",
+          "A proper demand to inspect",
+          "A purpose reasonably related to the member's interest",
+          "Wrongful refusal"
+        ],
+        "relief_sought": "An order compelling inspection of the books and records",
+        "strength": "strong"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Authorization under the operating agreement",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The operating agreement authorized the management decisions and compensation at issue."
+      },
+      {
+        "defense": "Unclean hands / prior breach",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The plaintiff breached first and comes to equity with unclean hands."
+      },
+      {
+        "defense": "Claims are derivative, not direct",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The asserted injuries are to the LLC and may be pursued only derivatively."
+      },
+      {
+        "defense": "Business judgment",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The challenged decisions were legitimate, good-faith exercises of business judgment."
+      },
+      {
+        "defense": "Fair buyout offer",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The buyout offered to the plaintiff was fair and reasonable."
+      }
+    ]
   }
 }
