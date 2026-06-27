@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-932967",
+    "matter_id": "MMC-2025-832948",
     "practice_area": "real_estate",
     "title": "Roe v. Coastal Outfitters LLC et al. (Paper Street / Road Access)",
     "jurisdiction": {
@@ -21,9 +21,9 @@
     "case_type": "real_property",
     "filing_date": "2025-07-17",
     "status": "active",
-    "summary": "Grace C. Roe, a lot owner and officer of the Lakeview Heights Road Association, sues to confirm that Maple Street in the Lakeview Heights plat is a deemed-vacated paper street, to defeat Coastal Outfitters LLC's claim of access over it to a rear parcel the developer plans to build on, and to collect Maria Q. Fairbanks's unpaid share of the private road maintenance.",
+    "summary": "Grace C. Roe, a lot owner and officer of the Lakeview Heights Road Association, sues to confirm that Maple Street in the Lakeview Heights plat is a deemed-vacated paper street, to defeat Coastal Outfitters LLC's claim of access over it to a landlocked back lot the developer wants to subdivide, and to collect Maria Q. Fairbanks's unpaid share of the private road maintenance.",
     "event_date": "1949-06-15",
-    "docket_number": "SAG-RE-2025-284"
+    "docket_number": "SAG-RE-2025-898"
   },
   "parties": {
     "plaintiff": {
@@ -116,16 +116,17 @@
     }
   },
   "fact_pattern": {
-    "summary": "Grace C. Roe, a lot owner and officer of the Lakeview Heights Road Association, sues to confirm that Maple Street in the Lakeview Heights plat is a deemed-vacated paper street, to defeat Coastal Outfitters LLC's claim of access over it to a rear parcel the developer plans to build on, and to collect Maria Q. Fairbanks's unpaid share of the private road maintenance.",
-    "narrative": "the Lakeview Heights plat was platted and the plan recorded in 1949, showing Maple Street as a way running through the development. Maple Street was never built or accepted as a public way; on the ground the lots are served instead by a seasonal private road, which the Lakeview Heights Road Association maintains. Grace C. Roe owns a lot in the subdivision and serves as an officer of the association.\n\nCoastal Outfitters LLC, a developer, owns a rear parcel the developer plans to build on and now claims a right to open and use Maple Street as access, asserting that the recorded plan grants all lot owners rights in the paper street. Grace contends that under Maine's Paper Streets Law Maple Street was deemed vacated decades ago because the town never accepted it, so the developer has no public way and, the association says, no private easement to push a new road through the neighborhood.\n\nSeparately, Maria Q. Fairbanks, a neighbor whose lot is served by a seasonal private road, has refused to pay his proportionate share of the road-maintenance assessments. The association's annual maintenance cost runs about $33699, and Maria's unpaid share has grown to roughly $6524. Grace seeks a declaration that the way is vacated and the developer has no easement, to quiet title, to collect the unpaid assessment with attorney fees, and to enjoin the developer from opening Maple Street.",
+    "summary": "Grace C. Roe, a lot owner and officer of the Lakeview Heights Road Association, sues to confirm that Maple Street in the Lakeview Heights plat is a deemed-vacated paper street, to defeat Coastal Outfitters LLC's claim of access over it to a landlocked back lot the developer wants to subdivide, and to collect Maria Q. Fairbanks's unpaid share of the private road maintenance.",
+    "narrative": "the Lakeview Heights plat was platted and the plan recorded in 1949, showing Maple Street as a way running through the development. Maple Street was never built or accepted as a public way; on the ground the lots are served instead by a seasonal private road, which the Lakeview Heights Road Association maintains. Grace C. Roe owns a lot in the subdivision and serves as an officer of the association.\n\nCoastal Outfitters LLC, a developer, owns a landlocked back lot the developer wants to subdivide and now claims a right to open and use Maple Street as access, asserting that the recorded plan grants all lot owners rights in the paper street. Grace contends that under Maine's Paper Streets Law Maple Street was deemed vacated decades ago because the town never accepted it, so the developer has no public way and, the association says, no private easement to push a new road through the neighborhood.\n\nSeparately, Maria Q. Fairbanks, a neighbor whose lot is served by a seasonal private road, has refused to pay his proportionate share of the road-maintenance assessments. The association's annual maintenance cost runs about $33699, and Maria's unpaid share has grown to roughly $6524. Grace seeks a declaration that the way is vacated and the developer has no easement, to quiet title, to collect the unpaid assessment with attorney fees, and to enjoin the developer from opening Maple Street.",
     "undisputed_facts": [
       "the Lakeview Heights plat was platted and its plan recorded in 1949.",
       "Maple Street was never built and the lots are in fact served by a seasonal private road.",
-      "the Lakeview Heights Road Association maintains the actual access road and levies assessments on the lot owners."
+      "the Lakeview Heights Road Association maintains the actual access road and levies assessments on the lot owners.",
+      "the Lakeview Heights Road Association apportions the annual maintenance cost as a share proportionate to each owner's actual use of the way."
     ],
     "disputed_facts": [
       "Whether Maple Street is deemed vacated under the Paper Streets Law and, if so, whether any private access rights survive.",
-      "Whether Coastal Outfitters LLC holds an easement over the paper street to reach a rear parcel the developer plans to build on.",
+      "Whether Coastal Outfitters LLC holds an easement over the paper street to reach a landlocked back lot the developer wants to subdivide.",
       "Whether the assessment formula is fair and equitable and how much Maria Q. Fairbanks owes for road maintenance."
     ],
     "timeline": [
@@ -142,65 +143,40 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Nadia K. Greenhill",
-      "type": "expert",
-      "role": "Title abstractor / examiner",
-      "relevance": "Examined the chain of title and the recorded plan for the affected lots.",
-      "contact": {
-        "phone": "(207) 555-0177",
-        "city": "Farmington",
-        "state": "ME",
-        "email": "nadia.greenhill@example.com"
-      }
-    },
-    {
-      "id": "tp2",
       "name": "Town Road Commissioner",
       "type": "government_agency",
       "role": "Town code enforcement / road commissioner",
       "relevance": "Speaks to whether the town ever accepted the way and to road-standard requirements.",
       "contact": {
-        "phone": "(207) 555-0196",
-        "city": "Belfast",
-        "state": "ME"
-      }
-    },
-    {
-      "id": "tp3",
-      "name": "John W. Poe",
-      "type": "neighbor",
-      "role": "Other lot owner in the subdivision",
-      "relevance": "Pays road assessments and has an interest in the status of the paper street.",
-      "contact": {
-        "phone": "(207) 555-0173",
-        "city": "Lewiston",
-        "state": "ME",
-        "email": "john.poe@example.net"
-      }
-    },
-    {
-      "id": "tp4",
-      "name": "County Registry of Deeds",
-      "type": "government_agency",
-      "role": "Registry of Deeds",
-      "relevance": "Holds the recorded subdivision plan and the chain of deeds.",
-      "contact": {
-        "phone": "(207) 555-0144",
+        "phone": "(207) 555-0167",
         "city": "Bath",
         "state": "ME"
       }
     },
     {
-      "id": "tp5",
-      "name": "Maria S. Ashford",
-      "type": "expert",
-      "role": "Licensed surveyor",
-      "relevance": "Surveyed the paper street and the actual access road on the ground.",
+      "id": "tp2",
+      "name": "Desmond D. Poe",
+      "type": "family_member",
+      "role": "Heir of the original subdivider",
+      "relevance": "Successor to the developer who recorded the original plat and any reserved rights.",
       "contact": {
-        "phone": "(207) 555-0189",
-        "city": "Brunswick",
+        "phone": "(207) 555-0165",
+        "city": "Lewiston",
         "state": "ME",
-        "email": "maria.ashford@example.net"
+        "email": "desmond.poe@example.org"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Omar C. Roe",
+      "type": "neighbor",
+      "role": "Other lot owner in the subdivision",
+      "relevance": "Pays road assessments and has an interest in the status of the paper street.",
+      "contact": {
+        "phone": "(207) 555-0197",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "omar.roe@example.net"
       }
     }
   ],
@@ -212,7 +188,7 @@
       {
         "topic": "Goal",
         "question": "What are you trying to accomplish?",
-        "answer": "I want it confirmed that Maple Street is a dead paper street and keep the developer from cutting a new road through to a rear parcel the developer plans to build on. And I want Maria to finally pay his share of the road."
+        "answer": "I want it confirmed that Maple Street is a dead paper street and keep the developer from cutting a new road through to a landlocked back lot the developer wants to subdivide. And I want Maria to finally pay his share of the road."
       },
       {
         "topic": "The paper street",
@@ -222,12 +198,12 @@
       {
         "topic": "The developer",
         "question": "What is the developer claiming?",
-        "answer": "They bought a rear parcel the developer plans to build on and now say that the recorded plan grants all lot owners rights in the paper street. They want to open that paper street as a road. The whole neighborhood is against it."
+        "answer": "They bought a landlocked back lot the developer wants to subdivide and now say that the recorded plan grants all lot owners rights in the paper street. They want to open that paper street as a road. The whole neighborhood is against it."
       },
       {
         "topic": "The road association",
         "question": "How does the road get maintained and paid for?",
-        "answer": "the Lakeview Heights Road Association runs it. We assess the owners for upkeep -- it is about $33699 a year for grading, gravel, and plowing. Everyone pays but Maria."
+        "answer": "the Lakeview Heights Road Association runs it. We assess the owners for upkeep -- it is about $33699 a year for grading, gravel, and plowing -- and we split it as a share proportionate to each owner's actual use of the way. Everyone pays but Maria."
       },
       {
         "topic": "The unpaid share",
@@ -243,7 +219,7 @@
   },
   "client_objectives": {
     "goals": [
-      "Confirm that Maple Street is deemed vacated and that Coastal Outfitters LLC has no easement to open it to reach a rear parcel the developer plans to build on.",
+      "Confirm that Maple Street is deemed vacated and that Coastal Outfitters LLC has no easement to open it to reach a landlocked back lot the developer wants to subdivide.",
       "Collect Maria Q. Fairbanks's unpaid proportionate share of the road-maintenance assessments, plus attorney fees.",
       "Protect a seasonal private road and the character of the neighborhood from a new through-road."
     ],
@@ -267,6 +243,19 @@
   },
   "issues": [
     {
+      "issue": "Private road association maintenance and each owner's fair and equitable proportionate share",
+      "category": "real_estate",
+      "governing_law": "23 M.R.S. § 3101",
+      "sub_questions": [
+        "Is the assessment a fair and equitable apportionment among benefited owners?",
+        "Does the association apportion cost by a defined method (a share proportionate to each owner's actual use of the way)?",
+        "May the association recover the unpaid share and attorney fees by civil action?"
+      ],
+      "strength": "strong",
+      "client_position": "The association apportions maintenance as a share proportionate to each owner's actual use of the way, and Maria owes that fair and equitable proportionate share plus attorney fees for non-payment.",
+      "id": "iss1"
+    },
+    {
       "issue": "Quiet title and declaratory judgment as to the status of the way and the developer's claimed easement",
       "category": "real_estate",
       "governing_law": "14 M.R.S. § 6651; 14 M.R.S. § 5951 et seq.",
@@ -275,30 +264,18 @@
         "Should title be quieted against the developer's claimed easement?"
       ],
       "strength": "moderate",
-      "id": "iss1"
-    },
-    {
-      "issue": "Private road association maintenance and each owner's fair and equitable proportionate share",
-      "category": "real_estate",
-      "governing_law": "23 M.R.S. § 3101",
-      "sub_questions": [
-        "Is the assessment a fair and equitable apportionment among benefited owners?",
-        "May the association recover the unpaid share and attorney fees by civil action?"
-      ],
-      "strength": "strong",
-      "client_position": "Maria owes his fair and equitable proportionate share plus attorney fees for non-payment.",
       "id": "iss2"
     },
     {
-      "issue": "The rights of action and reservations attending a vacated platted way",
+      "issue": "Whether Maple Street is deemed vacated under the Paper Streets Law",
       "category": "real_estate",
-      "governing_law": "23 M.R.S. § 3033",
+      "governing_law": "23 M.R.S. § 3032",
       "sub_questions": [
-        "What rights survive vacation of the public way?",
-        "Did the recorded plan or any deed reserve private access rights?"
+        "Was the way platted before 1987 and never accepted by the municipality?",
+        "Was it deemed vacated by the later of September 29, 1997 or 15 years after recording?"
       ],
-      "strength": "moderate",
-      "client_position": "No enforceable private easement over the paper street survives in the developer.",
+      "strength": "strong",
+      "client_position": "Because the town never accepted Maple Street, it was deemed vacated by operation of the statute.",
       "id": "iss3"
     },
     {
@@ -314,15 +291,15 @@
       "id": "iss4"
     },
     {
-      "issue": "Whether Maple Street is deemed vacated under the Paper Streets Law",
+      "issue": "The rights of action and reservations attending a vacated platted way",
       "category": "real_estate",
-      "governing_law": "23 M.R.S. § 3032",
+      "governing_law": "23 M.R.S. § 3033",
       "sub_questions": [
-        "Was the way platted before 1987 and never accepted by the municipality?",
-        "Was it deemed vacated by the later of September 29, 1997 or 15 years after recording?"
+        "What rights survive vacation of the public way?",
+        "Did the recorded plan or any deed reserve private access rights?"
       ],
-      "strength": "strong",
-      "client_position": "Because the town never accepted Maple Street, it was deemed vacated by operation of the statute.",
+      "strength": "moderate",
+      "client_position": "No enforceable private easement over the paper street survives in the developer.",
       "id": "iss5"
     }
   ],
@@ -330,89 +307,75 @@
     {
       "id": "exp1",
       "expert": {
-        "name": "Theodore D. Moe",
-        "field": "Land surveying",
-        "credentials": "PLS",
+        "name": "John R. Birchwood",
+        "field": "Civil engineering",
+        "credentials": "P.E.",
+        "retained_by": "defendant_2"
+      },
+      "topic": "Road standards and feasibility of opening the paper street",
+      "opinion": "The paper street corridor can feasibly be built to a road standard adequate to serve the back lot.",
+      "basis": "Engineering analysis of grades, drainage, and applicable road standards."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Diego M. Ellsworth",
+        "field": "Title examination / abstracting",
+        "credentials": "Licensed Title Abstractor",
         "retained_by": "plaintiff"
       },
-      "topic": "Location of the paper street and the actual access road",
-      "opinion": "The paper street was never constructed on the ground; the lots are served only by the existing private way.",
-      "basis": "Field survey tied to the recorded plan and monuments."
+      "topic": "Chain of title and the recorded plan",
+      "opinion": "The chain of title and the recorded plan show no deeded easement reserving the paper street to the developer's back lot.",
+      "basis": "Examination of the recorded subdivision plan and the deeds in the chain of title."
     }
   ],
   "evidence": [
     {
-      "title": "Recorded subdivision plan / plat",
+      "title": "Town records on acceptance of the way",
       "type": "public_record",
-      "party": "plaintiff",
-      "description": "The recorded plan showing the paper street and the lot layout.",
+      "party": "other_party",
+      "description": "The town's records showing acceptance or non-acceptance of the platted way.",
       "id": "ev1"
-    },
-    {
-      "title": "Chain of deeds for the affected lots",
-      "type": "public_record",
-      "party": "plaintiff",
-      "description": "The recorded conveyances for the lots and the claimed easement.",
-      "id": "ev2"
     },
     {
       "title": "Road association bylaws and maintenance assessments",
       "type": "document",
       "party": "plaintiff",
       "description": "The association's bylaws and the schedule of maintenance assessments.",
-      "id": "ev3"
+      "id": "ev2"
     },
     {
-      "title": "Photographs of the road and the unbuilt paper street",
-      "type": "photo",
+      "title": "Chain of deeds for the affected lots",
+      "type": "public_record",
       "party": "plaintiff",
-      "description": "Photographs of the maintained private road and the never-built paper street corridor.",
-      "id": "ev4"
+      "description": "The recorded conveyances for the lots and the claimed easement.",
+      "id": "ev3"
     },
     {
       "title": "The developer's deed and access claim",
       "type": "public_record",
       "party": "defendant_2",
       "description": "The developer's deed to the back lot and its written assertion of access over the paper street.",
-      "id": "ev5"
-    },
-    {
-      "title": "Records of the unpaid share and demand letters",
-      "type": "correspondence",
-      "party": "plaintiff",
-      "description": "Ledgers of the defendant's unpaid share and the demand letters sent.",
-      "id": "ev6"
-    },
-    {
-      "title": "Survey of the paper street and access road",
-      "type": "document",
-      "party": "plaintiff",
-      "description": "A survey locating the unbuilt paper street and the actual private road.",
-      "id": "ev7"
+      "id": "ev4"
     }
   ],
   "financials": {
     "currency": "USD",
     "amounts": [
       {
-        "label": "Annual road-maintenance cost",
-        "amount": 22208,
-        "basis": "The association's annual grading, gravel, and plowing budget."
-      },
-      {
-        "label": "Defendant's unpaid share plus attorney fees",
-        "amount": 15973,
-        "basis": "Accrued unpaid assessments and statutory attorney fees for non-payment."
-      },
-      {
         "label": "Value impact of the access dispute on the lots",
-        "amount": 45894,
+        "amount": 85348,
         "basis": "Estimated effect of the dispute on the affected lots' market value."
       },
       {
-        "label": "Cost to bring the paper street to a buildable standard",
-        "amount": 265717,
-        "basis": "Engineer's estimate to construct the corridor to a road standard."
+        "label": "Annual road-maintenance cost",
+        "amount": 12476,
+        "basis": "The association's annual grading, gravel, and plowing budget."
+      },
+      {
+        "label": "Survey and title-examination costs",
+        "amount": 27194,
+        "basis": "Cost of the boundary survey and the title abstract."
       }
     ]
   },
@@ -482,11 +445,6 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "The assessment formula is not fair and equitable",
-        "by": "Maria Q. Fairbanks",
-        "basis": "The maintenance assessment is not a fair and equitable apportionment of the actual benefit to the defendant's lot. 23 M.R.S. § 3101."
-      },
-      {
         "defense": "Laches and acquiescence",
         "by": "Coastal Outfitters LLC",
         "basis": "The plaintiff and the association acquiesced in the platted way and delayed unreasonably in challenging access."
@@ -495,11 +453,6 @@
         "defense": "Easement by implication or necessity",
         "by": "Coastal Outfitters LLC",
         "basis": "The back lot takes an easement over the paper street by implication from the subdivision plan or by necessity for access."
-      },
-      {
-        "defense": "The plan reserved private access rights to all lot owners",
-        "by": "Coastal Outfitters LLC",
-        "basis": "The recorded subdivision plan reserved private rights in the platted ways to every lot owner, including the developer. 23 M.R.S. § 3033."
       }
     ],
     "counterclaims": [
@@ -513,66 +466,58 @@
     ],
     "motions": [
       {
-        "title": "Motion to appoint a referee on the assessment",
-        "type": "procedural",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-10-31",
-        "status": "under_advisement",
-        "relief": "Appointment of a referee to determine the fair and equitable share owed."
-      },
-      {
         "title": "Motion for summary judgment on the vacation of the way",
         "type": "dispositive",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-09-10",
+        "filed_date": "2025-09-26",
         "status": "opposed",
         "relief": "Summary judgment that the paper street is deemed vacated and the developer has no easement."
       },
       {
-        "title": "Motion to join all lot owners as necessary parties",
+        "title": "Motion to appoint a referee on the assessment",
         "type": "procedural",
-        "movant": "Coastal Outfitters LLC",
-        "filed_date": "2025-08-15",
-        "status": "filed",
-        "relief": "An order joining all subdivision lot owners as necessary parties."
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-11-24",
+        "status": "under_advisement",
+        "relief": "Appointment of a referee to determine the fair and equitable share owed."
       },
       {
         "title": "Motion for a preliminary injunction",
         "type": "procedural",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-08-12",
+        "filed_date": "2025-07-18",
         "status": "granted_in_part",
         "relief": "A preliminary injunction barring road construction over the paper street pending judgment."
       }
     ],
     "docket": [
       {
-        "date": "2025-05-12",
+        "date": "2025-05-09",
         "entry": "Complaint to quiet title and for declaratory and injunctive relief filed.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-06-05",
+        "date": "2025-06-18",
         "entry": "Answer and counterclaim asserting an easement filed by the developer.",
         "party": "Coastal Outfitters LLC"
       },
       {
-        "date": "2025-07-25",
+        "date": "2025-07-27",
         "entry": "Answer of the defendant neighbor on the assessment filed.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-09-02",
+        "date": "2025-08-23",
         "entry": "Order on the motion for a preliminary injunction entered.",
         "party": "the court"
       },
       {
-        "date": "2025-10-06",
+        "date": "2025-10-23",
         "entry": "Scheduling order entered and the Town appears on the way's status.",
         "party": "the court"
       },
       {
-        "date": "2025-11-18",
+        "date": "2025-11-23",
         "entry": "Hearing held on summary judgment as to vacation of the way.",
         "party": "the court"
       }
@@ -580,7 +525,7 @@
     "trial": {
       "jury": false,
       "estimated_days": 4,
-      "scheduled_date": "2026-09-02"
+      "scheduled_date": "2027-02-22"
     }
   },
   "facts": {
@@ -592,7 +537,8 @@
     "actual_access_road": "a seasonal private road",
     "annual_maintenance_cost": 33699,
     "defendant_unpaid_share": 6524,
-    "developer_back_lot": "a rear parcel the developer plans to build on",
+    "cost_sharing_basis": "a share proportionate to each owner's actual use of the way",
+    "developer_back_lot": "a landlocked back lot the developer wants to subdivide",
     "developer_access_theory": "that the recorded plan grants all lot owners rights in the paper street"
   }
 }

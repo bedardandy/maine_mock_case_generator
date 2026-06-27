@@ -44,6 +44,7 @@ facts:
   actual_access_road: {pick: ["a gravel private way serving twelve camps", "a shared shorefront lane", "a seasonal private road"]}
   annual_maintenance_cost: {int_between: [4000, 38000]}
   defendant_unpaid_share: {int_between: [600, 9000]}
+  cost_sharing_basis: {pick: ["an equal per-lot share fixed in the road association bylaws", "a share proportionate to each lot's road frontage", "a share proportionate to each owner's actual use of the way", "a share proportionate to the benefit the way confers on each lot", "a maintenance formula adopted by majority vote of the road association"]}
   developer_back_lot: {pick: ["a landlocked back lot the developer wants to subdivide", "a rear parcel the developer plans to build on"]}
   developer_access_theory: {pick: ["that the recorded plan grants all lot owners rights in the paper street", "an easement by implication from the subdivision plan", "a deeded right-of-way over the paper street"]}
 
@@ -67,6 +68,7 @@ fact_pattern:
     - "{subdivision_name} was platted and its plan recorded in {plan_recorded_year}."
     - "{paper_street_name} was never built and the lots are in fact served by {actual_access_road}."
     - "{road_association_name} maintains the actual access road and levies assessments on the lot owners."
+    - "{road_association_name} apportions the annual maintenance cost as {cost_sharing_basis}."
   disputed:
     - "Whether {paper_street_name} is deemed vacated under the Paper Streets Law and, if so, whether any private access rights survive."
     - "Whether {defendant_2_full_name} holds an easement over the paper street to reach {developer_back_lot}."
@@ -82,7 +84,7 @@ interview:
     - {topic: "Goal", question: "What are you trying to accomplish?", answer: "I want it confirmed that {paper_street_name} is a dead paper street and keep the developer from cutting a new road through to {developer_back_lot}. And I want {defendant_first} to finally pay his share of the road."}
     - {topic: "The paper street", question: "Tell me about {paper_street_name}.", answer: "It is only a line on the old {plan_recorded_year} plan. It was never built. We all use {actual_access_road}, and the town never took {paper_street_name} over."}
     - {topic: "The developer", question: "What is the developer claiming?", answer: "They bought {developer_back_lot} and now say {developer_access_theory}. They want to open that paper street as a road. The whole neighborhood is against it."}
-    - {topic: "The road association", question: "How does the road get maintained and paid for?", answer: "{road_association_name} runs it. We assess the owners for upkeep -- it is about ${annual_maintenance_cost} a year for grading, gravel, and plowing. Everyone pays but {defendant_first}."}
+    - {topic: "The road association", question: "How does the road get maintained and paid for?", answer: "{road_association_name} runs it. We assess the owners for upkeep -- it is about ${annual_maintenance_cost} a year for grading, gravel, and plowing -- and we split it as {cost_sharing_basis}. Everyone pays but {defendant_first}."}
     - {topic: "The unpaid share", question: "How much is {defendant_first} behind?", answer: "He is into us for about ${defendant_unpaid_share} now. He just refuses, and the rest of us are covering his share of a road he uses every day."}
     - {topic: "Approach", question: "How do you want to handle this?", answer: "I would rather settle the road bill than fight forever, but I am not going to let the developer open that street. The survey and the title work back us up."}
 
@@ -111,7 +113,7 @@ issues:
     - {issue: "Whether {paper_street_name} is deemed vacated under the Paper Streets Law", category: real_estate, governing_law: "23 M.R.S. § 3032", sub_questions: ["Was the way platted before 1987 and never accepted by the municipality?", "Was it deemed vacated by the later of September 29, 1997 or 15 years after recording?"], strength: strong, client_position: "Because the town never accepted {paper_street_name}, it was deemed vacated by operation of the statute."}
     - {issue: "The rights of action and reservations attending a vacated platted way", category: real_estate, governing_law: "23 M.R.S. § 3033", sub_questions: ["What rights survive vacation of the public way?", "Did the recorded plan or any deed reserve private access rights?"], strength: moderate, client_position: "No enforceable private easement over the paper street survives in the developer."}
     - {issue: "Whether lot owners retain private access rights over the paper street despite vacation of public rights", category: real_estate, governing_law: "23 M.R.S. § 3032", sub_questions: ["Does the doctrine of incipient dedication grant lot owners private rights in the platted way?", "Has any such private right been used or abandoned?"], strength: moderate, client_position: "Any incipient private rights do not entitle the developer to open a new road for a back lot."}
-    - {issue: "Private road association maintenance and each owner's fair and equitable proportionate share", category: real_estate, governing_law: "23 M.R.S. § 3101", sub_questions: ["Is the assessment a fair and equitable apportionment among benefited owners?", "May the association recover the unpaid share and attorney fees by civil action?"], strength: strong, client_position: "{defendant_first} owes his fair and equitable proportionate share plus attorney fees for non-payment."}
+    - {issue: "Private road association maintenance and each owner's fair and equitable proportionate share", category: real_estate, governing_law: "23 M.R.S. § 3101", sub_questions: ["Is the assessment a fair and equitable apportionment among benefited owners?", "Does the association apportion cost by a defined method ({cost_sharing_basis})?", "May the association recover the unpaid share and attorney fees by civil action?"], strength: strong, client_position: "The association apportions maintenance as {cost_sharing_basis}, and {defendant_first} owes that fair and equitable proportionate share plus attorney fees for non-payment."}
     - {issue: "Quiet title and declaratory judgment as to the status of the way and the developer's claimed easement", category: real_estate, governing_law: "14 M.R.S. § 6651; 14 M.R.S. § 5951 et seq.", sub_questions: ["Is a declaration appropriate to settle the status of the way?", "Should title be quieted against the developer's claimed easement?"], strength: moderate}
 
 experts:

@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-RE-2025-284",
-    "case_id": "MMC-2025-932967",
+    "docket_number": "SAG-RE-2025-898",
+    "case_id": "MMC-2025-832948",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
@@ -90,73 +90,66 @@
     "actual_access_road": "a seasonal private road",
     "annual_maintenance_cost": 33699,
     "defendant_unpaid_share": 6524,
-    "developer_back_lot": "a rear parcel the developer plans to build on",
+    "cost_sharing_basis": "a share proportionate to each owner's actual use of the way",
+    "developer_back_lot": "a landlocked back lot the developer wants to subdivide",
     "developer_access_theory": "that the recorded plan grants all lot owners rights in the paper street"
   },
   "litigation": {
     "posture": "pleadings",
     "docket": [
       {
-        "date": "2025-05-12",
+        "date": "2025-05-09",
         "entry": "Complaint to quiet title and for declaratory and injunctive relief filed.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-06-05",
+        "date": "2025-06-18",
         "entry": "Answer and counterclaim asserting an easement filed by the developer.",
         "party": "Coastal Outfitters LLC"
       },
       {
-        "date": "2025-07-25",
+        "date": "2025-07-27",
         "entry": "Answer of the defendant neighbor on the assessment filed.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-09-02",
+        "date": "2025-08-23",
         "entry": "Order on the motion for a preliminary injunction entered.",
         "party": "the court"
       },
       {
-        "date": "2025-10-06",
+        "date": "2025-10-23",
         "entry": "Scheduling order entered and the Town appears on the way's status.",
         "party": "the court"
       },
       {
-        "date": "2025-11-18",
+        "date": "2025-11-23",
         "entry": "Hearing held on summary judgment as to vacation of the way.",
         "party": "the court"
       }
     ],
     "motions": [
       {
-        "title": "Motion to appoint a referee on the assessment",
-        "type": "procedural",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-10-31",
-        "status": "under_advisement",
-        "relief": "Appointment of a referee to determine the fair and equitable share owed."
-      },
-      {
         "title": "Motion for summary judgment on the vacation of the way",
         "type": "dispositive",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-09-10",
+        "filed_date": "2025-09-26",
         "status": "opposed",
         "relief": "Summary judgment that the paper street is deemed vacated and the developer has no easement."
       },
       {
-        "title": "Motion to join all lot owners as necessary parties",
+        "title": "Motion to appoint a referee on the assessment",
         "type": "procedural",
-        "movant": "Coastal Outfitters LLC",
-        "filed_date": "2025-08-15",
-        "status": "filed",
-        "relief": "An order joining all subdivision lot owners as necessary parties."
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-11-24",
+        "status": "under_advisement",
+        "relief": "Appointment of a referee to determine the fair and equitable share owed."
       },
       {
         "title": "Motion for a preliminary injunction",
         "type": "procedural",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-08-12",
+        "filed_date": "2025-07-18",
         "status": "granted_in_part",
         "relief": "A preliminary injunction barring road construction over the paper street pending judgment."
       }
@@ -234,11 +227,6 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "The assessment formula is not fair and equitable",
-        "by": "Maria Q. Fairbanks",
-        "basis": "The maintenance assessment is not a fair and equitable apportionment of the actual benefit to the defendant's lot. 23 M.R.S. § 3101."
-      },
-      {
         "defense": "Laches and acquiescence",
         "by": "Coastal Outfitters LLC",
         "basis": "The plaintiff and the association acquiesced in the platted way and delayed unreasonably in challenging access."
@@ -247,11 +235,6 @@
         "defense": "Easement by implication or necessity",
         "by": "Coastal Outfitters LLC",
         "basis": "The back lot takes an easement over the paper street by implication from the subdivision plan or by necessity for access."
-      },
-      {
-        "defense": "The plan reserved private access rights to all lot owners",
-        "by": "Coastal Outfitters LLC",
-        "basis": "The recorded subdivision plan reserved private rights in the platted ways to every lot owner, including the developer. 23 M.R.S. § 3033."
       }
     ]
   }
