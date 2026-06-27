@@ -87,6 +87,157 @@ variants:
     other_eviction_basis: "Good cause required; housing authority notified under the HAP contract"
     section8_tenancy: true
 
+# ---------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues layered on the primary
+# quit_ground above. Most matters draw ZERO (the weights keep a clean matter the
+# common case); any one exotic issue is rare. Each confounder injects coherent
+# ground-truth facts + a spotted issue + (where apt) an affirmative defense, and
+# carries its Maine grounding + a confidence flag. Sources verified against
+# legislature.maine.gov; AI-assembled research, NOT legal advice (see
+# DISCLAIMER.md). Overbroad-application risk is stated inline so the engine's
+# oracle is the CORRECT Maine rule, not a naive over-claim.
+confounders:
+  count: {weights: [55, 28, 13, 4]}   # ~55% of matters stay clean
+  pool:
+    - id: standing-real-party
+      weight: 5
+      confidence: "well-settled core (proper plaintiff / entity-counsel); the particular owner-lessor mismatch is fact-specific"
+      source: "14 M.R.S. § 6001(1); Bureau v. Gendron, 783 A.2d 643 (Me. 2001); 4 M.R.S. § 807; M.R. Civ. P. 17, 80D"
+      facts:
+        landlord_entity_type: {pick: [multi_member_llc, corporation]}
+        record_owner_entity: "a real-estate holding company"
+        lease_signatory_entity: "a different, affiliated entity"
+        owner_matches_lessor: false
+        landlord_self_represented: true
+        standing_question: true
+      issue:
+        issue: "Standing / real party in interest, and entity self-representation"
+        category: landlord_tenant
+        governing_law: "14 M.R.S. § 6001(1); Bureau v. Gendron, 783 A.2d 643 (Me. 2001); 4 M.R.S. § 807; M.R. Civ. P. 17"
+        sub_questions:
+          - "Is the named plaintiff the party entitled to immediate possession, or does the holding-company owner differ from the entity that signed the lease without an explained assignment/acknowledgment?"
+          - "May this entity appear without counsel, or does 4 M.R.S. § 807 require an attorney (the sole-member-LLC exception is narrow)?"
+        strength: moderate
+      defense:
+        defense: "Real party in interest / authority to maintain the FED / unauthorized entity appearance"
+        by: "{defendant_full_name}"
+        basis: "The entity that owns the premises is not the entity that signed the lease, and an LLC/corporation generally must appear through counsel. 14 M.R.S. § 6001(1); 4 M.R.S. § 807. NOTE: an owner/lessor mismatch is NOT itself proof of no standing — agency, assignment, successor status, management authority, or acceptance of rent can establish the immediate possessory right; record title is not always required."
+    - id: waiver-by-noncollection
+      weight: 3
+      requires: {quit_ground: nonpayment}
+      confidence: "fact-specific / NOT codified — common-law waiver-estoppel that courts often reject"
+      source: "common-law waiver / estoppel / modification; contrast 14 M.R.S. § 6002 (acceptance of money does not affect a 30-day no-cause notice until the writ issues)"
+      facts:
+        months_no_rent_collected: {int_between: [10, 30]}
+        landlord_sent_invoices: false
+        tenant_claims_waiver: true
+      issue:
+        issue: "Whether long non-collection of rent waived or modified the rent obligation, undercutting the stated arrears"
+        category: landlord_tenant
+        governing_law: "Common-law waiver / estoppel / implied modification (not an FED statute)"
+        sub_questions:
+          - "Did years of neither charging nor collecting rent signal the parties treated rent as not owed?"
+          - "If so, is the arrears figure in the 7-day notice overstated, making the notice defective?"
+        strength: weak
+      defense:
+        defense: "Waiver / estoppel / modification of the rent obligation"
+        by: "{defendant_full_name}"
+        basis: "The landlord neither charged nor collected rent for about {months_no_rent_collected} months. NOTE (overbroad-risk): mere delay or non-collection is NOT enough — waiver, estoppel, accord, or implied modification needs proof of an agreement, intentional relinquishment, or detrimental reliance; the argument frequently fails, and acceptance of rent does NOT auto-waive a Maine 30-day no-cause notice (14 M.R.S. § 6002)."
+    - id: retaliation-tenant-complaint
+      weight: 3
+      requires: {quit_ground: at_will}
+      confidence: "well-settled statute (presumption + 6-month window); the § 6002(1)/lease-violation carve-out is large"
+      source: "14 M.R.S. § 6001(3) (esp. (3)(B) code-officer complaint); § 6001(4); § 6026"
+      facts:
+        tenant_code_complaint: true
+        code_complaint_recipient: town_code_officer
+        code_complaint_date: {date_between: ["2025-08-01", "2026-01-15"]}
+        days_between_complaint_and_fed: {int_between: [20, 160]}
+      issue:
+        issue: "Rebuttable presumption of retaliatory eviction"
+        category: landlord_tenant
+        governing_law: "14 M.R.S. § 6001(3)"
+        sub_questions:
+          - "Did the tenant complain to a code-enforcement officer within 6 months before the FED, raising the presumption?"
+          - "Can the landlord rebut it with a legitimate non-retaliatory cause? (No writ may issue absent rebuttal.)"
+        strength: moderate
+      defense:
+        defense: "Retaliatory eviction (statutory presumption)"
+        by: "{defendant_full_name}"
+        basis: "The no-cause FED follows the tenant's code complaint within 6 months. 14 M.R.S. § 6001(3). NOTE: the presumption does NOT apply where the FED is for a § 6002(1) ground or a lease violation, unless the tenant asserted § 6026."
+    - id: landlord-code-violation-eviction
+      weight: 2
+      confidence: "statute well-settled; the inverse-twist OUTCOME is fact-specific"
+      source: "14 M.R.S. § 6001(3) exception; § 6002(1)(B) (nuisance / violation of a law regarding the tenancy)"
+      facts:
+        landlord_received_town_fine_notice: true
+        town_fine_subject: {pick: [grounded_boat, camper, accumulated_junk]}
+        tenant_code_complaint: false
+        eviction_recast_as: "6002(1)(B) law-violation / nuisance"
+      issue:
+        issue: "Whether retaliation protection is available where the landlord's OWN code-violation exposure drove the eviction"
+        category: landlord_tenant
+        governing_law: "14 M.R.S. § 6001(3) exception; § 6002(1)(B)"
+        sub_questions:
+          - "Did the TENANT engage in protected activity? The landlord's own exposure to municipal code enforcement is NOT tenant protected activity — if the tenant made no protected complaint, no § 6001(3) presumption arises at all."
+          - "If the FED is framed as a § 6002(1)(B) law-violation/nuisance ground, the § 6001(3) exception removes the presumption — but is that stated cause bona fide, or a pretext?"
+        strength: moderate
+    - id: habitability-bedbugs
+      weight: 4
+      confidence: "§ 6021 / § 6021-A elements well-settled; indeterminate-origin cost allocation is fact-specific"
+      source: "14 M.R.S. § 6021 (5-element warranty); § 6021-A (bedbugs: 5-day inspect / 10-day pest-control / cooperation cost-shift); § 6026 (narrow repair-and-deduct)"
+      facts:
+        condition_type: bedbugs
+        bedbug_origin: indeterminate
+        condition_caused_by_tenant: indeterminate
+        tenant_cooperated_with_treatment: false
+        landlord_inspected_within_5_days: {pick: [true, false]}
+      issue:
+        issue: "Implied warranty of habitability — bedbugs of indeterminate origin worsened by the tenant"
+        category: landlord_tenant
+        governing_law: "14 M.R.S. § 6021; § 6021-A"
+        sub_questions:
+          - "Was the condition caused by the tenant or someone under the tenant's control (§ 6021(3)(B)), and was the tenant current in rent (§ 6021(3)(E))?"
+          - "Did the landlord meet the § 6021-A 5-day inspect / 10-day pest-control duties, and does cost shift to an uncooperative tenant (§ 6021-A(3)(C))?"
+        strength: moderate
+      defense:
+        defense: "Breach of the implied warranty of habitability"
+        by: "{defendant_full_name}"
+        basis: "Bedbug infestation the landlord failed to address under 14 M.R.S. § 6021-A. NOTE (overbroad-risk): Maine has NO general rent-withholding — the tenant must be current in rent to assert the warranty (§ 6021(3)(E)), and indeterminate origin plus tenant non-cooperation can shift treatment cost to the tenant."
+    - id: abandoned-property-postwrit
+      weight: 2
+      confidence: "well-settled statute"
+      source: "14 M.R.S. § 6013 (safe/dry storage; first-class mail + itemized list; 7-day claim / 14-day retrieval; no ransom for early claim)"
+      facts:
+        property_left_behind_anticipated: true
+        property_has_market_value: {pick: [true, false]}
+      issue:
+        issue: "Post-judgment disposition of personal property the tenant leaves behind"
+        category: landlord_tenant
+        governing_law: "14 M.R.S. § 6013"
+        sub_questions:
+          - "Has the landlord met the § 6013 storage, itemized-notice, and 7-/14-day deadlines before disposing of or selling the property?"
+          - "Has the landlord avoided conditioning early release on back rent (prohibited)?"
+        strength: moderate
+    - id: unusual-dwelling-camper-boat
+      weight: 1
+      confidence: "UNSETTLED / fact-specific — HIGH overbroad-risk; no Maine appellate case squarely on point. EXPERIMENTAL."
+      source: "14 M.R.S. § 6021(1) 'dwelling unit'; § 6001/§ 6002; 10 M.R.S. § 9097-B (parks); 30-A § 3837 (campground); 38 M.R.S. § 9 (abandoned watercraft)"
+      facts:
+        dwelling_type: {pick: [camper_rv, grounded_boat]}
+        premises_address: {pick: ["Site 14, Pinecrest Camping Area", "a grounded vessel moored at 9 Shoreline Way", "an RV on the back lot at 220 County Road"]}
+        structure_owned_by: tenant
+        rents_land_only: true
+        correct_instrument_question: true
+      issue:
+        issue: "Is this even an FED? Camper / grounded-boat occupancy — tenancy vs license, personal property vs fixture, and which regime governs"
+        category: landlord_tenant
+        governing_law: "14 M.R.S. § 6021(1); § 6001/§ 6002; 10 M.R.S. § 9097-B; 30-A § 3837; 38 M.R.S. § 9"
+        sub_questions:
+          - "Is the camper/boat 'rented for human habitation' with a true tenancy, or a license / campground patronage?"
+          - "Which regime governs is NOT determinable from the dwelling type alone — it turns on tenancy-vs-license, land-vs-structure rental, park/campground status, attachment/fixture facts, and abandonment facts (FED vs replevin/abandoned-chattel vs mobile-home-park vs abandoned-watercraft vs campground self-help). Genuinely unsettled — EXPERIMENTAL."
+        strength: unknown
+
 third_parties:
   count: {min: 2, max: 4}
   pool:

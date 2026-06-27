@@ -79,6 +79,150 @@ variants:
     grantor_capacity: trustee
     grantor_authority: "as Trustee under the trust instrument, exercising the trustee's power of sale under 18-B M.R.S. § 816"
 
+# ---------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues layered on the deed/covenant
+# bundle above. Gated to grantor_capacity=individual so they stay coherent with a
+# person-to-person transfer (the fiduciary PR/trustee variants keep their own
+# posture). Most matters draw ZERO. Each injects coherent ground-truth facts + a
+# spotted issue, carrying its Maine grounding + a confidence flag. Sources verified
+# against legislature.maine.gov; AI-assembled research, NOT legal advice (see
+# DISCLAIMER.md). Overbroad-application risk stated inline so the oracle is the
+# CORRECT Maine rule — notably the spousal-joinder TRAP (Maine requires NO
+# non-titled-spouse joinder on an inter-vivos deed; dower/curtesy are abolished).
+confounders:
+  count: {weights: [58, 27, 12, 3]}   # ~58% of matters stay clean
+  pool:
+    - id: improvident-transfer-elder-gift
+      weight: 2
+      requires: {grantor_capacity: individual}
+      confidence: "HIGH / well-settled statute. Presumption applies ONLY when grantor is 60+ AND dependent AND in a confidential/fiduciary relationship AND consideration is less than full."
+      source: "33 M.R.S. ch. 20, §§ 1021-1025 (Improvident Transfers of Title Act); RETT family exemption 36 M.R.S. § 4641-C(4)"
+      facts:
+        purchase_price: {pick: [1, 1, 5000, 10000]}
+        fair_market_value: {int_between: [280000, 950000]}
+        financing: "nominal consideration ('$1 and love and affection') — effectively a gift"
+        grantor_age: {int_between: [78, 92]}
+        grantor_dependent_status: {pick: [partially_dependent, wholly_dependent]}
+        relationship_to_transferee: {pick: ["the grantor's paid caregiver", "the youngest child who moved in", "a late-life companion"]}
+        confidential_or_fiduciary_relationship: true
+        grantor_independent_counsel: false
+        less_than_full_consideration: true
+      issue:
+        issue: "Improvident transfer — presumed undue influence on an elder's below-value conveyance (and the off-record nature of the risk)"
+        category: real_estate
+        governing_law: "33 M.R.S. §§ 1021-1025"
+        sub_questions:
+          - "Is the grantor 60+ and dependent, conveying for less than full consideration to a confidential/fiduciary relation without independent counsel? If so, undue influence is PRESUMED (§ 1022)."
+          - "Because § 1025 forbids any recital/recording of compliance, the risk is OFF-RECORD — title exam will not catch it; the cure is independent counsel for the grantor, a process fact, not a deed choice."
+        strength: moderate
+    - id: grantor-capacity-at-execution
+      weight: 2
+      requires: {grantor_capacity: individual}
+      confidence: "void/voidable rule well-settled (Hovey v. Hobson, 53 Me. 451 (1866)); a modern pinpoint is UNVERIFIED. Capacity is transaction-specific and PRESUMED."
+      source: "Common law — deed by a person of unsound mind is voidable, not void (Hovey v. Hobson, 53 Me. 451 (1866)); adjudicated-incapacity conveyances run through a conservator/guardian"
+      facts:
+        grantor_capacity_in_fact: {pick: [diminished_alleged, capacity_disputed]}
+        diagnosis_or_event_at_execution: {pick: [early_dementia, post_stroke, none_documented]}
+        conservator_or_guardian_appointed: false
+      issue:
+        issue: "Grantor's mental capacity to convey at the moment of execution"
+        category: real_estate
+        governing_law: "Common law; Hovey v. Hobson, 53 Me. 451 (1866)"
+        sub_questions:
+          - "Did the grantor understand the nature and effect of the conveyance when signing? (Capacity is presumed; mere age or a diagnosis is not incapacity.)"
+          - "If a conservator/guardian has been appointed, confirm the fiduciary's authority and any required probate-court approval — the proper signer depends on the order and statute, not on the diagnosis alone."
+        strength: moderate
+    - id: spousal-no-joinder-trap
+      weight: 3
+      requires: {grantor_capacity: individual}
+      confidence: "HIGH on dower/curtesy abolition + elective share; the 'no joinder required' generalization is fact-specific to vesting. OVERBROAD-IMPORT TRAP — do NOT require spousal joinder on a Maine inter-vivos deed of solely-owned property."
+      source: "18-C M.R.S. § 2-111 (dower/curtesy abolished); § 2-202 (elective share); § 2-207 (augmented estate); 33 M.R.S. § 772-A (effect of release). Maine does NOT recognize tenancy by the entirety."
+      facts:
+        grantor_marital_status: married
+        title_vesting: sole_grantor
+        non_titled_spouse_joinder_required: false
+        non_titled_spouse_joined: false
+        elective_share_pullback_risk: true
+      issue:
+        issue: "Spousal joinder is NOT required on this inter-vivos deed (the over-import trap) — the real exposure is the elective share at death"
+        category: real_estate
+        governing_law: "18-C M.R.S. § 2-111; § 2-202; § 2-207"
+        sub_questions:
+          - "Because dower/curtesy are abolished, a non-titled spouse need NOT join a deed of property the other spouse owns solely — a template that forces a joinder/release line here is WRONG for Maine."
+          - "The uncompensated lifetime transfer can instead be pulled into the augmented estate for the surviving spouse's elective share — a future claim, not a present joinder defect."
+        strength: moderate
+    - id: co-owner-joinder-required
+      weight: 2
+      requires: {grantor_capacity: individual}
+      confidence: "HIGH / well-settled. Contrast with the spousal trap: a co-owner OF RECORD must join."
+      source: "33 M.R.S. ch. 7 (estates passing, § 151); ch. 12 (Short Form Deeds Act). A conveyance binds only the interests of those who sign."
+      facts:
+        record_co_owners: "the grantor and a co-owner of record"
+        co_tenancy_type: {pick: [joint_tenancy, tenancy_in_common]}
+        only_one_co_owner_signs: true
+        severance_or_partial_conveyance_risk: true
+      issue:
+        issue: "Co-owner joinder — a deed conveys only the signing co-owner's undivided interest; conveying one joint tenant's interest may sever it into a tenancy in common"
+        category: real_estate
+        governing_law: "33 M.R.S. § 151; ch. 12 (Short Form Deeds Act)"
+        sub_questions:
+          - "Are ALL record co-owners named as grantors? A deed signed by only one validly conveys only that co-owner's undivided interest, not the whole."
+          - "If the interest was held in joint tenancy, conveying one tenant's share may sever it into a tenancy in common (an effect of the conveyance, not a defect in the deed)."
+        strength: moderate
+    - id: mainecare-estate-recovery-lookback
+      weight: 1
+      requires: {grantor_capacity: individual}
+      confidence: "HIGH on each framework; but the transfer PENALTY (federal look-back) and estate RECOVERY (state, at death) are DISTINCT — do not conflate. Not every gift triggers a penalty (exempt-transfer categories exist)."
+      source: "42 U.S.C. § 1396p(c) (5-year transfer look-back/penalty); 22 M.R.S. § 14 (MaineCare estate recovery, age 55+)"
+      facts:
+        grantor_age_55_plus: true
+        long_term_care_application_likely: true
+        transfer_uncompensated: true
+        grantor_retained_interest: {pick: [none, life_estate]}
+      issue:
+        issue: "MaineCare exposure from a below-FMV conveyance — DISTINCT transfer-penalty and estate-recovery issues (do not conflate)"
+        category: real_estate
+        governing_law: "42 U.S.C. § 1396p(c) (transfer penalty); 22 M.R.S. § 14 (estate recovery)"
+        sub_questions:
+          - "Transfer penalty: could an uncompensated transfer within 5 years of a long-term-care application create an ineligibility penalty, subject to the exempt-transfer categories?"
+          - "Estate recovery: are there interests retained at death that 22 M.R.S. § 14 could reach? This is a SEPARATE question from the transfer penalty."
+          - "Planning options are fact-specific and may THEMSELVES create penalty or recovery consequences (e.g., a retained life estate has its own valuation/recovery effects) — do not assume a life-estate deed or trust is the 'right instrument'."
+        strength: moderate
+    - id: fraudulent-transfer-creditor
+      weight: 2
+      requires: {grantor_capacity: individual}
+      confidence: "HIGH (statute verified). Actual-intent (§ 3575) turns on badges of fraud and needs neither insolvency nor lack of value; constructive claims generally require lack of reasonably-equivalent value PLUS insolvency / unreasonably small assets / inability to pay — solvent arm's-length sales are not fraudulent transfers."
+      source: "14 M.R.S. ch. 504, §§ 3571-3582 (Maine Uniform FRAUDULENT Transfer Act — NOT recodified as UVTA); § 3575 (actual intent/badges), § 3576 (constructive)"
+      facts:
+        grantor_solvency: {pick: [insolvent, rendered_insolvent_by_transfer]}
+        transferee_is_insider: true
+        reasonably_equivalent_value_received: false
+        pending_or_threatened_creditor_claim: true
+      issue:
+        issue: "Fraudulent transfer — conveyance voidable by creditors (a facially valid deed that is reversible)"
+        category: real_estate
+        governing_law: "14 M.R.S. §§ 3575, 3576 (UFTA)"
+        sub_questions:
+          - "Do badges of fraud (insider transferee, near-insolvency, lack of reasonably-equivalent value, looming creditor) make the conveyance voidable?"
+          - "Is the recited consideration honest, and is it safe to record the deed at all while the claim is pending?"
+        strength: moderate
+    - id: rett-exemption-posture
+      weight: 2
+      confidence: "HIGH (statute + MRS Bulletin 31). Exemptions are narrow and predicate-specific — 'no money changed hands' is NOT a blanket exemption."
+      source: "36 M.R.S. § 4641-A (rate/liability); § 4641-C (exemptions, e.g. (3) corrective, (4) spouse/parent-child, (18) LLC proportional, (20) controlling-interest); § 4641-D (declaration of value)"
+      facts:
+        relationship: {pick: [spouse, parent_child, grandparent_grandchild, unrelated]}
+        transfer_purpose: {pick: [gift, sale, corrective, deed_in_lieu]}
+        claimed_exemption_subsection: {pick: ["4641-C(3)", "4641-C(4)", "none"]}
+      issue:
+        issue: "Real Estate Transfer Tax — which exemption (if any) the declaration may claim"
+        category: tax
+        governing_law: "36 M.R.S. §§ 4641-A, 4641-C, 4641-D"
+        sub_questions:
+          - "Does a relationship- or structure-specific exemption actually apply, or is the transfer taxable on the consideration / debt forgiven?"
+          - "A '$1 / love and affection' deed between UNRELATED parties is not exempt; a deed-in-lieu is generally taxable on the debt — does the claimed box fit?"
+        strength: moderate
+
 third_parties:
   count: {min: 2, max: 4}
   pool:
