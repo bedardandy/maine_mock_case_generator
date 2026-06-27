@@ -119,7 +119,7 @@
         "filing_date": "2025-10-31",
         "status": "pre_filing",
         "summary": "Nadia P. Loe petitions to divorce Priya C. Roe in Cumberland County District Court, citing irreconcilable marital differences, and asks the court to resolve parental rights for two minor child(ren), child support, and division of marital property.",
-        "event_date": "2025-03-19",
+        "event_date": "2025-07-31",
         "docket_number": "CUM-FM-2025-642",
         "universe_id": "UNIV-marital-breakdown-cascade-0007"
       },
@@ -223,11 +223,11 @@
       },
       "fact_pattern": {
         "summary": "Nadia P. Loe petitions to divorce Priya C. Roe in Cumberland County District Court, citing irreconcilable marital differences, and asks the court to resolve parental rights for two minor child(ren), child support, and division of marital property.",
-        "narrative": "Nadia P. Loe and Priya C. Roe were married on 2009-04-30 in Bar Harbor, Maine. The parties have two minor child(ren) together: Samuel B. Boe and Omar W. Loe. After several years of growing conflict and a period of unsuccessful counseling, the parties separated on 2025-03-19.\n\nSince separation, the children have lived primarily with Nadia P. Loe, while the other parent has exercised weekend contact. The parties jointly own or rent a jointly owned single-family home and share several financial accounts. They disagree about a long-term parenting schedule and about how to divide retirement savings accumulated during the marriage.\n\nNadia has resided in Cumberland County, Maine for approximately 52 months, satisfying the residency requirement to file. Nadia now seeks a divorce on the ground of irreconcilable marital differences, a workable parental rights and responsibilities order, child support consistent with the Maine guidelines, and an equitable division of marital property and debt.",
+        "narrative": "Nadia P. Loe and Priya C. Roe were married on 2009-04-30 in Brunswick, Maine. The parties have two minor child(ren) together: Samuel B. Boe and Omar W. Loe. After several years of growing conflict and a period of unsuccessful counseling, the parties separated on 2025-07-31.\n\nSince separation, the children have lived primarily with Nadia P. Loe, while the other parent has exercised weekend contact. The parties jointly own or rent a jointly owned single-family home and share several financial accounts. They disagree about a long-term parenting schedule and about how to divide retirement savings accumulated during the marriage.\n\nNadia has resided in Cumberland County, Maine for approximately 52 months, satisfying the residency requirement to file. Nadia now seeks a divorce on the ground of irreconcilable marital differences, a workable parental rights and responsibilities order, child support consistent with the Maine guidelines, and an equitable division of marital property and debt.",
         "undisputed_facts": [
-          "The parties were married on 2009-04-30 in Bar Harbor, Maine.",
+          "The parties were married on 2009-04-30 in Brunswick, Maine.",
           "The parties have two minor child(ren) of the marriage.",
-          "The parties separated on 2025-03-19 and have lived apart since."
+          "The parties separated on 2025-07-31 and have lived apart since."
         ],
         "disputed_facts": [
           "The long-term allocation of parental rights and responsibilities and the primary residence of the children.",
@@ -237,10 +237,10 @@
         "timeline": [
           {
             "date": "2009-04-30",
-            "event": "Nadia and Priya married in Bar Harbor, Maine."
+            "event": "Nadia and Priya married in Brunswick, Maine."
           },
           {
-            "date": "2025-03-19",
+            "date": "2025-07-31",
             "event": "The parties separated."
           },
           {
@@ -467,12 +467,66 @@
           }
         ]
       },
+      "litigation": {
+        "docket": [
+          {
+            "date": "2025-10-31",
+            "entry": "Complaint for divorce filed with an interim relief request.",
+            "party": "us"
+          },
+          {
+            "date": "2025-11-21",
+            "entry": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+            "party": "opposing"
+          },
+          {
+            "date": "2025-12-08",
+            "entry": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+            "party": "client"
+          }
+        ],
+        "procedure": [
+          {
+            "date": "2025-10-31",
+            "day": 0,
+            "actor": "us",
+            "event": "Complaint for divorce filed with an interim relief request.",
+            "produces": [
+              "family_law__divorce_complaint"
+            ]
+          },
+          {
+            "date": "2025-11-21",
+            "day": 21,
+            "actor": "opposing",
+            "event": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+            "produces": [
+              "family_law__pleading"
+            ],
+            "response_deadline": "2025-12-11",
+            "deadline_rule": "M.R. Civ. P. 80(c) — response to the counterclaim for divorce."
+          },
+          {
+            "date": "2025-12-08",
+            "day": 38,
+            "actor": "client",
+            "event": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+            "produces": [
+              "family_law__motion"
+            ],
+            "response_deadline": "2025-12-08",
+            "deadline_rule": "19-A M.R.S. § 904 / M.R. Civ. P. 65 — emergency motion for interim parental rights and to freeze marital assets pending hearing.",
+            "urgent": true
+          }
+        ]
+      },
       "facts": {
         "marriage_date": "2009-04-30",
-        "marriage_city": "Bar Harbor",
-        "marriage_county": "Sagadahoc",
+        "marriage_place": "Bar Harbor, Maine",
+        "marriage_city": "Brunswick",
+        "marriage_county": "Hancock",
         "marriage_state": "Maine",
-        "separation_date": "2025-03-19",
+        "separation_date": "2025-07-31",
         "grounds": "Irreconcilable marital differences",
         "residency_months": 52,
         "spousal_support_requested": true,

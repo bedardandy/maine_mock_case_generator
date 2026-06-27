@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-699",
-    "case_id": "MMC-2025-588218",
+    "docket_number": "SAG-CV-2025-470",
+    "case_id": "MMC-2025-575198",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
@@ -85,6 +85,186 @@
     "discovery_date": "2024-07-12",
     "repair_cost_estimate": 602549,
     "mechanic_lien_filed": false,
-    "warranty_period": "a written 10-year structural warranty"
+    "warranty_period": "a written 10-year structural warranty",
+    "legal_description": "The land and improvements at the subject premises, being the same parcel conveyed by warranty deed, together with all buildings thereon",
+    "registry": "Sagadahoc County Registry of Deeds",
+    "unpaid_amount": 161501
+  },
+  "litigation": {
+    "posture": "discovery",
+    "docket": [
+      {
+        "date": "2025-02-10",
+        "entry": "Complaint filed against the general contractor and excavation subcontractor.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-03-10",
+        "entry": "Answer, cross-claim against the subcontractor, and third-party complaint against the design professional filed.",
+        "party": "Summit Outfitters Co."
+      },
+      {
+        "date": "2025-04-06",
+        "entry": "Scheduling order entered; discovery and expert-disclosure deadlines set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-06-03",
+        "entry": "Order granting destructive testing and site inspection of the foundation.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-17",
+        "entry": "Expert reports on causation, soils, and repair cost served.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-11-20",
+        "entry": "Motion for summary judgment on the mechanic's lien taken under advisement.",
+        "party": "the court"
+      },
+      {
+        "date": "2026-01-16",
+        "entry": "Mediation held; discovery continues toward trial.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to bifurcate liability and damages",
+        "type": "pretrial",
+        "movant": "Summit Outfitters Co.",
+        "filed_date": "2026-02-01",
+        "status": "opposed",
+        "relief": "Separate trials on liability and damages."
+      },
+      {
+        "title": "Motion for summary judgment on the mechanic's lien",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-10-10",
+        "status": "under_advisement",
+        "relief": "Judgment reducing or discharging the recorded lien."
+      },
+      {
+        "title": "Motion in limine to exclude a defect expert",
+        "type": "evidentiary",
+        "movant": "Summit Outfitters Co.",
+        "filed_date": "2026-03-27",
+        "status": "filed",
+        "relief": "Exclusion of the homeowner's causation expert."
+      },
+      {
+        "title": "Motion to consolidate",
+        "type": "procedural",
+        "movant": "Summit Outfitters Co.",
+        "filed_date": "2025-04-07",
+        "status": "granted",
+        "relief": "Consolidation of the related lien and defect actions."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Breach of construction contract",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "14 M.R.S. § 752; common law",
+        "elements": [
+          "A valid construction contract",
+          "Performance by the homeowner",
+          "Defective or nonconforming work by the contractor",
+          "Resulting damages"
+        ],
+        "relief_sought": "Repair-cost damages of approximately $602549",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Breach of the implied warranty of workmanlike construction",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "Common law implied warranty",
+        "elements": [
+          "Construction of a residence",
+          "An implied warranty of workmanlike, habitable construction",
+          "Breach by defective work",
+          "Damages"
+        ],
+        "relief_sought": "Cost to repair and consequential damages",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Negligence",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "Common law negligence; 14 M.R.S. § 156",
+        "elements": [
+          "A duty of reasonable care in construction",
+          "Breach of that duty",
+          "Causation",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages for the cost of repair and diminution in value",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Negligence (negligent excavation and fill compaction)",
+        "by": "Grace C. Roe",
+        "against": "Coastal Logistics Inc.",
+        "governing_law": "Common law negligence",
+        "elements": [
+          "A duty to excavate and compact fill to specification",
+          "Breach of that duty",
+          "Causation of the settlement and intrusion",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages attributable to the defective sitework",
+        "strength": "moderate"
+      },
+      {
+        "count": 5,
+        "claim": "Enforcement and discharge of the mechanic's lien",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "10 M.R.S. § 3251 et seq.",
+        "elements": [
+          "A recorded mechanic's lien",
+          "A genuine dispute over the amount owed",
+          "The homeowner's setoff for defective work"
+        ],
+        "relief_sought": "A declaration reducing or discharging the lien and an accounting",
+        "strength": "unknown"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Failure to maintain and improper grading by the owner",
+        "by": "Summit Outfitters Co.",
+        "basis": "The conditions result from the owner's failure to maintain and regrade the site."
+      },
+      {
+        "defense": "Betterment",
+        "by": "Summit Outfitters Co.",
+        "basis": "The claimed repairs would put the homeowner in a better position than the contract required."
+      },
+      {
+        "defense": "The work met code",
+        "by": "Coastal Logistics Inc.",
+        "basis": "The excavation and fill work passed inspection and complied with the applicable building code."
+      },
+      {
+        "defense": "Lack of notice and opportunity to cure",
+        "by": "Summit Outfitters Co.",
+        "basis": "The homeowner failed to provide notice and a reasonable opportunity to cure the alleged defects."
+      },
+      {
+        "defense": "Statute of repose",
+        "by": "Summit Outfitters Co.",
+        "basis": "Claims for design and construction are barred by the period of repose. 14 M.R.S. § 752-A."
+      }
+    ]
   }
 }

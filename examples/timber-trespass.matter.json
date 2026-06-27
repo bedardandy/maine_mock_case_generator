@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-575198",
+    "matter_id": "MMC-2025-479146",
     "practice_area": "real_estate",
     "title": "Roe v. Fairbanks et al. (Timber Trespass)",
     "jurisdiction": {
@@ -23,7 +23,7 @@
     "status": "active",
     "summary": "Grace C. Roe sues neighbor Maria Q. Fairbanks and logging contractor Coastal Outfitters LLC after the defendants cut and hauled away trees from a mature white pine and hemlock woodlot on Roe's land, seeking the value of the timber plus enhanced damages under Maine's timber-trespass statute and a determination of the true boundary.",
     "event_date": "2024-05-31",
-    "docket_number": "SAG-RE-2025-470"
+    "docket_number": "SAG-RE-2025-406"
   },
   "parties": {
     "plaintiff": {
@@ -156,27 +156,14 @@
     {
       "id": "tp3",
       "name": "Wesley B. Fairbanks",
-      "type": "neighbor",
-      "role": "Adjoining neighbor",
-      "relevance": "Witnessed the crew cutting and hauling trees from the plaintiff's land.",
+      "type": "expert",
+      "role": "Licensed forester",
+      "relevance": "Appraised the stumpage and the damage to the woodlot.",
       "contact": {
         "phone": "(207) 555-0185",
         "city": "Lewiston",
         "state": "ME",
         "email": "wesley.fairbanks@example.net"
-      }
-    },
-    {
-      "id": "tp4",
-      "name": "Theodore S. Larkspur",
-      "type": "expert",
-      "role": "Licensed forester",
-      "relevance": "Appraised the stumpage and the damage to the woodlot.",
-      "contact": {
-        "phone": "(207) 555-0174",
-        "city": "Falmouth",
-        "state": "ME",
-        "email": "theodore.larkspur@example.org"
       }
     }
   ],
@@ -243,6 +230,29 @@
   },
   "issues": [
     {
+      "issue": "Quiet title and determination of the true boundary line where the cutter claims the trees were on his land",
+      "category": "real_estate",
+      "governing_law": "14 M.R.S. § 6651",
+      "sub_questions": [
+        "Where does the true boundary between the parcels lie?",
+        "Do the deeds, monuments, and survey place the cut trees on the plaintiff's land?"
+      ],
+      "strength": "moderate",
+      "client_position": "The deeds and a proper survey place the cut trees on Roe's side of the true line.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Whether restoration cost or diminution in value is the proper measure of damages",
+      "category": "real_estate",
+      "governing_law": "14 M.R.S. § 7552",
+      "sub_questions": [
+        "Is the cost of restoration the appropriate measure for the damage to the woodlot?",
+        "Does restoration cost exceed the diminution in the land's value?"
+      ],
+      "strength": "moderate",
+      "id": "iss2"
+    },
+    {
       "issue": "Shoreland-zoning buffer violation where the cut crossed a protected zone",
       "category": "real_estate",
       "governing_law": "38 M.R.S. § 438-A",
@@ -251,7 +261,7 @@
         "What municipal or state enforcement consequences follow?"
       ],
       "strength": "moderate",
-      "id": "iss1"
+      "id": "iss3"
     },
     {
       "issue": "Liability and enhanced damages for timber trespass under Maine's cutting-of-trees statute",
@@ -263,18 +273,7 @@
       ],
       "strength": "strong",
       "client_position": "The cutting was unauthorized, so Grace is entitled to the value of the trees plus enhanced double, and up to treble, damages.",
-      "id": "iss2"
-    },
-    {
-      "issue": "Whether restoration cost or diminution in value is the proper measure of damages",
-      "category": "real_estate",
-      "governing_law": "14 M.R.S. § 7552",
-      "sub_questions": [
-        "Is the cost of restoration the appropriate measure for the damage to the woodlot?",
-        "Does restoration cost exceed the diminution in the land's value?"
-      ],
-      "strength": "moderate",
-      "id": "iss3"
+      "id": "iss4"
     },
     {
       "issue": "Conversion of the cut timber once it was severed and hauled away",
@@ -286,18 +285,6 @@
       ],
       "strength": "moderate",
       "client_position": "Once cut, the logs were Roe's personal property, and removing and selling them was conversion.",
-      "id": "iss4"
-    },
-    {
-      "issue": "Common-law trespass to real property by entering and cutting on the plaintiff's land",
-      "category": "real_estate",
-      "governing_law": "Common law trespass",
-      "sub_questions": [
-        "Did the defendants enter the plaintiff's land without permission?",
-        "What damages flow from the physical intrusion and disturbance of the soil?"
-      ],
-      "strength": "strong",
-      "client_position": "The crew entered and cut on Roe's land without authority, a plain trespass.",
       "id": "iss5"
     }
   ],
@@ -305,19 +292,7 @@
     {
       "id": "exp1",
       "expert": {
-        "name": "Beatrice M. Ellsworth",
-        "field": "Arboriculture",
-        "credentials": "Certified Arborist",
-        "retained_by": "plaintiff"
-      },
-      "topic": "Value of ornamental and shade trees",
-      "opinion": "The destroyed ornamental and shade trees had appraised value well beyond their stumpage as sawlogs.",
-      "basis": "Trunk-formula appraisal of individual ornamental and shade trees."
-    },
-    {
-      "id": "exp2",
-      "expert": {
-        "name": "Jane M. Greenhill",
+        "name": "John R. Birchwood",
         "field": "Land surveying",
         "credentials": "PLS",
         "retained_by": "plaintiff"
@@ -327,9 +302,9 @@
       "basis": "Boundary survey, record deeds, and located monuments."
     },
     {
-      "id": "exp3",
+      "id": "exp2",
       "expert": {
-        "name": "Henry D. Larkspur",
+        "name": "Diego M. Ellsworth",
         "field": "Consulting forestry",
         "credentials": "Licensed Forester",
         "retained_by": "plaintiff"
@@ -341,77 +316,56 @@
   ],
   "evidence": [
     {
-      "title": "Deed and recorded plan",
-      "type": "public_record",
-      "party": "plaintiff",
-      "description": "The recorded deed and plan establishing the plaintiff's title and the boundary.",
-      "id": "ev1"
-    },
-    {
-      "title": "Boundary survey",
+      "title": "Forester's stumpage and damage appraisal",
       "type": "document",
       "party": "plaintiff",
-      "description": "The surveyor's plan locating the true boundary between the parcels.",
-      "id": "ev2"
+      "description": "The consulting forester's appraisal of stumpage value and restoration cost.",
+      "id": "ev1"
     },
     {
       "title": "Photographs of the stumps and cleared area",
       "type": "photo",
       "party": "plaintiff",
       "description": "Photographs of the cut stumps, skid trails, and the cleared portion of the woodlot.",
+      "id": "ev2"
+    },
+    {
+      "title": "Boundary survey",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "The surveyor's plan locating the true boundary between the parcels.",
       "id": "ev3"
     },
     {
-      "title": "Logging contract",
-      "type": "document",
-      "party": "defendant",
-      "description": "The harvesting contract between the neighbor and the logging contractor.",
-      "id": "ev4"
-    },
-    {
-      "title": "Sawmill scale and delivery tickets",
-      "type": "financial_record",
-      "party": "defendant_2",
-      "description": "The sawmill's scale slips and delivery tickets documenting the logs taken in.",
-      "id": "ev5"
-    },
-    {
-      "title": "Code-enforcement records",
+      "title": "Deed and recorded plan",
       "type": "public_record",
       "party": "plaintiff",
-      "description": "Municipal code-enforcement file on the shoreland buffer violation, where applicable.",
-      "id": "ev6"
-    },
-    {
-      "title": "Forester's stumpage and damage appraisal",
-      "type": "document",
-      "party": "plaintiff",
-      "description": "The consulting forester's appraisal of stumpage value and restoration cost.",
-      "id": "ev7"
+      "description": "The recorded deed and plan establishing the plaintiff's title and the boundary.",
+      "id": "ev4"
     }
   ],
   "financials": {
     "currency": "USD",
     "amounts": [
       {
-        "label": "Boundary survey cost",
-        "amount": 9080,
-        "basis": "Cost of the boundary survey to locate the true line."
-      },
-      {
         "label": "Stumpage value of the cut trees",
-        "amount": 147032,
+        "amount": 196557,
         "basis": "Forester's appraisal of the felled timber."
       },
       {
-        "label": "Estimated attorney fees",
-        "amount": 48416,
-        "basis": "Litigation budget through trial."
+        "label": "Double / treble enhanced damages",
+        "amount": 265642,
+        "basis": "Statutory multiplier on the value of the trees under 14 M.R.S. § 7552."
       },
       {
-        "label": "Double / treble enhanced damages",
-        "amount": 149577,
-        "basis": "Statutory multiplier on the value of the trees under 14 M.R.S. § 7552."
+        "label": "Boundary survey cost",
+        "amount": 9019,
+        "basis": "Cost of the boundary survey to locate the true line."
+      },
+      {
+        "label": "Estimated attorney fees",
+        "amount": 63242,
+        "basis": "Litigation budget through trial."
       }
     ]
   },
@@ -481,9 +435,9 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "Acquiescence in the boundary line",
+        "defense": "The trees were on the defendant's land",
         "by": "Maria Q. Fairbanks",
-        "basis": "The parties long acquiesced in a line that places the trees on the defendant's side."
+        "basis": "The cut trees stood on Fairbanks's side of the true boundary, so no trespass occurred. 14 M.R.S. § 6651."
       },
       {
         "defense": "Comparative responsibility",
@@ -507,108 +461,108 @@
     ],
     "discovery": [
       {
-        "type": "subpoena",
+        "type": "expert_disclosure",
         "propounding_party": "Grace C. Roe",
-        "responding_party": "the sawmill",
-        "served_date": "2025-06-22",
+        "responding_party": "Maria Q. Fairbanks",
+        "served_date": "2025-10-06",
         "status": "served",
-        "description": "Subpoena to the sawmill for scale and delivery records."
+        "description": "Plaintiff's forester and surveyor disclosures and reports."
       },
       {
         "type": "deposition",
         "propounding_party": "Grace C. Roe",
-        "responding_party": "Coastal Outfitters LLC",
-        "served_date": "2025-07-12",
+        "responding_party": "Maria Q. Fairbanks",
+        "served_date": "2025-07-18",
         "status": "outstanding",
-        "description": "Deposition of the logging contractor who cut the trees."
+        "description": "Deposition of the neighbor who ordered the clearing."
       },
       {
         "type": "request_for_production",
         "propounding_party": "Grace C. Roe",
         "responding_party": "Coastal Outfitters LLC",
-        "served_date": "2025-05-24",
+        "served_date": "2025-06-10",
         "status": "served",
         "description": "Requests for the logging contract and the sawmill scale tickets."
       },
       {
-        "type": "interrogatories",
+        "type": "deposition",
         "propounding_party": "Grace C. Roe",
-        "responding_party": "Maria Q. Fairbanks",
-        "served_date": "2025-05-29",
-        "status": "served",
-        "description": "First set of interrogatories on the harvest and the boundary."
+        "responding_party": "Coastal Outfitters LLC",
+        "served_date": "2025-07-23",
+        "status": "outstanding",
+        "description": "Deposition of the logging contractor who cut the trees."
       }
     ],
     "motions": [
       {
-        "title": "Motion for the enhanced-damages multiplier",
-        "type": "dispositive",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-11-05",
-        "status": "opposed",
-        "relief": "An order applying the double or treble damages multiplier under 14 M.R.S. § 7552."
+        "title": "Motion in limine on valuation",
+        "type": "evidentiary",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2025-12-12",
+        "status": "filed",
+        "relief": "Exclusion of the plaintiff's restoration-cost valuation."
       },
       {
         "title": "Motion for partial summary judgment on liability",
         "type": "dispositive",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-09-19",
+        "filed_date": "2025-09-10",
         "status": "filed",
         "relief": "Judgment that the unauthorized cutting establishes timber-trespass liability."
-      },
-      {
-        "title": "Motion in limine on valuation",
-        "type": "evidentiary",
-        "movant": "Maria Q. Fairbanks",
-        "filed_date": "2025-12-01",
-        "status": "filed",
-        "relief": "Exclusion of the plaintiff's restoration-cost valuation."
       },
       {
         "title": "Motion to determine the boundary",
         "type": "procedural",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-09-10",
+        "filed_date": "2025-09-15",
         "status": "under_advisement",
         "relief": "A determination of the true boundary between the parcels."
+      },
+      {
+        "title": "Motion for the enhanced-damages multiplier",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-11-03",
+        "status": "opposed",
+        "relief": "An order applying the double or treble damages multiplier under 14 M.R.S. § 7552."
       }
     ],
     "docket": [
       {
-        "date": "2025-04-18",
+        "date": "2025-04-05",
         "entry": "Complaint for timber trespass and to quiet title filed.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-05-27",
+        "date": "2025-05-25",
         "entry": "Answers of the neighbor and the logging contractor filed.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-06-16",
+        "date": "2025-06-23",
         "entry": "Counterclaim for declaratory judgment on the boundary filed.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-08-24",
+        "date": "2025-08-10",
         "entry": "Scheduling order entered; discovery and survey deadlines set.",
         "party": "the court"
       },
       {
-        "date": "2025-10-23",
+        "date": "2025-10-13",
         "entry": "Hearing on partial summary judgment and the boundary held.",
         "party": "the court"
       },
       {
-        "date": "2025-12-15",
+        "date": "2025-12-14",
         "entry": "Expert reports on stumpage value and the boundary served.",
         "party": "Grace C. Roe"
       }
     ],
     "trial": {
       "jury": true,
-      "estimated_days": 7,
-      "scheduled_date": "2027-01-06"
+      "estimated_days": 4,
+      "scheduled_date": "2026-11-16"
     }
   },
   "facts": {
@@ -621,6 +575,8 @@
     "boundary_disputed": false,
     "survey_exists": false,
     "buffer_or_shoreland": "ordinary woodlot, no shoreland issue",
-    "restoration_cost": 159501
+    "restoration_cost": 159501,
+    "demand_recipient": "Maria Q. Fairbanks",
+    "response_deadline_days": 21
   }
 }

@@ -42,6 +42,14 @@ facts:
   unpaid_assessments: {int_between: [6000, 85000]}
   warranty_claim: {pick: [true]}
   arbitration_clause_in_declaration: {pick: [true, false]}
+  # Lien-claim facts (feed real_estate__lien_claim): the recorded property/unit
+  # description, the registry of record, the amount the lien secures, and the
+  # book/page where the Condominium Declaration is recorded.
+  legal_description: {pick: ["Unit 14 of the Granite Wharf Condominium, together with its undivided percentage interest in the common elements", "Unit 3B and Parking Space P-12 of the condominium as described in the recorded Declaration", "Unit 27, a residential condominium unit, with appurtenant interest in the common elements and limited common elements"]}
+  registry: "{county} County Registry of Deeds"
+  unpaid_amount: {int_between: [4500, 85000]}
+  decl_book: {int_between: [3200, 9800]}
+  decl_page: {int_between: [1, 480]}
 
 third_parties:
   count: {min: 3, max: 5}

@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-479146",
+    "matter_id": "MMC-2025-360494",
     "practice_area": "civil",
     "title": "Olivia B. Ellsworth v. Maria Q. Fairbanks",
     "jurisdiction": {
@@ -23,7 +23,7 @@
     "status": "active",
     "summary": "Olivia B. Ellsworth was injured in a rear-end collision at Interstate 295 northbound near Exit 7 and sues the at-fault driver Maria Q. Fairbanks (and the driver's employer Coastal Outfitters LLC) for negligence, claiming a fractured wrist and ribs and roughly $211745 in medical bills.",
     "event_date": "2024-05-30",
-    "docket_number": "SAG-CV-2025-406"
+    "docket_number": "SAG-CV-2025-913"
   },
   "parties": {
     "plaintiff": {
@@ -133,9 +133,9 @@
     {
       "id": "tp1",
       "name": "Northstar Partners Corp.",
-      "type": "insurer",
-      "role": "Defendant's liability insurer",
-      "relevance": "Carries the at-fault driver's liability policy and controls the defense and any settlement within limits.",
+      "type": "business_entity",
+      "role": "Tow and storage company",
+      "relevance": "Towed the plaintiff's vehicle and holds the post-collision inspection and storage records.",
       "contact": {
         "phone": "(207) 555-0193",
         "city": "Falmouth",
@@ -145,9 +145,9 @@
     {
       "id": "tp2",
       "name": "Riverbend Builders Corp.",
-      "type": "business_entity",
-      "role": "Tow and storage company",
-      "relevance": "Towed the plaintiff's vehicle and holds the post-collision inspection and storage records.",
+      "type": "insurer",
+      "role": "Defendant's liability insurer",
+      "relevance": "Carries the at-fault driver's liability policy and controls the defense and any settlement within limits.",
       "contact": {
         "phone": "(207) 555-0119",
         "city": "Camden",
@@ -530,14 +530,34 @@
         "party": "the court"
       },
       {
+        "date": "2025-08-17",
+        "entry": "Pre-suit demand letter sent to the defendant's liability insurer.",
+        "party": "us"
+      },
+      {
         "date": "2025-09-03",
         "entry": "Defense medical examination completed; expert disclosures exchanged.",
         "party": "Maria Q. Fairbanks"
       },
       {
+        "date": "2025-10-01",
+        "entry": "Complaint for negligence filed and served after the demand went unmet.",
+        "party": "us"
+      },
+      {
+        "date": "2025-10-23",
+        "entry": "Defendant served an Answer pleading comparative negligence (14 M.R.S. § 156) and failure to mitigate; no counterclaim.",
+        "party": "opposing"
+      },
+      {
         "date": "2025-11-21",
         "entry": "Partial summary judgment on liability taken under advisement.",
         "party": "the court"
+      },
+      {
+        "date": "2026-01-19",
+        "entry": "Defendant moved in limine to exclude the plaintiff's treating physician's causation opinion.",
+        "party": "opposing"
       },
       {
         "date": "2026-02-08",
@@ -549,7 +569,47 @@
       "jury": false,
       "estimated_days": 10,
       "scheduled_date": "2026-08-11"
-    }
+    },
+    "procedure": [
+      {
+        "date": "2025-08-17",
+        "day": -45,
+        "actor": "us",
+        "event": "Pre-suit demand letter sent to the defendant's liability insurer.",
+        "produces": [
+          "general__demand_letter"
+        ]
+      },
+      {
+        "date": "2025-10-01",
+        "day": 0,
+        "actor": "us",
+        "event": "Complaint for negligence filed and served after the demand went unmet.",
+        "produces": [
+          "litigation__pleading"
+        ]
+      },
+      {
+        "date": "2025-10-23",
+        "day": 22,
+        "actor": "opposing",
+        "event": "Defendant served an Answer pleading comparative negligence (14 M.R.S. § 156) and failure to mitigate; no counterclaim.",
+        "produces": [
+          "litigation__discovery_letter"
+        ]
+      },
+      {
+        "date": "2026-01-19",
+        "day": 110,
+        "actor": "opposing",
+        "event": "Defendant moved in limine to exclude the plaintiff's treating physician's causation opinion.",
+        "produces": [
+          "litigation__opposition"
+        ],
+        "response_deadline": "2026-02-09",
+        "deadline_rule": "M.R. Civ. P. 7(b)(1)(A) — opposition within 21 days; M.R. Evid. 702/703 causation foundation."
+      }
+    ]
   },
   "facts": {
     "collision_date": "2024-05-30",
@@ -562,6 +622,8 @@
     "lost_wages": 43175,
     "property_damage": 33513,
     "policy_limits": 664006,
-    "comparative_fault_alleged": false
+    "comparative_fault_alleged": false,
+    "demand_recipient": "the defendant",
+    "response_deadline_days": 21
   }
 }

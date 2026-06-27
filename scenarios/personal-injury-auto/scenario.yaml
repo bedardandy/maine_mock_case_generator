@@ -41,6 +41,10 @@ facts:
   property_damage: {int_between: [3000, 45000]}
   policy_limits: {int_between: [50000, 1000000]}
   comparative_fault_alleged: {pick: [true, false]}
+  # Pre-suit demand facts (feed general__demand_letter): who the demand is addressed
+  # to and the deadline the recipient is given to respond.
+  demand_recipient: {pick: ["the defendant's liability insurer", "the defendant"]}
+  response_deadline_days: {pick: [14, 21, 30]}
 
 third_parties:
   count: {min: 3, max: 5}
@@ -192,3 +196,27 @@ litigation:
     jury: {pick: [true, false]}
     estimated_days: {int_between: [4, 12]}
     scheduled_date: {date_between: ["2026-05-01", "2026-11-01"]}
+
+# Chronological case events handed off as bundles (see complex-civil-litigation
+# for the field contract). A negligence suit where the answer raises comparative
+# fault and the defense moves to exclude the treating physician. day = days from
+# filing_date; the pre-suit demand is day -45.
+procedure:
+  - day: -45
+    actor: us
+    event: "Pre-suit demand letter sent to the defendant's liability insurer."
+    produces: [general__demand_letter]
+  - day: 0
+    actor: us
+    event: "Complaint for negligence filed and served after the demand went unmet."
+    produces: [litigation__pleading]
+  - day: 22
+    actor: opposing
+    event: "Defendant served an Answer pleading comparative negligence (14 M.R.S. § 156) and failure to mitigate; no counterclaim."
+    produces: [litigation__discovery_letter]
+  - day: 110
+    actor: opposing
+    event: "Defendant moved in limine to exclude the plaintiff's treating physician's causation opinion."
+    produces: [litigation__opposition]
+    deadline_days: 21
+    deadline_rule: "M.R. Civ. P. 7(b)(1)(A) — opposition within 21 days; M.R. Evid. 702/703 causation foundation."

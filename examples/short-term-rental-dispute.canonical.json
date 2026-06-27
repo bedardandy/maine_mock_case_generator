@@ -92,5 +92,166 @@
     "town_str_ordinance": "zoning does not list short-term rentals as a permitted use",
     "cease_and_desist_sent": true,
     "permit_appeal_pending": true
+  },
+  "litigation": {
+    "posture": "pleadings",
+    "docket": [
+      {
+        "date": "2025-05-06",
+        "entry": "Complaint filed to enforce the covenant, abate the nuisance, and for declaratory and injunctive relief.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-06-05",
+        "entry": "Motion for a preliminary injunction filed and set for hearing.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-07-08",
+        "entry": "Defendants' answer and counterclaim for declaratory judgment filed.",
+        "party": "John G. Inglewood"
+      },
+      {
+        "date": "2025-08-08",
+        "entry": "Town's answer filed and order on the preliminary-injunction motion entered.",
+        "party": "Town of Harborwick"
+      },
+      {
+        "date": "2025-09-01",
+        "entry": "Scheduling order entered; the related 80B permit appeal consolidated.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-10-16",
+        "entry": "Order on the motion for summary judgment on the covenant's meaning entered.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to consolidate with the Rule 80B permit appeal",
+        "type": "procedural",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-12-12",
+        "status": "granted",
+        "relief": "Consolidation of the related 80B permit appeal with this enforcement action."
+      },
+      {
+        "title": "Motion to compel platform booking records",
+        "type": "discovery",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-10-27",
+        "status": "filed",
+        "relief": "An order compelling production of the booking and payout records from the operators and the platform."
+      },
+      {
+        "title": "Motion for summary judgment on the covenant's meaning",
+        "type": "dispositive",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-11-17",
+        "status": "under_advisement",
+        "relief": "A ruling that the recorded restriction bars short-term rentals as a matter of law."
+      },
+      {
+        "title": "Motion for a preliminary injunction",
+        "type": "provisional",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-06-26",
+        "status": "opposed",
+        "relief": "An order enjoining the short-term rental of the unit while the action is pending."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Declaratory judgment that short-term rentals are permitted",
+        "by": "John G. Inglewood",
+        "against": "Riverbend Analytics LLC",
+        "relief": "A declaration that the recorded covenant and the town's ordinance permit the owners' short-term rental of the unit."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Enforcement of the restrictive covenant barring short-term rentals",
+        "by": "Riverbend Analytics LLC",
+        "against": "John G. Inglewood and John D. Kingsley",
+        "governing_law": "Recorded declaration; 33 M.R.S. § 1603-102",
+        "elements": [
+          "A valid recorded restriction limiting use to residential purposes",
+          "The owners' short-term-rental use of the unit",
+          "That the transient use violates the restriction",
+          "The association's right to enforce it"
+        ],
+        "relief_sought": "An order enforcing the covenant and prohibiting the short-term-rental use",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Private nuisance",
+        "by": "Riverbend Analytics LLC",
+        "against": "John G. Inglewood",
+        "governing_law": "Common law of private nuisance",
+        "elements": [
+          "The other owners' interest in the use and enjoyment of their property",
+          "An unreasonable and substantial interference from the transient rental",
+          "Causation",
+          "Resulting harm to the community"
+        ],
+        "relief_sought": "Abatement of the nuisance and damages",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Declaratory and injunctive relief to stop the short-term-rental use",
+        "by": "Riverbend Analytics LLC",
+        "against": "John G. Inglewood",
+        "governing_law": "14 M.R.S. § 6051; 14 M.R.S. § 5953",
+        "elements": [
+          "An actual controversy over the rental's legality under the covenant and ordinance",
+          "A clear legal right warranting injunctive relief",
+          "Inadequate remedy at law",
+          "A balance of equities favoring the association"
+        ],
+        "relief_sought": "A declaration of the parties' rights and an injunction stopping or strictly limiting the rental",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Enforcement of the association's assessment and fine lien",
+        "by": "Riverbend Analytics LLC",
+        "against": "John G. Inglewood",
+        "governing_law": "33 M.R.S. § 1603-116",
+        "elements": [
+          "A perfected lien for assessments and fines",
+          "Fines and assessments levied for the violation and unpaid",
+          "The foreclosure is within the enforcement period"
+        ],
+        "relief_sought": "Judgment enforcing the lien for the unpaid fines and assessments, interest, and reasonable attorney fees",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "No actionable nuisance",
+        "by": "John G. Inglewood",
+        "basis": "Any disturbances are isolated and do not rise to a substantial and unreasonable interference constituting a private nuisance."
+      },
+      {
+        "defense": "Selective or waived enforcement",
+        "by": "John G. Inglewood",
+        "basis": "The association has permitted other short-term rentals and has waived or acquiesced in the practice it now seeks to enforce."
+      },
+      {
+        "defense": "Covenant does not clearly bar short-term rentals",
+        "by": "John G. Inglewood",
+        "basis": "The recorded restriction does not unambiguously prohibit nightly or short-term rentals and must be construed in favor of the free use of property."
+      },
+      {
+        "defense": "Permitted residential use",
+        "by": "John G. Inglewood",
+        "basis": "Renting a residence to occupants is a residential use of the property and does not violate a residential-use covenant."
+      }
+    ]
   }
 }

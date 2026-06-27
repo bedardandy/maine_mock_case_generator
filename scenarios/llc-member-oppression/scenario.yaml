@@ -28,9 +28,14 @@ parties:
     - {key: plaintiff, label: "Plaintiff minority member"}
     - {key: defendant, label: "Defendant majority/managing member"}
     - {key: defendant_2, label: "Defendant co-manager member"}
-    - {key: company, entity: organization, label: "The LLC (nominal defendant)"}
+    - {key: company, entity: organization, entity_kind: llc, label: "The LLC (nominal defendant)"}
 
 facts:
+  # The nominal defendant is a Maine LLC (31 M.R.S.), so its name must carry an
+  # "LLC" suffix and the entity_kind discriminator must say so — otherwise the
+  # operating-agreement template was being handed a "... Corp." and flagging the
+  # corporation/LLC mismatch.
+  entity_kind: llc
   business_type: {pick: ["a craft brewery and taproom", "a coastal property-management company", "a software consultancy", "a family restaurant group", "a marine services company", "a cannabis cultivation business"]}
   plaintiff_ownership: {pick: ["a 25% membership interest", "a one-third interest", "a 40% minority interest", "a 20% interest"]}
   company_value: {int_between: [700000, 12000000]}

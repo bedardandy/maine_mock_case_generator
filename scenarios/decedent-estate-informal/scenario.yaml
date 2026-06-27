@@ -28,15 +28,44 @@ parties:
 
 facts:
   date_of_death: {date_between: ["2025-06-01", "2026-03-31"]}
-  will_exists: {pick: [true, false]}
-  will_date: {date_between: ["2010-01-01", "2024-12-31"]}
   decedent_domicile_county: "{county}"
   relationship_to_decedent: {pick: ["surviving spouse", "adult son", "adult daughter", "sibling", "nephew"]}
   approximate_estate_value: {int_between: [45000, 850000]}
   real_property: {pick: [true, false]}
   num_heirs: {int_between: [1, 5]}
   bond_required: {pick: [true, false]}
-  probate_type: {pick: ["informal probate", "informal appointment"]}
+
+# Testacy drives the whole proceeding: an informal PROBATE of a will presupposes a
+# will (18-C M.R.S. § 3-301 et seq.); an informal APPOINTMENT in intestacy has no
+# will and therefore no will date. Rolling will_exists independently of will_date
+# produced "no will, dated 2014" contradictions. testacy is the ground-truth
+# discriminator the affidavit / PR-deed templates were guessing.
+variants:
+  - weight: 3
+    testacy: testate
+    will_exists: true
+    will_date: {date_between: ["2010-01-01", "2024-12-31"]}
+    probate_type: "informal probate"
+    proceeding_type: informal
+  - weight: 2
+    testacy: intestate
+    will_exists: false
+    will_date: null
+    probate_type: "informal appointment"
+    proceeding_type: informal
+  # EDGE CASE (plausible, uncommon): informal probate is NOT available, forcing a
+  # formal proceeding. Decision point: a minor/incapacitated heir, an objection or
+  # a competing will, a missing/lost original, or a demand for formal proceedings
+  # all require a formal petition adjudicated by the court (18-C M.R.S. § 3-401 et
+  # seq.) rather than the registrar's informal track (§ 3-301). The PR's authority
+  # and any heirship affidavit must reflect the formal posture.
+  - weight: 1
+    testacy: testate
+    will_exists: true
+    will_date: {date_between: ["2010-01-01", "2024-12-31"]}
+    probate_type: "formal testacy proceeding"
+    proceeding_type: formal
+    formal_reason: {pick: ["a minor heir requires a guardian ad litem", "an interested person demanded formal proceedings under 18-C M.R.S. § 3-401", "the original will cannot be located and a copy is offered", "a competing later will has surfaced"]}
 
 third_parties:
   count: {min: 2, max: 4}

@@ -36,6 +36,23 @@ facts:
   existing_poa: {pick: [true, false]}
   care_setting: {pick: ["lives at home with supports", "resides in a long-term care facility", "lives with the petitioner"]}
   physician_evaluation_obtained: {pick: [true, false]}
+  # Power-of-attorney designation facts (feed estate_planning__poa): the named
+  # agent's mailing address and a successor agent who serves if the first cannot.
+  agent_address: {pick: ["42 Ocean Avenue, Portland, ME 04103", "115 Western Avenue, Augusta, ME 04330", "7 Birch Lane, Brunswick, ME 04011", "230 Main Street, Bangor, ME 04401"]}
+  successor_agent_name: {pick: ["Margaret E. Whitcomb", "Daniel R. Pelletier", "Susan A. Caldwell", "Thomas J. Gagnon"]}
+  successor_agent_address: {pick: ["18 Spruce Street, Camden, ME 04843", "64 Pleasant Street, Bath, ME 04530", "9 Highland Road, Falmouth, ME 04105", "301 Elm Street, Waterville, ME 04901"]}
+
+# The power-of-attorney effectiveness decision point. A durable POA may take effect
+# immediately on execution, or be "springing" — effective only upon the principal's
+# later incapacity, which must be certified by a licensed physician (18-C M.R.S.
+# § 5-909(1)). The effectiveness flag and its recital must agree, so they are bundled.
+variants:
+  - weight: 2
+    poa_effectiveness: immediate
+    effectiveness_recital: "effective immediately upon execution"
+  - weight: 1
+    poa_effectiveness: springing
+    effectiveness_recital: "effective upon the principal's incapacity as certified by a licensed physician (18-C M.R.S. § 5-909(1))"
 
 third_parties:
   count: {min: 3, max: 5}

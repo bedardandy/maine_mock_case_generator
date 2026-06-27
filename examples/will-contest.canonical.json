@@ -97,5 +97,177 @@
     "execution_irregularity": "the witnesses did not see the testator sign",
     "isolation_alleged": true,
     "drafting_attorney_used": false
+  },
+  "litigation": {
+    "posture": "pleadings",
+    "docket": [
+      {
+        "date": "2025-04-24",
+        "entry": "Petition for formal testacy and to contest the will filed.",
+        "party": "Rosa T. Roe"
+      },
+      {
+        "date": "2025-05-28",
+        "entry": "Proponent's response and petition to admit the contested will filed.",
+        "party": "Omar D. Roe"
+      },
+      {
+        "date": "2025-06-15",
+        "entry": "Order appointing a temporary special administrator entered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-07-09",
+        "entry": "Order compelling the decedent's medical records entered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-21",
+        "entry": "Capacity expert's report served; discovery continues.",
+        "party": "Rosa T. Roe"
+      },
+      {
+        "date": "2025-11-24",
+        "entry": "Hearing held on the motion regarding due execution.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for partial summary judgment on due execution",
+        "type": "dispositive",
+        "movant": "Rosa T. Roe",
+        "filed_date": "2025-09-10",
+        "status": "under_advisement",
+        "relief": "A ruling that the contested will was not duly executed under 18-C M.R.S. § 2-502."
+      },
+      {
+        "title": "Motion to appoint a temporary special administrator",
+        "type": "provisional",
+        "movant": "Rosa T. Roe",
+        "filed_date": "2025-04-28",
+        "status": "granted",
+        "relief": "Appointment of a special administrator to protect the estate pending resolution of the contest."
+      },
+      {
+        "title": "Motion to compel the decedent's medical records",
+        "type": "discovery",
+        "movant": "Rosa T. Roe",
+        "filed_date": "2025-07-02",
+        "status": "granted",
+        "relief": "An order compelling production of the decedent's medical and cognitive records."
+      },
+      {
+        "title": "Motion for formal testacy and to supervise administration",
+        "type": "procedural",
+        "movant": "Rosa T. Roe",
+        "filed_date": "2025-04-26",
+        "status": "filed",
+        "relief": "An order adjudicating testacy in a formal proceeding and supervising the administration of the estate."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Petition to admit the contested will to formal probate",
+        "by": "Omar D. Roe",
+        "against": "Rosa T. Roe",
+        "relief": "Formal probate of the will dated 2024-01-19 and appointment of the proponent as personal representative."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Lack of testamentary capacity",
+        "by": "Rosa T. Roe",
+        "against": "Omar D. Roe",
+        "governing_law": "18-C M.R.S. § 2-501; 18-C M.R.S. § 3-407",
+        "elements": [
+          "The testator executed the contested will",
+          "While lacking the capacity to understand the nature of the act, the property, and the natural objects of the testator's bounty",
+          "Due to the testator's cognitive condition at the time of signing",
+          "Rendering the will invalid"
+        ],
+        "relief_sought": "An order denying probate of the contested will for lack of testamentary capacity",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Undue influence",
+        "by": "Rosa T. Roe",
+        "against": "Omar D. Roe",
+        "governing_law": "18-C M.R.S. § 3-407; common law undue influence",
+        "elements": [
+          "A confidential relationship between the testator and the favored beneficiary",
+          "Susceptibility of the testator to influence",
+          "Opportunity and disposition of the beneficiary to exert influence",
+          "A will that reflects the influence rather than the testator's free will"
+        ],
+        "relief_sought": "An order denying probate of the contested will as the product of undue influence",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Improper execution (failure to satisfy 18-C M.R.S. § 2-502)",
+        "by": "Rosa T. Roe",
+        "against": "Omar D. Roe",
+        "governing_law": "18-C M.R.S. § 2-502",
+        "elements": [
+          "The contested will was not signed by the testator and attested by at least two competent witnesses as required",
+          "The witnesses did not witness the signing or the testator's acknowledgment as the statute requires",
+          "The instrument therefore does not meet the statutory execution requirements",
+          "Rendering the will ineligible for probate"
+        ],
+        "relief_sought": "An order denying probate of the contested will for want of due execution",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Fraud or mistake in the will's execution",
+        "by": "Rosa T. Roe",
+        "against": "Omar D. Roe",
+        "governing_law": "18-C M.R.S. § 3-407; common law",
+        "elements": [
+          "A material misrepresentation to or mistake by the testator about the instrument",
+          "On which the testator relied in executing the will",
+          "That caused the will to differ from the testator's true intent",
+          "Rendering the will invalid"
+        ],
+        "relief_sought": "An order denying probate of the contested will procured by fraud or mistake",
+        "strength": "weak"
+      },
+      {
+        "count": 5,
+        "claim": "Admission of the prior will and adjudication of testacy",
+        "by": "Rosa T. Roe",
+        "against": "Omar D. Roe",
+        "governing_law": "18-C M.R.S. § 2-507; 18-C M.R.S. § 3-401 et seq.",
+        "elements": [
+          "The decedent executed a valid prior will",
+          "That was never revoked under 18-C M.R.S. § 2-507",
+          "And remains the decedent's effective testamentary instrument",
+          "Entitling it to formal probate if the contested will is denied"
+        ],
+        "relief_sought": "An order admitting the prior will to formal probate, or, if none controls, directing intestate distribution",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "The will is self-proved and validly executed",
+        "by": "Omar D. Roe",
+        "basis": "The will was duly executed and is self-proved, establishing its validity. 18-C M.R.S. § 2-502; 18-C M.R.S. § 2-504."
+      },
+      {
+        "defense": "The testator had capacity and acted freely",
+        "by": "Omar D. Roe",
+        "basis": "The testator possessed testamentary capacity and executed the will of the testator's own free will. 18-C M.R.S. § 2-501."
+      },
+      {
+        "defense": "The contest is barred by limitations",
+        "by": "Omar D. Roe",
+        "basis": "The contest was not commenced within the period allowed to challenge a formal testacy order."
+      }
+    ]
   }
 }

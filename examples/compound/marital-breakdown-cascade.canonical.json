@@ -12,7 +12,7 @@
         "court_type": "District Court",
         "case_type": "family_matters",
         "filing_date": "2025-10-31",
-        "event_date": "2025-03-19"
+        "event_date": "2025-07-31"
       },
       "parties": {
         "plaintiff": {
@@ -98,10 +98,11 @@
       },
       "facts": {
         "marriage_date": "2009-04-30",
-        "marriage_city": "Bar Harbor",
-        "marriage_county": "Sagadahoc",
+        "marriage_place": "Bar Harbor, Maine",
+        "marriage_city": "Brunswick",
+        "marriage_county": "Hancock",
         "marriage_state": "Maine",
-        "separation_date": "2025-03-19",
+        "separation_date": "2025-07-31",
         "grounds": "Irreconcilable marital differences",
         "residency_months": 52,
         "spousal_support_requested": true,
@@ -124,6 +125,59 @@
         "mortgages_balance": 68569,
         "loans_balance": 18470,
         "other_assets_value": 19665
+      },
+      "litigation": {
+        "docket": [
+          {
+            "date": "2025-10-31",
+            "entry": "Complaint for divorce filed with an interim relief request.",
+            "party": "us"
+          },
+          {
+            "date": "2025-11-21",
+            "entry": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+            "party": "opposing"
+          },
+          {
+            "date": "2025-12-08",
+            "entry": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+            "party": "client"
+          }
+        ],
+        "procedure": [
+          {
+            "date": "2025-10-31",
+            "day": 0,
+            "actor": "us",
+            "event": "Complaint for divorce filed with an interim relief request.",
+            "produces": [
+              "family_law__divorce_complaint"
+            ]
+          },
+          {
+            "date": "2025-11-21",
+            "day": 21,
+            "actor": "opposing",
+            "event": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+            "produces": [
+              "family_law__pleading"
+            ],
+            "response_deadline": "2025-12-11",
+            "deadline_rule": "M.R. Civ. P. 80(c) — response to the counterclaim for divorce."
+          },
+          {
+            "date": "2025-12-08",
+            "day": 38,
+            "actor": "client",
+            "event": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+            "produces": [
+              "family_law__motion"
+            ],
+            "response_deadline": "2025-12-08",
+            "deadline_rule": "19-A M.R.S. § 904 / M.R. Civ. P. 65 — emergency motion for interim parental rights and to freeze marital assets pending hearing.",
+            "urgent": true
+          }
+        ]
       }
     }
   },

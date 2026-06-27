@@ -89,5 +89,129 @@
     "vacatur_ground": "the panel refused to hear material evidence",
     "attorney_fees_in_award": true,
     "included_punitive_or_consequential": true
+  },
+  "litigation": {
+    "posture": "motion_practice",
+    "docket": [
+      {
+        "date": "2025-06-05",
+        "entry": "Arbitration award issued and served on the parties.",
+        "party": "Maria Q. Jessup"
+      },
+      {
+        "date": "2025-07-14",
+        "entry": "Application and motion to confirm the award filed.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-08-22",
+        "entry": "Cross-motion to vacate the award filed.",
+        "party": "Coastal Provisions LLC"
+      },
+      {
+        "date": "2025-09-18",
+        "entry": "Briefing on the cross-applications completed.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-11-15",
+        "entry": "Hearing / oral argument on the cross-motions held.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for entry of judgment and post-award interest",
+        "type": "procedural",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2026-01-30",
+        "status": "filed",
+        "relief": "Entry of judgment on the confirmed award with interest under 14 M.R.S. § 5943."
+      },
+      {
+        "title": "Motion to seal the arbitration record",
+        "type": "procedural",
+        "movant": "Coastal Provisions LLC",
+        "filed_date": "2026-01-06",
+        "status": "granted_in_part",
+        "relief": "An order sealing confidential portions of the arbitration record filed with the court."
+      },
+      {
+        "title": "Motion to confirm the arbitration award",
+        "type": "dispositive",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2026-03-23",
+        "status": "filed",
+        "relief": "An order confirming the award under 14 M.R.S. § 5937."
+      },
+      {
+        "title": "Motion to modify or correct the award",
+        "type": "dispositive",
+        "movant": "Coastal Provisions LLC",
+        "filed_date": "2025-11-04",
+        "status": "under_advisement",
+        "relief": "Modification or correction of the award under 14 M.R.S. § 5939."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Application to confirm the arbitration award and for entry of judgment",
+        "by": "Riverbend Analytics LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "14 M.R.S. § 5937 and § 5941",
+        "elements": [
+          "A valid arbitration agreement and a final award",
+          "A timely application to confirm",
+          "No basis to vacate, modify, or correct the award"
+        ],
+        "relief_sought": "An order confirming the award and entering judgment for the award amount plus post-award interest",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Application, in the alternative, to modify or correct the award",
+        "by": "Riverbend Analytics LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "14 M.R.S. § 5939",
+        "elements": [
+          "An evident miscalculation, a description error, or an imperfection in form",
+          "A correction that does not affect the merits of the controversy"
+        ],
+        "relief_sought": "Correction or modification of the award and confirmation as modified",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Respondent's cross-application to vacate the award",
+        "by": "Coastal Provisions LLC",
+        "against": "Riverbend Analytics LLC",
+        "governing_law": "14 M.R.S. § 5938",
+        "elements": [
+          "An exclusive statutory ground such as corruption, fraud, or undue means",
+          "Evident partiality or corruption of an arbitrator",
+          "The arbitrators exceeding their powers, or a refusal to hear material evidence"
+        ],
+        "relief_sought": "An order vacating the award and denying confirmation",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Evident partiality / failure to disclose",
+        "by": "Coastal Provisions LLC",
+        "basis": "An arbitrator failed to disclose a conflict, showing evident partiality. 14 M.R.S. § 5938(1)(B)."
+      },
+      {
+        "defense": "Refusal to hear material evidence",
+        "by": "Coastal Provisions LLC",
+        "basis": "The panel refused to hear evidence material to the controversy, prejudicing the respondent. 14 M.R.S. § 5938(1)(D)."
+      },
+      {
+        "defense": "The arbitrators exceeded their powers",
+        "by": "Coastal Provisions LLC",
+        "basis": "The award granted relief outside the parties' agreement and the matters submitted. 14 M.R.S. § 5938(1)(C)."
+      }
+    ]
   }
 }

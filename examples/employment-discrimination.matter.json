@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-414328",
+    "matter_id": "MMC-2025-832948",
     "practice_area": "civil",
     "title": "Grace C. Roe v. Summit Outfitters Co.",
     "jurisdiction": {
@@ -23,7 +23,7 @@
     "status": "active",
     "summary": "Grace C. Roe, a longtime employee of Summit Outfitters Co., alleges the company and supervisor John D. Kingsley subjected Grace to termination because of disability and in retaliation for reporting discrimination, in violation of the Maine Human Rights Act and Title VII.",
     "event_date": "2024-09-14",
-    "docket_number": "SAG-CV-2025-354"
+    "docket_number": "SAG-CV-2025-898"
   },
   "parties": {
     "plaintiff": {
@@ -136,39 +136,40 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "U.S. Equal Employment Opportunity Commission",
-      "type": "government_agency",
-      "role": "Federal civil rights agency",
-      "relevance": "Cross-filed the Title VII charge and issued a notice of right to sue.",
-      "contact": {
-        "phone": "(207) 555-0138",
-        "city": "Lewiston",
-        "state": "ME"
-      }
-    },
-    {
-      "id": "tp2",
       "name": "Maine Human Rights Commission",
       "type": "government_agency",
       "role": "State civil rights agency",
       "relevance": "Investigated the charge of discrimination and issued the right-to-sue letter after exhaustion under 5 M.R.S. § 4622.",
       "contact": {
-        "phone": "(207) 555-0157",
-        "city": "Falmouth",
+        "phone": "(207) 555-0163",
+        "city": "Bath",
         "state": "ME"
       }
     },
     {
-      "id": "tp3",
-      "name": "Carmen F. Fairbanks",
+      "id": "tp2",
+      "name": "Desmond D. Poe",
       "type": "witness",
       "role": "Employer's HR director",
       "relevance": "Received the internal complaint and participated in the decision to take the adverse action.",
       "contact": {
-        "phone": "(207) 555-0196",
-        "city": "Belfast",
+        "phone": "(207) 555-0165",
+        "city": "Lewiston",
         "state": "ME",
-        "email": "carmen.fairbanks@example.com"
+        "email": "desmond.poe@example.org"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Omar C. Roe",
+      "type": "witness",
+      "role": "Coworker witness",
+      "relevance": "Observed the conduct and the differential treatment of the plaintiff.",
+      "contact": {
+        "phone": "(207) 555-0197",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "omar.roe@example.net"
       }
     }
   ],
@@ -220,7 +221,7 @@
       "Correcting the employment record and protecting future job prospects.",
       "Preserving leverage for a fair, timely settlement."
     ],
-    "risk_tolerance": "moderate",
+    "risk_tolerance": "high",
     "desired_outcomes": [
       "A judgment or settlement providing back pay, front pay, and compensatory damages.",
       "A neutral or corrected reference and removal of adverse material from the personnel file."
@@ -235,18 +236,6 @@
   },
   "issues": [
     {
-      "issue": "Whether the adverse action was unlawful retaliation for protected activity",
-      "category": "employment",
-      "governing_law": "Maine Human Rights Act, 5 M.R.S. § 4633",
-      "sub_questions": [
-        "Did the plaintiff engage in protected activity by reporting discrimination?",
-        "Is there a causal connection between the protected activity and the adverse action?"
-      ],
-      "strength": "strong",
-      "client_position": "The adverse action followed closely after the internal complaint and was caused by it.",
-      "id": "iss1"
-    },
-    {
       "issue": "Whether the plaintiff exhausted administrative remedies and holds a valid right to sue",
       "category": "employment",
       "governing_law": "Maine Human Rights Act exhaustion, 5 M.R.S. § 4622",
@@ -256,6 +245,18 @@
       ],
       "strength": "strong",
       "client_position": "The charge was timely filed and a right-to-sue letter issued, so the claims are properly before the court.",
+      "id": "iss1"
+    },
+    {
+      "issue": "Whether the plaintiff can establish a prima facie case of employment discrimination",
+      "category": "employment",
+      "governing_law": "Maine Human Rights Act, 5 M.R.S. § 4572; Title VII, 42 U.S.C. § 2000e-2; McDonnell Douglas burden-shifting framework",
+      "sub_questions": [
+        "Is the plaintiff a member of a protected class who was qualified for the position?",
+        "Did the plaintiff suffer an adverse employment action under circumstances giving rise to an inference of discrimination?"
+      ],
+      "strength": "moderate",
+      "client_position": "The plaintiff was qualified, performing well, and suffered the adverse action because of disability.",
       "id": "iss2"
     },
     {
@@ -281,13 +282,37 @@
       "strength": "moderate",
       "client_position": "The performance rationale is pretextual given reviews that were mixed and more favorable treatment of comparators.",
       "id": "iss4"
+    },
+    {
+      "issue": "Whether the adverse action was unlawful retaliation for protected activity",
+      "category": "employment",
+      "governing_law": "Maine Human Rights Act, 5 M.R.S. § 4633",
+      "sub_questions": [
+        "Did the plaintiff engage in protected activity by reporting discrimination?",
+        "Is there a causal connection between the protected activity and the adverse action?"
+      ],
+      "strength": "strong",
+      "client_position": "The adverse action followed closely after the internal complaint and was caused by it.",
+      "id": "iss5"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
       "expert": {
-        "name": "Eleanor C. Hawthorne",
+        "name": "Quentin R. Birchwood",
+        "field": "Forensic economics",
+        "credentials": "Ph.D.",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Present value of lost wages and benefits",
+      "opinion": "The present value of the plaintiff's lost back pay, front pay, and benefits is significant and reasonably quantifiable.",
+      "basis": "Earnings histories, benefit valuations, and discount-rate modeling."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Diego M. Ellsworth",
         "field": "Vocational rehabilitation and economic loss",
         "credentials": "M.S., CRC",
         "retained_by": "plaintiff"
@@ -295,35 +320,47 @@
       "topic": "Back pay, front pay, and loss of earning capacity",
       "opinion": "The plaintiff's wage loss and diminished earning capacity are substantial given age, skills, and the local labor market.",
       "basis": "Wage records, labor-market data, and a vocational assessment."
+    },
+    {
+      "id": "exp3",
+      "expert": {
+        "name": "Jane M. Greenhill",
+        "field": "Industrial/organizational psychology",
+        "credentials": "Ph.D.",
+        "retained_by": "defendant"
+      },
+      "topic": "Performance evaluation and the basis for the employment decision",
+      "opinion": "The employer's evaluation process was facially neutral and consistently applied.",
+      "basis": "Personnel records, evaluation instruments, and comparator data."
     }
   ],
   "evidence": [
     {
-      "title": "Comparator and replacement records",
-      "type": "document",
+      "title": "Termination letter",
+      "type": "correspondence",
       "party": "defendant",
-      "description": "Records identifying who replaced the plaintiff or comparators treated more favorably.",
+      "description": "The letter or notice memorializing the termination and the stated reason.",
       "id": "ev1"
-    },
-    {
-      "title": "Employee handbook and anti-discrimination policy",
-      "type": "document",
-      "party": "defendant",
-      "description": "The handbook and EEO/anti-retaliation policies in effect during the employment.",
-      "id": "ev2"
-    },
-    {
-      "title": "Plaintiff's contemporaneous notes",
-      "type": "affidavit",
-      "party": "plaintiff",
-      "description": "The plaintiff's dated notes documenting the discriminatory conduct and the complaint.",
-      "id": "ev3"
     },
     {
       "title": "MHRC charge and right-to-sue letter",
       "type": "public_record",
       "party": "plaintiff",
       "description": "The Maine Human Rights Commission charge of discrimination and the issued right-to-sue letter.",
+      "id": "ev2"
+    },
+    {
+      "title": "Personnel file and performance reviews",
+      "type": "document",
+      "party": "defendant",
+      "description": "The plaintiff's complete personnel file, including evaluations that were mixed.",
+      "id": "ev3"
+    },
+    {
+      "title": "Plaintiff's contemporaneous notes",
+      "type": "affidavit",
+      "party": "plaintiff",
+      "description": "The plaintiff's dated notes documenting the discriminatory conduct and the complaint.",
       "id": "ev4"
     },
     {
@@ -332,35 +369,42 @@
       "party": "plaintiff",
       "description": "Emails reporting discrimination to HR and management before the adverse action.",
       "id": "ev5"
+    },
+    {
+      "title": "Employee handbook and anti-discrimination policy",
+      "type": "document",
+      "party": "defendant",
+      "description": "The handbook and EEO/anti-retaliation policies in effect during the employment.",
+      "id": "ev6"
     }
   ],
   "financials": {
     "currency": "USD",
     "amounts": [
       {
+        "label": "Projected front pay",
+        "amount": 117223,
+        "basis": "Estimated future wage loss until reemployment or recovery."
+      },
+      {
         "label": "Compensatory / emotional-distress demand",
-        "amount": 69052,
+        "amount": 142751,
         "basis": "Emotional-distress and reputational harm."
       },
       {
+        "label": "Estimated attorney fees and statutory civil penalty",
+        "amount": 145288,
+        "basis": "Fee-shifting recovery and the civil penal damages under 5 M.R.S. § 4613."
+      },
+      {
         "label": "Lost benefits value",
-        "amount": 45037,
+        "amount": 41008,
         "basis": "Value of lost health, retirement, and other benefits."
       },
       {
         "label": "Lost back pay",
-        "amount": 55695,
+        "amount": 97833,
         "basis": "Wages lost from the adverse action to the present."
-      },
-      {
-        "label": "Projected front pay",
-        "amount": 288837,
-        "basis": "Estimated future wage loss until reemployment or recovery."
-      },
-      {
-        "label": "Estimated attorney fees and statutory civil penalty",
-        "amount": 55454,
-        "basis": "Fee-shifting recovery and the civil penal damages under 5 M.R.S. § 4613."
       }
     ]
   },
@@ -428,19 +472,19 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "After-acquired evidence",
+        "defense": "Failure to mitigate damages",
         "by": "Summit Outfitters Co.",
-        "basis": "Evidence discovered after the action would have independently justified the termination, limiting back pay."
-      },
-      {
-        "defense": "Failure to exhaust administrative remedies",
-        "by": "Summit Outfitters Co.",
-        "basis": "Some claims were not raised in the charge before the Maine Human Rights Commission. 5 M.R.S. § 4622."
+        "basis": "The plaintiff did not exercise reasonable diligence to seek comparable substitute employment."
       },
       {
         "defense": "Same-decision (Mt. Healthy) defense",
         "by": "Summit Outfitters Co.",
         "basis": "The employer would have made the same decision regardless of any protected activity or characteristic."
+      },
+      {
+        "defense": "After-acquired evidence",
+        "by": "Summit Outfitters Co.",
+        "basis": "Evidence discovered after the action would have independently justified the termination, limiting back pay."
       }
     ],
     "counterclaims": [
@@ -457,121 +501,121 @@
         "type": "deposition",
         "propounding_party": "Summit Outfitters Co.",
         "responding_party": "Grace C. Roe",
-        "served_date": "2025-06-26",
+        "served_date": "2025-06-12",
         "status": "served",
         "description": "Deposition of the plaintiff on the claims and damages."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "John D. Kingsley",
+        "served_date": "2025-06-10",
+        "status": "outstanding",
+        "description": "Deposition of the supervisor who carried out the adverse action."
       },
       {
         "type": "subpoena",
         "propounding_party": "Summit Outfitters Co.",
         "responding_party": "the plaintiff's subsequent employer",
-        "served_date": "2025-09-11",
+        "served_date": "2025-09-08",
         "status": "served",
         "description": "Subpoena to a subsequent employer on mitigation and post-termination earnings."
-      },
-      {
-        "type": "interrogatories",
-        "propounding_party": "Grace C. Roe",
-        "responding_party": "Summit Outfitters Co.",
-        "served_date": "2025-05-13",
-        "status": "responded",
-        "description": "First set of interrogatories on the decision-makers and the reasons for the adverse action."
       },
       {
         "type": "request_for_production",
         "propounding_party": "Grace C. Roe",
         "responding_party": "Summit Outfitters Co.",
-        "served_date": "2025-04-19",
+        "served_date": "2025-05-06",
         "status": "objected",
         "description": "Requests for the personnel file, comparator records, and internal complaint emails."
+      },
+      {
+        "type": "interrogatories",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Summit Outfitters Co.",
+        "served_date": "2025-04-22",
+        "status": "responded",
+        "description": "First set of interrogatories on the decision-makers and the reasons for the adverse action."
       },
       {
         "type": "request_for_admission",
         "propounding_party": "Grace C. Roe",
         "responding_party": "Summit Outfitters Co.",
-        "served_date": "2025-06-16",
+        "served_date": "2025-05-20",
         "status": "responded",
         "description": "Admissions on the timing of the complaint and the adverse action."
       }
     ],
     "motions": [
       {
-        "title": "Motion for summary judgment",
+        "title": "Motion for partial summary judgment on retaliation",
         "type": "dispositive",
-        "movant": "Summit Outfitters Co.",
-        "filed_date": "2025-10-10",
-        "status": "under_advisement",
-        "relief": "Judgment that the plaintiff cannot show pretext or causation."
-      },
-      {
-        "title": "Motion in limine to exclude me-too evidence",
-        "type": "evidentiary",
-        "movant": "Summit Outfitters Co.",
-        "filed_date": "2026-01-20",
-        "status": "filed",
-        "relief": "Exclusion of other employees' discrimination testimony."
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-10-01",
+        "status": "opposed",
+        "relief": "Judgment that the adverse action followed the protected activity."
       },
       {
         "title": "Motion to compel comparator data",
         "type": "discovery",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-06-06",
+        "filed_date": "2025-06-05",
         "status": "granted",
         "relief": "An order compelling production of comparator and replacement records."
       },
       {
-        "title": "Motion for partial summary judgment on retaliation",
-        "type": "dispositive",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-10-10",
-        "status": "opposed",
-        "relief": "Judgment that the adverse action followed the protected activity."
+        "title": "Motion in limine to exclude me-too evidence",
+        "type": "evidentiary",
+        "movant": "Summit Outfitters Co.",
+        "filed_date": "2026-02-10",
+        "status": "filed",
+        "relief": "Exclusion of other employees' discrimination testimony."
       },
       {
-        "title": "Motion to dismiss for failure to exhaust",
+        "title": "Motion for summary judgment",
         "type": "dispositive",
         "movant": "Summit Outfitters Co.",
-        "filed_date": "2025-03-29",
-        "status": "denied",
-        "relief": "Dismissal of claims not raised before the Maine Human Rights Commission."
+        "filed_date": "2025-11-04",
+        "status": "under_advisement",
+        "relief": "Judgment that the plaintiff cannot show pretext or causation."
       }
     ],
     "docket": [
       {
-        "date": "2025-03-11",
+        "date": "2025-03-06",
         "entry": "Complaint filed following the Maine Human Rights Commission right-to-sue letter.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-03-27",
+        "date": "2025-03-30",
         "entry": "Answer and counterclaim filed.",
         "party": "Summit Outfitters Co."
       },
       {
-        "date": "2025-04-15",
+        "date": "2025-04-19",
         "entry": "Scheduling order entered; discovery deadline set.",
         "party": "the court"
       },
       {
-        "date": "2025-06-30",
+        "date": "2025-07-01",
         "entry": "Order on the parties' discovery disputes regarding comparator data.",
         "party": "the court"
       },
       {
-        "date": "2025-09-19",
+        "date": "2025-09-20",
         "entry": "Discovery closes; expert disclosures exchanged.",
         "party": "the court"
       },
       {
-        "date": "2025-11-25",
+        "date": "2025-12-10",
         "entry": "Summary judgment briefing completed and taken under advisement.",
         "party": "the court"
       }
     ],
     "trial": {
-      "jury": false,
-      "estimated_days": 6,
-      "scheduled_date": "2026-05-02"
+      "jury": true,
+      "estimated_days": 7,
+      "scheduled_date": "2026-10-22"
     }
   },
   "facts": {
@@ -584,6 +628,8 @@
     "right_to_sue_issued": true,
     "annual_salary": 103027,
     "replacement_younger_or_outside_class": false,
-    "performance_reviews": "mixed"
+    "performance_reviews": "mixed",
+    "fee_arrangement": "contingent",
+    "contingent_percentage": 33
   }
 }

@@ -1,12 +1,12 @@
 [
   {
     "universe_id": "UNIV-death-cascade-0007",
-    "matter_id": "MMC-2026-129936",
+    "matter_id": "MMC-2026-385699",
     "scenario_id": "decedent-estate-informal",
     "canonical": {
       "matter": {
-        "docket_number": "KEN-PE-2026-628",
-        "case_id": "MMC-2026-129936",
+        "docket_number": "KEN-PE-2026-117",
+        "case_id": "MMC-2026-385699",
         "court_county": "Kennebec",
         "court_location": "Augusta",
         "court_type": "Probate Court",
@@ -73,15 +73,17 @@
       },
       "facts": {
         "date_of_death": "2025-11-03",
-        "will_exists": false,
-        "will_date": "2021-05-16",
         "decedent_domicile_county": "Kennebec",
-        "relationship_to_decedent": "surviving spouse",
-        "approximate_estate_value": 258927,
+        "relationship_to_decedent": "adult daughter",
+        "approximate_estate_value": 786360,
         "real_property": true,
         "num_heirs": 2,
-        "bond_required": false,
-        "probate_type": "informal probate"
+        "bond_required": true,
+        "testacy": "testate",
+        "will_exists": true,
+        "will_date": "2023-03-07",
+        "probate_type": "informal probate",
+        "proceeding_type": "informal"
       }
     }
   },

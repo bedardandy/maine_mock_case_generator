@@ -684,7 +684,8 @@
     },
     "facts": {
       "marriage_date": "2010-08-15",
-      "marriage_city": "Camden",
+      "marriage_place": "Camden, Maine",
+      "marriage_city": "Bangor",
       "marriage_county": "Penobscot",
       "marriage_state": "Maine",
       "separation_date": "2025-04-20",
@@ -710,6 +711,59 @@
       "mortgages_balance": 150962,
       "loans_balance": 19954,
       "other_assets_value": 4797
+    },
+    "litigation": {
+      "docket": [
+        {
+          "date": "2026-02-13",
+          "entry": "Complaint for divorce filed with an interim relief request.",
+          "party": "us"
+        },
+        {
+          "date": "2026-03-06",
+          "entry": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+          "party": "opposing"
+        },
+        {
+          "date": "2026-03-23",
+          "entry": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+          "party": "client"
+        }
+      ],
+      "procedure": [
+        {
+          "date": "2026-02-13",
+          "day": 0,
+          "actor": "us",
+          "event": "Complaint for divorce filed with an interim relief request.",
+          "produces": [
+            "family_law__divorce_complaint"
+          ]
+        },
+        {
+          "date": "2026-03-06",
+          "day": 21,
+          "actor": "opposing",
+          "event": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+          "produces": [
+            "family_law__pleading"
+          ],
+          "response_deadline": "2026-03-26",
+          "deadline_rule": "M.R. Civ. P. 80(c) — response to the counterclaim for divorce."
+        },
+        {
+          "date": "2026-03-23",
+          "day": 38,
+          "actor": "client",
+          "event": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+          "produces": [
+            "family_law__motion"
+          ],
+          "response_deadline": "2026-03-23",
+          "deadline_rule": "19-A M.R.S. § 904 / M.R. Civ. P. 65 — emergency motion for interim parental rights and to freeze marital assets pending hearing.",
+          "urgent": true
+        }
+      ]
     }
   }
 }

@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-588218",
+    "matter_id": "MMC-2025-575198",
     "practice_area": "civil",
     "title": "Grace C. Roe v. Summit Outfitters Co. et al.",
     "jurisdiction": {
@@ -23,7 +23,7 @@
     "status": "active",
     "summary": "Grace C. Roe hired Summit Outfitters Co. to build a custom single-family home for roughly $1363566, and now sues the general contractor, its excavation subcontractor Coastal Logistics Inc., and (by third-party complaint) the design professional Riverbend Analytics Inc. over framing and roof structural deficiencies the homeowner attributes to inadequate site drainage design.",
     "event_date": "2022-11-01",
-    "docket_number": "SAG-CV-2025-699"
+    "docket_number": "SAG-CV-2025-470"
   },
   "parties": {
     "plaintiff": {
@@ -142,35 +142,35 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Evergreen Logistics Corp.",
-      "type": "insurer",
-      "role": "General contractor's liability insurer",
-      "relevance": "Issued the contractor's commercial general liability policy implicated by the defect claims.",
+      "name": "Town Code Enforcement Office",
+      "type": "government_agency",
+      "role": "Municipal building inspector / code office",
+      "relevance": "Issued the building permit and conducted the foundation and framing inspections.",
       "contact": {
-        "phone": "(207) 555-0167",
-        "city": "Bath",
+        "phone": "(207) 555-0173",
+        "city": "Belfast",
         "state": "ME"
       }
     },
     {
       "id": "tp2",
-      "name": "Desmond D. Poe",
+      "name": "Quentin K. Greenhill",
       "type": "witness",
       "role": "Neighboring property owner",
       "relevance": "Owns adjacent land that floods from site runoff and can testify to the grading and drainage conditions.",
       "contact": {
-        "phone": "(207) 555-0165",
-        "city": "Lewiston",
+        "phone": "(207) 555-0177",
+        "city": "Farmington",
         "state": "ME",
-        "email": "desmond.poe@example.org"
+        "email": "quentin.greenhill@example.com"
       }
     },
     {
       "id": "tp3",
-      "name": "Town Code Enforcement Office",
-      "type": "government_agency",
-      "role": "Municipal building inspector / code office",
-      "relevance": "Issued the building permit and conducted the foundation and framing inspections.",
+      "name": "Cobblestone Builders Co.",
+      "type": "business_entity",
+      "role": "Subsequent inspection company",
+      "relevance": "Retained after the problems appeared to inspect the foundation and document the defects.",
       "contact": {
         "phone": "(207) 555-0153",
         "city": "Falmouth",
@@ -705,6 +705,9 @@
     "discovery_date": "2024-07-12",
     "repair_cost_estimate": 602549,
     "mechanic_lien_filed": false,
-    "warranty_period": "a written 10-year structural warranty"
+    "warranty_period": "a written 10-year structural warranty",
+    "legal_description": "The land and improvements at the subject premises, being the same parcel conveyed by warranty deed, together with all buildings thereon",
+    "registry": "Sagadahoc County Registry of Deeds",
+    "unpaid_amount": 161501
   }
 }
