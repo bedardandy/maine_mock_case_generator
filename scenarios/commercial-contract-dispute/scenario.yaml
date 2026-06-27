@@ -192,3 +192,24 @@ litigation:
     jury: {pick: [true, false]}
     estimated_days: {int_between: [4, 10]}
     scheduled_date: {date_between: ["2026-06-01", "2027-01-15"]}
+
+# Chronological case events handed off as bundles (see complex-civil-litigation
+# for the field contract). A contract suit that draws a counterclaim and an early
+# dispositive motion. day = days from filing_date.
+procedure:
+  - day: 0
+    actor: us
+    event: "Complaint for breach of contract and unjust enrichment filed and served."
+    produces: [litigation__pleading]
+  - day: 23
+    actor: opposing
+    event: "Defendant served its Answer and a Counterclaim alleging the plaintiff breached first and failed to mitigate."
+    produces: [litigation__reply]
+    deadline_days: 21
+    deadline_rule: "M.R. Civ. P. 7(a) / 12(a) — reply to a counterclaim within 21 days."
+  - day: 95
+    actor: opposing
+    event: "Defendant moved for summary judgment under M.R. Civ. P. 56, with a statement of material facts."
+    produces: [litigation__opposition]
+    deadline_days: 21
+    deadline_rule: "M.R. Civ. P. 56(c) / 7(b) — opposition and opposing statement of material facts within 21 days."

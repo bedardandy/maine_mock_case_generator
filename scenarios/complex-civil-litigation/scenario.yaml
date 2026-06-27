@@ -197,3 +197,33 @@ litigation:
     jury: {pick: [true, false]}
     estimated_days: {int_between: [5, 15]}
     scheduled_date: {date_between: ["2026-09-01", "2027-03-01"]}
+
+# Chronological case events. Each is handed off as a bundle: an inbound filing or
+# a mid-case incident (actor != us) paired with the responsive document it forces
+# us to draft (produces) and the rule clock (deadline_days/deadline_rule). This
+# exercises responsive drafting — reply, opposition, emergency injunction — not
+# just the originating complaint. day = days from filing_date.
+procedure:
+  - day: 0
+    actor: us
+    event: "Complaint filed and served on the defendants."
+    produces: [litigation__pleading]
+  - day: 24
+    actor: opposing
+    event: "Defendants served their Answer asserting affirmative defenses and a Counterclaim for breach of contract and tortious interference."
+    produces: [litigation__reply]
+    deadline_days: 21
+    deadline_rule: "M.R. Civ. P. 7(a) / 12(a) — reply to a counterclaim within 21 days of service."
+  - day: 52
+    actor: opposing
+    event: "Defendants filed a Motion to Dismiss Count III (negligent misrepresentation) under M.R. Civ. P. 12(b)(6)."
+    produces: [litigation__opposition]
+    deadline_days: 21
+    deadline_rule: "M.R. Civ. P. 7(b)(1)(A) — opposition to a motion within 21 days."
+  - day: 78
+    actor: client
+    event: "Client reports the defendants are liquidating the disputed inventory and moving sale proceeds offshore, threatening to defeat any judgment."
+    produces: [litigation__emergency_motion]
+    urgent: true
+    deadline_days: 0
+    deadline_rule: "M.R. Civ. P. 65 — motion for a temporary restraining order / preliminary injunction; attachment under M.R. Civ. P. 4A/4B."

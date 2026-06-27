@@ -90,4 +90,17 @@ def project_to_canonical(matter: dict) -> dict:
     if matter.get("facts"):
         case["facts"] = dict(matter["facts"])
 
+    # Litigation history — posture, docket, and the per-event response obligations
+    # — is the seam that lets a downstream drafter produce a RESPONSIVE document
+    # (an opposition to the motion just served, a reply to a counterclaim, an
+    # emergency injunction motion after a mid-case incident) rather than only the
+    # originating pleading. Carried through verbatim for context.
+    lit = matter.get("litigation") or {}
+    proj_lit = {k: lit[k] for k in
+                ("posture", "docket", "procedure", "motions", "counterclaims",
+                 "causes_of_action", "affirmative_defenses")
+                if lit.get(k)}
+    if proj_lit:
+        case["litigation"] = proj_lit
+
     return case

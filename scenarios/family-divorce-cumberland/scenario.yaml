@@ -150,3 +150,26 @@ financials:
     - {label: "Defendant retirement account balance", amount: {int_between: [15000, 220000]}, basis: "Most recent statement."}
     - {label: "Joint credit card debt", amount: {int_between: [2000, 28000]}, basis: "Combined balances."}
     - {label: "Plaintiff annual gross income", amount: {int_between: [38000, 110000]}, basis: "W-2 wages."}
+
+# Chronological case events handed off as bundles (see complex-civil-litigation
+# for the field contract). A divorce that turns urgent mid-case when the other
+# parent acts unilaterally — the incident the firm must answer with an emergency
+# motion. day = days from filing_date.
+procedure:
+  - day: 0
+    actor: us
+    event: "Complaint for divorce filed with an interim relief request."
+    produces: [family_law__divorce_complaint]
+  - day: 21
+    actor: opposing
+    event: "Defendant served an Answer and a counterclaim seeking primary residence of the children."
+    produces: [family_law__pleading]
+    deadline_days: 20
+    deadline_rule: "M.R. Civ. P. 80(c) — response to the counterclaim for divorce."
+  - day: 38
+    actor: client
+    event: "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying."
+    produces: [family_law__motion]
+    urgent: true
+    deadline_days: 0
+    deadline_rule: "19-A M.R.S. § 904 / M.R. Civ. P. 65 — emergency motion for interim parental rights and to freeze marital assets pending hearing."

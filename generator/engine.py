@@ -217,6 +217,51 @@ def _assemble_fact_pattern(scenario: dict, ctx: dict, rng: random.Random) -> dic
     return fact_pattern
 
 
+def _add_days(iso: str, days: int) -> str:
+    return (date.fromisoformat(iso) + timedelta(days=int(days))).isoformat()
+
+
+def _assemble_procedure(scenario: dict, ctx: dict, rng: random.Random,
+                        filing_date: str) -> dict:
+    """Turn a scenario ``procedure:`` block — an ordered stream of case events —
+    into a litigation docket plus a structured response obligation per event.
+
+    Each event is ``{day, actor, event, produces, deadline_days, deadline_rule,
+    urgent}``. ``day`` is days from the filing date; ``actor`` is who acted
+    (us | opposing | court | client); ``produces`` lists the responsive template
+    ids the event requires us to draft; ``deadline_days``/``deadline_rule`` carry
+    the response clock (e.g. M.R. Civ. P. 7 reply within 21 days). This is what
+    lets a matter be handed off as a bundle — an inbound filing or a mid-case
+    incident paired with the document it forces us to produce."""
+    spec = scenario.get("procedure")
+    if not spec:
+        return {}
+    events = dsl.resolve(spec, ctx, rng)
+    docket, procedure = [], []
+    for ev in events:
+        if not isinstance(ev, dict):
+            continue
+        when = _add_days(filing_date, ev.get("day", 0))
+        actor = ev.get("actor", "court")
+        entry = ev.get("event", "")
+        docket.append({"date": when, "entry": entry, "party": actor})
+        item = {"date": when, "day": int(ev.get("day", 0)), "actor": actor,
+                "event": entry}
+        if ev.get("produces"):
+            item["produces"] = ev["produces"] if isinstance(ev["produces"], list) \
+                else [ev["produces"]]
+        if ev.get("deadline_days") is not None:
+            item["response_deadline"] = _add_days(when, ev["deadline_days"])
+        if ev.get("deadline_rule"):
+            item["deadline_rule"] = ev["deadline_rule"]
+        if ev.get("urgent"):
+            item["urgent"] = True
+        procedure.append(item)
+    docket.sort(key=lambda e: e["date"])
+    procedure.sort(key=lambda e: e["date"])
+    return {"docket": docket, "procedure": procedure}
+
+
 def _assemble_issues(scenario: dict, ctx: dict, rng: random.Random) -> list:
     spec = scenario.get("issues")
     if not spec:
@@ -402,8 +447,20 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
     if financials:
         out["financials"] = financials
 
+    lit: dict = {}
     if scenario.get("litigation"):
-        out["litigation"] = dsl.resolve(scenario["litigation"], ctx, rng)
+        lit.update(dsl.resolve(scenario["litigation"], ctx, rng))
+    proc = _assemble_procedure(scenario, ctx, rng, filing_date)
+    if proc:
+        # the event-stream docket augments any declared docket; procedure is new
+        lit["docket"] = sorted((lit.get("docket") or []) + proc["docket"],
+                               key=lambda e: e.get("date", ""))
+        lit["procedure"] = proc["procedure"]
+        # posture follows the latest event unless the scenario pins one explicitly
+        if not lit.get("posture") and scenario.get("posture"):
+            lit["posture"] = scenario["posture"]
+    if lit:
+        out["litigation"] = lit
 
     if facts:
         out["facts"] = facts
