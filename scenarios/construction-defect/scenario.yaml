@@ -41,6 +41,12 @@ facts:
   repair_cost_estimate: {int_between: [45000, 650000]}
   mechanic_lien_filed: {pick: [true, false]}
   warranty_period: {pick: ["a one-year builder warranty", "a written 10-year structural warranty", "no express warranty"]}
+  # Mechanic's-lien facts (feed real_estate__lien_claim): the recorded parcel
+  # description, the registry of record, and the unpaid contract balance the lien
+  # secures under 10 M.R.S. § 3251 et seq.
+  legal_description: {pick: ["A certain lot or parcel of land with the buildings thereon situated on the easterly side of Old County Road, being Lot 7 as shown on a plan recorded in the registry", "The land and improvements at the subject premises, being the same parcel conveyed by warranty deed, together with all buildings thereon", "A parcel of land with a single-family dwelling, bounded and described in the deed of record, with all improvements and fixtures"]}
+  registry: "{county} County Registry of Deeds"
+  unpaid_amount: {int_between: [8000, 240000]}
 
 third_parties:
   count: {min: 3, max: 5}

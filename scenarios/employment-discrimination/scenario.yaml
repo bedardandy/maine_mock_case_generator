@@ -42,6 +42,18 @@ facts:
   replacement_younger_or_outside_class: {pick: [true, false]}
   performance_reviews: {pick: ["consistently positive before the complaint", "mixed", "strong until the protected activity"]}
 
+# The engagement-letter fee arrangement (feed general__engagement_letter). An
+# employment-discrimination plaintiff is typically taken on contingency, but some
+# matters are billed hourly; the arrangement and its dependent rate must agree, so
+# they are bundled into one coherent variant.
+variants:
+  - weight: 2
+    fee_arrangement: contingent
+    contingent_percentage: {pick: [33, 35, 40]}
+  - weight: 1
+    fee_arrangement: hourly
+    hourly_rate: {int_between: [225, 425]}
+
 third_parties:
   count: {min: 3, max: 5}
   pool:

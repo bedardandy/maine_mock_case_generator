@@ -36,6 +36,10 @@ facts:
   written_contract: {pick: [true, false]}
   interest_claimed: {pick: [true, false]}
   contract_status: {pick: ["governed by a signed written contract", "based on a written work order the customer signed", "based on an oral agreement confirmed by email and text", "an informal arrangement with no signed contract"]}
+  # Pre-suit demand facts (feed general__demand_letter): who the demand is addressed
+  # to and the deadline the recipient is given to pay before suit is filed.
+  demand_recipient: "{defendant_full_name}"
+  response_deadline_days: {pick: [14, 21, 30]}
 
 third_parties:
   count: {min: 1, max: 3}

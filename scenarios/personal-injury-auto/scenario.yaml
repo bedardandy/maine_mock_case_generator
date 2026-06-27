@@ -41,6 +41,10 @@ facts:
   property_damage: {int_between: [3000, 45000]}
   policy_limits: {int_between: [50000, 1000000]}
   comparative_fault_alleged: {pick: [true, false]}
+  # Pre-suit demand facts (feed general__demand_letter): who the demand is addressed
+  # to and the deadline the recipient is given to respond.
+  demand_recipient: {pick: ["the defendant's liability insurer", "the defendant"]}
+  response_deadline_days: {pick: [14, 21, 30]}
 
 third_parties:
   count: {min: 3, max: 5}

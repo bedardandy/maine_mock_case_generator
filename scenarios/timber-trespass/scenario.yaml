@@ -42,6 +42,10 @@ facts:
   survey_exists: {pick: [true, false]}
   buffer_or_shoreland: {pick: ["the cut violated a shoreland buffer zone", "ordinary woodlot, no shoreland issue", "the cut crossed into a conservation easement"]}
   restoration_cost: {int_between: [6000, 180000]}
+  # Pre-suit demand facts (feed general__demand_letter): who the demand for the
+  # value of the cut timber is addressed to and the deadline to respond.
+  demand_recipient: "{defendant_full_name}"
+  response_deadline_days: {pick: [14, 21, 30]}
 
 third_parties:
   count: {min: 3, max: 5}

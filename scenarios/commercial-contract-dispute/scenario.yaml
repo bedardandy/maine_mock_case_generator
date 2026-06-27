@@ -40,6 +40,13 @@ facts:
   guaranty_signed: {pick: [true]}
   notice_of_default_date: {date_between: ["2024-09-01", "2025-07-15"]}
   cure_period_expired: {pick: [true, false]}
+  # Pre-suit demand facts (feed general__demand_letter): who the demand is addressed
+  # to and the deadline given to respond before suit.
+  demand_recipient: "{defendant_full_name}"
+  response_deadline_days: {pick: [14, 21, 30]}
+  # Pleading relief (feed litigation__pleading): the matter-specific relief the
+  # prayer requests.
+  relief_requested: {pick: ["compensatory damages, prejudgment interest, and costs", "compensatory and cover damages, enforcement of the personal guaranty, and attorney fees", "damages for breach, prejudgment interest, and reasonable attorney fees"]}
 
 third_parties:
   count: {min: 3, max: 5}

@@ -42,6 +42,9 @@ facts:
   demand_made: {pick: [true, false]}
   class_action: {pick: [false, false, true]}
   auditor_role: "issued the audited financial statements relied upon in the offering"
+  # Pleading relief (feed litigation__pleading): the matter-specific relief the
+  # prayer requests.
+  relief_requested: {pick: ["compensatory damages, prejudgment interest, and costs", "rescission, disgorgement, and compensatory damages", "compensatory and punitive damages, attorney fees, and costs"]}
 
 third_parties:
   count: {min: 3, max: 5}

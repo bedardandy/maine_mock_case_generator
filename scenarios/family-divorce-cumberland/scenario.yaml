@@ -28,6 +28,7 @@ parties:
 
 facts:
   marriage_date: {date_between: ["2006-01-01", "2019-12-31"]}
+  marriage_place: {pick: ["Portland, Maine", "Bangor, Maine", "Bar Harbor, Maine", "Camden, Maine", "Brunswick, Maine"]}
   marriage_city: {pick: ["Portland", "Brunswick", "Bar Harbor", "Camden", "Bath", "Bangor"]}
   marriage_county: {pick: ["Cumberland", "Sagadahoc", "Hancock", "Knox", "Penobscot"]}
   marriage_state: "Maine"

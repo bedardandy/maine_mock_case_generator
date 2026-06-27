@@ -40,6 +40,10 @@ facts:
   special_circumstances_explanation: {pick: ["None", "Partial-interest transfer between family members", "Transfer includes seller-financing", "Short sale approved by lender"]}
   financing: {pick: ["conventional mortgage", "cash", "seller financing", "FHA mortgage"]}
   transfer_tax_exemption: {pick: [false, false, true]}
+  # Closing facts: where the recorded deed is returned after recording, and the
+  # earnest-money deposit held under the purchase-and-sale agreement.
+  record_return_to: {pick: ["Coastal Title & Closing, LLC, 88 Commercial Street, Suite 200, Portland, ME 04101", "Harbor Law Group, P.A., 145 Maine Street, Brunswick, ME 04011", "the Grantee at the property address"]}
+  earnest_money: {int_between: [2500, 45000]}
 
 # The deed the parties choose fixes the covenant the instrument gives, and the
 # grantor's CAPACITY fixes both the deed type and the authority recital. Rolling
