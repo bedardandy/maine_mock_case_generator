@@ -44,6 +44,16 @@ facts:
   # earnest-money deposit held under the purchase-and-sale agreement.
   record_return_to: {pick: ["Coastal Title & Closing, LLC, 88 Commercial Street, Suite 200, Portland, ME 04101", "Harbor Law Group, P.A., 145 Maine Street, Brunswick, ME 04011", "the Grantee at the property address"]}
   earnest_money: {int_between: [2500, 45000]}
+  # Source of title: the prior recorded deed by which the property came to the grantor
+  # (or, for a fiduciary, into the trust or to the decedent). Every Maine deed recites
+  # this "being the same premises" chain by book/page in the county registry (33 M.R.S.
+  # § 201). Shared across all deed variants so the source-of-title block can render.
+  has_source_of_title: true
+  source_grantor: {pick: ["Estate of Walter B. Harmon", "Eleanor T. Pomroy", "Estate of Frances M. Doyle", "the Penobscot Land Company", "Albert R. and Mary J. Stearns", "Estate of George W. Tarbox"]}
+  source_deed_date: {date_between: ["1988-01-01", "2016-12-31"]}
+  registry: "{county} County"
+  source_book: {int_between: [900, 8900]}
+  source_page: {int_between: [1, 740]}
 
 # The deed the parties choose fixes the covenant the instrument gives, and the
 # grantor's CAPACITY fixes both the deed type and the authority recital. Rolling
@@ -73,6 +83,19 @@ variants:
     covenant_type: release
     grantor_capacity: personal_representative
     grantor_authority: "as duly appointed Personal Representative under Letters of Authority issued by the Probate Court, exercising the power of sale"
+    # A PR conveys estate real estate by a representative's deed (no personal warranty)
+    # and must name the decedent, the probate county + docket, and recite the Letters of
+    # Authority + power of sale (18-C M.R.S. § 3-715(6),(23) PR powers incl. sale; § 3-711
+    # powers over title). pr_name = the transferor acting as PR; decedent + docket identify
+    # the estate. pr_deed_type=sale because this is a sale to a third-party buyer.
+    pr_name: "{transferor_full_name}"
+    fiduciary_name: "{transferor_full_name}"
+    fiduciary_capacity: "Personal Representative"
+    pr_deed_type: sale
+    testacy: {pick: [testate, intestate]}
+    decedent_name: {pick: ["Harold T. Whitcomb", "Eleanor M. Prescott", "Walter J. Bissett", "Doris A. Hallowell", "Raymond P. Lessard", "Gertrude E. Holloway"]}
+    probate_county: "{county}"
+    docket_number: {pick: ["2024-0417", "2023-1182", "2025-0683", "2024-0921", "2023-0559", "2025-0274"]}
   - weight: 1
     deed_type: "trustee's deed"
     covenant_type: release

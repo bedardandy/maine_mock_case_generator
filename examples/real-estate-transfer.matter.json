@@ -6,13 +6,10 @@
     "generator": "deterministic-engine",
     "generator_version": "0.1.0",
     "scenario_id": "real-estate-transfer",
-    "seed": 7,
-    "confounders": [
-      "spousal-no-joinder-trap"
-    ]
+    "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-657549",
+    "matter_id": "MMC-2025-914983",
     "practice_area": "real_estate",
     "title": "Sale of 129 Old Mill Road from Grace C. Roe to Maria Q. Fairbanks",
     "jurisdiction": {
@@ -111,37 +108,37 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Lighthouse Studios Corp.",
-      "type": "business_entity",
-      "role": "Real estate brokerage",
-      "relevance": "Represented the parties in the transaction.",
-      "contact": {
-        "phone": "(207) 555-0131",
-        "city": "Orono",
-        "state": "ME"
-      }
-    },
-    {
-      "id": "tp2",
       "name": "Maine Revenue Services",
       "type": "government_agency",
       "role": "Transfer tax authority",
       "relevance": "Collects the real estate transfer tax via the RETTD.",
       "contact": {
-        "phone": "(207) 555-0173",
-        "city": "Belfast",
+        "phone": "(207) 555-0138",
+        "city": "Windham",
         "state": "ME"
       }
     },
     {
-      "id": "tp3",
+      "id": "tp2",
       "name": "County Registry of Deeds",
       "type": "government_agency",
       "role": "Recording office",
       "relevance": "Records the deed and the transfer tax declaration.",
       "contact": {
-        "phone": "(207) 555-0193",
-        "city": "Falmouth",
+        "phone": "(207) 555-0199",
+        "city": "Waterville",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Downeast Federal Savings",
+      "type": "financial_institution",
+      "role": "Mortgage lender",
+      "relevance": "Finances the buyer's purchase and records a mortgage.",
+      "contact": {
+        "phone": "(207) 555-0143",
+        "city": "Waterville",
         "state": "ME"
       }
     }
@@ -202,16 +199,6 @@
   },
   "issues": [
     {
-      "issue": "Proper recording of the deed and declaration",
-      "category": "real_estate",
-      "governing_law": "33 M.R.S. § 651",
-      "sub_questions": [
-        "Is the deed in recordable form with the RETTD attached?"
-      ],
-      "strength": "strong",
-      "id": "iss1"
-    },
-    {
       "issue": "Calculation of the Maine real estate transfer tax",
       "category": "tax",
       "governing_law": "36 M.R.S. § 4641-A",
@@ -220,17 +207,7 @@
         "How is the tax split between transferor and transferee?"
       ],
       "strength": "strong",
-      "id": "iss2"
-    },
-    {
-      "issue": "Availability of a transfer tax exemption",
-      "category": "tax",
-      "governing_law": "36 M.R.S. § 4641-C",
-      "sub_questions": [
-        "Does any statutory exemption apply to this transfer?"
-      ],
-      "strength": "moderate",
-      "id": "iss3"
+      "id": "iss1"
     },
     {
       "issue": "Marketability and insurability of title",
@@ -240,41 +217,29 @@
         "Are there liens, easements, or encumbrances of record?"
       ],
       "strength": "moderate",
-      "id": "iss4"
-    },
-    {
-      "issue": "Spousal joinder is NOT required on this inter-vivos deed (the over-import trap) — the real exposure is the elective share at death",
-      "category": "real_estate",
-      "governing_law": "18-C M.R.S. § 2-111; § 2-202; § 2-207",
-      "sub_questions": [
-        "Because dower/curtesy are abolished, a non-titled spouse need NOT join a deed of property the other spouse owns solely — a template that forces a joinder/release line here is WRONG for Maine.",
-        "The uncompensated lifetime transfer can instead be pulled into the augmented estate for the surviving spouse's elective share — a future claim, not a present joinder defect."
-      ],
-      "strength": "moderate",
-      "notes": "[confounder:spousal-no-joinder-trap; HIGH on dower/curtesy abolition + elective share; the 'no joinder required' generalization is fact-specific to vesting. OVERBROAD-IMPORT TRAP — do NOT require spousal joinder on a Maine inter-vivos deed of solely-owned property.]",
-      "id": "iss5"
+      "id": "iss2"
     }
   ],
   "evidence": [
     {
-      "title": "Settlement statement",
-      "type": "financial_record",
+      "title": "Title commitment",
+      "type": "document",
       "party": "transferee",
-      "description": "Closing disclosure with prorations and the transfer tax.",
+      "description": "The title company's commitment and exceptions.",
       "id": "ev1"
-    },
-    {
-      "title": "Purchase and sale agreement",
-      "type": "contract",
-      "party": "transferee",
-      "description": "The executed agreement setting price and terms.",
-      "id": "ev2"
     },
     {
       "title": "Proposed deed",
       "type": "document",
       "party": "transferor",
       "description": "The deed prepared for the conveyance.",
+      "id": "ev2"
+    },
+    {
+      "title": "Purchase and sale agreement",
+      "type": "contract",
+      "party": "transferee",
+      "description": "The executed agreement setting price and terms.",
       "id": "ev3"
     },
     {
@@ -289,24 +254,19 @@
     "currency": "USD",
     "amounts": [
       {
+        "label": "Purchase price",
+        "amount": 842976,
+        "basis": "Agreed consideration."
+      },
+      {
         "label": "Mortgage amount",
-        "amount": 608064,
+        "amount": 356644,
         "basis": "Buyer's financing."
       },
       {
-        "label": "Estimated Maine transfer tax",
-        "amount": 4537,
-        "basis": "$2.20 per $500 of value, split between the parties."
-      },
-      {
         "label": "Adjusted assessed value",
-        "amount": 222103,
+        "amount": 879070,
         "basis": "Municipal assessment."
-      },
-      {
-        "label": "Purchase price",
-        "amount": 381285,
-        "basis": "Agreed consideration."
       }
     ]
   },
@@ -324,13 +284,14 @@
     "transfer_tax_exemption": false,
     "record_return_to": "the Grantee at the property address",
     "earnest_money": 6614,
+    "has_source_of_title": true,
+    "source_grantor": "Albert R. and Mary J. Stearns",
+    "source_deed_date": "1990-09-03",
+    "registry": "Sagadahoc County",
+    "source_book": 5970,
+    "source_page": 211,
     "deed_type": "quitclaim deed with covenant",
     "covenant_type": "quitclaim_covenant",
-    "grantor_capacity": "individual",
-    "grantor_marital_status": "married",
-    "title_vesting": "sole_grantor",
-    "non_titled_spouse_joinder_required": false,
-    "non_titled_spouse_joined": false,
-    "elective_share_pullback_risk": true
+    "grantor_capacity": "individual"
   }
 }

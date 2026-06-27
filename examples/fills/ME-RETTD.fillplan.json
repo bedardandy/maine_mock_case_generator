@@ -502,14 +502,15 @@
       "transfer_tax_exemption": false,
       "record_return_to": "the Grantee at the property address",
       "earnest_money": 6614,
+      "has_source_of_title": true,
+      "source_grantor": "Albert R. and Mary J. Stearns",
+      "source_deed_date": "1990-09-03",
+      "registry": "Sagadahoc County",
+      "source_book": 5970,
+      "source_page": 211,
       "deed_type": "quitclaim deed with covenant",
       "covenant_type": "quitclaim_covenant",
-      "grantor_capacity": "individual",
-      "grantor_marital_status": "married",
-      "title_vesting": "sole_grantor",
-      "non_titled_spouse_joinder_required": false,
-      "non_titled_spouse_joined": false,
-      "elective_share_pullback_risk": true
+      "grantor_capacity": "individual"
     }
   }
 }
