@@ -105,7 +105,7 @@ variants:
     # IS the transferor/grantor, conveying in a fiduciary capacity (no personal
     # warranty). Without these a trustee's deed (33 M.R.S. § 775 Form 3) cannot recite
     # its authority. trust_date predates the sale (the trust held the property first).
-    trust_name: "the {transferor_full_name} Revocable Living Trust"
+    trust_name: "{transferor_full_name} Revocable Living Trust"
     trust_instrument: "Declaration of Trust"
     trust_date: {date_between: ["1998-01-01", "2020-12-31"]}
     trustee_name: "{transferor_full_name}"
