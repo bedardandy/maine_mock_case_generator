@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-470",
-    "case_id": "MMC-2025-575198",
+    "docket_number": "SAG-CV-2025-913",
+    "case_id": "MMC-2025-360494",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
@@ -88,13 +88,14 @@
     "warranty_period": "a written 10-year structural warranty",
     "legal_description": "The land and improvements at the subject premises, being the same parcel conveyed by warranty deed, together with all buildings thereon",
     "registry": "Sagadahoc County Registry of Deeds",
-    "unpaid_amount": 161501
+    "unpaid_amount": 161501,
+    "public_entity_involved": false
   },
   "litigation": {
     "posture": "discovery",
     "docket": [
       {
-        "date": "2025-02-10",
+        "date": "2025-02-14",
         "entry": "Complaint filed against the general contractor and excavation subcontractor.",
         "party": "Grace C. Roe"
       },
@@ -104,32 +105,40 @@
         "party": "Summit Outfitters Co."
       },
       {
-        "date": "2025-04-06",
+        "date": "2025-04-03",
         "entry": "Scheduling order entered; discovery and expert-disclosure deadlines set.",
         "party": "the court"
       },
       {
-        "date": "2025-06-03",
+        "date": "2025-06-05",
         "entry": "Order granting destructive testing and site inspection of the foundation.",
         "party": "the court"
       },
       {
-        "date": "2025-09-17",
+        "date": "2025-09-10",
         "entry": "Expert reports on causation, soils, and repair cost served.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-11-20",
+        "date": "2025-11-01",
         "entry": "Motion for summary judgment on the mechanic's lien taken under advisement.",
         "party": "the court"
       },
       {
-        "date": "2026-01-16",
+        "date": "2026-01-19",
         "entry": "Mediation held; discovery continues toward trial.",
         "party": "the court"
       }
     ],
     "motions": [
+      {
+        "title": "Motion for summary judgment on the mechanic's lien",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-10-15",
+        "status": "under_advisement",
+        "relief": "Judgment reducing or discharging the recorded lien."
+      },
       {
         "title": "Motion to bifurcate liability and damages",
         "type": "pretrial",
@@ -139,26 +148,10 @@
         "relief": "Separate trials on liability and damages."
       },
       {
-        "title": "Motion for summary judgment on the mechanic's lien",
-        "type": "dispositive",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-10-10",
-        "status": "under_advisement",
-        "relief": "Judgment reducing or discharging the recorded lien."
-      },
-      {
-        "title": "Motion in limine to exclude a defect expert",
-        "type": "evidentiary",
-        "movant": "Summit Outfitters Co.",
-        "filed_date": "2026-03-27",
-        "status": "filed",
-        "relief": "Exclusion of the homeowner's causation expert."
-      },
-      {
         "title": "Motion to consolidate",
         "type": "procedural",
         "movant": "Summit Outfitters Co.",
-        "filed_date": "2025-04-07",
+        "filed_date": "2025-04-15",
         "status": "granted",
         "relief": "Consolidation of the related lien and defect actions."
       }
@@ -241,9 +234,9 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "Failure to maintain and improper grading by the owner",
+        "defense": "Statute of repose",
         "by": "Summit Outfitters Co.",
-        "basis": "The conditions result from the owner's failure to maintain and regrade the site."
+        "basis": "Claims for design and construction are barred by the period of repose. 14 M.R.S. § 752-A."
       },
       {
         "defense": "Betterment",
@@ -251,19 +244,9 @@
         "basis": "The claimed repairs would put the homeowner in a better position than the contract required."
       },
       {
-        "defense": "The work met code",
-        "by": "Coastal Logistics Inc.",
-        "basis": "The excavation and fill work passed inspection and complied with the applicable building code."
-      },
-      {
         "defense": "Lack of notice and opportunity to cure",
         "by": "Summit Outfitters Co.",
         "basis": "The homeowner failed to provide notice and a reasonable opportunity to cure the alleged defects."
-      },
-      {
-        "defense": "Statute of repose",
-        "by": "Summit Outfitters Co.",
-        "basis": "Claims for design and construction are barred by the period of repose. 14 M.R.S. § 752-A."
       }
     ]
   }

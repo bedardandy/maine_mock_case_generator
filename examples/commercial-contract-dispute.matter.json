@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-620528",
+    "matter_id": "MMC-2025-657549",
     "practice_area": "civil",
     "title": "Harbor Outfitters LLC v. Coastal Provisions LLC et al.",
     "jurisdiction": {
@@ -23,7 +23,7 @@
     "status": "active",
     "summary": "Harbor Outfitters LLC sues its supplier Coastal Provisions LLC and the supplier's owner, Maria Q. Jessup, for breach of a master supply agreement covering specialty food products, alleging delivery of defective goods that left $264326 owing, and seeks to enforce Maria's personal guaranty.",
     "event_date": "2025-02-07",
-    "docket_number": "SAG-CV-2025-796"
+    "docket_number": "SAG-CV-2025-537"
   },
   "parties": {
     "plaintiff": {
@@ -130,60 +130,48 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Northstar Provisions Inc.",
+      "name": "Evergreen Builders Inc.",
       "type": "business_entity",
       "role": "Freight and logistics company",
       "relevance": "Carried the shipments and documents the timing and condition of deliveries.",
       "contact": {
-        "phone": "(207) 555-0189",
-        "city": "Falmouth",
+        "phone": "(207) 555-0110",
+        "city": "Farmington",
         "state": "ME"
       }
     },
     {
       "id": "tp2",
-      "name": "Northstar Partners Corp.",
-      "type": "business_entity",
-      "role": "Substitute supplier",
-      "relevance": "The competing supplier the plaintiff turned to in mitigation after the breach; its invoices show the cover price.",
-      "contact": {
-        "phone": "(207) 555-0193",
-        "city": "Falmouth",
-        "state": "ME"
-      }
-    },
-    {
-      "id": "tp3",
-      "name": "Carmen F. Fairbanks",
-      "type": "witness",
-      "role": "Defendant's account manager",
-      "relevance": "Was the plaintiff's day-to-day contact and negotiated the orders and delivery schedule.",
-      "contact": {
-        "phone": "(207) 555-0196",
-        "city": "Belfast",
-        "state": "ME",
-        "email": "carmen.fairbanks@example.com"
-      }
-    },
-    {
-      "id": "tp4",
-      "name": "Malik W. Poe",
+      "name": "Nadia K. Greenhill",
       "type": "witness",
       "role": "Former employee of the defendant",
       "relevance": "Has direct knowledge of the contract negotiations and the alleged quality problems.",
       "contact": {
-        "phone": "(207) 555-0173",
-        "city": "Lewiston",
+        "phone": "(207) 555-0177",
+        "city": "Farmington",
         "state": "ME",
-        "email": "malik.poe@example.net"
+        "email": "nadia.greenhill@example.com"
       }
     },
     {
-      "id": "tp5",
-      "name": "Granite State Credit Union",
-      "type": "financial_institution",
-      "role": "Plaintiff's commercial bank",
-      "relevance": "Provided the working-capital line of credit and holds records of the plaintiff's payments and receivables.",
+      "id": "tp3",
+      "name": "Nadia S. Loe",
+      "type": "witness",
+      "role": "Defendant's account manager",
+      "relevance": "Was the plaintiff's day-to-day contact and negotiated the orders and delivery schedule.",
+      "contact": {
+        "phone": "(207) 555-0153",
+        "city": "Falmouth",
+        "state": "ME",
+        "email": "nadia.loe@example.net"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Cobblestone Studios Corp.",
+      "type": "business_entity",
+      "role": "Substitute supplier",
+      "relevance": "The competing supplier the plaintiff turned to in mitigation after the breach; its invoices show the cover price.",
       "contact": {
         "phone": "(207) 555-0176",
         "city": "Bath",

@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-913",
-    "case_id": "MMC-2025-360494",
+    "docket_number": "SAG-CV-2025-407",
+    "case_id": "MMC-2025-702326",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
@@ -84,30 +84,34 @@
     "lost_wages": 43175,
     "property_damage": 33513,
     "policy_limits": 664006,
+    "defendant_coverage": "underinsured",
     "comparative_fault_alleged": false,
     "demand_recipient": "the defendant",
-    "response_deadline_days": 21
+    "response_deadline_days": 14,
+    "plaintiff_mainecare_recipient": true,
+    "plaintiff_on_workers_comp": true,
+    "lien_must_clear_before_disbursement": true
   },
   "litigation": {
     "posture": "discovery",
     "docket": [
       {
-        "date": "2025-02-07",
+        "date": "2025-02-10",
         "entry": "Complaint and demand for jury trial filed.",
         "party": "Olivia B. Ellsworth"
       },
       {
-        "date": "2025-03-09",
+        "date": "2025-03-01",
         "entry": "Defendants' answer and affirmative defenses filed.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-03-25",
+        "date": "2025-03-21",
         "entry": "Scheduling order entered; discovery deadline set.",
         "party": "the court"
       },
       {
-        "date": "2025-06-25",
+        "date": "2025-06-15",
         "entry": "Order compelling production of the defendant's phone records.",
         "party": "the court"
       },
@@ -117,7 +121,7 @@
         "party": "us"
       },
       {
-        "date": "2025-09-03",
+        "date": "2025-09-10",
         "entry": "Defense medical examination completed; expert disclosures exchanged.",
         "party": "Maria Q. Fairbanks"
       },
@@ -132,7 +136,7 @@
         "party": "opposing"
       },
       {
-        "date": "2025-11-21",
+        "date": "2025-11-24",
         "entry": "Partial summary judgment on liability taken under advisement.",
         "party": "the court"
       },
@@ -142,7 +146,7 @@
         "party": "opposing"
       },
       {
-        "date": "2026-02-08",
+        "date": "2026-02-09",
         "entry": "Mediation held; case continues toward trial.",
         "party": "the court"
       }
@@ -189,28 +193,28 @@
     ],
     "motions": [
       {
-        "title": "Motion to bifurcate liability and damages",
-        "type": "trial",
+        "title": "Motion to compel the independent medical examination",
+        "type": "discovery",
         "movant": "Maria Q. Fairbanks",
-        "filed_date": "2026-03-19",
-        "status": "opposed",
-        "relief": "Separate trials on liability and damages."
+        "filed_date": "2025-08-11",
+        "status": "granted",
+        "relief": "An order compelling the plaintiff to attend a defense medical examination."
       },
       {
         "title": "Motion in limine to exclude the accident reconstruction",
         "type": "evidentiary",
         "movant": "Maria Q. Fairbanks",
-        "filed_date": "2026-01-15",
+        "filed_date": "2026-01-22",
         "status": "filed",
         "relief": "Exclusion of the plaintiff's reconstruction expert testimony."
       },
       {
-        "title": "Motion to compel the defendant's phone records",
-        "type": "discovery",
-        "movant": "Olivia B. Ellsworth",
-        "filed_date": "2025-05-24",
-        "status": "granted_in_part",
-        "relief": "An order compelling production of the defendant's call and text logs."
+        "title": "Motion to bifurcate liability and damages",
+        "type": "trial",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-03-22",
+        "status": "opposed",
+        "relief": "Separate trials on liability and damages."
       }
     ],
     "counterclaims": [
@@ -271,9 +275,9 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "Statute of limitations",
+        "defense": "Lack of causation",
         "by": "Maria Q. Fairbanks",
-        "basis": "The action was not commenced within the limitations period. 14 M.R.S. § 752."
+        "basis": "The claimed injuries are pre-existing or degenerative and were not caused by the collision."
       },
       {
         "defense": "Sudden emergency",
@@ -281,9 +285,14 @@
         "basis": "The defendant faced an unforeseen emergency not of the defendant's making."
       },
       {
-        "defense": "Lack of causation",
+        "defense": "Comparative negligence",
         "by": "Maria Q. Fairbanks",
-        "basis": "The claimed injuries are pre-existing or degenerative and were not caused by the collision."
+        "basis": "The plaintiff's own negligence caused or contributed to the collision. 14 M.R.S. § 156."
+      },
+      {
+        "defense": "Statute of limitations",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The action was not commenced within the limitations period. 14 M.R.S. § 752."
       }
     ]
   }

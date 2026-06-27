@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-414328",
+    "matter_id": "MMC-2025-932967",
     "practice_area": "family",
     "title": "Divorce of Grace C. Roe and Maria Q. Fairbanks (Concealed Digital Assets)",
     "jurisdiction": {
@@ -23,7 +23,7 @@
     "status": "active",
     "summary": "Grace C. Roe petitions to divorce Maria Q. Fairbanks in Sagadahoc County District Court on the ground of irreconcilable differences and asks the court to find, value, and equitably divide the marital estate, including roughly $2676314 in cryptocurrency the plaintiff alleges Maria concealed by routing funds through a foreign exchange.",
     "event_date": "2025-08-31",
-    "docket_number": "SAG-FM-2025-354"
+    "docket_number": "SAG-FM-2025-284"
   },
   "parties": {
     "plaintiff": {
@@ -143,37 +143,61 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Lighthouse Trust Company",
-      "type": "financial_institution",
-      "role": "Bank where fiat moved before crypto purchases",
-      "relevance": "Records show dollars leaving joint accounts to fund exchange deposits.",
+      "name": "Cobblestone Partners Corp.",
+      "type": "business_entity",
+      "role": "Blockchain-forensics investigation firm",
+      "relevance": "Retained to trace wallet activity and follow the coins on-chain.",
       "contact": {
-        "phone": "(207) 555-0138",
-        "city": "Lewiston",
+        "phone": "(207) 555-0177",
+        "city": "Farmington",
         "state": "ME"
       }
     },
     {
       "id": "tp2",
-      "name": "Lighthouse Holdings LLC",
-      "type": "business_entity",
-      "role": "Blockchain-forensics investigation firm",
-      "relevance": "Retained to trace wallet activity and follow the coins on-chain.",
-      "contact": {
-        "phone": "(207) 555-0115",
-        "city": "Windham",
-        "state": "ME"
-      }
-    },
-    {
-      "id": "tp3",
       "name": "Coinbase, Inc.",
       "type": "financial_institution",
       "role": "Cryptocurrency exchange",
       "relevance": "Holds the defendant's account and KYC records reachable by subpoena.",
       "contact": {
-        "phone": "(207) 555-0143",
-        "city": "Camden",
+        "phone": "(207) 555-0121",
+        "city": "Gorham",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Riverbend Analytics LLC",
+      "type": "business_entity",
+      "role": "Marital business that paid the defendant in tokens",
+      "relevance": "Source of token compensation that never reached the financial statement.",
+      "contact": {
+        "phone": "(207) 555-0197",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Mooselook Cafe Group",
+      "type": "employer",
+      "role": "Defendant's employer",
+      "relevance": "Pays the defendant's salary and reportedly some compensation in digital assets.",
+      "contact": {
+        "phone": "(207) 555-0144",
+        "city": "Bath",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Pine Tree Community Bank",
+      "type": "financial_institution",
+      "role": "Bank where fiat moved before crypto purchases",
+      "relevance": "Records show dollars leaving joint accounts to fund exchange deposits.",
+      "contact": {
+        "phone": "(207) 555-0134",
+        "city": "Falmouth",
         "state": "ME"
       }
     }
@@ -236,7 +260,7 @@
       "Any arrangement that destabilizes the children."
     ],
     "constraints": {
-      "budget": "Substantial; the client will fund the forensic work needed to trace the coins.",
+      "budget": "Moderate; willing to invest in forensics but wants fees shifted to the defendant where possible.",
       "timeline": "Wants the digital assets traced and frozen before they can be moved again."
     }
   },
@@ -254,6 +278,18 @@
       "id": "iss1"
     },
     {
+      "issue": "Discovery sanctions for concealment and non-disclosure, including an adverse inference, fees, and preclusion",
+      "category": "family",
+      "governing_law": "M.R. Civ. P. 37",
+      "sub_questions": [
+        "Has the defendant failed to comply with disclosure obligations?",
+        "Are an adverse inference, attorney fees, or preclusion warranted?"
+      ],
+      "strength": "strong",
+      "client_position": "The defendant's non-compliance warrants an adverse inference, fee-shifting, and preclusion of late-disclosed defenses.",
+      "id": "iss2"
+    },
+    {
       "issue": "Classification and valuation of cryptocurrency as marital property",
       "category": "family",
       "governing_law": "19-A M.R.S. § 953(1)",
@@ -263,7 +299,7 @@
       ],
       "strength": "moderate",
       "client_position": "Crypto acquired during the marriage is marital property subject to division at a fair valuation date.",
-      "id": "iss2"
+      "id": "iss3"
     },
     {
       "issue": "The valuation date for the cryptocurrency given its volatility",
@@ -275,18 +311,6 @@
       ],
       "strength": "moderate",
       "client_position": "The court should pick a valuation date that does not let the defendant benefit from timing the volatility.",
-      "id": "iss3"
-    },
-    {
-      "issue": "Discovery sanctions for concealment and non-disclosure, including an adverse inference, fees, and preclusion",
-      "category": "family",
-      "governing_law": "M.R. Civ. P. 37",
-      "sub_questions": [
-        "Has the defendant failed to comply with disclosure obligations?",
-        "Are an adverse inference, attorney fees, or preclusion warranted?"
-      ],
-      "strength": "strong",
-      "client_position": "The defendant's non-compliance warrants an adverse inference, fee-shifting, and preclusion of late-disclosed defenses.",
       "id": "iss4"
     },
     {
@@ -318,31 +342,7 @@
     {
       "id": "exp1",
       "expert": {
-        "name": "Wesley B. Poe",
-        "field": "Blockchain forensic analysis",
-        "credentials": "CFE",
-        "retained_by": "plaintiff"
-      },
-      "topic": "Tracing wallet activity and identifying concealed holdings",
-      "opinion": "On-chain analysis links the defendant's exchange account to wallets holding marital cryptocurrency.",
-      "basis": "Exchange KYC records, on-chain transaction graphs, and clustering analysis."
-    },
-    {
-      "id": "exp2",
-      "expert": {
-        "name": "Quentin R. Birchwood",
-        "field": "Business valuation",
-        "credentials": "ASA",
-        "retained_by": "plaintiff"
-      },
-      "topic": "Valuation of the startup and the tokens it paid the defendant",
-      "opinion": "The startup's token compensation had material value that belongs in the marital estate.",
-      "basis": "Cap table, token grants, and comparable-market data."
-    },
-    {
-      "id": "exp3",
-      "expert": {
-        "name": "Diego M. Ellsworth",
+        "name": "Henry D. Larkspur",
         "field": "Forensic accounting",
         "credentials": "CPA, CFF",
         "retained_by": "plaintiff"
@@ -350,21 +350,33 @@
       "topic": "Valuation of the marital estate and tracing of fiat into crypto",
       "opinion": "Funds left the joint accounts and were converted to cryptocurrency that was omitted from the disclosures.",
       "basis": "Bank records, tax returns, and the financial statement."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Wesley G. Roe",
+        "field": "Business valuation",
+        "credentials": "ASA",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Valuation of the startup and the tokens it paid the defendant",
+      "opinion": "The startup's token compensation had material value that belongs in the marital estate.",
+      "basis": "Cap table, token grants, and comparable-market data."
     }
   ],
   "evidence": [
-    {
-      "title": "Parties' joint tax returns",
-      "type": "financial_record",
-      "party": "plaintiff",
-      "description": "Joint returns relevant to undisclosed income and digital-asset questions.",
-      "id": "ev1"
-    },
     {
       "title": "Blockchain transaction traces and forensic report",
       "type": "document",
       "party": "plaintiff",
       "description": "On-chain traces and the forensic analyst's report tying wallets to the defendant.",
+      "id": "ev1"
+    },
+    {
+      "title": "Startup token-compensation records",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "Records of tokens the marital business paid the defendant as compensation.",
       "id": "ev2"
     },
     {
@@ -375,42 +387,51 @@
       "id": "ev3"
     },
     {
+      "title": "Bank records showing fiat moved to the exchange",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "Joint-account statements showing dollars transferred to fund crypto purchases.",
+      "id": "ev4"
+    },
+    {
       "title": "Text and email references to crypto holdings",
       "type": "correspondence",
       "party": "plaintiff",
       "description": "Messages in which the defendant references buying or holding cryptocurrency.",
-      "id": "ev4"
+      "id": "ev5"
+    },
+    {
+      "title": "Device-forensics results showing wallet software",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "Forensic imaging results showing wallet applications and keys on the defendant's devices.",
+      "id": "ev6"
     },
     {
       "title": "Defendant's sworn family financial statement (FM-043)",
       "type": "affidavit",
       "party": "defendant",
       "description": "The defendant's sworn financial statement, which omits the cryptocurrency holdings.",
-      "id": "ev5"
+      "id": "ev7"
     }
   ],
   "financials": {
     "currency": "USD",
     "amounts": [
       {
-        "label": "Total marital estate value",
-        "amount": 4754287,
-        "basis": "Estimated combined value of all marital property."
-      },
-      {
-        "label": "Suspected hidden cryptocurrency value",
-        "amount": 1748903,
-        "basis": "Plaintiff's estimate of the concealed digital assets."
-      },
-      {
         "label": "Forensic and expert costs",
-        "amount": 127485,
+        "amount": 97833,
         "basis": "Blockchain forensic, accounting, and valuation fees."
       },
       {
         "label": "Attorney fees sought as a sanction",
-        "amount": 275312,
+        "amount": 86788,
         "basis": "Fees attributable to the concealment and non-disclosure."
+      },
+      {
+        "label": "Traced or recovered cryptocurrency amount",
+        "amount": 1738154,
+        "basis": "Value tied to identified wallets and exchange records."
       }
     ]
   },
@@ -478,125 +499,138 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "The keys or coins are genuinely lost",
+        "defense": "The holdings are separate, non-marital property",
         "by": "Maria Q. Fairbanks",
-        "basis": "The private keys are irretrievably lost and the coins cannot be produced or valued."
+        "basis": "The cryptocurrency traces to non-marital funds and is the defendant's separate property."
       },
       {
         "defense": "The claimed value is overstated",
         "by": "Maria Q. Fairbanks",
         "basis": "The plaintiff's valuation of the holdings is speculative and inflated."
+      },
+      {
+        "defense": "The keys or coins are genuinely lost",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The private keys are irretrievably lost and the coins cannot be produced or valued."
       }
     ],
     "discovery": [
       {
-        "type": "independent_examination",
+        "type": "request_for_admission",
         "propounding_party": "Grace C. Roe",
         "responding_party": "Maria Q. Fairbanks",
-        "served_date": "2025-09-15",
-        "status": "served",
-        "description": "Forensic imaging of the defendant's devices by a neutral examiner."
-      },
-      {
-        "type": "subpoena",
-        "propounding_party": "Grace C. Roe",
-        "responding_party": "the cryptocurrency exchange",
-        "served_date": "2025-06-21",
-        "status": "served",
-        "description": "Subpoena to the cryptocurrency exchange for account and KYC records."
-      },
-      {
-        "type": "request_for_production",
-        "propounding_party": "Grace C. Roe",
-        "responding_party": "Maria Q. Fairbanks",
-        "served_date": "2025-05-25",
-        "status": "compelled",
-        "description": "Requests for exchange statements, wallet addresses, seed-phrase backups, and device records."
+        "served_date": "2025-09-30",
+        "status": "responded",
+        "description": "Admissions on the existence and control of specific wallets."
       },
       {
         "type": "deposition",
         "propounding_party": "Grace C. Roe",
         "responding_party": "Maria Q. Fairbanks",
-        "served_date": "2025-07-29",
+        "served_date": "2025-07-24",
         "status": "outstanding",
         "description": "Deposition of the defendant on the digital-asset holdings and disclosures."
       },
       {
-        "type": "request_for_admission",
+        "type": "request_for_production",
         "propounding_party": "Grace C. Roe",
         "responding_party": "Maria Q. Fairbanks",
-        "served_date": "2025-09-29",
-        "status": "responded",
-        "description": "Admissions on the existence and control of specific wallets."
+        "served_date": "2025-05-15",
+        "status": "compelled",
+        "description": "Requests for exchange statements, wallet addresses, seed-phrase backups, and device records."
+      },
+      {
+        "type": "interrogatories",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Maria Q. Fairbanks",
+        "served_date": "2025-05-15",
+        "status": "objected",
+        "description": "Interrogatories specific to digital assets, wallets, and exchange accounts."
+      },
+      {
+        "type": "subpoena",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "the cryptocurrency exchange",
+        "served_date": "2025-06-10",
+        "status": "served",
+        "description": "Subpoena to the cryptocurrency exchange for account and KYC records."
       }
     ],
     "motions": [
       {
-        "title": "Motion for sanctions and an adverse inference",
-        "type": "discovery",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-09-22",
-        "status": "under_advisement",
-        "relief": "An adverse inference and attorney fees for the concealment."
-      },
-      {
         "title": "Motion to freeze and preserve the cryptocurrency",
         "type": "injunctive",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-05-19",
+        "filed_date": "2025-05-05",
         "status": "opposed",
         "relief": "An order preserving and freezing the identified digital assets."
       },
       {
-        "title": "Motion to compel disclosure of digital assets",
+        "title": "Motion for sanctions and an adverse inference",
         "type": "discovery",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-06-15",
-        "status": "granted",
-        "relief": "An order compelling full disclosure of wallets, keys, and exchange accounts."
+        "filed_date": "2025-09-05",
+        "status": "under_advisement",
+        "relief": "An adverse inference and attorney fees for the concealment."
+      },
+      {
+        "title": "Motion for contempt",
+        "type": "enforcement",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-10-31",
+        "status": "filed",
+        "relief": "A finding of contempt for violating the disclosure order."
+      },
+      {
+        "title": "Motion to appoint a neutral forensic examiner",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-08-12",
+        "status": "granted_in_part",
+        "relief": "Appointment of a neutral examiner to image the defendant's devices."
       }
     ],
     "docket": [
       {
-        "date": "2025-04-20",
+        "date": "2025-04-15",
         "entry": "Complaint for divorce filed with a demand for full financial disclosure.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-05-10",
+        "date": "2025-05-09",
         "entry": "Defendant's family financial statement (FM-043) filed; plaintiff disputes its completeness.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-06-23",
+        "date": "2025-06-16",
         "entry": "Order compelling disclosure of digital assets entered.",
         "party": "the court"
       },
       {
-        "date": "2025-07-29",
+        "date": "2025-08-03",
         "entry": "Neutral forensic examiner appointed to image devices.",
         "party": "the court"
       },
       {
-        "date": "2025-09-01",
+        "date": "2025-09-18",
         "entry": "Plaintiff's forensic report and motion for sanctions served.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-10-14",
+        "date": "2025-10-22",
         "entry": "Motion for sanctions and an adverse inference taken under advisement.",
         "party": "the court"
       },
       {
-        "date": "2025-11-28",
+        "date": "2025-11-27",
         "entry": "Pretrial conference held; valuation-date dispute reserved for trial.",
         "party": "the court"
       }
     ],
     "trial": {
       "jury": false,
-      "estimated_days": 4,
-      "scheduled_date": "2026-12-04"
+      "estimated_days": 5,
+      "scheduled_date": "2026-10-09"
     }
   },
   "facts": {

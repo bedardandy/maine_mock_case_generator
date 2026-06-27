@@ -9,7 +9,7 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-202163",
+    "matter_id": "MMC-2025-846702",
     "practice_area": "civil",
     "title": "Small Claims of Grace C. Roe v. Maria Q. Fairbanks",
     "jurisdiction": {
@@ -23,7 +23,7 @@
     "status": "pre_filing",
     "summary": "Grace C. Roe, the sole proprietor of a freelance web-design practice, brings a small claims action in Sagadahoc County District Court against a former customer, Maria Q. Fairbanks, to collect the unpaid balance arising from unpaid invoice for completed services; the claim is within the $6,000 Maine small claims limit.",
     "event_date": "2025-05-27",
-    "docket_number": "SAG-SC-2025-660"
+    "docket_number": "SAG-SC-2025-164"
   },
   "parties": {
     "plaintiff": {
@@ -125,12 +125,12 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Lighthouse Outfitters Corp.",
+      "name": "Riverbend Studios Co.",
       "type": "business_entity",
       "role": "Collections agency",
       "relevance": "The plaintiff consulted this agency about recovering the unpaid balance before deciding to file in small claims court.",
       "contact": {
-        "phone": "(207) 555-0159",
+        "phone": "(207) 555-0174",
         "city": "Auburn",
         "state": "ME"
       }

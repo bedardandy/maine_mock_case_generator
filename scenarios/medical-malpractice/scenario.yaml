@@ -44,6 +44,102 @@ facts:
   statute_of_limitations_concern: {pick: [true, false]}
   economic_damages: {int_between: [60000, 2800000]}
 
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues layered on the primary
+# professional-negligence claim. Most matters draw ZERO. Each entry injects
+# coherent ground-truth facts + a spotted issue + (where apt) an affirmative
+# defense, with its Maine grounding and a confidence flag. AI-assembled research,
+# NOT legal advice (see DISCLAIMER.md). Overbroad-application risk is stated
+# inline. NOTE: med-mal carries its OWN limitations regime — the general 14
+# M.R.S. § 752 6-year period does NOT govern (the exact med-mal period is treated
+# as to-be-verified, EXPERIMENTAL).
+confounders:
+  count: {weights: [60, 26, 11, 3]} # ~60% of matters stay clean
+  pool:
+    # med-mal has its OWN limitations period; § 752'§ 6 years does NOT govern.
+    - id: medmal-specific-sol
+      weight: 3
+      confidence: "EXPERIMENTAL on the exact period/accrual — anchored on the VERIFIED hook that 14 M.R.S. § 752'§ 6 years does NOT govern med-mal"
+      source: "Med-mal carries its own shorter regime under 24 M.R.S. ch. 21 (the matter pleads 24 M.R.S. § 2902, a 3-year period); 14 M.R.S. § 752 (general 6-year tort limitations) does NOT apply to professional-negligence/med-mal claims"
+      facts:
+        general_752_sol_applies: false
+        medmal_specific_sol_applies: true
+        verify_medmal_sol_period: true
+        accrual_question: {pick: ["the date of the act or omission", "a continuing course of treatment", "discovery of a foreign object"]}
+      issue:
+        issue: "Statute of limitations — the med-mal-specific period, NOT the general 6-year tort clock"
+        category: procedure
+        governing_law: "24 M.R.S. ch. 21 (med-mal-specific limitations; the matter pleads § 2902); 14 M.R.S. § 752 expressly does NOT govern"
+        sub_questions:
+          - "A claim that would be timely under the general 14 M.R.S. § 752 6-year period can be time-barred under the shorter med-mal-specific period — verify the exact number and accrual rule against current 24 M.R.S. ch. 21."
+          - "Does accrual run from {accrual_question}, and does the prelitigation screening-panel process toll it?"
+        strength: moderate
+        notes: "Overbroad-risk / EXPERIMENTAL: do NOT assume 14 M.R.S. § 752'§ 6 years covers med-mal — it carries its own shorter period with distinct accrual (foreign-object, continuing-treatment, minors). Treat the exact figure as to-be-verified, not settled."
+      defense:
+        defense: "Statute of limitations (med-mal-specific period)"
+        by: "{defendant_full_name}"
+        basis: "The action was not commenced within the med-mal-specific limitations period of 24 M.R.S. ch. 21; the general 14 M.R.S. § 752 6-year period does not apply. NOTE: the exact period and accrual rule should be verified against current statute."
+    # Prelitigation screening panel — notice/tolling and the admissibility of findings.
+    - id: screening-panel-notice-tolling
+      weight: 3
+      confidence: "scenario-cited statutes; verify exact subsections against current 24 M.R.S. ch. 21"
+      source: "24 M.R.S. § 2903 (notice of claim — initiates the mandatory prelitigation screening panel and tolls the limitations period); § 2851 (mandatory prelitigation screening panel); § 2853 (admissibility/effect of panel findings)"
+      facts:
+        notice_of_claim_tolls_sol: true
+        panel_finding_unanimous: {pick: [true, false]}
+        notice_defect_risk: {pick: [true, false]}
+      issue:
+        issue: "Prelitigation screening panel — whether the notice tolled the clock and whether the findings are admissible"
+        category: procedure
+        governing_law: "24 M.R.S. § 2903 (notice of claim / tolling); § 2851 (screening panel); § 2853 (findings)"
+        sub_questions:
+          - "A statutory notice of claim under § 2903 initiates the panel and tolls limitations — was the notice timely and sufficient, or does a defect leave the clock running?"
+          - "Unanimous panel findings carry evidentiary weight the parties will fight over — are these findings admissible at trial, and on what terms?"
+        strength: moderate
+        notes: "Overbroad-risk: the screening-panel prerequisite and its tolling/admissibility turn on strict compliance with 24 M.R.S. ch. 21 — confirm the exact subsections and unanimity rules against current statute rather than assuming the panel cures a defective notice."
+    # liens and subrogation against a (often large) med-mal recovery.
+    - id: liens-subrogation-mainecare-wc
+      weight: 2
+      confidence: "VERIFIED — 22 M.R.S. § 14 MaineCare no-fee-reduction lien; 39-A M.R.S. § 107 WC lien; private health-insurer subrogation UNVERIFIED"
+      source: "22 M.R.S. § 14 (MaineCare subrogation/lien; NOT reduced for attorney fees; written notice before settlement and ≥ 10 days before filing); 39-A M.R.S. § 107 (workers'-comp lien; 30-day-demand subrogation; proportionate litigation costs); private health-insurer subrogation — UNVERIFIED (policy-language dependent)"
+      facts:
+        plaintiff_mainecare_recipient: {pick: [true, false]}
+        plaintiff_on_workers_comp: {pick: [true, false]}
+        lien_must_clear_before_disbursement: true
+      issue:
+        issue: "Liens and subrogation — MaineCare and workers'-comp claims against the recovery"
+        category: insurance
+        governing_law: "22 M.R.S. § 14 (MaineCare); 39-A M.R.S. § 107 (workers' comp)"
+        sub_questions:
+          - "MaineCare's § 14 lien is NOT reduced for a pro-rata share of attorney fees and requires written notice before settlement and at least 10 days before filing — has that been done?"
+          - "A workers'-comp lien under 39-A M.R.S. § 107 creates a de facto three-party settlement and a 30-day-demand subrogation clock."
+        strength: moderate
+        notes: "Overbroad-risk: the WC lien is NOT simply total benefits paid — the employer bears proportionate litigation costs. Private health-insurer subrogation is policy-language dependent and UNVERIFIED here."
+    # wrongful-death overlay (only where the injury is a death claim by the estate).
+    - id: wrongful-death-pr-standing
+      weight: 2
+      requires: {injury: "a wrongful-death claim by the estate"}
+      confidence: "VERIFIED — 18-C M.R.S. § 2-807 standing, 3-year SoL, distribution; the companionship cap is inflation-adjusted (do not hard-code)"
+      source: "18-C M.R.S. § 2-807 (wrongful death — must be brought by the personal representative/special administrator; 3-year SoL, 6 if by homicide; loss-of-comfort/society cap is inflation-adjusted; recovery distributes to heirs, bypassing the probate estate)"
+      facts:
+        wrongful_death: true
+        pr_appointed: {pick: [true, false]}
+        wrongful_death_sol_years: 3
+        recovery_bypasses_probate_estate: true
+      issue:
+        issue: "Wrongful death — personal-representative standing and the 3-year clock"
+        category: procedure
+        governing_law: "18-C M.R.S. § 2-807"
+        sub_questions:
+          - "A wrongful-death claim may be brought ONLY by an appointed personal representative or special administrator — has one been appointed, adding a petition to the pre-complaint workflow?"
+          - "The 3-year wrongful-death period under 18-C M.R.S. § 2-807 can expire before a claim mis-pleaded as ordinary professional negligence is even recognized as a death claim."
+        strength: moderate
+        notes: "Overbroad-risk: standing is dispositive — no appointed PR means no wrongful-death claim regardless of merit. The loss-of-comfort/society cap is inflation-adjusted; do NOT hard-code a fixed ceiling."
+      defense:
+        defense: "Lack of standing / statute of limitations (wrongful death)"
+        by: "{defendant_full_name}"
+        basis: "Any wrongful-death claim must be brought by a duly appointed personal representative within 18-C M.R.S. § 2-807'§ 3-year period. NOTE: absent an appointed PR there is no claimant with standing, and the 3-year clock is shorter than the general tort period."
+
 third_parties:
   count: {min: 3, max: 5}
   pool:

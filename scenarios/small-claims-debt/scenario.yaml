@@ -41,6 +41,89 @@ facts:
   demand_recipient: "{defendant_full_name}"
   response_deadline_days: {pick: [14, 21, 30]}
 
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues layered on the primary
+# debt-collection claim. Most matters draw ZERO. Each entry injects coherent
+# ground-truth facts + a spotted issue + (where apt) an affirmative defense, with
+# its Maine grounding and a confidence flag. AI-assembled research, NOT legal
+# advice (see DISCLAIMER.md). Overbroad-application risk is stated inline so the
+# oracle is the CORRECT Maine rule, not a naive over-claim.
+confounders:
+  count: {weights: [60, 26, 11, 3]} # ~60% of matters stay clean
+  pool:
+    # UTPA overlay where the customer is a consumer.
+    - id: utpa-consumer-overlay
+      weight: 3
+      requires: {debt_origin: ["unpaid invoice for completed services", "unpaid invoice for goods delivered"]}
+      confidence: "High on § 207/§ 213 text; Medium on what counts as 'unfair/deceptive' (FTC standard, fact-intensive)"
+      source: "5 M.R.S. § 206 (defines 'trade or commerce'); § 207 (unfair/deceptive acts unlawful); § 213 (private right of action for a personal/family/household purchaser; mandatory fees/costs to a prevailing plaintiff; 30-day written pre-suit demand prerequisite, EXCEPT for counterclaims/cross-claims)"
+      facts:
+        consumer_transaction: true
+        seller_in_trade_or_commerce: true
+        defendant_personal_household_use: true
+        utpa_counterclaim_risk: true
+        utpa_213_demand_required_for_counterclaim: false
+      issue:
+        issue: "UTPA overlay — who holds the § 213 remedy, and the 30-day-demand prerequisite"
+        category: civil
+        governing_law: "5 M.R.S. § 206; § 207; § 213"
+        sub_questions:
+          - "The plaintiff-business is in 'trade or commerce' (5 M.R.S. § 206), but the § 213 private right of action belongs to the CONSUMER purchaser — the seller cannot wield UTPA offensively to collect the debt."
+          - "If the customer counterclaims under UTPA that the work was deceptive or defective, the § 213 30-day written demand is NOT required for a counterclaim, and a prevailing consumer is entitled to mandatory attorney fees — flipping the fee exposure."
+        strength: moderate
+        notes: "Overbroad-risk: a pure non-payment dispute is NOT a UTPA violation — § 207 needs an affirmative unfair/deceptive act beyond non-performance; and a one-off private sale outside 'trade or commerce' falls outside the Act entirely."
+      defense:
+        defense: "Unfair Trade Practices Act counterclaim / defense"
+        by: "{defendant_full_name}"
+        basis: "The consumer alleges an unfair or deceptive act in the transaction under 5 M.R.S. § 207, seeking § 213 remedies including mandatory attorney fees. NOTE: a counterclaim needs no 30-day demand, but UTPA requires a deceptive act beyond mere non-performance."
+    # common-law statute of frauds (non-goods, unwritten debts).
+    - id: statute-of-frauds-suretyship
+      weight: 2
+      requires: {written_contract: false}
+      excludes: {debt_origin: "unpaid invoice for goods delivered"}
+      confidence: "High on the enumerated § 51 categories; Medium on main-purpose/estoppel (fact-intensive)"
+      source: "33 M.R.S. § 51 (signed writing required — § 51(2) a promise to answer for another's debt (suretyship); § 51(5) an agreement not to be performed within one year); for a sale of goods ≥ $500 the UCC writing requirement of 11 M.R.S. § 2-201 governs instead"
+      facts:
+        signed_writing_exists: false
+        oral_guaranty_by_third_party: {pick: [true, false]}
+        multi_year_payment_plan: {pick: [true, false]}
+        surety_main_purpose_own_benefit: {pick: [true, false]}
+      issue:
+        issue: "Statute of frauds — whether an unwritten promise is enforceable"
+        category: civil
+        governing_law: "33 M.R.S. § 51(2), (5)"
+        sub_questions:
+          - "If a third party orally promised to pay the customer's debt, 33 M.R.S. § 51(2) requires a signed writing — unless the 'main purpose / leading object' rule applies because the promisor's primary purpose was its own benefit."
+          - "If the agreement could not be performed within one year (e.g., a multi-year payment plan), § 51(5) requires a signed writing; an exchange of emails and texts may itself satisfy the writing."
+        strength: moderate
+        notes: "Overbroad-risk: the common-law statute of frauds applies to suretyship and one-year promises — NOT to a sale of goods, where 11 M.R.S. § 2-201's $500 writing rule controls instead; email/text and part performance can supply the writing or an estoppel."
+      defense:
+        defense: "Statute of frauds"
+        by: "{defendant_full_name}"
+        basis: "Any oral guaranty or promise not performable within one year is unenforceable absent a signed writing under 33 M.R.S. § 51. NOTE: for goods the UCC § 2-201 rule governs instead, and email/text or part performance may satisfy the writing."
+    # limitations on the debt: contract (6 yr) vs sale of goods (4 yr).
+    - id: sol-debt-contract-vs-ucc
+      weight: 3
+      confidence: "VERIFIED — 14 M.R.S. § 752 (6 yr) and 11 M.R.S. § 2-725 (4 yr, goods); part-payment acknowledgment is common-law, fact-specific"
+      source: "14 M.R.S. § 752 (6-year limitations for a common-law contract/account); 11 M.R.S. § 2-725 (4-year limitations for a sale of goods); part-payment/acknowledgment may restart or affect accrual (common law, fact-specific)"
+      facts:
+        debt_is_sale_of_goods: {pick: [true, false]}
+        applicable_sol: {pick: ["14 M.R.S. § 752 (6 years)", "11 M.R.S. § 2-725 (4 years, sale of goods)"]}
+        partial_payment_acknowledgment_question: true
+      issue:
+        issue: "Statute of limitations on the debt — which period governs"
+        category: civil
+        governing_law: "14 M.R.S. § 752; 11 M.R.S. § 2-725"
+        sub_questions:
+          - "A common-law contract or account-stated debt runs 6 years under 14 M.R.S. § 752 — but a debt for a sale of goods runs only 4 years under 11 M.R.S. § 2-725, a shorter clock that can bar a goods claim still timely as a service debt."
+          - "Does the customer's partial payment acknowledge the debt and affect the accrual or running of the period?"
+        strength: moderate
+        notes: "Overbroad-risk: do NOT assume the § 752 6-year period covers every debt — characterizing the debt as a sale of goods shortens it to the UCC'§ 4 years (11 M.R.S. § 2-725). Part-payment revival is fact-specific and not automatic."
+      defense:
+        defense: "Statute of limitations"
+        by: "{defendant_full_name}"
+        basis: "The claim is untimely under the applicable period — 4 years for a sale of goods (11 M.R.S. § 2-725) or 6 years for a contract/account (14 M.R.S. § 752). NOTE: the shorter UCC period applies if the debt is for goods; partial payment does not automatically revive a barred debt."
+
 third_parties:
   count: {min: 1, max: 3}
   pool:

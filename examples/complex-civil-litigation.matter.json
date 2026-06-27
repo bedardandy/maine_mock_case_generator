@@ -6,10 +6,13 @@
     "generator": "deterministic-engine",
     "generator_version": "0.1.0",
     "scenario_id": "complex-civil-litigation",
-    "seed": 7
+    "seed": 7,
+    "confounders": [
+      "sol-theory-selection"
+    ]
   },
   "matter": {
-    "matter_id": "MMC-2025-272975",
+    "matter_id": "MMC-2025-542182",
     "practice_area": "civil",
     "title": "Roe et al. v. Coastal Outfitters LLC et al.",
     "jurisdiction": {
@@ -23,7 +26,7 @@
     "status": "active",
     "summary": "Grace C. Roe and Maria Q. Fairbanks invested in a Series A preferred round of Coastal Outfitters LLC and now sue the company, its CEO Olivia D. Jessup, and (by third-party complaint) its outside auditor, alleging the offering misrepresented the status of a flagship contract.",
     "event_date": "2023-06-03",
-    "docket_number": "SAG-CV-2025-875"
+    "docket_number": "SAG-CV-2025-140"
   },
   "parties": {
     "plaintiff": {
@@ -149,52 +152,64 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Pine Tree Community Bank",
-      "type": "financial_institution",
-      "role": "Escrow agent",
-      "relevance": "Held the investment proceeds at closing; records trace the use of funds.",
+      "name": "Desmond R. Hawthorne",
+      "type": "witness",
+      "role": "Former VP of Finance",
+      "relevance": "Whistleblower who flagged the accounting irregularities before resigning.",
       "contact": {
-        "phone": "(207) 555-0197",
-        "city": "Lewiston",
-        "state": "ME"
+        "phone": "(207) 555-0108",
+        "city": "Augusta",
+        "state": "ME",
+        "email": "desmond.hawthorne@example.net"
       }
     },
     {
       "id": "tp2",
-      "name": "Beatrice S. Danforth",
-      "type": "expert",
-      "role": "Industry analyst",
-      "relevance": "Covered the company and can speak to market expectations.",
-      "contact": {
-        "phone": "(207) 555-0174",
-        "city": "Falmouth",
-        "state": "ME",
-        "email": "beatrice.danforth@example.org"
-      }
-    },
-    {
-      "id": "tp3",
-      "name": "Lighthouse Logistics LLC",
+      "name": "Summit Analytics Corp.",
       "type": "business_entity",
       "role": "Placement agent",
       "relevance": "Marketed the securities to the plaintiffs.",
       "contact": {
-        "phone": "(207) 555-0193",
+        "phone": "(207) 555-0182",
         "city": "Bath",
         "state": "ME"
       }
     },
     {
-      "id": "tp4",
-      "name": "Beatrice M. Ellsworth",
-      "type": "witness",
-      "role": "Former VP of Finance",
-      "relevance": "Whistleblower who flagged the accounting irregularities before resigning.",
+      "id": "tp3",
+      "name": "Maine Office of Securities",
+      "type": "government_agency",
+      "role": "State securities regulator",
+      "relevance": "Opened a parallel inquiry into the offering.",
       "contact": {
-        "phone": "(207) 555-0102",
-        "city": "Windham",
+        "phone": "(207) 555-0191",
+        "city": "Auburn",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Downeast Federal Savings",
+      "type": "financial_institution",
+      "role": "Escrow agent",
+      "relevance": "Held the investment proceeds at closing; records trace the use of funds.",
+      "contact": {
+        "phone": "(207) 555-0145",
+        "city": "Yarmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "John K. Noe",
+      "type": "expert",
+      "role": "Industry analyst",
+      "relevance": "Covered the company and can speak to market expectations.",
+      "contact": {
+        "phone": "(207) 555-0116",
+        "city": "Ellsworth",
         "state": "ME",
-        "email": "beatrice.ellsworth@example.com"
+        "email": "john.noe@example.org"
       }
     }
   ],
@@ -241,7 +256,7 @@
       "Defeating the company's counterclaims.",
       "Maximizing leverage for a favorable settlement."
     ],
-    "risk_tolerance": "high",
+    "risk_tolerance": "moderate",
     "desired_outcomes": [
       "A judgment or settlement compensating the plaintiffs' losses plus costs.",
       "A finding (or strong settlement posture) on fiduciary breach and misrepresentation."
@@ -256,32 +271,63 @@
   },
   "issues": [
     {
+      "issue": "The measure and availability of damages, including punitive damages",
+      "category": "remedies",
+      "governing_law": "14 M.R.S. § 1604-A",
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
       "issue": "Whether the auditor is liable for negligent misrepresentation to non-client investors",
       "category": "professional_liability",
       "governing_law": "Restatement (Second) of Torts § 552",
       "strength": "weak",
-      "id": "iss1"
+      "id": "iss2"
+    },
+    {
+      "issue": "Whether the offering materials contained actionable misrepresentations",
+      "category": "securities",
+      "governing_law": "Common law fraud; 5 M.R.S. § 207",
+      "strength": "moderate",
+      "id": "iss3"
     },
     {
       "issue": "Whether the CEO breached fiduciary duties owed to investors",
       "category": "corporate",
       "governing_law": "13-C M.R.S. § 831; common law",
       "strength": "moderate",
-      "id": "iss2"
+      "id": "iss4"
     },
     {
-      "issue": "Whether any claims are time-barred",
+      "issue": "Statute of limitations — when the claims accrued and which theory's clock governs",
       "category": "procedure",
       "governing_law": "14 M.R.S. § 752",
+      "sub_questions": [
+        "Do the fraud and breach claims accrue at the date the misstatement was discovered? The 14 M.R.S. § 752 6-year clock runs from accrual, and whether a discovery rule defers accrual for concealed fraud is contested.",
+        "A claim recast as a UTPA violation (5 M.R.S. § 213) or against a governmental defendant (14 M.R.S. § 8107, 365 days) is governed by a different, shorter deadline than § 752."
+      ],
       "strength": "weak",
-      "id": "iss3"
+      "notes": "Overbroad-risk: do NOT assume 14 M.R.S. § 752'§ 6 years covers every theory uniformly — accrual is theory- and fact-specific, and a UTPA or governmental overlay shortens the operative deadline. [confounder:sol-theory-selection; VERIFIED — 14 M.R.S. § 752 6-year general period; discovery-rule accrual for fraud is fact-specific/EXPERIMENTAL]",
+      "id": "iss5"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
       "expert": {
-        "name": "Wesley F. Poe",
+        "name": "Marcus C. Loe",
+        "field": "Damages economics",
+        "credentials": "Ph.D.",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Out-of-pocket and benefit-of-the-bargain damages",
+      "opinion": "Plaintiffs' recoverable loss approximates the amount in controversy.",
+      "basis": "Event study and cash-flow modeling."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Henry H. Loe",
         "field": "Auditing standards",
         "credentials": "CPA",
         "retained_by": "third_party_defendant"
@@ -291,9 +337,21 @@
       "basis": "Audit file and GAAS checklist."
     },
     {
-      "id": "exp2",
+      "id": "exp3",
       "expert": {
-        "name": "Lillian W. Ellsworth",
+        "name": "Malik A. Boe",
+        "field": "Business valuation",
+        "credentials": "ASA",
+        "retained_by": "plaintiff"
+      },
+      "topic": "But-for value of the investment",
+      "opinion": "The securities were worth materially less than the price paid at closing.",
+      "basis": "Market and income approaches applied to corrected financials."
+    },
+    {
+      "id": "exp4",
+      "expert": {
+        "name": "Wesley F. Kingsley",
         "field": "Corporate governance",
         "credentials": "J.D., Ph.D.",
         "retained_by": "defendant"
@@ -305,31 +363,31 @@
   ],
   "evidence": [
     {
-      "title": "Audited financial statements",
-      "type": "financial_record",
-      "party": "third_party_defendant",
-      "description": "The audited statements at the center of the dispute.",
-      "id": "ev1"
-    },
-    {
-      "title": "Escrow account statements",
-      "type": "financial_record",
-      "party": "plaintiff",
-      "description": "Records tracing the use of the investment proceeds.",
-      "id": "ev2"
-    },
-    {
-      "title": "Whistleblower memorandum",
-      "type": "document",
-      "party": "plaintiff",
-      "description": "The former VP of Finance's internal memo flagging the issue.",
-      "id": "ev3"
-    },
-    {
       "title": "Board meeting minutes",
       "type": "document",
       "party": "defendant",
       "description": "Minutes approving the projections and offering.",
+      "id": "ev1"
+    },
+    {
+      "title": "Securities purchase agreement",
+      "type": "contract",
+      "party": "plaintiff",
+      "description": "The executed agreement governing the investment.",
+      "id": "ev2"
+    },
+    {
+      "title": "Private offering memorandum",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "The offering deck and PPM relied upon by the plaintiffs.",
+      "id": "ev3"
+    },
+    {
+      "title": "Auditor workpapers",
+      "type": "financial_record",
+      "party": "third_party_defendant",
+      "description": "The audit file produced in discovery.",
       "id": "ev4"
     },
     {
@@ -340,17 +398,17 @@
       "id": "ev5"
     },
     {
-      "title": "Auditor workpapers",
+      "title": "Audited financial statements",
       "type": "financial_record",
       "party": "third_party_defendant",
-      "description": "The audit file produced in discovery.",
+      "description": "The audited statements at the center of the dispute.",
       "id": "ev6"
     },
     {
-      "title": "Private offering memorandum",
-      "type": "document",
-      "party": "plaintiff",
-      "description": "The offering deck and PPM relied upon by the plaintiffs.",
+      "title": "Email thread on revenue recognition",
+      "type": "correspondence",
+      "party": "defendant",
+      "description": "Internal emails discussing the accounting treatment.",
       "id": "ev7"
     }
   ],
@@ -358,29 +416,29 @@
     "currency": "USD",
     "amounts": [
       {
-        "label": "Estimated plaintiff-side fees and costs through trial",
-        "amount": 517295,
-        "basis": "Litigation budget."
-      },
-      {
-        "label": "Compensatory damages sought",
-        "amount": 4291590,
-        "basis": "Out-of-pocket and benefit-of-the-bargain loss."
-      },
-      {
-        "label": "Plaintiffs' investment at risk",
-        "amount": 5774038,
-        "basis": "Capital committed at closing."
-      },
-      {
         "label": "Punitive damages sought",
-        "amount": 1078682,
+        "amount": 3872914,
         "basis": "Alleged knowing misrepresentation."
       },
       {
+        "label": "Compensatory damages sought",
+        "amount": 6983025,
+        "basis": "Out-of-pocket and benefit-of-the-bargain loss."
+      },
+      {
         "label": "Expert witness fees",
-        "amount": 66324,
+        "amount": 268703,
         "basis": "Retained experts."
+      },
+      {
+        "label": "Plaintiffs' investment at risk",
+        "amount": 3596877,
+        "basis": "Capital committed at closing."
+      },
+      {
+        "label": "Estimated plaintiff-side fees and costs through trial",
+        "amount": 1026529,
+        "basis": "Litigation budget."
       }
     ]
   },
@@ -478,24 +536,19 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "Waiver and estoppel",
-        "by": "Coastal Outfitters LLC",
-        "basis": "The plaintiffs ratified the transaction by accepting later disclosures."
-      },
-      {
-        "defense": "Failure to state a claim",
-        "by": "Coastal Outfitters LLC",
-        "basis": "The complaint does not plead fraud with particularity. M.R. Civ. P. 9(b)."
-      },
-      {
-        "defense": "Comparative fault",
-        "by": "Coastal Outfitters LLC",
-        "basis": "The plaintiffs were sophisticated and failed to conduct due diligence. 14 M.R.S. § 156."
+        "defense": "Business judgment rule",
+        "by": "Olivia D. Jessup",
+        "basis": "The challenged decisions were informed, good-faith business judgments."
       },
       {
         "defense": "Statute of frauds",
         "by": "Coastal Outfitters LLC",
         "basis": "Any oral representations are unenforceable."
+      },
+      {
+        "defense": "Statute of limitations",
+        "by": "Coastal Outfitters LLC",
+        "basis": "Claims accrued more than six years before filing. 14 M.R.S. § 752."
       }
     ],
     "counterclaims": [
@@ -534,91 +587,75 @@
       {
         "type": "request_for_production",
         "propounding_party": "Grace C. Roe",
-        "responding_party": "Summit Logistics LLC",
-        "served_date": "2025-05-09",
-        "status": "compelled",
-        "description": "Requests for the audit workpapers."
-      },
-      {
-        "type": "deposition",
-        "propounding_party": "Grace C. Roe",
-        "responding_party": "Olivia D. Jessup",
-        "served_date": "2025-07-07",
-        "status": "outstanding",
-        "description": "Deposition of the CEO."
-      },
-      {
-        "type": "deposition",
-        "propounding_party": "Coastal Outfitters LLC",
-        "responding_party": "Grace C. Roe",
-        "served_date": "2025-06-21",
-        "status": "served",
-        "description": "Deposition of the lead plaintiff."
+        "responding_party": "Coastal Outfitters LLC",
+        "served_date": "2025-03-22",
+        "status": "objected",
+        "description": "Requests for financial records, board materials, and emails."
       },
       {
         "type": "expert_disclosure",
         "propounding_party": "Grace C. Roe",
         "responding_party": "Coastal Outfitters LLC",
-        "served_date": "2025-08-09",
+        "served_date": "2025-08-22",
         "status": "served",
         "description": "Plaintiffs' expert designations and reports."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "Olivia D. Jessup",
+        "served_date": "2025-07-09",
+        "status": "outstanding",
+        "description": "Deposition of the CEO."
+      },
+      {
+        "type": "subpoena",
+        "propounding_party": "Grace C. Roe",
+        "responding_party": "the escrow agent",
+        "served_date": "2025-05-04",
+        "status": "served",
+        "description": "Subpoena for escrow account records."
       }
     ],
     "motions": [
       {
-        "title": "Motion in limine to exclude the damages expert",
-        "type": "evidentiary",
-        "movant": "Coastal Outfitters LLC",
-        "filed_date": "2026-02-26",
-        "status": "filed",
-        "relief": "Exclusion of the plaintiffs' damages model."
-      },
-      {
-        "title": "Motion to amend to add a punitive damages claim",
-        "type": "pleading",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-09-26",
-        "status": "opposed",
-        "relief": "Leave to add a punitive damages demand."
-      },
-      {
         "title": "Motion to dismiss for failure to state a claim",
         "type": "dispositive",
         "movant": "Coastal Outfitters LLC",
-        "filed_date": "2025-02-27",
+        "filed_date": "2025-03-04",
         "status": "denied",
         "relief": "Dismissal of the fraud and UTPA counts."
+      },
+      {
+        "title": "Motion in limine to exclude the damages expert",
+        "type": "evidentiary",
+        "movant": "Coastal Outfitters LLC",
+        "filed_date": "2026-02-07",
+        "status": "filed",
+        "relief": "Exclusion of the plaintiffs' damages model."
       },
       {
         "title": "Motion to compel production of audit workpapers",
         "type": "discovery",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-05-07",
+        "filed_date": "2025-05-24",
         "status": "granted",
         "relief": "An order compelling the auditor's workpapers."
-      },
-      {
-        "title": "Motion for a protective order",
-        "type": "discovery",
-        "movant": "Coastal Outfitters LLC",
-        "filed_date": "2025-05-31",
-        "status": "granted_in_part",
-        "relief": "Protection of trade-secret financial information."
       }
     ],
     "docket": [
+      {
+        "date": "2025-01-19",
+        "entry": "Complaint and demand for jury trial filed.",
+        "party": "Grace C. Roe"
+      },
       {
         "date": "2025-01-19",
         "entry": "Complaint filed and served on the defendants.",
         "party": "us"
       },
       {
-        "date": "2025-01-20",
-        "entry": "Complaint and demand for jury trial filed.",
-        "party": "Grace C. Roe"
-      },
-      {
-        "date": "2025-02-11",
+        "date": "2025-02-05",
         "entry": "Defendants' answer, counterclaims, and cross-claim filed.",
         "party": "Coastal Outfitters LLC"
       },
@@ -628,7 +665,7 @@
         "party": "opposing"
       },
       {
-        "date": "2025-02-20",
+        "date": "2025-02-21",
         "entry": "Third-party complaint against the auditor filed.",
         "party": "Coastal Outfitters LLC"
       },
@@ -643,30 +680,30 @@
         "party": "opposing"
       },
       {
-        "date": "2025-04-02",
-        "entry": "Order denying the motion to dismiss.",
-        "party": "the court"
-      },
-      {
         "date": "2025-04-07",
         "entry": "Client reports the defendants are liquidating the disputed inventory and moving sale proceeds offshore, threatening to defeat any judgment.",
         "party": "client"
       },
       {
-        "date": "2025-06-04",
+        "date": "2025-04-10",
+        "entry": "Order denying the motion to dismiss.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-06-07",
         "entry": "Order compelling production of the audit workpapers.",
         "party": "the court"
       },
       {
-        "date": "2025-09-15",
+        "date": "2025-09-05",
         "entry": "Plaintiffs' expert reports served; discovery continues.",
         "party": "Grace C. Roe"
       }
     ],
     "trial": {
-      "jury": true,
-      "estimated_days": 6,
-      "scheduled_date": "2026-11-27"
+      "jury": false,
+      "estimated_days": 10,
+      "scheduled_date": "2027-02-02"
     },
     "procedure": [
       {
@@ -725,6 +762,10 @@
     "demand_made": true,
     "class_action": true,
     "auditor_role": "issued the audited financial statements relied upon in the offering",
-    "relief_requested": "rescission, disgorgement, and compensatory damages"
+    "relief_requested": "rescission, disgorgement, and compensatory damages",
+    "governmental_codefendant": false,
+    "accrual_theory": "the date the misstatement was discovered",
+    "discovery_rule_invoked": true,
+    "general_tort_sol_years": 6
   }
 }

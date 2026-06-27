@@ -131,3 +131,74 @@ financials:
     - {label: "Secured claims", amount: {int_between: [40000, 180000]}, basis: "Mortgage and liens."}
     - {label: "Funeral and administration expenses (priority)", amount: {int_between: [9000, 28000]}, basis: "Invoices."}
     - {label: "Family and homestead allowances claimed", amount: {int_between: [10000, 35000]}, basis: "Statutory allowances."}
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING -- confounding SECONDARY issues for an insolvent estate.
+# Grounded in 18-C M.R.S.; AI-assembled research,
+# NOT legal advice (see DISCLAIMER.md). Correct rule stated inline as the oracle.
+confounders:
+  count: {weights: [60, 27, 10, 3]} # ~60% of matters stay clean
+  pool:
+    # creditor nonclaim bar (dispositive before priority/proration)
+    - id: creditor-nonclaim-bar
+      weight: 4
+      confidence: "well-settled (§ 3-803 timing unambiguous; dispositive in an insolvent estate)"
+      source: "18-C M.R.S. § 3-803; § 3-801; § 3-805"
+      facts:
+        notice_published: true
+        notice_first_publication_date: {date_between: ["2025-06-01", "2026-01-01"]}
+        late_claim_filed: true
+        claim_filed_date: {date_between: ["2026-01-15", "2026-06-01"]}
+      issue:
+        issue: "Whether a competing creditor's claim is barred by the nonclaim period before priority and proration"
+        category: probate
+        governing_law: "18-C M.R.S. § 3-803; § 3-805"
+        sub_questions:
+          - "Was the claim presented within the EARLIER of 9 months after death or 4 months after first published § 3-801 notice?"
+          - "A barred claim drops out before the § 3-805 priority and proration analysis -- does excluding it change what the timely creditors recover?"
+          - "OVERBROAD-RISK / correct rule: secured claims and the decedent's liability-insurance claims are excepted from the § 3-803 bar; barring an unsecured claim does not reach a perfected secured creditor."
+        strength: strong
+        notes: "Apply the § 3-803 'earlier of' bar before § 3-805 priority; secured claims and insurance are excepted."
+      defense:
+        defense: "Creditor claim barred by the nonclaim statute"
+        by: "{personal_representative_full_name}"
+        basis: "The claim was presented after the § 3-803 nonclaim period (the earlier of 9 months after death or 4 months after first published § 3-801 notice) and is barred, except for secured claims and the decedent's liability insurance."
+    # formal / supervised administration to bind creditors
+    - id: appointment-or-will-contested
+      weight: 2
+      confidence: "well-settled (formal / supervised tracks clear under §§ 3-401 / 3-501)"
+      source: "18-C M.R.S. § 3-401; § 3-501"
+      facts:
+        appointment_contested: true
+        creditor_disputes: true
+        supervised_requested: true
+        administration_track: supervised
+      issue:
+        issue: "Need for formal and supervised administration to bind creditors and protect the personal representative"
+        category: probate
+        governing_law: "18-C M.R.S. § 3-401; § 3-501"
+        sub_questions:
+          - "Do the creditor disputes and the insolvency warrant supervised administration under § 3-501, so distributions need court approval?"
+          - "OVERBROAD-RISK / correct rule: supervised administration adds court-approval delay and cost and is not the default -- it is appropriate for complex-creditor or conflict estates, exactly the insolvent posture here, but should not be invoked reflexively for a simple solvent estate."
+        strength: moderate
+        notes: "Supervised administration is the in rem track with continuing court oversight for conflict / complex-creditor estates."
+    # abatement order + recovery of nonprobate transfers (testate matters only)
+    - id: abatement-order-and-nonprobate-recovery
+      weight: 2
+      requires: {will_exists: true}
+      confidence: "§ 3-902 abatement order well-settled; recovery of nonprobate transfers fact-specific (Medium)"
+      source: "18-C M.R.S. § 3-902; § 2-606; § 6-102"
+      facts:
+        specific_devise_present: true
+        nonprobate_assets_pct: {int_between: [20, 70]}
+        joint_tenancy_assets: {pick: [true, false]}
+        pod_beneficiaries_named: true
+      issue:
+        issue: "Order of abatement of devises and whether nonprobate transfers are reachable to pay claims"
+        category: probate
+        governing_law: "18-C M.R.S. § 3-902; § 6-102"
+        sub_questions:
+          - "In what order do devises abate to satisfy claims and allowances -- intestate property, then residuary, then general, then specific (§ 3-902), unless the will directs otherwise?"
+          - "Are recent nonprobate transfers (POD/TOD, joint tenancy) reachable under § 6-102 to satisfy claims and allowances when the probate estate is insufficient?"
+          - "OVERBROAD-RISK / correct rule: a specific devise abates LAST, not first; and § 6-102 reaches nonprobate transfers only to the extent the probate estate is inadequate, after the statutory priorities and allowances."
+        strength: moderate
+        notes: "Specific devises abate last; § 6-102 recovery is a backstop limited to the shortfall."

@@ -189,3 +189,74 @@ litigation:
     jury: false
     estimated_days: {int_between: [2, 5]}
     scheduled_date: {date_between: ["2026-07-01", "2027-02-01"]}
+
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY family-law issues layered on the
+# primary concealed-asset divorce. Most matters draw ZERO. Each confounder
+# injects coherent facts + a spotted issue (+ optional defense) with its Maine
+# grounding and a confidence flag; AI-assembled research verified against
+# legislature.maine.gov, NOT legal advice (see DISCLAIMER.md). Overbroad-risk is
+# stated inline so the oracle is the CORRECT rule.
+confounders:
+  count: {weights: [60, 26, 11, 3]} # ~60% of matters stay clean
+  pool:
+    # classification / tracing / active appreciation of the disputed holdings
+    - id: nonmarital-tracing-and-active-appreciation
+      weight: 4
+      confidence: "High (framework); Medium (the active-role boundary is UNSETTLED at the margins)"
+      source: "19-A M.R.S. § 953 (marital presumption + four § 953(2) exclusions); Doucette v. Washburn, 2001 ME 38 (tracing); Hedges v. Pitcher, 2008 ME 55 (routine reinvestment is not a substantial active role)"
+      facts:
+        nonmarital_tracing_dispute: true
+        claimed_separate_source: {pick: ["premarital savings", "an inheritance", "post-separation earnings"]}
+        appreciation_during_marriage: true
+        active_management_by_spouse: true
+        tracing_required: true
+      issue:
+        issue: "Tracing and the active-appreciation rule for the disputed digital-asset and business holdings"
+        category: family
+        governing_law: "19-A M.R.S. § 953; Doucette v. Washburn, 2001 ME 38; Hedges v. Pitcher, 2008 ME 55"
+        sub_questions:
+          - "Do the holdings trace to a § 953(2) exclusion (premarital, inherited, or post-separation), or to marital funds and effort?"
+          - "Did a spouse take a 'substantial active role' in managing or improving the asset, converting appreciation to marital, or is it passive market appreciation that stays separate?"
+        strength: moderate
+        notes: "Overbroad-risk: § 953(1) presumes property acquired during the marriage MARITAL regardless of title — the claimant bears the tracing burden; appreciation of a non-marital asset stays non-marital ONLY absent a substantial active role (routine reinvestment is not such a role, Hedges v. Pitcher); transmutation and commingling are resolved by tracing, not an express statute."
+    # retirement/pension division + QDRO sub-document (coverture UNVERIFIED)
+    - id: retirement-division-qdro-subdocument
+      weight: 3
+      confidence: "High that retirement division OFTEN requires a separate plan-compliant order in ADDITION to judgment language — a federally compliant QDRO for a private ERISA plan, or a MainePERS-compliant division order for a public plan; the required instrument depends on the plan type (MainePERS and some governmental/church plans are not ERISA QDRO plans). UNVERIFIED / EXPERIMENTAL that the coverture-fraction marital-portion formula is explicit Maine STATUTORY text (derived from plan practice / the MainePERS model DRO, not a statute)"
+      source: "19-A M.R.S. § 953 (division); 5 M.R.S. § 17059 (MainePERS division-order regime); a private ERISA plan requires a separate federally compliant QDRO, while a MainePERS or other governmental/church plan is not an ERISA QDRO plan and takes its own plan-compliant order; coverture fraction per MainePERS model DRO (NOT a statute)"
+      facts:
+        retirement_plan_present: true
+        pension_type: {pick: ["an ERISA-governed private retirement plan", "a MainePERS public pension", "a 401(k) plan", "a federal civil-service pension"]}
+        qdro_required: true
+        qdro_drafted: false
+        marital_portion_method: "coverture fraction (plan-practice convention, not a Maine statute)"
+      issue:
+        issue: "Retirement division often needs a separate plan-compliant division order (a QDRO for ERISA plans; a MainePERS-compliant order for public plans) in addition to the judgment, depending on plan type"
+        category: family
+        governing_law: "19-A M.R.S. § 953; 5 M.R.S. § 17059 (MainePERS)"
+        sub_questions:
+          - "Is the plan a private ERISA plan (needs a separate federally compliant QDRO) or a MainePERS / other governmental or church plan (which is NOT an ERISA QDRO plan and instead takes its own plan-compliant division order — for MainePERS, an order the chief executive officer must deem qualified under 5 M.R.S. § 17059)?"
+          - "Has the plan-appropriate division order been drafted, pre-approved by the plan administrator, and entered with or after the judgment?"
+        strength: moderate
+        notes: "Overbroad-risk: it is NOT universally true that 'a retirement plan needs a separate QDRO' — a federal QDRO applies to private ERISA plans, while MainePERS and some governmental/church plans are not ERISA QDRO plans and require their own plan-compliant order; for an ERISA plan the judgment alone CANNOT transfer benefits and missing the order before the participant retires or dies can extinguish the alternate payee's rights. The coverture-fraction marital-portion formula is plan practice, NOT verified Maine statutory text (UNVERIFIED / EXPERIMENTAL)."
+    # child-support deviation + imputed income (gated to matters with children)
+    - id: child-support-deviation-and-imputed-income
+      weight: 3
+      requires: {num_children_words: [one, two]}
+      confidence: "High (statute); Medium (factor weighting is case-specific)"
+      source: "19-A M.R.S. § 2006 (income-shares guidelines + worksheet); § 2007 (deviation; written proposed findings; ~17 factors)"
+      facts:
+        deviation_proposed: {pick: [true, false]}
+        imputed_income_issue: true
+        deviation_factor: {pick: ["a party's actual standard of living exceeding reported income", "extraordinary transportation costs", "the child's standard of living during the marriage"]}
+        written_deviation_findings_required: true
+      issue:
+        issue: "Child-support computation with imputed income and a possible guideline deviation"
+        category: family
+        governing_law: "19-A M.R.S. § 2006; § 2007"
+        sub_questions:
+          - "Where reported income understates a party's resources, should income be imputed before the § 2006 worksheet is applied?"
+          - "If a deviation is sought, are the § 2007 written proposed findings prepared?"
+        strength: moderate
+        notes: "Overbroad-risk: a deviation requires an EXPLICIT § 2007 written-findings block — silently adjusting the guideline number yields a defective order; imputing income for under-reported earnings or voluntary unemployment is litigation-heavy and fact-specific."

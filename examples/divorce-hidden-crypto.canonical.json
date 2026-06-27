@@ -1,7 +1,7 @@
 {
   "matter": {
-    "docket_number": "SAG-FM-2025-354",
-    "case_id": "MMC-2025-414328",
+    "docket_number": "SAG-FM-2025-284",
+    "case_id": "MMC-2025-932967",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "District Court",
@@ -98,65 +98,73 @@
     "posture": "discovery",
     "docket": [
       {
-        "date": "2025-04-20",
+        "date": "2025-04-15",
         "entry": "Complaint for divorce filed with a demand for full financial disclosure.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-05-10",
+        "date": "2025-05-09",
         "entry": "Defendant's family financial statement (FM-043) filed; plaintiff disputes its completeness.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-06-23",
+        "date": "2025-06-16",
         "entry": "Order compelling disclosure of digital assets entered.",
         "party": "the court"
       },
       {
-        "date": "2025-07-29",
+        "date": "2025-08-03",
         "entry": "Neutral forensic examiner appointed to image devices.",
         "party": "the court"
       },
       {
-        "date": "2025-09-01",
+        "date": "2025-09-18",
         "entry": "Plaintiff's forensic report and motion for sanctions served.",
         "party": "Grace C. Roe"
       },
       {
-        "date": "2025-10-14",
+        "date": "2025-10-22",
         "entry": "Motion for sanctions and an adverse inference taken under advisement.",
         "party": "the court"
       },
       {
-        "date": "2025-11-28",
+        "date": "2025-11-27",
         "entry": "Pretrial conference held; valuation-date dispute reserved for trial.",
         "party": "the court"
       }
     ],
     "motions": [
       {
-        "title": "Motion for sanctions and an adverse inference",
-        "type": "discovery",
-        "movant": "Grace C. Roe",
-        "filed_date": "2025-09-22",
-        "status": "under_advisement",
-        "relief": "An adverse inference and attorney fees for the concealment."
-      },
-      {
         "title": "Motion to freeze and preserve the cryptocurrency",
         "type": "injunctive",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-05-19",
+        "filed_date": "2025-05-05",
         "status": "opposed",
         "relief": "An order preserving and freezing the identified digital assets."
       },
       {
-        "title": "Motion to compel disclosure of digital assets",
+        "title": "Motion for sanctions and an adverse inference",
         "type": "discovery",
         "movant": "Grace C. Roe",
-        "filed_date": "2025-06-15",
-        "status": "granted",
-        "relief": "An order compelling full disclosure of wallets, keys, and exchange accounts."
+        "filed_date": "2025-09-05",
+        "status": "under_advisement",
+        "relief": "An adverse inference and attorney fees for the concealment."
+      },
+      {
+        "title": "Motion for contempt",
+        "type": "enforcement",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-10-31",
+        "status": "filed",
+        "relief": "A finding of contempt for violating the disclosure order."
+      },
+      {
+        "title": "Motion to appoint a neutral forensic examiner",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-08-12",
+        "status": "granted_in_part",
+        "relief": "Appointment of a neutral examiner to image the defendant's devices."
       }
     ],
     "causes_of_action": [
@@ -221,14 +229,19 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "The keys or coins are genuinely lost",
+        "defense": "The holdings are separate, non-marital property",
         "by": "Maria Q. Fairbanks",
-        "basis": "The private keys are irretrievably lost and the coins cannot be produced or valued."
+        "basis": "The cryptocurrency traces to non-marital funds and is the defendant's separate property."
       },
       {
         "defense": "The claimed value is overstated",
         "by": "Maria Q. Fairbanks",
         "basis": "The plaintiff's valuation of the holdings is speculative and inflated."
+      },
+      {
+        "defense": "The keys or coins are genuinely lost",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The private keys are irretrievably lost and the coins cannot be produced or valued."
       }
     ]
   }

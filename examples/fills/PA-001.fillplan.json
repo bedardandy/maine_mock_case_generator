@@ -36,7 +36,7 @@
     {
       "field_id": "location_town2",
       "fact_key": "matter.docket_number",
-      "value": "CUM-PA-2026-796",
+      "value": "CUM-PA-2026-537",
       "filled": true
     },
     {
@@ -501,8 +501,8 @@
   "profile": "canonical",
   "case": {
     "matter": {
-      "docket_number": "CUM-PA-2026-796",
-      "case_id": "MMC-2026-620528",
+      "docket_number": "CUM-PA-2026-537",
+      "case_id": "MMC-2026-657549",
       "court_county": "Cumberland",
       "court_location": "Portland",
       "court_type": "District Court",

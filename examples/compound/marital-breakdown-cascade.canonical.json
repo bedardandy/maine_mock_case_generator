@@ -1,12 +1,12 @@
 [
   {
     "universe_id": "UNIV-marital-breakdown-cascade-0007",
-    "matter_id": "MMC-2025-365540",
+    "matter_id": "MMC-2025-655684",
     "scenario_id": "family-divorce-cumberland",
     "canonical": {
       "matter": {
-        "docket_number": "CUM-FM-2025-642",
-        "case_id": "MMC-2025-365540",
+        "docket_number": "CUM-FM-2025-512",
+        "case_id": "MMC-2025-655684",
         "court_county": "Cumberland",
         "court_location": "Portland",
         "court_type": "District Court",
@@ -183,12 +183,12 @@
   },
   {
     "universe_id": "UNIV-marital-breakdown-cascade-0007",
-    "matter_id": "MMC-2026-877762",
+    "matter_id": "MMC-2026-748380",
     "scenario_id": "protection-from-abuse",
     "canonical": {
       "matter": {
-        "docket_number": "CUM-PA-2026-454",
-        "case_id": "MMC-2026-877762",
+        "docket_number": "CUM-PA-2026-740",
+        "case_id": "MMC-2026-748380",
         "court_county": "Cumberland",
         "court_location": "Portland",
         "court_type": "District Court",
@@ -285,17 +285,21 @@
         "prior_incidents": 7,
         "firearms_present": false,
         "requested_relief": "no contact and stay-away order",
-        "police_called": true
+        "police_called": true,
+        "pfa_chapter": "19-A ch.103 §§ 4101-4116 (renumbered from the pre-2021 ch.101 §§ 4001-4014)",
+        "ex_parte_temporary_requested": true,
+        "hearing_within_days": 21,
+        "relief_basis": "no contact"
       }
     }
   },
   {
     "universe_id": "UNIV-marital-breakdown-cascade-0007",
-    "matter_id": "MMC-2026-771146",
+    "matter_id": "MMC-2026-355133",
     "scenario_id": "business-formation-scorp",
     "canonical": {
       "matter": {
-        "case_id": "MMC-2026-771146",
+        "case_id": "MMC-2026-355133",
         "court_county": "Kennebec",
         "court_location": "Augusta",
         "court_type": "Maine Secretary of State / IRS (filing offices)",
@@ -372,7 +376,12 @@
         "principal_activity": "software development",
         "expected_first_year_revenue": 105512,
         "responsible_party_name": "Priya C. Roe",
-        "reasonable_compensation": 43327
+        "reasonable_compensation": 43327,
+        "entity_mislabeled_as_scorp_type": true,
+        "governing_act": "13-C M.R.S. (Maine Business Corporation Act)",
+        "internal_governance_instrument": "bylaws and a shareholder agreement",
+        "llc_operating_agreement_applies": false,
+        "s_corp_is_federal_tax_election": true
       }
     }
   }

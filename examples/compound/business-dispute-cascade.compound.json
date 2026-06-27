@@ -91,10 +91,13 @@
         "generator": "deterministic-engine",
         "generator_version": "0.1.0",
         "scenario_id": "business-formation-scorp",
-        "seed": 7001
+        "seed": 7001,
+        "confounders": [
+          "scorp-entity-type-confusion"
+        ]
       },
       "matter": {
-        "matter_id": "MMC-2026-560900",
+        "matter_id": "MMC-2026-237139",
         "practice_area": "business",
         "title": "Formation of Evergreen Analytics LLC and S-Corporation Election by Nadia P. Loe",
         "jurisdiction": {
@@ -205,27 +208,51 @@
       "third_parties": [
         {
           "id": "tp1",
-          "name": "Diego T. Ashford",
+          "name": "Eleanor T. Roe",
           "type": "witness",
-          "role": "Co-founder and shareholder",
-          "relationship": "Fellow shareholder of the corporation",
-          "relevance": "A second shareholder whose eligibility affects the S-corporation election and who must consent on Form 2553.",
+          "role": "Accountant",
+          "relationship": "Company's CPA",
+          "relevance": "Advises on the S-election, reasonable compensation, payroll setup, and prepares the corporation's federal and Maine tax filings.",
           "contact": {
-            "phone": "(207) 555-0151",
-            "city": "Augusta",
+            "phone": "(207) 555-0198",
+            "city": "Waterville",
             "state": "ME",
-            "email": "diego.ashford@example.net"
+            "email": "eleanor.roe@example.net"
           }
         },
         {
           "id": "tp2",
+          "name": "Maine Secretary of State",
+          "type": "government_agency",
+          "role": "State filing office",
+          "relevance": "Receives and approves the Articles of Incorporation under the Maine Business Corporation Act.",
+          "contact": {
+            "phone": "(207) 555-0163",
+            "city": "Bangor",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp3",
+          "name": "Granite State Credit Union",
+          "type": "financial_institution",
+          "role": "Business bank",
+          "relevance": "Holds the corporation's operating account, which is opened using the new EIN once issued.",
+          "contact": {
+            "phone": "(207) 555-0138",
+            "city": "Bangor",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp4",
           "name": "Internal Revenue Service",
           "type": "government_agency",
           "role": "Federal tax authority",
           "relevance": "Issues the EIN on Form SS-4 and processes the Form 2553 S-corporation election.",
           "contact": {
-            "phone": "(207) 555-0198",
-            "city": "Waterville",
+            "phone": "(207) 555-0158",
+            "city": "Farmington",
             "state": "ME"
           }
         }
@@ -283,21 +310,21 @@
           "Blowing the S-election deadline and losing pass-through treatment for the first year."
         ],
         "constraints": {
-          "budget": "Limited; prefers to handle routine filings in-house with counsel reviewing the elections.",
+          "budget": "Modest startup budget; wants the formation and elections done right the first time.",
           "timeline": "Needs the EIN and Form 2553 filed in time for the election to be effective on the incorporation date."
         }
       },
       "issues": [
         {
-          "issue": "Maine corporate registration and employer withholding obligations",
+          "issue": "Pass-through treatment and owner fringe-benefit rules",
           "category": "business",
-          "governing_law": "13-C M.R.S. (formation); 36 M.R.S. § 5102 et seq. and § 5250 (income tax and withholding)",
+          "governing_law": "IRC § 1366 and § 1372",
           "sub_questions": [
-            "Are the Articles of Incorporation compliant with the Maine Business Corporation Act?",
-            "When must the corporation register for and begin Maine income-tax withholding on wages?"
+            "How do items of income, loss, and deduction pass through to the shareholders?",
+            "Which fringe benefits are limited for more-than-2% shareholder-employees?"
           ],
-          "strength": "strong",
-          "client_position": "The corporation will file compliant Articles and register with Maine Revenue Services for corporate income tax and employer withholding before the first payroll.",
+          "strength": "moderate",
+          "client_position": "The founder seeks full pass-through treatment and to structure any owner fringe benefits in light of the 2% shareholder-employee rules.",
           "id": "iss1"
         },
         {
@@ -313,6 +340,30 @@
           "id": "iss2"
         },
         {
+          "issue": "Maine corporate registration and employer withholding obligations",
+          "category": "business",
+          "governing_law": "13-C M.R.S. (formation); 36 M.R.S. § 5102 et seq. and § 5250 (income tax and withholding)",
+          "sub_questions": [
+            "Are the Articles of Incorporation compliant with the Maine Business Corporation Act?",
+            "When must the corporation register for and begin Maine income-tax withholding on wages?"
+          ],
+          "strength": "strong",
+          "client_position": "The corporation will file compliant Articles and register with Maine Revenue Services for corporate income tax and employer withholding before the first payroll.",
+          "id": "iss3"
+        },
+        {
+          "issue": "Eligibility of the corporation and its shareholders to elect S status",
+          "category": "business",
+          "governing_law": "IRC § 1361",
+          "sub_questions": [
+            "Are all shareholders eligible (individuals, estates, or qualifying trusts) and within the 100-shareholder limit?",
+            "Does the corporation have only one class of stock as required?"
+          ],
+          "strength": "strong",
+          "client_position": "The corporation has eligible individual shareholders and a single class of stock, so it qualifies as a small business corporation.",
+          "id": "iss4"
+        },
+        {
           "issue": "Obtaining an Employer Identification Number on Form SS-4",
           "category": "business",
           "governing_law": "IRC § 6109; Form SS-4 instructions",
@@ -322,68 +373,71 @@
           ],
           "strength": "strong",
           "client_position": "Nadia P. Loe is the responsible party and will apply for the EIN reporting the corporation's principal activity of retail of specialty goods.",
-          "id": "iss3"
-        }
-      ],
-      "expert_opinions": [
+          "id": "iss5"
+        },
         {
-          "id": "exp1",
-          "expert": {
-            "name": "Olivia R. Noe",
-            "field": "Business valuation",
-            "credentials": "CVA",
-            "retained_by": "applicant"
-          },
-          "topic": "Valuation support for owner compensation and initial capitalization",
-          "opinion": "The planned owner salary falls within a defensible range for the services rendered and the corporation's projected operations.",
-          "basis": "Market compensation data, the business plan, and the initial capitalization."
+          "issue": "An 'S corporation' is a federal tax election, not a Maine entity type",
+          "category": "business",
+          "governing_law": "13-C M.R.S. § 101 et seq.; I.R.C. § 1361; 36 M.R.S. § 5102(1-A)",
+          "sub_questions": [
+            "Is the client treating 'S-corp' as an entity type? It is not: an S corporation is an ordinary 13-C M.R.S. corporation that has made a federal Subchapter S election under I.R.C. § 1361, which Maine recognizes only for income-tax conformity (36 M.R.S. § 5102(1-A)).",
+            "Is the entity therefore governed by the CORRECT instruments — bylaws and a shareholder agreement under 13-C M.R.S. — and not a 31 M.R.S. LLC operating agreement?"
+          ],
+          "strength": "strong",
+          "client_position": "The founder calls the company an 'S-corp,' but the engagement must treat it as a 13-C corporation that will make a federal S election.",
+          "notes": "Overbroad-risk: S-corp eligibility limits (the 100-shareholder cap, single-class-of-stock rule, and eligible-shareholder rules) are FEDERAL under I.R.C. § 1361(b) — do not attribute them to Maine statute. [confounder:scorp-entity-type-confusion; High — entity taxonomy well-settled; the client's mislabel is fact-specific]",
+          "id": "iss6"
         }
       ],
       "evidence": [
         {
-          "title": "IRS Form 2553 S-election",
+          "title": "IRS Form SS-4 application",
           "type": "document",
-          "party": "company",
-          "description": "The Election by a Small Business Corporation, with shareholder consents, electing S status effective 2026-03-16.",
+          "party": "applicant",
+          "description": "The Application for Employer Identification Number identifying Nadia P. Loe as the responsible party.",
           "id": "ev1"
-        },
-        {
-          "title": "Shareholder agreement",
-          "type": "contract",
-          "party": "company",
-          "description": "The agreement among the shareholders covering ownership, transfer restrictions, and the S-election.",
-          "id": "ev2"
         },
         {
           "title": "Initial capitalization / cap table",
           "type": "financial_record",
           "party": "company",
           "description": "The cap table showing the 3 shareholder(s) and their initial capital contributions.",
+          "id": "ev2"
+        },
+        {
+          "title": "IRS Form 2553 S-election",
+          "type": "document",
+          "party": "company",
+          "description": "The Election by a Small Business Corporation, with shareholder consents, electing S status effective 2026-03-16.",
           "id": "ev3"
+        },
+        {
+          "title": "Shareholder agreement",
+          "type": "contract",
+          "party": "company",
+          "description": "The agreement among the shareholders covering ownership, transfer restrictions, and the S-election.",
+          "id": "ev4"
+        },
+        {
+          "title": "Articles of Incorporation filed with the Maine Secretary of State",
+          "type": "public_record",
+          "party": "company",
+          "description": "The filed Articles establishing Evergreen Analytics LLC as a Maine corporation.",
+          "id": "ev5"
         }
       ],
       "financials": {
         "currency": "USD",
         "amounts": [
           {
-            "label": "Expected first-year revenue",
-            "amount": 178920,
-            "basis": "Projected gross receipts for the corporation's first tax year."
-          },
-          {
-            "label": "Planned owner reasonable compensation",
-            "amount": 78221,
-            "basis": "Annual W-2 wages planned for the owner-employee."
-          },
-          {
             "label": "Estimated first-year payroll",
-            "amount": 7279,
+            "amount": 3627,
             "basis": "Total projected wages for all employees in the first year."
           },
           {
-            "label": "Initial capital contributed",
-            "amount": 101850,
-            "basis": "Total cash and property contributed by the shareholders at formation."
+            "label": "Expected first-year revenue",
+            "amount": 664251,
+            "basis": "Projected gross receipts for the corporation's first tax year."
           }
         ]
       },
@@ -405,12 +459,17 @@
         "principal_activity": "retail of specialty goods",
         "expected_first_year_revenue": 162577,
         "responsible_party_name": "Nadia P. Loe",
-        "reasonable_compensation": 39970
+        "reasonable_compensation": 39970,
+        "entity_mislabeled_as_scorp_type": true,
+        "governing_act": "13-C M.R.S. (Maine Business Corporation Act)",
+        "internal_governance_instrument": "bylaws and a shareholder agreement",
+        "llc_operating_agreement_applies": false,
+        "s_corp_is_federal_tax_election": true
       },
       "related_matters": [
         {
           "universe_id": "UNIV-business-dispute-cascade-0007",
-          "matter_id": "MMC-2025-539254",
+          "matter_id": "MMC-2025-748380",
           "scenario_id": "complex-civil-litigation",
           "relationship": "precedes",
           "description": "The company and its S-election set up the entity later sued by its investors."
@@ -428,7 +487,7 @@
         "seed": 7002
       },
       "matter": {
-        "matter_id": "MMC-2025-539254",
+        "matter_id": "MMC-2025-748380",
         "practice_area": "civil",
         "title": "Fairbanks et al. v. Evergreen Analytics LLC et al.",
         "jurisdiction": {
@@ -442,7 +501,7 @@
         "status": "active",
         "summary": "Felix B. Fairbanks and Rosa B. Ellsworth invested in a purchase of LLC membership interests of Evergreen Analytics LLC and now sue the company, its CEO Nadia P. Loe, and (by third-party complaint) its outside auditor, alleging the offering misrepresented undisclosed contingent liabilities.",
         "event_date": "2022-11-18",
-        "docket_number": "CUM-CV-2025-616",
+        "docket_number": "CUM-CV-2025-740",
         "universe_id": "UNIV-business-dispute-cascade-0007"
       },
       "parties": {
@@ -569,39 +628,39 @@
       "third_parties": [
         {
           "id": "tp1",
-          "name": "Cobblestone Studios Corp.",
-          "type": "business_entity",
-          "role": "Placement agent",
-          "relevance": "Marketed the securities to the plaintiffs.",
+          "name": "Nadia W. Danforth",
+          "type": "expert",
+          "role": "Industry analyst",
+          "relevance": "Covered the company and can speak to market expectations.",
           "contact": {
-            "phone": "(207) 555-0199",
-            "city": "Augusta",
-            "state": "ME"
+            "phone": "(207) 555-0170",
+            "city": "Bangor",
+            "state": "ME",
+            "email": "nadia.danforth@example.net"
           }
         },
         {
           "id": "tp2",
-          "name": "Casco Bay Savings",
-          "type": "financial_institution",
-          "role": "Escrow agent",
-          "relevance": "Held the investment proceeds at closing; records trace the use of funds.",
+          "name": "Maine Office of Securities",
+          "type": "government_agency",
+          "role": "State securities regulator",
+          "relevance": "Opened a parallel inquiry into the offering.",
           "contact": {
-            "phone": "(207) 555-0168",
-            "city": "Bangor",
+            "phone": "(207) 555-0158",
+            "city": "Camden",
             "state": "ME"
           }
         },
         {
           "id": "tp3",
-          "name": "Omar Q. Doe",
-          "type": "expert",
-          "role": "Industry analyst",
-          "relevance": "Covered the company and can speak to market expectations.",
+          "name": "Riverbend Outfitters LLC",
+          "type": "business_entity",
+          "role": "Placement agent",
+          "relevance": "Marketed the securities to the plaintiffs.",
           "contact": {
-            "phone": "(207) 555-0152",
-            "city": "Bangor",
-            "state": "ME",
-            "email": "omar.doe@example.com"
+            "phone": "(207) 555-0184",
+            "city": "Falmouth",
+            "state": "ME"
           }
         }
       ],
@@ -1146,12 +1205,13 @@
         "demand_made": true,
         "class_action": true,
         "auditor_role": "issued the audited financial statements relied upon in the offering",
-        "relief_requested": "rescission, disgorgement, and compensatory damages"
+        "relief_requested": "rescission, disgorgement, and compensatory damages",
+        "governmental_codefendant": false
       },
       "related_matters": [
         {
           "universe_id": "UNIV-business-dispute-cascade-0007",
-          "matter_id": "MMC-2026-560900",
+          "matter_id": "MMC-2026-237139",
           "scenario_id": "business-formation-scorp",
           "relationship": "arises_from",
           "description": "The investors sue the very company formed in the formation matter, along with its founder and auditor."
