@@ -1,0 +1,82 @@
+{
+  "matter": {
+    "case_id": "MMC-2026-955770",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Maine Secretary of State / IRS",
+    "case_type": "nonprofit_formation",
+    "filing_date": "2026-02-08",
+    "event_date": "2026-04-18"
+  },
+  "parties": {
+    "incorporator": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "company": {
+      "full_name": "Summit Outfitters Co.",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154"
+    },
+    "attorney": {
+      "full_name": "John D. Kingsley",
+      "first_name": "John",
+      "middle_name": "D",
+      "last_name": "Kingsley",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "john.kingsley@example.org",
+      "date_of_birth": "1998-04-24",
+      "bar_number": "3181"
+    }
+  },
+  "_provenance": {
+    "fixture_id": "c61947c54b545b935dae",
+    "scenario_id": "nonprofit-formation",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
+  "party": {
+    "full_name": "Grace C. Roe",
+    "first_name": "Grace",
+    "middle_name": "C",
+    "last_name": "Roe",
+    "address": "422 Spruce Avenue",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "email": "grace.roe@example.com",
+    "date_of_birth": "1969-04-20",
+    "signature": "Grace C. Roe"
+  },
+  "facts": {
+    "entity_name": "Summit Outfitters Co.",
+    "formation_date": "2026-04-18",
+    "charitable_purpose": "coastal conservation education",
+    "membership_structure": "no statutory members",
+    "num_initial_directors": 7,
+    "public_charity_expected": true,
+    "tax_exemption_application_planned": true,
+    "conflict_policy_adopted": false,
+    "dissolution_clause_included": true,
+    "expected_donations": 308736,
+    "responsible_party_name": "Grace C. Roe"
+  }
+}

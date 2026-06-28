@@ -80,6 +80,13 @@
       "phone": "(207) 555-0130"
     }
   },
+  "_provenance": {
+    "fixture_id": "1ea6efee65fd04be64f8",
+    "scenario_id": "rule-80b-zoning-appeal",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
   "party": {
     "full_name": "Olivia B. Ellsworth",
     "first_name": "Olivia",

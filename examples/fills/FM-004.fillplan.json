@@ -489,6 +489,13 @@
         "bar_number": "1976"
       }
     },
+    "_provenance": {
+      "fixture_id": "5d8627c28d8289a6d605",
+      "scenario_id": "family-divorce-cumberland",
+      "seed": 7,
+      "reference_date": "2026-01-01",
+      "generator_version": "0.2.0"
+    },
     "party": {
       "full_name": "Olivia B. Ellsworth",
       "first_name": "Olivia",

@@ -1,0 +1,244 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.2.0",
+    "scenario_id": "emergency-guardianship",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "fixture_id": "b52f36fb34e52ccd7310",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc"
+    }
+  },
+  "matter": {
+    "matter_id": "MMC-2026-202163",
+    "practice_area": "probate",
+    "title": "Emergency protection proceeding for Maria Q. Fairbanks",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Probate Court"
+    },
+    "case_type": "emergency_guardianship_conservatorship",
+    "filing_date": "2026-02-08",
+    "status": "pre_filing",
+    "summary": "Grace C. Roe seeks appointment as emergency guardian and conservator for Maria Q. Fairbanks because immediate risk of financial exploitation, alleging traumatic brain injury and immediate exposure of approximately $118061.",
+    "event_date": "2026-04-18",
+    "docket_number": "SAG-GC-2026-660"
+  },
+  "parties": {
+    "petitioner": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Emergency petitioner / proposed fiduciary",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "respondent": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Adult requiring immediate protection",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Attorney for the client",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "ssn_last4": "4744",
+      "bar_number": "7867",
+      "organization_name": "Hawthorne Legal Group"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Emergency petitioner / proposed fiduciary",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe seeks appointment as emergency guardian and conservator for Maria Q. Fairbanks because immediate risk of financial exploitation, alleging traumatic brain injury and immediate exposure of approximately $118061.",
+    "narrative": "On 2026-04-18, the family learned of immediate risk of financial exploitation. Maria Q. Fairbanks is experiencing traumatic brain injury and cannot safely manage the immediate crisis.\n\nGrace C. Roe requests narrowly tailored emergency authority to stabilize care and assets while a full petition, physician report, visitor investigation, notice, and hearing proceed.\n\nThe requested order is temporary and must preserve the respondent's rights and independence to the greatest extent possible.",
+    "undisputed_facts": [
+      "An immediate protective decision is required.",
+      "A full proceeding and due-process protections must follow."
+    ],
+    "disputed_facts": [
+      "Whether the facts rise to the statutory emergency threshold.",
+      "Whether notice can safely be provided before temporary relief.",
+      "Whether a narrower protective arrangement would suffice."
+    ],
+    "timeline": [
+      {
+        "date": "2026-02-08",
+        "event": "Emergency affidavit and petition prepared."
+      },
+      {
+        "date": "2026-04-18",
+        "event": "The emergency condition or exploitation risk became known."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Stop immediate harm",
+      "Preserve assets and essential care",
+      "Transition promptly to a full least-restrictive proceeding"
+    ],
+    "priorities": [
+      "Immediate safety",
+      "Narrow temporary authority",
+      "Prompt notice and hearing"
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "Temporary emergency order",
+      "Stable care and protected funds pending full adjudication"
+    ],
+    "non_starters": [
+      "Open-ended emergency authority without prompt review"
+    ]
+  },
+  "issues": [
+    {
+      "issue": "Emergency statutory threshold",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. art. 5",
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Protection and tracing of assets",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. art. 5",
+      "strength": "moderate",
+      "id": "iss2"
+    },
+    {
+      "issue": "Notice, counsel, and prompt-hearing rights",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. art. 5",
+      "strength": "strong",
+      "id": "iss3"
+    },
+    {
+      "issue": "Least restrictive emergency alternative",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. art. 5",
+      "strength": "moderate",
+      "id": "iss4"
+    },
+    {
+      "issue": "Scope and duration of temporary authority",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. art. 5",
+      "strength": "strong",
+      "id": "iss5"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Bank alerts and recent account statements",
+      "type": "financial_record",
+      "party": "petitioner",
+      "id": "ev1"
+    },
+    {
+      "title": "Adult Protective Services referral",
+      "type": "public_record",
+      "party": "petitioner",
+      "id": "ev2"
+    },
+    {
+      "title": "Proposed temporary protective plan",
+      "type": "document",
+      "party": "petitioner",
+      "id": "ev3"
+    },
+    {
+      "title": "Hospital or physician report",
+      "type": "medical_record",
+      "party": "petitioner",
+      "id": "ev4"
+    },
+    {
+      "title": "Existing power of attorney",
+      "type": "document",
+      "party": "respondent",
+      "id": "ev5"
+    },
+    {
+      "title": "Emergency petitioner affidavit",
+      "type": "affidavit",
+      "party": "petitioner",
+      "id": "ev6"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Assets immediately at risk",
+        "amount": 95831
+      },
+      {
+        "label": "Monthly essential care and housing costs",
+        "amount": 10911
+      }
+    ]
+  },
+  "facts": {
+    "crisis_date": "2026-04-18",
+    "emergency_basis": "immediate risk of financial exploitation",
+    "alleged_condition": "traumatic brain injury",
+    "requested_emergency_role": "emergency guardian and conservator",
+    "notice_impracticable": true,
+    "immediate_asset_risk": 118061,
+    "existing_agent_unavailable": true,
+    "physician_report_available": false,
+    "full_petition_to_follow": true
+  }
+}

@@ -67,6 +67,13 @@
       "bar_number": "1976"
     }
   },
+  "_provenance": {
+    "fixture_id": "c62219da81a26e5cb727",
+    "scenario_id": "paper-street-road-access",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
   "party": {
     "full_name": "Grace C. Roe",
     "first_name": "Grace",

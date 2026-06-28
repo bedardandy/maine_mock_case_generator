@@ -9,7 +9,6 @@ matter would populate -- the input the downstream fill engine consumes to render
 from __future__ import annotations
 
 import json
-from datetime import date
 from functools import lru_cache
 
 import yaml
@@ -66,7 +65,9 @@ def resolve_dotted(case: dict, key: str, today: str):
 
 def build_fill_plan(case: dict, mapping: dict, today: str | None = None) -> dict:
     """Resolve every mapped field; return per-field entries and a coverage summary."""
-    today = today or date.today().isoformat()
+    today = today or case.get("matter", {}).get("filing_date")
+    if not today:
+        raise ValueError("A deterministic today value or matter.filing_date is required")
     field_map = mapping.get("map", {})
     entries = []
     for field_id, fact_key in field_map.items():
@@ -120,7 +121,8 @@ def fill_form(matter: dict, form_id: str, today: str | None = None) -> dict:
     """End-to-end: matter -> canonical -> (namespace adapter) -> fill plan for a form."""
     form = load_form(form_id)
     case = to_form_namespace(form_id, matter)
-    plan = build_fill_plan(case, form["mapping"], today=today)
+    deterministic_today = today or matter.get("provenance", {}).get("reference_date")
+    plan = build_fill_plan(case, form["mapping"], today=deterministic_today)
     plan["title"] = form["meta"].get("title")
     plan["repo"] = form["meta"].get("repo")
     plan["profile"] = form["meta"].get("profile")

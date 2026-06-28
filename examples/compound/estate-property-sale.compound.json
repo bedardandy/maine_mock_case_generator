@@ -1,0 +1,653 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "compound-engine",
+    "generator_version": "0.2.0",
+    "compound_id": "estate-property-sale",
+    "seed": 7
+  },
+  "universe_id": "UNIV-estate-property-sale-0007",
+  "title": "Estate administration and sale of Estate Property Holding",
+  "theme": "A personal representative administers an estate and sells estate-owned Maine real property, linking probate authority, inventory and accounting, lien-discharge reporting, and the RETTD closing.",
+  "narrative": "After Nadia P. Loe died, Felix M. Coe administered the estate and arranged to sell estate real property to Marcus W. Poe. The estate's authority and date-of-death valuation feed the sale, while the transfer produces closing proceeds that return to the probate account for claims, taxes, and distribution.\n",
+  "cast": [
+    {
+      "cast_id": "decedent",
+      "kind": "person",
+      "name": "Nadia P. Loe",
+      "description": "Decedent and former owner",
+      "appears_as": [
+        {
+          "matter_id": "administration",
+          "role": "decedent"
+        }
+      ]
+    },
+    {
+      "cast_id": "personal_representative",
+      "kind": "person",
+      "name": "Felix M. Coe",
+      "description": "Personal representative and deed transferor",
+      "appears_as": [
+        {
+          "matter_id": "administration",
+          "role": "personal_representative"
+        },
+        {
+          "matter_id": "property_sale",
+          "role": "transferor"
+        }
+      ]
+    },
+    {
+      "cast_id": "buyer",
+      "kind": "person",
+      "name": "Marcus W. Poe",
+      "description": "Buyer and deed transferee",
+      "appears_as": [
+        {
+          "matter_id": "property_sale",
+          "role": "transferee"
+        }
+      ]
+    },
+    {
+      "cast_id": "estate_property",
+      "kind": "organization",
+      "name": "Estate Property Holding",
+      "description": "Estate asset placeholder",
+      "appears_as": []
+    }
+  ],
+  "matters": [
+    {
+      "schema_version": "1.0",
+      "provenance": {
+        "mock": true,
+        "fictional": true,
+        "generator": "deterministic-engine",
+        "generator_version": "0.2.0",
+        "scenario_id": "full-estate-administration",
+        "seed": 7001,
+        "reference_date": "2026-01-01",
+        "fixture_id": "049377555c232f3e1cdb",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Kennebec"
+        }
+      },
+      "matter": {
+        "matter_id": "MMC-2026-139762",
+        "practice_area": "probate",
+        "title": "Administration and closing of the estate of Nadia P. Loe",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Kennebec",
+          "court_location": "Augusta",
+          "court_type": "Probate Court"
+        },
+        "case_type": "estate_administration",
+        "filing_date": "2026-03-30",
+        "status": "active",
+        "summary": "Felix M. Coe is administering the estate of Nadia P. Loe through formal administration, including notice, inventory, creditor claims, fiduciary income-tax returns, accounting, distribution, and closure by sworn statement.",
+        "event_date": "2025-06-07",
+        "docket_number": "KEN-PE-2026-980",
+        "universe_id": "UNIV-estate-property-sale-0007"
+      },
+      "parties": {
+        "decedent": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "P",
+          "last_name": "Loe",
+          "full_name": "Nadia P. Loe",
+          "date_of_birth": "1960-01-25",
+          "ssn_last4": "1186",
+          "role": "Decedent"
+        },
+        "personal_representative": {
+          "entity_type": "person",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "full_name": "Felix M. Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03",
+          "ssn_last4": "1144",
+          "role": "Personal representative"
+        },
+        "attorney": {
+          "entity_type": "person",
+          "first_name": "Nadia",
+          "middle_name": "E",
+          "last_name": "Danforth",
+          "full_name": "Nadia E. Danforth",
+          "role": "Attorney for the client",
+          "address": "341 Harbor Road",
+          "city": "Yarmouth",
+          "state": "ME",
+          "zip": "04046",
+          "phone": "(207) 555-0124",
+          "email": "nadia.danforth@example.net",
+          "date_of_birth": "1970-04-29",
+          "ssn_last4": "2431",
+          "bar_number": "5753",
+          "organization_name": "Hawthorne Legal Group"
+        },
+        "client": {
+          "entity_type": "person",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "full_name": "Felix M. Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03",
+          "ssn_last4": "1144",
+          "role": "Personal representative"
+        }
+      },
+      "fact_pattern": {
+        "summary": "Felix M. Coe is administering the estate of Nadia P. Loe through formal administration, including notice, inventory, creditor claims, fiduciary income-tax returns, accounting, distribution, and closure by sworn statement.",
+        "narrative": "Nadia P. Loe died on 2025-06-07. Felix M. Coe was appointed personal representative and obtained an estate EIN.\n\nThe estate includes real property worth about $751398, personal property near $43282, 2 creditor claim(s), and approximately $4242 in post-death income.\n\nThe personal representative must complete the inventory, resolve claims, file federal and Maine fiduciary income-tax returns, account to beneficiaries, distribute the residue, and close by sworn statement.",
+        "undisputed_facts": [
+          "Felix M. Coe has authority to administer the estate.",
+          "The estate must account for assets, claims, income, expenses, and distributions."
+        ],
+        "disputed_facts": [
+          "Whether any creditor claim should be disallowed or compromised.",
+          "Whether reserves are sufficient before final distribution."
+        ],
+        "timeline": [
+          {
+            "date": "2025-06-07",
+            "event": "Nadia P. Loe died."
+          },
+          {
+            "date": "2026-03-30",
+            "event": "Administration and tax-compliance work is underway."
+          },
+          {
+            "date": "2026-08-23",
+            "event": "Accounting period closes for final reporting."
+          }
+        ]
+      },
+      "client_objectives": {
+        "goals": [
+          "Complete the inventory",
+          "Resolve creditor claims",
+          "File fiduciary tax returns",
+          "Distribute and close the estate"
+        ],
+        "priorities": [
+          "Accurate accounting",
+          "Tax compliance",
+          "Fair beneficiary treatment",
+          "Timely closure"
+        ],
+        "risk_tolerance": "low",
+        "desired_outcomes": [
+          "Approved or accepted final accounting",
+          "Documented distributions and discharge"
+        ],
+        "non_starters": [
+          "Premature distribution that leaves taxes or claims unpaid"
+        ]
+      },
+      "issues": [
+        {
+          "issue": "Inventory and valuation of estate assets",
+          "category": "probate",
+          "governing_law": "18-C M.R.S. § 3-706",
+          "strength": "strong",
+          "id": "iss1"
+        },
+        {
+          "issue": "Allowance and priority of creditor claims",
+          "category": "probate",
+          "governing_law": "18-C M.R.S. §§ 3-803, 3-805",
+          "strength": "moderate",
+          "id": "iss2"
+        },
+        {
+          "issue": "Federal and Maine fiduciary income-tax returns",
+          "category": "tax",
+          "governing_law": "IRC § 641 et seq.; 36 M.R.S.",
+          "strength": "strong",
+          "id": "iss3"
+        },
+        {
+          "issue": "Authority to sell estate real property",
+          "category": "probate",
+          "governing_law": "18-C M.R.S. art. 3",
+          "strength": "moderate",
+          "id": "iss4"
+        },
+        {
+          "issue": "Accounting to beneficiaries",
+          "category": "probate",
+          "governing_law": "18-C M.R.S. art. 3",
+          "strength": "strong",
+          "id": "iss5"
+        }
+      ],
+      "evidence": [
+        {
+          "title": "Letters of authority and PR acceptance",
+          "type": "public_record",
+          "party": "personal_representative",
+          "id": "ev1"
+        },
+        {
+          "title": "Form 1041 and Maine fiduciary return workpapers",
+          "type": "financial_record",
+          "party": "personal_representative",
+          "id": "ev2"
+        },
+        {
+          "title": "Estate inventory",
+          "type": "financial_record",
+          "party": "personal_representative",
+          "id": "ev3"
+        },
+        {
+          "title": "Creditor claims register",
+          "type": "financial_record",
+          "party": "personal_representative",
+          "id": "ev4"
+        },
+        {
+          "title": "Beneficiary receipts and releases",
+          "type": "document",
+          "party": "personal_representative",
+          "id": "ev5"
+        },
+        {
+          "title": "Final probate account",
+          "type": "financial_record",
+          "party": "personal_representative",
+          "id": "ev6"
+        }
+      ],
+      "financials": {
+        "currency": "USD",
+        "amounts": [
+          {
+            "label": "Estate income",
+            "amount": 36789
+          },
+          {
+            "label": "Real property",
+            "amount": 810402
+          },
+          {
+            "label": "Creditor claims",
+            "amount": 42243
+          },
+          {
+            "label": "Personal property",
+            "amount": 252231
+          }
+        ]
+      },
+      "facts": {
+        "date_of_death": "2025-06-07",
+        "will_exists": false,
+        "administration_type": "formal administration",
+        "estate_ein_obtained": true,
+        "inventory_filed": true,
+        "bond_required": true,
+        "creditor_claims_count": 2,
+        "disputed_claim_exists": true,
+        "real_property": true,
+        "real_property_value": 751398,
+        "personal_property_value": 43282,
+        "estate_income": 4242,
+        "distributions_made": false,
+        "accounting_period_end": "2026-08-23",
+        "closing_method": "sworn statement"
+      },
+      "related_matters": [
+        {
+          "universe_id": "UNIV-estate-property-sale-0007",
+          "matter_id": "MMC-2025-755876",
+          "scenario_id": "real-estate-transfer",
+          "relationship": "authorizes",
+          "description": "The personal representative's appointment and estate administration authorize the estate conveyance."
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "provenance": {
+        "mock": true,
+        "fictional": true,
+        "generator": "deterministic-engine",
+        "generator_version": "0.2.0",
+        "scenario_id": "real-estate-transfer",
+        "seed": 7002,
+        "reference_date": "2026-01-01",
+        "fixture_id": "064cea856b53f2e3a82d",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Cumberland"
+        }
+      },
+      "matter": {
+        "matter_id": "MMC-2025-755876",
+        "practice_area": "real_estate",
+        "title": "Sale of 8 Harbor Road from Felix M. Coe to Marcus W. Poe",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Cumberland",
+          "court_location": "Portland",
+          "court_type": "Maine Registry of Deeds / Maine Revenue Services"
+        },
+        "case_type": "real_estate_transfer",
+        "filing_date": "2025-10-19",
+        "status": "intake",
+        "summary": "Marcus W. Poe is purchasing single-family residential at 8 Harbor Road, Camden, Maine from Felix M. Coe for $981539, requiring a Maine Real Estate Transfer Tax Declaration at recording.",
+        "event_date": "2026-02-28",
+        "universe_id": "UNIV-estate-property-sale-0007"
+      },
+      "parties": {
+        "transferor": {
+          "entity_type": "person",
+          "first_name": "Felix",
+          "middle_name": "M",
+          "last_name": "Coe",
+          "full_name": "Felix M. Coe",
+          "address": "300 Pine Lane",
+          "city": "Farmington",
+          "state": "ME",
+          "zip": "04028",
+          "phone": "(207) 555-0104",
+          "email": "felix.coe@example.com",
+          "date_of_birth": "1974-08-03",
+          "ssn_last4": "1144",
+          "role": "Transferor (seller / grantor)"
+        },
+        "transferee": {
+          "entity_type": "person",
+          "first_name": "Marcus",
+          "middle_name": "W",
+          "last_name": "Poe",
+          "full_name": "Marcus W. Poe",
+          "address": "219 Pine Lane",
+          "city": "Yarmouth",
+          "state": "ME",
+          "zip": "04029",
+          "phone": "(207) 555-0180",
+          "email": "marcus.poe@example.net",
+          "date_of_birth": "1964-02-01",
+          "ssn_last4": "9455",
+          "role": "Transferee (buyer / grantee)"
+        },
+        "attorney": {
+          "entity_type": "person",
+          "first_name": "Malik",
+          "middle_name": "K",
+          "last_name": "Kingsley",
+          "full_name": "Malik K. Kingsley",
+          "role": "Attorney for the client",
+          "address": "231 Meadowbrook Drive",
+          "city": "Falmouth",
+          "state": "ME",
+          "zip": "04002",
+          "phone": "(207) 555-0135",
+          "email": "malik.kingsley@example.com",
+          "date_of_birth": "1981-12-22",
+          "ssn_last4": "8373",
+          "bar_number": "6473",
+          "organization_name": "Kingsley & Associates"
+        },
+        "client": {
+          "entity_type": "person",
+          "first_name": "Marcus",
+          "middle_name": "W",
+          "last_name": "Poe",
+          "full_name": "Marcus W. Poe",
+          "address": "219 Pine Lane",
+          "city": "Yarmouth",
+          "state": "ME",
+          "zip": "04029",
+          "phone": "(207) 555-0180",
+          "email": "marcus.poe@example.net",
+          "date_of_birth": "1964-02-01",
+          "ssn_last4": "9455",
+          "role": "Transferee (buyer / grantee)"
+        }
+      },
+      "fact_pattern": {
+        "summary": "Marcus W. Poe is purchasing single-family residential at 8 Harbor Road, Camden, Maine from Felix M. Coe for $981539, requiring a Maine Real Estate Transfer Tax Declaration at recording.",
+        "narrative": "Felix M. Coe has agreed to sell, and Marcus W. Poe to buy, the single-family residential property at 8 Harbor Road in Camden, Cumberland County, Maine. The agreed purchase price is $981539, with closing set for about 2026-02-28.\n\nThe buyer is financing the purchase through cash, and title will pass by quitclaim deed with covenant. At recording in the Cumberland County Registry of Deeds, the parties must file a Real Estate Transfer Tax Declaration (RETTD) reporting the price, the property, and the transferor and transferee, and pay the Maine transfer tax unless an exemption applies.\n\nCounsel is handling the closing, confirming clear title, prorating taxes, and preparing the deed and the transfer tax declaration for the parties' signatures.",
+        "undisputed_facts": [
+          "The property at 8 Harbor Road, Camden is being transferred from Felix M. Coe to Marcus W. Poe.",
+          "The stated purchase price is $981539.",
+          "The transfer must be reported on a Maine RETTD at recording."
+        ],
+        "disputed_facts": [
+          "Whether a transfer tax exemption applies to this transaction.",
+          "The allocation of prorated property taxes and closing costs between the parties."
+        ]
+      },
+      "third_parties": [
+        {
+          "id": "tp1",
+          "name": "Maine Revenue Services",
+          "type": "government_agency",
+          "role": "Transfer tax authority",
+          "relevance": "Collects the real estate transfer tax via the RETTD.",
+          "contact": {
+            "phone": "(207) 555-0179",
+            "city": "Auburn",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp2",
+          "name": "Cobblestone Holdings Co.",
+          "type": "business_entity",
+          "role": "Real estate brokerage",
+          "relevance": "Represented the parties in the transaction.",
+          "contact": {
+            "phone": "(207) 555-0125",
+            "city": "Bath",
+            "state": "ME"
+          }
+        }
+      ],
+      "intake_interview": {
+        "interviewer": "Closing Attorney",
+        "interviewee_role": "transferee",
+        "date": "2025-10-19",
+        "exchanges": [
+          {
+            "topic": "Property",
+            "question": "What are you buying and for how much?",
+            "answer": "The single-family residential at 8 Harbor Road in Camden, for $981539."
+          },
+          {
+            "topic": "Financing",
+            "question": "How are you paying?",
+            "answer": "Through cash. We expect to close around 2026-02-28."
+          },
+          {
+            "topic": "Title",
+            "question": "Any known title concerns?",
+            "answer": "Not that we know of; we are getting title insurance and a quitclaim deed with covenant."
+          },
+          {
+            "topic": "Taxes",
+            "question": "Do you understand the transfer tax?",
+            "answer": "We know there is a Maine transfer tax reported on the RETTD at recording, split between buyer and seller."
+          },
+          {
+            "topic": "Goal",
+            "question": "What do you need from the closing?",
+            "answer": "Clear title, a clean RETTD, and the deed recorded correctly."
+          }
+        ]
+      },
+      "client_objectives": {
+        "goals": [
+          "Close the purchase with clear, insurable title.",
+          "File an accurate Real Estate Transfer Tax Declaration and pay the correct tax.",
+          "Record the deed promptly in the county registry."
+        ],
+        "priorities": [
+          "Clear title and correct recording.",
+          "Accurate transfer tax reporting."
+        ],
+        "risk_tolerance": "low",
+        "desired_outcomes": [
+          "A recorded deed and a properly filed RETTD."
+        ],
+        "non_starters": [
+          "Closing with an unresolved title defect."
+        ],
+        "constraints": {
+          "budget": "Standard closing costs; buyer and seller split the transfer tax.",
+          "timeline": "Closing target around 2026-02-28."
+        }
+      },
+      "issues": [
+        {
+          "issue": "Proper recording of the deed and declaration",
+          "category": "real_estate",
+          "governing_law": "33 M.R.S. § 651",
+          "sub_questions": [
+            "Is the deed in recordable form with the RETTD attached?"
+          ],
+          "strength": "strong",
+          "id": "iss1"
+        },
+        {
+          "issue": "Calculation of the Maine real estate transfer tax",
+          "category": "tax",
+          "governing_law": "36 M.R.S. § 4641-A",
+          "sub_questions": [
+            "What is the consideration subject to tax?",
+            "How is the tax split between transferor and transferee?"
+          ],
+          "strength": "strong",
+          "id": "iss2"
+        },
+        {
+          "issue": "Availability of a transfer tax exemption",
+          "category": "tax",
+          "governing_law": "36 M.R.S. § 4641-C",
+          "sub_questions": [
+            "Does any statutory exemption apply to this transfer?"
+          ],
+          "strength": "moderate",
+          "id": "iss3"
+        }
+      ],
+      "evidence": [
+        {
+          "title": "Purchase and sale agreement",
+          "type": "contract",
+          "party": "transferee",
+          "description": "The executed agreement setting price and terms.",
+          "id": "ev1"
+        },
+        {
+          "title": "Title commitment",
+          "type": "document",
+          "party": "transferee",
+          "description": "The title company's commitment and exceptions.",
+          "id": "ev2"
+        },
+        {
+          "title": "Property tax assessment",
+          "type": "public_record",
+          "party": "transferee",
+          "description": "The municipal assessment supporting adjusted assessed value.",
+          "id": "ev3"
+        },
+        {
+          "title": "Proposed deed",
+          "type": "document",
+          "party": "transferor",
+          "description": "The deed prepared for the conveyance.",
+          "id": "ev4"
+        }
+      ],
+      "financials": {
+        "currency": "USD",
+        "amounts": [
+          {
+            "label": "Adjusted assessed value",
+            "amount": 429166,
+            "basis": "Municipal assessment."
+          },
+          {
+            "label": "Estimated Maine transfer tax",
+            "amount": 3072,
+            "basis": "$2.20 per $500 of value, split between the parties."
+          },
+          {
+            "label": "Mortgage amount",
+            "amount": 871522,
+            "basis": "Buyer's financing."
+          },
+          {
+            "label": "Purchase price",
+            "amount": 348807,
+            "basis": "Agreed consideration."
+          }
+        ]
+      },
+      "facts": {
+        "property_address": "8 Harbor Road",
+        "property_town": "Camden",
+        "property_county": "Cumberland",
+        "property_map_block_lot": "Map 4, Block 1, Lot 22",
+        "purchase_price": 981539,
+        "transfer_date": "2026-02-28",
+        "property_type": "single-family residential",
+        "adjusted_assessed_value": 233473,
+        "special_circumstances_explanation": "Transfer includes seller-financing",
+        "deed_type": "quitclaim deed with covenant",
+        "financing": "cash",
+        "transfer_tax_exemption": true
+      },
+      "related_matters": [
+        {
+          "universe_id": "UNIV-estate-property-sale-0007",
+          "matter_id": "MMC-2026-139762",
+          "scenario_id": "full-estate-administration",
+          "relationship": "feeds",
+          "description": "Net sale proceeds and closing expenses feed the estate account and beneficiary distributions."
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "administration",
+      "to": "property_sale",
+      "type": "authorizes",
+      "description": "The personal representative's appointment and estate administration authorize the estate conveyance."
+    },
+    {
+      "from": "property_sale",
+      "to": "administration",
+      "type": "feeds",
+      "description": "Net sale proceeds and closing expenses feed the estate account and beneficiary distributions."
+    }
+  ]
+}

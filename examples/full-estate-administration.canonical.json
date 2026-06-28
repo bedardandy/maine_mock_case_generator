@@ -1,0 +1,93 @@
+{
+  "matter": {
+    "docket_number": "SAG-PE-2026-695",
+    "case_id": "MMC-2026-208061",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Probate Court",
+    "case_type": "estate_administration",
+    "filing_date": "2026-05-31",
+    "event_date": "2025-03-15"
+  },
+  "parties": {
+    "decedent": {
+      "full_name": "Olivia B. Ellsworth",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "date_of_birth": "1997-10-02"
+    },
+    "personal_representative": {
+      "full_name": "Theodore B. Kingsley",
+      "first_name": "Theodore",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "theodore.kingsley@example.org",
+      "date_of_birth": "1975-02-05"
+    },
+    "attorney": {
+      "full_name": "Maria Q. Jessup",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Jessup",
+      "address": "32 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04029",
+      "phone": "(207) 555-0180",
+      "email": "maria.jessup@example.net",
+      "date_of_birth": "1964-02-01",
+      "bar_number": "7499"
+    },
+    "plaintiff": {
+      "full_name": "Olivia B. Ellsworth",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "date_of_birth": "1997-10-02"
+    }
+  },
+  "_provenance": {
+    "fixture_id": "9a97a2e2ab8e0ba14c31",
+    "scenario_id": "full-estate-administration",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
+  "party": {
+    "full_name": "Theodore B. Kingsley",
+    "first_name": "Theodore",
+    "middle_name": "B",
+    "last_name": "Kingsley",
+    "address": "467 Spruce Avenue",
+    "city": "Bangor",
+    "state": "ME",
+    "zip": "04005",
+    "phone": "(207) 555-0111",
+    "email": "theodore.kingsley@example.org",
+    "date_of_birth": "1975-02-05",
+    "signature": "Theodore B. Kingsley"
+  },
+  "facts": {
+    "date_of_death": "2025-03-15",
+    "will_exists": true,
+    "administration_type": "formal administration",
+    "estate_ein_obtained": true,
+    "inventory_filed": true,
+    "bond_required": false,
+    "creditor_claims_count": 7,
+    "disputed_claim_exists": true,
+    "real_property": true,
+    "real_property_value": 1313900,
+    "personal_property_value": 148514,
+    "estate_income": 75330,
+    "distributions_made": false,
+    "accounting_period_end": "2026-11-13",
+    "closing_method": "sworn statement"
+  }
+}

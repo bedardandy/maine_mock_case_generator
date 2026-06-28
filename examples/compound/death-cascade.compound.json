@@ -4,7 +4,7 @@
     "mock": true,
     "fictional": true,
     "generator": "compound-engine",
-    "generator_version": "0.1.0",
+    "generator_version": "0.2.0",
     "compound_id": "death-cascade",
     "seed": 7
   },
@@ -88,9 +88,15 @@
         "mock": true,
         "fictional": true,
         "generator": "deterministic-engine",
-        "generator_version": "0.1.0",
+        "generator_version": "0.2.0",
         "scenario_id": "decedent-estate-informal",
-        "seed": 7001
+        "seed": 7001,
+        "reference_date": "2026-01-01",
+        "fixture_id": "8c29edb5d068c61b5213",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Kennebec"
+        }
       },
       "matter": {
         "matter_id": "MMC-2026-129936",
@@ -473,9 +479,15 @@
         "mock": true,
         "fictional": true,
         "generator": "deterministic-engine",
-        "generator_version": "0.1.0",
+        "generator_version": "0.2.0",
         "scenario_id": "estate-tax-706",
-        "seed": 7002
+        "seed": 7002,
+        "reference_date": "2026-01-01",
+        "fixture_id": "e3bbc49fc4651c141b65",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Cumberland"
+        }
       },
       "matter": {
         "matter_id": "MMC-2026-444016",
@@ -850,9 +862,15 @@
         "mock": true,
         "fictional": true,
         "generator": "deterministic-engine",
-        "generator_version": "0.1.0",
+        "generator_version": "0.2.0",
         "scenario_id": "minor-guardianship",
-        "seed": 7003
+        "seed": 7003,
+        "reference_date": "2026-01-01",
+        "fixture_id": "40db702798d431b59eb7",
+        "jurisdiction": {
+          "state": "ME",
+          "county": "Kennebec"
+        }
       },
       "matter": {
         "matter_id": "MMC-2026-717342",

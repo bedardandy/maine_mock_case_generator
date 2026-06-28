@@ -1,0 +1,77 @@
+id: llc-formation
+title: "Formation of {company_full_name}, a Maine LLC"
+practice_area: business
+case_type: entity_formation
+status: intake
+assign_docket: false
+downstream:
+  repo: maine-corporation-forms
+  example_forms: [LLC_MLLC-6, IRS-SS-4, IRS-8832, MRS-941ME]
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Maine Secretary of State / IRS"
+dates:
+  filing_date: {date_between: ["2026-01-01", "2026-06-01"]}
+  event_date: "{formation_date}"
+parties:
+  client_role: organizer
+  attorney: true
+  roles:
+    - {key: organizer, label: "Organizer / responsible party"}
+    - {key: company, entity: organization, label: "New Maine limited liability company"}
+facts:
+  entity_name: "{company_full_name}"
+  entity_type: "Maine limited liability company"
+  formation_date: {date_between: ["2026-01-01", "2026-05-31"]}
+  management: {pick: ["member-managed", "manager-managed"]}
+  num_members: {int_between: [1, 5]}
+  registered_agent_type: {pick: ["commercial registered agent", "individual registered agent"]}
+  principal_activity: {pick: ["consulting", "property management", "specialty construction", "online retail", "food services"]}
+  tax_classification: {pick: ["disregarded entity", "partnership", "corporation election"]}
+  classification_election_required: {pick: [false, false, true]}
+  employees_expected: {int_between: [0, 10]}
+  initial_capital: {int_between: [1000, 250000]}
+  operating_agreement_signed: {pick: [true, false]}
+  responsible_party_name: "{organizer_full_name}"
+fact_pattern:
+  summary: "{organizer_full_name} is organizing {company_full_name} as a {management} Maine LLC for {principal_activity}, with {num_members} member(s), initial capital of about ${initial_capital}, and federal tax classification as a {tax_classification}."
+  narrative:
+    - "{company_full_name} will be a {management} Maine LLC with {num_members} member(s), organized to conduct {principal_activity}."
+    - "The organizer must file the Certificate of Formation, appoint a {registered_agent_type}, obtain an EIN, adopt an operating agreement, and confirm whether Form 8832 is needed for the intended {tax_classification} treatment."
+    - "The company expects {employees_expected} employee(s) and initial capitalization near ${initial_capital}."
+  undisputed: ["The entity will be formed as a Maine LLC.", "{organizer_full_name} is the organizer and IRS responsible party."]
+  disputed:
+    - "Whether the intended tax classification requires an affirmative Form 8832 election."
+    - "Whether the operating agreement adequately addresses management, transfers, and member exits."
+  timeline:
+    - {date: "{formation_date}", event: "Certificate of Formation becomes effective."}
+    - {date: "{filing_date}", event: "Formation, EIN, and classification package prepared."}
+objectives:
+  goals: ["Form the LLC", "Obtain an EIN", "Document management and ownership", "Select the intended federal tax classification"]
+  priorities: ["Liability protection", "Clean ownership records", "Correct tax classification"]
+  risk_tolerance: low
+  desired_outcomes: ["Accepted Certificate of Formation", "Signed operating agreement and issued EIN"]
+  non_starters: ["Accidentally electing corporate tax treatment"]
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Sufficiency of the Certificate of Formation", category: business, governing_law: "31 M.R.S. § 1531", strength: strong}
+    - {issue: "Member-managed versus manager-managed authority", category: business, governing_law: "31 M.R.S. ch. 21", strength: moderate}
+    - {issue: "Default or elected federal tax classification", category: tax, governing_law: "Treas. Reg. § 301.7701-3", strength: moderate}
+    - {issue: "Operating agreement governance and transfer restrictions", category: business, governing_law: "31 M.R.S. ch. 21", strength: moderate}
+    - {issue: "Employer withholding registration", category: tax, governing_law: "36 M.R.S. § 5250", strength: strong}
+evidence:
+  count: {min: 3, max: 5}
+  pool:
+    - {title: "Certificate of Formation", type: public_record, party: company}
+    - {title: "Operating agreement", type: contract, party: company}
+    - {title: "Initial member ledger", type: financial_record, party: company}
+    - {title: "IRS Form SS-4", type: document, party: organizer}
+    - {title: "Draft Form 8832 if required", type: document, party: company}
+financials:
+  currency: USD
+  count: 2
+  amounts:
+    - {label: "Initial capital", amount: {int_between: [1000, 250000]}}
+    - {label: "Expected first-year revenue", amount: {int_between: [25000, 900000]}}

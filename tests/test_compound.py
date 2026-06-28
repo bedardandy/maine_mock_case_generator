@@ -15,6 +15,7 @@ COMPOUNDS = list_compounds()
 def test_compounds_exist():
     assert set(COMPOUNDS) >= {
         "death-cascade", "marital-breakdown-cascade", "business-dispute-cascade",
+        "estate-property-sale",
     }
 
 

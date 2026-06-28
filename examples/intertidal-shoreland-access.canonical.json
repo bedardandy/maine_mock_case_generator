@@ -72,6 +72,13 @@
       "bar_number": "1976"
     }
   },
+  "_provenance": {
+    "fixture_id": "b6b21a8c9728fe234a8c",
+    "scenario_id": "intertidal-shoreland-access",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
   "party": {
     "full_name": "Grace C. Roe",
     "first_name": "Grace",

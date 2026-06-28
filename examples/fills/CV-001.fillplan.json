@@ -237,6 +237,13 @@
         "bar_number": "2596"
       }
     },
+    "_provenance": {
+      "fixture_id": "5406e623313a63110552",
+      "scenario_id": "personal-injury-auto",
+      "seed": 7,
+      "reference_date": "2026-01-01",
+      "generator_version": "0.2.0"
+    },
     "party": {
       "full_name": "Olivia B. Ellsworth",
       "first_name": "Olivia",

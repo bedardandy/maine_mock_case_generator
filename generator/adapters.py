@@ -11,6 +11,12 @@ Everything stays fictional; no value is invented beyond what the matter already 
 """
 from __future__ import annotations
 
+from dataclasses import dataclass
+from typing import Callable
+
+from .contracts import AdapterResult
+from .errors import UnsupportedProfileError
+from .project import project_to_canonical
 
 def _pick(d: dict, *keys: str):
     for k in keys:
@@ -148,3 +154,47 @@ PROFILES = {
     "tax": to_tax_case,
     "real_estate": to_real_estate_case,
 }
+
+
+@dataclass(frozen=True)
+class NamespaceAdapter:
+    profile: str
+    function: Callable[[dict, dict], dict] | None = None
+
+    def supports(self, form: dict) -> bool:
+        return form.get("profile", "canonical") == self.profile
+
+    def adapt(self, matter: dict, form: dict) -> dict:
+        canonical = project_to_canonical(matter)
+        return canonical if self.function is None else self.function(canonical, matter)
+
+    def validate(self, case: dict, form: dict) -> AdapterResult:
+        required = form.get("required_keys", [])
+        missing = [key for key in required if _resolve(case, key) in (None, "", [])]
+        errors = [{"code": "MISSING_REQUIRED_KEY", "path": key} for key in missing]
+        return AdapterResult(not errors, case, errors=errors, profile=self.profile)
+
+
+def _resolve(case: dict, key: str):
+    node = case
+    for part in key.split("."):
+        if not isinstance(node, dict) or part not in node:
+            return None
+        node = node[part]
+    return node
+
+
+ADAPTERS = {
+    "canonical": NamespaceAdapter("canonical"),
+    "tax": NamespaceAdapter("tax", to_tax_case),
+    "real_estate": NamespaceAdapter("real_estate", to_real_estate_case),
+    "corporation": NamespaceAdapter("corporation", to_tax_case),
+    "probate": NamespaceAdapter("probate"),
+}
+
+
+def get_adapter(profile: str) -> NamespaceAdapter:
+    try:
+        return ADAPTERS[profile]
+    except KeyError as exc:
+        raise UnsupportedProfileError(f"Unsupported integration profile: {profile}") from exc

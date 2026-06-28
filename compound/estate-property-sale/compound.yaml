@@ -1,0 +1,24 @@
+id: estate-property-sale
+title: "Estate administration and sale of {estate_property_name}"
+theme: "A personal representative administers an estate and sells estate-owned Maine real property, linking probate authority, inventory and accounting, lien-discharge reporting, and the RETTD closing."
+narrative: >
+  After {decedent_full_name} died, {personal_representative_full_name} administered the
+  estate and arranged to sell estate real property to {buyer_full_name}. The estate's
+  authority and date-of-death valuation feed the sale, while the transfer produces closing
+  proceeds that return to the probate account for claims, taxes, and distribution.
+cast:
+  - {cast_id: decedent, kind: person, contact: false, label: "Decedent and former owner"}
+  - {cast_id: personal_representative, kind: person, label: "Personal representative and deed transferor"}
+  - {cast_id: buyer, kind: person, label: "Buyer and deed transferee"}
+  - {cast_id: estate_property, kind: organization, name: "Estate Property Holding", label: "Estate asset placeholder"}
+matters:
+  - id: administration
+    scenario: full-estate-administration
+    roles: {decedent: decedent, personal_representative: personal_representative}
+    relates:
+      - {to: property_sale, type: authorizes, description: "The personal representative's appointment and estate administration authorize the estate conveyance."}
+  - id: property_sale
+    scenario: real-estate-transfer
+    roles: {transferor: personal_representative, transferee: buyer}
+    relates:
+      - {to: administration, type: feeds, description: "Net sale proceeds and closing expenses feed the estate account and beneficiary distributions."}

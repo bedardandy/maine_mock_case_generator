@@ -6,6 +6,7 @@ always yields the same matter (no timestamps or external state are embedded).
 from __future__ import annotations
 
 import copy
+import hashlib
 import random
 from datetime import date, timedelta
 
@@ -13,7 +14,8 @@ from . import dsl
 from .pools import Pools, build_organization, build_person
 from .scenarios import load_scenario
 
-GENERATOR_VERSION = "0.1.0"
+GENERATOR_VERSION = "0.2.0"
+DEFAULT_REFERENCE_DATE = date(2026, 1, 1)
 
 _NUM_WORDS = {0: "no", 1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six"}
 _PERSON_TYPES = {
@@ -22,9 +24,15 @@ _PERSON_TYPES = {
 }
 
 
-def _random_recent_date(rng: random.Random) -> str:
-    start = date(2025, 6, 1)
-    return (start + timedelta(days=rng.randint(0, 380))).isoformat()
+def _normalize_reference_date(reference_date: str | date | None) -> date:
+    if reference_date is None:
+        return DEFAULT_REFERENCE_DATE
+    return date.fromisoformat(reference_date) if isinstance(reference_date, str) else reference_date
+
+
+def _random_recent_date(rng: random.Random, reference_date: date) -> str:
+    start = reference_date - timedelta(days=365)
+    return (start + timedelta(days=rng.randint(0, 365))).isoformat()
 
 
 def _ctx_for_party(ctx: dict, key: str, party: dict) -> None:
@@ -235,7 +243,12 @@ def _assemble_financials(scenario: dict, ctx: dict, rng: random.Random):
     return financials
 
 
-def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = None) -> dict:
+def generate_matter(
+    scenario_id: str,
+    seed: int = 0,
+    reference_date: str | date | None = None,
+    overrides: dict | None = None,
+) -> dict:
     """Build a fully-validated Mock Matter from a scenario archetype and seed.
 
     ``overrides`` maps a party role key (plaintiff, decedent, child_1, attorney, ...) to a
@@ -244,6 +257,7 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
     narrative and facts stay internally consistent.
     """
     scenario = load_scenario(scenario_id)
+    reference = _normalize_reference_date(reference_date)
     rng = random.Random(seed)
     pools = Pools(rng)
     ctx: dict = {}
@@ -263,7 +277,7 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
     filing_date = (
         dsl.resolve(dates_spec["filing_date"], ctx, rng)
         if dates_spec.get("filing_date")
-        else _random_recent_date(rng)
+        else _random_recent_date(rng, reference)
     )
     ctx["filing_date"] = filing_date
 
@@ -307,6 +321,9 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
         matter["docket_number"] = f"{county[:3].upper()}-{scenario.get('docket_prefix', 'XX')}-{year}-{rng.randint(100, 999)}"
 
     # --- assemble excludes/includes ------------------------------------
+    fixture_id = hashlib.sha256(
+        f"{scenario_id}:{seed}:{reference.isoformat()}:{GENERATOR_VERSION}".encode()
+    ).hexdigest()[:20]
     out = {
         "schema_version": "1.0",
         "provenance": {
@@ -316,6 +333,9 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
             "generator_version": GENERATOR_VERSION,
             "scenario_id": scenario_id,
             "seed": seed,
+            "reference_date": reference.isoformat(),
+            "fixture_id": fixture_id,
+            "jurisdiction": {"state": state, "county": county},
         },
         "matter": matter,
         "parties": parties,

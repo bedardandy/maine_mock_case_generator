@@ -51,6 +51,13 @@
       "date_of_birth": "1997-10-02"
     }
   },
+  "_provenance": {
+    "fixture_id": "f3ff45a75bc392d6634e",
+    "scenario_id": "estate-tax-706",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
   "party": {
     "full_name": "Theodore B. Kingsley",
     "first_name": "Theodore",

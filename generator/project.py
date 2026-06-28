@@ -74,6 +74,13 @@ def project_to_canonical(matter: dict) -> dict:
                 break
 
     case = {"matter": canonical_matter, "parties": canonical_parties}
+    provenance = matter.get("provenance", {})
+    if provenance:
+        case["_provenance"] = {
+            key: provenance.get(key)
+            for key in ("fixture_id", "scenario_id", "seed", "reference_date", "generator_version")
+            if provenance.get(key) is not None
+        }
 
     # Signing filer (`party`): the represented client, else plaintiff/petitioner.
     signer_source = None

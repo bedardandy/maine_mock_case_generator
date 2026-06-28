@@ -2,6 +2,9 @@
 
 # Maine Mock Case Generator
 
+[![smoke](https://github.com/bedardandy/maine_mock_case_generator/actions/workflows/smoke.yml/badge.svg)](https://github.com/bedardandy/maine_mock_case_generator/actions/workflows/smoke.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+
 Generate — or guide the detailed generation of — **fictional US legal matters** for
 **smoke-testing an end-to-end legal workflow pipeline**. Each generated matter is a rich,
 internally-consistent package (fact pattern, intake interview, client objectives, third
@@ -36,6 +39,60 @@ deterministically and at volume, and projects them into the exact shape the fill
 | **Reproducible?** | Yes — `(scenario, seed)` | No |
 
 Both emit the same [`mock_matter.schema.json`](catalog/mock_matter.schema.json) shape.
+
+## Ecosystem test hub
+
+The `mmcg` command is the stable interface for deterministic fixtures, mutation
+testing, routing plans, catalog verification, and cross-repository smoke reports:
+
+```bash
+pip install -e ".[test]"
+mmcg generate family-divorce-cumberland --seed 1 --reference-date 2026-01-01
+mmcg mutate family-divorce-cumberland unicode --seed 1
+mmcg route estate-tax-706
+mmcg catalog verify
+mmcg ecosystem-smoke --out out/ecosystem
+mmcg documents full-estate-administration --seed 7 --out output/pdf/client-pack
+mmcg communications commercial-contract-dispute --seed 7 --out output/communications
+```
+
+`catalog/ecosystem.lock.json` pins the repository contracts used by integration
+runs. Vendored mappings under `integration/` are retained only as small immutable
+offline regression fixtures; sibling repositories remain authoritative for live
+schemas, mappings, trust metadata, preflight rules, and PDF filling.
+
+## Synthetic client documents
+
+`mmcg documents` generates linked, clearly watermarked test records including death
+certificates, deeds, bank statements, pay stubs, federal and Maine tax statements,
+and stock certificates. Each recipe writes:
+
+- a pristine source PDF;
+- a rotated, blurred, noisy, raster-only scan PDF with no embedded text layer;
+- JSON ground truth for classification, OCR, extraction, redaction, and accuracy tests;
+- SHA-256 hashes and a document-pack manifest.
+
+Every identifier is fictional. Phone numbers use the reserved `555-01xx` range,
+emails use reserved `example.*` domains, taxpayer IDs use invalid `900-00-xxxx`
+test values, and every page says `SYNTHETIC TEST DOCUMENT - NOT VALID`.
+
+Additional recipes include appraisals, property-tax bills, credit-card and
+peer-to-peer-payment statements, signed wills and powers of attorney, receipts,
+contracts, and court/opposing-counsel cover letters.
+
+The broader evidence library also covers medical records and bills, insurance
+declarations/EOBs, mortgage and loan statements, brokerage and retirement
+statements, utilities, leases and rent ledgers, employment records, invoices and
+repair estimates, business financial statements and ledgers, trusts and beneficiary
+designations, funeral invoices, title and closing records, incident reports,
+demands, settlement offers, lien releases, and affidavits.
+
+`mmcg communications` creates iPhone/Android-style text screenshots and email
+threads for clients, opposing parties, counsel, witnesses, and experts. Email is
+always emitted as standards-compliant `.eml`; a genuine Outlook `.msg` is also
+exported when Microsoft Outlook and `pywin32` are available and
+`MMCG_EXPORT_MSG=1` is explicitly set. The generator never
+creates a fake `.msg` by merely renaming another format.
 
 ## Quick start
 
@@ -130,7 +187,7 @@ See [`docs/probate-fixtures.md`](docs/probate-fixtures.md).
 
 ## Seed scenarios
 
-Thirty-one archetypes spanning the three downstream repos and eight practice areas. Add more by dropping a new
+Thirty-six archetypes spanning the downstream ecosystem and eight practice areas. Add more by dropping a new
 `scenarios/<id>/scenario.yaml` — no code changes required.
 
 | Scenario | Practice area | Downstream repo |
@@ -166,6 +223,11 @@ Thirty-one archetypes spanning the three downstream repos and eight practice are
 | `llc-member-oppression` | business (minority freeze-out, § 1595) | maine-court-forms |
 | `short-term-rental-dispute` | civil (STR covenant / nuisance / zoning) | maine-court-forms |
 | `medical-malpractice` | civil (§ 2851 screening panel) | maine-court-forms |
+| `business-dissolution` | business (corporation / LLC / nonprofit wind-down) | maine-corporation-forms + transactional-tax-forms |
+| `llc-formation` | business (Maine LLC + EIN / classification) | maine-corporation-forms + transactional-tax-forms |
+| `nonprofit-formation` | business (Maine nonprofit + charitable governance) | maine-corporation-forms |
+| `full-estate-administration` | probate (inventory through accounting and closure) | maine-probate-forms + transactional-tax-forms |
+| `emergency-guardianship` | probate (expedited temporary protection) | maine-probate-forms |
 
 Browse a worked sample of each under [`examples/`](examples/) (`*.matter.json` and the
 projected `*.canonical.json`).

@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.2.0",
+    "scenario_id": "full-estate-administration",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "fixture_id": "9a97a2e2ab8e0ba14c31",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc"
+    }
+  },
+  "matter": {
+    "matter_id": "MMC-2026-208061",
+    "practice_area": "probate",
+    "title": "Administration and closing of the estate of Olivia B. Ellsworth",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Probate Court"
+    },
+    "case_type": "estate_administration",
+    "filing_date": "2026-05-31",
+    "status": "active",
+    "summary": "Theodore B. Kingsley is administering the estate of Olivia B. Ellsworth through formal administration, including notice, inventory, creditor claims, fiduciary income-tax returns, accounting, distribution, and closure by sworn statement.",
+    "event_date": "2025-03-15",
+    "docket_number": "SAG-PE-2026-695"
+  },
+  "parties": {
+    "decedent": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Decedent",
+      "date_of_birth": "1997-10-02",
+      "ssn_last4": "1542"
+    },
+    "personal_representative": {
+      "entity_type": "person",
+      "first_name": "Theodore",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Theodore B. Kingsley",
+      "role": "Personal representative",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "theodore.kingsley@example.org",
+      "date_of_birth": "1975-02-05",
+      "ssn_last4": "3943"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Jessup",
+      "full_name": "Maria Q. Jessup",
+      "role": "Attorney for the client",
+      "address": "32 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04029",
+      "phone": "(207) 555-0180",
+      "email": "maria.jessup@example.net",
+      "date_of_birth": "1964-02-01",
+      "ssn_last4": "9455",
+      "bar_number": "7499",
+      "organization_name": "Birchwood & Calloway LLP"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Theodore",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Theodore B. Kingsley",
+      "role": "Personal representative",
+      "address": "467 Spruce Avenue",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04005",
+      "phone": "(207) 555-0111",
+      "email": "theodore.kingsley@example.org",
+      "date_of_birth": "1975-02-05",
+      "ssn_last4": "3943"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Theodore B. Kingsley is administering the estate of Olivia B. Ellsworth through formal administration, including notice, inventory, creditor claims, fiduciary income-tax returns, accounting, distribution, and closure by sworn statement.",
+    "narrative": "Olivia B. Ellsworth died on 2025-03-15. Theodore B. Kingsley was appointed personal representative and obtained an estate EIN.\n\nThe estate includes real property worth about $1313900, personal property near $148514, 7 creditor claim(s), and approximately $75330 in post-death income.\n\nThe personal representative must complete the inventory, resolve claims, file federal and Maine fiduciary income-tax returns, account to beneficiaries, distribute the residue, and close by sworn statement.",
+    "undisputed_facts": [
+      "Theodore B. Kingsley has authority to administer the estate.",
+      "The estate must account for assets, claims, income, expenses, and distributions."
+    ],
+    "disputed_facts": [
+      "Whether any creditor claim should be disallowed or compromised.",
+      "Whether reserves are sufficient before final distribution."
+    ],
+    "timeline": [
+      {
+        "date": "2025-03-15",
+        "event": "Olivia B. Ellsworth died."
+      },
+      {
+        "date": "2026-05-31",
+        "event": "Administration and tax-compliance work is underway."
+      },
+      {
+        "date": "2026-11-13",
+        "event": "Accounting period closes for final reporting."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Complete the inventory",
+      "Resolve creditor claims",
+      "File fiduciary tax returns",
+      "Distribute and close the estate"
+    ],
+    "priorities": [
+      "Accurate accounting",
+      "Tax compliance",
+      "Fair beneficiary treatment",
+      "Timely closure"
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "Approved or accepted final accounting",
+      "Documented distributions and discharge"
+    ],
+    "non_starters": [
+      "Premature distribution that leaves taxes or claims unpaid"
+    ]
+  },
+  "issues": [
+    {
+      "issue": "Requirements for closing and discharge",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. §§ 3-1001 et seq.",
+      "strength": "strong",
+      "id": "iss1"
+    },
+    {
+      "issue": "Allowance and priority of creditor claims",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. §§ 3-803, 3-805",
+      "strength": "moderate",
+      "id": "iss2"
+    },
+    {
+      "issue": "Federal and Maine fiduciary income-tax returns",
+      "category": "tax",
+      "governing_law": "IRC § 641 et seq.; 36 M.R.S.",
+      "strength": "strong",
+      "id": "iss3"
+    },
+    {
+      "issue": "Inventory and valuation of estate assets",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 3-706",
+      "strength": "strong",
+      "id": "iss4"
+    },
+    {
+      "issue": "Accounting to beneficiaries",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. art. 3",
+      "strength": "strong",
+      "id": "iss5"
+    },
+    {
+      "issue": "Authority to sell estate real property",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. art. 3",
+      "strength": "moderate",
+      "id": "iss6"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Estate bank statements",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "id": "ev1"
+    },
+    {
+      "title": "Beneficiary receipts and releases",
+      "type": "document",
+      "party": "personal_representative",
+      "id": "ev2"
+    },
+    {
+      "title": "Form 1041 and Maine fiduciary return workpapers",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "id": "ev3"
+    },
+    {
+      "title": "Final probate account",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "id": "ev4"
+    },
+    {
+      "title": "Estate inventory",
+      "type": "financial_record",
+      "party": "personal_representative",
+      "id": "ev5"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Estate income",
+        "amount": 39791
+      },
+      {
+        "label": "Creditor claims",
+        "amount": 67123
+      },
+      {
+        "label": "Personal property",
+        "amount": 213499
+      },
+      {
+        "label": "Real property",
+        "amount": 691907
+      }
+    ]
+  },
+  "facts": {
+    "date_of_death": "2025-03-15",
+    "will_exists": true,
+    "administration_type": "formal administration",
+    "estate_ein_obtained": true,
+    "inventory_filed": true,
+    "bond_required": false,
+    "creditor_claims_count": 7,
+    "disputed_claim_exists": true,
+    "real_property": true,
+    "real_property_value": 1313900,
+    "personal_property_value": 148514,
+    "estate_income": 75330,
+    "distributions_made": false,
+    "accounting_period_end": "2026-11-13",
+    "closing_method": "sworn statement"
+  }
+}

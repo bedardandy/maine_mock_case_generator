@@ -1,0 +1,88 @@
+id: full-estate-administration
+title: "Administration and closing of the estate of {decedent_full_name}"
+practice_area: probate
+case_type: estate_administration
+status: active
+docket_prefix: PE
+assign_docket: true
+downstream:
+  repo: maine-probate-forms
+  example_forms: [DE-101, DE-201, DE-104, DE-403, DE-405, DE-406, DE-602, IRS-56, IRS-1041, MRS-1041ME]
+jurisdiction:
+  state: ME
+  county: random
+  court_type: Probate Court
+dates:
+  filing_date: {date_between: ["2025-10-01", "2026-05-31"]}
+  event_date: "{date_of_death}"
+parties:
+  client_role: personal_representative
+  attorney: true
+  roles:
+    - {key: decedent, label: "Decedent", with_contact: false}
+    - {key: personal_representative, label: "Personal representative"}
+facts:
+  date_of_death: {date_between: ["2024-08-01", "2025-12-31"]}
+  will_exists: {pick: [true, false]}
+  administration_type: {pick: ["informal testate administration", "informal intestate administration", "formal administration"]}
+  estate_ein_obtained: true
+  inventory_filed: {pick: [true, false]}
+  bond_required: {pick: [true, false]}
+  creditor_claims_count: {int_between: [1, 9]}
+  disputed_claim_exists: {pick: [true, false]}
+  real_property: true
+  real_property_value: {int_between: [180000, 1400000]}
+  personal_property_value: {int_between: [25000, 600000]}
+  estate_income: {int_between: [500, 85000]}
+  distributions_made: {pick: [true, false]}
+  accounting_period_end: {date_between: ["2026-01-31", "2026-12-31"]}
+  closing_method: {pick: ["sworn statement", "petition for complete settlement"]}
+fact_pattern:
+  summary: "{personal_representative_full_name} is administering the estate of {decedent_full_name} through {administration_type}, including notice, inventory, creditor claims, fiduciary income-tax returns, accounting, distribution, and closure by {closing_method}."
+  narrative:
+    - "{decedent_full_name} died on {date_of_death}. {personal_representative_full_name} was appointed personal representative and obtained an estate EIN."
+    - "The estate includes real property worth about ${real_property_value}, personal property near ${personal_property_value}, {creditor_claims_count} creditor claim(s), and approximately ${estate_income} in post-death income."
+    - "The personal representative must complete the inventory, resolve claims, file federal and Maine fiduciary income-tax returns, account to beneficiaries, distribute the residue, and close by {closing_method}."
+  undisputed:
+    - "{personal_representative_full_name} has authority to administer the estate."
+    - "The estate must account for assets, claims, income, expenses, and distributions."
+  disputed:
+    - "Whether any creditor claim should be disallowed or compromised."
+    - "Whether reserves are sufficient before final distribution."
+  timeline:
+    - {date: "{date_of_death}", event: "{decedent_full_name} died."}
+    - {date: "{filing_date}", event: "Administration and tax-compliance work is underway."}
+    - {date: "{accounting_period_end}", event: "Accounting period closes for final reporting."}
+objectives:
+  goals: ["Complete the inventory", "Resolve creditor claims", "File fiduciary tax returns", "Distribute and close the estate"]
+  priorities: ["Accurate accounting", "Tax compliance", "Fair beneficiary treatment", "Timely closure"]
+  risk_tolerance: low
+  desired_outcomes: ["Approved or accepted final accounting", "Documented distributions and discharge"]
+  non_starters: ["Premature distribution that leaves taxes or claims unpaid"]
+issues:
+  count: {min: 4, max: 6}
+  pool:
+    - {issue: "Inventory and valuation of estate assets", category: probate, governing_law: "18-C M.R.S. § 3-706", strength: strong}
+    - {issue: "Allowance and priority of creditor claims", category: probate, governing_law: "18-C M.R.S. §§ 3-803, 3-805", strength: moderate}
+    - {issue: "Federal and Maine fiduciary income-tax returns", category: tax, governing_law: "IRC § 641 et seq.; 36 M.R.S.", strength: strong}
+    - {issue: "Accounting to beneficiaries", category: probate, governing_law: "18-C M.R.S. art. 3", strength: strong}
+    - {issue: "Authority to sell estate real property", category: probate, governing_law: "18-C M.R.S. art. 3", strength: moderate}
+    - {issue: "Requirements for closing and discharge", category: probate, governing_law: "18-C M.R.S. §§ 3-1001 et seq.", strength: strong}
+evidence:
+  count: {min: 4, max: 7}
+  pool:
+    - {title: "Letters of authority and PR acceptance", type: public_record, party: personal_representative}
+    - {title: "Estate inventory", type: financial_record, party: personal_representative}
+    - {title: "Creditor claims register", type: financial_record, party: personal_representative}
+    - {title: "Estate bank statements", type: financial_record, party: personal_representative}
+    - {title: "Form 1041 and Maine fiduciary return workpapers", type: financial_record, party: personal_representative}
+    - {title: "Beneficiary receipts and releases", type: document, party: personal_representative}
+    - {title: "Final probate account", type: financial_record, party: personal_representative}
+financials:
+  currency: USD
+  count: 4
+  amounts:
+    - {label: "Real property", amount: {int_between: [180000, 1400000]}}
+    - {label: "Personal property", amount: {int_between: [25000, 600000]}}
+    - {label: "Creditor claims", amount: {int_between: [2000, 250000]}}
+    - {label: "Estate income", amount: {int_between: [500, 85000]}}

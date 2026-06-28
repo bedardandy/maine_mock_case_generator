@@ -1,0 +1,88 @@
+id: business-dissolution
+title: "Wind-down and dissolution of {company_full_name}"
+practice_area: business
+case_type: entity_dissolution
+status: pre_filing
+assign_docket: false
+downstream:
+  repo: maine-corporation-forms
+  example_forms: [CORP_MBCA-11, LLC_MLLC-11C, NP_MNPCA-11, NP_MNPCA-11D, MRS-1120ME, MRS-941ME]
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Maine Secretary of State / Maine Revenue Services"
+dates:
+  filing_date: {date_between: ["2026-01-01", "2026-06-01"]}
+  event_date: "{cessation_date}"
+parties:
+  client_role: authorized_person
+  attorney: true
+  roles:
+    - {key: authorized_person, label: "Authorized filer / owner"}
+    - {key: company, entity: organization, label: "Dissolving Maine entity"}
+facts:
+  entity_name: "{company_full_name}"
+  entity_type: {pick: ["business corporation", "limited liability company", "nonprofit corporation"]}
+  charter_number: {pick: ["20211234DC", "20204567D", "20199876ND"]}
+  formation_date: {date_between: ["2008-01-01", "2023-12-31"]}
+  cessation_date: {date_between: ["2025-10-01", "2026-04-30"]}
+  dissolution_reason: {pick: ["the owners agreed to retire", "the business completed its project", "continued operation is no longer economical", "the nonprofit completed its charitable program"]}
+  approval_method: {pick: ["unanimous owner consent", "board and shareholder approval", "member vote", "board and member approval"]}
+  known_creditors: {int_between: [1, 8]}
+  employees_at_closing: {int_between: [0, 12]}
+  final_payroll_date: {date_between: ["2025-11-01", "2026-05-15"]}
+  assets_to_distribute: {int_between: [5000, 650000]}
+  liabilities_to_pay: {int_between: [1000, 240000]}
+  final_return_required: true
+  tax_clearance_requested: {pick: [true, false]}
+fact_pattern:
+  summary: "{authorized_person_full_name} is winding down {company_full_name}, a Maine {entity_type}, after {dissolution_reason}, requiring creditor resolution, final payroll and tax filings, asset distribution, and the correct Secretary of State dissolution or cancellation filing."
+  narrative:
+    - "{company_full_name} was formed on {formation_date} and has now stopped active operations as of {cessation_date} because {dissolution_reason}. The dissolution was approved by {approval_method}."
+    - "The company has about {known_creditors} known creditor(s), assets estimated at ${assets_to_distribute}, liabilities near ${liabilities_to_pay}, and {employees_at_closing} employee(s) at closing. Final payroll is scheduled for {final_payroll_date}."
+    - "{authorized_person_full_name} must preserve enough assets for claims, complete final federal and Maine returns, distribute the lawful remainder, and file the entity-specific dissolution or cancellation document."
+  undisputed:
+    - "{company_full_name} has ceased ordinary operations."
+    - "The owners or governing body approved the wind-down by {approval_method}."
+    - "Final tax and payroll obligations must be completed."
+  disputed:
+    - "Whether all known and contingent creditor claims have been adequately provided for."
+    - "Whether any assets may be distributed before tax clearance and claim resolution."
+  timeline:
+    - {date: "{formation_date}", event: "{company_full_name} was formed in Maine."}
+    - {date: "{cessation_date}", event: "The company ceased ordinary business operations."}
+    - {date: "{final_payroll_date}", event: "Final payroll and withholding obligations become due."}
+    - {date: "{filing_date}", event: "Dissolution, cancellation, and final-return package prepared."}
+objectives:
+  goals:
+    - "Complete an orderly wind-down without unlawful owner distributions."
+    - "Resolve creditors, employees, taxes, and final reporting."
+    - "Terminate the entity's Maine legal existence using the correct filing."
+  priorities: ["Creditor and employee protection", "Final tax compliance", "Clean public-record termination"]
+  risk_tolerance: low
+  desired_outcomes: ["Accepted dissolution or cancellation filing", "Documented final distributions and closed tax accounts"]
+  non_starters: ["Distributing assets while known claims remain unfunded"]
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Authority and approval for voluntary dissolution", category: business, governing_law: "13-C M.R.S. ch. 14; 31 M.R.S. ch. 21", strength: strong}
+    - {issue: "Notice and provision for known and contingent claims", category: business, governing_law: "Maine entity dissolution statutes", strength: moderate}
+    - {issue: "Final Maine corporate income and withholding returns", category: tax, governing_law: "36 M.R.S.", strength: strong}
+    - {issue: "Priority and legality of liquidating distributions", category: business, governing_law: "Applicable Maine entity statute", strength: moderate}
+    - {issue: "Preservation of books and authority after dissolution", category: business, governing_law: "Applicable Maine entity statute", strength: strong}
+evidence:
+  count: {min: 3, max: 5}
+  pool:
+    - {title: "Owner or board dissolution consent", type: public_record, party: company}
+    - {title: "Creditor and liabilities schedule", type: financial_record, party: company}
+    - {title: "Final payroll register", type: financial_record, party: company}
+    - {title: "Liquidation balance sheet", type: financial_record, party: company}
+    - {title: "Draft dissolution or cancellation filing", type: document, party: authorized_person}
+financials:
+  currency: USD
+  total_is_sum: false
+  count: 3
+  amounts:
+    - {label: "Assets available for liquidation", amount: {int_between: [5000, 650000]}}
+    - {label: "Known liabilities", amount: {int_between: [1000, 240000]}}
+    - {label: "Reserve for contingent claims", amount: {int_between: [1000, 90000]}}

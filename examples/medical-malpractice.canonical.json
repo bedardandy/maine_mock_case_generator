@@ -72,6 +72,13 @@
       "bar_number": "8424"
     }
   },
+  "_provenance": {
+    "fixture_id": "7aeb211324eb09fffd2e",
+    "scenario_id": "medical-malpractice",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "generator_version": "0.2.0"
+  },
   "party": {
     "full_name": "Grace C. Roe",
     "first_name": "Grace",

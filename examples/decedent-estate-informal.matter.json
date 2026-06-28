@@ -4,9 +4,15 @@
     "mock": true,
     "fictional": true,
     "generator": "deterministic-engine",
-    "generator_version": "0.1.0",
+    "generator_version": "0.2.0",
     "scenario_id": "decedent-estate-informal",
-    "seed": 7
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "fixture_id": "acf846663ff07ec7467a",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc"
+    }
   },
   "matter": {
     "matter_id": "MMC-2026-687472",

@@ -1,0 +1,249 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.2.0",
+    "scenario_id": "business-dissolution",
+    "seed": 7,
+    "reference_date": "2026-01-01",
+    "fixture_id": "93330ab717296c5af8ab",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc"
+    }
+  },
+  "matter": {
+    "matter_id": "MMC-2026-674351",
+    "practice_area": "business",
+    "title": "Wind-down and dissolution of Summit Outfitters Co.",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Maine Secretary of State / Maine Revenue Services"
+    },
+    "case_type": "entity_dissolution",
+    "filing_date": "2026-02-08",
+    "status": "pre_filing",
+    "summary": "Grace C. Roe is winding down Summit Outfitters Co., a Maine limited liability company, after continued operation is no longer economical, requiring creditor resolution, final payroll and tax filings, asset distribution, and the correct Secretary of State dissolution or cancellation filing.",
+    "event_date": "2025-10-31"
+  },
+  "parties": {
+    "authorized_person": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Authorized filer / owner",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "company": {
+      "entity_type": "organization",
+      "organization_name": "Summit Outfitters Co.",
+      "full_name": "Summit Outfitters Co.",
+      "role": "Dissolving Maine entity",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "D",
+      "last_name": "Kingsley",
+      "full_name": "John D. Kingsley",
+      "role": "Attorney for the client",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "john.kingsley@example.org",
+      "date_of_birth": "1998-04-24",
+      "ssn_last4": "0763",
+      "bar_number": "3181",
+      "organization_name": "Greenhill Law Offices"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Authorized filer / owner",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe is winding down Summit Outfitters Co., a Maine limited liability company, after continued operation is no longer economical, requiring creditor resolution, final payroll and tax filings, asset distribution, and the correct Secretary of State dissolution or cancellation filing.",
+    "narrative": "Summit Outfitters Co. was formed on 2020-02-16 and has now stopped active operations as of 2025-10-31 because continued operation is no longer economical. The dissolution was approved by board and shareholder approval.\n\nThe company has about 2 known creditor(s), assets estimated at $201997, liabilities near $98621, and 9 employee(s) at closing. Final payroll is scheduled for 2026-03-27.\n\nGrace C. Roe must preserve enough assets for claims, complete final federal and Maine returns, distribute the lawful remainder, and file the entity-specific dissolution or cancellation document.",
+    "undisputed_facts": [
+      "Summit Outfitters Co. has ceased ordinary operations.",
+      "The owners or governing body approved the wind-down by board and shareholder approval.",
+      "Final tax and payroll obligations must be completed."
+    ],
+    "disputed_facts": [
+      "Whether all known and contingent creditor claims have been adequately provided for.",
+      "Whether any assets may be distributed before tax clearance and claim resolution."
+    ],
+    "timeline": [
+      {
+        "date": "2020-02-16",
+        "event": "Summit Outfitters Co. was formed in Maine."
+      },
+      {
+        "date": "2025-10-31",
+        "event": "The company ceased ordinary business operations."
+      },
+      {
+        "date": "2026-02-08",
+        "event": "Dissolution, cancellation, and final-return package prepared."
+      },
+      {
+        "date": "2026-03-27",
+        "event": "Final payroll and withholding obligations become due."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Complete an orderly wind-down without unlawful owner distributions.",
+      "Resolve creditors, employees, taxes, and final reporting.",
+      "Terminate the entity's Maine legal existence using the correct filing."
+    ],
+    "priorities": [
+      "Creditor and employee protection",
+      "Final tax compliance",
+      "Clean public-record termination"
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "Accepted dissolution or cancellation filing",
+      "Documented final distributions and closed tax accounts"
+    ],
+    "non_starters": [
+      "Distributing assets while known claims remain unfunded"
+    ]
+  },
+  "issues": [
+    {
+      "issue": "Authority and approval for voluntary dissolution",
+      "category": "business",
+      "governing_law": "13-C M.R.S. ch. 14; 31 M.R.S. ch. 21",
+      "strength": "strong",
+      "id": "iss1"
+    },
+    {
+      "issue": "Preservation of books and authority after dissolution",
+      "category": "business",
+      "governing_law": "Applicable Maine entity statute",
+      "strength": "strong",
+      "id": "iss2"
+    },
+    {
+      "issue": "Final Maine corporate income and withholding returns",
+      "category": "tax",
+      "governing_law": "36 M.R.S.",
+      "strength": "strong",
+      "id": "iss3"
+    },
+    {
+      "issue": "Priority and legality of liquidating distributions",
+      "category": "business",
+      "governing_law": "Applicable Maine entity statute",
+      "strength": "moderate",
+      "id": "iss4"
+    },
+    {
+      "issue": "Notice and provision for known and contingent claims",
+      "category": "business",
+      "governing_law": "Maine entity dissolution statutes",
+      "strength": "moderate",
+      "id": "iss5"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Draft dissolution or cancellation filing",
+      "type": "document",
+      "party": "authorized_person",
+      "id": "ev1"
+    },
+    {
+      "title": "Liquidation balance sheet",
+      "type": "financial_record",
+      "party": "company",
+      "id": "ev2"
+    },
+    {
+      "title": "Creditor and liabilities schedule",
+      "type": "financial_record",
+      "party": "company",
+      "id": "ev3"
+    },
+    {
+      "title": "Final payroll register",
+      "type": "financial_record",
+      "party": "company",
+      "id": "ev4"
+    },
+    {
+      "title": "Owner or board dissolution consent",
+      "type": "public_record",
+      "party": "company",
+      "id": "ev5"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Known liabilities",
+        "amount": 209241
+      },
+      {
+        "label": "Reserve for contingent claims",
+        "amount": 24562
+      },
+      {
+        "label": "Assets available for liquidation",
+        "amount": 260953
+      }
+    ]
+  },
+  "facts": {
+    "entity_name": "Summit Outfitters Co.",
+    "entity_type": "limited liability company",
+    "charter_number": "20211234DC",
+    "formation_date": "2020-02-16",
+    "cessation_date": "2025-10-31",
+    "dissolution_reason": "continued operation is no longer economical",
+    "approval_method": "board and shareholder approval",
+    "known_creditors": 2,
+    "employees_at_closing": 9,
+    "final_payroll_date": "2026-03-27",
+    "assets_to_distribute": 201997,
+    "liabilities_to_pay": 98621,
+    "final_return_required": true,
+    "tax_clearance_requested": true
+  }
+}
