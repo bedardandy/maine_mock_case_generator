@@ -1,3 +1,5 @@
+> **AI/legal-use disclosure:** This repository is experimental, AI-assisted workflow software. It is not legal advice, not a primary legal source, and not lawyer-reviewed as a complete statement of law. Outputs are first drafts for human review, intended to reduce creation effort while increasing focused review effort. See [AI_DISCLOSURE.md](AI_DISCLOSURE.md).
+
 # Maine Mock Case Generator
 
 Generate — or guide the detailed generation of — **fictional US legal matters** for
