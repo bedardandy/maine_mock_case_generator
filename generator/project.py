@@ -51,6 +51,8 @@ def project_to_canonical(matter: dict) -> dict:
         canonical_matter["court_location"] = jurisdiction["court_location"]
     if jurisdiction.get("court_type"):
         canonical_matter["court_type"] = jurisdiction["court_type"]
+    if jurisdiction.get("court_address"):
+        canonical_matter["court_address"] = jurisdiction["court_address"]
     if matter_meta.get("case_type"):
         canonical_matter["case_type"] = matter_meta["case_type"]
     if matter_meta.get("filing_date"):

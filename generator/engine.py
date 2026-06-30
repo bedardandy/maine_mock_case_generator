@@ -494,6 +494,7 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
             "county": county,
             "court_location": court_location,
             "court_type": court_type,
+            "court_address": pools.courthouse_address(court_location),
         },
         "case_type": scenario.get("case_type", ""),
         "filing_date": filing_date,

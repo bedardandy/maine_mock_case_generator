@@ -16,7 +16,8 @@
       "state": "ME",
       "county": "Sagadahoc",
       "court_location": "Bath",
-      "court_type": "Probate Court"
+      "court_type": "Probate Court",
+      "court_address": "96 Federal Street, Bath, ME 04050"
     },
     "case_type": "conservatorship",
     "filing_date": "2025-11-08",

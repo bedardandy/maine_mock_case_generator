@@ -112,6 +112,22 @@ class Pools:
     def court_location(self, county: str) -> str:
         return self.data["court_locations_by_county"].get(county, "Portland")
 
+    _COURT_STREETS = ["Court Street", "Federal Street", "Main Street",
+                      "State Street", "County Way"]
+
+    def courthouse_address(self, town: str) -> str:
+        """A synthetic but plausible one-line courthouse street address. Real
+        Maine court TOWNS drive routing; the street/number/zip are fictional (no
+        real building implied). Seeded by the town so a given courthouse always
+        has the same address AND the shared matter rng stream is never perturbed
+        (purely additive — existing per-seed facts/goldens are unchanged)."""
+        import random as _random
+        rng = _random.Random(f"courthouse::{town}")
+        number = rng.randint(2, 480)
+        street = rng.choice(self._COURT_STREETS)
+        zip_code = f"{self.data['zip_prefix']}{rng.randint(1, 99):02d}"
+        return f"{number} {street}, {town}, ME {zip_code}"
+
 
 def build_person(pools: Pools, role: str = "", with_contact: bool = True,
                  with_dob: bool = True, child: bool = False) -> dict:

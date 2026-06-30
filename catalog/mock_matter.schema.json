@@ -48,7 +48,8 @@
             "state": { "type": "string", "description": "USPS state code, e.g. 'ME'." },
             "county": { "type": "string" },
             "court_location": { "type": "string", "description": "Courthouse town/location." },
-            "court_type": { "type": "string", "description": "e.g. 'District Court', 'Probate Court', 'Superior Court'." }
+            "court_type": { "type": "string", "description": "e.g. 'District Court', 'Probate Court', 'Superior Court'." },
+            "court_address": { "type": "string", "description": "Synthetic one-line courthouse street address (fictional street/number/zip; real town)." }
           }
         },
         "case_type": { "type": "string", "description": "Routing classification, e.g. 'family_matters', 'decedent_estate'." },

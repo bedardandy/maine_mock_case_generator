@@ -16,7 +16,8 @@
       "state": "ME",
       "county": "Sagadahoc",
       "court_location": "Bath",
-      "court_type": "Maine Secretary of State / IRS (filing offices)"
+      "court_type": "Maine Secretary of State / IRS (filing offices)",
+      "court_address": "96 Federal Street, Bath, ME 04050"
     },
     "case_type": "entity_formation",
     "filing_date": "2025-12-09",

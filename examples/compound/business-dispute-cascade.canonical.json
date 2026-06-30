@@ -9,6 +9,7 @@
         "court_county": "Kennebec",
         "court_location": "Augusta",
         "court_type": "Maine Secretary of State / IRS (filing offices)",
+        "court_address": "121 State Street, Augusta, ME 04089",
         "case_type": "entity_formation",
         "filing_date": "2026-04-30",
         "event_date": "2026-03-16"
@@ -102,6 +103,7 @@
         "court_county": "Cumberland",
         "court_location": "Portland",
         "court_type": "Superior Court",
+        "court_address": "127 State Street, Portland, ME 04019",
         "case_type": "civil",
         "filing_date": "2025-01-14",
         "event_date": "2022-11-18"

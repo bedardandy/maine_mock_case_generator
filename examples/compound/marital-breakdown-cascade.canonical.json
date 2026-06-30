@@ -10,6 +10,7 @@
         "court_county": "Cumberland",
         "court_location": "Portland",
         "court_type": "District Court",
+        "court_address": "127 State Street, Portland, ME 04019",
         "case_type": "family_matters",
         "filing_date": "2025-10-31",
         "event_date": "2025-07-31"
@@ -192,6 +193,7 @@
         "court_county": "Cumberland",
         "court_location": "Portland",
         "court_type": "District Court",
+        "court_address": "127 State Street, Portland, ME 04019",
         "case_type": "protection_from_abuse",
         "filing_date": "2026-05-24",
         "event_date": "2026-04-06"
@@ -303,6 +305,7 @@
         "court_county": "Kennebec",
         "court_location": "Augusta",
         "court_type": "Maine Secretary of State / IRS (filing offices)",
+        "court_address": "121 State Street, Augusta, ME 04089",
         "case_type": "entity_formation",
         "filing_date": "2026-04-27",
         "event_date": "2026-02-19"
