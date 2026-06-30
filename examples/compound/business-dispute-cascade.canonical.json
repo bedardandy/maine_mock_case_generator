@@ -12,7 +12,8 @@
         "court_address": "121 State Street, Augusta, ME 04089",
         "case_type": "entity_formation",
         "filing_date": "2026-04-30",
-        "event_date": "2026-03-16"
+        "event_date": "2026-03-16",
+        "firm_name": "Hawthorne Legal Group"
       },
       "parties": {
         "applicant": {
@@ -26,7 +27,8 @@
           "zip": "04069",
           "phone": "(207) 555-0112",
           "email": "nadia.loe@example.org",
-          "date_of_birth": "1964-01-30"
+          "date_of_birth": "1964-01-30",
+          "entity_type": "person"
         },
         "company": {
           "full_name": "Evergreen Analytics LLC",
@@ -34,7 +36,9 @@
           "city": "Falmouth",
           "state": "ME",
           "zip": "04031",
-          "phone": "(207) 555-0111"
+          "phone": "(207) 555-0111",
+          "organization_name": "Evergreen Analytics LLC",
+          "entity_type": "organization"
         },
         "attorney": {
           "full_name": "Nadia E. Danforth",
@@ -48,7 +52,9 @@
           "phone": "(207) 555-0124",
           "email": "nadia.danforth@example.net",
           "date_of_birth": "1970-04-29",
-          "bar_number": "5753"
+          "bar_number": "5753",
+          "organization_name": "Hawthorne Legal Group",
+          "entity_type": "person"
         }
       },
       "party": {
@@ -63,6 +69,7 @@
         "phone": "(207) 555-0112",
         "email": "nadia.loe@example.org",
         "date_of_birth": "1964-01-30",
+        "entity_type": "person",
         "signature": "Nadia P. Loe"
       },
       "facts": {
@@ -106,7 +113,8 @@
         "court_address": "127 State Street, Portland, ME 04019",
         "case_type": "civil",
         "filing_date": "2025-01-14",
-        "event_date": "2022-11-18"
+        "event_date": "2022-11-18",
+        "firm_name": "Kingsley & Associates"
       },
       "parties": {
         "plaintiff": {
@@ -120,7 +128,8 @@
           "zip": "04029",
           "phone": "(207) 555-0180",
           "email": "felix.fairbanks@example.net",
-          "date_of_birth": "1964-02-01"
+          "date_of_birth": "1964-02-01",
+          "entity_type": "person"
         },
         "plaintiff_2": {
           "full_name": "Rosa B. Ellsworth",
@@ -133,7 +142,8 @@
           "zip": "04038",
           "phone": "(207) 555-0153",
           "email": "rosa.ellsworth@example.com",
-          "date_of_birth": "1967-03-02"
+          "date_of_birth": "1967-03-02",
+          "entity_type": "person"
         },
         "defendant": {
           "full_name": "Evergreen Analytics LLC",
@@ -141,7 +151,9 @@
           "city": "Falmouth",
           "state": "ME",
           "zip": "04031",
-          "phone": "(207) 555-0111"
+          "phone": "(207) 555-0111",
+          "organization_name": "Evergreen Analytics LLC",
+          "entity_type": "organization"
         },
         "defendant_2": {
           "full_name": "Nadia P. Loe",
@@ -154,7 +166,8 @@
           "zip": "04069",
           "phone": "(207) 555-0112",
           "email": "nadia.loe@example.org",
-          "date_of_birth": "1964-01-30"
+          "date_of_birth": "1964-01-30",
+          "entity_type": "person"
         },
         "third_party_defendant": {
           "full_name": "Northstar Builders LLC",
@@ -162,7 +175,9 @@
           "city": "Bangor",
           "state": "ME",
           "zip": "04048",
-          "phone": "(207) 555-0112"
+          "phone": "(207) 555-0112",
+          "organization_name": "Northstar Builders LLC",
+          "entity_type": "organization"
         },
         "attorney": {
           "full_name": "Malik K. Kingsley",
@@ -176,7 +191,9 @@
           "phone": "(207) 555-0135",
           "email": "malik.kingsley@example.com",
           "date_of_birth": "1981-12-22",
-          "bar_number": "6473"
+          "bar_number": "6473",
+          "organization_name": "Kingsley & Associates",
+          "entity_type": "person"
         }
       },
       "party": {
@@ -191,6 +208,7 @@
         "phone": "(207) 555-0180",
         "email": "felix.fairbanks@example.net",
         "date_of_birth": "1964-02-01",
+        "entity_type": "person",
         "signature": "Felix B. Fairbanks"
       },
       "facts": {

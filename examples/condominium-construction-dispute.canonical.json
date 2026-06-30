@@ -8,7 +8,8 @@
     "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "condominium",
     "filing_date": "2025-05-17",
-    "event_date": "2023-12-30"
+    "event_date": "2023-12-30",
+    "firm_name": "Greenhill Law Offices"
   },
   "parties": {
     "plaintiff": {
@@ -17,7 +18,9 @@
       "city": "Yarmouth",
       "state": "ME",
       "zip": "04047",
-      "phone": "(207) 555-0174"
+      "phone": "(207) 555-0174",
+      "organization_name": "Riverbend Analytics LLC",
+      "entity_type": "organization"
     },
     "defendant": {
       "full_name": "Coastal Provisions LLC",
@@ -25,7 +28,9 @@
       "city": "Camden",
       "state": "ME",
       "zip": "04009",
-      "phone": "(207) 555-0130"
+      "phone": "(207) 555-0130",
+      "organization_name": "Coastal Provisions LLC",
+      "entity_type": "organization"
     },
     "defendant_2": {
       "full_name": "Summit Outfitters LLC",
@@ -33,7 +38,9 @@
       "city": "Yarmouth",
       "state": "ME",
       "zip": "04029",
-      "phone": "(207) 555-0180"
+      "phone": "(207) 555-0180",
+      "organization_name": "Summit Outfitters LLC",
+      "entity_type": "organization"
     },
     "other_party": {
       "full_name": "Ingrid B. Kingsley",
@@ -46,7 +53,8 @@
       "zip": "04007",
       "phone": "(207) 555-0128",
       "email": "ingrid.kingsley@example.com",
-      "date_of_birth": "1966-03-10"
+      "date_of_birth": "1966-03-10",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Omar W. Loe",
@@ -60,7 +68,9 @@
       "phone": "(207) 555-0187",
       "email": "omar.loe@example.com",
       "date_of_birth": "1995-10-25",
-      "bar_number": "4078"
+      "bar_number": "4078",
+      "organization_name": "Greenhill Law Offices",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -70,6 +80,8 @@
     "state": "ME",
     "zip": "04047",
     "phone": "(207) 555-0174",
+    "organization_name": "Riverbend Analytics LLC",
+    "entity_type": "organization",
     "signature": "Riverbend Analytics LLC"
   },
   "facts": {

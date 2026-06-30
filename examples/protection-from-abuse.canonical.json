@@ -8,7 +8,8 @@
     "court_address": "127 State Street, Portland, ME 04019",
     "case_type": "protection_from_abuse",
     "filing_date": "2026-02-13",
-    "event_date": "2026-05-21"
+    "event_date": "2026-05-21",
+    "firm_name": "Greenhill Law Offices"
   },
   "parties": {
     "plaintiff": {
@@ -22,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "olivia.ellsworth@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Maria Q. Fairbanks",
@@ -35,21 +37,24 @@
       "zip": "04071",
       "phone": "(207) 555-0154",
       "email": "maria.fairbanks@example.com",
-      "date_of_birth": "1965-03-05"
+      "date_of_birth": "1965-03-05",
+      "entity_type": "person"
     },
     "child_1": {
       "full_name": "Ingrid B. Kingsley",
       "first_name": "Ingrid",
       "middle_name": "B",
       "last_name": "Kingsley",
-      "date_of_birth": "2013-01-26"
+      "date_of_birth": "2013-01-26",
+      "entity_type": "person"
     },
     "child_2": {
       "full_name": "Marcus W. Roe",
       "first_name": "Marcus",
       "middle_name": "W",
       "last_name": "Roe",
-      "date_of_birth": "2021-05-29"
+      "date_of_birth": "2021-05-29",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Omar W. Loe",
@@ -63,7 +68,9 @@
       "phone": "(207) 555-0187",
       "email": "omar.loe@example.com",
       "date_of_birth": "1995-10-25",
-      "bar_number": "4078"
+      "bar_number": "4078",
+      "organization_name": "Greenhill Law Offices",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -78,6 +85,7 @@
     "phone": "(207) 555-0174",
     "email": "olivia.ellsworth@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Olivia B. Ellsworth"
   },
   "facts": {

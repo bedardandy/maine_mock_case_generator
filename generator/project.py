@@ -10,6 +10,9 @@ _CANONICAL_PARTY_FIELDS = (
     "full_name", "first_name", "middle_name", "last_name",
     "address", "city", "state", "zip", "phone", "email",
     "date_of_birth", "signature", "bar_number",
+    # entity identity / firm — a represented attorney carries its firm in
+    # organization_name; dropping it lost firm_name downstream.
+    "organization_name", "entity_type", "entity_kind", "title",
 )
 
 # "client" is intentionally not projected as a party because it aliases another
@@ -61,6 +64,12 @@ def project_to_canonical(matter: dict) -> dict:
         canonical_matter["event_date"] = matter_meta["event_date"]
 
     src_parties = matter.get("parties", {})
+    # The represented attorney's firm (organization_name) is the firm_name slot
+    # used by transmittals/pleadings; surface it directly (self-represented matters
+    # have no attorney, so the slot is correctly absent).
+    attorney = src_parties.get("attorney") or {}
+    if attorney.get("organization_name"):
+        canonical_matter["firm_name"] = attorney["organization_name"]
     canonical_parties: dict = {}
     for key, party in src_parties.items():
         if key in _SKIP_ROLES:

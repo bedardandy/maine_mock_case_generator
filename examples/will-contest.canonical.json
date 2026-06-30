@@ -8,7 +8,8 @@
     "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "will_contest",
     "filing_date": "2025-06-17",
-    "event_date": "2025-09-20"
+    "event_date": "2025-09-20",
+    "firm_name": "Greenhill Law Offices"
   },
   "parties": {
     "decedent": {
@@ -16,7 +17,8 @@
       "first_name": "Grace",
       "middle_name": "C",
       "last_name": "Roe",
-      "date_of_birth": "1967-02-18"
+      "date_of_birth": "1967-02-18",
+      "entity_type": "person"
     },
     "plaintiff": {
       "full_name": "Rosa T. Roe",
@@ -29,7 +31,8 @@
       "zip": "04056",
       "phone": "(207) 555-0153",
       "email": "rosa.roe@example.com",
-      "date_of_birth": "1986-02-16"
+      "date_of_birth": "1986-02-16",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Omar D. Roe",
@@ -42,7 +45,8 @@
       "zip": "04074",
       "phone": "(207) 555-0174",
       "email": "omar.roe@example.org",
-      "date_of_birth": "1998-04-24"
+      "date_of_birth": "1998-04-24",
+      "entity_type": "person"
     },
     "other_party": {
       "full_name": "Felix K. Loe",
@@ -55,7 +59,8 @@
       "zip": "04074",
       "phone": "(207) 555-0139",
       "email": "felix.loe@example.net",
-      "date_of_birth": "1958-04-03"
+      "date_of_birth": "1958-04-03",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Rosa G. Kingsley",
@@ -69,7 +74,9 @@
       "phone": "(207) 555-0107",
       "email": "rosa.kingsley@example.net",
       "date_of_birth": "1988-09-11",
-      "bar_number": "8005"
+      "bar_number": "8005",
+      "organization_name": "Greenhill Law Offices",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -84,6 +91,7 @@
     "phone": "(207) 555-0153",
     "email": "rosa.roe@example.com",
     "date_of_birth": "1986-02-16",
+    "entity_type": "person",
     "signature": "Rosa T. Roe"
   },
   "facts": {

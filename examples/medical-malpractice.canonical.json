@@ -8,7 +8,8 @@
     "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "medical_malpractice",
     "filing_date": "2025-04-19",
-    "event_date": "2023-03-04"
+    "event_date": "2023-03-04",
+    "firm_name": "Greenhill Law Offices"
   },
   "parties": {
     "plaintiff": {
@@ -22,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Maria Q. Fairbanks",
@@ -35,7 +37,8 @@
       "zip": "04071",
       "phone": "(207) 555-0154",
       "email": "maria.fairbanks@example.com",
-      "date_of_birth": "1965-03-05"
+      "date_of_birth": "1965-03-05",
+      "entity_type": "person"
     },
     "defendant_2": {
       "full_name": "Coastal Outfitters LLC",
@@ -43,7 +46,9 @@
       "city": "Gorham",
       "state": "ME",
       "zip": "04038",
-      "phone": "(207) 555-0153"
+      "phone": "(207) 555-0153",
+      "organization_name": "Coastal Outfitters LLC",
+      "entity_type": "organization"
     },
     "third_party_defendant": {
       "full_name": "Olivia D. Jessup",
@@ -56,7 +61,8 @@
       "zip": "04014",
       "phone": "(207) 555-0174",
       "email": "olivia.jessup@example.net",
-      "date_of_birth": "1961-04-07"
+      "date_of_birth": "1961-04-07",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Samuel C. Jessup",
@@ -70,7 +76,9 @@
       "phone": "(207) 555-0187",
       "email": "samuel.jessup@example.net",
       "date_of_birth": "1974-06-10",
-      "bar_number": "8424"
+      "bar_number": "8424",
+      "organization_name": "Greenhill Law Offices",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -85,6 +93,7 @@
     "phone": "(207) 555-0174",
     "email": "grace.roe@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Grace C. Roe"
   },
   "facts": {

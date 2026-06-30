@@ -379,7 +379,8 @@
         "zip": "04047",
         "phone": "(207) 555-0174",
         "email": "grace.roe@example.com",
-        "date_of_birth": "1969-04-20"
+        "date_of_birth": "1969-04-20",
+        "entity_type": "person"
       },
       "defendant": {
         "full_name": "Maria Q. Fairbanks",
@@ -392,14 +393,16 @@
         "zip": "04071",
         "phone": "(207) 555-0154",
         "email": "maria.fairbanks@example.com",
-        "date_of_birth": "1965-03-05"
+        "date_of_birth": "1965-03-05",
+        "entity_type": "person"
       },
       "child_1": {
         "full_name": "Rosa P. Kingsley",
         "first_name": "Rosa",
         "middle_name": "P",
         "last_name": "Kingsley",
-        "date_of_birth": "2024-04-23"
+        "date_of_birth": "2024-04-23",
+        "entity_type": "person"
       }
     },
     "party": {
@@ -414,6 +417,7 @@
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
       "date_of_birth": "1969-04-20",
+      "entity_type": "person",
       "signature": "Grace C. Roe"
     },
     "facts": {

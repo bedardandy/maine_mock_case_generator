@@ -8,7 +8,8 @@
     "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "criminal",
     "filing_date": "2025-10-09",
-    "event_date": "2025-10-10"
+    "event_date": "2025-10-10",
+    "firm_name": "Birchwood & Calloway LLP"
   },
   "parties": {
     "plaintiff": {
@@ -17,7 +18,9 @@
       "city": "Brunswick",
       "state": "ME",
       "zip": "04010",
-      "phone": "(207) 555-0168"
+      "phone": "(207) 555-0168",
+      "organization_name": "State of Maine",
+      "entity_type": "organization"
     },
     "defendant": {
       "full_name": "Samuel B. Danforth",
@@ -30,7 +33,8 @@
       "zip": "04005",
       "phone": "(207) 555-0111",
       "email": "samuel.danforth@example.org",
-      "date_of_birth": "1975-02-05"
+      "date_of_birth": "1975-02-05",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Maria Q. Jessup",
@@ -44,7 +48,9 @@
       "phone": "(207) 555-0180",
       "email": "maria.jessup@example.net",
       "date_of_birth": "1964-02-01",
-      "bar_number": "7499"
+      "bar_number": "7499",
+      "organization_name": "Birchwood & Calloway LLP",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -59,6 +65,7 @@
     "phone": "(207) 555-0111",
     "email": "samuel.danforth@example.org",
     "date_of_birth": "1975-02-05",
+    "entity_type": "person",
     "signature": "Samuel B. Danforth"
   },
   "facts": {

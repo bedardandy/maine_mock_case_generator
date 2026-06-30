@@ -263,7 +263,8 @@
       "court_address": "96 Federal Street, Bath, ME 04050",
       "case_type": "forcible_entry_detainer",
       "filing_date": "2025-12-09",
-      "event_date": "2026-02-21"
+      "event_date": "2026-02-21",
+      "firm_name": "Hawthorne Legal Group"
     },
     "parties": {
       "plaintiff": {
@@ -277,7 +278,8 @@
         "zip": "04047",
         "phone": "(207) 555-0174",
         "email": "grace.roe@example.com",
-        "date_of_birth": "1969-04-20"
+        "date_of_birth": "1969-04-20",
+        "entity_type": "person"
       },
       "defendant": {
         "full_name": "Maria Q. Fairbanks",
@@ -290,7 +292,8 @@
         "zip": "04071",
         "phone": "(207) 555-0154",
         "email": "maria.fairbanks@example.com",
-        "date_of_birth": "1965-03-05"
+        "date_of_birth": "1965-03-05",
+        "entity_type": "person"
       },
       "attorney": {
         "full_name": "Ingrid B. Kingsley",
@@ -304,7 +307,9 @@
         "phone": "(207) 555-0128",
         "email": "ingrid.kingsley@example.com",
         "date_of_birth": "1966-03-10",
-        "bar_number": "7867"
+        "bar_number": "7867",
+        "organization_name": "Hawthorne Legal Group",
+        "entity_type": "person"
       }
     },
     "party": {
@@ -319,6 +324,7 @@
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
       "date_of_birth": "1969-04-20",
+      "entity_type": "person",
       "signature": "Grace C. Roe"
     },
     "facts": {

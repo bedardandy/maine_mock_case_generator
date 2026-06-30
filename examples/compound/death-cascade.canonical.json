@@ -13,7 +13,8 @@
         "court_address": "121 State Street, Augusta, ME 04089",
         "case_type": "decedent_estate",
         "filing_date": "2026-03-30",
-        "event_date": "2025-11-03"
+        "event_date": "2025-11-03",
+        "firm_name": "Hawthorne Legal Group"
       },
       "parties": {
         "decedent": {
@@ -21,7 +22,8 @@
           "first_name": "Nadia",
           "middle_name": "P",
           "last_name": "Loe",
-          "date_of_birth": "1960-01-25"
+          "date_of_birth": "1960-01-25",
+          "entity_type": "person"
         },
         "personal_representative": {
           "full_name": "Felix M. Coe",
@@ -34,7 +36,8 @@
           "zip": "04028",
           "phone": "(207) 555-0104",
           "email": "felix.coe@example.com",
-          "date_of_birth": "1974-08-03"
+          "date_of_birth": "1974-08-03",
+          "entity_type": "person"
         },
         "attorney": {
           "full_name": "Nadia E. Danforth",
@@ -48,14 +51,17 @@
           "phone": "(207) 555-0124",
           "email": "nadia.danforth@example.net",
           "date_of_birth": "1970-04-29",
-          "bar_number": "5753"
+          "bar_number": "5753",
+          "organization_name": "Hawthorne Legal Group",
+          "entity_type": "person"
         },
         "plaintiff": {
           "full_name": "Nadia P. Loe",
           "first_name": "Nadia",
           "middle_name": "P",
           "last_name": "Loe",
-          "date_of_birth": "1960-01-25"
+          "date_of_birth": "1960-01-25",
+          "entity_type": "person"
         }
       },
       "party": {
@@ -70,6 +76,7 @@
         "phone": "(207) 555-0104",
         "email": "felix.coe@example.com",
         "date_of_birth": "1974-08-03",
+        "entity_type": "person",
         "signature": "Felix M. Coe"
       },
       "facts": {
@@ -101,7 +108,8 @@
         "court_address": "127 State Street, Portland, ME 04019",
         "case_type": "estate_tax",
         "filing_date": "2026-05-18",
-        "event_date": "2025-05-19"
+        "event_date": "2025-05-19",
+        "firm_name": "Kingsley & Associates"
       },
       "parties": {
         "decedent": {
@@ -109,7 +117,8 @@
           "first_name": "Nadia",
           "middle_name": "P",
           "last_name": "Loe",
-          "date_of_birth": "1960-01-25"
+          "date_of_birth": "1960-01-25",
+          "entity_type": "person"
         },
         "personal_representative": {
           "full_name": "Felix M. Coe",
@@ -122,7 +131,8 @@
           "zip": "04028",
           "phone": "(207) 555-0104",
           "email": "felix.coe@example.com",
-          "date_of_birth": "1974-08-03"
+          "date_of_birth": "1974-08-03",
+          "entity_type": "person"
         },
         "attorney": {
           "full_name": "Maria K. Kingsley",
@@ -136,14 +146,17 @@
           "phone": "(207) 555-0135",
           "email": "maria.kingsley@example.com",
           "date_of_birth": "1981-12-22",
-          "bar_number": "6473"
+          "bar_number": "6473",
+          "organization_name": "Kingsley & Associates",
+          "entity_type": "person"
         },
         "plaintiff": {
           "full_name": "Nadia P. Loe",
           "first_name": "Nadia",
           "middle_name": "P",
           "last_name": "Loe",
-          "date_of_birth": "1960-01-25"
+          "date_of_birth": "1960-01-25",
+          "entity_type": "person"
         }
       },
       "party": {
@@ -158,6 +171,7 @@
         "phone": "(207) 555-0104",
         "email": "felix.coe@example.com",
         "date_of_birth": "1974-08-03",
+        "entity_type": "person",
         "signature": "Felix M. Coe"
       },
       "facts": {
@@ -194,7 +208,8 @@
         "court_type": "Probate Court",
         "court_address": "121 State Street, Augusta, ME 04089",
         "case_type": "guardianship",
-        "filing_date": "2026-03-27"
+        "filing_date": "2026-03-27",
+        "firm_name": "Birchwood & Calloway LLP"
       },
       "parties": {
         "petitioner": {
@@ -208,7 +223,8 @@
           "zip": "04048",
           "phone": "(207) 555-0112",
           "email": "diego.jessup@example.net",
-          "date_of_birth": "1956-02-02"
+          "date_of_birth": "1956-02-02",
+          "entity_type": "person"
         },
         "respondent": {
           "full_name": "Felix M. Coe",
@@ -221,7 +237,8 @@
           "zip": "04028",
           "phone": "(207) 555-0104",
           "email": "felix.coe@example.com",
-          "date_of_birth": "1974-08-03"
+          "date_of_birth": "1974-08-03",
+          "entity_type": "person"
         },
         "child_1": {
           "full_name": "Rosa B. Ellsworth",
@@ -234,7 +251,8 @@
           "zip": "04038",
           "phone": "(207) 555-0153",
           "email": "rosa.ellsworth@example.com",
-          "date_of_birth": "2022-10-20"
+          "date_of_birth": "2022-10-20",
+          "entity_type": "person"
         },
         "attorney": {
           "full_name": "Wesley J. Poe",
@@ -248,7 +266,9 @@
           "phone": "(207) 555-0175",
           "email": "wesley.poe@example.com",
           "date_of_birth": "1980-11-18",
-          "bar_number": "5106"
+          "bar_number": "5106",
+          "organization_name": "Birchwood & Calloway LLP",
+          "entity_type": "person"
         },
         "plaintiff": {
           "full_name": "Diego F. Jessup",
@@ -261,7 +281,8 @@
           "zip": "04048",
           "phone": "(207) 555-0112",
           "email": "diego.jessup@example.net",
-          "date_of_birth": "1956-02-02"
+          "date_of_birth": "1956-02-02",
+          "entity_type": "person"
         },
         "defendant": {
           "full_name": "Felix M. Coe",
@@ -274,7 +295,8 @@
           "zip": "04028",
           "phone": "(207) 555-0104",
           "email": "felix.coe@example.com",
-          "date_of_birth": "1974-08-03"
+          "date_of_birth": "1974-08-03",
+          "entity_type": "person"
         }
       },
       "party": {
@@ -289,6 +311,7 @@
         "phone": "(207) 555-0112",
         "email": "diego.jessup@example.net",
         "date_of_birth": "1956-02-02",
+        "entity_type": "person",
         "signature": "Diego F. Jessup"
       },
       "facts": {

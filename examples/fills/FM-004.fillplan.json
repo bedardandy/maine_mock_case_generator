@@ -425,7 +425,8 @@
       "court_address": "127 State Street, Portland, ME 04019",
       "case_type": "family_matters",
       "filing_date": "2026-02-13",
-      "event_date": "2025-04-20"
+      "event_date": "2025-04-20",
+      "firm_name": "Ellsworth Advocates PC"
     },
     "parties": {
       "plaintiff": {
@@ -439,7 +440,8 @@
         "zip": "04047",
         "phone": "(207) 555-0174",
         "email": "olivia.ellsworth@example.com",
-        "date_of_birth": "1969-04-20"
+        "date_of_birth": "1969-04-20",
+        "entity_type": "person"
       },
       "defendant": {
         "full_name": "Maria Q. Fairbanks",
@@ -452,28 +454,32 @@
         "zip": "04071",
         "phone": "(207) 555-0154",
         "email": "maria.fairbanks@example.com",
-        "date_of_birth": "1965-03-05"
+        "date_of_birth": "1965-03-05",
+        "entity_type": "person"
       },
       "child_1": {
         "full_name": "Ingrid B. Kingsley",
         "first_name": "Ingrid",
         "middle_name": "B",
         "last_name": "Kingsley",
-        "date_of_birth": "2013-01-26"
+        "date_of_birth": "2013-01-26",
+        "entity_type": "person"
       },
       "child_2": {
         "full_name": "Marcus W. Roe",
         "first_name": "Marcus",
         "middle_name": "W",
         "last_name": "Roe",
-        "date_of_birth": "2021-05-29"
+        "date_of_birth": "2021-05-29",
+        "entity_type": "person"
       },
       "child_3": {
         "full_name": "Omar W. Loe",
         "first_name": "Omar",
         "middle_name": "W",
         "last_name": "Loe",
-        "date_of_birth": "2022-10-20"
+        "date_of_birth": "2022-10-20",
+        "entity_type": "person"
       },
       "attorney": {
         "full_name": "Diego F. Jessup",
@@ -487,7 +493,9 @@
         "phone": "(207) 555-0112",
         "email": "diego.jessup@example.net",
         "date_of_birth": "1956-02-02",
-        "bar_number": "1976"
+        "bar_number": "1976",
+        "organization_name": "Ellsworth Advocates PC",
+        "entity_type": "person"
       }
     },
     "party": {
@@ -502,6 +510,7 @@
       "phone": "(207) 555-0174",
       "email": "olivia.ellsworth@example.com",
       "date_of_birth": "1969-04-20",
+      "entity_type": "person",
       "signature": "Olivia B. Ellsworth"
     },
     "facts": {

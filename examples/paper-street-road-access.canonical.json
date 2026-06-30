@@ -8,7 +8,8 @@
     "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "real_property",
     "filing_date": "2025-07-17",
-    "event_date": "1949-06-15"
+    "event_date": "1949-06-15",
+    "firm_name": "Ellsworth Advocates PC"
   },
   "parties": {
     "plaintiff": {
@@ -22,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Maria Q. Fairbanks",
@@ -35,7 +37,8 @@
       "zip": "04071",
       "phone": "(207) 555-0154",
       "email": "maria.fairbanks@example.com",
-      "date_of_birth": "1965-03-05"
+      "date_of_birth": "1965-03-05",
+      "entity_type": "person"
     },
     "defendant_2": {
       "full_name": "Coastal Outfitters LLC",
@@ -43,7 +46,9 @@
       "city": "Gorham",
       "state": "ME",
       "zip": "04038",
-      "phone": "(207) 555-0153"
+      "phone": "(207) 555-0153",
+      "organization_name": "Coastal Outfitters LLC",
+      "entity_type": "organization"
     },
     "other_party": {
       "full_name": "Town of Mooselook",
@@ -51,7 +56,9 @@
       "city": "Yarmouth",
       "state": "ME",
       "zip": "04074",
-      "phone": "(207) 555-0139"
+      "phone": "(207) 555-0139",
+      "organization_name": "Town of Mooselook",
+      "entity_type": "organization"
     },
     "attorney": {
       "full_name": "Felix D. Moe",
@@ -65,7 +72,9 @@
       "phone": "(207) 555-0112",
       "email": "felix.moe@example.net",
       "date_of_birth": "1956-02-02",
-      "bar_number": "1976"
+      "bar_number": "1976",
+      "organization_name": "Ellsworth Advocates PC",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -80,6 +89,7 @@
     "phone": "(207) 555-0174",
     "email": "grace.roe@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Grace C. Roe"
   },
   "facts": {
