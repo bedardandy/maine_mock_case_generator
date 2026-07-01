@@ -38,11 +38,13 @@ identical regardless of how a matter was produced.
 |--------|----------------|
 | `paths.py` | Canonical filesystem locations. |
 | `pools.py` | Seeded, *fictional* value factory (names, addresses, fiction-range phones/emails, orgs, banks, credentials). |
-| `dsl.py` | The tiny declarative DSL (`pick`, `pick_n`, `date_between`, `int_between`, templates) that lets scenarios stay data. |
+| `dsl.py` | The tiny declarative DSL (`pick`, `pick_n`, `date_between`, `date_offset` for real date arithmetic, `int_between` with optional step, templates) that lets scenarios stay data. |
 | `scenarios.py` | Discover/load `scenarios/<id>/scenario.yaml`. |
 | `engine.py` | `generate_matter(scenario_id, seed)` — assembles every section. |
 | `project.py` | `project_to_canonical(matter)` — the downstream seam. |
 | `schema.py` | Load schemas; `validate_matter` / `validate_canonical`. |
+| `stress.py` | Deterministic mutators that turn any matter into schema-valid hostile variants (see `tools/stress.py`). |
+| `cli.py` | The `mmcg` console entry point installed by `pip install -e .`. |
 
 ## Adding a scenario
 
@@ -50,6 +52,18 @@ Drop a new `scenarios/<id>/scenario.yaml` (copy an existing one as a template). 
 changes are needed — `engine.py` interprets the scenario declaratively. Run
 `python tools/smoke.py --scenarios <id> -v` to verify. This "add a file, not code"
 property is what makes the generator quick to adapt to new practice areas or states.
+
+Two authoring notes:
+
+- **Authored parties.** A role may pin exact party fields with
+  `roles: [{key: plaintiff, party: {first_name: "José-María", ...}}]` — nothing is
+  auto-filled, values may themselves be DSL specs, and `full_name` is derived from the
+  name parts (including `suffix`) when omitted. The `edge-*` pack uses this to keep
+  hostile values byte-stable across seeds while everything else varies.
+- **Computed dates.** `facts` resolve sequentially, so later facts can reference earlier
+  ones, and `{date_offset: {from: "{closing_date}", days: 45}}` yields real statutory
+  arithmetic (the 1031 45/180-day clock, the § 6111 35-day cure period) instead of
+  hand-picked windows that can drift.
 
 ## Design choices
 

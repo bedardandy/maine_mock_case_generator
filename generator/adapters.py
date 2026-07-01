@@ -102,10 +102,19 @@ def to_tax_case(canonical: dict, matter: dict) -> dict:
     return tax
 
 
+# Grantor/grantee role fallbacks: deed-style scenarios use transferor/transferee,
+# the closing-suite scenarios use seller/buyer — both drive the same RETTD.
+_RE_ROLE_FALLBACKS = {
+    "transferor": ("transferor", "seller"),
+    "transferee": ("transferee", "buyer"),
+}
+
+
 def to_real_estate_case(canonical: dict, matter: dict) -> dict:
     """Translate a canonical case into the real-estate transfer namespace (ME-RETTD):
     property / transferor / transferee / facts. Reads grantor/grantee from the
-    `transferor` and `transferee` party roles and the property from facts.
+    `transferor`/`transferee` party roles (falling back to `seller`/`buyer`) and the
+    property from facts.
     """
     parties = canonical.get("parties", {})
     facts = dict(canonical.get("facts", {}))
@@ -113,7 +122,8 @@ def to_real_estate_case(canonical: dict, matter: dict) -> dict:
     jurisdiction = matter.get("matter", {}).get("jurisdiction", {})
 
     def party_block(role: str) -> dict:
-        party = parties.get(role, {})
+        key = next((k for k in _RE_ROLE_FALLBACKS[role] if parties.get(k)), role)
+        party = parties.get(key, {})
         return {
             "name": party.get("full_name", ""),
             "address": party.get("address", ""),
@@ -121,7 +131,7 @@ def to_real_estate_case(canonical: dict, matter: dict) -> dict:
             "mailing_city": party.get("city", ""),
             "mailing_state": party.get("state", ""),
             "mailing_zip": party.get("zip", ""),
-            "ssn_or_ein": _fiction_tin(m_parties.get(role, {})),
+            "ssn_or_ein": _fiction_tin(m_parties.get(key, {})),
         }
 
     re_case = {

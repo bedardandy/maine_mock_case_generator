@@ -1,0 +1,71 @@
+{
+  "matter": {
+    "docket_number": "ARO-CV-2026-664",
+    "case_id": "MMC-2026-195119",
+    "court_county": "Aroostook",
+    "court_location": "Caribou",
+    "court_type": "Superior Court",
+    "case_type": "contract_dispute",
+    "filing_date": "2026-02-25",
+    "event_date": "2025-10-09"
+  },
+  "parties": {
+    "plaintiff": {
+      "full_name": "José-María Düböis O'Callaghan-Núñez Jr.",
+      "first_name": "José-María",
+      "middle_name": "Düböis",
+      "last_name": "O'Callaghan-Núñez",
+      "address": "17 Bramblewood Lane, Unit 4-B",
+      "city": "Presque Isle",
+      "state": "ME",
+      "zip": "04769",
+      "phone": "(207) 555-0142",
+      "email": "jose-maria.ocallaghan@example.com",
+      "date_of_birth": "1961-11-02"
+    },
+    "defendant": {
+      "full_name": "Ändersson, Fitzwilliam & Sønsteby Timber Holdings, LLC",
+      "address": "1 Rue de l'Église, Suite 300",
+      "city": "Madawaska",
+      "state": "ME",
+      "zip": "04756",
+      "phone": "(207) 555-0169"
+    },
+    "attorney": {
+      "full_name": "Olivia B. Ellsworth",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20",
+      "bar_number": "2408"
+    }
+  },
+  "party": {
+    "full_name": "José-María Düböis O'Callaghan-Núñez Jr.",
+    "first_name": "José-María",
+    "middle_name": "Düböis",
+    "last_name": "O'Callaghan-Núñez",
+    "address": "17 Bramblewood Lane, Unit 4-B",
+    "city": "Presque Isle",
+    "state": "ME",
+    "zip": "04769",
+    "phone": "(207) 555-0142",
+    "email": "jose-maria.ocallaghan@example.com",
+    "date_of_birth": "1961-11-02",
+    "signature": "José-María Düböis O'Callaghan-Núñez Jr."
+  },
+  "facts": {
+    "contract_description": "a delivered-sale contract for 500 cords of seasoned firewood",
+    "contract_amount": 69405,
+    "delivery_deadline": "2025-10-09",
+    "cords_delivered": 141,
+    "governing_clause": "paragraph 14 — the “force majeure” clause",
+    "demand_letter_date": "2025-10-30"
+  }
+}

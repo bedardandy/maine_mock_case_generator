@@ -1,6 +1,6 @@
 {
   "matter": {
-    "case_id": "MMC-2026-185831",
+    "case_id": "MMC-2026-832948",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Maine Registry of Deeds / qualified intermediary escrow",
@@ -90,11 +90,11 @@
     "replacement_debt": 976437,
     "exchange_type": "a delayed exchange identifying under the three-property rule",
     "relinquished_closing_date": "2026-02-19",
-    "identification_deadline": "2026-04-02",
-    "exchange_deadline": "2026-08-12",
-    "replacement_closing_date": "2026-07-02",
-    "identification_rule": "the three-property rule",
-    "boot_risk": "no expected boot if value and debt are fully replaced",
+    "identification_deadline": "2026-04-05",
+    "exchange_deadline": "2026-08-18",
+    "replacement_closing_date": "2026-07-12",
+    "identification_rule": "the 200% fair-market-value rule",
+    "boot_risk": "cash boot if the replacement price is below the relinquished price",
     "related_party": "an unrelated seller (no related-party issue)",
     "qi_role": "a qualified intermediary holding the net proceeds so the exchangor never has actual or constructive receipt",
     "deed_type": "warranty deed"

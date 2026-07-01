@@ -1,0 +1,116 @@
+id: edge-max-household
+title: "{petitioner_full_name} v. {respondent_full_name} (divorce, six minor children)"
+practice_area: family
+case_type: divorce
+status: intake
+docket_prefix: FM
+
+# EDGE-CASE PACK — length and cardinality stress.
+# Very long compound names (44+ characters), a long multi-part street address, and the
+# maximum six-child household. A filler with fixed-width PDF fields, a caption that
+# assumes short names, or child-table logic that stops at child_3 will fail here first.
+downstream:
+  repo: maine-court-forms
+  example_forms: [FM-004, FM-050]
+
+jurisdiction:
+  state: ME
+  county: Washington
+  court_type: District Court
+
+dates:
+  filing_date: {date_between: ["2026-02-01", "2026-05-01"]}
+  event_date: "{separation_date}"
+
+parties:
+  client_role: petitioner
+  attorney: true
+  children: 6
+  roles:
+    - key: petitioner
+      label: "Petitioner"
+      party:
+        entity_type: person
+        first_name: "Alexandrina-Wilhelmina"
+        middle_name: "Montgomery"
+        last_name: "Featherstonehaugh-Cholmondeley-Smythe"
+        address: "1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B"
+        city: "Machias"
+        state: "ME"
+        zip: "04654"
+        phone: "(207) 555-0128"
+        email: "alexandrina.featherstonehaugh@example.org"
+        date_of_birth: "1987-04-12"
+        ssn_last4: "6120"
+    - key: respondent
+      label: "Respondent"
+      party:
+        entity_type: person
+        first_name: "Bartholomew-Constantine"
+        middle_name: "Worthington"
+        last_name: "Featherstonehaugh-Cholmondeley-Smythe"
+        address: "1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B"
+        city: "Machias"
+        state: "ME"
+        zip: "04654"
+        phone: "(207) 555-0129"
+        email: "bartholomew.featherstonehaugh@example.org"
+        date_of_birth: "1984-09-30"
+        ssn_last4: "3348"
+
+facts:
+  marriage_date: {date_between: ["2009-05-01", "2012-10-01"]}
+  marriage_city: "Machias"
+  marriage_state: "ME"
+  separation_date: {date_between: ["2025-08-01", "2025-12-31"]}
+  grounds: "irreconcilable marital differences"
+  num_minor_children: 6
+  marital_home: "the family residence at 1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B, Machias, together with the adjoining woodlot conveyed by the respondent's grandparents"
+  petitioner_employer: "Downeast Regional Consolidated School District Transportation Cooperative"
+  petitioner_income: {int_between: [38000, 52000, 500]}
+  respondent_employer: "Passamaquoddy Bay Aquaculture Research & Development Consortium, LLLP"
+  respondent_income: {int_between: [61000, 88000, 500]}
+  child_support_worksheet: "Maine child support worksheet with six children on the table of basic support entitlements"
+
+fact_pattern:
+  summary: "{petitioner_full_name} petitions to divorce {respondent_full_name} on grounds of {grounds}; the parties share six minor children and {marital_home}."
+  narrative:
+    - "{petitioner_full_name} and {respondent_full_name} married on {marriage_date} in {marriage_city}, Maine, and separated on {separation_date}. Six minor children live in the household: {children_names}."
+    - "The petitioner works for {petitioner_employer} earning about ${petitioner_income} per year; the respondent works for {respondent_employer} earning about ${respondent_income}. The principal asset is {marital_home}."
+    - "Parental rights and responsibilities, a six-child support calculation, and division of the home and woodlot are the contested pieces. Counsel {attorney_full_name} of {attorney_firm} represents the petitioner."
+  undisputed:
+    - "The parties married on {marriage_date} and separated on {separation_date}."
+    - "All six children ({children_names}) reside in the marital home."
+  disputed:
+    - "Primary residence and the parent-child contact schedule for six children."
+    - "Whether the woodlot is marital or the respondent's non-marital inheritance."
+
+interview:
+  interviewer: "Family Law Attorney"
+  interviewee_role: petitioner
+  exchanges:
+    - {topic: "Household", question: "Tell me about the children.", answer: "There are six: {children_names}. They all live with me in the apartment."}
+    - {topic: "Income", question: "What do you both earn?", answer: "I make about ${petitioner_income} at {petitioner_employer}; he makes about ${respondent_income}."}
+    - {topic: "Home", question: "What happens to the house?", answer: "I want to keep {marital_home} so the children stay in their schools."}
+
+issues:
+  count: {min: 2, max: 3}
+  pool:
+    - {issue: "Parental rights and responsibilities for six minor children", category: family, governing_law: "19-A M.R.S. § 1653", sub_questions: ["What allocation serves the children's best interests?"], strength: moderate}
+    - {issue: "Child support above the standard worksheet table", category: family, governing_law: "19-A M.R.S. § 2006", sub_questions: ["How does the six-child table apply to combined income?"], strength: strong}
+    - {issue: "Marital vs. non-marital character of the woodlot", category: property, governing_law: "19-A M.R.S. § 953", sub_questions: ["Was the grandparents' conveyance a gift to one spouse or both?"], strength: moderate}
+
+evidence:
+  count: {min: 2, max: 3}
+  pool:
+    - {title: "Marriage certificate", type: public_record, party: petitioner, description: "Certificate of the {marriage_date} marriage in {marriage_city}."}
+    - {title: "Pay records", type: financial_record, party: petitioner, description: "Both parties' recent pay stubs supporting the support worksheet."}
+    - {title: "Woodlot deed", type: document, party: respondent, description: "The grandparents' conveyance relied on for the non-marital claim."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  amounts:
+    - {label: "Petitioner annual income", amount: {int_between: [38000, 52000, 500]}, basis: "Wages from {petitioner_employer}."}
+    - {label: "Respondent annual income", amount: {int_between: [61000, 88000, 500]}, basis: "Wages from {respondent_employer}."}
+    - {label: "Marital home assessed value", amount: {int_between: [180000, 320000, 5000]}, basis: "Municipal assessment of the residence and woodlot."}

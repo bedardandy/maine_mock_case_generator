@@ -88,7 +88,14 @@
       "dir": "integration/transactional-tax-forms/ME-RETTD",
       "profile": "real_estate",
       "practice_areas": ["real_estate"],
-      "best_scenario": "real-estate-transfer"
+      "best_scenario": "real-estate-transfer",
+      "alt_scenarios": [
+        "residential-purchase-sale",
+        "condo-unit-sale",
+        "commercial-property-sale",
+        "subdivision-development-sale",
+        "resource-extraction-sale"
+      ]
     }
   }
 }

@@ -1,9 +1,17 @@
-"""Shared filesystem paths for the mock case generator."""
+"""Shared filesystem paths for the mock case generator.
+
+The generator is data-driven: ``catalog/``, ``scenarios/``, ``compound/``, and
+``integration/`` live beside the package in the repo checkout. Install with
+``pip install -e .`` (or run from a clone) so these resolve; a consuming repo can
+also point ``MOCK_CASE_GENERATOR_ROOT`` at a checkout explicitly.
+"""
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+_env_root = os.environ.get("MOCK_CASE_GENERATOR_ROOT")
+REPO_ROOT = Path(_env_root).resolve() if _env_root else Path(__file__).resolve().parents[1]
 CATALOG_DIR = REPO_ROOT / "catalog"
 SCENARIOS_DIR = REPO_ROOT / "scenarios"
 COMPOUND_DIR = REPO_ROOT / "compound"

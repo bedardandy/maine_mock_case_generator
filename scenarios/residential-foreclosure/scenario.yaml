@@ -1,0 +1,243 @@
+id: residential-foreclosure
+title: "{lender_full_name} v. {borrower_full_name} (residential foreclosure)"
+practice_area: real_estate
+case_type: residential_foreclosure
+status: active
+docket_prefix: RE
+
+# A deep, litigation-posture matter: judicial foreclosure of an owner-occupied home,
+# defended. Maine is a judicial-foreclosure state with a mandatory pre-suit notice of
+# right to cure (14 M.R.S. § 6111) and a Foreclosure Diversion Program mediation track
+# (14 M.R.S. § 6321-A; M.R. Civ. P. 93). The statutory clock is computed, not sampled:
+# default -> § 6111 notice (+45 days) -> 35-day cure deadline -> complaint. The matter
+# carries litigation, communications, and loss-mitigation facts so a document system
+# sees the whole arc: default notice, mediation, modification terms, answer defenses.
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: District Court
+
+dates:
+  filing_date: {date_between: ["2026-01-15", "2026-04-15"]}
+  event_date: "{default_date}"
+
+parties:
+  client_role: borrower
+  attorney: true
+  roles:
+    - key: lender
+      label: "Plaintiff (foreclosing lender)"
+      entity: organization
+    - key: borrower
+      label: "Defendant (homeowner / borrower, the client)"
+    - key: co_borrower
+      label: "Defendant (co-borrower spouse)"
+
+facts:
+  property_address: {pick: ["31 Birchwood Terrace", "218 River Road", "7 Kestrel Lane", "112 Meetinghouse Hill Road", "46 Quarry Street"]}
+  property_town: {pick: ["Lewiston", "Augusta", "Waterville", "Skowhegan", "Biddeford", "Bangor"]}
+  property_county: "{county}"
+  origination_date: {date_between: ["2016-03-01", "2021-06-30"]}
+  original_principal: {int_between: [140000, 320000, 1000]}
+  interest_rate: {pick: ["3.875%", "4.250%", "4.625%", "5.125%", "6.500%"]}
+  monthly_payment: {int_between: [1150, 2450]}
+  loan_type: {pick: ["conventional 30-year fixed", "FHA-insured 30-year fixed", "VA-guaranteed 30-year fixed", "USDA rural development"]}
+  hardship: {pick: ["a layoff from the paper mill followed by lower-paying work", "a cancer diagnosis and months of reduced hours", "a divorce that removed the second income", "an unreimbursed furnace and roof failure the same winter"]}
+  months_delinquent: {int_between: [7, 14]}
+  # Statutory pre-suit sequence (14 M.R.S. § 6111), computed backward from the filing
+  # date so it always holds: notice -> 35-day right to cure -> (20-45 days) -> complaint,
+  # with the missed payment 45-90 days before the notice.
+  notice_of_default_date: {date_offset: {from: "{filing_date}", days: {int_between: [-80, -55]}}}
+  right_to_cure_deadline: {date_offset: {from: "{notice_of_default_date}", days: 35}}
+  default_date: {date_offset: {from: "{notice_of_default_date}", days: {int_between: [-90, -45]}}}
+  arrearage_at_notice: {int_between: [9500, 32000]}
+  principal_balance: {int_between: [118000, 295000, 500]}
+  escrow_shortage: {int_between: [1800, 6400]}
+  reinstatement_amount: {int_between: [11000, 39000]}
+  property_value_estimate: {int_between: [175000, 380000, 5000]}
+  payment_dispute: {pick: ["two payments the servicer applied to a suspense account instead of the note", "a force-placed insurance charge added after the borrower's own policy lapsed for nine days", "an escrow re-analysis that nearly doubled the payment without a clear statement"]}
+  servicing_transfer: {pick: ["the loan was service-transferred mid-default and the payment history arrived incomplete", "no servicing transfer occurred", "the loan was sold into a securitized trust two years after origination"]}
+  mediation_session_1: {date_offset: {from: "{filing_date}", days: {int_between: [50, 80]}}}
+  mediation_session_2: {date_offset: {from: "{mediation_session_1}", days: {int_between: [35, 60]}}}
+  modification_offer: {pick: ["a 40-year recast at 5.000% capitalizing the arrears", "an FHA-HAMP partial claim deferring the arrears to a junior lien", "a trial payment plan of three months at a reduced payment, then permanent modification", "a capitalization and term extension keeping the payment within 31% of gross income"]}
+  borrower_income_now: {int_between: [3100, 5600]}
+
+third_parties:
+  count: {min: 3, max: 5}
+  pool:
+    - {type: business_entity, name_kind: organization, role: "Loan servicer", relevance: "Services the note for the plaintiff; source of the payment history and the § 6111 notice."}
+    - {type: other, name_kind: person, role: "Foreclosure Diversion Program mediator", relevance: "Conducts the court-supervised mediation sessions under M.R. Civ. P. 93."}
+    - {type: other, name_kind: person, role: "HUD-approved housing counselor", relevance: "Prepared the borrower's loss-mitigation package and budget."}
+    - {type: business_entity, name_kind: organization, role: "Title company", relevance: "Ran the foreclosure title search and identified parties in interest."}
+    - {type: government_agency, name: "Maine Bureau of Consumer Credit Protection", role: "Regulator", relevance: "Received the lender's § 6111 notice filing and the borrower's servicing complaint."}
+
+fact_pattern:
+  summary: "{lender_full_name} seeks to foreclose the {loan_type} mortgage on {borrower_full_name}'s home at {property_address}, {property_town}; the borrowers, about {months_delinquent} months delinquent after {hardship}, contest the § 6111 notice and {payment_dispute}, while pursuing {modification_offer} in the Foreclosure Diversion Program."
+  narrative:
+    - "{borrower_full_name} and {co_borrower_full_name} bought their home at {property_address}, {property_town}, {county} County with a {loan_type} loan of ${original_principal} at {interest_rate}, originated {origination_date}, payment about ${monthly_payment} monthly. After {hardship}, they missed the {default_date} payment and are now roughly {months_delinquent} months behind, owing about ${principal_balance} in principal with an escrow shortage near ${escrow_shortage}."
+    - "The servicer issued a notice of right to cure dated {notice_of_default_date} stating an arrearage of ${arrearage_at_notice} and a cure deadline of {right_to_cure_deadline} — thirty-five days, as 14 M.R.S. § 6111 requires. The borrowers could not raise the ${reinstatement_amount} reinstatement figure, and {lender_full_name} filed its foreclosure complaint on {filing_date} in {court_location} District Court. Complicating the ledger, {payment_dispute}; also, {servicing_transfer}."
+    - "The case entered the Foreclosure Diversion Program. At the first mediation on {mediation_session_1}, the borrowers submitted a complete loss-mitigation package showing current household income of about ${borrower_income_now} per month; the servicer's review produced {modification_offer}, to be finalized at the {mediation_session_2} session. Counsel {attorney_full_name} of {attorney_firm} has answered, preserving defenses that the § 6111 notice misstates the amount due and that the plaintiff must prove ownership of both note and mortgage."
+    - "The home is worth roughly ${property_value_estimate}, so equity — and Maine's post-Greenleaf standing doctrine — give the borrowers real leverage: if mediation fails, the lender must prove the entire chain of the note's negotiation at trial."
+  undisputed:
+    - "The borrowers signed the note and mortgage on {origination_date} for ${original_principal}."
+    - "No payment has been made since {default_date}."
+    - "A notice of right to cure issued {notice_of_default_date} with a deadline of {right_to_cure_deadline}."
+  disputed:
+    - "Whether the § 6111 notice states the amount due accurately given {payment_dispute}."
+    - "Whether the plaintiff owns both the note and the mortgage and can prove the chain of transfers."
+    - "The correct arrearage and reinstatement figures."
+  timeline:
+    - {date: "{origination_date}", event: "Note and mortgage signed: ${original_principal} at {interest_rate}, {loan_type}."}
+    - {date: "{default_date}", event: "First missed payment after {hardship}."}
+    - {date: "{notice_of_default_date}", event: "Notice of right to cure issued under 14 M.R.S. § 6111 stating ${arrearage_at_notice} due."}
+    - {date: "{right_to_cure_deadline}", event: "35-day cure period expires without reinstatement."}
+    - {date: "{filing_date}", event: "Foreclosure complaint filed; borrowers request Foreclosure Diversion Program mediation."}
+    - {date: "{mediation_session_1}", event: "First FDP mediation: complete loss-mitigation package submitted."}
+    - {date: "{mediation_session_2}", event: "Second FDP mediation scheduled to finalize {modification_offer}."}
+
+interview:
+  interviewer: "Foreclosure Defense Attorney"
+  interviewee_role: borrower
+  exchanges:
+    - {topic: "Hardship", question: "What happened that you fell behind?", answer: "{hardship}. We kept paying what we could until {default_date}, then it just wasn't possible."}
+    - {topic: "The notice", question: "What did the cure notice say?", answer: "It came dated {notice_of_default_date} and said we owed ${arrearage_at_notice} by {right_to_cure_deadline}. We think that number is wrong because of {payment_dispute}."}
+    - {topic: "Ledger", question: "Tell me about the payment dispute.", answer: "There's {payment_dispute}. We've asked the servicer for a full history and never gotten a straight answer — and {servicing_transfer}."}
+    - {topic: "Income", question: "What can you afford now?", answer: "About ${borrower_income_now} a month comes in. The counselor says that supports a modified payment if they capitalize the arrears."}
+    - {topic: "Goal", question: "What outcome do you want?", answer: "To keep the house. We want the modification — {modification_offer} — not a sale on the courthouse steps."}
+    - {topic: "Mediation", question: "Where are we in the process?", answer: "First session was {mediation_session_1}; the second is set for {mediation_session_2} to finalize the offer."}
+
+objectives:
+  goals:
+    - "Keep the home through a sustainable loan modification finalized in FDP mediation."
+    - "Force an accurate accounting resolving {payment_dispute}."
+    - "Preserve § 6111 and standing defenses as leverage if mediation fails."
+  priorities:
+    - "The modification — {modification_offer} — on terms within the household budget."
+    - "No waiver of defenses while mediation proceeds."
+  risk_tolerance: low
+  desired_outcomes:
+    - "A permanent modification and dismissal of the foreclosure."
+  non_starters:
+    - "A consent judgment of foreclosure."
+    - "A modification with a payment above what ${borrower_income_now} monthly income supports."
+  constraints:
+    budget: "Limited; representation is partly through the volunteer lawyers project."
+    timeline: "Mediation sessions {mediation_session_1} and {mediation_session_2} control the near term."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Sufficiency of the notice of right to cure", category: real_estate, governing_law: "14 M.R.S. § 6111", sub_questions: ["Does the notice state the amount due accurately?", "Is a defective notice fatal to the action?"], client_position: "The stated arrearage is wrong because of {payment_dispute}.", strength: strong}
+    - {issue: "Plaintiff's ownership of the note and mortgage (standing)", category: real_estate, governing_law: "Bank of America, N.A. v. Greenleaf, 2014 ME 89; 14 M.R.S. § 6321", sub_questions: ["Can the plaintiff prove the chain of the note's negotiation?", "Does a MERS-sourced assignment convey the mortgage?"], strength: strong}
+    - {issue: "Accuracy of the loan accounting", category: consumer, governing_law: "RESPA, 12 C.F.R. § 1024.35 (error resolution); 9-A M.R.S. § 9-305-A", sub_questions: ["Were payments misapplied to suspense?", "Was force-placed insurance proper?"], strength: moderate}
+    - {issue: "Good-faith participation in FDP mediation", category: procedure, governing_law: "14 M.R.S. § 6321-A; M.R. Civ. P. 93(j)", sub_questions: ["Has the servicer engaged with the loss-mitigation package in good faith?"], strength: moderate}
+    - {issue: "Loss-mitigation eligibility and terms", category: consumer, governing_law: "FHA/servicer loss-mitigation waterfall", sub_questions: ["Does ${borrower_income_now} monthly income support the modified payment?"], strength: moderate}
+    - {issue: "Deficiency exposure after any sale", category: real_estate, governing_law: "14 M.R.S. § 6324", sub_questions: ["Would fair-market credit at ${property_value_estimate} eliminate a deficiency?"], strength: weak}
+
+evidence:
+  count: {min: 4, max: 6}
+  pool:
+    - {title: "Note and mortgage", type: contract, party: lender, description: "The {origination_date} note for ${original_principal} and recorded mortgage."}
+    - {title: "Notice of right to cure", type: correspondence, party: lender, description: "The § 6111 notice dated {notice_of_default_date} stating ${arrearage_at_notice}."}
+    - {title: "Complete payment history", type: financial_record, party: borrower, description: "Servicer life-of-loan history showing {payment_dispute}."}
+    - {title: "Loss-mitigation package", type: financial_record, party: borrower, description: "Application, budget, and income documents showing ${borrower_income_now} monthly."}
+    - {title: "Assignment chain and note endorsements", type: document, party: lender, description: "Recorded assignments and the note's allonges — the Greenleaf proof."}
+    - {title: "FDP mediator's report", type: document, party: borrower, description: "Report of the {mediation_session_1} session and the pending {modification_offer}."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  amounts:
+    - {label: "Principal balance", amount: {int_between: [118000, 295000, 500]}, basis: "Unpaid principal per the servicer."}
+    - {label: "Stated arrearage at § 6111 notice", amount: {int_between: [9500, 32000]}, basis: "Amount the cure notice demanded."}
+    - {label: "Escrow shortage", amount: {int_between: [1800, 6400]}, basis: "Advances for taxes and insurance."}
+    - {label: "Reinstatement quote", amount: {int_between: [11000, 39000]}, basis: "Arrears plus fees to reinstate."}
+    - {label: "Estimated property value", amount: {int_between: [175000, 380000, 5000]}, basis: "Broker price opinion."}
+
+litigation:
+  posture: settlement
+  causes_of_action:
+    - {count: 1, claim: "Foreclosure and sale", by: "{lender_full_name}", against: "{borrower_full_name} and {co_borrower_full_name}", governing_law: "14 M.R.S. §§ 6321-6325", elements: ["Existence of the mortgage and breach of its condition", "Ownership of the note and mortgage", "Amount due", "Compliance with 14 M.R.S. § 6111 notice of right to cure", "Priority over parties in interest"], relief_sought: "Judgment of foreclosure and sale; the statutory 90-day redemption period", strength: moderate}
+    - {count: 2, claim: "Breach of note", by: "{lender_full_name}", against: "{borrower_full_name}", governing_law: "11 M.R.S. Article 3-A", elements: ["A negotiable instrument", "Default", "Holder status or entitlement to enforce"], relief_sought: "The debt, interest, and costs", strength: moderate}
+  affirmative_defenses:
+    n: {min: 3, max: 5}
+    pick_n:
+      - {defense: "Defective notice of right to cure", by: "{borrower_full_name}", basis: "The § 6111 notice misstates the amount due given {payment_dispute}; a materially inaccurate notice requires dismissal."}
+      - {defense: "Lack of standing / failure to prove note ownership", by: "{borrower_full_name}", basis: "Under Greenleaf the plaintiff must prove ownership of both note and mortgage; the assignment chain is incomplete after {servicing_transfer}."}
+      - {defense: "Payment and misapplication", by: "{borrower_full_name}", basis: "Payments held in suspense were never applied to the note."}
+      - {defense: "Unclean hands / breach of the duty of good faith", by: "{borrower_full_name}", basis: "The servicer dual-tracked: it advanced foreclosure while the complete loss-mitigation package was under review."}
+      - {defense: "Failure to comply with FHA pre-foreclosure servicing requirements", by: "{borrower_full_name}", basis: "For an FHA loan, 24 C.F.R. § 203.604 face-to-face requirements are a condition precedent."}
+  discovery:
+    n: {min: 2, max: 4}
+    pick_n:
+      - {type: request_for_production, propounding_party: "{borrower_full_name}", responding_party: "{lender_full_name}", served_date: {date_offset: {from: "{filing_date}", days: 30}}, status: responded, description: "Life-of-loan payment history, the collateral file, and the original note for inspection."}
+      - {type: interrogatories, propounding_party: "{borrower_full_name}", responding_party: "{lender_full_name}", served_date: {date_offset: {from: "{filing_date}", days: 30}}, status: objected, description: "Chain of note transfers, suspense-account postings, and force-placed insurance."}
+      - {type: request_for_production, propounding_party: "{lender_full_name}", responding_party: "{borrower_full_name}", served_date: {date_offset: {from: "{filing_date}", days: 45}}, status: responded, description: "Income and hardship documentation supporting loss mitigation."}
+      - {type: deposition, propounding_party: "{borrower_full_name}", responding_party: "the servicer's records custodian", served_date: {date_offset: {from: "{filing_date}", days: 90}}, status: outstanding, description: "Rule 30(b)(6)-style deposition on the boarding of records after {servicing_transfer}."}
+  motions:
+    n: {min: 1, max: 3}
+    pick_n:
+      - {title: "Motion to dismiss for non-compliance with 14 M.R.S. § 6111", type: dispositive, movant: "{borrower_full_name}", filed_date: {date_offset: {from: "{filing_date}", days: 25}}, status: under_advisement, relief: "Dismissal without prejudice for a defective cure notice."}
+      - {title: "Motion to compel the complete payment history", type: discovery, movant: "{borrower_full_name}", filed_date: {date_offset: {from: "{filing_date}", days: 70}}, status: granted, relief: "Production of the full suspense-account ledger."}
+      - {title: "Motion to extend mediation", type: procedural, movant: "{borrower_full_name}", filed_date: {date_offset: {from: "{mediation_session_1}", days: 10}}, status: granted, relief: "A further FDP session to complete the modification review."}
+  docket:
+    - {date: "{filing_date}", entry: "Complaint for foreclosure filed with certificate of § 6111 compliance."}
+    - {date: {date_offset: {from: "{filing_date}", days: 21}}, entry: "Borrowers' answer, affirmative defenses, and request for FDP mediation."}
+    - {date: {date_offset: {from: "{filing_date}", days: 35}}, entry: "Case referred to the Foreclosure Diversion Program; scheduling order issued."}
+    - {date: "{mediation_session_1}", entry: "First mediation session held; mediator's report notes complete package under review."}
+    - {date: "{mediation_session_2}", entry: "Second mediation session scheduled."}
+  trial:
+    jury: false
+    estimated_days: 1
+
+communications:
+  - date: "{notice_of_default_date}"
+    channel: letter
+    from: "Loan servicer"
+    to: "{borrower_full_name} and {co_borrower_full_name}"
+    subject: "Notice of default and right to cure — {property_address}"
+    summary: "The statutory § 6111 cure notice stating the arrearage and 35-day deadline."
+    body: "Your {loan_type} loan is in default; the last payment received was applied to the period before {default_date}. To cure, pay ${arrearage_at_notice} on or before {right_to_cure_deadline}. If you do not cure, we may accelerate the debt and commence foreclosure. You may be eligible for housing counseling assistance; a list of approved counselors is enclosed as required by 14 M.R.S. § 6111."
+    attachments: ["Itemization of amount due", "HUD counselor list"]
+  - date: {date_offset: {from: "{notice_of_default_date}", days: 12}}
+    channel: letter
+    from: "{borrower_full_name}"
+    to: "Loan servicer"
+    subject: "Hardship letter and request for loss-mitigation review"
+    summary: "Borrowers explain the hardship and ask for modification review before the deadline."
+    body: "We fell behind because of {hardship}. Our household now brings in about ${borrower_income_now} per month and we can sustain a modified payment. We dispute the amount in your notice — {payment_dispute} — and we ask that you review us for all loss-mitigation options before taking further action."
+  - date: {date_offset: {from: "{right_to_cure_deadline}", days: 5}}
+    channel: letter
+    from: "{attorney_full_name}"
+    to: "Loan servicer"
+    cc: "{borrower_full_name}"
+    subject: "Notice of representation; error resolution request — {property_address}"
+    summary: "Defense counsel appears, disputes the ledger under RESPA, and preserves § 6111 objections."
+    body: "This office represents {borrower_full_name} and {co_borrower_full_name}. Treat this as a notice of error under 12 C.F.R. § 1024.35: the account reflects {payment_dispute}, and the § 6111 notice's stated arrearage of ${arrearage_at_notice} appears inaccurate. Provide the life-of-loan history and the identity of the note's owner. Any foreclosure filed on a defective notice will be met with a motion to dismiss."
+  - date: {date_offset: {from: "{filing_date}", days: 40}}
+    channel: portal_message
+    from: "Foreclosure Diversion Program mediator"
+    to: "All parties"
+    subject: "FDP mediation scheduled — session 1"
+    summary: "The court's diversion program schedules the first mediation and lists required documents."
+    body: "The first mediation session is scheduled for {mediation_session_1}. The lender shall appear with authority to modify and a current reinstatement figure; the borrowers shall bring a complete loss-mitigation application, proof of income, and a budget prepared with their housing counselor, per M.R. Civ. P. 93."
+  - date: {date_offset: {from: "{mediation_session_1}", days: 14}}
+    channel: email
+    from: "Loan servicer"
+    to: "{attorney_full_name}"
+    cc: "Foreclosure Diversion Program mediator"
+    subject: "Loss-mitigation decision — {property_address}"
+    summary: "The servicer's underwriting produces a modification offer to be finalized at session 2."
+    body: "Underwriting has completed review of the package submitted at mediation. Based on documented income of ${borrower_income_now} per month, the investor approves {modification_offer}. Draft documents will issue before the {mediation_session_2} session; the trial-period payment schedule is attached. The pending motion practice is unaffected until final documents are executed."
+    attachments: ["Modification term sheet", "Trial payment schedule"]
+  - date: {date_offset: {from: "{mediation_session_1}", days: 20}}
+    channel: email
+    from: "{attorney_full_name}"
+    to: "{borrower_full_name}"
+    subject: "The modification offer — what it means"
+    summary: "Counsel explains the offer, the arrears treatment, and the strategy at session 2."
+    body: "The servicer has offered {modification_offer}. On your income of about ${borrower_income_now} a month this is workable, and it resolves the arrearage without a lump sum. We will not dismiss our § 6111 and standing defenses until the permanent modification is signed — if the trial payments go through, the foreclosure is dismissed; if the deal falls apart, we litigate the defective notice and the note's chain of ownership."

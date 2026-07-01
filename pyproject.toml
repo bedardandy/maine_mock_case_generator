@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maine-mock-case-generator"
+version = "0.2.0"
+description = "Deterministic generator of clearly-FICTIONAL Maine legal matters for smoke-testing document-automation pipelines"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "jsonschema>=4.0",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+mcp = ["mcp[cli]>=1.2"]
+
+[project.urls]
+Repository = "https://github.com/bedardandy/maine_mock_case_generator"
+
+[project.scripts]
+mmcg = "generator.cli:main"
+
+[tool.setuptools]
+# The generator is data-driven; scenarios/catalog/integration live beside the package,
+# so the supported install is editable (`pip install -e .`) from a checkout — see
+# docs/integration.md. Only the Python package itself is distributed.
+packages = ["generator"]

@@ -1,0 +1,62 @@
+id: edge-sparse-minimal
+title: "{plaintiff_full_name} v. {defendant_full_name}"
+practice_area: civil
+case_type: contract_dispute
+status: intake
+docket_prefix: CV
+
+# EDGE-CASE PACK — sparseness stress.
+# Two organization parties with no contact details beyond a name, no attorney, no
+# interview, no objectives, no third parties, no financials, and a two-key facts block.
+# Everything optional is absent. A filler that assumes a phone, an email, a DOB, an
+# attorney block, or any particular facts key will fail here first — the generated
+# matter is still fully schema-valid.
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001]
+
+jurisdiction:
+  state: ME
+  county: Somerset
+  court_type: Superior Court
+
+dates:
+  filing_date: {date_between: ["2026-01-10", "2026-06-01"]}
+
+parties:
+  client_role: plaintiff
+  attorney: false
+  roles:
+    - key: plaintiff
+      label: "Plaintiff"
+      entity: organization
+      party:
+        entity_type: organization
+        organization_name: "Kennebec Valley Pallet Co."
+        full_name: "Kennebec Valley Pallet Co."
+    - key: defendant
+      label: "Defendant"
+      entity: organization
+      party:
+        entity_type: organization
+        organization_name: "North Woods Skidding, Inc."
+        full_name: "North Woods Skidding, Inc."
+
+facts:
+  invoice_total: {int_between: [8000, 46000]}
+  invoices_outstanding: {int_between: [2, 7]}
+
+fact_pattern:
+  summary: "{plaintiff_full_name} sues {defendant_full_name} to collect {invoices_outstanding} unpaid invoices totaling ${invoice_total}."
+  narrative:
+    - "{plaintiff_full_name} delivered pallet stock to {defendant_full_name} on open account. {invoices_outstanding} invoices totaling ${invoice_total} remain unpaid despite demand. The plaintiff proceeds without counsel through its bookkeeper as authorized officer."
+
+issues:
+  count: 1
+  pool:
+    - {issue: "Collection on an open account", category: contract, governing_law: "14 M.R.S. § 752 (six-year limitations)", sub_questions: ["Are the invoices within the limitations period?"], strength: strong}
+
+evidence:
+  count: 1
+  pool:
+    - {title: "Unpaid invoices", type: financial_record, party: plaintiff, description: "{invoices_outstanding} invoices totaling ${invoice_total}."}

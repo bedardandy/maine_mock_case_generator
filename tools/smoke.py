@@ -128,19 +128,22 @@ def main() -> int:
         print("-" * 72)
         for fid in forms:
             meta = load_form(fid)["meta"]
-            scenario = meta.get("best_scenario")
-            try:
-                plan = fill_form(generate_matter(scenario, args.seed_base), fid)
-            except Exception as exc:
-                fill_fail += 1
-                print(f"{fid:<10} ERROR: {exc}")
-                continue
-            cov = plan["coverage"]
-            req = "OK" if plan["required"]["ok"] else f"MISSING {plan['required']['missing']}"
-            if not plan["required"]["ok"]:
-                fill_fail += 1
-            print(f"{fid:<10} {meta['repo']:<26} {meta['profile']:<10} "
-                  f"{cov['filled_fields']:>3}/{cov['total_fields']:<3} ({cov['percent']:>4}%)  {req}")
+            # A form may accept several source scenarios (best + alternates).
+            for scenario in [meta.get("best_scenario"), *meta.get("alt_scenarios", [])]:
+                try:
+                    plan = fill_form(generate_matter(scenario, args.seed_base), fid)
+                except Exception as exc:
+                    fill_fail += 1
+                    print(f"{fid:<10} ERROR ({scenario}): {exc}")
+                    continue
+                cov = plan["coverage"]
+                req = "OK" if plan["required"]["ok"] else f"MISSING {plan['required']['missing']}"
+                if not plan["required"]["ok"]:
+                    fill_fail += 1
+                label = fid if scenario == meta.get("best_scenario") else f"{fid}*"
+                print(f"{label:<10} {meta['repo']:<26} {meta['profile']:<10} "
+                      f"{cov['filled_fields']:>3}/{cov['total_fields']:<3} ({cov['percent']:>4}%)  {req}"
+                      + ("" if scenario == meta.get("best_scenario") else f"  [{scenario}]"))
         print("-" * 72)
         print(f"{len(forms)} wired form(s), {fill_fail} fill failure(s).")
 

@@ -13,7 +13,7 @@ from . import dsl
 from .pools import Pools, build_organization, build_person
 from .scenarios import load_scenario
 
-GENERATOR_VERSION = "0.1.0"
+GENERATOR_VERSION = "0.2.0"
 
 _NUM_WORDS = {0: "no", 1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six"}
 _PERSON_TYPES = {
@@ -98,6 +98,17 @@ def _build_parties(scenario: dict, ctx: dict, rng: random.Random, pools: Pools,
         if key in overrides:
             party = copy.deepcopy(overrides[key])
             party.setdefault("role", role.get("label", ""))
+        elif role.get("party"):
+            # Authored party: the scenario pins exact field values (edge-case names,
+            # sparse contact, boundary DOBs). Values may themselves be DSL specs, and
+            # nothing is auto-filled, so a sparse authored party stays sparse.
+            party = dsl.resolve(role["party"], ctx, rng)
+            party.setdefault("entity_type", "person")
+            party.setdefault("role", role.get("label", ""))
+            if not party.get("full_name") and party.get("entity_type") == "person":
+                bits = [party.get("first_name", ""), party.get("middle_name", ""),
+                        party.get("last_name", ""), party.get("suffix", "")]
+                party["full_name"] = " ".join(b for b in bits if b)
         elif role.get("entity") == "organization":
             party = build_organization(pools, name=role.get("name", ""), role=role.get("label", ""))
         else:

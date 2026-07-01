@@ -1,0 +1,108 @@
+id: edge-unicode-names
+title: "{plaintiff_full_name} v. {defendant_full_name}"
+practice_area: civil
+case_type: contract_dispute
+status: intake
+docket_prefix: CV
+
+# EDGE-CASE PACK — character-set stress.
+# Every name below is deliberately hostile to naive document automation: diacritics
+# (é, ü, ø, Ä), apostrophes, hyphenated compounds, a generational suffix, an
+# organization name containing commas and an ampersand, and free text with curly
+# quotes and em dashes. A filler that ASCII-folds, truncates at the apostrophe,
+# splits names on the hyphen, or breaks JSON/XML escaping will fail here first.
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001]
+
+jurisdiction:
+  state: ME
+  county: Aroostook
+  court_type: Superior Court
+
+dates:
+  filing_date: {date_between: ["2026-01-15", "2026-04-15"]}
+  event_date: "{delivery_deadline}"
+
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - key: plaintiff
+      label: "Plaintiff (buyer under the timber contract)"
+      party:
+        entity_type: person
+        first_name: "José-María"
+        middle_name: "Düböis"
+        last_name: "O'Callaghan-Núñez"
+        suffix: "Jr."
+        address: "17 Bramblewood Lane, Unit 4-B"
+        city: "Presque Isle"
+        state: "ME"
+        zip: "04769"
+        phone: "(207) 555-0142"
+        email: "jose-maria.ocallaghan@example.com"
+        date_of_birth: "1961-11-02"
+        ssn_last4: "7304"
+    - key: defendant
+      label: "Defendant (seller of the timber)"
+      entity: organization
+      party:
+        entity_type: organization
+        organization_name: "Ändersson, Fitzwilliam & Sønsteby Timber Holdings, LLC"
+        full_name: "Ändersson, Fitzwilliam & Sønsteby Timber Holdings, LLC"
+        address: "1 Rue de l'Église, Suite 300"
+        city: "Madawaska"
+        state: "ME"
+        zip: "04756"
+        phone: "(207) 555-0169"
+
+facts:
+  contract_description: "a delivered-sale contract for 500 cords of seasoned firewood"
+  contract_amount: {int_between: [42000, 98000]}
+  delivery_deadline: {date_between: ["2025-10-01", "2025-12-15"]}
+  cords_delivered: {int_between: [80, 240]}
+  governing_clause: "paragraph 14 — the “force majeure” clause"
+  demand_letter_date: {date_offset: {from: "{delivery_deadline}", days: 21}}
+
+fact_pattern:
+  summary: "{plaintiff_full_name} sues {defendant_full_name} for breach of {contract_description} worth ${contract_amount}, after only {cords_delivered} cords were delivered by {delivery_deadline}."
+  narrative:
+    - "{plaintiff_full_name} contracted with {defendant_full_name} for {contract_description} at a total price of ${contract_amount}, delivery due by {delivery_deadline}. Only {cords_delivered} cords arrived."
+    - "The seller invokes {governing_clause} — citing an “unusually wet harvest season” — but the clause requires written notice within ten days, which was never given. A demand letter went out {demand_letter_date} and drew no substantive response."
+    - "Counsel {attorney_full_name} of {attorney_firm} will plead breach of contract and seek cover damages for replacement wood purchased on the spot market."
+  undisputed:
+    - "The parties signed the contract for ${contract_amount}."
+    - "Only {cords_delivered} of 500 cords were delivered by {delivery_deadline}."
+  disputed:
+    - "Whether {governing_clause} excuses the shortfall without the required written notice."
+    - "The plaintiff's cover damages and incidental costs."
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "Contract", question: "What did you agree to?", answer: "{contract_description}, ${contract_amount} total, delivered by {delivery_deadline}."}
+    - {topic: "Breach", question: "What actually happened?", answer: "They delivered {cords_delivered} cords and went quiet — no notice under {governing_clause}, nothing."}
+    - {topic: "Damages", question: "What did the shortfall cost you?", answer: "I had to buy replacement wood at spot prices and lost two resale customers."}
+
+issues:
+  count: {min: 2, max: 3}
+  pool:
+    - {issue: "Breach of the delivered-sale contract", category: contract, governing_law: "11 M.R.S. § 2-301 (UCC sale of goods)", sub_questions: ["Was delivery due by {delivery_deadline}?", "Was the shortfall a breach?"], strength: strong}
+    - {issue: "Force majeure as an affirmative defense", category: contract, governing_law: "Contract paragraph 14; common law impracticability", sub_questions: ["Was the required ten-day written notice given?"], strength: moderate}
+    - {issue: "Cover damages for substitute goods", category: damages, governing_law: "11 M.R.S. § 2-712", sub_questions: ["Were the spot purchases commercially reasonable?"], strength: strong}
+
+evidence:
+  count: {min: 2, max: 3}
+  pool:
+    - {title: "Signed timber contract", type: contract, party: plaintiff, description: "The delivered-sale contract including {governing_clause}."}
+    - {title: "Delivery tickets", type: document, party: plaintiff, description: "Scale slips showing {cords_delivered} cords received."}
+    - {title: "Demand letter of {demand_letter_date}", type: correspondence, party: plaintiff, description: "Pre-suit demand; no substantive response."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  amounts:
+    - {label: "Contract price", amount: {int_between: [42000, 98000]}, basis: "Agreed total for 500 cords."}
+    - {label: "Cover purchases", amount: {int_between: [9000, 30000]}, basis: "Replacement wood bought on the spot market."}

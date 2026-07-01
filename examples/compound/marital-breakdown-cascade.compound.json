@@ -4,7 +4,7 @@
     "mock": true,
     "fictional": true,
     "generator": "compound-engine",
-    "generator_version": "0.1.0",
+    "generator_version": "0.2.0",
     "compound_id": "marital-breakdown-cascade",
     "seed": 7
   },
@@ -101,7 +101,7 @@
         "mock": true,
         "fictional": true,
         "generator": "deterministic-engine",
-        "generator_version": "0.1.0",
+        "generator_version": "0.2.0",
         "scenario_id": "family-divorce-cumberland",
         "seed": 7001
       },
@@ -519,7 +519,7 @@
         "mock": true,
         "fictional": true,
         "generator": "deterministic-engine",
-        "generator_version": "0.1.0",
+        "generator_version": "0.2.0",
         "scenario_id": "protection-from-abuse",
         "seed": 7002
       },
@@ -833,7 +833,7 @@
         "mock": true,
         "fictional": true,
         "generator": "deterministic-engine",
-        "generator_version": "0.1.0",
+        "generator_version": "0.2.0",
         "scenario_id": "business-formation-scorp",
         "seed": 7003
       },

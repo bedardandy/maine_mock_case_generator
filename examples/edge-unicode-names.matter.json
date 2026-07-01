@@ -1,0 +1,199 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.2.0",
+    "scenario_id": "edge-unicode-names",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-195119",
+    "practice_area": "civil",
+    "title": "José-María Düböis O'Callaghan-Núñez Jr. v. Ändersson, Fitzwilliam & Sønsteby Timber Holdings, LLC",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Aroostook",
+      "court_location": "Caribou",
+      "court_type": "Superior Court"
+    },
+    "case_type": "contract_dispute",
+    "filing_date": "2026-02-25",
+    "status": "intake",
+    "summary": "José-María Düböis O'Callaghan-Núñez Jr. sues Ändersson, Fitzwilliam & Sønsteby Timber Holdings, LLC for breach of a delivered-sale contract for 500 cords of seasoned firewood worth $69405, after only 141 cords were delivered by 2025-10-09.",
+    "event_date": "2025-10-09",
+    "docket_number": "ARO-CV-2026-664"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "person",
+      "first_name": "José-María",
+      "middle_name": "Düböis",
+      "last_name": "O'Callaghan-Núñez",
+      "suffix": "Jr.",
+      "address": "17 Bramblewood Lane, Unit 4-B",
+      "city": "Presque Isle",
+      "state": "ME",
+      "zip": "04769",
+      "phone": "(207) 555-0142",
+      "email": "jose-maria.ocallaghan@example.com",
+      "date_of_birth": "1961-11-02",
+      "ssn_last4": "7304",
+      "role": "Plaintiff (buyer under the timber contract)",
+      "full_name": "José-María Düböis O'Callaghan-Núñez Jr."
+    },
+    "defendant": {
+      "entity_type": "organization",
+      "organization_name": "Ändersson, Fitzwilliam & Sønsteby Timber Holdings, LLC",
+      "full_name": "Ändersson, Fitzwilliam & Sønsteby Timber Holdings, LLC",
+      "address": "1 Rue de l'Église, Suite 300",
+      "city": "Madawaska",
+      "state": "ME",
+      "zip": "04756",
+      "phone": "(207) 555-0169",
+      "role": "Defendant (seller of the timber)"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Attorney for the client",
+      "address": "39 Meadowbrook Drive",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "olivia.ellsworth@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614",
+      "bar_number": "2408",
+      "organization_name": "Kingsley & Associates"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "José-María",
+      "middle_name": "Düböis",
+      "last_name": "O'Callaghan-Núñez",
+      "suffix": "Jr.",
+      "address": "17 Bramblewood Lane, Unit 4-B",
+      "city": "Presque Isle",
+      "state": "ME",
+      "zip": "04769",
+      "phone": "(207) 555-0142",
+      "email": "jose-maria.ocallaghan@example.com",
+      "date_of_birth": "1961-11-02",
+      "ssn_last4": "7304",
+      "role": "Plaintiff (buyer under the timber contract)",
+      "full_name": "José-María Düböis O'Callaghan-Núñez Jr."
+    }
+  },
+  "fact_pattern": {
+    "summary": "José-María Düböis O'Callaghan-Núñez Jr. sues Ändersson, Fitzwilliam & Sønsteby Timber Holdings, LLC for breach of a delivered-sale contract for 500 cords of seasoned firewood worth $69405, after only 141 cords were delivered by 2025-10-09.",
+    "narrative": "José-María Düböis O'Callaghan-Núñez Jr. contracted with Ändersson, Fitzwilliam & Sønsteby Timber Holdings, LLC for a delivered-sale contract for 500 cords of seasoned firewood at a total price of $69405, delivery due by 2025-10-09. Only 141 cords arrived.\n\nThe seller invokes paragraph 14 — the “force majeure” clause — citing an “unusually wet harvest season” — but the clause requires written notice within ten days, which was never given. A demand letter went out 2025-10-30 and drew no substantive response.\n\nCounsel Olivia B. Ellsworth of Kingsley & Associates will plead breach of contract and seek cover damages for replacement wood purchased on the spot market.",
+    "undisputed_facts": [
+      "The parties signed the contract for $69405.",
+      "Only 141 of 500 cords were delivered by 2025-10-09."
+    ],
+    "disputed_facts": [
+      "Whether paragraph 14 — the “force majeure” clause excuses the shortfall without the required written notice.",
+      "The plaintiff's cover damages and incidental costs."
+    ]
+  },
+  "intake_interview": {
+    "interviewer": "Intake Attorney",
+    "interviewee_role": "plaintiff",
+    "date": "2026-02-25",
+    "exchanges": [
+      {
+        "topic": "Contract",
+        "question": "What did you agree to?",
+        "answer": "a delivered-sale contract for 500 cords of seasoned firewood, $69405 total, delivered by 2025-10-09."
+      },
+      {
+        "topic": "Breach",
+        "question": "What actually happened?",
+        "answer": "They delivered 141 cords and went quiet — no notice under paragraph 14 — the “force majeure” clause, nothing."
+      },
+      {
+        "topic": "Damages",
+        "question": "What did the shortfall cost you?",
+        "answer": "I had to buy replacement wood at spot prices and lost two resale customers."
+      }
+    ]
+  },
+  "issues": [
+    {
+      "issue": "Breach of the delivered-sale contract",
+      "category": "contract",
+      "governing_law": "11 M.R.S. § 2-301 (UCC sale of goods)",
+      "sub_questions": [
+        "Was delivery due by 2025-10-09?",
+        "Was the shortfall a breach?"
+      ],
+      "strength": "strong",
+      "id": "iss1"
+    },
+    {
+      "issue": "Cover damages for substitute goods",
+      "category": "damages",
+      "governing_law": "11 M.R.S. § 2-712",
+      "sub_questions": [
+        "Were the spot purchases commercially reasonable?"
+      ],
+      "strength": "strong",
+      "id": "iss2"
+    },
+    {
+      "issue": "Force majeure as an affirmative defense",
+      "category": "contract",
+      "governing_law": "Contract paragraph 14; common law impracticability",
+      "sub_questions": [
+        "Was the required ten-day written notice given?"
+      ],
+      "strength": "moderate",
+      "id": "iss3"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Demand letter of 2025-10-30",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "Pre-suit demand; no substantive response.",
+      "id": "ev1"
+    },
+    {
+      "title": "Delivery tickets",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "Scale slips showing 141 cords received.",
+      "id": "ev2"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Contract price",
+        "amount": 45052,
+        "basis": "Agreed total for 500 cords."
+      },
+      {
+        "label": "Cover purchases",
+        "amount": 27240,
+        "basis": "Replacement wood bought on the spot market."
+      }
+    ]
+  },
+  "facts": {
+    "contract_description": "a delivered-sale contract for 500 cords of seasoned firewood",
+    "contract_amount": 69405,
+    "delivery_deadline": "2025-10-09",
+    "cords_delivered": 141,
+    "governing_clause": "paragraph 14 — the “force majeure” clause",
+    "demand_letter_date": "2025-10-30"
+  }
+}

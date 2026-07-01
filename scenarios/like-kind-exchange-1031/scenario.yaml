@@ -43,9 +43,10 @@ facts:
   replacement_debt: {int_between: [0, 2000000]}
   exchange_type: {pick: ["a forward (delayed) exchange", "a forward exchange with a backup replacement", "a delayed exchange identifying under the three-property rule"]}
   relinquished_closing_date: {date_between: ["2026-02-05", "2026-03-05"]}
-  identification_deadline: {date_between: ["2026-03-22", "2026-04-19"]}
-  exchange_deadline: {date_between: ["2026-08-03", "2026-08-31"]}
-  replacement_closing_date: {date_between: ["2026-06-01", "2026-08-25"]}
+  # Statutory clocks computed from the relinquished closing (IRC § 1031(a)(3)):
+  identification_deadline: {date_offset: {from: "{relinquished_closing_date}", days: 45}}
+  exchange_deadline: {date_offset: {from: "{relinquished_closing_date}", days: 180}}
+  replacement_closing_date: {date_offset: {from: "{relinquished_closing_date}", days: {int_between: [120, 175]}}}
   identification_rule: {pick: ["the three-property rule", "the 200% fair-market-value rule", "the 95% rule"]}
   boot_risk: {pick: ["cash boot if the replacement price is below the relinquished price", "mortgage boot unless the replacement debt matches or exceeds the relinquished debt", "no expected boot if value and debt are fully replaced"]}
   related_party: {pick: ["an unrelated seller (no related-party issue)", "a related-party seller triggering the two-year holding rule", "an unrelated seller and no related-party concern"]}

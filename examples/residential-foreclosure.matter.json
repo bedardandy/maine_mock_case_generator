@@ -1,0 +1,593 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.2.0",
+    "scenario_id": "residential-foreclosure",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-702326",
+    "practice_area": "real_estate",
+    "title": "Riverbend Analytics LLC v. John G. Inglewood (residential foreclosure)",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "District Court"
+    },
+    "case_type": "residential_foreclosure",
+    "filing_date": "2026-02-03",
+    "status": "active",
+    "summary": "Riverbend Analytics LLC seeks to foreclose the FHA-insured 30-year fixed mortgage on John G. Inglewood's home at 31 Birchwood Terrace, Biddeford; the borrowers, about 13 months delinquent after an unreimbursed furnace and roof failure the same winter, contest the § 6111 notice and two payments the servicer applied to a suspense account instead of the note, while pursuing an FHA-HAMP partial claim deferring the arrears to a junior lien in the Foreclosure Diversion Program.",
+    "event_date": "2025-09-30",
+    "docket_number": "SAG-RE-2026-407"
+  },
+  "parties": {
+    "lender": {
+      "entity_type": "organization",
+      "organization_name": "Riverbend Analytics LLC",
+      "full_name": "Riverbend Analytics LLC",
+      "role": "Plaintiff (foreclosing lender)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174"
+    },
+    "borrower": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "G",
+      "last_name": "Inglewood",
+      "full_name": "John G. Inglewood",
+      "role": "Defendant (homeowner / borrower, the client)",
+      "address": "21 Maple Court",
+      "city": "Camden",
+      "state": "ME",
+      "zip": "04054",
+      "phone": "(207) 555-0108",
+      "email": "john.inglewood@example.com",
+      "date_of_birth": "1996-10-09",
+      "ssn_last4": "6955"
+    },
+    "co_borrower": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "D",
+      "last_name": "Kingsley",
+      "full_name": "John D. Kingsley",
+      "role": "Defendant (co-borrower spouse)",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "john.kingsley@example.org",
+      "date_of_birth": "1998-04-24",
+      "ssn_last4": "0763"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Felix",
+      "middle_name": "K",
+      "last_name": "Loe",
+      "full_name": "Felix K. Loe",
+      "role": "Attorney for the client",
+      "address": "216 Birch Street",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0139",
+      "email": "felix.loe@example.net",
+      "date_of_birth": "1958-04-03",
+      "ssn_last4": "1688",
+      "bar_number": "4078",
+      "organization_name": "Greenhill Law Offices"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "G",
+      "last_name": "Inglewood",
+      "full_name": "John G. Inglewood",
+      "role": "Defendant (homeowner / borrower, the client)",
+      "address": "21 Maple Court",
+      "city": "Camden",
+      "state": "ME",
+      "zip": "04054",
+      "phone": "(207) 555-0108",
+      "email": "john.inglewood@example.com",
+      "date_of_birth": "1996-10-09",
+      "ssn_last4": "6955"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Riverbend Analytics LLC seeks to foreclose the FHA-insured 30-year fixed mortgage on John G. Inglewood's home at 31 Birchwood Terrace, Biddeford; the borrowers, about 13 months delinquent after an unreimbursed furnace and roof failure the same winter, contest the § 6111 notice and two payments the servicer applied to a suspense account instead of the note, while pursuing an FHA-HAMP partial claim deferring the arrears to a junior lien in the Foreclosure Diversion Program.",
+    "narrative": "John G. Inglewood and John D. Kingsley bought their home at 31 Birchwood Terrace, Biddeford, Sagadahoc County with a FHA-insured 30-year fixed loan of $156000 at 6.500%, originated 2020-02-27, payment about $1272 monthly. After an unreimbursed furnace and roof failure the same winter, they missed the 2025-09-30 payment and are now roughly 13 months behind, owing about $267500 in principal with an escrow shortage near $5512.\n\nThe servicer issued a notice of right to cure dated 2025-12-09 stating an arrearage of $24756 and a cure deadline of 2026-01-13 — thirty-five days, as 14 M.R.S. § 6111 requires. The borrowers could not raise the $22848 reinstatement figure, and Riverbend Analytics LLC filed its foreclosure complaint on 2026-02-03 in Bath District Court. Complicating the ledger, two payments the servicer applied to a suspense account instead of the note; also, the loan was service-transferred mid-default and the payment history arrived incomplete.\n\nThe case entered the Foreclosure Diversion Program. At the first mediation on 2026-04-16, the borrowers submitted a complete loss-mitigation package showing current household income of about $3435 per month; the servicer's review produced an FHA-HAMP partial claim deferring the arrears to a junior lien, to be finalized at the 2026-06-14 session. Counsel Felix K. Loe of Greenhill Law Offices has answered, preserving defenses that the § 6111 notice misstates the amount due and that the plaintiff must prove ownership of both note and mortgage.\n\nThe home is worth roughly $270000, so equity — and Maine's post-Greenleaf standing doctrine — give the borrowers real leverage: if mediation fails, the lender must prove the entire chain of the note's negotiation at trial.",
+    "undisputed_facts": [
+      "The borrowers signed the note and mortgage on 2020-02-27 for $156000.",
+      "No payment has been made since 2025-09-30.",
+      "A notice of right to cure issued 2025-12-09 with a deadline of 2026-01-13."
+    ],
+    "disputed_facts": [
+      "Whether the § 6111 notice states the amount due accurately given two payments the servicer applied to a suspense account instead of the note.",
+      "Whether the plaintiff owns both the note and the mortgage and can prove the chain of transfers.",
+      "The correct arrearage and reinstatement figures."
+    ],
+    "timeline": [
+      {
+        "date": "2020-02-27",
+        "event": "Note and mortgage signed: $156000 at 6.500%, FHA-insured 30-year fixed."
+      },
+      {
+        "date": "2025-09-30",
+        "event": "First missed payment after an unreimbursed furnace and roof failure the same winter."
+      },
+      {
+        "date": "2025-12-09",
+        "event": "Notice of right to cure issued under 14 M.R.S. § 6111 stating $24756 due."
+      },
+      {
+        "date": "2026-01-13",
+        "event": "35-day cure period expires without reinstatement."
+      },
+      {
+        "date": "2026-02-03",
+        "event": "Foreclosure complaint filed; borrowers request Foreclosure Diversion Program mediation."
+      },
+      {
+        "date": "2026-04-16",
+        "event": "First FDP mediation: complete loss-mitigation package submitted."
+      },
+      {
+        "date": "2026-06-14",
+        "event": "Second FDP mediation scheduled to finalize an FHA-HAMP partial claim deferring the arrears to a junior lien."
+      }
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Summit Logistics Co.",
+      "type": "business_entity",
+      "role": "Title company",
+      "relevance": "Ran the foreclosure title search and identified parties in interest.",
+      "contact": {
+        "phone": "(207) 555-0121",
+        "city": "Gorham",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Omar C. Roe",
+      "type": "other",
+      "role": "HUD-approved housing counselor",
+      "relevance": "Prepared the borrower's loss-mitigation package and budget.",
+      "contact": {
+        "phone": "(207) 555-0197",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "omar.roe@example.net"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Maine Bureau of Consumer Credit Protection",
+      "type": "government_agency",
+      "role": "Regulator",
+      "relevance": "Received the lender's § 6111 notice filing and the borrower's servicing complaint.",
+      "contact": {
+        "phone": "(207) 555-0144",
+        "city": "Bath",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Maria S. Ashford",
+      "type": "other",
+      "role": "Foreclosure Diversion Program mediator",
+      "relevance": "Conducts the court-supervised mediation sessions under M.R. Civ. P. 93.",
+      "contact": {
+        "phone": "(207) 555-0189",
+        "city": "Brunswick",
+        "state": "ME",
+        "email": "maria.ashford@example.net"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Northstar Partners Corp.",
+      "type": "business_entity",
+      "role": "Loan servicer",
+      "relevance": "Services the note for the plaintiff; source of the payment history and the § 6111 notice.",
+      "contact": {
+        "phone": "(207) 555-0191",
+        "city": "Auburn",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Foreclosure Defense Attorney",
+    "interviewee_role": "borrower",
+    "date": "2026-02-03",
+    "exchanges": [
+      {
+        "topic": "Hardship",
+        "question": "What happened that you fell behind?",
+        "answer": "an unreimbursed furnace and roof failure the same winter. We kept paying what we could until 2025-09-30, then it just wasn't possible."
+      },
+      {
+        "topic": "The notice",
+        "question": "What did the cure notice say?",
+        "answer": "It came dated 2025-12-09 and said we owed $24756 by 2026-01-13. We think that number is wrong because of two payments the servicer applied to a suspense account instead of the note."
+      },
+      {
+        "topic": "Ledger",
+        "question": "Tell me about the payment dispute.",
+        "answer": "There's two payments the servicer applied to a suspense account instead of the note. We've asked the servicer for a full history and never gotten a straight answer — and the loan was service-transferred mid-default and the payment history arrived incomplete."
+      },
+      {
+        "topic": "Income",
+        "question": "What can you afford now?",
+        "answer": "About $3435 a month comes in. The counselor says that supports a modified payment if they capitalize the arrears."
+      },
+      {
+        "topic": "Goal",
+        "question": "What outcome do you want?",
+        "answer": "To keep the house. We want the modification — an FHA-HAMP partial claim deferring the arrears to a junior lien — not a sale on the courthouse steps."
+      },
+      {
+        "topic": "Mediation",
+        "question": "Where are we in the process?",
+        "answer": "First session was 2026-04-16; the second is set for 2026-06-14 to finalize the offer."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Keep the home through a sustainable loan modification finalized in FDP mediation.",
+      "Force an accurate accounting resolving two payments the servicer applied to a suspense account instead of the note.",
+      "Preserve § 6111 and standing defenses as leverage if mediation fails."
+    ],
+    "priorities": [
+      "The modification — an FHA-HAMP partial claim deferring the arrears to a junior lien — on terms within the household budget.",
+      "No waiver of defenses while mediation proceeds."
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "A permanent modification and dismissal of the foreclosure."
+    ],
+    "non_starters": [
+      "A consent judgment of foreclosure.",
+      "A modification with a payment above what $3435 monthly income supports."
+    ],
+    "constraints": {
+      "budget": "Limited; representation is partly through the volunteer lawyers project.",
+      "timeline": "Mediation sessions 2026-04-16 and 2026-06-14 control the near term."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Accuracy of the loan accounting",
+      "category": "consumer",
+      "governing_law": "RESPA, 12 C.F.R. § 1024.35 (error resolution); 9-A M.R.S. § 9-305-A",
+      "sub_questions": [
+        "Were payments misapplied to suspense?",
+        "Was force-placed insurance proper?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Plaintiff's ownership of the note and mortgage (standing)",
+      "category": "real_estate",
+      "governing_law": "Bank of America, N.A. v. Greenleaf, 2014 ME 89; 14 M.R.S. § 6321",
+      "sub_questions": [
+        "Can the plaintiff prove the chain of the note's negotiation?",
+        "Does a MERS-sourced assignment convey the mortgage?"
+      ],
+      "strength": "strong",
+      "id": "iss2"
+    },
+    {
+      "issue": "Sufficiency of the notice of right to cure",
+      "category": "real_estate",
+      "governing_law": "14 M.R.S. § 6111",
+      "sub_questions": [
+        "Does the notice state the amount due accurately?",
+        "Is a defective notice fatal to the action?"
+      ],
+      "client_position": "The stated arrearage is wrong because of two payments the servicer applied to a suspense account instead of the note.",
+      "strength": "strong",
+      "id": "iss3"
+    },
+    {
+      "issue": "Loss-mitigation eligibility and terms",
+      "category": "consumer",
+      "governing_law": "FHA/servicer loss-mitigation waterfall",
+      "sub_questions": [
+        "Does $3435 monthly income support the modified payment?"
+      ],
+      "strength": "moderate",
+      "id": "iss4"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Notice of right to cure",
+      "type": "correspondence",
+      "party": "lender",
+      "description": "The § 6111 notice dated 2025-12-09 stating $24756.",
+      "id": "ev1"
+    },
+    {
+      "title": "Complete payment history",
+      "type": "financial_record",
+      "party": "borrower",
+      "description": "Servicer life-of-loan history showing two payments the servicer applied to a suspense account instead of the note.",
+      "id": "ev2"
+    },
+    {
+      "title": "FDP mediator's report",
+      "type": "document",
+      "party": "borrower",
+      "description": "Report of the 2026-04-16 session and the pending an FHA-HAMP partial claim deferring the arrears to a junior lien.",
+      "id": "ev3"
+    },
+    {
+      "title": "Assignment chain and note endorsements",
+      "type": "document",
+      "party": "lender",
+      "description": "Recorded assignments and the note's allonges — the Greenleaf proof.",
+      "id": "ev4"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Stated arrearage at § 6111 notice",
+        "amount": 14951,
+        "basis": "Amount the cure notice demanded."
+      },
+      {
+        "label": "Reinstatement quote",
+        "amount": 25718,
+        "basis": "Arrears plus fees to reinstate."
+      },
+      {
+        "label": "Estimated property value",
+        "amount": 300000,
+        "basis": "Broker price opinion."
+      },
+      {
+        "label": "Escrow shortage",
+        "amount": 6301,
+        "basis": "Advances for taxes and insurance."
+      },
+      {
+        "label": "Principal balance",
+        "amount": 189000,
+        "basis": "Unpaid principal per the servicer."
+      }
+    ]
+  },
+  "litigation": {
+    "posture": "settlement",
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Foreclosure and sale",
+        "by": "Riverbend Analytics LLC",
+        "against": "John G. Inglewood and John D. Kingsley",
+        "governing_law": "14 M.R.S. §§ 6321-6325",
+        "elements": [
+          "Existence of the mortgage and breach of its condition",
+          "Ownership of the note and mortgage",
+          "Amount due",
+          "Compliance with 14 M.R.S. § 6111 notice of right to cure",
+          "Priority over parties in interest"
+        ],
+        "relief_sought": "Judgment of foreclosure and sale; the statutory 90-day redemption period",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Breach of note",
+        "by": "Riverbend Analytics LLC",
+        "against": "John G. Inglewood",
+        "governing_law": "11 M.R.S. Article 3-A",
+        "elements": [
+          "A negotiable instrument",
+          "Default",
+          "Holder status or entitlement to enforce"
+        ],
+        "relief_sought": "The debt, interest, and costs",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Unclean hands / breach of the duty of good faith",
+        "by": "John G. Inglewood",
+        "basis": "The servicer dual-tracked: it advanced foreclosure while the complete loss-mitigation package was under review."
+      },
+      {
+        "defense": "Payment and misapplication",
+        "by": "John G. Inglewood",
+        "basis": "Payments held in suspense were never applied to the note."
+      },
+      {
+        "defense": "Failure to comply with FHA pre-foreclosure servicing requirements",
+        "by": "John G. Inglewood",
+        "basis": "For an FHA loan, 24 C.F.R. § 203.604 face-to-face requirements are a condition precedent."
+      }
+    ],
+    "discovery": [
+      {
+        "type": "request_for_production",
+        "propounding_party": "Riverbend Analytics LLC",
+        "responding_party": "John G. Inglewood",
+        "served_date": "2026-03-20",
+        "status": "responded",
+        "description": "Income and hardship documentation supporting loss mitigation."
+      },
+      {
+        "type": "deposition",
+        "propounding_party": "John G. Inglewood",
+        "responding_party": "the servicer's records custodian",
+        "served_date": "2026-05-04",
+        "status": "outstanding",
+        "description": "Rule 30(b)(6)-style deposition on the boarding of records after the loan was service-transferred mid-default and the payment history arrived incomplete."
+      },
+      {
+        "type": "interrogatories",
+        "propounding_party": "John G. Inglewood",
+        "responding_party": "Riverbend Analytics LLC",
+        "served_date": "2026-03-05",
+        "status": "objected",
+        "description": "Chain of note transfers, suspense-account postings, and force-placed insurance."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to dismiss for non-compliance with 14 M.R.S. § 6111",
+        "type": "dispositive",
+        "movant": "John G. Inglewood",
+        "filed_date": "2026-02-28",
+        "status": "under_advisement",
+        "relief": "Dismissal without prejudice for a defective cure notice."
+      }
+    ],
+    "docket": [
+      {
+        "date": "2026-02-03",
+        "entry": "Complaint for foreclosure filed with certificate of § 6111 compliance."
+      },
+      {
+        "date": "2026-02-24",
+        "entry": "Borrowers' answer, affirmative defenses, and request for FDP mediation."
+      },
+      {
+        "date": "2026-03-10",
+        "entry": "Case referred to the Foreclosure Diversion Program; scheduling order issued."
+      },
+      {
+        "date": "2026-04-16",
+        "entry": "First mediation session held; mediator's report notes complete package under review."
+      },
+      {
+        "date": "2026-06-14",
+        "entry": "Second mediation session scheduled."
+      }
+    ],
+    "trial": {
+      "jury": false,
+      "estimated_days": 1
+    }
+  },
+  "communications": [
+    {
+      "date": "2025-12-09",
+      "channel": "letter",
+      "from": "Loan servicer",
+      "to": "John G. Inglewood and John D. Kingsley",
+      "subject": "Notice of default and right to cure — 31 Birchwood Terrace",
+      "summary": "The statutory § 6111 cure notice stating the arrearage and 35-day deadline.",
+      "body": "Your FHA-insured 30-year fixed loan is in default; the last payment received was applied to the period before 2025-09-30. To cure, pay $24756 on or before 2026-01-13. If you do not cure, we may accelerate the debt and commence foreclosure. You may be eligible for housing counseling assistance; a list of approved counselors is enclosed as required by 14 M.R.S. § 6111.",
+      "attachments": [
+        "Itemization of amount due",
+        "HUD counselor list"
+      ],
+      "id": "comm1"
+    },
+    {
+      "date": "2025-12-21",
+      "channel": "letter",
+      "from": "John G. Inglewood",
+      "to": "Loan servicer",
+      "subject": "Hardship letter and request for loss-mitigation review",
+      "summary": "Borrowers explain the hardship and ask for modification review before the deadline.",
+      "body": "We fell behind because of an unreimbursed furnace and roof failure the same winter. Our household now brings in about $3435 per month and we can sustain a modified payment. We dispute the amount in your notice — two payments the servicer applied to a suspense account instead of the note — and we ask that you review us for all loss-mitigation options before taking further action.",
+      "id": "comm2"
+    },
+    {
+      "date": "2026-01-18",
+      "channel": "letter",
+      "from": "Felix K. Loe",
+      "to": "Loan servicer",
+      "cc": "John G. Inglewood",
+      "subject": "Notice of representation; error resolution request — 31 Birchwood Terrace",
+      "summary": "Defense counsel appears, disputes the ledger under RESPA, and preserves § 6111 objections.",
+      "body": "This office represents John G. Inglewood and John D. Kingsley. Treat this as a notice of error under 12 C.F.R. § 1024.35: the account reflects two payments the servicer applied to a suspense account instead of the note, and the § 6111 notice's stated arrearage of $24756 appears inaccurate. Provide the life-of-loan history and the identity of the note's owner. Any foreclosure filed on a defective notice will be met with a motion to dismiss.",
+      "id": "comm3"
+    },
+    {
+      "date": "2026-03-15",
+      "channel": "portal_message",
+      "from": "Foreclosure Diversion Program mediator",
+      "to": "All parties",
+      "subject": "FDP mediation scheduled — session 1",
+      "summary": "The court's diversion program schedules the first mediation and lists required documents.",
+      "body": "The first mediation session is scheduled for 2026-04-16. The lender shall appear with authority to modify and a current reinstatement figure; the borrowers shall bring a complete loss-mitigation application, proof of income, and a budget prepared with their housing counselor, per M.R. Civ. P. 93.",
+      "id": "comm4"
+    },
+    {
+      "date": "2026-04-30",
+      "channel": "email",
+      "from": "Loan servicer",
+      "to": "Felix K. Loe",
+      "cc": "Foreclosure Diversion Program mediator",
+      "subject": "Loss-mitigation decision — 31 Birchwood Terrace",
+      "summary": "The servicer's underwriting produces a modification offer to be finalized at session 2.",
+      "body": "Underwriting has completed review of the package submitted at mediation. Based on documented income of $3435 per month, the investor approves an FHA-HAMP partial claim deferring the arrears to a junior lien. Draft documents will issue before the 2026-06-14 session; the trial-period payment schedule is attached. The pending motion practice is unaffected until final documents are executed.",
+      "attachments": [
+        "Modification term sheet",
+        "Trial payment schedule"
+      ],
+      "id": "comm5"
+    },
+    {
+      "date": "2026-05-06",
+      "channel": "email",
+      "from": "Felix K. Loe",
+      "to": "John G. Inglewood",
+      "subject": "The modification offer — what it means",
+      "summary": "Counsel explains the offer, the arrears treatment, and the strategy at session 2.",
+      "body": "The servicer has offered an FHA-HAMP partial claim deferring the arrears to a junior lien. On your income of about $3435 a month this is workable, and it resolves the arrearage without a lump sum. We will not dismiss our § 6111 and standing defenses until the permanent modification is signed — if the trial payments go through, the foreclosure is dismissed; if the deal falls apart, we litigate the defective notice and the note's chain of ownership.",
+      "id": "comm6"
+    }
+  ],
+  "facts": {
+    "property_address": "31 Birchwood Terrace",
+    "property_town": "Biddeford",
+    "property_county": "Sagadahoc",
+    "origination_date": "2020-02-27",
+    "original_principal": 156000,
+    "interest_rate": "6.500%",
+    "monthly_payment": 1272,
+    "loan_type": "FHA-insured 30-year fixed",
+    "hardship": "an unreimbursed furnace and roof failure the same winter",
+    "months_delinquent": 13,
+    "notice_of_default_date": "2025-12-09",
+    "right_to_cure_deadline": "2026-01-13",
+    "default_date": "2025-09-30",
+    "arrearage_at_notice": 24756,
+    "principal_balance": 267500,
+    "escrow_shortage": 5512,
+    "reinstatement_amount": 22848,
+    "property_value_estimate": 270000,
+    "payment_dispute": "two payments the servicer applied to a suspense account instead of the note",
+    "servicing_transfer": "the loan was service-transferred mid-default and the payment history arrived incomplete",
+    "mediation_session_1": "2026-04-16",
+    "mediation_session_2": "2026-06-14",
+    "modification_offer": "an FHA-HAMP partial claim deferring the arrears to a junior lien",
+    "borrower_income_now": 3435
+  }
+}

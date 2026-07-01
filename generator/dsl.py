@@ -6,7 +6,13 @@ A *spec* is any JSON/YAML value. Resolution rules:
 * ``{"pick": [...]}``             -> one random element (then resolved)
 * ``{"pick_n": [...], "n": N}``   -> N random elements (N may be int or {min,max})
 * ``{"date_between": [iso, iso]}``-> a random ISO date in [start, end]
+* ``{"date_offset": {"from": spec, "days": N}}`` -> the resolved date plus N days
+  (N may be negative, or itself a spec such as ``{int_between}``) — real date
+  arithmetic for statutory deadlines (45/180-day 1031 periods, cure periods,
+  limitations dates) instead of hand-picked windows that can drift.
 * ``{"int_between": [lo, hi]}``   -> a random integer in [lo, hi]
+* ``{"int_between": [lo, hi, step]}`` -> same, quantized to multiples of step
+  from lo (round dollar figures: [250000, 900000, 5000]).
 * ``{"template": "..."}``         -> explicit template format (same as a bare str)
 * ``dict`` / ``list``             -> resolved recursively
 
@@ -70,8 +76,17 @@ def resolve(spec, ctx: dict, rng: random.Random):
         if "date_between" in spec and len(spec) == 1:
             start, end = spec["date_between"]
             return _date_between(start, end, rng)
+        if "date_offset" in spec and len(spec) == 1:
+            cfg = spec["date_offset"]
+            base = resolve(cfg.get("from", ""), ctx, rng)
+            days = cfg.get("days", 0)
+            if not isinstance(days, int):
+                days = int(resolve(days, ctx, rng))
+            return (date.fromisoformat(str(base)) + _timedelta_days(days)).isoformat()
         if "int_between" in spec and len(spec) == 1:
-            lo, hi = spec["int_between"]
+            lo, hi, *step = spec["int_between"]
+            if step:
+                return rng.randrange(int(lo), int(hi) + 1, int(step[0]))
             return rng.randint(int(lo), int(hi))
         if "template" in spec and len(spec) == 1:
             return safe_format(spec["template"], ctx)

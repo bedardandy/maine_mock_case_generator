@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.2.0",
+    "scenario_id": "edge-boundary-dates",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-757911",
+    "practice_area": "civil",
+    "title": "Merle A Thibodeau v. Nadia P. Loe (leap-day collision)",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Penobscot",
+      "court_location": "Bangor",
+      "court_type": "Superior Court"
+    },
+    "case_type": "personal_injury",
+    "filing_date": "2026-01-01",
+    "status": "intake",
+    "summary": "Merle A Thibodeau, a leap-day-born 98-year-old, was struck in the crosswalk at Main Street and Water Street, Bangor at 23:58 on 2024-02-29; suit filed 2026-01-01, limitations running to 2030-02-28.",
+    "event_date": "2024-02-29",
+    "docket_number": "PEN-CV-2026-696"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "person",
+      "first_name": "Merle",
+      "middle_name": "A",
+      "last_name": "Thibodeau",
+      "address": "9 Winterberry Court",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04401",
+      "phone": "(207) 555-0117",
+      "email": "merle.thibodeau@example.com",
+      "date_of_birth": "1926-02-29",
+      "ssn_last4": "0229",
+      "role": "Plaintiff (injured pedestrian)",
+      "full_name": "Merle A Thibodeau"
+    },
+    "defendant": {
+      "entity_type": "person",
+      "first_name": "Nadia",
+      "middle_name": "P",
+      "last_name": "Loe",
+      "full_name": "Nadia P. Loe",
+      "role": "Defendant (driver)",
+      "address": "335 Pine Lane",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04069",
+      "phone": "(207) 555-0112",
+      "email": "nadia.loe@example.org",
+      "date_of_birth": "1964-01-30",
+      "ssn_last4": "8313"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Priya",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Priya C. Roe",
+      "role": "Attorney for the client",
+      "address": "224 Lighthouse Drive",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04031",
+      "phone": "(207) 555-0111",
+      "email": "priya.roe@example.net",
+      "date_of_birth": "1974-01-31",
+      "ssn_last4": "9264",
+      "bar_number": "3028",
+      "organization_name": "Hawthorne Legal Group"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Merle",
+      "middle_name": "A",
+      "last_name": "Thibodeau",
+      "address": "9 Winterberry Court",
+      "city": "Bangor",
+      "state": "ME",
+      "zip": "04401",
+      "phone": "(207) 555-0117",
+      "email": "merle.thibodeau@example.com",
+      "date_of_birth": "1926-02-29",
+      "ssn_last4": "0229",
+      "role": "Plaintiff (injured pedestrian)",
+      "full_name": "Merle A Thibodeau"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Merle A Thibodeau, a leap-day-born 98-year-old, was struck in the crosswalk at Main Street and Water Street, Bangor at 23:58 on 2024-02-29; suit filed 2026-01-01, limitations running to 2030-02-28.",
+    "narrative": "On 2024-02-29 — a leap day — at 23:58, Merle A Thibodeau, then 98 years old and himself born on a February 29, was struck by a vehicle driven by Nadia P. Loe in the crosswalk at Main Street and Water Street, Bangor. He was treated at the emergency department the same date, 2024-02-29.\n\nThe complaint is filed on 2026-01-01. Under 14 M.R.S. § 752 (six years), the limitations period runs from the leap-day accident to 2030-02-28, because 2030 has no February 29.\n\nCounsel Priya C. Roe of Hawthorne Legal Group demands $210314 for the fracture injuries, ambulance, and rehabilitation.",
+    "undisputed_facts": [
+      "The collision occurred on 2024-02-29 at about 23:58 in the crosswalk at Main Street and Water Street, Bangor.",
+      "Police report 24-000001 documents the scene."
+    ],
+    "disputed_facts": [
+      "Comparative fault in a dark crosswalk two minutes before midnight.",
+      "The extent of aggravation of pre-existing conditions in a 98-year-old plaintiff."
+    ],
+    "timeline": [
+      {
+        "date": "2024-02-29",
+        "event": "Collision in the Main Street crosswalk at 23:58."
+      },
+      {
+        "date": "2024-02-29",
+        "event": "Emergency-department treatment at St. Joseph Hospital (same calendar day)."
+      },
+      {
+        "date": "2024-03-01",
+        "event": "Police report 24-000001 issued."
+      },
+      {
+        "date": "2026-01-01",
+        "event": "Complaint filed (New Year's Day)."
+      },
+      {
+        "date": "2030-02-28",
+        "event": "Statute of limitations expires (14 M.R.S. § 752 (six years))."
+      }
+    ]
+  },
+  "intake_interview": {
+    "interviewer": "Intake Attorney",
+    "interviewee_role": "plaintiff",
+    "date": "2026-01-01",
+    "exchanges": [
+      {
+        "topic": "Accident",
+        "question": "When exactly did this happen?",
+        "answer": "February 29, 2024 — leap day, my birthday — at two minutes to midnight, in the crosswalk at Main Street and Water Street, Bangor."
+      },
+      {
+        "topic": "Injuries",
+        "question": "How were you hurt?",
+        "answer": "A fractured hip and wrist; I was treated that same night and did months of rehabilitation."
+      },
+      {
+        "topic": "Timing",
+        "question": "Why file now?",
+        "answer": "Counsel said we're well inside the six-year period, which runs to 2030-02-28."
+      }
+    ]
+  },
+  "issues": [
+    {
+      "issue": "Comparative negligence",
+      "category": "tort",
+      "governing_law": "14 M.R.S. § 156",
+      "sub_questions": [
+        "Was the plaintiff's late-night crossing a contributing cause?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Limitations computation from a leap-day accrual",
+      "category": "procedure",
+      "governing_law": "14 M.R.S. § 752 (six years); 1 M.R.S. § 71 (computation of time)",
+      "sub_questions": [
+        "Does the period expire 2030-02-28 or March 1, 2030?"
+      ],
+      "strength": "strong",
+      "id": "iss2"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Police report 24-000001",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "Scene report dated the day after the leap-day collision.",
+      "id": "ev1"
+    },
+    {
+      "title": "Crosswalk camera footage",
+      "type": "photo",
+      "party": "plaintiff",
+      "description": "Municipal camera capture at 23:58.",
+      "id": "ev2"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Medical specials",
+        "amount": 72937,
+        "basis": "Emergency and rehabilitation charges."
+      },
+      {
+        "label": "General damages demand",
+        "amount": 64815,
+        "basis": "Pain, suffering, and loss of enjoyment."
+      }
+    ],
+    "total_claimed": 137752
+  },
+  "facts": {
+    "accident_date": "2024-02-29",
+    "accident_time": "23:58",
+    "accident_location": "the crosswalk at Main Street and Water Street, Bangor",
+    "police_report_number": "24-000001",
+    "sol_statute": "14 M.R.S. § 752 (six years)",
+    "sol_expiration_date": "2030-02-28",
+    "medical_treatment_date": "2024-02-29",
+    "demand_amount": 210314,
+    "plaintiff_age_at_accident": 98
+  }
+}

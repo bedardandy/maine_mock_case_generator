@@ -43,6 +43,31 @@ def test_ss4_adapter_fill_covers_entity_and_responsible_party():
     assert tin.startswith("900-"), "responsible-party TIN must be the fictional 900-series"
 
 
+RETTD_SOURCES = ["real-estate-transfer", *load_form("ME-RETTD")["meta"].get("alt_scenarios", [])]
+
+
+@pytest.mark.parametrize("scenario", RETTD_SOURCES)
+def test_rettd_fills_from_every_sale_scenario(scenario):
+    """Deed-style and closing-suite scenarios both drive the RETTD via role fallbacks."""
+    plan = fill_form(generate_matter(scenario, 1), "ME-RETTD")
+    assert plan["profile"] == "real_estate"
+    by_key = {e["fact_key"]: e["value"] for e in plan["entries"] if e["filled"]}
+    assert by_key.get("transferor.name"), f"{scenario}: no grantor"
+    assert by_key.get("transferee.name"), f"{scenario}: no grantee"
+    assert by_key.get("property.town"), f"{scenario}: no property town"
+    assert by_key.get("property.purchase_price"), f"{scenario}: no price"
+    assert by_key.get("property.transfer_date"), f"{scenario}: no transfer date"
+    assert plan["coverage"]["filled_fields"] >= 15, f"{scenario}: thin coverage"
+
+
+def test_rettd_grantor_grantee_fallback_maps_seller_buyer():
+    matter = generate_matter("residential-purchase-sale", 2)
+    plan = fill_form(matter, "ME-RETTD")
+    by_key = {e["fact_key"]: e["value"] for e in plan["entries"] if e["filled"]}
+    assert by_key["transferor.name"] == matter["parties"]["seller"]["full_name"]
+    assert by_key["transferee.name"] == matter["parties"]["buyer"]["full_name"]
+
+
 def test_ss4_does_not_invent_an_ein():
     """The form IS the EIN application; entity.ein must stay blank."""
     plan = fill_form(generate_matter("business-formation-scorp", 2), "IRS-SS-4")

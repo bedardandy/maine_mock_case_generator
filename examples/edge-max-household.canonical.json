@@ -1,0 +1,150 @@
+{
+  "matter": {
+    "docket_number": "WAS-FM-2026-161",
+    "case_id": "MMC-2026-691783",
+    "court_county": "Washington",
+    "court_location": "Machias",
+    "court_type": "District Court",
+    "case_type": "divorce",
+    "filing_date": "2026-03-14",
+    "event_date": "2025-12-19"
+  },
+  "parties": {
+    "petitioner": {
+      "full_name": "Alexandrina-Wilhelmina Montgomery Featherstonehaugh-Cholmondeley-Smythe",
+      "first_name": "Alexandrina-Wilhelmina",
+      "middle_name": "Montgomery",
+      "last_name": "Featherstonehaugh-Cholmondeley-Smythe",
+      "address": "1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B",
+      "city": "Machias",
+      "state": "ME",
+      "zip": "04654",
+      "phone": "(207) 555-0128",
+      "email": "alexandrina.featherstonehaugh@example.org",
+      "date_of_birth": "1987-04-12"
+    },
+    "respondent": {
+      "full_name": "Bartholomew-Constantine Worthington Featherstonehaugh-Cholmondeley-Smythe",
+      "first_name": "Bartholomew-Constantine",
+      "middle_name": "Worthington",
+      "last_name": "Featherstonehaugh-Cholmondeley-Smythe",
+      "address": "1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B",
+      "city": "Machias",
+      "state": "ME",
+      "zip": "04654",
+      "phone": "(207) 555-0129",
+      "email": "bartholomew.featherstonehaugh@example.org",
+      "date_of_birth": "1984-09-30"
+    },
+    "child_1": {
+      "full_name": "Olivia B. Ellsworth",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "date_of_birth": "2023-10-02"
+    },
+    "child_2": {
+      "full_name": "Samuel B. Danforth",
+      "first_name": "Samuel",
+      "middle_name": "B",
+      "last_name": "Danforth",
+      "date_of_birth": "2009-04-20"
+    },
+    "child_3": {
+      "full_name": "John Q. Poe",
+      "first_name": "John",
+      "middle_name": "Q",
+      "last_name": "Poe",
+      "date_of_birth": "2012-02-05"
+    },
+    "child_4": {
+      "full_name": "Marcus W. Poe",
+      "first_name": "Marcus",
+      "middle_name": "W",
+      "last_name": "Poe",
+      "date_of_birth": "2012-01-31"
+    },
+    "child_5": {
+      "full_name": "Rosa H. Coe",
+      "first_name": "Rosa",
+      "middle_name": "H",
+      "last_name": "Coe",
+      "date_of_birth": "2024-10-22"
+    },
+    "child_6": {
+      "full_name": "Rosa B. Ellsworth",
+      "first_name": "Rosa",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "date_of_birth": "2018-01-24"
+    },
+    "attorney": {
+      "full_name": "Felix K. Loe",
+      "first_name": "Felix",
+      "middle_name": "K",
+      "last_name": "Loe",
+      "address": "216 Birch Street",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0139",
+      "email": "felix.loe@example.net",
+      "date_of_birth": "1958-04-03",
+      "bar_number": "4078"
+    },
+    "plaintiff": {
+      "full_name": "Alexandrina-Wilhelmina Montgomery Featherstonehaugh-Cholmondeley-Smythe",
+      "first_name": "Alexandrina-Wilhelmina",
+      "middle_name": "Montgomery",
+      "last_name": "Featherstonehaugh-Cholmondeley-Smythe",
+      "address": "1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B",
+      "city": "Machias",
+      "state": "ME",
+      "zip": "04654",
+      "phone": "(207) 555-0128",
+      "email": "alexandrina.featherstonehaugh@example.org",
+      "date_of_birth": "1987-04-12"
+    },
+    "defendant": {
+      "full_name": "Bartholomew-Constantine Worthington Featherstonehaugh-Cholmondeley-Smythe",
+      "first_name": "Bartholomew-Constantine",
+      "middle_name": "Worthington",
+      "last_name": "Featherstonehaugh-Cholmondeley-Smythe",
+      "address": "1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B",
+      "city": "Machias",
+      "state": "ME",
+      "zip": "04654",
+      "phone": "(207) 555-0129",
+      "email": "bartholomew.featherstonehaugh@example.org",
+      "date_of_birth": "1984-09-30"
+    }
+  },
+  "party": {
+    "full_name": "Alexandrina-Wilhelmina Montgomery Featherstonehaugh-Cholmondeley-Smythe",
+    "first_name": "Alexandrina-Wilhelmina",
+    "middle_name": "Montgomery",
+    "last_name": "Featherstonehaugh-Cholmondeley-Smythe",
+    "address": "1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B",
+    "city": "Machias",
+    "state": "ME",
+    "zip": "04654",
+    "phone": "(207) 555-0128",
+    "email": "alexandrina.featherstonehaugh@example.org",
+    "date_of_birth": "1987-04-12",
+    "signature": "Alexandrina-Wilhelmina Montgomery Featherstonehaugh-Cholmondeley-Smythe"
+  },
+  "facts": {
+    "marriage_date": "2009-11-16",
+    "marriage_city": "Machias",
+    "marriage_state": "ME",
+    "separation_date": "2025-12-19",
+    "grounds": "irreconcilable marital differences",
+    "num_minor_children": 6,
+    "marital_home": "the family residence at 1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B, Machias, together with the adjoining woodlot conveyed by the respondent's grandparents",
+    "petitioner_employer": "Downeast Regional Consolidated School District Transportation Cooperative",
+    "petitioner_income": 49000,
+    "respondent_employer": "Passamaquoddy Bay Aquaculture Research & Development Consortium, LLLP",
+    "respondent_income": 63000,
+    "child_support_worksheet": "Maine child support worksheet with six children on the table of basic support entitlements"
+  }
+}

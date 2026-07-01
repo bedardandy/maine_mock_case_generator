@@ -1,0 +1,110 @@
+id: edge-boundary-dates
+title: "{plaintiff_full_name} v. {defendant_full_name} (leap-day collision)"
+practice_area: civil
+case_type: personal_injury
+status: intake
+docket_prefix: CV
+
+# EDGE-CASE PACK — calendar-boundary stress.
+# The collision happened on 2024-02-29 (a leap day); the complaint is filed on
+# 2026-01-01 (New Year's Day); the plaintiff was born 1926-02-29 (a leap-day
+# centenarian); and the six-year limitations date falls in 2030, a year with no
+# February 29 — the classic roll-forward/roll-back ambiguity. Two timeline events
+# share the accident date to stress stable same-day ordering. Date parsing with
+# two-digit years, leap-day arithmetic, or locale-dependent formatting fails here first.
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001]
+
+jurisdiction:
+  state: ME
+  county: Penobscot
+  court_type: Superior Court
+
+dates:
+  filing_date: "2026-01-01"
+  event_date: "{accident_date}"
+
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - key: plaintiff
+      label: "Plaintiff (injured pedestrian)"
+      party:
+        entity_type: person
+        first_name: "Merle"
+        middle_name: "A"
+        last_name: "Thibodeau"
+        address: "9 Winterberry Court"
+        city: "Bangor"
+        state: "ME"
+        zip: "04401"
+        phone: "(207) 555-0117"
+        email: "merle.thibodeau@example.com"
+        date_of_birth: "1926-02-29"
+        ssn_last4: "0229"
+    - key: defendant
+      label: "Defendant (driver)"
+
+facts:
+  accident_date: "2024-02-29"
+  accident_time: "23:58"
+  accident_location: "the crosswalk at Main Street and Water Street, Bangor"
+  police_report_number: "24-000001"
+  sol_statute: "14 M.R.S. § 752 (six years)"
+  # Feb 29, 2024 + six years lands in 2030, which has no Feb 29 — Maine practice
+  # treats the period as expiring at the end of the last day of the anniversary
+  # month-day or the day before March 1; the conservative calendar answer:
+  sol_expiration_date: "2030-02-28"
+  medical_treatment_date: "2024-02-29"
+  demand_amount: {int_between: [45000, 260000]}
+  plaintiff_age_at_accident: 98
+
+fact_pattern:
+  summary: "{plaintiff_full_name}, a leap-day-born {plaintiff_age_at_accident}-year-old, was struck in {accident_location} at {accident_time} on {accident_date}; suit filed {filing_date}, limitations running to {sol_expiration_date}."
+  narrative:
+    - "On {accident_date} — a leap day — at {accident_time}, {plaintiff_full_name}, then {plaintiff_age_at_accident} years old and himself born on a February 29, was struck by a vehicle driven by {defendant_full_name} in {accident_location}. He was treated at the emergency department the same date, {medical_treatment_date}."
+    - "The complaint is filed on {filing_date}. Under {sol_statute}, the limitations period runs from the leap-day accident to {sol_expiration_date}, because 2030 has no February 29."
+    - "Counsel {attorney_full_name} of {attorney_firm} demands ${demand_amount} for the fracture injuries, ambulance, and rehabilitation."
+  undisputed:
+    - "The collision occurred on {accident_date} at about {accident_time} in {accident_location}."
+    - "Police report {police_report_number} documents the scene."
+  disputed:
+    - "Comparative fault in a dark crosswalk two minutes before midnight."
+    - "The extent of aggravation of pre-existing conditions in a {plaintiff_age_at_accident}-year-old plaintiff."
+  timeline:
+    - {date: "2024-02-29", event: "Collision in the Main Street crosswalk at 23:58."}
+    - {date: "2024-02-29", event: "Emergency-department treatment at St. Joseph Hospital (same calendar day)."}
+    - {date: "2024-03-01", event: "Police report {police_report_number} issued."}
+    - {date: "2026-01-01", event: "Complaint filed (New Year's Day)."}
+    - {date: "2030-02-28", event: "Statute of limitations expires ({sol_statute})."}
+
+interview:
+  interviewer: "Intake Attorney"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "Accident", question: "When exactly did this happen?", answer: "February 29, 2024 — leap day, my birthday — at two minutes to midnight, in {accident_location}."}
+    - {topic: "Injuries", question: "How were you hurt?", answer: "A fractured hip and wrist; I was treated that same night and did months of rehabilitation."}
+    - {topic: "Timing", question: "Why file now?", answer: "Counsel said we're well inside the six-year period, which runs to {sol_expiration_date}."}
+
+issues:
+  count: {min: 2, max: 3}
+  pool:
+    - {issue: "Negligence of the driver", category: tort, governing_law: "Common-law negligence; 29-A M.R.S. § 2056 (crosswalk duty)", sub_questions: ["Did the driver fail to yield in the crosswalk?"], strength: strong}
+    - {issue: "Limitations computation from a leap-day accrual", category: procedure, governing_law: "{sol_statute}; 1 M.R.S. § 71 (computation of time)", sub_questions: ["Does the period expire {sol_expiration_date} or March 1, 2030?"], strength: strong}
+    - {issue: "Comparative negligence", category: tort, governing_law: "14 M.R.S. § 156", sub_questions: ["Was the plaintiff's late-night crossing a contributing cause?"], strength: moderate}
+
+evidence:
+  count: {min: 2, max: 3}
+  pool:
+    - {title: "Police report {police_report_number}", type: public_record, party: plaintiff, description: "Scene report dated the day after the leap-day collision."}
+    - {title: "Emergency department records", type: medical_record, party: plaintiff, description: "Same-day treatment records dated {medical_treatment_date}."}
+    - {title: "Crosswalk camera footage", type: photo, party: plaintiff, description: "Municipal camera capture at {accident_time}."}
+
+financials:
+  currency: USD
+  total_is_sum: true
+  amounts:
+    - {label: "Medical specials", amount: {int_between: [18000, 90000]}, basis: "Emergency and rehabilitation charges."}
+    - {label: "General damages demand", amount: {int_between: [27000, 170000]}, basis: "Pain, suffering, and loss of enjoyment."}

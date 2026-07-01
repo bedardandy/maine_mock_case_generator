@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.2.0",
+    "scenario_id": "edge-sparse-minimal",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-782554",
+    "practice_area": "civil",
+    "title": "Kennebec Valley Pallet Co. v. North Woods Skidding, Inc.",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Somerset",
+      "court_location": "Skowhegan",
+      "court_type": "Superior Court"
+    },
+    "case_type": "contract_dispute",
+    "filing_date": "2026-04-02",
+    "status": "intake",
+    "summary": "Kennebec Valley Pallet Co. sues North Woods Skidding, Inc. to collect 5 unpaid invoices totaling $17886.",
+    "docket_number": "SOM-CV-2026-149"
+  },
+  "parties": {
+    "plaintiff": {
+      "entity_type": "organization",
+      "organization_name": "Kennebec Valley Pallet Co.",
+      "full_name": "Kennebec Valley Pallet Co.",
+      "role": "Plaintiff"
+    },
+    "defendant": {
+      "entity_type": "organization",
+      "organization_name": "North Woods Skidding, Inc.",
+      "full_name": "North Woods Skidding, Inc.",
+      "role": "Defendant"
+    },
+    "client": {
+      "entity_type": "organization",
+      "organization_name": "Kennebec Valley Pallet Co.",
+      "full_name": "Kennebec Valley Pallet Co.",
+      "role": "Plaintiff"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Kennebec Valley Pallet Co. sues North Woods Skidding, Inc. to collect 5 unpaid invoices totaling $17886.",
+    "narrative": "Kennebec Valley Pallet Co. delivered pallet stock to North Woods Skidding, Inc. on open account. 5 invoices totaling $17886 remain unpaid despite demand. The plaintiff proceeds without counsel through its bookkeeper as authorized officer."
+  },
+  "issues": [
+    {
+      "issue": "Collection on an open account",
+      "category": "contract",
+      "governing_law": "14 M.R.S. § 752 (six-year limitations)",
+      "sub_questions": [
+        "Are the invoices within the limitations period?"
+      ],
+      "strength": "strong",
+      "id": "iss1"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Unpaid invoices",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "5 invoices totaling $17886.",
+      "id": "ev1"
+    }
+  ],
+  "facts": {
+    "invoice_total": 17886,
+    "invoices_outstanding": 5
+  }
+}

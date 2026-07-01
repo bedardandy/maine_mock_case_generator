@@ -1,0 +1,108 @@
+id: edge-money-extremes
+title: "{plaintiff_full_name} v. {defendant_full_name} (accounting reconciliation)"
+practice_area: business
+case_type: contract_dispute
+status: intake
+docket_prefix: BUS
+
+# EDGE-CASE PACK — currency and magnitude stress.
+# The financials mix a one-cent disputed line, a zero-dollar item, a NEGATIVE setoff,
+# a nine-figure contract with cents, and a half-cent (banker's rounding) amount, and
+# total_is_sum forces the engine to round the mess. A filler that formats currency with
+# %d, drops sign, overflows at eight digits, or mishandles .005 rounding fails here
+# first. All amounts are pinned literals so the assertions are exact.
+downstream:
+  repo: maine-court-forms
+  example_forms: [CV-001]
+
+jurisdiction:
+  state: ME
+  county: Cumberland
+  court_type: Superior Court (Business and Consumer Docket)
+
+dates:
+  filing_date: {date_between: ["2026-02-01", "2026-05-15"]}
+
+parties:
+  client_role: plaintiff
+  attorney: true
+  roles:
+    - key: plaintiff
+      label: "Plaintiff (prime contractor)"
+      entity: organization
+      party:
+        entity_type: organization
+        organization_name: "Casco Bay Marine Infrastructure Group, Inc."
+        full_name: "Casco Bay Marine Infrastructure Group, Inc."
+        address: "400 Commercial Street, Pier 2"
+        city: "Portland"
+        state: "ME"
+        zip: "04101"
+        phone: "(207) 555-0154"
+    - key: defendant
+      label: "Defendant (project owner)"
+      entity: organization
+      party:
+        entity_type: organization
+        organization_name: "Penobscot Narrows Terminal Authority LLC"
+        full_name: "Penobscot Narrows Terminal Authority LLC"
+        address: "2 Waterfront Way"
+        city: "Bucksport"
+        state: "ME"
+        zip: "04416"
+        phone: "(207) 555-0187"
+
+facts:
+  contract_value: 123456789.10
+  retainage_withheld: 6172839.46
+  disputed_penny: 0.01
+  liquidated_damages_setoff: -2500.75
+  zero_dollar_change_order: 0
+  half_cent_interest_item: 1234.565
+  reconciliation_period: "final project reconciliation, payment applications 1 through 47"
+
+fact_pattern:
+  summary: "{plaintiff_full_name} sues {defendant_full_name} over the {reconciliation_period} on a ${contract_value} marine terminal contract: ${retainage_withheld} of retainage, a ${liquidated_damages_setoff} setoff, and a ledger that closes one cent out of balance."
+  narrative:
+    - "{plaintiff_full_name} completed a marine terminal for {defendant_full_name} under a contract valued at ${contract_value}. At {reconciliation_period}, the owner holds ${retainage_withheld} in retainage and asserts a liquidated-damages setoff of ${liquidated_damages_setoff} (a negative adjustment on the payment ledger)."
+    - "The reconciliation also carries a change order priced at ${zero_dollar_change_order} (scope swap, no price change), a prompt-payment interest item of ${half_cent_interest_item} whose half-cent must round somewhere, and — after 47 payment applications — a ledger that closes ${disputed_penny} out of balance. Neither side's accounting software agrees on where the penny went."
+    - "Counsel {attorney_full_name} of {attorney_firm} will plead breach of contract and violation of Maine's prompt-payment act to release the retainage."
+  undisputed:
+    - "The contract value is ${contract_value}."
+    - "The owner holds ${retainage_withheld} of retainage after final completion."
+  disputed:
+    - "Whether the ${liquidated_damages_setoff} liquidated-damages setoff is enforceable."
+    - "The rounding of the ${half_cent_interest_item} interest item and the unreconciled ${disputed_penny}."
+
+interview:
+  interviewer: "Construction Counsel"
+  interviewee_role: plaintiff
+  exchanges:
+    - {topic: "Retainage", question: "What is actually being held?", answer: "${retainage_withheld} — five percent of ${contract_value} — months after final completion."}
+    - {topic: "Setoff", question: "What is their justification?", answer: "A liquidated-damages backcharge of ${liquidated_damages_setoff}; we say the delay was owner-caused."}
+    - {topic: "The penny", question: "Seriously, one cent?", answer: "Forty-seven pay apps and the ledgers close ${disputed_penny} apart. Their system rounds each line; ours rounds the total."}
+
+issues:
+  count: {min: 2, max: 3}
+  pool:
+    - {issue: "Release of retainage after final completion", category: contract, governing_law: "10 M.R.S. §§ 1111-1120 (prompt payment)", sub_questions: ["Is retention past final completion a prompt-payment violation?", "Does statutory interest accrue?"], strength: strong}
+    - {issue: "Enforceability of the liquidated-damages setoff", category: contract, governing_law: "Common law; contract article 9", sub_questions: ["Is the per-diem a penalty?", "Was the delay owner-caused?"], strength: moderate}
+    - {issue: "Accounting methodology for line-item vs. total rounding", category: damages, governing_law: "Contract payment provisions", sub_questions: ["Which ledger's rounding convention controls?"], strength: weak}
+
+evidence:
+  count: {min: 2, max: 3}
+  pool:
+    - {title: "Payment application ledger", type: financial_record, party: plaintiff, description: "All 47 payment applications and the one-cent reconciliation gap."}
+    - {title: "Change order log", type: document, party: plaintiff, description: "Includes the ${zero_dollar_change_order} scope-swap change order."}
+    - {title: "Owner's setoff notice", type: correspondence, party: defendant, description: "The liquidated-damages backcharge of ${liquidated_damages_setoff}."}
+
+financials:
+  currency: USD
+  total_is_sum: true
+  amounts:
+    - {label: "Contract value", amount: 123456789.10, basis: "Nine-figure contract price with cents."}
+    - {label: "Retainage withheld", amount: 6172839.46, basis: "Five percent retention."}
+    - {label: "Liquidated-damages setoff (owner backcharge)", amount: -2500.75, basis: "Negative adjustment asserted by the owner."}
+    - {label: "Zero-dollar change order", amount: 0, basis: "Scope swap; no price change."}
+    - {label: "Prompt-payment interest item", amount: 1234.565, basis: "Half-cent amount that must round."}
+    - {label: "Unreconciled ledger difference", amount: 0.01, basis: "One cent of drift across 47 payment applications."}

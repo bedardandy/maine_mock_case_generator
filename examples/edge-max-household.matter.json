@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.2.0",
+    "scenario_id": "edge-max-household",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-691783",
+    "practice_area": "family",
+    "title": "Alexandrina-Wilhelmina Montgomery Featherstonehaugh-Cholmondeley-Smythe v. Bartholomew-Constantine Worthington Featherstonehaugh-Cholmondeley-Smythe (divorce, six minor children)",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Washington",
+      "court_location": "Machias",
+      "court_type": "District Court"
+    },
+    "case_type": "divorce",
+    "filing_date": "2026-03-14",
+    "status": "intake",
+    "summary": "Alexandrina-Wilhelmina Montgomery Featherstonehaugh-Cholmondeley-Smythe petitions to divorce Bartholomew-Constantine Worthington Featherstonehaugh-Cholmondeley-Smythe on grounds of irreconcilable marital differences; the parties share six minor children and the family residence at 1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B, Machias, together with the adjoining woodlot conveyed by the respondent's grandparents.",
+    "event_date": "2025-12-19",
+    "docket_number": "WAS-FM-2026-161"
+  },
+  "parties": {
+    "petitioner": {
+      "entity_type": "person",
+      "first_name": "Alexandrina-Wilhelmina",
+      "middle_name": "Montgomery",
+      "last_name": "Featherstonehaugh-Cholmondeley-Smythe",
+      "address": "1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B",
+      "city": "Machias",
+      "state": "ME",
+      "zip": "04654",
+      "phone": "(207) 555-0128",
+      "email": "alexandrina.featherstonehaugh@example.org",
+      "date_of_birth": "1987-04-12",
+      "ssn_last4": "6120",
+      "role": "Petitioner",
+      "full_name": "Alexandrina-Wilhelmina Montgomery Featherstonehaugh-Cholmondeley-Smythe"
+    },
+    "respondent": {
+      "entity_type": "person",
+      "first_name": "Bartholomew-Constantine",
+      "middle_name": "Worthington",
+      "last_name": "Featherstonehaugh-Cholmondeley-Smythe",
+      "address": "1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B",
+      "city": "Machias",
+      "state": "ME",
+      "zip": "04654",
+      "phone": "(207) 555-0129",
+      "email": "bartholomew.featherstonehaugh@example.org",
+      "date_of_birth": "1984-09-30",
+      "ssn_last4": "3348",
+      "role": "Respondent",
+      "full_name": "Bartholomew-Constantine Worthington Featherstonehaugh-Cholmondeley-Smythe"
+    },
+    "child_1": {
+      "entity_type": "person",
+      "first_name": "Olivia",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Olivia B. Ellsworth",
+      "role": "Minor child",
+      "date_of_birth": "2023-10-02"
+    },
+    "child_2": {
+      "entity_type": "person",
+      "first_name": "Samuel",
+      "middle_name": "B",
+      "last_name": "Danforth",
+      "full_name": "Samuel B. Danforth",
+      "role": "Minor child",
+      "date_of_birth": "2009-04-20"
+    },
+    "child_3": {
+      "entity_type": "person",
+      "first_name": "John",
+      "middle_name": "Q",
+      "last_name": "Poe",
+      "full_name": "John Q. Poe",
+      "role": "Minor child",
+      "date_of_birth": "2012-02-05"
+    },
+    "child_4": {
+      "entity_type": "person",
+      "first_name": "Marcus",
+      "middle_name": "W",
+      "last_name": "Poe",
+      "full_name": "Marcus W. Poe",
+      "role": "Minor child",
+      "date_of_birth": "2012-01-31"
+    },
+    "child_5": {
+      "entity_type": "person",
+      "first_name": "Rosa",
+      "middle_name": "H",
+      "last_name": "Coe",
+      "full_name": "Rosa H. Coe",
+      "role": "Minor child",
+      "date_of_birth": "2024-10-22"
+    },
+    "child_6": {
+      "entity_type": "person",
+      "first_name": "Rosa",
+      "middle_name": "B",
+      "last_name": "Ellsworth",
+      "full_name": "Rosa B. Ellsworth",
+      "role": "Minor child",
+      "date_of_birth": "2018-01-24"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Felix",
+      "middle_name": "K",
+      "last_name": "Loe",
+      "full_name": "Felix K. Loe",
+      "role": "Attorney for the client",
+      "address": "216 Birch Street",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0139",
+      "email": "felix.loe@example.net",
+      "date_of_birth": "1958-04-03",
+      "ssn_last4": "1688",
+      "bar_number": "4078",
+      "organization_name": "Greenhill Law Offices"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Alexandrina-Wilhelmina",
+      "middle_name": "Montgomery",
+      "last_name": "Featherstonehaugh-Cholmondeley-Smythe",
+      "address": "1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B",
+      "city": "Machias",
+      "state": "ME",
+      "zip": "04654",
+      "phone": "(207) 555-0128",
+      "email": "alexandrina.featherstonehaugh@example.org",
+      "date_of_birth": "1987-04-12",
+      "ssn_last4": "6120",
+      "role": "Petitioner",
+      "full_name": "Alexandrina-Wilhelmina Montgomery Featherstonehaugh-Cholmondeley-Smythe"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Alexandrina-Wilhelmina Montgomery Featherstonehaugh-Cholmondeley-Smythe petitions to divorce Bartholomew-Constantine Worthington Featherstonehaugh-Cholmondeley-Smythe on grounds of irreconcilable marital differences; the parties share six minor children and the family residence at 1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B, Machias, together with the adjoining woodlot conveyed by the respondent's grandparents.",
+    "narrative": "Alexandrina-Wilhelmina Montgomery Featherstonehaugh-Cholmondeley-Smythe and Bartholomew-Constantine Worthington Featherstonehaugh-Cholmondeley-Smythe married on 2009-11-16 in Machias, Maine, and separated on 2025-12-19. Six minor children live in the household: Olivia B. Ellsworth, Samuel B. Danforth, John Q. Poe, Marcus W. Poe, Rosa H. Coe and Rosa B. Ellsworth.\n\nThe petitioner works for Downeast Regional Consolidated School District Transportation Cooperative earning about $49000 per year; the respondent works for Passamaquoddy Bay Aquaculture Research & Development Consortium, LLLP earning about $63000. The principal asset is the family residence at 1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B, Machias, together with the adjoining woodlot conveyed by the respondent's grandparents.\n\nParental rights and responsibilities, a six-child support calculation, and division of the home and woodlot are the contested pieces. Counsel Felix K. Loe of Greenhill Law Offices represents the petitioner.",
+    "undisputed_facts": [
+      "The parties married on 2009-11-16 and separated on 2025-12-19.",
+      "All six children (Olivia B. Ellsworth, Samuel B. Danforth, John Q. Poe, Marcus W. Poe, Rosa H. Coe and Rosa B. Ellsworth) reside in the marital home."
+    ],
+    "disputed_facts": [
+      "Primary residence and the parent-child contact schedule for six children.",
+      "Whether the woodlot is marital or the respondent's non-marital inheritance."
+    ]
+  },
+  "intake_interview": {
+    "interviewer": "Family Law Attorney",
+    "interviewee_role": "petitioner",
+    "date": "2026-03-14",
+    "exchanges": [
+      {
+        "topic": "Household",
+        "question": "Tell me about the children.",
+        "answer": "There are six: Olivia B. Ellsworth, Samuel B. Danforth, John Q. Poe, Marcus W. Poe, Rosa H. Coe and Rosa B. Ellsworth. They all live with me in the apartment."
+      },
+      {
+        "topic": "Income",
+        "question": "What do you both earn?",
+        "answer": "I make about $49000 at Downeast Regional Consolidated School District Transportation Cooperative; he makes about $63000."
+      },
+      {
+        "topic": "Home",
+        "question": "What happens to the house?",
+        "answer": "I want to keep the family residence at 1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B, Machias, together with the adjoining woodlot conveyed by the respondent's grandparents so the children stay in their schools."
+      }
+    ]
+  },
+  "issues": [
+    {
+      "issue": "Child support above the standard worksheet table",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 2006",
+      "sub_questions": [
+        "How does the six-child table apply to combined income?"
+      ],
+      "strength": "strong",
+      "id": "iss1"
+    },
+    {
+      "issue": "Marital vs. non-marital character of the woodlot",
+      "category": "property",
+      "governing_law": "19-A M.R.S. § 953",
+      "sub_questions": [
+        "Was the grandparents' conveyance a gift to one spouse or both?"
+      ],
+      "strength": "moderate",
+      "id": "iss2"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Pay records",
+      "type": "financial_record",
+      "party": "petitioner",
+      "description": "Both parties' recent pay stubs supporting the support worksheet.",
+      "id": "ev1"
+    },
+    {
+      "title": "Woodlot deed",
+      "type": "document",
+      "party": "respondent",
+      "description": "The grandparents' conveyance relied on for the non-marital claim.",
+      "id": "ev2"
+    },
+    {
+      "title": "Marriage certificate",
+      "type": "public_record",
+      "party": "petitioner",
+      "description": "Certificate of the 2009-11-16 marriage in Machias.",
+      "id": "ev3"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Respondent annual income",
+        "amount": 83000,
+        "basis": "Wages from Passamaquoddy Bay Aquaculture Research & Development Consortium, LLLP."
+      },
+      {
+        "label": "Petitioner annual income",
+        "amount": 50000,
+        "basis": "Wages from Downeast Regional Consolidated School District Transportation Cooperative."
+      },
+      {
+        "label": "Marital home assessed value",
+        "amount": 215000,
+        "basis": "Municipal assessment of the residence and woodlot."
+      }
+    ]
+  },
+  "facts": {
+    "marriage_date": "2009-11-16",
+    "marriage_city": "Machias",
+    "marriage_state": "ME",
+    "separation_date": "2025-12-19",
+    "grounds": "irreconcilable marital differences",
+    "num_minor_children": 6,
+    "marital_home": "the family residence at 1247 Passamaquoddy Narrows Road, Building 3, Apartment 12-B, Machias, together with the adjoining woodlot conveyed by the respondent's grandparents",
+    "petitioner_employer": "Downeast Regional Consolidated School District Transportation Cooperative",
+    "petitioner_income": 49000,
+    "respondent_employer": "Passamaquoddy Bay Aquaculture Research & Development Consortium, LLLP",
+    "respondent_income": 63000,
+    "child_support_worksheet": "Maine child support worksheet with six children on the table of basic support entitlements"
+  }
+}

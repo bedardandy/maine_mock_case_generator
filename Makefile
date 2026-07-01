@@ -1,4 +1,4 @@
-.PHONY: help install list generate fill compound probate smoke test examples clean
+.PHONY: help install list generate fill compound probate smoke stress corpus test examples clean
 
 help:
 	@echo "Mock Legal Matter Generator"
@@ -9,6 +9,8 @@ help:
 	@echo "  make fill       Fill a downstream form (FORM=<id>)"
 	@echo "  make compound   Summarize a compound universe (COMPOUND=<id>)"
 	@echo "  make smoke      Run the end-to-end smoke test (scenarios, fills, compounds)"
+	@echo "  make stress     Emit schema-valid stressed variants (SCENARIO=<id>)"
+	@echo "  make corpus     Build the JSONL fixture corpus for downstream repos"
 	@echo "  make examples   Regenerate the committed examples/"
 	@echo "  make test       Run the pytest suite"
 	@echo "  make clean      Remove generated output and caches"
@@ -27,6 +29,13 @@ generate:
 
 smoke:
 	python3 tools/smoke.py --count 5
+
+# Usage: make stress SCENARIO=family-divorce-cumberland SEED=1
+stress:
+	python3 tools/stress.py $(SCENARIO) --seed $(SEED)
+
+corpus:
+	python3 tools/corpus.py --seeds 3 --stress --compounds --out out/corpus
 
 # Usage: make fill FORM=FM-004
 FORM ?= FM-004

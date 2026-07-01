@@ -1,0 +1,27 @@
+{
+  "matter": {
+    "docket_number": "SOM-CV-2026-149",
+    "case_id": "MMC-2026-782554",
+    "court_county": "Somerset",
+    "court_location": "Skowhegan",
+    "court_type": "Superior Court",
+    "case_type": "contract_dispute",
+    "filing_date": "2026-04-02"
+  },
+  "parties": {
+    "plaintiff": {
+      "full_name": "Kennebec Valley Pallet Co."
+    },
+    "defendant": {
+      "full_name": "North Woods Skidding, Inc."
+    }
+  },
+  "party": {
+    "full_name": "Kennebec Valley Pallet Co.",
+    "signature": "Kennebec Valley Pallet Co."
+  },
+  "facts": {
+    "invoice_total": 17886,
+    "invoices_outstanding": 5
+  }
+}

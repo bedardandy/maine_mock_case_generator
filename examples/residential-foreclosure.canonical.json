@@ -1,0 +1,102 @@
+{
+  "matter": {
+    "docket_number": "SAG-RE-2026-407",
+    "case_id": "MMC-2026-702326",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "District Court",
+    "case_type": "residential_foreclosure",
+    "filing_date": "2026-02-03",
+    "event_date": "2025-09-30"
+  },
+  "parties": {
+    "lender": {
+      "full_name": "Riverbend Analytics LLC",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174"
+    },
+    "borrower": {
+      "full_name": "John G. Inglewood",
+      "first_name": "John",
+      "middle_name": "G",
+      "last_name": "Inglewood",
+      "address": "21 Maple Court",
+      "city": "Camden",
+      "state": "ME",
+      "zip": "04054",
+      "phone": "(207) 555-0108",
+      "email": "john.inglewood@example.com",
+      "date_of_birth": "1996-10-09"
+    },
+    "co_borrower": {
+      "full_name": "John D. Kingsley",
+      "first_name": "John",
+      "middle_name": "D",
+      "last_name": "Kingsley",
+      "address": "116 Granite Ridge Road",
+      "city": "Brunswick",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0174",
+      "email": "john.kingsley@example.org",
+      "date_of_birth": "1998-04-24"
+    },
+    "attorney": {
+      "full_name": "Felix K. Loe",
+      "first_name": "Felix",
+      "middle_name": "K",
+      "last_name": "Loe",
+      "address": "216 Birch Street",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04074",
+      "phone": "(207) 555-0139",
+      "email": "felix.loe@example.net",
+      "date_of_birth": "1958-04-03",
+      "bar_number": "4078"
+    }
+  },
+  "party": {
+    "full_name": "John G. Inglewood",
+    "first_name": "John",
+    "middle_name": "G",
+    "last_name": "Inglewood",
+    "address": "21 Maple Court",
+    "city": "Camden",
+    "state": "ME",
+    "zip": "04054",
+    "phone": "(207) 555-0108",
+    "email": "john.inglewood@example.com",
+    "date_of_birth": "1996-10-09",
+    "signature": "John G. Inglewood"
+  },
+  "facts": {
+    "property_address": "31 Birchwood Terrace",
+    "property_town": "Biddeford",
+    "property_county": "Sagadahoc",
+    "origination_date": "2020-02-27",
+    "original_principal": 156000,
+    "interest_rate": "6.500%",
+    "monthly_payment": 1272,
+    "loan_type": "FHA-insured 30-year fixed",
+    "hardship": "an unreimbursed furnace and roof failure the same winter",
+    "months_delinquent": 13,
+    "notice_of_default_date": "2025-12-09",
+    "right_to_cure_deadline": "2026-01-13",
+    "default_date": "2025-09-30",
+    "arrearage_at_notice": 24756,
+    "principal_balance": 267500,
+    "escrow_shortage": 5512,
+    "reinstatement_amount": 22848,
+    "property_value_estimate": 270000,
+    "payment_dispute": "two payments the servicer applied to a suspense account instead of the note",
+    "servicing_transfer": "the loan was service-transferred mid-default and the payment history arrived incomplete",
+    "mediation_session_1": "2026-04-16",
+    "mediation_session_2": "2026-06-14",
+    "modification_offer": "an FHA-HAMP partial claim deferring the arrears to a junior lien",
+    "borrower_income_now": 3435
+  }
+}

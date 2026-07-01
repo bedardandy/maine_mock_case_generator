@@ -23,3 +23,11 @@ jobs:
           python tools/build_examples.py
           git diff --exit-code examples/ \
             || (echo "examples/ is stale; run 'make examples' and commit" && exit 1)
+      - name: Build the downstream fixture corpus
+        run: python tools/corpus.py --seeds 3 --stress --compounds --out out/corpus
+      - name: Publish corpus artifact for downstream repos
+        uses: actions/upload-artifact@v4
+        with:
+          name: mock-case-corpus
+          path: out/corpus/
+          retention-days: 30

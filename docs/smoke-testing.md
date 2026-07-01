@@ -72,3 +72,25 @@ python tools/smoke.py --count 100        # 100 seeds per scenario
 
 Every seed is reproducible: if seed 73 of `minor-guardianship` ever breaks a downstream
 form, `python tools/generate.py minor-guardianship --seed 73` reproduces the exact input.
+
+## Adversarial testing (the stress harness + edge pack)
+
+Seed sweeps only vary what a scenario *samples*; they never produce a missing section or a
+hostile string. Two additions cover that gap:
+
+- **`edge-*` scenarios** bake the hostility into the content itself — unicode names, a
+  six-child household, org parties with no contact info, leap-day/limitations date traps,
+  and currency extremes (negative, zero, half-cent, nine figures). Each README says what
+  it hunts.
+- **`tools/stress.py` mutators** perturb *any* generated matter into variants that remain
+  schema-valid but violate downstream assumptions: `drop_optionals`, `blank_strings`,
+  `maximal_lengths`, `unicode_stress`.
+
+```bash
+python tools/stress.py --all-scenarios --seeds 2 --canonical --jsonl out/stress.jsonl
+```
+
+Feed the JSONL to your fill engine; anything that crashes or renders wrong was a latent
+bug you'd otherwise meet in production intake. For a ready-made bundle, the CI workflow
+publishes `out/corpus/` (matters + stressed variants + compounds + manifest) as the
+`mock-case-corpus` artifact on every push — see `docs/integration.md`.

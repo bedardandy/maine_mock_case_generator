@@ -51,11 +51,22 @@ python -m pytest -q                      # test suite
 
 Or via `make`: `make list`, `make generate SCENARIO=estate-tax-706 SEED=2`, `make smoke`, `make test`.
 
+Or install it as a package (editable) and use the `mmcg` console script — the easy way to
+drive the generator from a **sibling repo's** checkout or CI:
+
+```bash
+pip install -e .                          # exposes `mmcg` + `import generator`
+mmcg list
+mmcg generate residential-purchase-sale --seed 3 --canonical
+mmcg stress --all-scenarios --jsonl stress.jsonl    # schema-valid hostile variants
+mmcg corpus --seeds 3 --stress --out out/corpus     # bulk JSONL fixture corpus
+```
+
 ## Concrete fills (end-to-end proof)
 
 The generator doesn't stop at a canonical case — it pours matters into **real downstream
 form mappings** (vendored in `integration/`) so you can see exactly which PDF fields get
-populated. **Ten forms across all three repos and three fact-key namespaces** are wired
+populated. **Eleven forms across all three repos and three fact-key namespaces** are wired
 (the probate repo ships no fact-key mapping, so DE-301's was authored here from its schema):
 
 ```bash
@@ -72,8 +83,17 @@ python tools/fill.py IRS-SS-4 --seed 1 --show-empty   # EIN application, via tax
 | `real_estate` (`property`/`transferor`/`transferee`) | ME-RETTD | `adapters.to_real_estate_case` |
 
 Each fill prints a coverage report and required-key check; the form-namespace case JSON it
-emits is the input the downstream repo's PDF engine renders. See
+emits is the input the downstream repo's PDF engine renders. A form can declare several
+source scenarios: ME-RETTD fills from the deed-style `real-estate-transfer` **and** all
+five closing-suite sale scenarios (seller/buyer → transferor/transferee fallback), and the
+smoke suite exercises every declared source. See
 [`integration/README.md`](integration/README.md).
+
+For bulk hand-off, `make corpus` (or `mmcg corpus`) builds a JSONL **fixture corpus** —
+every scenario × N seeds as `{matter, canonical}` records plus stressed variants and the
+compound universes, with a `manifest.json` — and CI uploads it as the `mock-case-corpus`
+artifact on every push, so a downstream repo can conformance-test against ~270 records
+without installing anything from here.
 
 ## Compound (intertwined) matters
 
@@ -103,13 +123,46 @@ The `complex-civil-litigation` scenario exercises the schema's `litigation` sect
 multi-party suit with multiple counts, affirmative defenses, counterclaims, cross-claims,
 a third-party complaint, discovery, motions, a chronological docket, and trial details.
 
-## Edge cases
+`residential-foreclosure` combines *everything at once* — a defended Maine judicial
+foreclosure with a **computed statutory clock** (missed payment → 14 M.R.S. § 6111 cure
+notice → exactly 35 days → complaint → FDP mediation, via the DSL's `date_offset`),
+*Greenleaf* standing defenses, loss-mitigation facts, a litigation section, and a
+six-message communications thread from cure notice to modification offer.
 
-Two scenarios deliberately probe boundaries: `insolvent-estate` (a probate where claims
-always exceed assets, stressing claim-priority and allowance logic) and
-`pro-se-interstate-custody` (a self-represented parent — no attorney generated — with a
-cross-border UCCJEA jurisdiction question). `tests/test_edge.py` adds wide seed sweeps and
-boundary assertions (zero-children handling, no-counsel projection, multi-party rosters).
+## Edge cases & the stress harness
+
+Document automation fails on the weird intake, not the average one — so the repo attacks
+its own output from two directions.
+
+**The `edge-*` scenario pack** — five matters whose *content* is deliberately hostile,
+each README documenting exactly which downstream failure mode it hunts:
+
+| Scenario | Stresses |
+|----------|----------|
+| `edge-unicode-names` | diacritics, apostrophes, hyphenated surnames, a `Jr.` suffix, an org name with commas + `&`, curly quotes/em dashes |
+| `edge-max-household` | 38-char surnames, six minor children (`child_1..6`), long multi-part addresses, oversized employer strings |
+| `edge-sparse-minimal` | org-only parties with no contact info, no attorney, no optional section at all, two facts |
+| `edge-boundary-dates` | leap-day accident *and* DOB (1926-02-29), limitations landing in a non-leap year, New-Year's-Day filing, same-day timeline events |
+| `edge-money-extremes` | $123,456,789.10, a **negative** setoff, a $0 line item, a half-cent rounding case, a one-cent dispute |
+
+Values that matter are **authored** (`parties.roles[].party` pins exact names/dates), so
+assertions can be byte-exact; everything else still varies by seed. Two earlier boundary
+scenarios remain: `insolvent-estate` (claims always exceed assets) and
+`pro-se-interstate-custody` (no attorney generated).
+
+**The perturbation harness** (`generator/stress.py`) mutates *any* generated matter into
+schema-valid stress variants — `drop_optionals` (required-fields-only skeleton),
+`blank_strings` (present-but-empty), `maximal_lengths` (field overflow), `unicode_stress`
+(hostile text, dates/numbers untouched) — deterministically, tagged in provenance:
+
+```bash
+python tools/stress.py --list-mutators
+python tools/stress.py family-divorce-cumberland --seed 1 --mutators maximal_lengths
+python tools/stress.py --all-scenarios --seeds 2 --canonical --jsonl out/stress.jsonl
+```
+
+`tests/test_edge.py`, `tests/test_edge_pack.py`, and `tests/test_stress.py` sweep wide
+seed ranges and assert every mutator keeps every scenario valid and projectable.
 
 ## Probate fixtures (schema-driven path)
 
@@ -170,7 +223,7 @@ any scenario can add one under a `communications:` block. See
 
 ## Seed scenarios
 
-Thirty-nine archetypes spanning the three downstream repos and eight practice areas. Add more by dropping a new
+Forty-five archetypes spanning the three downstream repos and eight practice areas. Add more by dropping a new
 `scenarios/<id>/scenario.yaml` — no code changes required.
 
 | Scenario | Practice area | Downstream repo |
@@ -214,6 +267,12 @@ Thirty-nine archetypes spanning the three downstream repos and eight practice ar
 | `resource-extraction-sale` | real estate (gravel/quarry/timberland) | transactional-tax-forms |
 | `business-asset-sale` | business (operating-business asset purchase) | transactional-tax-forms |
 | `like-kind-exchange-1031` | tax (IRC § 1031 deferred exchange) | transactional-tax-forms |
+| `residential-foreclosure` | real estate (defended judicial foreclosure + FDP mediation) | maine-court-forms |
+| `edge-unicode-names` | civil (edge: hostile character sets) | maine-court-forms |
+| `edge-max-household` | family (edge: six children + oversized strings) | maine-court-forms |
+| `edge-sparse-minimal` | civil (edge: everything optional absent) | maine-court-forms |
+| `edge-boundary-dates` | civil (edge: leap days + limitations math) | maine-court-forms |
+| `edge-money-extremes` | business (edge: currency traps) | maine-court-forms |
 
 Browse a worked sample of each under [`examples/`](examples/) (`*.matter.json` and the
 projected `*.canonical.json`).
@@ -232,8 +291,8 @@ bridge). Full reference: [`docs/data-model.md`](docs/data-model.md).
 catalog/      schemas (mock_matter, canonical_case, compound_matter), practice_areas, faker_pools
 scenarios/    one folder per archetype (scenario.yaml + README.md)
 compound/     intertwined matter universes (compound.yaml + README.md)
-generator/    the engine: pools, dsl, scenarios, engine, project, schema, adapters, formfill, compound
-tools/        generate, validate, project_canonical, fill, compound, smoke, build_examples, mcp_server
+generator/    the engine: pools, dsl, scenarios, engine, project, schema, adapters, formfill, compound, stress, cli
+tools/        generate, validate, project_canonical, fill, compound, smoke, stress, corpus, build_examples, mcp_server
 integration/  vendored real downstream form mappings + registry (concrete fills)
 skills/       mock-case-generator/ (LLM-guided generation protocol + prompts)
 examples/     generated matters, canonical projections, fill plans, and compound universes
