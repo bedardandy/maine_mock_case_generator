@@ -1,0 +1,178 @@
+id: subdivision-development-sale
+title: "Subdivision land sale: {project_name}, {property_town} — {seller_full_name} to {buyer_full_name}"
+practice_area: real_estate
+case_type: subdivision_development_sale
+status: pre_filing
+docket_prefix: RE
+assign_docket: false
+
+downstream:
+  repo: transactional-tax-forms
+  example_forms: [ME-RETTD]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Maine Registry of Deeds / municipal planning board"
+
+dates:
+  filing_date: {date_between: ["2026-01-05", "2026-03-01"]}
+  event_date: "{closing_date}"
+
+# A developer's acquisition of raw land for a residential subdivision: entitlement/approval
+# contingencies (planning board, Maine DEP site law / stormwater), phased lot takedowns,
+# offsite improvements and performance bonding, and the approvals correspondence.
+parties:
+  client_role: buyer
+  attorney: true
+  roles:
+    - {key: seller, label: "Seller / landowner (grantor)"}
+    - {key: buyer, label: "Buyer / developer (grantee, client)"}
+
+facts:
+  project_name: {pick: ["Hillcrest Estates", "Sawyer Brook Subdivision", "Ledgeview Farms", "Cranberry Meadows", "Stonewall Crossing"]}
+  property_address: {pick: ["0 Sawyer Brook Road", "Route 9 (undeveloped)", "0 Ledge Hill Road", "North Meadow Road parcel"]}
+  property_town: {pick: ["Gorham", "Windham", "Scarborough", "Standish", "Buxton", "Gray"]}
+  property_county: "{county}"
+  parcel_acres: {int_between: [22, 240]}
+  planned_lots: {int_between: [8, 96]}
+  zoning: {pick: ["Rural Residential (RR)", "Suburban Residential (SR-2)", "Village Residential", "Agricultural/Residential"]}
+  approval_type: {pick: ["major subdivision approval", "cluster/open-space subdivision approval", "planned unit development approval"]}
+  purchase_price: {int_between: [420000, 6800000]}
+  price_basis: {pick: ["a fixed lump sum", "a per-approved-lot price of $38,000", "a base price plus a per-lot bonus over 40 lots"]}
+  earnest_money: {int_between: [15000, 250000]}
+  effective_date: {date_between: ["2026-01-06", "2026-01-25"]}
+  approval_contingency_deadline: {date_between: ["2026-07-01", "2026-11-30"]}
+  closing_date: {date_between: ["2026-12-01", "2027-03-31"]}
+  transfer_date: "{closing_date}"
+  takedown_structure: {pick: ["a single closing on the entire parcel", "three phased lot takedowns of roughly equal size", "an initial 20-lot takedown with options on later phases"]}
+  offsite_improvements: {pick: ["a Route 9 turn lane and sight-distance easement required by MaineDOT", "an upgraded municipal water main extension", "a regional stormwater detention pond serving two phases"]}
+  dep_permit: {pick: ["a Maine DEP Stormwater Permit (Chapter 500)", "a DEP Site Location of Development Act permit", "a Natural Resources Protection Act permit for a stream crossing"]}
+  wetlands: {pick: ["3.2 acres of mapped freshwater wetland requiring avoidance", "a vernal pool with a 250-foot significant-vernal-pool setback", "no mapped wetlands on the developable area"]}
+  performance_security: {pick: ["a $640,000 performance bond for roads and utilities", "an irrevocable letter of credit for site improvements", "a subdivision improvement guarantee escrow"]}
+  road_standard: {pick: ["public roads built to town standards and offered for acceptance", "private roads with a road-maintenance association", "a mix of public collector and private lane roads"]}
+  deed_type: "warranty deed"
+
+third_parties:
+  count: {min: 5, max: 6}
+  pool:
+    - {type: expert, name_kind: person, role: "Civil engineer / site designer", relevance: "Prepared the subdivision plan, stormwater design, and DEP applications."}
+    - {type: government_agency, name: "Municipal Planning Board", role: "Subdivision approval authority", relevance: "Reviews and approves the subdivision under the town ordinance and 30-A M.R.S. § 4403."}
+    - {type: government_agency, name: "Maine Department of Environmental Protection", role: "Environmental permitting authority", relevance: "Issues stormwater and natural-resource permits for the development."}
+    - {type: financial_institution, name_kind: bank, role: "Land / development lender", relevance: "Finances the land acquisition and horizontal development."}
+    - {type: business_entity, name_kind: organization, role: "Title insurance company", relevance: "Insures title and the subdivision plan of record."}
+    - {type: expert, name_kind: person, role: "Licensed surveyor", relevance: "Prepared the boundary and subdivision plat for recording."}
+
+fact_pattern:
+  summary: "{buyer_full_name}, a developer, is buying {parcel_acres} acres at {property_address}, {property_town} from {seller_full_name} for ${purchase_price} to build {project_name}, a {planned_lots}-lot {approval_type}, contingent on approvals by {approval_contingency_deadline}."
+  narrative:
+    - "{seller_full_name} owns roughly {parcel_acres} acres of undeveloped {zoning}-zoned land at {property_address} in {property_town}, {county} County. {buyer_full_name}'s development company has agreed to buy it for ${purchase_price} on {price_basis}, to develop {project_name} as a {planned_lots}-lot {approval_type}. The PSA became effective {effective_date} with ${earnest_money} down and {takedown_structure}."
+    - "The deal is contingent on obtaining all approvals by {approval_contingency_deadline}: municipal {approval_type} from the planning board and {dep_permit} from Maine DEP. Site constraints include {wetlands}, and the approval will require {offsite_improvements}. Roads are planned as {road_standard}, secured by {performance_security}."
+    - "Counsel {attorney_full_name} of {attorney_firm} is handling the acquisition, the entitlement contingency, the subdivision plat and covenants, and coordinating the developer's lender. Title will pass by {deed_type} once approvals are final and unappealable, with closing targeted for {closing_date}."
+  undisputed:
+    - "The {parcel_acres}-acre parcel at {property_address}, {property_town} is under contract from {seller_full_name} to {buyer_full_name} at ${purchase_price}."
+    - "The project is a planned {planned_lots}-lot {approval_type} known as {project_name}."
+    - "Closing is contingent on approvals by {approval_contingency_deadline}."
+  disputed:
+    - "Whether the planning board conditions ({offsite_improvements}) make the project economically feasible at ${purchase_price}."
+    - "How wetland/vernal-pool constraints ({wetlands}) reduce the yield below {planned_lots} lots."
+    - "The form and amount of {performance_security} the town will require."
+
+interview:
+  interviewer: "Land Use Attorney"
+  interviewee_role: buyer
+  exchanges:
+    - {topic: "Parcel", question: "What are you acquiring?", answer: "About {parcel_acres} acres at {property_address} in {property_town}, for ${purchase_price} on {price_basis}."}
+    - {topic: "Project", question: "What are you building?", answer: "{project_name}, a {planned_lots}-lot {approval_type} in the {zoning} district."}
+    - {topic: "Approvals", question: "What has to happen before closing?", answer: "Planning board {approval_type} and {dep_permit}, all final by {approval_contingency_deadline}."}
+    - {topic: "Constraints", question: "Any site constraints?", answer: "{wetlands}, and the town will require {offsite_improvements}."}
+    - {topic: "Phasing", question: "How is the takedown structured?", answer: "{takedown_structure}, with roads built as {road_standard}."}
+    - {topic: "Security", question: "What improvement security is expected?", answer: "{performance_security}."}
+
+objectives:
+  goals:
+    - "Secure {approval_type} and {dep_permit} by {approval_contingency_deadline}."
+    - "Close at ${purchase_price} once approvals are final and unappealable."
+    - "Keep lot yield near {planned_lots} despite {wetlands}."
+  priorities:
+    - "Entitlement certainty before hard money is at risk."
+    - "Feasible conditions of approval and improvement security."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A recorded subdivision plat and a closing on entitled land."
+  non_starters:
+    - "Closing before approvals are final and the appeal period has run."
+    - "Conditions that cut yield below the deal's break-even lot count."
+  constraints:
+    budget: "Acquisition plus horizontal development financed by the land/development lender."
+    timeline: "Entitlements through {approval_contingency_deadline}; closing {closing_date}."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Subdivision approval standards and conditions", category: land_use, governing_law: "30-A M.R.S. § 4403; town subdivision ordinance", sub_questions: ["Does the plan meet the 20 statutory review criteria?", "Are the conditions of approval reasonable and lawful?"], strength: moderate}
+    - {issue: "Environmental permitting and natural-resource protection", category: environmental, governing_law: "38 M.R.S. §§ 480-A to 490 (NRPA); DEP Chapter 500 stormwater", sub_questions: ["Do wetlands or a vernal pool require avoidance or a permit?", "Is a Site Law permit triggered by acreage?"], strength: moderate}
+    - {issue: "Performance guarantee for required improvements", category: land_use, governing_law: "30-A M.R.S. § 4404; ordinance improvement-guarantee provisions", sub_questions: ["What bond or letter of credit will the town require?"], strength: strong}
+    - {issue: "Entitlement/approval contingency in the PSA", category: real_estate, governing_law: "PSA approval-contingency rider", sub_questions: ["Are approvals 'final and unappealable' by {approval_contingency_deadline}?"], strength: strong}
+    - {issue: "Maine real estate transfer tax on the land sale", category: tax, governing_law: "36 M.R.S. § 4641-A", sub_questions: ["What is the taxable consideration if the price is per-lot?"], strength: moderate}
+
+evidence:
+  count: {min: 4, max: 6}
+  pool:
+    - {title: "Purchase and sale agreement with approval contingency", type: contract, party: buyer, description: "The executed PSA and entitlement-contingency rider."}
+    - {title: "Preliminary subdivision plan", type: document, party: buyer, description: "The engineer's {planned_lots}-lot plan for {project_name}."}
+    - {title: "DEP permit application", type: document, party: buyer, description: "The application for {dep_permit}."}
+    - {title: "Wetland delineation report", type: document, party: buyer, description: "Field delineation supporting {wetlands}."}
+    - {title: "Planning board decision with conditions", type: public_record, party: buyer, description: "The approval and its conditions ({offsite_improvements})."}
+    - {title: "Recorded subdivision plat", type: public_record, party: buyer, description: "The surveyor's plat filed at the registry."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  amounts:
+    - {label: "Purchase price", amount: {int_between: [420000, 6800000]}, basis: "Agreed consideration on {price_basis}."}
+    - {label: "Earnest money deposit", amount: {int_between: [15000, 250000]}, basis: "Held in escrow pending approvals."}
+    - {label: "Estimated horizontal development cost", amount: {int_between: [600000, 9500000]}, basis: "Roads, utilities, stormwater, and {offsite_improvements}."}
+    - {label: "Performance security amount", amount: {int_between: [250000, 3000000]}, basis: "Town improvement guarantee."}
+    - {label: "Estimated Maine transfer tax", amount: {int_between: [1848, 29920]}, basis: "$2.20 per $500 of consideration, split between the parties."}
+
+communications:
+  - date: "{effective_date}"
+    channel: letter
+    from: "{attorney_full_name}, {attorney_firm}"
+    to: "Seller's counsel"
+    subject: "Executed PSA and approval contingency — {project_name}"
+    summary: "Buyer's counsel confirms the deal and the entitlement timeline."
+    body: "Enclosed is the executed PSA for the {parcel_acres}-acre parcel at {property_address}. {buyer_full_name} is proceeding to entitle {project_name} as a {planned_lots}-lot {approval_type}. The approval contingency runs to {approval_contingency_deadline}; the ${earnest_money} deposit is going hard only after preliminary approval. Please deliver any prior surveys, soils work, and title materials."
+  - date: "{effective_date}"
+    channel: email
+    from: "Civil engineer / site designer"
+    to: "{buyer_full_name}"
+    cc: "{attorney_full_name}"
+    subject: "Yield and constraints — {project_name}"
+    summary: "Engineer flags wetland constraints affecting lot yield."
+    body: "First-pass fit for {project_name} shows {wetlands}. Working around it, we can lay out close to {planned_lots} lots, but the town will almost certainly require {offsite_improvements}. I'm preparing the application for {dep_permit} in parallel with the local submission."
+  - date: "{approval_contingency_deadline}"
+    channel: letter
+    from: "Municipal Planning Board"
+    to: "{buyer_full_name}"
+    subject: "Conditional approval — {project_name} {approval_type}"
+    summary: "Planning board grants approval with conditions."
+    body: "The Planning Board has granted {approval_type} for {project_name} subject to conditions, including {offsite_improvements}, {road_standard}, and posting {performance_security} before any construction. The approval is subject to the 30-day appeal period under 30-A M.R.S. § 2691."
+    attachments: ["Notice of decision with conditions of approval"]
+  - date: "{approval_contingency_deadline}"
+    channel: email
+    from: "Maine Department of Environmental Protection"
+    to: "{buyer_full_name}"
+    cc: "Civil engineer / site designer"
+    subject: "Permit decision — {project_name}"
+    summary: "DEP issues the environmental permit with conditions."
+    body: "DEP has issued {dep_permit} for {project_name} with standard stormwater maintenance and inspection conditions. The permit reflects the wetland avoidance shown on the approved plan ({wetlands}). Please record the permit conditions with the subdivision plat."
+    attachments: ["DEP permit and conditions"]
+  - date: "{closing_date}"
+    channel: memo
+    from: "Title insurance company"
+    to: "All parties"
+    subject: "Closing and plat recording — {project_name}, {property_town}"
+    summary: "Escrow agent confirms closing and plat recording sequence."
+    body: "With approvals final and unappealable, closing on {project_name} is set for {closing_date}. We will record the {deed_type}, the subdivision plat, the declaration of covenants, and the RETTD, and issue an owner's policy insuring the plat of record. Consideration is ${purchase_price} with the Maine transfer tax split between {seller_full_name} and {buyer_full_name}. {takedown_structure} governs any later phases."

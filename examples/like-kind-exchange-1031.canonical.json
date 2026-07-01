@@ -1,0 +1,102 @@
+{
+  "matter": {
+    "case_id": "MMC-2026-185831",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Maine Registry of Deeds / qualified intermediary escrow",
+    "case_type": "like_kind_exchange_1031",
+    "filing_date": "2026-01-09",
+    "event_date": "2026-02-19"
+  },
+  "parties": {
+    "exchangor": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "relinquished_buyer": {
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
+    },
+    "replacement_seller": {
+      "full_name": "Ingrid B. Kingsley",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10"
+    },
+    "attorney": {
+      "full_name": "Omar W. Loe",
+      "first_name": "Omar",
+      "middle_name": "W",
+      "last_name": "Loe",
+      "address": "62 Tidewater Lane",
+      "city": "Waterville",
+      "state": "ME",
+      "zip": "04072",
+      "phone": "(207) 555-0187",
+      "email": "omar.loe@example.com",
+      "date_of_birth": "1995-10-25",
+      "bar_number": "4078"
+    }
+  },
+  "party": {
+    "full_name": "Grace C. Roe",
+    "first_name": "Grace",
+    "middle_name": "C",
+    "last_name": "Roe",
+    "address": "422 Spruce Avenue",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "email": "grace.roe@example.com",
+    "date_of_birth": "1969-04-20",
+    "signature": "Grace C. Roe"
+  },
+  "facts": {
+    "relinquished_property": "a 6-unit apartment building at 22 Sherman Street",
+    "relinquished_town": "Portland",
+    "relinquished_county": "Sagadahoc",
+    "relinquished_sale_price": 669985,
+    "relinquished_basis": 739078,
+    "relinquished_debt": 431926,
+    "replacement_property": "a self-storage facility in Sanford",
+    "replacement_town": "Sanford",
+    "replacement_price": 1817628,
+    "replacement_debt": 976437,
+    "exchange_type": "a delayed exchange identifying under the three-property rule",
+    "relinquished_closing_date": "2026-02-19",
+    "identification_deadline": "2026-04-02",
+    "exchange_deadline": "2026-08-12",
+    "replacement_closing_date": "2026-07-02",
+    "identification_rule": "the three-property rule",
+    "boot_risk": "no expected boot if value and debt are fully replaced",
+    "related_party": "an unrelated seller (no related-party issue)",
+    "qi_role": "a qualified intermediary holding the net proceeds so the exchangor never has actual or constructive receipt",
+    "deed_type": "warranty deed"
+  }
+}

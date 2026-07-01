@@ -1,0 +1,187 @@
+id: business-asset-sale
+title: "Business asset sale: {business_name} — {seller_full_name} to {buyer_full_name}"
+practice_area: business
+case_type: business_asset_sale
+status: pre_filing
+docket_prefix: BUS
+assign_docket: false
+
+downstream:
+  repo: transactional-tax-forms
+  example_forms: [IRS-SS-4]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Private closing / Maine Secretary of State"
+
+dates:
+  filing_date: {date_between: ["2026-01-05", "2026-03-01"]}
+  event_date: "{closing_date}"
+
+# Sale of an operating business as an asset purchase (APA): purchase-price allocation
+# (Form 8594), a working-capital adjustment, escrow/holdback and earnout, seller financing,
+# a non-compete, and the buyer's accounting/financing due-diligence questions.
+parties:
+  client_role: buyer
+  attorney: true
+  roles:
+    - {key: seller, label: "Seller / owner (of the business)"}
+    - {key: buyer, label: "Buyer (asset acquirer, client)"}
+
+facts:
+  business_name: {pick: ["Harbor Machine & Tool, Inc.", "Downeast Family Dental, P.A.", "Katahdin HVAC Services LLC", "Portland Precision Fabrication Co.", "Casco Bay Landscaping, Inc."]}
+  business_type: {pick: ["a precision machine shop", "a two-location dental practice", "a residential HVAC service company", "a metal fabrication business", "a commercial landscaping company"]}
+  entity_form: {pick: ["an S-corporation", "a C-corporation", "a member-managed LLC", "a professional association"]}
+  years_in_business: {int_between: [8, 42]}
+  employee_count: {int_between: [6, 85]}
+  deal_structure: "an asset purchase (not a stock/equity purchase)"
+  new_entity_name: {pick: ["Harbor Machine Acquisition LLC", "Downeast Dental Partners LLC", "Katahdin Mechanical Holdings LLC", "Casco Bay Grounds LLC"]}
+  purchase_price: {int_between: [650000, 12500000]}
+  annual_revenue: {int_between: [900000, 18000000]}
+  ebitda: {int_between: [180000, 3200000]}
+  ebitda_multiple: {pick: ["3.5x", "4.0x", "4.5x", "5.0x"]}
+  addbacks: {pick: ["owner's above-market salary and personal auto/travel", "one-time legal fees and a discontinued product line", "related-party rent normalized to market"]}
+  working_capital_target: {int_between: [90000, 1400000]}
+  wc_adjustment: "a dollar-for-dollar working-capital true-up against a pegged target at closing"
+  escrow_holdback: {pick: ["10% held in escrow for 18 months for indemnity", "a $250,000 indemnity escrow for 12 months", "a 12-month holdback of 8% of the price"]}
+  earnout: {pick: ["a 2-year earnout of up to $400,000 tied to gross-profit retention", "no earnout", "an earnout of 25% of revenue over $2.0M for two years"]}
+  seller_note: {pick: ["a $500,000 seller note at 7% over 5 years, subordinated to the bank", "no seller financing", "seller financing of 15% of the price on a 4-year note"]}
+  financing_type: {pick: ["an SBA 7(a) loan for the majority of the price", "conventional bank acquisition financing plus a seller note", "a bank term loan with a revolving line for working capital"]}
+  loan_amount: {int_between: [400000, 9000000]}
+  noncompete: {pick: ["a 5-year, 50-mile non-compete and non-solicit from the seller", "a 3-year non-compete plus a 1-year consulting agreement", "a 4-year non-compete covering Cumberland and York Counties"]}
+  allocation_basis: "an IRC § 1060 purchase-price allocation on Form 8594 across Class I-VII assets"
+  key_assets: {pick: ["equipment, inventory, customer contracts, and goodwill", "FF&E, patient records, and goodwill", "vehicles, tools, service contracts, and goodwill", "machinery, WIP inventory, and the trade name"]}
+  assumed_liabilities: {pick: ["only assumed contracts and PTO; no debt assumed", "assumed equipment leases and warranty obligations", "specified trade payables and customer deposits"]}
+  lease_status: {pick: ["assignment of the facility lease with landlord consent", "a new 10-year lease with the seller as landlord", "assignment of two leases plus a vehicle-fleet lease"]}
+  effective_date: {date_between: ["2026-01-06", "2026-01-25"]}
+  qoe_deadline: {date_between: ["2026-02-15", "2026-03-31"]}
+  closing_date: {date_between: ["2026-04-15", "2026-07-31"]}
+
+third_parties:
+  count: {min: 5, max: 6}
+  pool:
+    - {type: business_entity, name_kind: organization, role: "Business broker / M&A advisor", relevance: "Marketed the business and manages the deal process."}
+    - {type: expert, name_kind: person, role: "Buyer's CPA / quality-of-earnings analyst", relevance: "Performs the financial due diligence and QoE analysis."}
+    - {type: financial_institution, name_kind: bank, role: "Acquisition / SBA lender", relevance: "Underwrites the acquisition loan against cash flow and collateral."}
+    - {type: business_entity, name_kind: organization, role: "Escrow agent", relevance: "Holds the indemnity escrow and closing funds."}
+    - {type: expert, name_kind: person, role: "Business appraiser", relevance: "Valued the business and allocated assets for Form 8594."}
+    - {type: government_agency, name: "Maine Secretary of State", role: "Entity filing office", relevance: "Registers the buyer's acquisition entity and any name filings."}
+
+fact_pattern:
+  summary: "{buyer_full_name} is acquiring the assets of {business_name} ({business_type}) from {seller_full_name} for ${purchase_price} — about {ebitda_multiple} EBITDA of ${ebitda} — via {deal_structure}, with closing set for {closing_date}."
+  narrative:
+    - "{seller_full_name} owns {business_name}, {business_type} operating as {entity_form} for {years_in_business} years with {employee_count} employees, about ${annual_revenue} in revenue and ${ebitda} in adjusted EBITDA. {buyer_full_name} has agreed to buy substantially all of its assets ({key_assets}) through {deal_structure} for ${purchase_price}, roughly a {ebitda_multiple} multiple, into a new entity, {new_entity_name}."
+    - "The deal includes {wc_adjustment} against a ${working_capital_target} target, {escrow_holdback}, {earnout}, and {seller_note}. Buyer's CPA is running a quality-of-earnings review by {qoe_deadline}, testing {addbacks} and normalizing the numbers. Buyer is financing with {financing_type} of about ${loan_amount}; the price is allocated under {allocation_basis}."
+    - "Only {assumed_liabilities} are assumed; the transaction contemplates {lease_status} and {noncompete}. Counsel {attorney_full_name} of {attorney_firm} is drafting the APA, escrow and non-compete agreements, bill of sale and assignments, and coordinating the lender and the Form 8594 allocation for a {closing_date} closing."
+  undisputed:
+    - "{buyer_full_name} is buying the assets of {business_name} from {seller_full_name} for ${purchase_price} via {deal_structure}."
+    - "Adjusted EBITDA is about ${ebitda} on ${annual_revenue} of revenue."
+    - "The deal includes {escrow_holdback} and {noncompete}."
+  disputed:
+    - "The quality of earnings and which {addbacks} are legitimate normalizations."
+    - "The closing working-capital peg and the {wc_adjustment}."
+    - "The purchase-price allocation on Form 8594 (goodwill vs. equipment) and its tax effect on each side."
+
+interview:
+  interviewer: "Business/M&A Attorney"
+  interviewee_role: buyer
+  exchanges:
+    - {topic: "Target", question: "What are you buying?", answer: "The assets of {business_name}, {business_type}, for ${purchase_price} via {deal_structure}."}
+    - {topic: "Valuation", question: "How did you price it?", answer: "About {ebitda_multiple} on ${ebitda} adjusted EBITDA, after normalizing {addbacks}."}
+    - {topic: "Structure", question: "Any holdback, earnout, or seller note?", answer: "{escrow_holdback}, {earnout}, and {seller_note}."}
+    - {topic: "Working capital", question: "How is working capital handled?", answer: "{wc_adjustment} against a ${working_capital_target} target."}
+    - {topic: "Financing", question: "How is it financed?", answer: "{financing_type} of about ${loan_amount}, into {new_entity_name}."}
+    - {topic: "Accounting", question: "What's your accountant checking?", answer: "A quality-of-earnings review by {qoe_deadline} — revenue recognition, add-backs, and the balance sheet."}
+    - {topic: "Protection", question: "What about competition and liabilities?", answer: "{noncompete}, and we're assuming only {assumed_liabilities}."}
+
+objectives:
+  goals:
+    - "Close the asset purchase at ${purchase_price} into {new_entity_name} on {closing_date}."
+    - "Confirm quality of earnings and the working-capital peg before the {qoe_deadline}."
+    - "Lock financing ({financing_type}) and a favorable Form 8594 allocation."
+  priorities:
+    - "Verified earnings and a clean balance sheet at closing."
+    - "Successor-liability protection and enforceable non-compete."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A funded asset acquisition with escrow, a working-capital true-up, and clear title to the assets."
+  non_starters:
+    - "Assuming undisclosed liabilities or unfunded tax exposure."
+    - "Closing before the QoE and financing are firm."
+  constraints:
+    budget: "${purchase_price} funded by {financing_type} of ${loan_amount} plus equity and {seller_note}."
+    timeline: "QoE by {qoe_deadline}; closing {closing_date}."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Purchase-price allocation and tax treatment", category: tax, governing_law: "IRC § 1060; Form 8594; 26 C.F.R. § 1.1060-1", sub_questions: ["How is the price allocated across asset classes?", "How does goodwill vs. equipment affect each party's tax?"], strength: strong}
+    - {issue: "Working-capital adjustment and closing balance sheet", category: business, governing_law: "APA purchase-price adjustment provisions", sub_questions: ["Is the working-capital peg met?", "How are disputes over the closing statement resolved?"], strength: moderate}
+    - {issue: "Successor liability and bulk-sale exposure", category: business, governing_law: "36 M.R.S. § 177 (tax clearance); common-law successor liability", sub_questions: ["Is a Maine tax clearance / bulk-sale notice needed?", "Are only scheduled liabilities assumed?"], strength: moderate}
+    - {issue: "Enforceability of the non-compete and non-solicit", category: business, governing_law: "26 M.R.S. § 599-A (noncompete limits); reasonableness at common law", sub_questions: ["Are the {noncompete} scope, duration, and geography reasonable?"], strength: moderate}
+    - {issue: "Assignment of contracts, leases, and licenses", category: business, governing_law: "Contract anti-assignment terms; lease consent", sub_questions: ["Do key contracts and {lease_status} require third-party consent?"], strength: moderate}
+
+evidence:
+  count: {min: 4, max: 6}
+  pool:
+    - {title: "Letter of intent", type: document, party: buyer, description: "The signed LOI framing price, structure, and exclusivity."}
+    - {title: "Asset purchase agreement", type: contract, party: buyer, description: "The executed APA with reps, warranties, and indemnities."}
+    - {title: "Quality-of-earnings report", type: financial_record, party: buyer, description: "The CPA's QoE testing ${ebitda} EBITDA and {addbacks}."}
+    - {title: "Three years of financial statements and tax returns", type: financial_record, party: seller, description: "The seller's historical financials for diligence."}
+    - {title: "Form 8594 asset allocation schedule", type: financial_record, party: buyer, description: "The agreed {allocation_basis}."}
+    - {title: "Lender commitment letter", type: financial_record, party: buyer, description: "The {financing_type} commitment for ${loan_amount}."}
+    - {title: "Non-compete and consulting agreement", type: contract, party: seller, description: "The seller's {noncompete}."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  amounts:
+    - {label: "Purchase price (asset deal)", amount: {int_between: [650000, 12500000]}, basis: "About {ebitda_multiple} adjusted EBITDA via {deal_structure}."}
+    - {label: "Adjusted EBITDA", amount: {int_between: [180000, 3200000]}, basis: "Normalized for {addbacks}."}
+    - {label: "Annual revenue", amount: {int_between: [900000, 18000000]}, basis: "Trailing-twelve-month revenue."}
+    - {label: "Acquisition loan", amount: {int_between: [400000, 9000000]}, basis: "{financing_type}."}
+    - {label: "Working-capital target (peg)", amount: {int_between: [90000, 1400000]}, basis: "Normalized working capital delivered at closing."}
+    - {label: "Indemnity escrow / holdback", amount: {int_between: [50000, 1250000]}, basis: "{escrow_holdback}."}
+
+communications:
+  - date: "{effective_date}"
+    channel: email
+    from: "Business broker / M&A advisor"
+    to: "{buyer_full_name}"
+    cc: "{attorney_full_name}"
+    subject: "Signed LOI — {business_name}"
+    summary: "Broker circulates the executed LOI and opens the data room."
+    body: "Attached is the signed LOI for the assets of {business_name} at ${purchase_price} (~{ebitda_multiple} on ${ebitda} adjusted EBITDA), via {deal_structure} into {new_entity_name}. Terms include {escrow_holdback}, {earnout}, {seller_note}, and {wc_adjustment}. The data room now holds three years of financials and tax returns, the customer list, and the asset schedule."
+    attachments: ["Letter of intent (executed)"]
+  - date: "{effective_date}"
+    channel: email
+    from: "Buyer's CPA / quality-of-earnings analyst"
+    to: "Seller / owner"
+    cc: "{buyer_full_name}"
+    subject: "Financial due-diligence request — {business_name}"
+    summary: "Buyer's accountant sends the accounting/financing diligence questions."
+    body: "To complete our quality-of-earnings review by {qoe_deadline}, please provide: monthly P&Ls and balance sheets for 36 months, the trial balance and general ledger, AR/AP aging, the fixed-asset register and depreciation schedule, revenue recognition policy, customer concentration, inventory valuation method, and support for the proposed add-backs ({addbacks}). We also need payroll detail and any related-party rent to normalize {business_name}'s earnings to a ${ebitda} EBITDA basis."
+  - date: "{qoe_deadline}"
+    channel: letter
+    from: "Buyer's CPA / quality-of-earnings analyst"
+    to: "{buyer_full_name}"
+    cc: "{attorney_full_name}"
+    subject: "QoE findings and working-capital peg — {business_name}"
+    summary: "Accountant reports QoE findings and recommends the working-capital target."
+    body: "Our review supports adjusted EBITDA near ${ebitda} after normalizing {addbacks}, though we recommend reserving for a customer-concentration risk. Normalized working capital averages about ${working_capital_target}; we suggest pegging the target there with {wc_adjustment}. We note the seller's cash-basis reporting and have converted to accrual for comparability. These findings support the {financing_type} underwriting."
+    attachments: ["Quality-of-earnings report", "Normalized working-capital analysis"]
+  - date: "{qoe_deadline}"
+    channel: email
+    from: "Acquisition / SBA lender"
+    to: "{buyer_full_name}"
+    subject: "Credit questions — {business_name} acquisition"
+    summary: "Lender asks financing and accounting questions before commitment."
+    body: "Before we issue a commitment for the {financing_type} of ${loan_amount}, we need: the QoE report, the debt-service-coverage projection on post-close cash flow, confirmation of the {escrow_holdback} and any {seller_note} (which we will require to be on full standby), the Form 8594 allocation, and a personal financial statement. We also need to confirm collateral values for {key_assets} and that only {assumed_liabilities} are assumed."
+  - date: "{closing_date}"
+    channel: memo
+    from: "Escrow agent"
+    to: "All parties"
+    subject: "Closing and funds flow — {business_name}"
+    summary: "Escrow agent confirms the closing statement, allocation, and holdback."
+    body: "Closing for the {business_name} asset sale is set for {closing_date}. The funds flow reflects the ${purchase_price} price, the {financing_type} advance of ${loan_amount}, any {seller_note}, the {escrow_holdback} retained here, and the closing working-capital true-up per {wc_adjustment}. The bill of sale, assignment and assumption of {assumed_liabilities}, {lease_status}, {noncompete}, and the agreed Form 8594 allocation ({allocation_basis}) will be delivered at closing into {new_entity_name}."

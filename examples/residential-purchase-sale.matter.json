@@ -1,0 +1,432 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "residential-purchase-sale",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-414328",
+    "practice_area": "real_estate",
+    "title": "Residential purchase & sale: 129 Old Mill Road, Portland — Grace C. Roe to Maria Q. Fairbanks",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Maine Registry of Deeds / private closing"
+    },
+    "case_type": "real_estate_purchase_sale",
+    "filing_date": "2026-01-14",
+    "status": "pre_filing",
+    "summary": "Maria Q. Fairbanks is buying the single-family home at 129 Old Mill Road, Portland from Grace C. Roe for $481997, financed by a FHA mortgage, with closing set for 2026-03-06.",
+    "event_date": "2026-03-06"
+  },
+  "parties": {
+    "seller": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Seller (grantor)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "buyer": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer (grantee / client)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Attorney for the client",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "ssn_last4": "4744",
+      "bar_number": "7867",
+      "organization_name": "Hawthorne Legal Group"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer (grantee / client)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Maria Q. Fairbanks is buying the single-family home at 129 Old Mill Road, Portland from Grace C. Roe for $481997, financed by a FHA mortgage, with closing set for 2026-03-06.",
+    "narrative": "Maria Q. Fairbanks signed a purchase-and-sale agreement to buy Grace C. Roe's home at 129 Old Mill Road in Portland, Sagadahoc County, Maine for $481997. The agreement became effective 2026-01-07; Maria Q. Fairbanks put down $14702 in earnest money held in the listing brokerage's escrow account.\n\nThe deal carries the usual contingencies: a home inspection due by 2026-01-29, a title review by 2026-02-14, and a financing contingency tied to a FHA mortgage that must clear by 2026-02-12. The inspection turned up a wet basement and an undersized electrical panel; the buyer's proposed resolution is $8,500 credit in lieu of repairs.\n\nClosing is scheduled for 2026-03-06 at the title company's office, with title passing by quitclaim deed with covenant and possession at closing, keys delivered at recording. Counsel, Ingrid B. Kingsley of Hawthorne Legal Group, is reviewing title, the deed, and the settlement statement, and will confirm the Maine Real Estate Transfer Tax Declaration is filed at recording.",
+    "undisputed_facts": [
+      "The property at 129 Old Mill Road, Portland is under contract from Grace C. Roe to Maria Q. Fairbanks at $481997.",
+      "The agreement became effective 2026-01-07 and closing is set for 2026-03-06.",
+      "The buyer deposited $14702 in earnest money."
+    ],
+    "disputed_facts": [
+      "Whether the seller must complete repairs ($8,500 credit in lieu of repairs) or the parties resolve the inspection with a price credit.",
+      "The allocation of prorated property taxes, fuel, and closing costs on the settlement statement."
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Northstar Partners Corp.",
+      "type": "business_entity",
+      "role": "Buyer's brokerage",
+      "relevance": "Represents the buyer under a buyer-agency agreement.",
+      "contact": {
+        "phone": "(207) 555-0193",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "County Registry of Deeds",
+      "type": "government_agency",
+      "role": "Recording office",
+      "relevance": "Records the deed, mortgage, and RETTD.",
+      "contact": {
+        "phone": "(207) 555-0165",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Lighthouse Outfitters LLC",
+      "type": "business_entity",
+      "role": "Listing brokerage",
+      "relevance": "Represents the seller and holds the listing.",
+      "contact": {
+        "phone": "(207) 555-0185",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Granite State Credit Union",
+      "type": "financial_institution",
+      "role": "Mortgage lender",
+      "relevance": "Underwrites and funds the buyer's loan; records a mortgage.",
+      "contact": {
+        "phone": "(207) 555-0176",
+        "city": "Bath",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Closing Attorney",
+    "interviewee_role": "buyer",
+    "date": "2026-01-14",
+    "exchanges": [
+      {
+        "topic": "Property",
+        "question": "What are you buying and for how much?",
+        "answer": "The single-family home at 129 Old Mill Road in Portland, for $481997."
+      },
+      {
+        "topic": "Deposit",
+        "question": "How much earnest money is down and who holds it?",
+        "answer": "$14702, held in the listing brokerage's escrow account."
+      },
+      {
+        "topic": "Financing",
+        "question": "How are you paying?",
+        "answer": "A FHA mortgage; the financing contingency runs to 2026-02-12."
+      },
+      {
+        "topic": "Inspection",
+        "question": "How did the inspection go?",
+        "answer": "It flagged a wet basement and an undersized electrical panel. We asked that $8,500 credit in lieu of repairs."
+      },
+      {
+        "topic": "Title",
+        "question": "Any known title concerns?",
+        "answer": "None yet; we ordered title and will review it by 2026-02-14."
+      },
+      {
+        "topic": "Goal",
+        "question": "What do you need at closing?",
+        "answer": "Clear, insurable title, the agreed fixtures (all appliances, generator, and the storage shed), and a clean RETTD, closing on 2026-03-06."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Close on 2026-03-06 with clear, insurable title by quitclaim deed with covenant.",
+      "Resolve the inspection items so that $8,500 credit in lieu of repairs.",
+      "Confirm financing clears before the 2026-02-12 contingency date."
+    ],
+    "priorities": [
+      "Clean title and correct recording.",
+      "Financing certainty before waiving the contingency."
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "A recorded deed, funded loan, and properly filed RETTD."
+    ],
+    "non_starters": [
+      "Waiving the financing contingency before loan commitment.",
+      "Closing over an unresolved title defect."
+    ],
+    "constraints": {
+      "budget": "Buyer brings $193362 plus closing costs; commission is 6% split between the brokerages.",
+      "timeline": "Contingencies in January-February; closing 2026-03-06."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Satisfaction of the financing contingency",
+      "category": "real_estate",
+      "governing_law": "Maine PSA financing rider",
+      "sub_questions": [
+        "Did the buyer obtain a loan commitment by 2026-02-12?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Calculation and split of the Maine real estate transfer tax",
+      "category": "tax",
+      "governing_law": "36 M.R.S. § 4641-A",
+      "sub_questions": [
+        "What consideration is taxable?",
+        "How is the tax split?"
+      ],
+      "strength": "strong",
+      "id": "iss2"
+    },
+    {
+      "issue": "Escrow of earnest money on default",
+      "category": "real_estate",
+      "governing_law": "Maine PSA default clause",
+      "sub_questions": [
+        "Who is entitled to the $14702 deposit on a failed closing?"
+      ],
+      "strength": "moderate",
+      "id": "iss3"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Executed purchase and sale agreement",
+      "type": "contract",
+      "party": "buyer",
+      "description": "The signed PSA with all riders.",
+      "id": "ev1"
+    },
+    {
+      "title": "Settlement statement (Closing Disclosure)",
+      "type": "financial_record",
+      "party": "buyer",
+      "description": "Prorations, credits, and the transfer tax.",
+      "id": "ev2"
+    },
+    {
+      "title": "Title commitment",
+      "type": "document",
+      "party": "buyer",
+      "description": "The title company's commitment and exceptions.",
+      "id": "ev3"
+    },
+    {
+      "title": "Loan estimate and commitment letter",
+      "type": "financial_record",
+      "party": "buyer",
+      "description": "The lender's terms for the FHA mortgage.",
+      "id": "ev4"
+    },
+    {
+      "title": "Home inspection report",
+      "type": "document",
+      "party": "buyer",
+      "description": "The inspector's report identifying a wet basement and an undersized electrical panel.",
+      "id": "ev5"
+    },
+    {
+      "title": "Seller's property disclosure",
+      "type": "document",
+      "party": "seller",
+      "description": "The statutory residential property disclosure.",
+      "id": "ev6"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Loan amount",
+        "amount": 640595,
+        "basis": "Buyer's FHA mortgage."
+      },
+      {
+        "label": "Purchase price",
+        "amount": 407783,
+        "basis": "Agreed consideration in the PSA."
+      },
+      {
+        "label": "Earnest money deposit",
+        "amount": 18677,
+        "basis": "Held in escrow by the listing brokerage."
+      },
+      {
+        "label": "Estimated buyer closing costs",
+        "amount": 6965,
+        "basis": "Lender, title, recording, and prepaid items."
+      },
+      {
+        "label": "Estimated Maine transfer tax",
+        "amount": 2093,
+        "basis": "$2.20 per $500 of value, split between the parties."
+      }
+    ]
+  },
+  "communications": [
+    {
+      "date": "2026-01-07",
+      "channel": "email",
+      "from": "Buyer's agent",
+      "to": "Listing agent",
+      "subject": "Offer — 129 Old Mill Road, Portland",
+      "summary": "Buyer submits an offer with an inspection and financing contingency.",
+      "body": "On behalf of Maria Q. Fairbanks, please find the attached offer of $481997 on 129 Old Mill Road, with $14702 earnest money, an inspection contingency to 2026-01-29, and a FHA mortgage financing contingency to 2026-02-12. Requested closing is 2026-03-06. Buyer would like the following to convey: all appliances, generator, and the storage shed.",
+      "attachments": [
+        "Purchase and Sale Agreement (unsigned)",
+        "Pre-approval letter"
+      ],
+      "id": "comm1"
+    },
+    {
+      "date": "2026-01-07",
+      "channel": "email",
+      "from": "Listing agent",
+      "to": "Buyer's agent",
+      "subject": "RE: Offer — 129 Old Mill Road, Portland",
+      "summary": "Seller accepts, excluding certain personal property.",
+      "body": "Grace C. Roe accepts at $481997 and the requested timeline. Seller confirms all appliances, generator, and the storage shed convey, but is excluding the seller's freezer in the basement. Signed PSA attached; the deposit can go to our escrow account today.",
+      "attachments": [
+        "Purchase and Sale Agreement (seller-signed)"
+      ],
+      "id": "comm2"
+    },
+    {
+      "date": "2026-01-29",
+      "channel": "email",
+      "from": "Buyer's agent",
+      "to": "Listing agent",
+      "subject": "Inspection objection — 129 Old Mill Road",
+      "summary": "Buyer raises inspection findings and a repair/credit request.",
+      "body": "The inspection found a wet basement and an undersized electrical panel. Within the inspection contingency, Maria Q. Fairbanks requests that $8,500 credit in lieu of repairs. We'd like to keep the 2026-03-06 closing on track and can turn an amendment around quickly.",
+      "attachments": [
+        "Home inspection report"
+      ],
+      "id": "comm3"
+    },
+    {
+      "date": "2026-02-12",
+      "channel": "email",
+      "from": "Mortgage lender",
+      "to": "Maria Q. Fairbanks",
+      "cc": "Buyer's agent",
+      "subject": "Loan commitment issued — 129 Old Mill Road",
+      "summary": "Lender issues a clear-to-close loan commitment.",
+      "body": "Congratulations — your FHA mortgage for $520528 at 7.000% is approved and we have issued a loan commitment. Estimated cash to close, including your $193362 down payment, will appear on the Closing Disclosure. We are coordinating funding for 2026-03-06.",
+      "attachments": [
+        "Loan commitment letter",
+        "Initial Closing Disclosure"
+      ],
+      "id": "comm5"
+    },
+    {
+      "date": "2026-02-14",
+      "channel": "letter",
+      "from": "Ingrid B. Kingsley, Hawthorne Legal Group",
+      "to": "Seller's counsel",
+      "subject": "Title review — 129 Old Mill Road, Portland",
+      "summary": "Buyer's counsel notes a title exception to be cleared before closing.",
+      "body": "We have reviewed the title commitment for 129 Old Mill Road. Please confirm the seller will discharge the existing mortgage at closing and address the exception for the recorded utility easement so we can deliver marketable title by quitclaim deed with covenant. We remain on schedule for 2026-03-06.",
+      "id": "comm4"
+    },
+    {
+      "date": "2026-03-06",
+      "channel": "memo",
+      "from": "Title & closing company",
+      "to": "All parties",
+      "subject": "Closing confirmation — 129 Old Mill Road, Portland",
+      "summary": "Closing agent confirms figures, prorations, and recording.",
+      "body": "Closing for 129 Old Mill Road is set for 2026-03-06. The settlement statement reflects the $481997 price, credited earnest money of $14702, agreed inspection resolution ($8,500 credit in lieu of repairs), prorated taxes and fuel, and the Maine transfer tax split between Grace C. Roe and Maria Q. Fairbanks. The quitclaim deed with covenant and RETTD will be recorded upon funding.",
+      "id": "comm6"
+    }
+  ],
+  "facts": {
+    "property_address": "129 Old Mill Road",
+    "property_town": "Portland",
+    "property_county": "Sagadahoc",
+    "property_map_block_lot": "Map 31, Block 9, Lot 5",
+    "property_type": "single-family residential",
+    "year_built": 1939,
+    "lot_size": "0.51 acres",
+    "bedrooms": 2,
+    "bathrooms": "3",
+    "purchase_price": 481997,
+    "earnest_money": 14702,
+    "effective_date": "2026-01-07",
+    "inspection_deadline": "2026-01-29",
+    "financing_contingency_date": "2026-02-12",
+    "title_review_deadline": "2026-02-14",
+    "closing_date": "2026-03-06",
+    "possession": "at closing, keys delivered at recording",
+    "financing_type": "FHA mortgage",
+    "loan_amount": 520528,
+    "down_payment": 193362,
+    "interest_rate": "7.000%",
+    "deed_type": "quitclaim deed with covenant",
+    "included_fixtures": "all appliances, generator, and the storage shed",
+    "excluded_items": "the seller's freezer in the basement",
+    "home_inspection_result": "a wet basement and an undersized electrical panel",
+    "repair_request": "$8,500 credit in lieu of repairs",
+    "brokerage_commission": "6% split between the brokerages",
+    "transfer_date": "2026-03-06"
+  }
+}

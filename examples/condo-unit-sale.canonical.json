@@ -1,0 +1,93 @@
+{
+  "matter": {
+    "case_id": "MMC-2026-575198",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Maine Registry of Deeds / private closing",
+    "case_type": "condominium_unit_sale",
+    "filing_date": "2026-01-14",
+    "event_date": "2026-03-20"
+  },
+  "parties": {
+    "seller": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "buyer": {
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
+    },
+    "attorney": {
+      "full_name": "Ingrid B. Kingsley",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "bar_number": "7867"
+    }
+  },
+  "party": {
+    "full_name": "Maria Q. Fairbanks",
+    "first_name": "Maria",
+    "middle_name": "Q",
+    "last_name": "Fairbanks",
+    "address": "37 Cedar Way",
+    "city": "Falmouth",
+    "state": "ME",
+    "zip": "04071",
+    "phone": "(207) 555-0154",
+    "email": "maria.fairbanks@example.com",
+    "date_of_birth": "1965-03-05",
+    "signature": "Maria Q. Fairbanks"
+  },
+  "facts": {
+    "project_name": "Old Port Landing",
+    "unit_number": "3B",
+    "property_address": "9 Eastern Promenade",
+    "property_town": "Kennebunk",
+    "property_county": "Sagadahoc",
+    "unit_type": "a 1-bedroom loft",
+    "unit_sf": 831,
+    "ownership_percentage": "2.10%",
+    "purchase_price": 615487,
+    "earnest_money": 9385,
+    "effective_date": "2026-01-08",
+    "resale_cert_deadline": "2026-02-03",
+    "inspection_deadline": "2026-01-28",
+    "closing_date": "2026-03-20",
+    "transfer_date": "2026-03-20",
+    "monthly_assessment": 430,
+    "reserve_balance": 1086056,
+    "special_assessment": "no pending special assessment",
+    "rofr": "board approval of the buyer with no purchase option",
+    "pet_rental_rules": "a 20%-rental cap that is currently at the limit",
+    "insurance": "a bare-walls master policy requiring an HO-6 unit policy",
+    "financing_type": "an FHA condo loan requiring project approval",
+    "loan_amount": 614006,
+    "deed_type": "unit deed with covenant"
+  }
+}

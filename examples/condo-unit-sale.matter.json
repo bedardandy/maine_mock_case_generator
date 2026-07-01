@@ -1,0 +1,436 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "condo-unit-sale",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-575198",
+    "practice_area": "real_estate",
+    "title": "Condominium unit sale: Unit 3B, Old Port Landing, Kennebunk — Grace C. Roe to Maria Q. Fairbanks",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Maine Registry of Deeds / private closing"
+    },
+    "case_type": "condominium_unit_sale",
+    "filing_date": "2026-01-14",
+    "status": "pre_filing",
+    "summary": "Maria Q. Fairbanks is buying Unit 3B at Old Port Landing, Kennebunk (a 1-bedroom loft) from Grace C. Roe for $615487, subject to the Maine Condominium Act, the resale certificate, and no pending special assessment.",
+    "event_date": "2026-03-20"
+  },
+  "parties": {
+    "seller": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Seller / unit owner (grantor)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "buyer": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer (grantee, client)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Attorney for the client",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "ssn_last4": "4744",
+      "bar_number": "7867",
+      "organization_name": "Hawthorne Legal Group"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer (grantee, client)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Maria Q. Fairbanks is buying Unit 3B at Old Port Landing, Kennebunk (a 1-bedroom loft) from Grace C. Roe for $615487, subject to the Maine Condominium Act, the resale certificate, and no pending special assessment.",
+    "narrative": "Grace C. Roe owns Unit 3B (a 1-bedroom loft, 831 SF, 2.10% common-interest share) at Old Port Landing, 9 Eastern Promenade in Kennebunk, Sagadahoc County. Maria Q. Fairbanks has agreed to buy it for $615487; the PSA became effective 2026-01-08 with $9385 in earnest money.\n\nBecause this is a resale under the Maine Condominium Act, the seller must furnish a resale certificate by 2026-02-03 with the declaration and bylaws, the current budget, the $430/month assessment, the $1086056 reserve balance, and any special assessments. Diligence has surfaced no pending special assessment, board approval of the buyer with no purchase option, and rules including a 20%-rental cap that is currently at the limit. The master insurance is a bare-walls master policy requiring an HO-6 unit policy.\n\nThe buyer is paying by an FHA condo loan requiring project approval; a condo loan requires the lender to confirm project eligibility (owner-occupancy, budget reserves, and litigation). Counsel Ingrid B. Kingsley of Hawthorne Legal Group is reviewing the condo documents and resale certificate and will confirm the transfer tax and record the unit deed with covenant at closing on 2026-03-20.",
+    "undisputed_facts": [
+      "Unit 3B at Old Port Landing, Kennebunk is under contract from Grace C. Roe to Maria Q. Fairbanks at $615487.",
+      "The unit's monthly assessment is $430 and its common-interest share is 2.10%.",
+      "A resale certificate is due by 2026-02-03."
+    ],
+    "disputed_facts": [
+      "Who bears no pending special assessment — the seller or the buyer — at closing.",
+      "Whether the project satisfies the lender's condo-eligibility requirements for the an FHA condo loan requiring project approval.",
+      "Whether a 20%-rental cap that is currently at the limit impairs the buyer's intended use."
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Pine Tree Community Bank",
+      "type": "financial_institution",
+      "role": "Mortgage lender",
+      "relevance": "Underwrites the condo loan and reviews project eligibility.",
+      "contact": {
+        "phone": "(207) 555-0173",
+        "city": "Belfast",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Lighthouse Holdings LLC",
+      "type": "business_entity",
+      "role": "Property management company",
+      "relevance": "Manages the association and prepares the resale package.",
+      "contact": {
+        "phone": "(207) 555-0115",
+        "city": "Windham",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Cobblestone Builders Co.",
+      "type": "business_entity",
+      "role": "Insurance agency",
+      "relevance": "Places the master policy and the buyer's HO-6 unit coverage.",
+      "contact": {
+        "phone": "(207) 555-0153",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "County Registry of Deeds",
+      "type": "government_agency",
+      "role": "Recording office",
+      "relevance": "Records the unit deed and RETTD.",
+      "contact": {
+        "phone": "(207) 555-0171",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Cobblestone Partners Co.",
+      "type": "business_entity",
+      "role": "Condominium association / board",
+      "relevance": "Issues the resale certificate and administers assessments and rules.",
+      "contact": {
+        "phone": "(207) 555-0108",
+        "city": "Augusta",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Closing Attorney",
+    "interviewee_role": "buyer",
+    "date": "2026-01-14",
+    "exchanges": [
+      {
+        "topic": "Unit",
+        "question": "What are you buying?",
+        "answer": "Unit 3B at Old Port Landing, a 1-bedroom loft, for $615487."
+      },
+      {
+        "topic": "Assessments",
+        "question": "What are the condo fees?",
+        "answer": "$430 per month, with a reserve balance of about $1086056."
+      },
+      {
+        "topic": "Special assessment",
+        "question": "Any special assessment pending?",
+        "answer": "Yes — no pending special assessment. We want the seller to cover it."
+      },
+      {
+        "topic": "Rules",
+        "question": "Any rules that concern you?",
+        "answer": "The project has a 20%-rental cap that is currently at the limit, and board approval of the buyer with no purchase option."
+      },
+      {
+        "topic": "Insurance",
+        "question": "How is insurance handled?",
+        "answer": "The association carries a bare-walls master policy requiring an HO-6 unit policy; I'll add my own HO-6 as needed."
+      },
+      {
+        "topic": "Financing",
+        "question": "How are you paying?",
+        "answer": "By an FHA condo loan requiring project approval; the lender is reviewing condo-project eligibility."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Close on 2026-03-20 with clear title to Unit 3B.",
+      "Shift no pending special assessment to the seller or obtain a credit.",
+      "Confirm the an FHA condo loan requiring project approval clears condo-project eligibility."
+    ],
+    "priorities": [
+      "A clean resale certificate and title.",
+      "No surprise assessment liability after closing."
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "A recorded unit deed, funded loan, and paid/allocated assessments."
+    ],
+    "non_starters": [
+      "Assuming an undisclosed special assessment.",
+      "Closing before the lender clears the project."
+    ],
+    "constraints": {
+      "budget": "Buyer's an FHA condo loan requiring project approval plus closing costs; monthly assessment of $430.",
+      "timeline": "Resale certificate by 2026-02-03; closing 2026-03-20."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Resale certificate disclosure obligations",
+      "category": "real_estate",
+      "governing_law": "33 M.R.S. § 1604-108 (Maine Condominium Act)",
+      "sub_questions": [
+        "Was a complete resale certificate delivered by 2026-02-03?",
+        "Does it disclose no pending special assessment?"
+      ],
+      "strength": "strong",
+      "id": "iss1"
+    },
+    {
+      "issue": "Maine real estate transfer tax on the unit sale",
+      "category": "tax",
+      "governing_law": "36 M.R.S. § 4641-A",
+      "sub_questions": [
+        "What consideration is taxable and how is the tax split?"
+      ],
+      "strength": "strong",
+      "id": "iss2"
+    },
+    {
+      "issue": "Association right of first refusal / board approval",
+      "category": "real_estate",
+      "governing_law": "33 M.R.S. § 1603-112; declaration",
+      "sub_questions": [
+        "Must the association waive board approval of the buyer with no purchase option before closing?"
+      ],
+      "strength": "moderate",
+      "id": "iss3"
+    },
+    {
+      "issue": "Allocation of a pending special assessment",
+      "category": "real_estate",
+      "governing_law": "33 M.R.S. § 1603-115; PSA proration terms",
+      "sub_questions": [
+        "Was the assessment levied before or after closing?",
+        "Who is contractually responsible?"
+      ],
+      "strength": "moderate",
+      "id": "iss4"
+    },
+    {
+      "issue": "Lender condominium-project eligibility",
+      "category": "real_estate",
+      "governing_law": "Investor condo-approval guidelines",
+      "sub_questions": [
+        "Do owner-occupancy, reserves, and litigation meet the an FHA condo loan requiring project approval requirements?"
+      ],
+      "strength": "moderate",
+      "id": "iss5"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Unit deed",
+      "type": "document",
+      "party": "seller",
+      "description": "The unit deed with covenant prepared for recording.",
+      "id": "ev1"
+    },
+    {
+      "title": "Association budget and reserve study",
+      "type": "financial_record",
+      "party": "seller",
+      "description": "Current budget, $430 assessment, and $1086056 reserves.",
+      "id": "ev2"
+    },
+    {
+      "title": "Declaration and bylaws",
+      "type": "document",
+      "party": "seller",
+      "description": "The recorded condominium declaration and association bylaws.",
+      "id": "ev3"
+    },
+    {
+      "title": "Purchase and sale agreement",
+      "type": "contract",
+      "party": "buyer",
+      "description": "The executed PSA for Unit 3B.",
+      "id": "ev4"
+    },
+    {
+      "title": "Resale certificate package",
+      "type": "document",
+      "party": "seller",
+      "description": "The Condominium Act resale certificate with budget and rules.",
+      "id": "ev5"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Monthly common assessment",
+        "amount": 280,
+        "basis": "The unit's share of common expenses."
+      },
+      {
+        "label": "Earnest money deposit",
+        "amount": 17300,
+        "basis": "Held in escrow by the title company."
+      },
+      {
+        "label": "Estimated Maine transfer tax",
+        "amount": 4136,
+        "basis": "$2.20 per $500 of consideration, split between the parties."
+      },
+      {
+        "label": "Purchase price",
+        "amount": 526394,
+        "basis": "Agreed consideration."
+      },
+      {
+        "label": "Association reserve balance",
+        "amount": 316246,
+        "basis": "Replacement reserve per the budget."
+      }
+    ]
+  },
+  "communications": [
+    {
+      "date": "2026-01-08",
+      "channel": "email",
+      "from": "Buyer's agent",
+      "to": "Listing agent",
+      "subject": "Under contract — Unit 3B, Old Port Landing",
+      "summary": "Buyer requests the full condo resale package.",
+      "body": "Maria Q. Fairbanks is under contract on Unit 3B at $615487. Please have the association deliver the resale certificate by 2026-02-03: declaration and bylaws, current budget, the $430 assessment, reserve study, insurance, meeting minutes, and any special assessments or litigation.",
+      "id": "comm1"
+    },
+    {
+      "date": "2026-01-28",
+      "channel": "email",
+      "from": "Ingrid B. Kingsley, Hawthorne Legal Group",
+      "to": "Seller's counsel",
+      "subject": "Special assessment allocation — Unit 3B",
+      "summary": "Buyer's counsel asks the seller to bear the special assessment.",
+      "body": "The resale certificate discloses no pending special assessment. Because it was levied before closing, Maria Q. Fairbanks asks that the seller pay it in full at closing or provide an equivalent credit on the settlement statement. Please confirm so we can finalize figures for 2026-03-20.",
+      "id": "comm3"
+    },
+    {
+      "date": "2026-01-28",
+      "channel": "email",
+      "from": "Mortgage lender",
+      "to": "Maria Q. Fairbanks",
+      "subject": "Condo project review — Old Port Landing",
+      "summary": "Lender requests project-eligibility documentation.",
+      "body": "To clear your an FHA condo loan requiring project approval, we need the association's budget (confirming reserves), the master insurance certificate (a bare-walls master policy requiring an HO-6 unit policy), owner-occupancy percentage, and confirmation of no material litigation. Once the project is approved and the appraisal is in, we can issue the commitment ahead of 2026-03-20.",
+      "id": "comm4"
+    },
+    {
+      "date": "2026-02-03",
+      "channel": "letter",
+      "from": "Property management company",
+      "to": "Maria Q. Fairbanks",
+      "cc": "Ingrid B. Kingsley",
+      "subject": "Resale certificate — Unit 3B, Old Port Landing",
+      "summary": "Manager delivers the resale certificate disclosing the special assessment.",
+      "body": "Enclosed is the resale certificate for Unit 3B. The unit's common-interest share is 2.10% and the assessment is $430/month; the reserve balance is $1086056. Please note no pending special assessment. The project has board approval of the buyer with no purchase option and a 20%-rental cap that is currently at the limit. Master insurance is a bare-walls master policy requiring an HO-6 unit policy.",
+      "attachments": [
+        "Resale certificate",
+        "Budget and reserve study",
+        "Declaration and bylaws"
+      ],
+      "id": "comm2"
+    },
+    {
+      "date": "2026-03-20",
+      "channel": "memo",
+      "from": "Title & closing company",
+      "to": "All parties",
+      "subject": "Closing statement — Unit 3B, Old Port Landing",
+      "summary": "Closing agent confirms figures, assessment allocation, and recording.",
+      "body": "Closing for Unit 3B is set for 2026-03-20. The statement reflects the $615487 price, $9385 deposit credit, prorated $430 assessment, the agreed handling of no pending special assessment, and the Maine transfer tax split between Grace C. Roe and Maria Q. Fairbanks. We will record the unit deed with covenant and RETTD upon funding and issue the owner's policy.",
+      "id": "comm5"
+    }
+  ],
+  "facts": {
+    "project_name": "Old Port Landing",
+    "unit_number": "3B",
+    "property_address": "9 Eastern Promenade",
+    "property_town": "Kennebunk",
+    "property_county": "Sagadahoc",
+    "unit_type": "a 1-bedroom loft",
+    "unit_sf": 831,
+    "ownership_percentage": "2.10%",
+    "purchase_price": 615487,
+    "earnest_money": 9385,
+    "effective_date": "2026-01-08",
+    "resale_cert_deadline": "2026-02-03",
+    "inspection_deadline": "2026-01-28",
+    "closing_date": "2026-03-20",
+    "transfer_date": "2026-03-20",
+    "monthly_assessment": 430,
+    "reserve_balance": 1086056,
+    "special_assessment": "no pending special assessment",
+    "rofr": "board approval of the buyer with no purchase option",
+    "pet_rental_rules": "a 20%-rental cap that is currently at the limit",
+    "insurance": "a bare-walls master policy requiring an HO-6 unit policy",
+    "financing_type": "an FHA condo loan requiring project approval",
+    "loan_amount": 614006,
+    "deed_type": "unit deed with covenant"
+  }
+}

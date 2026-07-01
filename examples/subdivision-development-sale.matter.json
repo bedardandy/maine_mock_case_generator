@@ -1,0 +1,447 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "subdivision-development-sale",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-315963",
+    "practice_area": "real_estate",
+    "title": "Subdivision land sale: Stonewall Crossing, Buxton — Grace C. Roe to Maria Q. Fairbanks",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Maine Registry of Deeds / municipal planning board"
+    },
+    "case_type": "subdivision_development_sale",
+    "filing_date": "2026-01-14",
+    "status": "pre_filing",
+    "summary": "Maria Q. Fairbanks, a developer, is buying 100 acres at 0 Sawyer Brook Road, Buxton from Grace C. Roe for $5298815 to build Stonewall Crossing, a 79-lot major subdivision approval, contingent on approvals by 2026-10-04.",
+    "event_date": "2026-12-13"
+  },
+  "parties": {
+    "seller": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Seller / landowner (grantor)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "buyer": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer / developer (grantee, client)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Attorney for the client",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "ssn_last4": "4744",
+      "bar_number": "7867",
+      "organization_name": "Hawthorne Legal Group"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer / developer (grantee, client)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Maria Q. Fairbanks, a developer, is buying 100 acres at 0 Sawyer Brook Road, Buxton from Grace C. Roe for $5298815 to build Stonewall Crossing, a 79-lot major subdivision approval, contingent on approvals by 2026-10-04.",
+    "narrative": "Grace C. Roe owns roughly 100 acres of undeveloped Suburban Residential (SR-2)-zoned land at 0 Sawyer Brook Road in Buxton, Sagadahoc County. Maria Q. Fairbanks's development company has agreed to buy it for $5298815 on a base price plus a per-lot bonus over 40 lots, to develop Stonewall Crossing as a 79-lot major subdivision approval. The PSA became effective 2026-01-12 with $182487 down and an initial 20-lot takedown with options on later phases.\n\nThe deal is contingent on obtaining all approvals by 2026-10-04: municipal major subdivision approval from the planning board and a Maine DEP Stormwater Permit (Chapter 500) from Maine DEP. Site constraints include no mapped wetlands on the developable area, and the approval will require a regional stormwater detention pond serving two phases. Roads are planned as a mix of public collector and private lane roads, secured by a $640,000 performance bond for roads and utilities.\n\nCounsel Ingrid B. Kingsley of Hawthorne Legal Group is handling the acquisition, the entitlement contingency, the subdivision plat and covenants, and coordinating the developer's lender. Title will pass by warranty deed once approvals are final and unappealable, with closing targeted for 2026-12-13.",
+    "undisputed_facts": [
+      "The 100-acre parcel at 0 Sawyer Brook Road, Buxton is under contract from Grace C. Roe to Maria Q. Fairbanks at $5298815.",
+      "The project is a planned 79-lot major subdivision approval known as Stonewall Crossing.",
+      "Closing is contingent on approvals by 2026-10-04."
+    ],
+    "disputed_facts": [
+      "Whether the planning board conditions (a regional stormwater detention pond serving two phases) make the project economically feasible at $5298815.",
+      "How wetland/vernal-pool constraints (no mapped wetlands on the developable area) reduce the yield below 79 lots.",
+      "The form and amount of a $640,000 performance bond for roads and utilities the town will require."
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Theodore H. Birchwood",
+      "type": "expert",
+      "role": "Licensed surveyor",
+      "relevance": "Prepared the boundary and subdivision plat for recording.",
+      "contact": {
+        "phone": "(207) 555-0123",
+        "city": "Orono",
+        "state": "ME",
+        "email": "theodore.birchwood@example.net"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Northstar Partners Corp.",
+      "type": "business_entity",
+      "role": "Title insurance company",
+      "relevance": "Insures title and the subdivision plan of record.",
+      "contact": {
+        "phone": "(207) 555-0193",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Lighthouse Trust Company",
+      "type": "financial_institution",
+      "role": "Land / development lender",
+      "relevance": "Finances the land acquisition and horizontal development.",
+      "contact": {
+        "phone": "(207) 555-0153",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Municipal Planning Board",
+      "type": "government_agency",
+      "role": "Subdivision approval authority",
+      "relevance": "Reviews and approves the subdivision under the town ordinance and 30-A M.R.S. § 4403.",
+      "contact": {
+        "phone": "(207) 555-0162",
+        "city": "Falmouth",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Maine Department of Environmental Protection",
+      "type": "government_agency",
+      "role": "Environmental permitting authority",
+      "relevance": "Issues stormwater and natural-resource permits for the development.",
+      "contact": {
+        "phone": "(207) 555-0171",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp6",
+      "name": "Beatrice S. Danforth",
+      "type": "expert",
+      "role": "Civil engineer / site designer",
+      "relevance": "Prepared the subdivision plan, stormwater design, and DEP applications.",
+      "contact": {
+        "phone": "(207) 555-0174",
+        "city": "Falmouth",
+        "state": "ME",
+        "email": "beatrice.danforth@example.org"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Land Use Attorney",
+    "interviewee_role": "buyer",
+    "date": "2026-01-14",
+    "exchanges": [
+      {
+        "topic": "Parcel",
+        "question": "What are you acquiring?",
+        "answer": "About 100 acres at 0 Sawyer Brook Road in Buxton, for $5298815 on a base price plus a per-lot bonus over 40 lots."
+      },
+      {
+        "topic": "Project",
+        "question": "What are you building?",
+        "answer": "Stonewall Crossing, a 79-lot major subdivision approval in the Suburban Residential (SR-2) district."
+      },
+      {
+        "topic": "Approvals",
+        "question": "What has to happen before closing?",
+        "answer": "Planning board major subdivision approval and a Maine DEP Stormwater Permit (Chapter 500), all final by 2026-10-04."
+      },
+      {
+        "topic": "Constraints",
+        "question": "Any site constraints?",
+        "answer": "no mapped wetlands on the developable area, and the town will require a regional stormwater detention pond serving two phases."
+      },
+      {
+        "topic": "Phasing",
+        "question": "How is the takedown structured?",
+        "answer": "an initial 20-lot takedown with options on later phases, with roads built as a mix of public collector and private lane roads."
+      },
+      {
+        "topic": "Security",
+        "question": "What improvement security is expected?",
+        "answer": "a $640,000 performance bond for roads and utilities."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Secure major subdivision approval and a Maine DEP Stormwater Permit (Chapter 500) by 2026-10-04.",
+      "Close at $5298815 once approvals are final and unappealable.",
+      "Keep lot yield near 79 despite no mapped wetlands on the developable area."
+    ],
+    "priorities": [
+      "Entitlement certainty before hard money is at risk.",
+      "Feasible conditions of approval and improvement security."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "A recorded subdivision plat and a closing on entitled land."
+    ],
+    "non_starters": [
+      "Closing before approvals are final and the appeal period has run.",
+      "Conditions that cut yield below the deal's break-even lot count."
+    ],
+    "constraints": {
+      "budget": "Acquisition plus horizontal development financed by the land/development lender.",
+      "timeline": "Entitlements through 2026-10-04; closing 2026-12-13."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Subdivision approval standards and conditions",
+      "category": "land_use",
+      "governing_law": "30-A M.R.S. § 4403; town subdivision ordinance",
+      "sub_questions": [
+        "Does the plan meet the 20 statutory review criteria?",
+        "Are the conditions of approval reasonable and lawful?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Maine real estate transfer tax on the land sale",
+      "category": "tax",
+      "governing_law": "36 M.R.S. § 4641-A",
+      "sub_questions": [
+        "What is the taxable consideration if the price is per-lot?"
+      ],
+      "strength": "moderate",
+      "id": "iss2"
+    },
+    {
+      "issue": "Performance guarantee for required improvements",
+      "category": "land_use",
+      "governing_law": "30-A M.R.S. § 4404; ordinance improvement-guarantee provisions",
+      "sub_questions": [
+        "What bond or letter of credit will the town require?"
+      ],
+      "strength": "strong",
+      "id": "iss3"
+    },
+    {
+      "issue": "Environmental permitting and natural-resource protection",
+      "category": "environmental",
+      "governing_law": "38 M.R.S. §§ 480-A to 490 (NRPA); DEP Chapter 500 stormwater",
+      "sub_questions": [
+        "Do wetlands or a vernal pool require avoidance or a permit?",
+        "Is a Site Law permit triggered by acreage?"
+      ],
+      "strength": "moderate",
+      "id": "iss4"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Planning board decision with conditions",
+      "type": "public_record",
+      "party": "buyer",
+      "description": "The approval and its conditions (a regional stormwater detention pond serving two phases).",
+      "id": "ev1"
+    },
+    {
+      "title": "Wetland delineation report",
+      "type": "document",
+      "party": "buyer",
+      "description": "Field delineation supporting no mapped wetlands on the developable area.",
+      "id": "ev2"
+    },
+    {
+      "title": "DEP permit application",
+      "type": "document",
+      "party": "buyer",
+      "description": "The application for a Maine DEP Stormwater Permit (Chapter 500).",
+      "id": "ev3"
+    },
+    {
+      "title": "Recorded subdivision plat",
+      "type": "public_record",
+      "party": "buyer",
+      "description": "The surveyor's plat filed at the registry.",
+      "id": "ev4"
+    },
+    {
+      "title": "Preliminary subdivision plan",
+      "type": "document",
+      "party": "buyer",
+      "description": "The engineer's 79-lot plan for Stonewall Crossing.",
+      "id": "ev5"
+    },
+    {
+      "title": "Purchase and sale agreement with approval contingency",
+      "type": "contract",
+      "party": "buyer",
+      "description": "The executed PSA and entitlement-contingency rider.",
+      "id": "ev6"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Purchase price",
+        "amount": 4561397,
+        "basis": "Agreed consideration on a base price plus a per-lot bonus over 40 lots."
+      },
+      {
+        "label": "Performance security amount",
+        "amount": 497272,
+        "basis": "Town improvement guarantee."
+      },
+      {
+        "label": "Earnest money deposit",
+        "amount": 72201,
+        "basis": "Held in escrow pending approvals."
+      },
+      {
+        "label": "Estimated Maine transfer tax",
+        "amount": 27021,
+        "basis": "$2.20 per $500 of consideration, split between the parties."
+      },
+      {
+        "label": "Estimated horizontal development cost",
+        "amount": 5422307,
+        "basis": "Roads, utilities, stormwater, and a regional stormwater detention pond serving two phases."
+      }
+    ]
+  },
+  "communications": [
+    {
+      "date": "2026-01-12",
+      "channel": "letter",
+      "from": "Ingrid B. Kingsley, Hawthorne Legal Group",
+      "to": "Seller's counsel",
+      "subject": "Executed PSA and approval contingency — Stonewall Crossing",
+      "summary": "Buyer's counsel confirms the deal and the entitlement timeline.",
+      "body": "Enclosed is the executed PSA for the 100-acre parcel at 0 Sawyer Brook Road. Maria Q. Fairbanks is proceeding to entitle Stonewall Crossing as a 79-lot major subdivision approval. The approval contingency runs to 2026-10-04; the $182487 deposit is going hard only after preliminary approval. Please deliver any prior surveys, soils work, and title materials.",
+      "id": "comm1"
+    },
+    {
+      "date": "2026-01-12",
+      "channel": "email",
+      "from": "Civil engineer / site designer",
+      "to": "Maria Q. Fairbanks",
+      "cc": "Ingrid B. Kingsley",
+      "subject": "Yield and constraints — Stonewall Crossing",
+      "summary": "Engineer flags wetland constraints affecting lot yield.",
+      "body": "First-pass fit for Stonewall Crossing shows no mapped wetlands on the developable area. Working around it, we can lay out close to 79 lots, but the town will almost certainly require a regional stormwater detention pond serving two phases. I'm preparing the application for a Maine DEP Stormwater Permit (Chapter 500) in parallel with the local submission.",
+      "id": "comm2"
+    },
+    {
+      "date": "2026-10-04",
+      "channel": "letter",
+      "from": "Municipal Planning Board",
+      "to": "Maria Q. Fairbanks",
+      "subject": "Conditional approval — Stonewall Crossing major subdivision approval",
+      "summary": "Planning board grants approval with conditions.",
+      "body": "The Planning Board has granted major subdivision approval for Stonewall Crossing subject to conditions, including a regional stormwater detention pond serving two phases, a mix of public collector and private lane roads, and posting a $640,000 performance bond for roads and utilities before any construction. The approval is subject to the 30-day appeal period under 30-A M.R.S. § 2691.",
+      "attachments": [
+        "Notice of decision with conditions of approval"
+      ],
+      "id": "comm3"
+    },
+    {
+      "date": "2026-10-04",
+      "channel": "email",
+      "from": "Maine Department of Environmental Protection",
+      "to": "Maria Q. Fairbanks",
+      "cc": "Civil engineer / site designer",
+      "subject": "Permit decision — Stonewall Crossing",
+      "summary": "DEP issues the environmental permit with conditions.",
+      "body": "DEP has issued a Maine DEP Stormwater Permit (Chapter 500) for Stonewall Crossing with standard stormwater maintenance and inspection conditions. The permit reflects the wetland avoidance shown on the approved plan (no mapped wetlands on the developable area). Please record the permit conditions with the subdivision plat.",
+      "attachments": [
+        "DEP permit and conditions"
+      ],
+      "id": "comm4"
+    },
+    {
+      "date": "2026-12-13",
+      "channel": "memo",
+      "from": "Title insurance company",
+      "to": "All parties",
+      "subject": "Closing and plat recording — Stonewall Crossing, Buxton",
+      "summary": "Escrow agent confirms closing and plat recording sequence.",
+      "body": "With approvals final and unappealable, closing on Stonewall Crossing is set for 2026-12-13. We will record the warranty deed, the subdivision plat, the declaration of covenants, and the RETTD, and issue an owner's policy insuring the plat of record. Consideration is $5298815 with the Maine transfer tax split between Grace C. Roe and Maria Q. Fairbanks. an initial 20-lot takedown with options on later phases governs any later phases.",
+      "id": "comm5"
+    }
+  ],
+  "facts": {
+    "project_name": "Stonewall Crossing",
+    "property_address": "0 Sawyer Brook Road",
+    "property_town": "Buxton",
+    "property_county": "Sagadahoc",
+    "parcel_acres": 100,
+    "planned_lots": 79,
+    "zoning": "Suburban Residential (SR-2)",
+    "approval_type": "major subdivision approval",
+    "purchase_price": 5298815,
+    "price_basis": "a base price plus a per-lot bonus over 40 lots",
+    "earnest_money": 182487,
+    "effective_date": "2026-01-12",
+    "approval_contingency_deadline": "2026-10-04",
+    "closing_date": "2026-12-13",
+    "transfer_date": "2026-12-13",
+    "takedown_structure": "an initial 20-lot takedown with options on later phases",
+    "offsite_improvements": "a regional stormwater detention pond serving two phases",
+    "dep_permit": "a Maine DEP Stormwater Permit (Chapter 500)",
+    "wetlands": "no mapped wetlands on the developable area",
+    "performance_security": "a $640,000 performance bond for roads and utilities",
+    "road_standard": "a mix of public collector and private lane roads",
+    "deed_type": "warranty deed"
+  }
+}

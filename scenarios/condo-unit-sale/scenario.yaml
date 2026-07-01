@@ -1,0 +1,178 @@
+id: condo-unit-sale
+title: "Condominium unit sale: Unit {unit_number}, {project_name}, {property_town} — {seller_full_name} to {buyer_full_name}"
+practice_area: real_estate
+case_type: condominium_unit_sale
+status: pre_filing
+docket_prefix: RE
+assign_docket: false
+
+downstream:
+  repo: transactional-tax-forms
+  example_forms: [ME-RETTD]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Maine Registry of Deeds / private closing"
+
+dates:
+  filing_date: {date_between: ["2026-01-05", "2026-02-20"]}
+  event_date: "{closing_date}"
+
+# A resale of a condominium unit under the Maine Condominium Act: the resale certificate,
+# association budget and assessments, a pending special assessment, insurance, and the
+# association/lender/attorney correspondence that fills the closing binder.
+parties:
+  client_role: buyer
+  attorney: true
+  roles:
+    - {key: seller, label: "Seller / unit owner (grantor)"}
+    - {key: buyer, label: "Buyer (grantee, client)"}
+
+facts:
+  project_name: {pick: ["Harborview Condominiums", "The Mills at Saco Falls", "Eastern Prom Lofts", "Sea Glass Condominium", "Old Port Landing"]}
+  unit_number: {pick: ["3B", "204", "1201", "7", "PH-2", "115"]}
+  property_address: {pick: ["120 Commercial Street", "40 Mill Street", "9 Eastern Promenade", "230 Ocean Avenue"]}
+  property_town: {pick: ["Portland", "Saco", "Bath", "Rockland", "Kennebunk"]}
+  property_county: "{county}"
+  unit_type: {pick: ["a 2-bedroom flat", "a 1-bedroom loft", "a 3-bedroom townhouse-style unit", "a studio with deeded parking"]}
+  unit_sf: {int_between: [620, 2200]}
+  ownership_percentage: {pick: ["1.84%", "2.10%", "0.95%", "3.40%"]}
+  purchase_price: {int_between: [225000, 1150000]}
+  earnest_money: {int_between: [3000, 40000]}
+  effective_date: {date_between: ["2026-01-06", "2026-01-22"]}
+  resale_cert_deadline: {date_between: ["2026-01-25", "2026-02-08"]}
+  inspection_deadline: {date_between: ["2026-01-28", "2026-02-10"]}
+  closing_date: {date_between: ["2026-03-01", "2026-03-28"]}
+  transfer_date: "{closing_date}"
+  monthly_assessment: {int_between: [220, 950]}
+  reserve_balance: {int_between: [45000, 1200000]}
+  special_assessment: {pick: ["a pending $6,500 special assessment for roof replacement", "a $12,000 special assessment for facade repairs, voted but not yet due", "no pending special assessment"]}
+  rofr: {pick: ["a 30-day association right of first refusal", "no right of first refusal in the declaration", "board approval of the buyer with no purchase option"]}
+  pet_rental_rules: {pick: ["a no-short-term-rental restriction and a two-pet limit", "a 20%-rental cap that is currently at the limit", "owner-occupancy required for the first year"]}
+  insurance: {pick: ["a master policy on a single-entity (all-in) basis", "a bare-walls master policy requiring an HO-6 unit policy", "a master policy with a $10,000 per-unit deductible allocation"]}
+  financing_type: {pick: ["a conventional condo mortgage", "an FHA condo loan requiring project approval", "cash"]}
+  loan_amount: {int_between: [0, 900000]}
+  deed_type: "unit deed with covenant"
+
+third_parties:
+  count: {min: 4, max: 5}
+  pool:
+    - {type: business_entity, name_kind: organization, role: "Condominium association / board", relevance: "Issues the resale certificate and administers assessments and rules."}
+    - {type: business_entity, name_kind: organization, role: "Property management company", relevance: "Manages the association and prepares the resale package."}
+    - {type: financial_institution, name_kind: bank, role: "Mortgage lender", relevance: "Underwrites the condo loan and reviews project eligibility."}
+    - {type: business_entity, name_kind: organization, role: "Title & closing company", relevance: "Insures title to the unit and conducts the closing."}
+    - {type: business_entity, name_kind: organization, role: "Insurance agency", relevance: "Places the master policy and the buyer's HO-6 unit coverage."}
+    - {type: government_agency, name: "County Registry of Deeds", role: "Recording office", relevance: "Records the unit deed and RETTD."}
+
+fact_pattern:
+  summary: "{buyer_full_name} is buying Unit {unit_number} at {project_name}, {property_town} ({unit_type}) from {seller_full_name} for ${purchase_price}, subject to the Maine Condominium Act, the resale certificate, and {special_assessment}."
+  narrative:
+    - "{seller_full_name} owns Unit {unit_number} ({unit_type}, {unit_sf} SF, {ownership_percentage} common-interest share) at {project_name}, {property_address} in {property_town}, {county} County. {buyer_full_name} has agreed to buy it for ${purchase_price}; the PSA became effective {effective_date} with ${earnest_money} in earnest money."
+    - "Because this is a resale under the Maine Condominium Act, the seller must furnish a resale certificate by {resale_cert_deadline} with the declaration and bylaws, the current budget, the ${monthly_assessment}/month assessment, the ${reserve_balance} reserve balance, and any special assessments. Diligence has surfaced {special_assessment}, {rofr}, and rules including {pet_rental_rules}. The master insurance is {insurance}."
+    - "The buyer is paying by {financing_type}; a condo loan requires the lender to confirm project eligibility (owner-occupancy, budget reserves, and litigation). Counsel {attorney_full_name} of {attorney_firm} is reviewing the condo documents and resale certificate and will confirm the transfer tax and record the {deed_type} at closing on {closing_date}."
+  undisputed:
+    - "Unit {unit_number} at {project_name}, {property_town} is under contract from {seller_full_name} to {buyer_full_name} at ${purchase_price}."
+    - "The unit's monthly assessment is ${monthly_assessment} and its common-interest share is {ownership_percentage}."
+    - "A resale certificate is due by {resale_cert_deadline}."
+  disputed:
+    - "Who bears {special_assessment} — the seller or the buyer — at closing."
+    - "Whether the project satisfies the lender's condo-eligibility requirements for the {financing_type}."
+    - "Whether {pet_rental_rules} impairs the buyer's intended use."
+
+interview:
+  interviewer: "Closing Attorney"
+  interviewee_role: buyer
+  exchanges:
+    - {topic: "Unit", question: "What are you buying?", answer: "Unit {unit_number} at {project_name}, {unit_type}, for ${purchase_price}."}
+    - {topic: "Assessments", question: "What are the condo fees?", answer: "${monthly_assessment} per month, with a reserve balance of about ${reserve_balance}."}
+    - {topic: "Special assessment", question: "Any special assessment pending?", answer: "Yes — {special_assessment}. We want the seller to cover it."}
+    - {topic: "Rules", question: "Any rules that concern you?", answer: "The project has {pet_rental_rules}, and {rofr}."}
+    - {topic: "Insurance", question: "How is insurance handled?", answer: "The association carries {insurance}; I'll add my own HO-6 as needed."}
+    - {topic: "Financing", question: "How are you paying?", answer: "By {financing_type}; the lender is reviewing condo-project eligibility."}
+
+objectives:
+  goals:
+    - "Close on {closing_date} with clear title to Unit {unit_number}."
+    - "Shift {special_assessment} to the seller or obtain a credit."
+    - "Confirm the {financing_type} clears condo-project eligibility."
+  priorities:
+    - "A clean resale certificate and title."
+    - "No surprise assessment liability after closing."
+  risk_tolerance: low
+  desired_outcomes:
+    - "A recorded unit deed, funded loan, and paid/allocated assessments."
+  non_starters:
+    - "Assuming an undisclosed special assessment."
+    - "Closing before the lender clears the project."
+  constraints:
+    budget: "Buyer's {financing_type} plus closing costs; monthly assessment of ${monthly_assessment}."
+    timeline: "Resale certificate by {resale_cert_deadline}; closing {closing_date}."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Resale certificate disclosure obligations", category: real_estate, governing_law: "33 M.R.S. § 1604-108 (Maine Condominium Act)", sub_questions: ["Was a complete resale certificate delivered by {resale_cert_deadline}?", "Does it disclose {special_assessment}?"], strength: strong}
+    - {issue: "Allocation of a pending special assessment", category: real_estate, governing_law: "33 M.R.S. § 1603-115; PSA proration terms", sub_questions: ["Was the assessment levied before or after closing?", "Who is contractually responsible?"], strength: moderate}
+    - {issue: "Association right of first refusal / board approval", category: real_estate, governing_law: "33 M.R.S. § 1603-112; declaration", sub_questions: ["Must the association waive {rofr} before closing?"], strength: moderate}
+    - {issue: "Lender condominium-project eligibility", category: real_estate, governing_law: "Investor condo-approval guidelines", sub_questions: ["Do owner-occupancy, reserves, and litigation meet the {financing_type} requirements?"], strength: moderate}
+    - {issue: "Maine real estate transfer tax on the unit sale", category: tax, governing_law: "36 M.R.S. § 4641-A", sub_questions: ["What consideration is taxable and how is the tax split?"], strength: strong}
+
+evidence:
+  count: {min: 4, max: 6}
+  pool:
+    - {title: "Purchase and sale agreement", type: contract, party: buyer, description: "The executed PSA for Unit {unit_number}."}
+    - {title: "Resale certificate package", type: document, party: seller, description: "The Condominium Act resale certificate with budget and rules."}
+    - {title: "Declaration and bylaws", type: document, party: seller, description: "The recorded condominium declaration and association bylaws."}
+    - {title: "Association budget and reserve study", type: financial_record, party: seller, description: "Current budget, ${monthly_assessment} assessment, and ${reserve_balance} reserves."}
+    - {title: "Master insurance certificate", type: document, party: seller, description: "Evidence of the association's {insurance}."}
+    - {title: "Unit deed", type: document, party: seller, description: "The {deed_type} prepared for recording."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  amounts:
+    - {label: "Purchase price", amount: {int_between: [225000, 1150000]}, basis: "Agreed consideration."}
+    - {label: "Earnest money deposit", amount: {int_between: [3000, 40000]}, basis: "Held in escrow by the title company."}
+    - {label: "Monthly common assessment", amount: {int_between: [220, 950]}, basis: "The unit's share of common expenses."}
+    - {label: "Association reserve balance", amount: {int_between: [45000, 1200000]}, basis: "Replacement reserve per the budget."}
+    - {label: "Estimated Maine transfer tax", amount: {int_between: [990, 5060]}, basis: "$2.20 per $500 of consideration, split between the parties."}
+
+communications:
+  - date: "{effective_date}"
+    channel: email
+    from: "Buyer's agent"
+    to: "Listing agent"
+    subject: "Under contract — Unit {unit_number}, {project_name}"
+    summary: "Buyer requests the full condo resale package."
+    body: "{buyer_full_name} is under contract on Unit {unit_number} at ${purchase_price}. Please have the association deliver the resale certificate by {resale_cert_deadline}: declaration and bylaws, current budget, the ${monthly_assessment} assessment, reserve study, insurance, meeting minutes, and any special assessments or litigation."
+  - date: "{resale_cert_deadline}"
+    channel: letter
+    from: "Property management company"
+    to: "{buyer_full_name}"
+    cc: "{attorney_full_name}"
+    subject: "Resale certificate — Unit {unit_number}, {project_name}"
+    summary: "Manager delivers the resale certificate disclosing the special assessment."
+    body: "Enclosed is the resale certificate for Unit {unit_number}. The unit's common-interest share is {ownership_percentage} and the assessment is ${monthly_assessment}/month; the reserve balance is ${reserve_balance}. Please note {special_assessment}. The project has {rofr} and {pet_rental_rules}. Master insurance is {insurance}."
+    attachments: ["Resale certificate", "Budget and reserve study", "Declaration and bylaws"]
+  - date: "{inspection_deadline}"
+    channel: email
+    from: "{attorney_full_name}, {attorney_firm}"
+    to: "Seller's counsel"
+    subject: "Special assessment allocation — Unit {unit_number}"
+    summary: "Buyer's counsel asks the seller to bear the special assessment."
+    body: "The resale certificate discloses {special_assessment}. Because it was levied before closing, {buyer_full_name} asks that the seller pay it in full at closing or provide an equivalent credit on the settlement statement. Please confirm so we can finalize figures for {closing_date}."
+  - date: "{inspection_deadline}"
+    channel: email
+    from: "Mortgage lender"
+    to: "{buyer_full_name}"
+    subject: "Condo project review — {project_name}"
+    summary: "Lender requests project-eligibility documentation."
+    body: "To clear your {financing_type}, we need the association's budget (confirming reserves), the master insurance certificate ({insurance}), owner-occupancy percentage, and confirmation of no material litigation. Once the project is approved and the appraisal is in, we can issue the commitment ahead of {closing_date}."
+  - date: "{closing_date}"
+    channel: memo
+    from: "Title & closing company"
+    to: "All parties"
+    subject: "Closing statement — Unit {unit_number}, {project_name}"
+    summary: "Closing agent confirms figures, assessment allocation, and recording."
+    body: "Closing for Unit {unit_number} is set for {closing_date}. The statement reflects the ${purchase_price} price, ${earnest_money} deposit credit, prorated ${monthly_assessment} assessment, the agreed handling of {special_assessment}, and the Maine transfer tax split between {seller_full_name} and {buyer_full_name}. We will record the {deed_type} and RETTD upon funding and issue the owner's policy."

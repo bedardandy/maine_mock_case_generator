@@ -1,0 +1,191 @@
+id: residential-purchase-sale
+title: "Residential purchase & sale: {property_address}, {property_town} — {seller_full_name} to {buyer_full_name}"
+practice_area: real_estate
+case_type: real_estate_purchase_sale
+status: pre_filing
+docket_prefix: RE
+assign_docket: false
+
+downstream:
+  repo: transactional-tax-forms
+  example_forms: [ME-RETTD]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Maine Registry of Deeds / private closing"
+
+dates:
+  filing_date: {date_between: ["2026-01-05", "2026-03-01"]}
+  event_date: "{closing_date}"
+
+# A full single-family purchase-and-sale closing binder: a term-sheet's worth of PSA
+# economics, contingencies, and a simulated broker/lender/attorney correspondence thread.
+parties:
+  client_role: buyer
+  attorney: true
+  roles:
+    - {key: seller, label: "Seller (grantor)"}
+    - {key: buyer, label: "Buyer (grantee / client)"}
+
+facts:
+  property_address: {pick: ["14 Lighthouse Drive", "203 Granite Ridge Road", "8 Harbor Road", "57 Meadowbrook Drive", "129 Old Mill Road", "42 Spruce Point Lane"]}
+  property_town: {pick: ["Portland", "Brunswick", "Camden", "Falmouth", "Yarmouth", "Cape Elizabeth"]}
+  property_county: "{county}"
+  property_map_block_lot: {pick: ["Map 12, Block 3, Lot 7", "Map 4, Block 1, Lot 22", "Map 31, Block 9, Lot 5"]}
+  property_type: "single-family residential"
+  year_built: {int_between: [1900, 2015]}
+  lot_size: {pick: ["0.28 acres", "0.51 acres", "1.2 acres", "2.4 acres"]}
+  bedrooms: {int_between: [2, 5]}
+  bathrooms: {pick: ["1", "1.5", "2", "2.5", "3"]}
+  purchase_price: {int_between: [285000, 875000]}
+  earnest_money: {int_between: [2500, 25000]}
+  effective_date: {date_between: ["2026-01-06", "2026-01-20"]}
+  inspection_deadline: {date_between: ["2026-01-21", "2026-02-02"]}
+  financing_contingency_date: {date_between: ["2026-02-10", "2026-02-25"]}
+  title_review_deadline: {date_between: ["2026-02-05", "2026-02-18"]}
+  closing_date: {date_between: ["2026-03-05", "2026-03-28"]}
+  possession: "at closing, keys delivered at recording"
+  financing_type: {pick: ["conventional 30-year mortgage", "FHA mortgage", "VA mortgage", "cash"]}
+  loan_amount: {int_between: [0, 700000]}
+  down_payment: {int_between: [15000, 200000]}
+  interest_rate: {pick: ["6.125%", "6.375%", "6.625%", "6.875%", "7.000%"]}
+  deed_type: {pick: ["warranty deed", "quitclaim deed with covenant"]}
+  included_fixtures: {pick: ["range, dishwasher, refrigerator, washer/dryer, and all window treatments", "all appliances, generator, and the storage shed", "kitchen appliances and the mounted TV brackets"]}
+  excluded_items: {pick: ["the dining-room chandelier and the workbench in the garage", "the seller's freezer in the basement", "nothing excluded"]}
+  home_inspection_result: {pick: ["a failing roof section and knob-and-tube wiring in the attic", "an aged furnace and minor radon above 4 pCi/L", "a wet basement and an undersized electrical panel"]}
+  repair_request: {pick: ["seller to replace the roof section and remediate radon before closing", "$8,500 credit in lieu of repairs", "seller to update the electrical panel to 200-amp service"]}
+  brokerage_commission: {pick: ["5% split between the listing and buyer brokerages", "6% split between the brokerages", "a flat $18,000 total commission"]}
+  transfer_date: "{closing_date}"
+
+third_parties:
+  count: {min: 4, max: 5}
+  pool:
+    - {type: business_entity, name_kind: organization, role: "Listing brokerage", relevance: "Represents the seller and holds the listing."}
+    - {type: business_entity, name_kind: organization, role: "Buyer's brokerage", relevance: "Represents the buyer under a buyer-agency agreement."}
+    - {type: financial_institution, name_kind: bank, role: "Mortgage lender", relevance: "Underwrites and funds the buyer's loan; records a mortgage."}
+    - {type: business_entity, name_kind: organization, role: "Title & closing company", relevance: "Issues title insurance and conducts the closing."}
+    - {type: expert, name_kind: person, role: "Home inspector", relevance: "Inspected the property during the inspection contingency."}
+    - {type: government_agency, name: "County Registry of Deeds", role: "Recording office", relevance: "Records the deed, mortgage, and RETTD."}
+
+fact_pattern:
+  summary: "{buyer_full_name} is buying the single-family home at {property_address}, {property_town} from {seller_full_name} for ${purchase_price}, financed by a {financing_type}, with closing set for {closing_date}."
+  narrative:
+    - "{buyer_full_name} signed a purchase-and-sale agreement to buy {seller_full_name}'s home at {property_address} in {property_town}, {county} County, Maine for ${purchase_price}. The agreement became effective {effective_date}; {buyer_full_name} put down ${earnest_money} in earnest money held in the listing brokerage's escrow account."
+    - "The deal carries the usual contingencies: a home inspection due by {inspection_deadline}, a title review by {title_review_deadline}, and a financing contingency tied to a {financing_type} that must clear by {financing_contingency_date}. The inspection turned up {home_inspection_result}; the buyer's proposed resolution is {repair_request}."
+    - "Closing is scheduled for {closing_date} at the title company's office, with title passing by {deed_type} and possession {possession}. Counsel, {attorney_full_name} of {attorney_firm}, is reviewing title, the deed, and the settlement statement, and will confirm the Maine Real Estate Transfer Tax Declaration is filed at recording."
+  undisputed:
+    - "The property at {property_address}, {property_town} is under contract from {seller_full_name} to {buyer_full_name} at ${purchase_price}."
+    - "The agreement became effective {effective_date} and closing is set for {closing_date}."
+    - "The buyer deposited ${earnest_money} in earnest money."
+  disputed:
+    - "Whether the seller must complete repairs ({repair_request}) or the parties resolve the inspection with a price credit."
+    - "The allocation of prorated property taxes, fuel, and closing costs on the settlement statement."
+
+interview:
+  interviewer: "Closing Attorney"
+  interviewee_role: buyer
+  exchanges:
+    - {topic: "Property", question: "What are you buying and for how much?", answer: "The single-family home at {property_address} in {property_town}, for ${purchase_price}."}
+    - {topic: "Deposit", question: "How much earnest money is down and who holds it?", answer: "${earnest_money}, held in the listing brokerage's escrow account."}
+    - {topic: "Financing", question: "How are you paying?", answer: "A {financing_type}; the financing contingency runs to {financing_contingency_date}."}
+    - {topic: "Inspection", question: "How did the inspection go?", answer: "It flagged {home_inspection_result}. We asked that {repair_request}."}
+    - {topic: "Title", question: "Any known title concerns?", answer: "None yet; we ordered title and will review it by {title_review_deadline}."}
+    - {topic: "Goal", question: "What do you need at closing?", answer: "Clear, insurable title, the agreed fixtures ({included_fixtures}), and a clean RETTD, closing on {closing_date}."}
+
+objectives:
+  goals:
+    - "Close on {closing_date} with clear, insurable title by {deed_type}."
+    - "Resolve the inspection items so that {repair_request}."
+    - "Confirm financing clears before the {financing_contingency_date} contingency date."
+  priorities:
+    - "Clean title and correct recording."
+    - "Financing certainty before waiving the contingency."
+  risk_tolerance: low
+  desired_outcomes:
+    - "A recorded deed, funded loan, and properly filed RETTD."
+  non_starters:
+    - "Waiving the financing contingency before loan commitment."
+    - "Closing over an unresolved title defect."
+  constraints:
+    budget: "Buyer brings ${down_payment} plus closing costs; commission is {brokerage_commission}."
+    timeline: "Contingencies in January-February; closing {closing_date}."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Enforceability of the inspection contingency and repair obligations", category: real_estate, governing_law: "Maine PSA standard form; 33 M.R.S. § 173 (disclosure)", sub_questions: ["Did the buyer object to inspection items in time?", "Must the seller repair or credit?"], strength: strong}
+    - {issue: "Marketability and insurability of title", category: real_estate, governing_law: "33 M.R.S. § 351", sub_questions: ["Are there liens, easements, or encumbrances of record?"], strength: moderate}
+    - {issue: "Satisfaction of the financing contingency", category: real_estate, governing_law: "Maine PSA financing rider", sub_questions: ["Did the buyer obtain a loan commitment by {financing_contingency_date}?"], strength: moderate}
+    - {issue: "Calculation and split of the Maine real estate transfer tax", category: tax, governing_law: "36 M.R.S. § 4641-A", sub_questions: ["What consideration is taxable?", "How is the tax split?"], strength: strong}
+    - {issue: "Escrow of earnest money on default", category: real_estate, governing_law: "Maine PSA default clause", sub_questions: ["Who is entitled to the ${earnest_money} deposit on a failed closing?"], strength: moderate}
+
+evidence:
+  count: {min: 4, max: 6}
+  pool:
+    - {title: "Executed purchase and sale agreement", type: contract, party: buyer, description: "The signed PSA with all riders."}
+    - {title: "Home inspection report", type: document, party: buyer, description: "The inspector's report identifying {home_inspection_result}."}
+    - {title: "Title commitment", type: document, party: buyer, description: "The title company's commitment and exceptions."}
+    - {title: "Loan estimate and commitment letter", type: financial_record, party: buyer, description: "The lender's terms for the {financing_type}."}
+    - {title: "Seller's property disclosure", type: document, party: seller, description: "The statutory residential property disclosure."}
+    - {title: "Proposed deed", type: document, party: seller, description: "The {deed_type} prepared for the conveyance."}
+    - {title: "Settlement statement (Closing Disclosure)", type: financial_record, party: buyer, description: "Prorations, credits, and the transfer tax."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  amounts:
+    - {label: "Purchase price", amount: {int_between: [285000, 875000]}, basis: "Agreed consideration in the PSA."}
+    - {label: "Earnest money deposit", amount: {int_between: [2500, 25000]}, basis: "Held in escrow by the listing brokerage."}
+    - {label: "Loan amount", amount: {int_between: [0, 700000]}, basis: "Buyer's {financing_type}."}
+    - {label: "Estimated Maine transfer tax", amount: {int_between: [1200, 3900]}, basis: "$2.20 per $500 of value, split between the parties."}
+    - {label: "Estimated buyer closing costs", amount: {int_between: [6000, 22000]}, basis: "Lender, title, recording, and prepaid items."}
+
+communications:
+  - date: "{effective_date}"
+    channel: email
+    from: "Buyer's agent"
+    to: "Listing agent"
+    subject: "Offer — {property_address}, {property_town}"
+    summary: "Buyer submits an offer with an inspection and financing contingency."
+    body: "On behalf of {buyer_full_name}, please find the attached offer of ${purchase_price} on {property_address}, with ${earnest_money} earnest money, an inspection contingency to {inspection_deadline}, and a {financing_type} financing contingency to {financing_contingency_date}. Requested closing is {closing_date}. Buyer would like the following to convey: {included_fixtures}."
+    attachments: ["Purchase and Sale Agreement (unsigned)", "Pre-approval letter"]
+  - date: "{effective_date}"
+    channel: email
+    from: "Listing agent"
+    to: "Buyer's agent"
+    subject: "RE: Offer — {property_address}, {property_town}"
+    summary: "Seller accepts, excluding certain personal property."
+    body: "{seller_full_name} accepts at ${purchase_price} and the requested timeline. Seller confirms {included_fixtures} convey, but is excluding {excluded_items}. Signed PSA attached; the deposit can go to our escrow account today."
+    attachments: ["Purchase and Sale Agreement (seller-signed)"]
+  - date: "{inspection_deadline}"
+    channel: email
+    from: "Buyer's agent"
+    to: "Listing agent"
+    subject: "Inspection objection — {property_address}"
+    summary: "Buyer raises inspection findings and a repair/credit request."
+    body: "The inspection found {home_inspection_result}. Within the inspection contingency, {buyer_full_name} requests that {repair_request}. We'd like to keep the {closing_date} closing on track and can turn an amendment around quickly."
+    attachments: ["Home inspection report"]
+  - date: "{title_review_deadline}"
+    channel: letter
+    from: "{attorney_full_name}, {attorney_firm}"
+    to: "Seller's counsel"
+    subject: "Title review — {property_address}, {property_town}"
+    summary: "Buyer's counsel notes a title exception to be cleared before closing."
+    body: "We have reviewed the title commitment for {property_address}. Please confirm the seller will discharge the existing mortgage at closing and address the exception for the recorded utility easement so we can deliver marketable title by {deed_type}. We remain on schedule for {closing_date}."
+  - date: "{financing_contingency_date}"
+    channel: email
+    from: "Mortgage lender"
+    to: "{buyer_full_name}"
+    cc: "Buyer's agent"
+    subject: "Loan commitment issued — {property_address}"
+    summary: "Lender issues a clear-to-close loan commitment."
+    body: "Congratulations — your {financing_type} for ${loan_amount} at {interest_rate} is approved and we have issued a loan commitment. Estimated cash to close, including your ${down_payment} down payment, will appear on the Closing Disclosure. We are coordinating funding for {closing_date}."
+    attachments: ["Loan commitment letter", "Initial Closing Disclosure"]
+  - date: "{closing_date}"
+    channel: memo
+    from: "Title & closing company"
+    to: "All parties"
+    subject: "Closing confirmation — {property_address}, {property_town}"
+    summary: "Closing agent confirms figures, prorations, and recording."
+    body: "Closing for {property_address} is set for {closing_date}. The settlement statement reflects the ${purchase_price} price, credited earnest money of ${earnest_money}, agreed inspection resolution ({repair_request}), prorated taxes and fuel, and the Maine transfer tax split between {seller_full_name} and {buyer_full_name}. The {deed_type} and RETTD will be recorded upon funding."

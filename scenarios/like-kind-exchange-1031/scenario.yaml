@@ -1,0 +1,175 @@
+id: like-kind-exchange-1031
+title: "1031 like-kind exchange: {relinquished_property} for {replacement_property} — {exchangor_full_name}"
+practice_area: tax
+case_type: like_kind_exchange_1031
+status: pre_filing
+docket_prefix: TAX
+assign_docket: false
+
+downstream:
+  repo: transactional-tax-forms
+  example_forms: [ME-RETTD]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Maine Registry of Deeds / qualified intermediary escrow"
+
+dates:
+  filing_date: {date_between: ["2026-01-05", "2026-02-01"]}
+  event_date: "{relinquished_closing_date}"
+
+# A smaller, tax-driven cousin of the sale binders: an IRC Section 1031 deferred exchange.
+# A qualified intermediary holds proceeds; the exchangor identifies replacement property
+# within 45 days and closes within 180 days, matching value and debt to defer gain.
+parties:
+  client_role: exchangor
+  attorney: true
+  roles:
+    - {key: exchangor, label: "Exchangor / taxpayer (client)"}
+    - {key: relinquished_buyer, label: "Buyer of the relinquished property"}
+    - {key: replacement_seller, label: "Seller of the replacement property"}
+
+facts:
+  relinquished_property: {pick: ["a 6-unit apartment building at 22 Sherman Street", "a leased retail pad at 410 Main Street", "a duplex rental at 15 Cedar Lane", "a small warehouse at 88 Industrial Way"]}
+  relinquished_town: {pick: ["Portland", "Lewiston", "Augusta", "Biddeford"]}
+  relinquished_county: "{county}"
+  relinquished_sale_price: {int_between: [420000, 2600000]}
+  relinquished_basis: {int_between: [90000, 900000]}
+  relinquished_debt: {int_between: [0, 1400000]}
+  replacement_property: {pick: ["a 12-unit apartment complex in Brunswick", "a NNN-leased pharmacy in Bangor", "a mixed-use building in Rockland", "a self-storage facility in Sanford"]}
+  replacement_town: {pick: ["Brunswick", "Bangor", "Rockland", "Sanford"]}
+  replacement_price: {int_between: [500000, 3400000]}
+  replacement_debt: {int_between: [0, 2000000]}
+  exchange_type: {pick: ["a forward (delayed) exchange", "a forward exchange with a backup replacement", "a delayed exchange identifying under the three-property rule"]}
+  relinquished_closing_date: {date_between: ["2026-02-05", "2026-03-05"]}
+  identification_deadline: {date_between: ["2026-03-22", "2026-04-19"]}
+  exchange_deadline: {date_between: ["2026-08-03", "2026-08-31"]}
+  replacement_closing_date: {date_between: ["2026-06-01", "2026-08-25"]}
+  identification_rule: {pick: ["the three-property rule", "the 200% fair-market-value rule", "the 95% rule"]}
+  boot_risk: {pick: ["cash boot if the replacement price is below the relinquished price", "mortgage boot unless the replacement debt matches or exceeds the relinquished debt", "no expected boot if value and debt are fully replaced"]}
+  related_party: {pick: ["an unrelated seller (no related-party issue)", "a related-party seller triggering the two-year holding rule", "an unrelated seller and no related-party concern"]}
+  qi_role: "a qualified intermediary holding the net proceeds so the exchangor never has actual or constructive receipt"
+  deed_type: "warranty deed"
+
+third_parties:
+  count: {min: 4, max: 5}
+  pool:
+    - {type: business_entity, name_kind: organization, role: "Qualified intermediary (QI)", relevance: "Holds exchange proceeds and documents the 1031 exchange."}
+    - {type: expert, name_kind: person, role: "CPA / tax advisor", relevance: "Computes deferred gain, basis, and boot, and reports Form 8824."}
+    - {type: business_entity, name_kind: organization, role: "Title & closing company", relevance: "Closes both legs and directs proceeds through the QI."}
+    - {type: financial_institution, name_kind: bank, role: "Replacement-property lender", relevance: "Finances the replacement property to match or exceed relinquished debt."}
+    - {type: government_agency, name: "County Registry of Deeds", role: "Recording office", relevance: "Records both deeds and the RETTDs."}
+
+fact_pattern:
+  summary: "{exchangor_full_name} is selling {relinquished_property} in {relinquished_town} for ${relinquished_sale_price} and, through {exchange_type}, acquiring {replacement_property} for ${replacement_price} to defer gain under IRC § 1031, with replacement to close by {exchange_deadline}."
+  narrative:
+    - "{exchangor_full_name} owns {relinquished_property} in {relinquished_town}, {county} County (adjusted basis about ${relinquished_basis}, debt about ${relinquished_debt}) and is selling it to {relinquished_buyer_full_name} for ${relinquished_sale_price}. To defer the gain, the sale is structured as {exchange_type} under IRC § 1031, with {qi_role}."
+    - "The relinquished leg closes about {relinquished_closing_date}. The exchangor must identify replacement property in writing by the 45-day deadline of {identification_deadline} under {identification_rule}, and must close on it by the 180-day deadline of {exchange_deadline}. The target is {replacement_property}, purchased from {replacement_seller_full_name} for ${replacement_price} with about ${replacement_debt} of new debt, expected to close {replacement_closing_date}."
+    - "To fully defer, the exchangor must reinvest all net proceeds and match or exceed the relinquished value and debt — watching for {boot_risk}. Diligence confirms {related_party}. Counsel {attorney_full_name} of {attorney_firm} and the CPA are coordinating the QI exchange documents, both deeds, and the Form 8824 reporting."
+  undisputed:
+    - "{exchangor_full_name} is selling {relinquished_property} for ${relinquished_sale_price} as part of {exchange_type}."
+    - "A qualified intermediary is holding the proceeds; the exchangor avoids constructive receipt."
+    - "Identification is due by {identification_deadline} and replacement closing by {exchange_deadline}."
+  disputed:
+    - "Whether the ${replacement_price} replacement and ${replacement_debt} debt fully avoid {boot_risk}."
+    - "Whether the identification under {identification_rule} is sufficient if the primary target falls through."
+    - "The deferred gain and carryover basis computation for Form 8824."
+
+interview:
+  interviewer: "Tax / Real Estate Attorney"
+  interviewee_role: exchangor
+  exchanges:
+    - {topic: "Relinquished", question: "What are you selling?", answer: "{relinquished_property} in {relinquished_town} for ${relinquished_sale_price}."}
+    - {topic: "Goal", question: "Why the exchange?", answer: "To defer the gain under § 1031 through {exchange_type}; my basis is only about ${relinquished_basis}."}
+    - {topic: "Replacement", question: "What are you buying?", answer: "{replacement_property} for ${replacement_price} from {replacement_seller_full_name}."}
+    - {topic: "Deadlines", question: "Do you understand the clock?", answer: "Yes — identify by {identification_deadline} and close by {exchange_deadline}, using {identification_rule}."}
+    - {topic: "Boot", question: "Any boot exposure?", answer: "We're watching for {boot_risk} and matching value and debt."}
+    - {topic: "QI", question: "Who holds the money?", answer: "The qualified intermediary — I can't touch the proceeds or I blow the exchange."}
+
+objectives:
+  goals:
+    - "Fully defer gain under IRC § 1031 by reinvesting all proceeds and matching value and debt."
+    - "Meet the 45-day ({identification_deadline}) and 180-day ({exchange_deadline}) deadlines."
+    - "Close the replacement ({replacement_property}) by {replacement_closing_date}."
+  priorities:
+    - "Strict compliance with the QI, identification, and timing rules."
+    - "Avoiding {boot_risk}."
+  risk_tolerance: low
+  desired_outcomes:
+    - "A completed exchange with no or minimal boot and a clean Form 8824."
+  non_starters:
+    - "Taking actual or constructive receipt of the proceeds."
+    - "Missing the 45- or 180-day deadline."
+  constraints:
+    budget: "Reinvest all ${relinquished_sale_price} of proceeds; new debt about ${replacement_debt}."
+    timeline: "Identify by {identification_deadline}; close replacement by {exchange_deadline}."
+
+issues:
+  count: {min: 3, max: 4}
+  pool:
+    - {issue: "Qualifying like-kind exchange and non-receipt of proceeds", category: tax, governing_law: "IRC § 1031; Treas. Reg. § 1.1031(k)-1 (qualified intermediary safe harbor)", sub_questions: ["Is the QI structure respected?", "Does the exchangor avoid constructive receipt?"], strength: strong}
+    - {issue: "45-day identification and 180-day exchange periods", category: tax, governing_law: "IRC § 1031(a)(3); Treas. Reg. § 1.1031(k)-1(b)-(c)", sub_questions: ["Is identification timely and compliant with {identification_rule}?", "Will replacement close by {exchange_deadline}?"], strength: strong}
+    - {issue: "Boot and debt replacement", category: tax, governing_law: "IRC §§ 1031(b), 1031(d)", sub_questions: ["Is there cash or mortgage boot given {boot_risk}?", "How is carryover basis computed?"], strength: moderate}
+    - {issue: "Related-party exchange holding requirement", category: tax, governing_law: "IRC § 1031(f); two-year holding rule", sub_questions: ["Does {related_party} trigger the two-year rule?"], strength: moderate}
+    - {issue: "Maine real estate transfer tax on each leg", category: tax, governing_law: "36 M.R.S. § 4641-A", sub_questions: ["Is the transfer tax due on both the relinquished and replacement deeds?"], strength: moderate}
+
+evidence:
+  count: {min: 4, max: 5}
+  pool:
+    - {title: "Qualified intermediary exchange agreement", type: contract, party: exchangor, description: "The QI agreement assigning the PSAs and holding proceeds."}
+    - {title: "Relinquished-property PSA", type: contract, party: exchangor, description: "The sale of {relinquished_property} for ${relinquished_sale_price}."}
+    - {title: "45-day identification notice", type: document, party: exchangor, description: "Written identification under {identification_rule}."}
+    - {title: "Replacement-property PSA", type: contract, party: exchangor, description: "The purchase of {replacement_property} for ${replacement_price}."}
+    - {title: "Form 8824 gain-deferral computation", type: financial_record, party: exchangor, description: "The CPA's deferred-gain, boot, and basis schedule."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  amounts:
+    - {label: "Relinquished sale price", amount: {int_between: [420000, 2600000]}, basis: "Consideration for {relinquished_property}."}
+    - {label: "Relinquished adjusted basis", amount: {int_between: [90000, 900000]}, basis: "Carryover basis before the exchange."}
+    - {label: "Replacement purchase price", amount: {int_between: [500000, 3400000]}, basis: "Consideration for {replacement_property}."}
+    - {label: "New replacement debt", amount: {int_between: [0, 2000000]}, basis: "Debt to match or exceed relinquished debt."}
+    - {label: "Estimated Maine transfer tax (relinquished leg)", amount: {int_between: [1848, 11440]}, basis: "$2.20 per $500 of consideration, split between the parties."}
+
+communications:
+  - date: "{filing_date}"
+    channel: email
+    from: "CPA / tax advisor"
+    to: "{exchangor_full_name}"
+    cc: "{attorney_full_name}"
+    subject: "1031 setup — {relinquished_property}"
+    summary: "CPA confirms exchange feasibility and the deferral targets."
+    body: "With a ${relinquished_sale_price} sale price against roughly ${relinquished_basis} basis, {relinquished_property} has significant built-in gain. To fully defer under § 1031 you must reinvest all net proceeds and acquire replacement property of equal or greater value (${replacement_price} works) while replacing at least ${relinquished_debt} of debt. Watch for {boot_risk}. We must engage {qi_role} before the relinquished closing on {relinquished_closing_date}."
+  - date: "{relinquished_closing_date}"
+    channel: letter
+    from: "Qualified intermediary (QI)"
+    to: "{exchangor_full_name}"
+    cc: "Title & closing company"
+    subject: "Exchange funds received — {relinquished_property}"
+    summary: "QI confirms receipt of proceeds and states the 45/180-day deadlines."
+    body: "We have received the net proceeds from the sale of {relinquished_property} to {relinquished_buyer_full_name} and are holding them under the exchange agreement so you have no actual or constructive receipt. Your 45-day identification deadline is {identification_deadline} and your 180-day exchange deadline is {exchange_deadline}. Identify replacement property in writing under {identification_rule}."
+  - date: "{identification_deadline}"
+    channel: email
+    from: "{exchangor_full_name}"
+    to: "Qualified intermediary (QI)"
+    cc: "{attorney_full_name}"
+    subject: "45-day identification — replacement property"
+    summary: "Exchangor delivers the written identification of replacement property."
+    body: "Under {identification_rule}, I identify {replacement_property} in {replacement_town} (purchase price ${replacement_price}) as my primary replacement property, plus one backup as permitted. Please acknowledge receipt within the 45-day window ending {identification_deadline}. We expect to close the replacement around {replacement_closing_date}."
+    attachments: ["45-day identification notice"]
+  - date: "{replacement_closing_date}"
+    channel: memo
+    from: "Title & closing company"
+    to: "All parties"
+    subject: "Replacement closing — {replacement_property}"
+    summary: "Closing agent confirms the replacement leg and QI funds direction."
+    body: "The replacement closing for {replacement_property} is set for {replacement_closing_date}, within the {exchange_deadline} deadline. The Qualified Intermediary will wire the exchange funds directly to this closing toward the ${replacement_price} price, with about ${replacement_debt} in new financing from the lender. We will record the {deed_type} and the RETTD; the CPA will report the exchange on Form 8824."
+  - date: "{exchange_deadline}"
+    channel: letter
+    from: "CPA / tax advisor"
+    to: "{exchangor_full_name}"
+    subject: "Exchange complete — Form 8824 summary"
+    summary: "CPA reports the completed exchange, deferred gain, and carryover basis."
+    body: "Your § 1031 exchange is complete within the 180-day period. By reinvesting the full ${relinquished_sale_price} of proceeds into {replacement_property} at ${replacement_price} and replacing debt, you deferred substantially all of the gain over your ${relinquished_basis} basis, subject to {boot_risk}. We will report the exchange on Form 8824 and carry your basis forward into the replacement property. {related_party} was confirmed, so no related-party holding issue applies."

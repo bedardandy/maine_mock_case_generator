@@ -1,0 +1,91 @@
+{
+  "matter": {
+    "case_id": "MMC-2026-749078",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Maine Registry of Deeds / private closing",
+    "case_type": "construction_loan_closing",
+    "filing_date": "2026-01-14",
+    "event_date": "2026-03-13"
+  },
+  "parties": {
+    "borrower": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "general_contractor": {
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
+    },
+    "attorney": {
+      "full_name": "Ingrid B. Kingsley",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "bar_number": "7867"
+    }
+  },
+  "party": {
+    "full_name": "Grace C. Roe",
+    "first_name": "Grace",
+    "middle_name": "C",
+    "last_name": "Roe",
+    "address": "422 Spruce Avenue",
+    "city": "Yarmouth",
+    "state": "ME",
+    "zip": "04047",
+    "phone": "(207) 555-0174",
+    "email": "grace.roe@example.com",
+    "date_of_birth": "1969-04-20",
+    "signature": "Grace C. Roe"
+  },
+  "facts": {
+    "project_name": "Downtown Mixed-Use Block",
+    "property_address": "0 Gateway Drive",
+    "property_town": "Brunswick",
+    "property_county": "Sagadahoc",
+    "project_type": "a 32-unit apartment building",
+    "contract_form": "a design-build GMP contract",
+    "contract_price": 7864171,
+    "gmp": "7864171",
+    "contingency_line": "a 5% owner's contingency",
+    "construction_loan_amount": 11157631,
+    "ltc": "70% loan-to-cost",
+    "interest_rate": "prime + 1.00%",
+    "loan_term_months": "18 months interest-only, then a mini-perm",
+    "loan_closing_date": "2026-03-13",
+    "groundbreaking_date": "2026-04-04",
+    "substantial_completion_date": "2027-06-21",
+    "draw_schedule": "monthly draws with retainage reduced to 5% after 50% completion",
+    "retainage": "10% held until substantial completion",
+    "lien_waiver_requirement": "conditional and unconditional lien waivers from the GC and all subs with each draw",
+    "performance_bond": "no bond, with the lender relying on a completion guaranty",
+    "title_requirement": "a title date-down endorsement and mechanic's-lien coverage at each draw",
+    "equity_required": 899970
+  }
+}

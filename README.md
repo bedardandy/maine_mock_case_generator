@@ -128,9 +128,49 @@ python tools/fetch_probate_schemas.py --refresh    # add/update vendored probate
 
 See [`docs/probate-fixtures.md`](docs/probate-fixtures.md).
 
+## Real-estate & asset-sale closing binders
+
+A dedicated suite models the full arc of **real-estate and asset-sale closings** — the kind
+of rich, term-sheet-and-PSA data plus back-and-forth party communications you'd find in a
+closing binder. Each scenario populates a deal's economics into `facts` (a term sheet's
+worth of fields), spots the governing issues, and authors a **simulated correspondence
+thread** (see below):
+
+| Scenario | Deal type | Highlights |
+|----------|-----------|------------|
+| `residential-purchase-sale` | Single-family PSA closing | contingencies, inspection/repair, loan commitment |
+| `commercial-property-sale` | Income-property (office/retail/industrial) | cap rate/NOI, Phase I ESA, estoppels/SNDA, DSCR loan |
+| `subdivision-development-sale` | Raw land for a subdivision | planning-board & DEP approvals, bonding, phased takedowns |
+| `condo-unit-sale` | Condominium unit resale | Maine Condo Act resale certificate, assessments, condo loan |
+| `construction-loan-closing` | Construction loan + GMP contract | AIA draw schedule, retainage, lien waivers, bonding |
+| `resource-extraction-sale` | Gravel pit / quarry / timberland | reserves & royalty, extraction permits, reclamation bond |
+| `business-asset-sale` | Operating-business asset purchase | Form 8594 allocation, working-capital true-up, QoE diligence |
+| `like-kind-exchange-1031` | IRC § 1031 deferred exchange | qualified intermediary, 45/180-day clock, boot & debt matching |
+
+```bash
+python tools/generate.py commercial-property-sale --seed 1
+python tools/generate.py business-asset-sale --seed 1 | python -m json.tool
+python tools/smoke.py --scenarios like-kind-exchange-1031 -v
+```
+
+The `business-asset-sale` thread includes the buyer's accountant sending **financing and
+business-accounting due-diligence questions** (general ledger, AR/AP aging, revenue
+recognition, add-back support, quality-of-earnings), and `like-kind-exchange-1031` is the
+deliberately **smaller, tax-driven cousin** of the sale binders.
+
+### Simulated communications
+
+Every matter can now carry a `communications` array — a **chronological, name-consistent
+back-and-forth** between the parties and their brokers, lenders, title/escrow agents,
+accountants, and counsel (emails, letters, memos). It is authored in the scenario, templated
+against the same context as the narrative (so senders, dates, and deal terms stay
+consistent), and date-sorted by the engine. All eight closing-suite scenarios ship a thread;
+any scenario can add one under a `communications:` block. See
+[`docs/data-model.md`](docs/data-model.md).
+
 ## Seed scenarios
 
-Thirty-one archetypes spanning the three downstream repos and eight practice areas. Add more by dropping a new
+Thirty-nine archetypes spanning the three downstream repos and eight practice areas. Add more by dropping a new
 `scenarios/<id>/scenario.yaml` — no code changes required.
 
 | Scenario | Practice area | Downstream repo |
@@ -166,6 +206,14 @@ Thirty-one archetypes spanning the three downstream repos and eight practice are
 | `llc-member-oppression` | business (minority freeze-out, § 1595) | maine-court-forms |
 | `short-term-rental-dispute` | civil (STR covenant / nuisance / zoning) | maine-court-forms |
 | `medical-malpractice` | civil (§ 2851 screening panel) | maine-court-forms |
+| `residential-purchase-sale` | real estate (single-family PSA closing) | transactional-tax-forms |
+| `commercial-property-sale` | real estate (income-property closing) | transactional-tax-forms |
+| `subdivision-development-sale` | real estate (subdivision land + approvals) | transactional-tax-forms |
+| `condo-unit-sale` | real estate (Maine Condo Act unit resale) | transactional-tax-forms |
+| `construction-loan-closing` | real estate (construction loan + GMP contract) | transactional-tax-forms |
+| `resource-extraction-sale` | real estate (gravel/quarry/timberland) | transactional-tax-forms |
+| `business-asset-sale` | business (operating-business asset purchase) | transactional-tax-forms |
+| `like-kind-exchange-1031` | tax (IRC § 1031 deferred exchange) | transactional-tax-forms |
 
 Browse a worked sample of each under [`examples/`](examples/) (`*.matter.json` and the
 projected `*.canonical.json`).
@@ -174,8 +222,9 @@ projected `*.canonical.json`).
 
 `provenance` · `matter` · `parties` (+ `third_parties`) · `fact_pattern` (narrative,
 timeline, disputed/undisputed) · `intake_interview` · `client_objectives` · `issues`
-(with governing law) · `expert_opinions` · `evidence` · `financials` · `facts` (the flat
-form-specific bridge). Full reference: [`docs/data-model.md`](docs/data-model.md).
+(with governing law) · `expert_opinions` · `evidence` · `financials` · `litigation` ·
+`communications` (simulated deal/closing correspondence) · `facts` (the flat form-specific
+bridge). Full reference: [`docs/data-model.md`](docs/data-model.md).
 
 ## Repository layout
 

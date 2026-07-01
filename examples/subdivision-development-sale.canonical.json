@@ -1,0 +1,91 @@
+{
+  "matter": {
+    "case_id": "MMC-2026-315963",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Maine Registry of Deeds / municipal planning board",
+    "case_type": "subdivision_development_sale",
+    "filing_date": "2026-01-14",
+    "event_date": "2026-12-13"
+  },
+  "parties": {
+    "seller": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "buyer": {
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
+    },
+    "attorney": {
+      "full_name": "Ingrid B. Kingsley",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "bar_number": "7867"
+    }
+  },
+  "party": {
+    "full_name": "Maria Q. Fairbanks",
+    "first_name": "Maria",
+    "middle_name": "Q",
+    "last_name": "Fairbanks",
+    "address": "37 Cedar Way",
+    "city": "Falmouth",
+    "state": "ME",
+    "zip": "04071",
+    "phone": "(207) 555-0154",
+    "email": "maria.fairbanks@example.com",
+    "date_of_birth": "1965-03-05",
+    "signature": "Maria Q. Fairbanks"
+  },
+  "facts": {
+    "project_name": "Stonewall Crossing",
+    "property_address": "0 Sawyer Brook Road",
+    "property_town": "Buxton",
+    "property_county": "Sagadahoc",
+    "parcel_acres": 100,
+    "planned_lots": 79,
+    "zoning": "Suburban Residential (SR-2)",
+    "approval_type": "major subdivision approval",
+    "purchase_price": 5298815,
+    "price_basis": "a base price plus a per-lot bonus over 40 lots",
+    "earnest_money": 182487,
+    "effective_date": "2026-01-12",
+    "approval_contingency_deadline": "2026-10-04",
+    "closing_date": "2026-12-13",
+    "transfer_date": "2026-12-13",
+    "takedown_structure": "an initial 20-lot takedown with options on later phases",
+    "offsite_improvements": "a regional stormwater detention pond serving two phases",
+    "dep_permit": "a Maine DEP Stormwater Permit (Chapter 500)",
+    "wetlands": "no mapped wetlands on the developable area",
+    "performance_security": "a $640,000 performance bond for roads and utilities",
+    "road_standard": "a mix of public collector and private lane roads",
+    "deed_type": "warranty deed"
+  }
+}

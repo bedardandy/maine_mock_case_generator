@@ -1,0 +1,179 @@
+id: resource-extraction-sale
+title: "Resource-extraction property sale: {property_name}, {property_town} — {seller_full_name} to {buyer_full_name}"
+practice_area: real_estate
+case_type: resource_extraction_sale
+status: pre_filing
+docket_prefix: RE
+assign_docket: false
+
+downstream:
+  repo: transactional-tax-forms
+  example_forms: [ME-RETTD]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Maine Registry of Deeds / private closing"
+
+dates:
+  filing_date: {date_between: ["2026-01-05", "2026-03-01"]}
+  event_date: "{closing_date}"
+
+# Sale of a natural-resource property (gravel pit / quarry / timberland with extraction
+# rights): reserves and royalty/severance economics, extraction permits and reclamation
+# bonding, current-use tax recapture, and the diligence correspondence.
+parties:
+  client_role: buyer
+  attorney: true
+  roles:
+    - {key: seller, label: "Seller / landowner (grantor)"}
+    - {key: buyer, label: "Buyer / operator (grantee, client)"}
+
+facts:
+  property_name: {pick: ["Ledge Hill Gravel Pit", "Sawyer Ridge Quarry", "North Woods Timberland Tract", "Meddybemps Sand & Gravel", "Blackstone Aggregate Pit"]}
+  property_address: {pick: ["0 Ledge Hill Road", "Route 201 (rural)", "T5 R7 woodland parcel", "0 Quarry Road"]}
+  property_town: {pick: ["Lyman", "Hermon", "Greenville", "Hiram", "Baileyville"]}
+  property_county: "{county}"
+  resource_type: {pick: ["a sand-and-gravel pit", "a dimension-stone / aggregate quarry", "a working timberland tract with harvest rights", "a sand, gravel, and loam extraction operation"]}
+  parcel_acres: {int_between: [40, 1200]}
+  active_extraction_acres: {int_between: [8, 180]}
+  estimated_reserves: {pick: ["about 1.8 million cubic yards of sand and gravel", "roughly 900,000 tons of crushed aggregate", "an estimated 12,000 cords of merchantable softwood plus 4 MMBF of sawlogs", "an estimated 2.4 million tons of reserves over 20 years"]}
+  purchase_price: {int_between: [380000, 8500000]}
+  price_structure: {pick: ["a fixed purchase price", "a base price plus a per-yard royalty override to the seller", "a price plus a 5-year severance royalty of $1.25/ton"]}
+  royalty_terms: {pick: ["a $1.25 per ton royalty on extracted material", "a $0.75 per cubic yard royalty for five years", "a stumpage split of 60/40 on harvested timber", "no continuing royalty — a clean sale"]}
+  earnest_money: {int_between: [15000, 400000]}
+  effective_date: {date_between: ["2026-01-06", "2026-01-25"]}
+  due_diligence_deadline: {date_between: ["2026-03-01", "2026-05-15"]}
+  closing_date: {date_between: ["2026-05-20", "2026-08-31"]}
+  transfer_date: "{closing_date}"
+  extraction_permit: {pick: ["a municipal gravel-pit / mineral-extraction permit under the town ordinance", "a Maine DEP performance-standards registration for a pit over 5 acres", "a Natural Resources Protection Act permit for work near a stream", "a Land Use Planning Commission permit for the unorganized territory"]}
+  reclamation_requirement: {pick: ["a phased reclamation plan with 2:1 side-slope regrading and revegetation", "final grading, topsoil respread, and seeding on completed phases", "a groundwater-monitoring and reclamation plan"]}
+  reclamation_security: {pick: ["a $180,000 reclamation performance bond", "an escrowed reclamation surety of $0.10 per yard extracted", "a letter of credit securing final reclamation"]}
+  current_use_status: {pick: ["enrollment in the Maine Tree Growth Tax program with recapture on withdrawal", "Farm and Open Space current-use classification", "no current-use enrollment"]}
+  environmental_status: {pick: ["a Phase I ESA with no recognized environmental conditions", "a Phase I noting historic equipment-fueling areas recommending soil sampling", "a groundwater review confirming compliance with extraction setbacks"]}
+  water_setbacks: {pick: ["a 100-foot buffer to a mapped stream and a 25-foot water-table separation", "a 250-foot setback from an adjoining great pond", "wellhead-protection setbacks from two abutting residences"]}
+  deed_type: "warranty deed reserving no mineral interest"
+
+third_parties:
+  count: {min: 5, max: 6}
+  pool:
+    - {type: expert, name_kind: person, role: "Licensed geologist / reserve engineer", relevance: "Estimated recoverable reserves and mine life."}
+    - {type: government_agency, name: "Maine Department of Environmental Protection", role: "Extraction permitting authority", relevance: "Administers extraction performance standards and reclamation."}
+    - {type: government_agency, name: "Municipal Code Enforcement Office", role: "Local permit authority", relevance: "Issues the local extraction permit and enforces the ordinance."}
+    - {type: expert, name_kind: person, role: "Environmental consultant", relevance: "Performed the Phase I ESA and groundwater review."}
+    - {type: financial_institution, name_kind: bank, role: "Acquisition lender", relevance: "Finances the purchase against reserves and cash flow."}
+    - {type: business_entity, name_kind: organization, role: "Surety / bonding company", relevance: "Issues the reclamation performance bond."}
+
+fact_pattern:
+  summary: "{buyer_full_name} is buying {property_name} ({resource_type}, {parcel_acres} acres) at {property_address}, {property_town} from {seller_full_name} for ${purchase_price}, structured as {price_structure}, with closing set for {closing_date}."
+  narrative:
+    - "{seller_full_name} owns {property_name}, {resource_type} on about {parcel_acres} acres at {property_address} in {property_town}, {county} County, with roughly {active_extraction_acres} acres in active extraction and {estimated_reserves}. {buyer_full_name}, an operator, has agreed to buy it for ${purchase_price} on {price_structure}, with {royalty_terms}. The PSA became effective {effective_date} with ${earnest_money} down and diligence to {due_diligence_deadline}."
+    - "Operations run under {extraction_permit}, subject to {reclamation_requirement} secured by {reclamation_security}, and {water_setbacks}. Diligence covers reserve verification, permit transferability, {environmental_status}, and the {current_use_status}, including any tax recapture on a change of use."
+    - "Counsel {attorney_full_name} of {attorney_firm} is handling the acquisition, permit assignment or reissuance, the reclamation bond substitution, the royalty/severance terms, and title, with title passing by {deed_type} at closing on {closing_date}."
+  undisputed:
+    - "{property_name} at {property_address}, {property_town} is under contract from {seller_full_name} to {buyer_full_name} at ${purchase_price}."
+    - "The property is {resource_type} with {estimated_reserves}."
+    - "Operations are governed by {extraction_permit} and {reclamation_requirement}."
+  disputed:
+    - "The accuracy of the reserve estimate ({estimated_reserves}) supporting the price."
+    - "Whether the permit transfers to the buyer or must be reissued, and on what conditions."
+    - "Responsibility for reclamation of previously-worked phases and the {reclamation_security}."
+
+interview:
+  interviewer: "Natural Resources Attorney"
+  interviewee_role: buyer
+  exchanges:
+    - {topic: "Property", question: "What are you buying?", answer: "{property_name}, {resource_type} on {parcel_acres} acres, for ${purchase_price} on {price_structure}."}
+    - {topic: "Reserves", question: "What are the reserves?", answer: "{estimated_reserves}, with about {active_extraction_acres} acres actively worked."}
+    - {topic: "Royalty", question: "Any continuing payments to the seller?", answer: "{royalty_terms}."}
+    - {topic: "Permits", question: "What governs operations?", answer: "{extraction_permit}, with {reclamation_requirement}."}
+    - {topic: "Reclamation", question: "How is reclamation secured?", answer: "{reclamation_security}; I'll need to substitute my own bond."}
+    - {topic: "Taxes", question: "Any current-use tax issue?", answer: "The land has {current_use_status}; we're checking recapture on any change of use."}
+
+objectives:
+  goals:
+    - "Close at ${purchase_price} with transferable extraction rights and permits."
+    - "Verify {estimated_reserves} before diligence expires on {due_diligence_deadline}."
+    - "Substitute reclamation security and confirm no assumed cleanup liability."
+  priorities:
+    - "Permit transferability and reserve certainty."
+    - "Clean environmental and bounded reclamation obligations."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A funded acquisition with permits in the buyer's name and a substituted reclamation bond."
+  non_starters:
+    - "Assuming reclamation liability for the seller's pre-closing phases without a credit."
+    - "Closing before the permit's transferability is confirmed."
+  constraints:
+    budget: "Acquisition financed against reserves; ongoing {royalty_terms}."
+    timeline: "Diligence to {due_diligence_deadline}; closing {closing_date}."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Extraction permit transfer and performance standards", category: environmental, governing_law: "38 M.R.S. §§ 490-Z (mineral exploration/extraction performance standards); town ordinance", sub_questions: ["Does the permit run with the land or require reissuance?", "Are performance standards being met?"], strength: moderate}
+    - {issue: "Reclamation obligations and financial assurance", category: environmental, governing_law: "38 M.R.S. § 490-Z(13); permit reclamation conditions", sub_questions: ["What reclamation remains on worked phases?", "Is {reclamation_security} adequate and substitutable?"], strength: strong}
+    - {issue: "Current-use tax classification and recapture", category: tax, governing_law: "36 M.R.S. §§ 571-584-A (Tree Growth); §§ 1101-1121 (Open Space)", sub_questions: ["Does the sale or use change trigger recapture?", "Who bears the penalty?"], strength: moderate}
+    - {issue: "Reserve verification and royalty accounting", category: real_estate, governing_law: "PSA representations; royalty/severance terms", sub_questions: ["Is {estimated_reserves} supported?", "How is a per-unit royalty measured and audited?"], strength: moderate}
+    - {issue: "Maine real estate transfer tax on the sale", category: tax, governing_law: "36 M.R.S. § 4641-A", sub_questions: ["Is a per-unit royalty part of taxable consideration?"], strength: moderate}
+
+evidence:
+  count: {min: 4, max: 6}
+  pool:
+    - {title: "Purchase and sale agreement", type: contract, party: buyer, description: "The executed PSA with reserve and permit representations."}
+    - {title: "Reserve / geologic report", type: document, party: buyer, description: "The geologist's estimate: {estimated_reserves}."}
+    - {title: "Extraction permit and reclamation plan", type: public_record, party: seller, description: "The {extraction_permit} and {reclamation_requirement}."}
+    - {title: "Reclamation bond", type: document, party: seller, description: "The existing {reclamation_security}."}
+    - {title: "Phase I Environmental Site Assessment", type: document, party: buyer, description: "The consultant's ESA: {environmental_status}."}
+    - {title: "Current-use tax records", type: public_record, party: seller, description: "Enrollment and recapture exposure: {current_use_status}."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  amounts:
+    - {label: "Purchase price", amount: {int_between: [380000, 8500000]}, basis: "Agreed consideration on {price_structure}."}
+    - {label: "Earnest money deposit", amount: {int_between: [15000, 400000]}, basis: "Held in escrow pending diligence."}
+    - {label: "Estimated reclamation cost", amount: {int_between: [120000, 2400000]}, basis: "Regrading, topsoil, and revegetation of worked phases."}
+    - {label: "Reclamation security amount", amount: {int_between: [100000, 1500000]}, basis: "Bond or letter of credit per permit."}
+    - {label: "Estimated Maine transfer tax", amount: {int_between: [1672, 37400]}, basis: "$2.20 per $500 of consideration, split between the parties."}
+
+communications:
+  - date: "{effective_date}"
+    channel: letter
+    from: "{attorney_full_name}, {attorney_firm}"
+    to: "Seller's counsel"
+    subject: "Diligence request — {property_name}"
+    summary: "Buyer's counsel opens diligence on reserves, permits, and reclamation."
+    body: "On behalf of {buyer_full_name}, please deliver the reserve/geologic reports, {extraction_permit} and all conditions, the reclamation plan and {reclamation_security}, extraction and royalty records, environmental reports, and {current_use_status} tax records. We will retain a geologist to confirm {estimated_reserves} before the {due_diligence_deadline} deadline."
+  - date: "{due_diligence_deadline}"
+    channel: email
+    from: "Licensed geologist / reserve engineer"
+    to: "{buyer_full_name}"
+    cc: "{attorney_full_name}"
+    subject: "Reserve verification — {property_name}"
+    summary: "Geologist reports on recoverable reserves and mine life."
+    body: "Based on test pits, borings, and the survey of {active_extraction_acres} active acres, my estimate is consistent with {estimated_reserves}, subject to the {water_setbacks} that constrain the working face. At planned production, mine life supports the underwriting behind the ${purchase_price} price and {royalty_terms}."
+    attachments: ["Reserve and mine-plan report"]
+  - date: "{due_diligence_deadline}"
+    channel: letter
+    from: "Municipal Code Enforcement Office"
+    to: "{buyer_full_name}"
+    subject: "Permit transfer — {property_name}"
+    summary: "Local authority addresses permit transfer and reclamation bonding."
+    body: "The extraction permit for {property_name} may be transferred to a new operator upon application, provided the operator assumes {reclamation_requirement} and posts acceptable financial assurance in place of the seller's {reclamation_security}. Previously-disturbed phases remain subject to reclamation regardless of ownership."
+  - date: "{due_diligence_deadline}"
+    channel: email
+    from: "Environmental consultant"
+    to: "{buyer_full_name}"
+    cc: "{attorney_full_name}"
+    subject: "Phase I ESA — {property_name}"
+    summary: "Consultant reports environmental findings."
+    body: "Our Phase I for {property_name} resulted in {environmental_status}. Operations appear consistent with the applicable extraction setbacks, including {water_setbacks}. We flag the reclamation status of previously-worked phases for allocation in the PSA."
+    attachments: ["Phase I Environmental Site Assessment"]
+  - date: "{closing_date}"
+    channel: memo
+    from: "Acquisition lender"
+    to: "All parties"
+    subject: "Closing — {property_name}, {property_town}"
+    summary: "Lender confirms closing, bond substitution, and permit assignment."
+    body: "Closing on {property_name} is set for {closing_date} at ${purchase_price}. Funding is conditioned on the assigned or reissued {extraction_permit}, the buyer's substituted reclamation security in place of {reclamation_security}, resolution of any {current_use_status} recapture, and recording of the {deed_type} and RETTD. {royalty_terms} will be documented in a recorded royalty agreement where applicable."

@@ -1,0 +1,196 @@
+id: commercial-property-sale
+title: "Commercial property sale: {property_name}, {property_town} — {seller_full_name} to {buyer_full_name}"
+practice_area: real_estate
+case_type: commercial_real_estate_sale
+status: pre_filing
+docket_prefix: RE
+assign_docket: false
+
+downstream:
+  repo: transactional-tax-forms
+  example_forms: [ME-RETTD]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Maine Registry of Deeds / private closing"
+
+dates:
+  filing_date: {date_between: ["2026-01-05", "2026-02-15"]}
+  event_date: "{closing_date}"
+
+# An income-property commercial closing: LOI/term sheet economics (price, cap rate, NOI),
+# institutional due diligence (Phase I ESA, estoppels, SNDA, survey, rent roll), commercial
+# financing (DSCR/LTV), and the deal correspondence that builds the closing binder.
+parties:
+  client_role: buyer
+  attorney: true
+  roles:
+    - {key: seller, label: "Seller (grantor)"}
+    - {key: buyer, label: "Buyer / principal (grantee, client)"}
+
+facts:
+  property_name: {pick: ["Riverside Commons", "Granite Point Plaza", "Bayview Business Center", "Millyard Retail Block", "Portland Gateway Industrial"]}
+  property_address: {pick: ["500 Commercial Street", "1200 Congress Street", "88 Industrial Parkway", "17 Marginal Way", "245 Presumpscot Street"]}
+  property_town: {pick: ["Portland", "South Portland", "Bangor", "Lewiston", "Biddeford", "Westbrook"]}
+  property_county: "{county}"
+  property_type: {pick: ["multi-tenant office building", "neighborhood retail center", "flex/industrial warehouse", "mixed-use retail and office"]}
+  building_sf: {int_between: [18000, 145000]}
+  lot_size: {pick: ["1.8 acres", "3.4 acres", "6.2 acres", "0.9 acres"]}
+  year_built: {int_between: [1965, 2018]}
+  occupancy_pct: {pick: ["100%", "94%", "88%", "76%"]}
+  tenant_count: {int_between: [1, 22]}
+  largest_tenant: {pick: ["a regional credit union on a 10-year NNN lease", "a national pharmacy anchor", "a state agency field office", "a logistics tenant with two renewal options"]}
+  annual_noi: {int_between: [180000, 2400000]}
+  cap_rate: {pick: ["6.25%", "6.75%", "7.25%", "8.00%"]}
+  purchase_price: {int_between: [2200000, 34000000]}
+  earnest_money: {int_between: [50000, 750000]}
+  buyer_entity: {pick: ["Coastline Holdings LLC", "245 Presumpscot Acquisitions LLC", "Granite Point Investors LP", "Bayview Property Partners LLC"]}
+  effective_date: {date_between: ["2026-01-06", "2026-01-22"]}
+  due_diligence_deadline: {date_between: ["2026-02-20", "2026-03-15"]}
+  financing_contingency_date: {date_between: ["2026-03-10", "2026-03-30"]}
+  closing_date: {date_between: ["2026-04-01", "2026-04-30"]}
+  transfer_date: "{closing_date}"
+  financing_type: {pick: ["a bank commercial mortgage", "life-company permanent financing", "an SBA 504 loan", "a bridge loan with a 24-month term"]}
+  loan_amount: {int_between: [1500000, 24000000]}
+  ltv: {pick: ["65%", "70%", "75%"]}
+  dscr_required: {pick: ["1.25x", "1.30x", "1.35x"]}
+  interest_rate: {pick: ["6.85%", "7.10%", "7.45%", "SOFR + 275 bps"]}
+  environmental_finding: {pick: ["a recognized environmental condition from a former dry cleaner tenant", "historic fill and a closed UST with a no-further-action letter", "no recognized environmental conditions", "a de minimis condition recommending a Phase II"]}
+  title_survey: "ALTA/NSPS survey with Table A items 1-4, 6-11, and 16"
+  deed_type: "warranty deed with commercial closing affidavit"
+  estoppel_status: {pick: ["all tenant estoppels returned clean", "the anchor tenant's estoppel notes a disputed CAM reconciliation", "two estoppels outstanding at the DD deadline"]}
+
+third_parties:
+  count: {min: 5, max: 6}
+  pool:
+    - {type: business_entity, name_kind: organization, role: "Commercial brokerage", relevance: "Marketed the property and brokered the transaction."}
+    - {type: financial_institution, name_kind: bank, role: "Commercial lender", relevance: "Underwrites the acquisition loan against NOI and DSCR."}
+    - {type: business_entity, name_kind: organization, role: "Title insurance company", relevance: "Issues an ALTA owner's and lender's policy with endorsements."}
+    - {type: expert, name_kind: person, role: "Environmental consultant", relevance: "Performed the Phase I Environmental Site Assessment."}
+    - {type: business_entity, name_kind: organization, role: "Property management company", relevance: "Manages the tenants and provided the rent roll and CAM reconciliations."}
+    - {type: expert, name_kind: person, role: "Licensed surveyor", relevance: "Prepared the ALTA/NSPS survey."}
+    - {type: government_agency, name: "County Registry of Deeds", role: "Recording office", relevance: "Records the deed, mortgage, and RETTD."}
+
+fact_pattern:
+  summary: "{buyer_full_name}, through {buyer_entity}, is acquiring {property_name} ({property_type}) at {property_address}, {property_town} from {seller_full_name} for ${purchase_price} — roughly a {cap_rate} cap on ${annual_noi} of NOI — with closing set for {closing_date}."
+  narrative:
+    - "{seller_full_name} has agreed to sell {property_name}, a {building_sf}-square-foot {property_type} at {property_address} in {property_town}, {county} County, to {buyer_full_name}'s acquisition entity, {buyer_entity}, for ${purchase_price}. The pricing reflects a {cap_rate} capitalization rate on trailing NOI of about ${annual_noi}, with the property {occupancy_pct} occupied across {tenant_count} tenant(s), anchored by {largest_tenant}."
+    - "The PSA became effective {effective_date} with a ${earnest_money} deposit and a due-diligence period running to {due_diligence_deadline}. Buyer's diligence covers title and the {title_survey}, a Phase I ESA, tenant estoppels and SNDAs, service contracts, and the rent roll and CAM reconciliations. The Phase I reported {environmental_finding}; {estoppel_status}."
+    - "Buyer is financing with {financing_type} of about ${loan_amount} at roughly {ltv} LTV, subject to a {dscr_required} debt-service-coverage test, with the financing contingency running to {financing_contingency_date}. Counsel {attorney_full_name} of {attorney_firm} is negotiating the deed, title endorsements, estoppel and SNDA forms, and the closing statement for a {closing_date} closing."
+  undisputed:
+    - "{property_name} at {property_address}, {property_town} is under contract from {seller_full_name} to {buyer_entity} at ${purchase_price}."
+    - "Trailing NOI is about ${annual_noi} at a {cap_rate} cap rate."
+    - "The due-diligence period runs to {due_diligence_deadline} and closing is set for {closing_date}."
+  disputed:
+    - "Whether the Phase I finding ({environmental_finding}) requires a Phase II, a price adjustment, or seller indemnity."
+    - "Resolution of the estoppel issue: {estoppel_status}."
+    - "Whether the loan clears the {dscr_required} DSCR test at the agreed price."
+
+interview:
+  interviewer: "Transactional Attorney"
+  interviewee_role: buyer
+  exchanges:
+    - {topic: "Asset", question: "What are you buying?", answer: "{property_name}, a {building_sf} SF {property_type} at {property_address}, for ${purchase_price}."}
+    - {topic: "Underwriting", question: "How did you price it?", answer: "About a {cap_rate} cap on ${annual_noi} NOI; it's {occupancy_pct} leased across {tenant_count} tenants, anchored by {largest_tenant}."}
+    - {topic: "Entity", question: "Who takes title?", answer: "My acquisition entity, {buyer_entity}."}
+    - {topic: "Diligence", question: "What's your diligence plan?", answer: "Title and an ALTA survey, a Phase I ESA, estoppels and SNDAs, service contracts, and the rent roll and CAM true-ups — all by {due_diligence_deadline}."}
+    - {topic: "Environmental", question: "Any environmental concerns?", answer: "The Phase I found {environmental_finding}; we're deciding whether we need a Phase II."}
+    - {topic: "Financing", question: "How is it financed?", answer: "{financing_type} at about {ltv} LTV; the lender wants {dscr_required} coverage. Contingency runs to {financing_contingency_date}."}
+
+objectives:
+  goals:
+    - "Close on {closing_date} at ${purchase_price} with clean title and required endorsements."
+    - "Resolve the Phase I finding ({environmental_finding}) with a Phase II, credit, or indemnity as warranted."
+    - "Obtain clean tenant estoppels and lender-required SNDAs."
+  priorities:
+    - "Environmental certainty and title/survey clearance."
+    - "Loan commitment meeting the {dscr_required} DSCR test."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A funded acquisition into {buyer_entity} with owner's and lender's title policies."
+  non_starters:
+    - "Closing over an unquantified environmental liability."
+    - "Waiving financing before a firm commitment."
+  constraints:
+    budget: "Equity plus {financing_type} of about ${loan_amount}."
+    timeline: "Diligence to {due_diligence_deadline}; closing {closing_date}."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Environmental liability and CERCLA/BEP protections", category: environmental, governing_law: "42 U.S.C. § 9601 (CERCLA); 38 M.R.S. § 343-E", sub_questions: ["Does the Phase I trigger a Phase II?", "Is a bona fide prospective purchaser defense preserved?"], strength: moderate}
+    - {issue: "Tenant estoppels and lease compliance", category: real_estate, governing_law: "Common-law estoppel; lease terms", sub_questions: ["Do estoppels confirm rent, term, and no defaults?", "Is the CAM reconciliation dispute material?"], strength: moderate}
+    - {issue: "Title, survey, and required endorsements", category: real_estate, governing_law: "33 M.R.S. § 351; ALTA policy forms", sub_questions: ["Are there survey encroachments or access issues?", "Which endorsements does the lender require?"], strength: strong}
+    - {issue: "Satisfaction of the DSCR-based financing contingency", category: real_estate, governing_law: "Loan commitment terms", sub_questions: ["Does NOI support {dscr_required} coverage at the loan amount?"], strength: moderate}
+    - {issue: "Maine real estate transfer tax on the sale", category: tax, governing_law: "36 M.R.S. § 4641-A", sub_questions: ["What is the taxable consideration?", "Does any controlling-interest rule apply?"], strength: strong}
+
+evidence:
+  count: {min: 4, max: 6}
+  pool:
+    - {title: "Letter of intent / term sheet", type: document, party: buyer, description: "The signed LOI framing price, deposit, DD period, and closing."}
+    - {title: "Purchase and sale agreement", type: contract, party: buyer, description: "The executed commercial PSA with representations and warranties."}
+    - {title: "Phase I Environmental Site Assessment", type: document, party: buyer, description: "The consultant's ESA reporting {environmental_finding}."}
+    - {title: "Rent roll and CAM reconciliation", type: financial_record, party: seller, description: "Tenant schedule supporting ${annual_noi} NOI."}
+    - {title: "Tenant estoppel certificates", type: document, party: seller, description: "Signed estoppels; {estoppel_status}."}
+    - {title: "ALTA/NSPS survey", type: document, party: buyer, description: "The {title_survey}."}
+    - {title: "Lender term sheet and commitment", type: financial_record, party: buyer, description: "{financing_type} at {ltv} LTV and {dscr_required} DSCR."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  amounts:
+    - {label: "Purchase price", amount: {int_between: [2200000, 34000000]}, basis: "Agreed consideration."}
+    - {label: "Trailing net operating income", amount: {int_between: [180000, 2400000]}, basis: "Rent roll less operating expenses."}
+    - {label: "Earnest money deposit", amount: {int_between: [50000, 750000]}, basis: "Held by the title company as escrow agent."}
+    - {label: "Acquisition loan", amount: {int_between: [1500000, 24000000]}, basis: "{financing_type} at {ltv} LTV."}
+    - {label: "Estimated Maine transfer tax", amount: {int_between: [9680, 149600]}, basis: "$2.20 per $500 of consideration, split between the parties."}
+
+communications:
+  - date: "{effective_date}"
+    channel: email
+    from: "Commercial brokerage"
+    to: "{buyer_full_name}"
+    cc: "{attorney_full_name}"
+    subject: "Signed LOI — {property_name}, {property_town}"
+    summary: "Broker circulates the executed term sheet and opens due diligence."
+    body: "Attached is the fully-signed LOI for {property_name} at ${purchase_price} (~{cap_rate} cap on ${annual_noi} NOI). Deposit is ${earnest_money}, due diligence runs to {due_diligence_deadline}, and target closing is {closing_date}. Seller will deliver the rent roll, leases, service contracts, and environmental history to the data room this week."
+    attachments: ["Letter of intent (executed)"]
+  - date: "{effective_date}"
+    channel: letter
+    from: "{attorney_full_name}, {attorney_firm}"
+    to: "Seller's counsel"
+    subject: "Due diligence request list — {property_name}"
+    summary: "Buyer's counsel sends the diligence checklist."
+    body: "On behalf of {buyer_entity}, please post to the data room: the current rent roll and trailing-12 operating statements, all leases and amendments, CAM reconciliations, the title policy and existing survey, environmental reports, service and management contracts, and any notices of violation. We will order a Phase I ESA, an ALTA/NSPS survey, and tenant estoppels."
+  - date: "{due_diligence_deadline}"
+    channel: email
+    from: "Environmental consultant"
+    to: "{buyer_full_name}"
+    cc: "{attorney_full_name}"
+    subject: "Phase I ESA results — {property_address}"
+    summary: "Consultant reports the Phase I finding."
+    body: "Our Phase I for {property_address} is complete. The assessment identified {environmental_finding}. We can scope a limited Phase II if you want to quantify any impact before the due-diligence deadline; otherwise the report supports a bona fide prospective purchaser position with continuing obligations."
+    attachments: ["Phase I Environmental Site Assessment"]
+  - date: "{due_diligence_deadline}"
+    channel: email
+    from: "{attorney_full_name}, {attorney_firm}"
+    to: "Seller's counsel"
+    subject: "Estoppels and CAM — {property_name}"
+    summary: "Buyer's counsel raises the estoppel/CAM issue."
+    body: "Reviewing the returned certificates, {estoppel_status}. Please have the property manager reconcile the anchor tenant's CAM before closing and confirm no landlord defaults. We also need lender-form SNDAs from the top tenants to satisfy our financing."
+  - date: "{financing_contingency_date}"
+    channel: letter
+    from: "Commercial lender"
+    to: "{buyer_entity}"
+    subject: "Loan commitment — {property_name}"
+    summary: "Lender issues a commitment subject to the DSCR test."
+    body: "We are pleased to commit {financing_type} of ${loan_amount} at approximately {ltv} LTV and {interest_rate}, subject to the property underwriting to a minimum {dscr_required} debt-service coverage on stabilized NOI, satisfactory estoppels and SNDAs, and a clean environmental. Please confirm resolution of the Phase I item before funding."
+    attachments: ["Loan commitment letter"]
+  - date: "{closing_date}"
+    channel: memo
+    from: "Title insurance company"
+    to: "All parties"
+    subject: "Closing statement — {property_name}, {property_town}"
+    summary: "Escrow agent circulates the settlement statement and recording plan."
+    body: "Closing for {property_name} is set for {closing_date}. The statement reflects the ${purchase_price} price, ${earnest_money} deposit credit, prorated rents and CAM, tenant security deposits transferred to {buyer_entity}, the acquisition loan of ${loan_amount}, and the Maine transfer tax split between the parties. We will issue the ALTA owner's and lender's policies and record the deed, mortgage, and RETTD upon funding."

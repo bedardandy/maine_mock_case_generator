@@ -1,0 +1,452 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "business-asset-sale",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-932967",
+    "practice_area": "business",
+    "title": "Business asset sale: Casco Bay Landscaping, Inc. — Grace C. Roe to Maria Q. Fairbanks",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Private closing / Maine Secretary of State"
+    },
+    "case_type": "business_asset_sale",
+    "filing_date": "2026-01-14",
+    "status": "pre_filing",
+    "summary": "Maria Q. Fairbanks is acquiring the assets of Casco Bay Landscaping, Inc. (a precision machine shop) from Grace C. Roe for $6897794 — about 3.5x EBITDA of $2477406 — via an asset purchase (not a stock/equity purchase), with closing set for 2026-05-16.",
+    "event_date": "2026-05-16"
+  },
+  "parties": {
+    "seller": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Seller / owner (of the business)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "buyer": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer (asset acquirer, client)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Attorney for the client",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "ssn_last4": "4744",
+      "bar_number": "7867",
+      "organization_name": "Hawthorne Legal Group"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer (asset acquirer, client)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Maria Q. Fairbanks is acquiring the assets of Casco Bay Landscaping, Inc. (a precision machine shop) from Grace C. Roe for $6897794 — about 3.5x EBITDA of $2477406 — via an asset purchase (not a stock/equity purchase), with closing set for 2026-05-16.",
+    "narrative": "Grace C. Roe owns Casco Bay Landscaping, Inc., a precision machine shop operating as a member-managed LLC for 19 years with 19 employees, about $4169227 in revenue and $2477406 in adjusted EBITDA. Maria Q. Fairbanks has agreed to buy substantially all of its assets (machinery, WIP inventory, and the trade name) through an asset purchase (not a stock/equity purchase) for $6897794, roughly a 3.5x multiple, into a new entity, Downeast Dental Partners LLC.\n\nThe deal includes a dollar-for-dollar working-capital true-up against a pegged target at closing against a $214992 target, a 12-month holdback of 8% of the price, a 2-year earnout of up to $400,000 tied to gross-profit retention, and no seller financing. Buyer's CPA is running a quality-of-earnings review by 2026-03-06, testing related-party rent normalized to market and normalizing the numbers. Buyer is financing with a bank term loan with a revolving line for working capital of about $7573808; the price is allocated under an IRC § 1060 purchase-price allocation on Form 8594 across Class I-VII assets.\n\nOnly specified trade payables and customer deposits are assumed; the transaction contemplates a new 10-year lease with the seller as landlord and a 3-year non-compete plus a 1-year consulting agreement. Counsel Ingrid B. Kingsley of Hawthorne Legal Group is drafting the APA, escrow and non-compete agreements, bill of sale and assignments, and coordinating the lender and the Form 8594 allocation for a 2026-05-16 closing.",
+    "undisputed_facts": [
+      "Maria Q. Fairbanks is buying the assets of Casco Bay Landscaping, Inc. from Grace C. Roe for $6897794 via an asset purchase (not a stock/equity purchase).",
+      "Adjusted EBITDA is about $2477406 on $4169227 of revenue.",
+      "The deal includes a 12-month holdback of 8% of the price and a 3-year non-compete plus a 1-year consulting agreement."
+    ],
+    "disputed_facts": [
+      "The quality of earnings and which related-party rent normalized to market are legitimate normalizations.",
+      "The closing working-capital peg and the a dollar-for-dollar working-capital true-up against a pegged target at closing.",
+      "The purchase-price allocation on Form 8594 (goodwill vs. equipment) and its tax effect on each side."
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Maine Secretary of State",
+      "type": "government_agency",
+      "role": "Entity filing office",
+      "relevance": "Registers the buyer's acquisition entity and any name filings.",
+      "contact": {
+        "phone": "(207) 555-0167",
+        "city": "Bath",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Desmond D. Poe",
+      "type": "expert",
+      "role": "Buyer's CPA / quality-of-earnings analyst",
+      "relevance": "Performs the financial due diligence and QoE analysis.",
+      "contact": {
+        "phone": "(207) 555-0165",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "desmond.poe@example.org"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Riverbend Analytics LLC",
+      "type": "business_entity",
+      "role": "Business broker / M&A advisor",
+      "relevance": "Marketed the business and manages the deal process.",
+      "contact": {
+        "phone": "(207) 555-0197",
+        "city": "Lewiston",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Granite State Credit Union",
+      "type": "financial_institution",
+      "role": "Acquisition / SBA lender",
+      "relevance": "Underwrites the acquisition loan against cash flow and collateral.",
+      "contact": {
+        "phone": "(207) 555-0176",
+        "city": "Bath",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Maria S. Ashford",
+      "type": "expert",
+      "role": "Business appraiser",
+      "relevance": "Valued the business and allocated assets for Form 8594.",
+      "contact": {
+        "phone": "(207) 555-0189",
+        "city": "Brunswick",
+        "state": "ME",
+        "email": "maria.ashford@example.net"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Business/M&A Attorney",
+    "interviewee_role": "buyer",
+    "date": "2026-01-14",
+    "exchanges": [
+      {
+        "topic": "Target",
+        "question": "What are you buying?",
+        "answer": "The assets of Casco Bay Landscaping, Inc., a precision machine shop, for $6897794 via an asset purchase (not a stock/equity purchase)."
+      },
+      {
+        "topic": "Valuation",
+        "question": "How did you price it?",
+        "answer": "About 3.5x on $2477406 adjusted EBITDA, after normalizing related-party rent normalized to market."
+      },
+      {
+        "topic": "Structure",
+        "question": "Any holdback, earnout, or seller note?",
+        "answer": "a 12-month holdback of 8% of the price, a 2-year earnout of up to $400,000 tied to gross-profit retention, and no seller financing."
+      },
+      {
+        "topic": "Working capital",
+        "question": "How is working capital handled?",
+        "answer": "a dollar-for-dollar working-capital true-up against a pegged target at closing against a $214992 target."
+      },
+      {
+        "topic": "Financing",
+        "question": "How is it financed?",
+        "answer": "a bank term loan with a revolving line for working capital of about $7573808, into Downeast Dental Partners LLC."
+      },
+      {
+        "topic": "Accounting",
+        "question": "What's your accountant checking?",
+        "answer": "A quality-of-earnings review by 2026-03-06 — revenue recognition, add-backs, and the balance sheet."
+      },
+      {
+        "topic": "Protection",
+        "question": "What about competition and liabilities?",
+        "answer": "a 3-year non-compete plus a 1-year consulting agreement, and we're assuming only specified trade payables and customer deposits."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Close the asset purchase at $6897794 into Downeast Dental Partners LLC on 2026-05-16.",
+      "Confirm quality of earnings and the working-capital peg before the 2026-03-06.",
+      "Lock financing (a bank term loan with a revolving line for working capital) and a favorable Form 8594 allocation."
+    ],
+    "priorities": [
+      "Verified earnings and a clean balance sheet at closing.",
+      "Successor-liability protection and enforceable non-compete."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "A funded asset acquisition with escrow, a working-capital true-up, and clear title to the assets."
+    ],
+    "non_starters": [
+      "Assuming undisclosed liabilities or unfunded tax exposure.",
+      "Closing before the QoE and financing are firm."
+    ],
+    "constraints": {
+      "budget": "$6897794 funded by a bank term loan with a revolving line for working capital of $7573808 plus equity and no seller financing.",
+      "timeline": "QoE by 2026-03-06; closing 2026-05-16."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Assignment of contracts, leases, and licenses",
+      "category": "business",
+      "governing_law": "Contract anti-assignment terms; lease consent",
+      "sub_questions": [
+        "Do key contracts and a new 10-year lease with the seller as landlord require third-party consent?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Enforceability of the non-compete and non-solicit",
+      "category": "business",
+      "governing_law": "26 M.R.S. § 599-A (noncompete limits); reasonableness at common law",
+      "sub_questions": [
+        "Are the a 3-year non-compete plus a 1-year consulting agreement scope, duration, and geography reasonable?"
+      ],
+      "strength": "moderate",
+      "id": "iss2"
+    },
+    {
+      "issue": "Working-capital adjustment and closing balance sheet",
+      "category": "business",
+      "governing_law": "APA purchase-price adjustment provisions",
+      "sub_questions": [
+        "Is the working-capital peg met?",
+        "How are disputes over the closing statement resolved?"
+      ],
+      "strength": "moderate",
+      "id": "iss3"
+    },
+    {
+      "issue": "Successor liability and bulk-sale exposure",
+      "category": "business",
+      "governing_law": "36 M.R.S. § 177 (tax clearance); common-law successor liability",
+      "sub_questions": [
+        "Is a Maine tax clearance / bulk-sale notice needed?",
+        "Are only scheduled liabilities assumed?"
+      ],
+      "strength": "moderate",
+      "id": "iss4"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Quality-of-earnings report",
+      "type": "financial_record",
+      "party": "buyer",
+      "description": "The CPA's QoE testing $2477406 EBITDA and related-party rent normalized to market.",
+      "id": "ev1"
+    },
+    {
+      "title": "Letter of intent",
+      "type": "document",
+      "party": "buyer",
+      "description": "The signed LOI framing price, structure, and exclusivity.",
+      "id": "ev2"
+    },
+    {
+      "title": "Three years of financial statements and tax returns",
+      "type": "financial_record",
+      "party": "seller",
+      "description": "The seller's historical financials for diligence.",
+      "id": "ev3"
+    },
+    {
+      "title": "Non-compete and consulting agreement",
+      "type": "contract",
+      "party": "seller",
+      "description": "The seller's a 3-year non-compete plus a 1-year consulting agreement.",
+      "id": "ev4"
+    },
+    {
+      "title": "Lender commitment letter",
+      "type": "financial_record",
+      "party": "buyer",
+      "description": "The a bank term loan with a revolving line for working capital commitment for $7573808.",
+      "id": "ev5"
+    },
+    {
+      "title": "Form 8594 asset allocation schedule",
+      "type": "financial_record",
+      "party": "buyer",
+      "description": "The agreed an IRC § 1060 purchase-price allocation on Form 8594 across Class I-VII assets.",
+      "id": "ev6"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Acquisition loan",
+        "amount": 7075615,
+        "basis": "a bank term loan with a revolving line for working capital."
+      },
+      {
+        "label": "Purchase price (asset deal)",
+        "amount": 7209047,
+        "basis": "About 3.5x adjusted EBITDA via an asset purchase (not a stock/equity purchase)."
+      },
+      {
+        "label": "Adjusted EBITDA",
+        "amount": 2262500,
+        "basis": "Normalized for related-party rent normalized to market."
+      },
+      {
+        "label": "Indemnity escrow / holdback",
+        "amount": 218991,
+        "basis": "a 12-month holdback of 8% of the price."
+      },
+      {
+        "label": "Working-capital target (peg)",
+        "amount": 438895,
+        "basis": "Normalized working capital delivered at closing."
+      },
+      {
+        "label": "Annual revenue",
+        "amount": 15972228,
+        "basis": "Trailing-twelve-month revenue."
+      }
+    ]
+  },
+  "communications": [
+    {
+      "date": "2026-01-17",
+      "channel": "email",
+      "from": "Business broker / M&A advisor",
+      "to": "Maria Q. Fairbanks",
+      "cc": "Ingrid B. Kingsley",
+      "subject": "Signed LOI — Casco Bay Landscaping, Inc.",
+      "summary": "Broker circulates the executed LOI and opens the data room.",
+      "body": "Attached is the signed LOI for the assets of Casco Bay Landscaping, Inc. at $6897794 (~3.5x on $2477406 adjusted EBITDA), via an asset purchase (not a stock/equity purchase) into Downeast Dental Partners LLC. Terms include a 12-month holdback of 8% of the price, a 2-year earnout of up to $400,000 tied to gross-profit retention, no seller financing, and a dollar-for-dollar working-capital true-up against a pegged target at closing. The data room now holds three years of financials and tax returns, the customer list, and the asset schedule.",
+      "attachments": [
+        "Letter of intent (executed)"
+      ],
+      "id": "comm1"
+    },
+    {
+      "date": "2026-01-17",
+      "channel": "email",
+      "from": "Buyer's CPA / quality-of-earnings analyst",
+      "to": "Seller / owner",
+      "cc": "Maria Q. Fairbanks",
+      "subject": "Financial due-diligence request — Casco Bay Landscaping, Inc.",
+      "summary": "Buyer's accountant sends the accounting/financing diligence questions.",
+      "body": "To complete our quality-of-earnings review by 2026-03-06, please provide: monthly P&Ls and balance sheets for 36 months, the trial balance and general ledger, AR/AP aging, the fixed-asset register and depreciation schedule, revenue recognition policy, customer concentration, inventory valuation method, and support for the proposed add-backs (related-party rent normalized to market). We also need payroll detail and any related-party rent to normalize Casco Bay Landscaping, Inc.'s earnings to a $2477406 EBITDA basis.",
+      "id": "comm2"
+    },
+    {
+      "date": "2026-03-06",
+      "channel": "letter",
+      "from": "Buyer's CPA / quality-of-earnings analyst",
+      "to": "Maria Q. Fairbanks",
+      "cc": "Ingrid B. Kingsley",
+      "subject": "QoE findings and working-capital peg — Casco Bay Landscaping, Inc.",
+      "summary": "Accountant reports QoE findings and recommends the working-capital target.",
+      "body": "Our review supports adjusted EBITDA near $2477406 after normalizing related-party rent normalized to market, though we recommend reserving for a customer-concentration risk. Normalized working capital averages about $214992; we suggest pegging the target there with a dollar-for-dollar working-capital true-up against a pegged target at closing. We note the seller's cash-basis reporting and have converted to accrual for comparability. These findings support the a bank term loan with a revolving line for working capital underwriting.",
+      "attachments": [
+        "Quality-of-earnings report",
+        "Normalized working-capital analysis"
+      ],
+      "id": "comm3"
+    },
+    {
+      "date": "2026-03-06",
+      "channel": "email",
+      "from": "Acquisition / SBA lender",
+      "to": "Maria Q. Fairbanks",
+      "subject": "Credit questions — Casco Bay Landscaping, Inc. acquisition",
+      "summary": "Lender asks financing and accounting questions before commitment.",
+      "body": "Before we issue a commitment for the a bank term loan with a revolving line for working capital of $7573808, we need: the QoE report, the debt-service-coverage projection on post-close cash flow, confirmation of the a 12-month holdback of 8% of the price and any no seller financing (which we will require to be on full standby), the Form 8594 allocation, and a personal financial statement. We also need to confirm collateral values for machinery, WIP inventory, and the trade name and that only specified trade payables and customer deposits are assumed.",
+      "id": "comm4"
+    },
+    {
+      "date": "2026-05-16",
+      "channel": "memo",
+      "from": "Escrow agent",
+      "to": "All parties",
+      "subject": "Closing and funds flow — Casco Bay Landscaping, Inc.",
+      "summary": "Escrow agent confirms the closing statement, allocation, and holdback.",
+      "body": "Closing for the Casco Bay Landscaping, Inc. asset sale is set for 2026-05-16. The funds flow reflects the $6897794 price, the a bank term loan with a revolving line for working capital advance of $7573808, any no seller financing, the a 12-month holdback of 8% of the price retained here, and the closing working-capital true-up per a dollar-for-dollar working-capital true-up against a pegged target at closing. The bill of sale, assignment and assumption of specified trade payables and customer deposits, a new 10-year lease with the seller as landlord, a 3-year non-compete plus a 1-year consulting agreement, and the agreed Form 8594 allocation (an IRC § 1060 purchase-price allocation on Form 8594 across Class I-VII assets) will be delivered at closing into Downeast Dental Partners LLC.",
+      "id": "comm5"
+    }
+  ],
+  "facts": {
+    "business_name": "Casco Bay Landscaping, Inc.",
+    "business_type": "a precision machine shop",
+    "entity_form": "a member-managed LLC",
+    "years_in_business": 19,
+    "employee_count": 19,
+    "deal_structure": "an asset purchase (not a stock/equity purchase)",
+    "new_entity_name": "Downeast Dental Partners LLC",
+    "purchase_price": 6897794,
+    "annual_revenue": 4169227,
+    "ebitda": 2477406,
+    "ebitda_multiple": "3.5x",
+    "addbacks": "related-party rent normalized to market",
+    "working_capital_target": 214992,
+    "wc_adjustment": "a dollar-for-dollar working-capital true-up against a pegged target at closing",
+    "escrow_holdback": "a 12-month holdback of 8% of the price",
+    "earnout": "a 2-year earnout of up to $400,000 tied to gross-profit retention",
+    "seller_note": "no seller financing",
+    "financing_type": "a bank term loan with a revolving line for working capital",
+    "loan_amount": 7573808,
+    "noncompete": "a 3-year non-compete plus a 1-year consulting agreement",
+    "allocation_basis": "an IRC § 1060 purchase-price allocation on Form 8594 across Class I-VII assets",
+    "key_assets": "machinery, WIP inventory, and the trade name",
+    "assumed_liabilities": "specified trade payables and customer deposits",
+    "lease_status": "a new 10-year lease with the seller as landlord",
+    "effective_date": "2026-01-17",
+    "qoe_deadline": "2026-03-06",
+    "closing_date": "2026-05-16"
+  }
+}

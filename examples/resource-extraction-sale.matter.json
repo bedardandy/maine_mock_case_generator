@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "resource-extraction-sale",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-813451",
+    "practice_area": "real_estate",
+    "title": "Resource-extraction property sale: Blackstone Aggregate Pit, Baileyville — Grace C. Roe to Maria Q. Fairbanks",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Maine Registry of Deeds / private closing"
+    },
+    "case_type": "resource_extraction_sale",
+    "filing_date": "2026-01-14",
+    "status": "pre_filing",
+    "summary": "Maria Q. Fairbanks is buying Blackstone Aggregate Pit (a working timberland tract with harvest rights, 1187 acres) at 0 Ledge Hill Road, Baileyville from Grace C. Roe for $5258815, structured as a price plus a 5-year severance royalty of $1.25/ton, with closing set for 2026-08-19.",
+    "event_date": "2026-08-19"
+  },
+  "parties": {
+    "seller": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Seller / landowner (grantor)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "buyer": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer / operator (grantee, client)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Attorney for the client",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "ssn_last4": "4744",
+      "bar_number": "7867",
+      "organization_name": "Hawthorne Legal Group"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer / operator (grantee, client)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Maria Q. Fairbanks is buying Blackstone Aggregate Pit (a working timberland tract with harvest rights, 1187 acres) at 0 Ledge Hill Road, Baileyville from Grace C. Roe for $5258815, structured as a price plus a 5-year severance royalty of $1.25/ton, with closing set for 2026-08-19.",
+    "narrative": "Grace C. Roe owns Blackstone Aggregate Pit, a working timberland tract with harvest rights on about 1187 acres at 0 Ledge Hill Road in Baileyville, Sagadahoc County, with roughly 54 acres in active extraction and about 1.8 million cubic yards of sand and gravel. Maria Q. Fairbanks, an operator, has agreed to buy it for $5258815 on a price plus a 5-year severance royalty of $1.25/ton, with a $0.75 per cubic yard royalty for five years. The PSA became effective 2026-01-09 with $210243 down and diligence to 2026-05-10.\n\nOperations run under a municipal gravel-pit / mineral-extraction permit under the town ordinance, subject to a groundwater-monitoring and reclamation plan secured by a $180,000 reclamation performance bond, and a 250-foot setback from an adjoining great pond. Diligence covers reserve verification, permit transferability, a Phase I ESA with no recognized environmental conditions, and the no current-use enrollment, including any tax recapture on a change of use.\n\nCounsel Ingrid B. Kingsley of Hawthorne Legal Group is handling the acquisition, permit assignment or reissuance, the reclamation bond substitution, the royalty/severance terms, and title, with title passing by warranty deed reserving no mineral interest at closing on 2026-08-19.",
+    "undisputed_facts": [
+      "Blackstone Aggregate Pit at 0 Ledge Hill Road, Baileyville is under contract from Grace C. Roe to Maria Q. Fairbanks at $5258815.",
+      "The property is a working timberland tract with harvest rights with about 1.8 million cubic yards of sand and gravel.",
+      "Operations are governed by a municipal gravel-pit / mineral-extraction permit under the town ordinance and a groundwater-monitoring and reclamation plan."
+    ],
+    "disputed_facts": [
+      "The accuracy of the reserve estimate (about 1.8 million cubic yards of sand and gravel) supporting the price.",
+      "Whether the permit transfers to the buyer or must be reissued, and on what conditions.",
+      "Responsibility for reclamation of previously-worked phases and the a $180,000 reclamation performance bond."
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Municipal Code Enforcement Office",
+      "type": "government_agency",
+      "role": "Local permit authority",
+      "relevance": "Issues the local extraction permit and enforces the ordinance.",
+      "contact": {
+        "phone": "(207) 555-0123",
+        "city": "Orono",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Rosa T. Birchwood",
+      "type": "expert",
+      "role": "Environmental consultant",
+      "relevance": "Performed the Phase I ESA and groundwater review.",
+      "contact": {
+        "phone": "(207) 555-0163",
+        "city": "Bath",
+        "state": "ME",
+        "email": "rosa.birchwood@example.net"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Pine Tree Community Bank",
+      "type": "financial_institution",
+      "role": "Acquisition lender",
+      "relevance": "Finances the purchase against reserves and cash flow.",
+      "contact": {
+        "phone": "(207) 555-0115",
+        "city": "Windham",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Maine Department of Environmental Protection",
+      "type": "government_agency",
+      "role": "Extraction permitting authority",
+      "relevance": "Administers extraction performance standards and reclamation.",
+      "contact": {
+        "phone": "(207) 555-0143",
+        "city": "Camden",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Summit Studios Corp.",
+      "type": "business_entity",
+      "role": "Surety / bonding company",
+      "relevance": "Issues the reclamation performance bond.",
+      "contact": {
+        "phone": "(207) 555-0188",
+        "city": "Belfast",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp6",
+      "name": "Lillian C. Poe",
+      "type": "expert",
+      "role": "Licensed geologist / reserve engineer",
+      "relevance": "Estimated recoverable reserves and mine life.",
+      "contact": {
+        "phone": "(207) 555-0134",
+        "city": "Falmouth",
+        "state": "ME",
+        "email": "lillian.poe@example.net"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Natural Resources Attorney",
+    "interviewee_role": "buyer",
+    "date": "2026-01-14",
+    "exchanges": [
+      {
+        "topic": "Property",
+        "question": "What are you buying?",
+        "answer": "Blackstone Aggregate Pit, a working timberland tract with harvest rights on 1187 acres, for $5258815 on a price plus a 5-year severance royalty of $1.25/ton."
+      },
+      {
+        "topic": "Reserves",
+        "question": "What are the reserves?",
+        "answer": "about 1.8 million cubic yards of sand and gravel, with about 54 acres actively worked."
+      },
+      {
+        "topic": "Royalty",
+        "question": "Any continuing payments to the seller?",
+        "answer": "a $0.75 per cubic yard royalty for five years."
+      },
+      {
+        "topic": "Permits",
+        "question": "What governs operations?",
+        "answer": "a municipal gravel-pit / mineral-extraction permit under the town ordinance, with a groundwater-monitoring and reclamation plan."
+      },
+      {
+        "topic": "Reclamation",
+        "question": "How is reclamation secured?",
+        "answer": "a $180,000 reclamation performance bond; I'll need to substitute my own bond."
+      },
+      {
+        "topic": "Taxes",
+        "question": "Any current-use tax issue?",
+        "answer": "The land has no current-use enrollment; we're checking recapture on any change of use."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Close at $5258815 with transferable extraction rights and permits.",
+      "Verify about 1.8 million cubic yards of sand and gravel before diligence expires on 2026-05-10.",
+      "Substitute reclamation security and confirm no assumed cleanup liability."
+    ],
+    "priorities": [
+      "Permit transferability and reserve certainty.",
+      "Clean environmental and bounded reclamation obligations."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "A funded acquisition with permits in the buyer's name and a substituted reclamation bond."
+    ],
+    "non_starters": [
+      "Assuming reclamation liability for the seller's pre-closing phases without a credit.",
+      "Closing before the permit's transferability is confirmed."
+    ],
+    "constraints": {
+      "budget": "Acquisition financed against reserves; ongoing a $0.75 per cubic yard royalty for five years.",
+      "timeline": "Diligence to 2026-05-10; closing 2026-08-19."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Current-use tax classification and recapture",
+      "category": "tax",
+      "governing_law": "36 M.R.S. §§ 571-584-A (Tree Growth); §§ 1101-1121 (Open Space)",
+      "sub_questions": [
+        "Does the sale or use change trigger recapture?",
+        "Who bears the penalty?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Reserve verification and royalty accounting",
+      "category": "real_estate",
+      "governing_law": "PSA representations; royalty/severance terms",
+      "sub_questions": [
+        "Is about 1.8 million cubic yards of sand and gravel supported?",
+        "How is a per-unit royalty measured and audited?"
+      ],
+      "strength": "moderate",
+      "id": "iss2"
+    },
+    {
+      "issue": "Reclamation obligations and financial assurance",
+      "category": "environmental",
+      "governing_law": "38 M.R.S. § 490-Z(13); permit reclamation conditions",
+      "sub_questions": [
+        "What reclamation remains on worked phases?",
+        "Is a $180,000 reclamation performance bond adequate and substitutable?"
+      ],
+      "strength": "strong",
+      "id": "iss3"
+    },
+    {
+      "issue": "Maine real estate transfer tax on the sale",
+      "category": "tax",
+      "governing_law": "36 M.R.S. § 4641-A",
+      "sub_questions": [
+        "Is a per-unit royalty part of taxable consideration?"
+      ],
+      "strength": "moderate",
+      "id": "iss4"
+    },
+    {
+      "issue": "Extraction permit transfer and performance standards",
+      "category": "environmental",
+      "governing_law": "38 M.R.S. §§ 490-Z (mineral exploration/extraction performance standards); town ordinance",
+      "sub_questions": [
+        "Does the permit run with the land or require reissuance?",
+        "Are performance standards being met?"
+      ],
+      "strength": "moderate",
+      "id": "iss5"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Reclamation bond",
+      "type": "document",
+      "party": "seller",
+      "description": "The existing a $180,000 reclamation performance bond.",
+      "id": "ev1"
+    },
+    {
+      "title": "Extraction permit and reclamation plan",
+      "type": "public_record",
+      "party": "seller",
+      "description": "The a municipal gravel-pit / mineral-extraction permit under the town ordinance and a groundwater-monitoring and reclamation plan.",
+      "id": "ev2"
+    },
+    {
+      "title": "Reserve / geologic report",
+      "type": "document",
+      "party": "buyer",
+      "description": "The geologist's estimate: about 1.8 million cubic yards of sand and gravel.",
+      "id": "ev3"
+    },
+    {
+      "title": "Phase I Environmental Site Assessment",
+      "type": "document",
+      "party": "buyer",
+      "description": "The consultant's ESA: a Phase I ESA with no recognized environmental conditions.",
+      "id": "ev4"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Purchase price",
+        "amount": 1464984,
+        "basis": "Agreed consideration on a price plus a 5-year severance royalty of $1.25/ton."
+      },
+      {
+        "label": "Reclamation security amount",
+        "amount": 619285,
+        "basis": "Bond or letter of credit per permit."
+      },
+      {
+        "label": "Estimated Maine transfer tax",
+        "amount": 27748,
+        "basis": "$2.20 per $500 of consideration, split between the parties."
+      },
+      {
+        "label": "Estimated reclamation cost",
+        "amount": 1759761,
+        "basis": "Regrading, topsoil, and revegetation of worked phases."
+      },
+      {
+        "label": "Earnest money deposit",
+        "amount": 275312,
+        "basis": "Held in escrow pending diligence."
+      }
+    ]
+  },
+  "communications": [
+    {
+      "date": "2026-01-09",
+      "channel": "letter",
+      "from": "Ingrid B. Kingsley, Hawthorne Legal Group",
+      "to": "Seller's counsel",
+      "subject": "Diligence request — Blackstone Aggregate Pit",
+      "summary": "Buyer's counsel opens diligence on reserves, permits, and reclamation.",
+      "body": "On behalf of Maria Q. Fairbanks, please deliver the reserve/geologic reports, a municipal gravel-pit / mineral-extraction permit under the town ordinance and all conditions, the reclamation plan and a $180,000 reclamation performance bond, extraction and royalty records, environmental reports, and no current-use enrollment tax records. We will retain a geologist to confirm about 1.8 million cubic yards of sand and gravel before the 2026-05-10 deadline.",
+      "id": "comm1"
+    },
+    {
+      "date": "2026-05-10",
+      "channel": "email",
+      "from": "Licensed geologist / reserve engineer",
+      "to": "Maria Q. Fairbanks",
+      "cc": "Ingrid B. Kingsley",
+      "subject": "Reserve verification — Blackstone Aggregate Pit",
+      "summary": "Geologist reports on recoverable reserves and mine life.",
+      "body": "Based on test pits, borings, and the survey of 54 active acres, my estimate is consistent with about 1.8 million cubic yards of sand and gravel, subject to the a 250-foot setback from an adjoining great pond that constrain the working face. At planned production, mine life supports the underwriting behind the $5258815 price and a $0.75 per cubic yard royalty for five years.",
+      "attachments": [
+        "Reserve and mine-plan report"
+      ],
+      "id": "comm2"
+    },
+    {
+      "date": "2026-05-10",
+      "channel": "letter",
+      "from": "Municipal Code Enforcement Office",
+      "to": "Maria Q. Fairbanks",
+      "subject": "Permit transfer — Blackstone Aggregate Pit",
+      "summary": "Local authority addresses permit transfer and reclamation bonding.",
+      "body": "The extraction permit for Blackstone Aggregate Pit may be transferred to a new operator upon application, provided the operator assumes a groundwater-monitoring and reclamation plan and posts acceptable financial assurance in place of the seller's a $180,000 reclamation performance bond. Previously-disturbed phases remain subject to reclamation regardless of ownership.",
+      "id": "comm3"
+    },
+    {
+      "date": "2026-05-10",
+      "channel": "email",
+      "from": "Environmental consultant",
+      "to": "Maria Q. Fairbanks",
+      "cc": "Ingrid B. Kingsley",
+      "subject": "Phase I ESA — Blackstone Aggregate Pit",
+      "summary": "Consultant reports environmental findings.",
+      "body": "Our Phase I for Blackstone Aggregate Pit resulted in a Phase I ESA with no recognized environmental conditions. Operations appear consistent with the applicable extraction setbacks, including a 250-foot setback from an adjoining great pond. We flag the reclamation status of previously-worked phases for allocation in the PSA.",
+      "attachments": [
+        "Phase I Environmental Site Assessment"
+      ],
+      "id": "comm4"
+    },
+    {
+      "date": "2026-08-19",
+      "channel": "memo",
+      "from": "Acquisition lender",
+      "to": "All parties",
+      "subject": "Closing — Blackstone Aggregate Pit, Baileyville",
+      "summary": "Lender confirms closing, bond substitution, and permit assignment.",
+      "body": "Closing on Blackstone Aggregate Pit is set for 2026-08-19 at $5258815. Funding is conditioned on the assigned or reissued a municipal gravel-pit / mineral-extraction permit under the town ordinance, the buyer's substituted reclamation security in place of a $180,000 reclamation performance bond, resolution of any no current-use enrollment recapture, and recording of the warranty deed reserving no mineral interest and RETTD. a $0.75 per cubic yard royalty for five years will be documented in a recorded royalty agreement where applicable.",
+      "id": "comm5"
+    }
+  ],
+  "facts": {
+    "property_name": "Blackstone Aggregate Pit",
+    "property_address": "0 Ledge Hill Road",
+    "property_town": "Baileyville",
+    "property_county": "Sagadahoc",
+    "resource_type": "a working timberland tract with harvest rights",
+    "parcel_acres": 1187,
+    "active_extraction_acres": 54,
+    "estimated_reserves": "about 1.8 million cubic yards of sand and gravel",
+    "purchase_price": 5258815,
+    "price_structure": "a price plus a 5-year severance royalty of $1.25/ton",
+    "royalty_terms": "a $0.75 per cubic yard royalty for five years",
+    "earnest_money": 210243,
+    "effective_date": "2026-01-09",
+    "due_diligence_deadline": "2026-05-10",
+    "closing_date": "2026-08-19",
+    "transfer_date": "2026-08-19",
+    "extraction_permit": "a municipal gravel-pit / mineral-extraction permit under the town ordinance",
+    "reclamation_requirement": "a groundwater-monitoring and reclamation plan",
+    "reclamation_security": "a $180,000 reclamation performance bond",
+    "current_use_status": "no current-use enrollment",
+    "environmental_status": "a Phase I ESA with no recognized environmental conditions",
+    "water_setbacks": "a 250-foot setback from an adjoining great pond",
+    "deed_type": "warranty deed reserving no mineral interest"
+  }
+}

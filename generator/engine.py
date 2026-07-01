@@ -235,6 +235,25 @@ def _assemble_financials(scenario: dict, ctx: dict, rng: random.Random):
     return financials
 
 
+def _assemble_communications(scenario: dict, ctx: dict, rng: random.Random) -> list:
+    """Resolve a scenario's simulated correspondence thread and sort it chronologically.
+
+    ``communications`` is an authored list (not a sampled pool): a coherent back-and-forth
+    reads better whole and in order than as a random subset. Each item is templated against
+    the same ``ctx`` as the narrative, so sender/recipient names and deal terms stay
+    consistent with the rest of the matter.
+    """
+    spec = scenario.get("communications")
+    if not spec:
+        return []
+    resolved = dsl.resolve(spec, ctx, rng)
+    comms = [c for c in resolved if isinstance(c, dict)]
+    for idx, msg in enumerate(comms, start=1):
+        msg.setdefault("id", f"comm{idx}")
+    comms.sort(key=lambda c: c.get("date", ""))
+    return comms
+
+
 def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = None) -> dict:
     """Build a fully-validated Mock Matter from a scenario archetype and seed.
 
@@ -271,8 +290,12 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
     parties = _build_parties(scenario, ctx, rng, pools, overrides)
 
     # --- canonical bridge facts -----------------------------------------
-    facts = dsl.resolve(scenario.get("facts", {}), ctx, rng)
-    for key, value in facts.items():
+    # Resolve facts one at a time, publishing each scalar into ctx before the next,
+    # so a later fact may reference an earlier one (e.g. transfer_date: "{closing_date}").
+    facts: dict = {}
+    for key, value_spec in scenario.get("facts", {}).items():
+        value = dsl.resolve(value_spec, ctx, rng)
+        facts[key] = value
         if isinstance(value, (str, int, float)):
             ctx[key] = value
         if isinstance(value, str):
@@ -356,6 +379,10 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
 
     if scenario.get("litigation"):
         out["litigation"] = dsl.resolve(scenario["litigation"], ctx, rng)
+
+    communications = _assemble_communications(scenario, ctx, rng)
+    if communications:
+        out["communications"] = communications
 
     if facts:
         out["facts"] = facts

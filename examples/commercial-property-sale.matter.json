@@ -1,0 +1,466 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "commercial-property-sale",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-702326",
+    "practice_area": "real_estate",
+    "title": "Commercial property sale: Portland Gateway Industrial, Biddeford — Grace C. Roe to Maria Q. Fairbanks",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Maine Registry of Deeds / private closing"
+    },
+    "case_type": "commercial_real_estate_sale",
+    "filing_date": "2026-01-14",
+    "status": "pre_filing",
+    "summary": "Maria Q. Fairbanks, through Bayview Property Partners LLC, is acquiring Portland Gateway Industrial (flex/industrial warehouse) at 500 Commercial Street, Biddeford from Grace C. Roe for $22970515 — roughly a 6.25% cap on $443356 of NOI — with closing set for 2026-04-19.",
+    "event_date": "2026-04-19"
+  },
+  "parties": {
+    "seller": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Seller (grantor)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "buyer": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer / principal (grantee, client)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Attorney for the client",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "ssn_last4": "4744",
+      "bar_number": "7867",
+      "organization_name": "Hawthorne Legal Group"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer / principal (grantee, client)",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Maria Q. Fairbanks, through Bayview Property Partners LLC, is acquiring Portland Gateway Industrial (flex/industrial warehouse) at 500 Commercial Street, Biddeford from Grace C. Roe for $22970515 — roughly a 6.25% cap on $443356 of NOI — with closing set for 2026-04-19.",
+    "narrative": "Grace C. Roe has agreed to sell Portland Gateway Industrial, a 91434-square-foot flex/industrial warehouse at 500 Commercial Street in Biddeford, Sagadahoc County, to Maria Q. Fairbanks's acquisition entity, Bayview Property Partners LLC, for $22970515. The pricing reflects a 6.25% capitalization rate on trailing NOI of about $443356, with the property 94% occupied across 12 tenant(s), anchored by a regional credit union on a 10-year NNN lease.\n\nThe PSA became effective 2026-01-19 with a $265963 deposit and a due-diligence period running to 2026-03-02. Buyer's diligence covers title and the ALTA/NSPS survey with Table A items 1-4, 6-11, and 16, a Phase I ESA, tenant estoppels and SNDAs, service contracts, and the rent roll and CAM reconciliations. The Phase I reported historic fill and a closed UST with a no-further-action letter; all tenant estoppels returned clean.\n\nBuyer is financing with a bridge loan with a 24-month term of about $13632690 at roughly 70% LTV, subject to a 1.25x debt-service-coverage test, with the financing contingency running to 2026-03-24. Counsel Ingrid B. Kingsley of Hawthorne Legal Group is negotiating the deed, title endorsements, estoppel and SNDA forms, and the closing statement for a 2026-04-19 closing.",
+    "undisputed_facts": [
+      "Portland Gateway Industrial at 500 Commercial Street, Biddeford is under contract from Grace C. Roe to Bayview Property Partners LLC at $22970515.",
+      "Trailing NOI is about $443356 at a 6.25% cap rate.",
+      "The due-diligence period runs to 2026-03-02 and closing is set for 2026-04-19."
+    ],
+    "disputed_facts": [
+      "Whether the Phase I finding (historic fill and a closed UST with a no-further-action letter) requires a Phase II, a price adjustment, or seller indemnity.",
+      "Resolution of the estoppel issue: all tenant estoppels returned clean.",
+      "Whether the loan clears the 1.25x DSCR test at the agreed price."
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Summit Outfitters Inc.",
+      "type": "business_entity",
+      "role": "Property management company",
+      "relevance": "Manages the tenants and provided the rent roll and CAM reconciliations.",
+      "contact": {
+        "phone": "(207) 555-0196",
+        "city": "Belfast",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "John W. Poe",
+      "type": "expert",
+      "role": "Environmental consultant",
+      "relevance": "Performed the Phase I Environmental Site Assessment.",
+      "contact": {
+        "phone": "(207) 555-0173",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "john.poe@example.net"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Cobblestone Partners Co.",
+      "type": "business_entity",
+      "role": "Title insurance company",
+      "relevance": "Issues an ALTA owner's and lender's policy with endorsements.",
+      "contact": {
+        "phone": "(207) 555-0108",
+        "city": "Augusta",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Beatrice B. Poe",
+      "type": "expert",
+      "role": "Licensed surveyor",
+      "relevance": "Prepared the ALTA/NSPS survey.",
+      "contact": {
+        "phone": "(207) 555-0193",
+        "city": "Bath",
+        "state": "ME",
+        "email": "beatrice.poe@example.net"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Downeast Federal Savings",
+      "type": "financial_institution",
+      "role": "Commercial lender",
+      "relevance": "Underwrites the acquisition loan against NOI and DSCR.",
+      "contact": {
+        "phone": "(207) 555-0185",
+        "city": "Bath",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp6",
+      "name": "Harbor Logistics Co.",
+      "type": "business_entity",
+      "role": "Commercial brokerage",
+      "relevance": "Marketed the property and brokered the transaction.",
+      "contact": {
+        "phone": "(207) 555-0107",
+        "city": "Waterville",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Transactional Attorney",
+    "interviewee_role": "buyer",
+    "date": "2026-01-14",
+    "exchanges": [
+      {
+        "topic": "Asset",
+        "question": "What are you buying?",
+        "answer": "Portland Gateway Industrial, a 91434 SF flex/industrial warehouse at 500 Commercial Street, for $22970515."
+      },
+      {
+        "topic": "Underwriting",
+        "question": "How did you price it?",
+        "answer": "About a 6.25% cap on $443356 NOI; it's 94% leased across 12 tenants, anchored by a regional credit union on a 10-year NNN lease."
+      },
+      {
+        "topic": "Entity",
+        "question": "Who takes title?",
+        "answer": "My acquisition entity, Bayview Property Partners LLC."
+      },
+      {
+        "topic": "Diligence",
+        "question": "What's your diligence plan?",
+        "answer": "Title and an ALTA survey, a Phase I ESA, estoppels and SNDAs, service contracts, and the rent roll and CAM true-ups — all by 2026-03-02."
+      },
+      {
+        "topic": "Environmental",
+        "question": "Any environmental concerns?",
+        "answer": "The Phase I found historic fill and a closed UST with a no-further-action letter; we're deciding whether we need a Phase II."
+      },
+      {
+        "topic": "Financing",
+        "question": "How is it financed?",
+        "answer": "a bridge loan with a 24-month term at about 70% LTV; the lender wants 1.25x coverage. Contingency runs to 2026-03-24."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Close on 2026-04-19 at $22970515 with clean title and required endorsements.",
+      "Resolve the Phase I finding (historic fill and a closed UST with a no-further-action letter) with a Phase II, credit, or indemnity as warranted.",
+      "Obtain clean tenant estoppels and lender-required SNDAs."
+    ],
+    "priorities": [
+      "Environmental certainty and title/survey clearance.",
+      "Loan commitment meeting the 1.25x DSCR test."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "A funded acquisition into Bayview Property Partners LLC with owner's and lender's title policies."
+    ],
+    "non_starters": [
+      "Closing over an unquantified environmental liability.",
+      "Waiving financing before a firm commitment."
+    ],
+    "constraints": {
+      "budget": "Equity plus a bridge loan with a 24-month term of about $13632690.",
+      "timeline": "Diligence to 2026-03-02; closing 2026-04-19."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Tenant estoppels and lease compliance",
+      "category": "real_estate",
+      "governing_law": "Common-law estoppel; lease terms",
+      "sub_questions": [
+        "Do estoppels confirm rent, term, and no defaults?",
+        "Is the CAM reconciliation dispute material?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Satisfaction of the DSCR-based financing contingency",
+      "category": "real_estate",
+      "governing_law": "Loan commitment terms",
+      "sub_questions": [
+        "Does NOI support 1.25x coverage at the loan amount?"
+      ],
+      "strength": "moderate",
+      "id": "iss2"
+    },
+    {
+      "issue": "Maine real estate transfer tax on the sale",
+      "category": "tax",
+      "governing_law": "36 M.R.S. § 4641-A",
+      "sub_questions": [
+        "What is the taxable consideration?",
+        "Does any controlling-interest rule apply?"
+      ],
+      "strength": "strong",
+      "id": "iss3"
+    },
+    {
+      "issue": "Title, survey, and required endorsements",
+      "category": "real_estate",
+      "governing_law": "33 M.R.S. § 351; ALTA policy forms",
+      "sub_questions": [
+        "Are there survey encroachments or access issues?",
+        "Which endorsements does the lender require?"
+      ],
+      "strength": "strong",
+      "id": "iss4"
+    },
+    {
+      "issue": "Environmental liability and CERCLA/BEP protections",
+      "category": "environmental",
+      "governing_law": "42 U.S.C. § 9601 (CERCLA); 38 M.R.S. § 343-E",
+      "sub_questions": [
+        "Does the Phase I trigger a Phase II?",
+        "Is a bona fide prospective purchaser defense preserved?"
+      ],
+      "strength": "moderate",
+      "id": "iss5"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Rent roll and CAM reconciliation",
+      "type": "financial_record",
+      "party": "seller",
+      "description": "Tenant schedule supporting $443356 NOI.",
+      "id": "ev1"
+    },
+    {
+      "title": "Lender term sheet and commitment",
+      "type": "financial_record",
+      "party": "buyer",
+      "description": "a bridge loan with a 24-month term at 70% LTV and 1.25x DSCR.",
+      "id": "ev2"
+    },
+    {
+      "title": "Tenant estoppel certificates",
+      "type": "document",
+      "party": "seller",
+      "description": "Signed estoppels; all tenant estoppels returned clean.",
+      "id": "ev3"
+    },
+    {
+      "title": "Phase I Environmental Site Assessment",
+      "type": "document",
+      "party": "buyer",
+      "description": "The consultant's ESA reporting historic fill and a closed UST with a no-further-action letter.",
+      "id": "ev4"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Trailing net operating income",
+        "amount": 1684795,
+        "basis": "Rent roll less operating expenses."
+      },
+      {
+        "label": "Acquisition loan",
+        "amount": 14265491,
+        "basis": "a bridge loan with a 24-month term at 70% LTV."
+      },
+      {
+        "label": "Earnest money deposit",
+        "amount": 291960,
+        "basis": "Held by the title company as escrow agent."
+      },
+      {
+        "label": "Estimated Maine transfer tax",
+        "amount": 49243,
+        "basis": "$2.20 per $500 of consideration, split between the parties."
+      },
+      {
+        "label": "Purchase price",
+        "amount": 4984504,
+        "basis": "Agreed consideration."
+      }
+    ]
+  },
+  "communications": [
+    {
+      "date": "2026-01-19",
+      "channel": "email",
+      "from": "Commercial brokerage",
+      "to": "Maria Q. Fairbanks",
+      "cc": "Ingrid B. Kingsley",
+      "subject": "Signed LOI — Portland Gateway Industrial, Biddeford",
+      "summary": "Broker circulates the executed term sheet and opens due diligence.",
+      "body": "Attached is the fully-signed LOI for Portland Gateway Industrial at $22970515 (~6.25% cap on $443356 NOI). Deposit is $265963, due diligence runs to 2026-03-02, and target closing is 2026-04-19. Seller will deliver the rent roll, leases, service contracts, and environmental history to the data room this week.",
+      "attachments": [
+        "Letter of intent (executed)"
+      ],
+      "id": "comm1"
+    },
+    {
+      "date": "2026-01-19",
+      "channel": "letter",
+      "from": "Ingrid B. Kingsley, Hawthorne Legal Group",
+      "to": "Seller's counsel",
+      "subject": "Due diligence request list — Portland Gateway Industrial",
+      "summary": "Buyer's counsel sends the diligence checklist.",
+      "body": "On behalf of Bayview Property Partners LLC, please post to the data room: the current rent roll and trailing-12 operating statements, all leases and amendments, CAM reconciliations, the title policy and existing survey, environmental reports, service and management contracts, and any notices of violation. We will order a Phase I ESA, an ALTA/NSPS survey, and tenant estoppels.",
+      "id": "comm2"
+    },
+    {
+      "date": "2026-03-02",
+      "channel": "email",
+      "from": "Environmental consultant",
+      "to": "Maria Q. Fairbanks",
+      "cc": "Ingrid B. Kingsley",
+      "subject": "Phase I ESA results — 500 Commercial Street",
+      "summary": "Consultant reports the Phase I finding.",
+      "body": "Our Phase I for 500 Commercial Street is complete. The assessment identified historic fill and a closed UST with a no-further-action letter. We can scope a limited Phase II if you want to quantify any impact before the due-diligence deadline; otherwise the report supports a bona fide prospective purchaser position with continuing obligations.",
+      "attachments": [
+        "Phase I Environmental Site Assessment"
+      ],
+      "id": "comm3"
+    },
+    {
+      "date": "2026-03-02",
+      "channel": "email",
+      "from": "Ingrid B. Kingsley, Hawthorne Legal Group",
+      "to": "Seller's counsel",
+      "subject": "Estoppels and CAM — Portland Gateway Industrial",
+      "summary": "Buyer's counsel raises the estoppel/CAM issue.",
+      "body": "Reviewing the returned certificates, all tenant estoppels returned clean. Please have the property manager reconcile the anchor tenant's CAM before closing and confirm no landlord defaults. We also need lender-form SNDAs from the top tenants to satisfy our financing.",
+      "id": "comm4"
+    },
+    {
+      "date": "2026-03-24",
+      "channel": "letter",
+      "from": "Commercial lender",
+      "to": "Bayview Property Partners LLC",
+      "subject": "Loan commitment — Portland Gateway Industrial",
+      "summary": "Lender issues a commitment subject to the DSCR test.",
+      "body": "We are pleased to commit a bridge loan with a 24-month term of $13632690 at approximately 70% LTV and 7.10%, subject to the property underwriting to a minimum 1.25x debt-service coverage on stabilized NOI, satisfactory estoppels and SNDAs, and a clean environmental. Please confirm resolution of the Phase I item before funding.",
+      "attachments": [
+        "Loan commitment letter"
+      ],
+      "id": "comm5"
+    },
+    {
+      "date": "2026-04-19",
+      "channel": "memo",
+      "from": "Title insurance company",
+      "to": "All parties",
+      "subject": "Closing statement — Portland Gateway Industrial, Biddeford",
+      "summary": "Escrow agent circulates the settlement statement and recording plan.",
+      "body": "Closing for Portland Gateway Industrial is set for 2026-04-19. The statement reflects the $22970515 price, $265963 deposit credit, prorated rents and CAM, tenant security deposits transferred to Bayview Property Partners LLC, the acquisition loan of $13632690, and the Maine transfer tax split between the parties. We will issue the ALTA owner's and lender's policies and record the deed, mortgage, and RETTD upon funding.",
+      "id": "comm6"
+    }
+  ],
+  "facts": {
+    "property_name": "Portland Gateway Industrial",
+    "property_address": "500 Commercial Street",
+    "property_town": "Biddeford",
+    "property_county": "Sagadahoc",
+    "property_type": "flex/industrial warehouse",
+    "building_sf": 91434,
+    "lot_size": "3.4 acres",
+    "year_built": 1971,
+    "occupancy_pct": "94%",
+    "tenant_count": 12,
+    "largest_tenant": "a regional credit union on a 10-year NNN lease",
+    "annual_noi": 443356,
+    "cap_rate": "6.25%",
+    "purchase_price": 22970515,
+    "earnest_money": 265963,
+    "buyer_entity": "Bayview Property Partners LLC",
+    "effective_date": "2026-01-19",
+    "due_diligence_deadline": "2026-03-02",
+    "financing_contingency_date": "2026-03-24",
+    "closing_date": "2026-04-19",
+    "transfer_date": "2026-04-19",
+    "financing_type": "a bridge loan with a 24-month term",
+    "loan_amount": 13632690,
+    "ltv": "70%",
+    "dscr_required": "1.25x",
+    "interest_rate": "7.10%",
+    "environmental_finding": "historic fill and a closed UST with a no-further-action letter",
+    "title_survey": "ALTA/NSPS survey with Table A items 1-4, 6-11, and 16",
+    "deed_type": "warranty deed with commercial closing affidavit",
+    "estoppel_status": "all tenant estoppels returned clean"
+  }
+}

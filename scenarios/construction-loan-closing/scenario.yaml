@@ -1,0 +1,180 @@
+id: construction-loan-closing
+title: "Construction loan & build closing: {project_name}, {property_town} — {borrower_full_name} / {general_contractor_full_name}"
+practice_area: real_estate
+case_type: construction_loan_closing
+status: pre_filing
+docket_prefix: RE
+assign_docket: false
+
+downstream:
+  repo: transactional-tax-forms
+  example_forms: [ME-RETTD]
+
+jurisdiction:
+  state: ME
+  county: random
+  court_type: "Maine Registry of Deeds / private closing"
+
+dates:
+  filing_date: {date_between: ["2026-01-05", "2026-02-20"]}
+  event_date: "{loan_closing_date}"
+
+# An owner/borrower closing a construction loan and a construction contract to build:
+# the GMP contract, draw schedule and retainage, lender requirements (title date-downs,
+# lien waivers, inspections), bonding, and the lender/GC/architect correspondence.
+parties:
+  client_role: borrower
+  attorney: true
+  roles:
+    - {key: borrower, label: "Owner / borrower (client)"}
+    - {key: general_contractor, label: "General contractor"}
+
+facts:
+  project_name: {pick: ["Riverside Medical Office", "Gateway Self-Storage", "Bayside Apartments Phase I", "Presumpscot Flex Building", "Downtown Mixed-Use Block"]}
+  property_address: {pick: ["0 Gateway Drive", "310 Riverside Street", "45 Bayside Court", "820 Warren Avenue"]}
+  property_town: {pick: ["Portland", "Auburn", "Bangor", "Sanford", "Brunswick"]}
+  property_county: "{county}"
+  project_type: {pick: ["a 24,000 SF medical office building", "a 60-unit self-storage facility", "a 32-unit apartment building", "a 40,000 SF flex/warehouse building"]}
+  contract_form: {pick: ["an AIA A102 cost-plus with a guaranteed maximum price", "an AIA A101 stipulated-sum contract", "a design-build GMP contract"]}
+  contract_price: {int_between: [1800000, 22000000]}
+  gmp: "{contract_price}"
+  contingency_line: {pick: ["a 5% owner's contingency", "a 3% construction contingency plus a 2% design contingency", "a 4% shared contingency"]}
+  construction_loan_amount: {int_between: [1400000, 18000000]}
+  ltc: {pick: ["75% loan-to-cost", "80% loan-to-cost", "70% loan-to-cost"]}
+  interest_rate: {pick: ["SOFR + 300 bps", "8.25% fixed during construction", "prime + 1.00%"]}
+  loan_term_months: {pick: ["18 months interest-only, then a mini-perm", "24-month construction term with two 6-month extensions", "12-month term converting to permanent financing"]}
+  loan_closing_date: {date_between: ["2026-03-02", "2026-03-27"]}
+  groundbreaking_date: {date_between: ["2026-04-01", "2026-04-30"]}
+  substantial_completion_date: {date_between: ["2027-02-01", "2027-08-31"]}
+  draw_schedule: {pick: ["monthly draws on AIA G702/G703 with 10% retainage", "milestone draws at foundation, dry-in, and completion", "monthly draws with retainage reduced to 5% after 50% completion"]}
+  retainage: {pick: ["10% held until substantial completion", "10% reduced to 5% at 50% completion", "5% throughout with a final retainage release at closeout"]}
+  lien_waiver_requirement: "conditional and unconditional lien waivers from the GC and all subs with each draw"
+  performance_bond: {pick: ["a 100% performance and payment bond from the GC", "a subguard/subcontractor default insurance program in lieu of bonds", "no bond, with the lender relying on a completion guaranty"]}
+  title_requirement: "a title date-down endorsement and mechanic's-lien coverage at each draw"
+  equity_required: {int_between: [400000, 6000000]}
+
+third_parties:
+  count: {min: 5, max: 6}
+  pool:
+    - {type: financial_institution, name_kind: bank, role: "Construction lender", relevance: "Funds the loan against draws, inspections, and lien waivers."}
+    - {type: expert, name_kind: person, role: "Project architect", relevance: "Certifies draws on AIA G702/G703 and administers the contract."}
+    - {type: business_entity, name_kind: organization, role: "Title insurance company", relevance: "Insures the mortgage and issues date-down and mechanic's-lien endorsements."}
+    - {type: expert, name_kind: person, role: "Lender's inspecting engineer", relevance: "Inspects progress and signs off on each draw."}
+    - {type: business_entity, name_kind: organization, role: "Surety / bonding company", relevance: "Issues the performance and payment bond for the work."}
+    - {type: government_agency, name: "Municipal Code Enforcement Office", role: "Building permit authority", relevance: "Issues the building permit and certificate of occupancy."}
+
+fact_pattern:
+  summary: "{borrower_full_name} is closing a ${construction_loan_amount} construction loan and a {contract_form} with {general_contractor_full_name} to build {project_name} ({project_type}) at {property_address}, {property_town}, with loan closing set for {loan_closing_date}."
+  narrative:
+    - "{borrower_full_name} owns the site at {property_address} in {property_town}, {county} County, and is building {project_name}, {project_type}. The owner has contracted with {general_contractor_full_name} under {contract_form} at a price of ${contract_price}, including {contingency_line}. To fund it, {borrower_full_name} is closing a ${construction_loan_amount} construction loan (about {ltc}) at {interest_rate} on {loan_term_months}."
+    - "The loan closes {loan_closing_date}; the owner is contributing about ${equity_required} in equity ahead of the loan. Advances follow {draw_schedule}, with {retainage} and {lien_waiver_requirement}. The lender requires {title_requirement}, the project architect's G702/G703 certification, and its inspecting engineer's sign-off on each draw. The contractor is providing {performance_bond}."
+    - "Counsel {attorney_full_name} of {attorney_firm} is negotiating the loan documents, the GMP contract, the disbursement/escrow agreement, and the consents and estoppels, and coordinating groundbreaking around {groundbreaking_date} for substantial completion by {substantial_completion_date}."
+  undisputed:
+    - "{borrower_full_name} and {general_contractor_full_name} have a {contract_form} at ${contract_price} to build {project_name}."
+    - "The construction loan is ${construction_loan_amount} at {interest_rate}, closing {loan_closing_date}."
+    - "Draws follow {draw_schedule} with {retainage}."
+  disputed:
+    - "The scope of the contingency ({contingency_line}) and who controls its use."
+    - "Whether {performance_bond} satisfies the lender's security requirements."
+    - "The retainage terms ({retainage}) and the timing of final release."
+
+interview:
+  interviewer: "Real Estate Finance Attorney"
+  interviewee_role: borrower
+  exchanges:
+    - {topic: "Project", question: "What are you building?", answer: "{project_name}, {project_type}, at {property_address} in {property_town}."}
+    - {topic: "Contract", question: "What's the construction contract?", answer: "{contract_form} with {general_contractor_full_name} at ${contract_price}, including {contingency_line}."}
+    - {topic: "Loan", question: "How is it financed?", answer: "A ${construction_loan_amount} construction loan (~{ltc}) at {interest_rate}, {loan_term_months}. I'm putting in about ${equity_required} equity."}
+    - {topic: "Draws", question: "How do advances work?", answer: "{draw_schedule}, with {retainage} and {lien_waiver_requirement}."}
+    - {topic: "Bonding", question: "Is the GC bonded?", answer: "{performance_bond}."}
+    - {topic: "Schedule", question: "What's the timeline?", answer: "Loan closing {loan_closing_date}, groundbreaking about {groundbreaking_date}, substantial completion by {substantial_completion_date}."}
+
+objectives:
+  goals:
+    - "Close the ${construction_loan_amount} loan and the {contract_form} on {loan_closing_date}."
+    - "Lock a draw process ({draw_schedule}) that protects against liens."
+    - "Break ground by {groundbreaking_date} for completion by {substantial_completion_date}."
+  priorities:
+    - "Lien protection and clean draw certifications."
+    - "Cost certainty under the GMP and the contingency ({contingency_line})."
+  risk_tolerance: moderate
+  desired_outcomes:
+    - "A funded construction loan, a bonded GMP contract, and a clean draw and lien-waiver regime."
+  non_starters:
+    - "Advancing funds without lien waivers and architect/inspector certification."
+    - "An uncapped cost exposure above the GMP."
+  constraints:
+    budget: "Total cost about ${contract_price}; ${construction_loan_amount} financed, ${equity_required} equity."
+    timeline: "Loan closing {loan_closing_date}; completion {substantial_completion_date}."
+
+issues:
+  count: {min: 3, max: 5}
+  pool:
+    - {issue: "Mechanic's lien priority and waivers", category: real_estate, governing_law: "10 M.R.S. §§ 3251-3269 (Maine mechanic's lien)", sub_questions: ["Do lien waivers accompany each draw?", "Is the mortgage protected against inchoate liens?"], strength: strong}
+    - {issue: "Guaranteed maximum price and contingency control", category: construction, governing_law: "AIA A102/A201 general conditions", sub_questions: ["What costs are inside the GMP?", "Who authorizes use of {contingency_line}?"], strength: moderate}
+    - {issue: "Draw disbursement and retainage terms", category: real_estate, governing_law: "Construction loan agreement; 10 M.R.S. § 1113 (prompt-pay)", sub_questions: ["Are draw conditions met?", "When is retainage released?"], strength: moderate}
+    - {issue: "Performance and payment security", category: construction, governing_law: "Surety bond terms; lender requirements", sub_questions: ["Does {performance_bond} cover completion and subs?"], strength: moderate}
+    - {issue: "Building permit and completion requirements", category: land_use, governing_law: "Maine Uniform Building and Energy Code (25 M.R.S. § 2357-A)", sub_questions: ["Is the permit in hand before the first vertical draw?"], strength: strong}
+
+evidence:
+  count: {min: 4, max: 6}
+  pool:
+    - {title: "Construction loan agreement and note", type: contract, party: borrower, description: "The ${construction_loan_amount} loan documents and disbursement terms."}
+    - {title: "Construction contract (GMP)", type: contract, party: borrower, description: "The {contract_form} with {general_contractor_full_name}."}
+    - {title: "Schedule of values (AIA G703)", type: financial_record, party: general_contractor, description: "The line-item budget supporting draws."}
+    - {title: "Performance and payment bond", type: document, party: general_contractor, description: "The surety's {performance_bond}."}
+    - {title: "Title commitment with construction endorsements", type: document, party: borrower, description: "Mortgage title with date-down and mechanic's-lien coverage."}
+    - {title: "Building permit", type: public_record, party: borrower, description: "The municipal permit authorizing construction."}
+
+financials:
+  currency: USD
+  total_is_sum: false
+  amounts:
+    - {label: "Construction contract price (GMP)", amount: {int_between: [1800000, 22000000]}, basis: "The {contract_form} price."}
+    - {label: "Construction loan amount", amount: {int_between: [1400000, 18000000]}, basis: "About {ltc}."}
+    - {label: "Owner equity contribution", amount: {int_between: [400000, 6000000]}, basis: "Equity funded ahead of the loan."}
+    - {label: "Retainage held (illustrative 10%)", amount: {int_between: [180000, 2200000]}, basis: "Held back per {retainage}."}
+    - {label: "Estimated bond premium", amount: {int_between: [18000, 260000]}, basis: "Surety premium for the performance and payment bond."}
+
+communications:
+  - date: "{filing_date}"
+    channel: letter
+    from: "Construction lender"
+    to: "{borrower_full_name}"
+    cc: "{attorney_full_name}"
+    subject: "Loan commitment — {project_name}"
+    summary: "Lender issues the construction loan commitment with closing conditions."
+    body: "We commit a ${construction_loan_amount} construction loan (~{ltc}) at {interest_rate} on {loan_term_months} for {project_name}. Closing conditions include a signed {contract_form}, the schedule of values, {title_requirement}, {performance_bond}, evidence of your ${equity_required} equity, and the building permit. Draws will follow {draw_schedule} with {retainage}."
+    attachments: ["Loan commitment letter"]
+  - date: "{loan_closing_date}"
+    channel: email
+    from: "{attorney_full_name}, {attorney_firm}"
+    to: "General contractor's counsel"
+    subject: "Draw and lien-waiver mechanics — {project_name}"
+    summary: "Owner's counsel confirms the draw and lien-waiver process."
+    body: "For the {loan_closing_date} closing, each draw on {project_name} will require the architect's G702/G703 certification, the lender's inspecting engineer sign-off, and {lien_waiver_requirement}. {general_contractor_full_name} should route conditional waivers with each application and unconditional waivers upon payment. Contingency ({contingency_line}) draws need the owner's prior written approval."
+  - date: "{loan_closing_date}"
+    channel: memo
+    from: "Title insurance company"
+    to: "All parties"
+    subject: "Loan closing and disbursement — {project_name}"
+    summary: "Title/escrow confirms mortgage recording and first-advance mechanics."
+    body: "At the {loan_closing_date} closing we will record the mortgage on {property_address}, issue the loan policy with mechanic's-lien coverage, and set up the disbursement escrow. Each advance requires a date-down endorsement confirming no intervening liens. The first vertical advance is conditioned on the recorded building permit and groundbreaking around {groundbreaking_date}."
+  - date: "{groundbreaking_date}"
+    channel: email
+    from: "Project architect"
+    to: "{borrower_full_name}"
+    cc: "Construction lender"
+    subject: "Draw #1 certification — {project_name}"
+    summary: "Architect certifies the first payment application."
+    body: "I have certified {general_contractor_full_name}'s first Application for Payment for {project_name} on AIA G702/G703, less {retainage}. The work in place matches the schedule of values, and conditional lien waivers are attached. Please release the certified amount through the disbursement escrow."
+    attachments: ["AIA G702/G703 Application for Payment #1", "Conditional lien waivers"]
+  - date: "{substantial_completion_date}"
+    channel: letter
+    from: "Project architect"
+    to: "{borrower_full_name}"
+    cc: "Construction lender"
+    subject: "Substantial completion — {project_name}"
+    summary: "Architect issues the certificate of substantial completion and punch list."
+    body: "I certify {project_name} substantially complete as of {substantial_completion_date}, with an attached punch list. Upon the municipality's certificate of occupancy, final unconditional lien waivers, and consent of surety, the retainage held per {retainage} may be released and the loan may convert per {loan_term_months}."
+    attachments: ["Certificate of Substantial Completion", "Punch list"]

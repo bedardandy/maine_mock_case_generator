@@ -366,6 +366,30 @@
         }
       }
     },
+    "communications": {
+      "type": "array",
+      "description": "Simulated correspondence between the parties (and their brokers, lenders, title/escrow agents, accountants, and counsel) during a transaction or closing: the back-and-forth that fills a deal or closing binder. Ordered chronologically by date. Every message is FICTIONAL.",
+      "items": {
+        "type": "object",
+        "required": ["date", "from", "to", "summary"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string" },
+          "date": { "type": "string", "description": "ISO yyyy-mm-dd." },
+          "channel": {
+            "type": "string",
+            "enum": ["email", "letter", "phone_call", "voicemail", "text_message", "memo", "fax", "meeting", "portal_message"]
+          },
+          "from": { "type": "string", "description": "Sender name or role label." },
+          "to": { "type": "string", "description": "Recipient name or role label." },
+          "cc": { "type": "string", "description": "Copied recipients." },
+          "subject": { "type": "string", "description": "Subject line / RE: reference." },
+          "summary": { "type": "string", "description": "One-line summary of the message." },
+          "body": { "type": "string", "description": "Full simulated message text." },
+          "attachments": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
     "facts": {
       "type": "object",
       "description": "Flat, form-specific canonical fact keys consumed by downstream form-fillers (passed through to canonical_case.facts unchanged). Values are scalars, arrays, or null.",

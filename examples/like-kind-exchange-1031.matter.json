@@ -1,0 +1,433 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "like-kind-exchange-1031",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-185831",
+    "practice_area": "tax",
+    "title": "1031 like-kind exchange: a 6-unit apartment building at 22 Sherman Street for a self-storage facility in Sanford — Grace C. Roe",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Maine Registry of Deeds / qualified intermediary escrow"
+    },
+    "case_type": "like_kind_exchange_1031",
+    "filing_date": "2026-01-09",
+    "status": "pre_filing",
+    "summary": "Grace C. Roe is selling a 6-unit apartment building at 22 Sherman Street in Portland for $669985 and, through a delayed exchange identifying under the three-property rule, acquiring a self-storage facility in Sanford for $1817628 to defer gain under IRC § 1031, with replacement to close by 2026-08-12.",
+    "event_date": "2026-02-19"
+  },
+  "parties": {
+    "exchangor": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Exchangor / taxpayer (client)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "relinquished_buyer": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "Buyer of the relinquished property",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "replacement_seller": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Seller of the replacement property",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "ssn_last4": "4744"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Omar",
+      "middle_name": "W",
+      "last_name": "Loe",
+      "full_name": "Omar W. Loe",
+      "role": "Attorney for the client",
+      "address": "62 Tidewater Lane",
+      "city": "Waterville",
+      "state": "ME",
+      "zip": "04072",
+      "phone": "(207) 555-0187",
+      "email": "omar.loe@example.com",
+      "date_of_birth": "1995-10-25",
+      "ssn_last4": "9358",
+      "bar_number": "4078",
+      "organization_name": "Greenhill Law Offices"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Exchangor / taxpayer (client)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe is selling a 6-unit apartment building at 22 Sherman Street in Portland for $669985 and, through a delayed exchange identifying under the three-property rule, acquiring a self-storage facility in Sanford for $1817628 to defer gain under IRC § 1031, with replacement to close by 2026-08-12.",
+    "narrative": "Grace C. Roe owns a 6-unit apartment building at 22 Sherman Street in Portland, Sagadahoc County (adjusted basis about $739078, debt about $431926) and is selling it to Maria Q. Fairbanks for $669985. To defer the gain, the sale is structured as a delayed exchange identifying under the three-property rule under IRC § 1031, with a qualified intermediary holding the net proceeds so the exchangor never has actual or constructive receipt.\n\nThe relinquished leg closes about 2026-02-19. The exchangor must identify replacement property in writing by the 45-day deadline of 2026-04-02 under the three-property rule, and must close on it by the 180-day deadline of 2026-08-12. The target is a self-storage facility in Sanford, purchased from Ingrid B. Kingsley for $1817628 with about $976437 of new debt, expected to close 2026-07-02.\n\nTo fully defer, the exchangor must reinvest all net proceeds and match or exceed the relinquished value and debt — watching for no expected boot if value and debt are fully replaced. Diligence confirms an unrelated seller (no related-party issue). Counsel Omar W. Loe of Greenhill Law Offices and the CPA are coordinating the QI exchange documents, both deeds, and the Form 8824 reporting.",
+    "undisputed_facts": [
+      "Grace C. Roe is selling a 6-unit apartment building at 22 Sherman Street for $669985 as part of a delayed exchange identifying under the three-property rule.",
+      "A qualified intermediary is holding the proceeds; the exchangor avoids constructive receipt.",
+      "Identification is due by 2026-04-02 and replacement closing by 2026-08-12."
+    ],
+    "disputed_facts": [
+      "Whether the $1817628 replacement and $976437 debt fully avoid no expected boot if value and debt are fully replaced.",
+      "Whether the identification under the three-property rule is sufficient if the primary target falls through.",
+      "The deferred gain and carryover basis computation for Form 8824."
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "County Registry of Deeds",
+      "type": "government_agency",
+      "role": "Recording office",
+      "relevance": "Records both deeds and the RETTDs.",
+      "contact": {
+        "phone": "(207) 555-0177",
+        "city": "Farmington",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Casco Bay Savings",
+      "type": "financial_institution",
+      "role": "Replacement-property lender",
+      "relevance": "Finances the replacement property to match or exceed relinquished debt.",
+      "contact": {
+        "phone": "(207) 555-0196",
+        "city": "Belfast",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "John W. Poe",
+      "type": "expert",
+      "role": "CPA / tax advisor",
+      "relevance": "Computes deferred gain, basis, and boot, and reports Form 8824.",
+      "contact": {
+        "phone": "(207) 555-0173",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "john.poe@example.net"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Cobblestone Partners Co.",
+      "type": "business_entity",
+      "role": "Title & closing company",
+      "relevance": "Closes both legs and directs proceeds through the QI.",
+      "contact": {
+        "phone": "(207) 555-0108",
+        "city": "Augusta",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Summit Analytics Corp.",
+      "type": "business_entity",
+      "role": "Qualified intermediary (QI)",
+      "relevance": "Holds exchange proceeds and documents the 1031 exchange.",
+      "contact": {
+        "phone": "(207) 555-0182",
+        "city": "Bath",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Tax / Real Estate Attorney",
+    "interviewee_role": "exchangor",
+    "date": "2026-01-09",
+    "exchanges": [
+      {
+        "topic": "Relinquished",
+        "question": "What are you selling?",
+        "answer": "a 6-unit apartment building at 22 Sherman Street in Portland for $669985."
+      },
+      {
+        "topic": "Goal",
+        "question": "Why the exchange?",
+        "answer": "To defer the gain under § 1031 through a delayed exchange identifying under the three-property rule; my basis is only about $739078."
+      },
+      {
+        "topic": "Replacement",
+        "question": "What are you buying?",
+        "answer": "a self-storage facility in Sanford for $1817628 from Ingrid B. Kingsley."
+      },
+      {
+        "topic": "Deadlines",
+        "question": "Do you understand the clock?",
+        "answer": "Yes — identify by 2026-04-02 and close by 2026-08-12, using the three-property rule."
+      },
+      {
+        "topic": "Boot",
+        "question": "Any boot exposure?",
+        "answer": "We're watching for no expected boot if value and debt are fully replaced and matching value and debt."
+      },
+      {
+        "topic": "QI",
+        "question": "Who holds the money?",
+        "answer": "The qualified intermediary — I can't touch the proceeds or I blow the exchange."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Fully defer gain under IRC § 1031 by reinvesting all proceeds and matching value and debt.",
+      "Meet the 45-day (2026-04-02) and 180-day (2026-08-12) deadlines.",
+      "Close the replacement (a self-storage facility in Sanford) by 2026-07-02."
+    ],
+    "priorities": [
+      "Strict compliance with the QI, identification, and timing rules.",
+      "Avoiding no expected boot if value and debt are fully replaced."
+    ],
+    "risk_tolerance": "low",
+    "desired_outcomes": [
+      "A completed exchange with no or minimal boot and a clean Form 8824."
+    ],
+    "non_starters": [
+      "Taking actual or constructive receipt of the proceeds.",
+      "Missing the 45- or 180-day deadline."
+    ],
+    "constraints": {
+      "budget": "Reinvest all $669985 of proceeds; new debt about $976437.",
+      "timeline": "Identify by 2026-04-02; close replacement by 2026-08-12."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Boot and debt replacement",
+      "category": "tax",
+      "governing_law": "IRC §§ 1031(b), 1031(d)",
+      "sub_questions": [
+        "Is there cash or mortgage boot given no expected boot if value and debt are fully replaced?",
+        "How is carryover basis computed?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Qualifying like-kind exchange and non-receipt of proceeds",
+      "category": "tax",
+      "governing_law": "IRC § 1031; Treas. Reg. § 1.1031(k)-1 (qualified intermediary safe harbor)",
+      "sub_questions": [
+        "Is the QI structure respected?",
+        "Does the exchangor avoid constructive receipt?"
+      ],
+      "strength": "strong",
+      "id": "iss2"
+    },
+    {
+      "issue": "45-day identification and 180-day exchange periods",
+      "category": "tax",
+      "governing_law": "IRC § 1031(a)(3); Treas. Reg. § 1.1031(k)-1(b)-(c)",
+      "sub_questions": [
+        "Is identification timely and compliant with the three-property rule?",
+        "Will replacement close by 2026-08-12?"
+      ],
+      "strength": "strong",
+      "id": "iss3"
+    },
+    {
+      "issue": "Maine real estate transfer tax on each leg",
+      "category": "tax",
+      "governing_law": "36 M.R.S. § 4641-A",
+      "sub_questions": [
+        "Is the transfer tax due on both the relinquished and replacement deeds?"
+      ],
+      "strength": "moderate",
+      "id": "iss4"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Form 8824 gain-deferral computation",
+      "type": "financial_record",
+      "party": "exchangor",
+      "description": "The CPA's deferred-gain, boot, and basis schedule.",
+      "id": "ev1"
+    },
+    {
+      "title": "Qualified intermediary exchange agreement",
+      "type": "contract",
+      "party": "exchangor",
+      "description": "The QI agreement assigning the PSAs and holding proceeds.",
+      "id": "ev2"
+    },
+    {
+      "title": "Relinquished-property PSA",
+      "type": "contract",
+      "party": "exchangor",
+      "description": "The sale of a 6-unit apartment building at 22 Sherman Street for $669985.",
+      "id": "ev3"
+    },
+    {
+      "title": "Replacement-property PSA",
+      "type": "contract",
+      "party": "exchangor",
+      "description": "The purchase of a self-storage facility in Sanford for $1817628.",
+      "id": "ev4"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Relinquished adjusted basis",
+        "amount": 499940,
+        "basis": "Carryover basis before the exchange."
+      },
+      {
+        "label": "Replacement purchase price",
+        "amount": 2582500,
+        "basis": "Consideration for a self-storage facility in Sanford."
+      },
+      {
+        "label": "Relinquished sale price",
+        "amount": 757982,
+        "basis": "Consideration for a 6-unit apartment building at 22 Sherman Street."
+      },
+      {
+        "label": "New replacement debt",
+        "amount": 348895,
+        "basis": "Debt to match or exceed relinquished debt."
+      },
+      {
+        "label": "Estimated Maine transfer tax (relinquished leg)",
+        "amount": 9207,
+        "basis": "$2.20 per $500 of consideration, split between the parties."
+      }
+    ]
+  },
+  "communications": [
+    {
+      "date": "2026-01-09",
+      "channel": "email",
+      "from": "CPA / tax advisor",
+      "to": "Grace C. Roe",
+      "cc": "Omar W. Loe",
+      "subject": "1031 setup — a 6-unit apartment building at 22 Sherman Street",
+      "summary": "CPA confirms exchange feasibility and the deferral targets.",
+      "body": "With a $669985 sale price against roughly $739078 basis, a 6-unit apartment building at 22 Sherman Street has significant built-in gain. To fully defer under § 1031 you must reinvest all net proceeds and acquire replacement property of equal or greater value ($1817628 works) while replacing at least $431926 of debt. Watch for no expected boot if value and debt are fully replaced. We must engage a qualified intermediary holding the net proceeds so the exchangor never has actual or constructive receipt before the relinquished closing on 2026-02-19.",
+      "id": "comm1"
+    },
+    {
+      "date": "2026-02-19",
+      "channel": "letter",
+      "from": "Qualified intermediary (QI)",
+      "to": "Grace C. Roe",
+      "cc": "Title & closing company",
+      "subject": "Exchange funds received — a 6-unit apartment building at 22 Sherman Street",
+      "summary": "QI confirms receipt of proceeds and states the 45/180-day deadlines.",
+      "body": "We have received the net proceeds from the sale of a 6-unit apartment building at 22 Sherman Street to Maria Q. Fairbanks and are holding them under the exchange agreement so you have no actual or constructive receipt. Your 45-day identification deadline is 2026-04-02 and your 180-day exchange deadline is 2026-08-12. Identify replacement property in writing under the three-property rule.",
+      "id": "comm2"
+    },
+    {
+      "date": "2026-04-02",
+      "channel": "email",
+      "from": "Grace C. Roe",
+      "to": "Qualified intermediary (QI)",
+      "cc": "Omar W. Loe",
+      "subject": "45-day identification — replacement property",
+      "summary": "Exchangor delivers the written identification of replacement property.",
+      "body": "Under the three-property rule, I identify a self-storage facility in Sanford in Sanford (purchase price $1817628) as my primary replacement property, plus one backup as permitted. Please acknowledge receipt within the 45-day window ending 2026-04-02. We expect to close the replacement around 2026-07-02.",
+      "attachments": [
+        "45-day identification notice"
+      ],
+      "id": "comm3"
+    },
+    {
+      "date": "2026-07-02",
+      "channel": "memo",
+      "from": "Title & closing company",
+      "to": "All parties",
+      "subject": "Replacement closing — a self-storage facility in Sanford",
+      "summary": "Closing agent confirms the replacement leg and QI funds direction.",
+      "body": "The replacement closing for a self-storage facility in Sanford is set for 2026-07-02, within the 2026-08-12 deadline. The Qualified Intermediary will wire the exchange funds directly to this closing toward the $1817628 price, with about $976437 in new financing from the lender. We will record the warranty deed and the RETTD; the CPA will report the exchange on Form 8824.",
+      "id": "comm4"
+    },
+    {
+      "date": "2026-08-12",
+      "channel": "letter",
+      "from": "CPA / tax advisor",
+      "to": "Grace C. Roe",
+      "subject": "Exchange complete — Form 8824 summary",
+      "summary": "CPA reports the completed exchange, deferred gain, and carryover basis.",
+      "body": "Your § 1031 exchange is complete within the 180-day period. By reinvesting the full $669985 of proceeds into a self-storage facility in Sanford at $1817628 and replacing debt, you deferred substantially all of the gain over your $739078 basis, subject to no expected boot if value and debt are fully replaced. We will report the exchange on Form 8824 and carry your basis forward into the replacement property. an unrelated seller (no related-party issue) was confirmed, so no related-party holding issue applies.",
+      "id": "comm5"
+    }
+  ],
+  "facts": {
+    "relinquished_property": "a 6-unit apartment building at 22 Sherman Street",
+    "relinquished_town": "Portland",
+    "relinquished_county": "Sagadahoc",
+    "relinquished_sale_price": 669985,
+    "relinquished_basis": 739078,
+    "relinquished_debt": 431926,
+    "replacement_property": "a self-storage facility in Sanford",
+    "replacement_town": "Sanford",
+    "replacement_price": 1817628,
+    "replacement_debt": 976437,
+    "exchange_type": "a delayed exchange identifying under the three-property rule",
+    "relinquished_closing_date": "2026-02-19",
+    "identification_deadline": "2026-04-02",
+    "exchange_deadline": "2026-08-12",
+    "replacement_closing_date": "2026-07-02",
+    "identification_rule": "the three-property rule",
+    "boot_risk": "no expected boot if value and debt are fully replaced",
+    "related_party": "an unrelated seller (no related-party issue)",
+    "qi_role": "a qualified intermediary holding the net proceeds so the exchangor never has actual or constructive receipt",
+    "deed_type": "warranty deed"
+  }
+}

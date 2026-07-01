@@ -20,6 +20,7 @@ The rich superset the generator produces. Required: `schema_version`, `provenanc
 | `expert_opinions[]` | `{id,expert{name,field,credentials,retained_by},topic,opinion,basis,exhibits[]}`. |
 | `evidence[]` | `{id,title,type,description,date,source,party}`. |
 | `financials` | `currency`, `amounts[{label,amount,basis}]`, `total_claimed`. |
+| `communications[]` | Simulated deal/closing correspondence: `{id,date,channel,from,to,cc,subject,summary,body,attachments[]}`. |
 | `facts` | **Flat, form-specific canonical keys** (the bridge — see below). |
 
 ### Party object
@@ -77,6 +78,23 @@ Contested matters may carry a `litigation` object: `posture`, `causes_of_action`
 `cross_claims`, `third_party_claims`, `discovery` (type, parties, status), `motions`
 (title, movant, status), a chronological `docket`, and `trial` (jury, days, date). See the
 `complex-civil-litigation` scenario.
+
+## Communications section (optional)
+
+Any matter may carry a `communications` array: a **chronological, name-consistent
+back-and-forth** among the parties and their brokers, lenders, title/escrow agents,
+accountants, and counsel. Each message is `{id, date, channel, from, to, cc?, subject?,
+summary, body?, attachments[]?}`, where `channel` is one of `email`, `letter`,
+`phone_call`, `voicemail`, `text_message`, `memo`, `fax`, `meeting`, or `portal_message`.
+
+Authoring: put an ordered `communications:` list in the scenario. Each field is templated
+against the same context as the narrative — so `{seller_full_name}`, `{buyer_full_name}`,
+`{attorney_full_name}`/`{attorney_firm}`, and any `facts` key resolve consistently — and the
+engine assigns `id`s and **sorts the thread by `date`**. Unlike pooled sections
+(`issues`/`evidence`/`third_parties`), the list is authored whole rather than sampled, so a
+coherent exchange reads in order. All eight real-estate & asset-sale closing scenarios ship a
+thread; `business-asset-sale` includes the buyer accountant's financing/accounting
+due-diligence questions.
 
 ## Compound matters
 

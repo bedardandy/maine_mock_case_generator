@@ -1,0 +1,92 @@
+{
+  "matter": {
+    "case_id": "MMC-2026-813451",
+    "court_county": "Sagadahoc",
+    "court_location": "Bath",
+    "court_type": "Maine Registry of Deeds / private closing",
+    "case_type": "resource_extraction_sale",
+    "filing_date": "2026-01-14",
+    "event_date": "2026-08-19"
+  },
+  "parties": {
+    "seller": {
+      "full_name": "Grace C. Roe",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20"
+    },
+    "buyer": {
+      "full_name": "Maria Q. Fairbanks",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05"
+    },
+    "attorney": {
+      "full_name": "Ingrid B. Kingsley",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "bar_number": "7867"
+    }
+  },
+  "party": {
+    "full_name": "Maria Q. Fairbanks",
+    "first_name": "Maria",
+    "middle_name": "Q",
+    "last_name": "Fairbanks",
+    "address": "37 Cedar Way",
+    "city": "Falmouth",
+    "state": "ME",
+    "zip": "04071",
+    "phone": "(207) 555-0154",
+    "email": "maria.fairbanks@example.com",
+    "date_of_birth": "1965-03-05",
+    "signature": "Maria Q. Fairbanks"
+  },
+  "facts": {
+    "property_name": "Blackstone Aggregate Pit",
+    "property_address": "0 Ledge Hill Road",
+    "property_town": "Baileyville",
+    "property_county": "Sagadahoc",
+    "resource_type": "a working timberland tract with harvest rights",
+    "parcel_acres": 1187,
+    "active_extraction_acres": 54,
+    "estimated_reserves": "about 1.8 million cubic yards of sand and gravel",
+    "purchase_price": 5258815,
+    "price_structure": "a price plus a 5-year severance royalty of $1.25/ton",
+    "royalty_terms": "a $0.75 per cubic yard royalty for five years",
+    "earnest_money": 210243,
+    "effective_date": "2026-01-09",
+    "due_diligence_deadline": "2026-05-10",
+    "closing_date": "2026-08-19",
+    "transfer_date": "2026-08-19",
+    "extraction_permit": "a municipal gravel-pit / mineral-extraction permit under the town ordinance",
+    "reclamation_requirement": "a groundwater-monitoring and reclamation plan",
+    "reclamation_security": "a $180,000 reclamation performance bond",
+    "current_use_status": "no current-use enrollment",
+    "environmental_status": "a Phase I ESA with no recognized environmental conditions",
+    "water_setbacks": "a 250-foot setback from an adjoining great pond",
+    "deed_type": "warranty deed reserving no mineral interest"
+  }
+}

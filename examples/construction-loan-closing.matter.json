@@ -1,0 +1,430 @@
+{
+  "schema_version": "1.0",
+  "provenance": {
+    "mock": true,
+    "fictional": true,
+    "generator": "deterministic-engine",
+    "generator_version": "0.1.0",
+    "scenario_id": "construction-loan-closing",
+    "seed": 7
+  },
+  "matter": {
+    "matter_id": "MMC-2026-749078",
+    "practice_area": "real_estate",
+    "title": "Construction loan & build closing: Downtown Mixed-Use Block, Brunswick — Grace C. Roe / Maria Q. Fairbanks",
+    "jurisdiction": {
+      "state": "ME",
+      "county": "Sagadahoc",
+      "court_location": "Bath",
+      "court_type": "Maine Registry of Deeds / private closing"
+    },
+    "case_type": "construction_loan_closing",
+    "filing_date": "2026-01-14",
+    "status": "pre_filing",
+    "summary": "Grace C. Roe is closing a $11157631 construction loan and a a design-build GMP contract with Maria Q. Fairbanks to build Downtown Mixed-Use Block (a 32-unit apartment building) at 0 Gateway Drive, Brunswick, with loan closing set for 2026-03-13.",
+    "event_date": "2026-03-13"
+  },
+  "parties": {
+    "borrower": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Owner / borrower (client)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    },
+    "general_contractor": {
+      "entity_type": "person",
+      "first_name": "Maria",
+      "middle_name": "Q",
+      "last_name": "Fairbanks",
+      "full_name": "Maria Q. Fairbanks",
+      "role": "General contractor",
+      "address": "37 Cedar Way",
+      "city": "Falmouth",
+      "state": "ME",
+      "zip": "04071",
+      "phone": "(207) 555-0154",
+      "email": "maria.fairbanks@example.com",
+      "date_of_birth": "1965-03-05",
+      "ssn_last4": "3657"
+    },
+    "attorney": {
+      "entity_type": "person",
+      "first_name": "Ingrid",
+      "middle_name": "B",
+      "last_name": "Kingsley",
+      "full_name": "Ingrid B. Kingsley",
+      "role": "Attorney for the client",
+      "address": "297 Tidewater Lane",
+      "city": "Ellsworth",
+      "state": "ME",
+      "zip": "04007",
+      "phone": "(207) 555-0128",
+      "email": "ingrid.kingsley@example.com",
+      "date_of_birth": "1966-03-10",
+      "ssn_last4": "4744",
+      "bar_number": "7867",
+      "organization_name": "Hawthorne Legal Group"
+    },
+    "client": {
+      "entity_type": "person",
+      "first_name": "Grace",
+      "middle_name": "C",
+      "last_name": "Roe",
+      "full_name": "Grace C. Roe",
+      "role": "Owner / borrower (client)",
+      "address": "422 Spruce Avenue",
+      "city": "Yarmouth",
+      "state": "ME",
+      "zip": "04047",
+      "phone": "(207) 555-0174",
+      "email": "grace.roe@example.com",
+      "date_of_birth": "1969-04-20",
+      "ssn_last4": "0614"
+    }
+  },
+  "fact_pattern": {
+    "summary": "Grace C. Roe is closing a $11157631 construction loan and a a design-build GMP contract with Maria Q. Fairbanks to build Downtown Mixed-Use Block (a 32-unit apartment building) at 0 Gateway Drive, Brunswick, with loan closing set for 2026-03-13.",
+    "narrative": "Grace C. Roe owns the site at 0 Gateway Drive in Brunswick, Sagadahoc County, and is building Downtown Mixed-Use Block, a 32-unit apartment building. The owner has contracted with Maria Q. Fairbanks under a design-build GMP contract at a price of $7864171, including a 5% owner's contingency. To fund it, Grace C. Roe is closing a $11157631 construction loan (about 70% loan-to-cost) at prime + 1.00% on 18 months interest-only, then a mini-perm.\n\nThe loan closes 2026-03-13; the owner is contributing about $899970 in equity ahead of the loan. Advances follow monthly draws with retainage reduced to 5% after 50% completion, with 10% held until substantial completion and conditional and unconditional lien waivers from the GC and all subs with each draw. The lender requires a title date-down endorsement and mechanic's-lien coverage at each draw, the project architect's G702/G703 certification, and its inspecting engineer's sign-off on each draw. The contractor is providing no bond, with the lender relying on a completion guaranty.\n\nCounsel Ingrid B. Kingsley of Hawthorne Legal Group is negotiating the loan documents, the GMP contract, the disbursement/escrow agreement, and the consents and estoppels, and coordinating groundbreaking around 2026-04-04 for substantial completion by 2027-06-21.",
+    "undisputed_facts": [
+      "Grace C. Roe and Maria Q. Fairbanks have a a design-build GMP contract at $7864171 to build Downtown Mixed-Use Block.",
+      "The construction loan is $11157631 at prime + 1.00%, closing 2026-03-13.",
+      "Draws follow monthly draws with retainage reduced to 5% after 50% completion with 10% held until substantial completion."
+    ],
+    "disputed_facts": [
+      "The scope of the contingency (a 5% owner's contingency) and who controls its use.",
+      "Whether no bond, with the lender relying on a completion guaranty satisfies the lender's security requirements.",
+      "The retainage terms (10% held until substantial completion) and the timing of final release."
+    ]
+  },
+  "third_parties": [
+    {
+      "id": "tp1",
+      "name": "Rosa M. Greenhill",
+      "type": "expert",
+      "role": "Lender's inspecting engineer",
+      "relevance": "Inspects progress and signs off on each draw.",
+      "contact": {
+        "phone": "(207) 555-0138",
+        "city": "Windham",
+        "state": "ME",
+        "email": "rosa.greenhill@example.com"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Summit Holdings Co.",
+      "type": "business_entity",
+      "role": "Surety / bonding company",
+      "relevance": "Issues the performance and payment bond for the work.",
+      "contact": {
+        "phone": "(207) 555-0143",
+        "city": "Waterville",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Municipal Code Enforcement Office",
+      "type": "government_agency",
+      "role": "Building permit authority",
+      "relevance": "Issues the building permit and certificate of occupancy.",
+      "contact": {
+        "phone": "(207) 555-0109",
+        "city": "Camden",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Nadia S. Loe",
+      "type": "expert",
+      "role": "Project architect",
+      "relevance": "Certifies draws on AIA G702/G703 and administers the contract.",
+      "contact": {
+        "phone": "(207) 555-0153",
+        "city": "Falmouth",
+        "state": "ME",
+        "email": "nadia.loe@example.net"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Cobblestone Studios Corp.",
+      "type": "business_entity",
+      "role": "Title insurance company",
+      "relevance": "Insures the mortgage and issues date-down and mechanic's-lien endorsements.",
+      "contact": {
+        "phone": "(207) 555-0176",
+        "city": "Bath",
+        "state": "ME"
+      }
+    }
+  ],
+  "intake_interview": {
+    "interviewer": "Real Estate Finance Attorney",
+    "interviewee_role": "borrower",
+    "date": "2026-01-14",
+    "exchanges": [
+      {
+        "topic": "Project",
+        "question": "What are you building?",
+        "answer": "Downtown Mixed-Use Block, a 32-unit apartment building, at 0 Gateway Drive in Brunswick."
+      },
+      {
+        "topic": "Contract",
+        "question": "What's the construction contract?",
+        "answer": "a design-build GMP contract with Maria Q. Fairbanks at $7864171, including a 5% owner's contingency."
+      },
+      {
+        "topic": "Loan",
+        "question": "How is it financed?",
+        "answer": "A $11157631 construction loan (~70% loan-to-cost) at prime + 1.00%, 18 months interest-only, then a mini-perm. I'm putting in about $899970 equity."
+      },
+      {
+        "topic": "Draws",
+        "question": "How do advances work?",
+        "answer": "monthly draws with retainage reduced to 5% after 50% completion, with 10% held until substantial completion and conditional and unconditional lien waivers from the GC and all subs with each draw."
+      },
+      {
+        "topic": "Bonding",
+        "question": "Is the GC bonded?",
+        "answer": "no bond, with the lender relying on a completion guaranty."
+      },
+      {
+        "topic": "Schedule",
+        "question": "What's the timeline?",
+        "answer": "Loan closing 2026-03-13, groundbreaking about 2026-04-04, substantial completion by 2027-06-21."
+      }
+    ]
+  },
+  "client_objectives": {
+    "goals": [
+      "Close the $11157631 loan and the a design-build GMP contract on 2026-03-13.",
+      "Lock a draw process (monthly draws with retainage reduced to 5% after 50% completion) that protects against liens.",
+      "Break ground by 2026-04-04 for completion by 2027-06-21."
+    ],
+    "priorities": [
+      "Lien protection and clean draw certifications.",
+      "Cost certainty under the GMP and the contingency (a 5% owner's contingency)."
+    ],
+    "risk_tolerance": "moderate",
+    "desired_outcomes": [
+      "A funded construction loan, a bonded GMP contract, and a clean draw and lien-waiver regime."
+    ],
+    "non_starters": [
+      "Advancing funds without lien waivers and architect/inspector certification.",
+      "An uncapped cost exposure above the GMP."
+    ],
+    "constraints": {
+      "budget": "Total cost about $7864171; $11157631 financed, $899970 equity.",
+      "timeline": "Loan closing 2026-03-13; completion 2027-06-21."
+    }
+  },
+  "issues": [
+    {
+      "issue": "Draw disbursement and retainage terms",
+      "category": "real_estate",
+      "governing_law": "Construction loan agreement; 10 M.R.S. § 1113 (prompt-pay)",
+      "sub_questions": [
+        "Are draw conditions met?",
+        "When is retainage released?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
+    {
+      "issue": "Performance and payment security",
+      "category": "construction",
+      "governing_law": "Surety bond terms; lender requirements",
+      "sub_questions": [
+        "Does no bond, with the lender relying on a completion guaranty cover completion and subs?"
+      ],
+      "strength": "moderate",
+      "id": "iss2"
+    },
+    {
+      "issue": "Building permit and completion requirements",
+      "category": "land_use",
+      "governing_law": "Maine Uniform Building and Energy Code (25 M.R.S. § 2357-A)",
+      "sub_questions": [
+        "Is the permit in hand before the first vertical draw?"
+      ],
+      "strength": "strong",
+      "id": "iss3"
+    }
+  ],
+  "evidence": [
+    {
+      "title": "Construction loan agreement and note",
+      "type": "contract",
+      "party": "borrower",
+      "description": "The $11157631 loan documents and disbursement terms.",
+      "id": "ev1"
+    },
+    {
+      "title": "Building permit",
+      "type": "public_record",
+      "party": "borrower",
+      "description": "The municipal permit authorizing construction.",
+      "id": "ev2"
+    },
+    {
+      "title": "Schedule of values (AIA G703)",
+      "type": "financial_record",
+      "party": "general_contractor",
+      "description": "The line-item budget supporting draws.",
+      "id": "ev3"
+    },
+    {
+      "title": "Performance and payment bond",
+      "type": "document",
+      "party": "general_contractor",
+      "description": "The surety's no bond, with the lender relying on a completion guaranty.",
+      "id": "ev4"
+    },
+    {
+      "title": "Construction contract (GMP)",
+      "type": "contract",
+      "party": "borrower",
+      "description": "The a design-build GMP contract with Maria Q. Fairbanks.",
+      "id": "ev5"
+    },
+    {
+      "title": "Title commitment with construction endorsements",
+      "type": "document",
+      "party": "borrower",
+      "description": "Mortgage title with date-down and mechanic's-lien coverage.",
+      "id": "ev6"
+    }
+  ],
+  "financials": {
+    "currency": "USD",
+    "amounts": [
+      {
+        "label": "Retainage held (illustrative 10%)",
+        "amount": 532422,
+        "basis": "Held back per 10% held until substantial completion."
+      },
+      {
+        "label": "Owner equity contribution",
+        "amount": 5524764,
+        "basis": "Equity funded ahead of the loan."
+      },
+      {
+        "label": "Construction contract price (GMP)",
+        "amount": 5729082,
+        "basis": "The a design-build GMP contract price."
+      },
+      {
+        "label": "Construction loan amount",
+        "amount": 9682794,
+        "basis": "About 70% loan-to-cost."
+      },
+      {
+        "label": "Estimated bond premium",
+        "amount": 33454,
+        "basis": "Surety premium for the performance and payment bond."
+      }
+    ]
+  },
+  "communications": [
+    {
+      "date": "2026-01-14",
+      "channel": "letter",
+      "from": "Construction lender",
+      "to": "Grace C. Roe",
+      "cc": "Ingrid B. Kingsley",
+      "subject": "Loan commitment — Downtown Mixed-Use Block",
+      "summary": "Lender issues the construction loan commitment with closing conditions.",
+      "body": "We commit a $11157631 construction loan (~70% loan-to-cost) at prime + 1.00% on 18 months interest-only, then a mini-perm for Downtown Mixed-Use Block. Closing conditions include a signed a design-build GMP contract, the schedule of values, a title date-down endorsement and mechanic's-lien coverage at each draw, no bond, with the lender relying on a completion guaranty, evidence of your $899970 equity, and the building permit. Draws will follow monthly draws with retainage reduced to 5% after 50% completion with 10% held until substantial completion.",
+      "attachments": [
+        "Loan commitment letter"
+      ],
+      "id": "comm1"
+    },
+    {
+      "date": "2026-03-13",
+      "channel": "email",
+      "from": "Ingrid B. Kingsley, Hawthorne Legal Group",
+      "to": "General contractor's counsel",
+      "subject": "Draw and lien-waiver mechanics — Downtown Mixed-Use Block",
+      "summary": "Owner's counsel confirms the draw and lien-waiver process.",
+      "body": "For the 2026-03-13 closing, each draw on Downtown Mixed-Use Block will require the architect's G702/G703 certification, the lender's inspecting engineer sign-off, and conditional and unconditional lien waivers from the GC and all subs with each draw. Maria Q. Fairbanks should route conditional waivers with each application and unconditional waivers upon payment. Contingency (a 5% owner's contingency) draws need the owner's prior written approval.",
+      "id": "comm2"
+    },
+    {
+      "date": "2026-03-13",
+      "channel": "memo",
+      "from": "Title insurance company",
+      "to": "All parties",
+      "subject": "Loan closing and disbursement — Downtown Mixed-Use Block",
+      "summary": "Title/escrow confirms mortgage recording and first-advance mechanics.",
+      "body": "At the 2026-03-13 closing we will record the mortgage on 0 Gateway Drive, issue the loan policy with mechanic's-lien coverage, and set up the disbursement escrow. Each advance requires a date-down endorsement confirming no intervening liens. The first vertical advance is conditioned on the recorded building permit and groundbreaking around 2026-04-04.",
+      "id": "comm3"
+    },
+    {
+      "date": "2026-04-04",
+      "channel": "email",
+      "from": "Project architect",
+      "to": "Grace C. Roe",
+      "cc": "Construction lender",
+      "subject": "Draw #1 certification — Downtown Mixed-Use Block",
+      "summary": "Architect certifies the first payment application.",
+      "body": "I have certified Maria Q. Fairbanks's first Application for Payment for Downtown Mixed-Use Block on AIA G702/G703, less 10% held until substantial completion. The work in place matches the schedule of values, and conditional lien waivers are attached. Please release the certified amount through the disbursement escrow.",
+      "attachments": [
+        "AIA G702/G703 Application for Payment #1",
+        "Conditional lien waivers"
+      ],
+      "id": "comm4"
+    },
+    {
+      "date": "2027-06-21",
+      "channel": "letter",
+      "from": "Project architect",
+      "to": "Grace C. Roe",
+      "cc": "Construction lender",
+      "subject": "Substantial completion — Downtown Mixed-Use Block",
+      "summary": "Architect issues the certificate of substantial completion and punch list.",
+      "body": "I certify Downtown Mixed-Use Block substantially complete as of 2027-06-21, with an attached punch list. Upon the municipality's certificate of occupancy, final unconditional lien waivers, and consent of surety, the retainage held per 10% held until substantial completion may be released and the loan may convert per 18 months interest-only, then a mini-perm.",
+      "attachments": [
+        "Certificate of Substantial Completion",
+        "Punch list"
+      ],
+      "id": "comm5"
+    }
+  ],
+  "facts": {
+    "project_name": "Downtown Mixed-Use Block",
+    "property_address": "0 Gateway Drive",
+    "property_town": "Brunswick",
+    "property_county": "Sagadahoc",
+    "project_type": "a 32-unit apartment building",
+    "contract_form": "a design-build GMP contract",
+    "contract_price": 7864171,
+    "gmp": "7864171",
+    "contingency_line": "a 5% owner's contingency",
+    "construction_loan_amount": 11157631,
+    "ltc": "70% loan-to-cost",
+    "interest_rate": "prime + 1.00%",
+    "loan_term_months": "18 months interest-only, then a mini-perm",
+    "loan_closing_date": "2026-03-13",
+    "groundbreaking_date": "2026-04-04",
+    "substantial_completion_date": "2027-06-21",
+    "draw_schedule": "monthly draws with retainage reduced to 5% after 50% completion",
+    "retainage": "10% held until substantial completion",
+    "lien_waiver_requirement": "conditional and unconditional lien waivers from the GC and all subs with each draw",
+    "performance_bond": "no bond, with the lender relying on a completion guaranty",
+    "title_requirement": "a title date-down endorsement and mechanic's-lien coverage at each draw",
+    "equity_required": 899970
+  }
+}
