@@ -9,21 +9,22 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2026-620528",
+    "matter_id": "MMC-2026-657549",
     "practice_area": "family",
     "title": "Protection From Abuse: Olivia B. Ellsworth v. Maria Q. Fairbanks",
     "jurisdiction": {
       "state": "ME",
       "county": "Cumberland",
       "court_location": "Portland",
-      "court_type": "District Court"
+      "court_type": "District Court",
+      "court_address": "127 State Street, Portland, ME 04019"
     },
     "case_type": "protection_from_abuse",
     "filing_date": "2026-02-13",
     "status": "pre_filing",
     "summary": "Olivia B. Ellsworth petitions the Portland District Court for a protection from abuse order against Maria Q. Fairbanks, a current spouse, seeking no contact and exclusive use of the residence following a course of conduct that includes a most recent incident on 2026-05-21 at a public parking lot.",
     "event_date": "2026-05-21",
-    "docket_number": "CUM-PA-2026-796"
+    "docket_number": "CUM-PA-2026-537"
   },
   "parties": {
     "plaintiff": {
@@ -137,40 +138,27 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Penobscot Maritime Supply",
+      "name": "Katahdin Outfitters Inc.",
       "type": "employer",
       "role": "Plaintiff's employer",
       "relevance": "Aware of a workplace incident and relevant to a workplace stay-away provision.",
       "contact": {
-        "phone": "(207) 555-0158",
-        "city": "Orono",
+        "phone": "(207) 555-0146",
+        "city": "Windham",
         "state": "ME"
       }
     },
     {
       "id": "tp2",
-      "name": "Beatrice C. Boe",
-      "type": "neighbor",
-      "role": "Neighbor who witnessed an incident",
-      "relevance": "Personally observed an incident and can corroborate the plaintiff's account.",
-      "contact": {
-        "phone": "(207) 555-0173",
-        "city": "Belfast",
-        "state": "ME",
-        "email": "beatrice.boe@example.net"
-      }
-    },
-    {
-      "id": "tp3",
-      "name": "Lillian C. Birchwood",
+      "name": "Marcus K. Poe",
       "type": "healthcare_provider",
       "role": "Domestic-violence advocate",
       "relevance": "Assists the plaintiff with safety planning and connecting to community resources.",
       "contact": {
-        "phone": "(207) 555-0115",
-        "city": "Windham",
+        "phone": "(207) 555-0167",
+        "city": "Bath",
         "state": "ME",
-        "email": "lillian.birchwood@example.org"
+        "email": "marcus.poe@example.net"
       }
     }
   ],
@@ -233,59 +221,47 @@
   },
   "issues": [
     {
-      "issue": "Firearms prohibition and surrender during the order",
-      "category": "family",
-      "governing_law": "19-A M.R.S. § 4007(1)(A-1)",
-      "sub_questions": [
-        "Should the order prohibit the defendant from possessing firearms?",
-        "What surrender and verification terms are appropriate?"
-      ],
-      "strength": "moderate",
-      "client_position": "Asks the court to prohibit firearm possession and order surrender for the duration of the order.",
-      "id": "iss1"
-    },
-    {
-      "issue": "Entitlement to relief on a protection from abuse complaint",
-      "category": "family",
-      "governing_law": "19-A M.R.S. § 4007",
-      "sub_questions": [
-        "Does the alleged conduct constitute abuse under the statute?",
-        "Which forms of relief (no contact, stay-away, residence, parental rights) are appropriate?"
-      ],
-      "strength": "moderate",
-      "client_position": "Seeks no contact and exclusive use of the residence based on the pattern of conduct and the most recent incident.",
-      "id": "iss2"
-    },
-    {
-      "issue": "Standing and commencement of the protection action",
-      "category": "family",
-      "governing_law": "19-A M.R.S. § 4005",
-      "sub_questions": [
-        "Does the plaintiff's relationship to the defendant qualify under the statute?",
-        "Is venue in Cumberland County proper?"
-      ],
-      "strength": "strong",
-      "client_position": "Qualifies to file as a current spouse and brings the action in the proper county.",
-      "id": "iss3"
-    },
-    {
       "issue": "Enforcement and consequences of any violation",
       "category": "family",
-      "governing_law": "19-A M.R.S. § 4011",
+      "governing_law": "19-A M.R.S. § 4113",
       "sub_questions": [
         "What conduct would violate the order?",
         "What enforcement mechanisms and penalties apply to a violation?"
       ],
       "strength": "strong",
       "client_position": "Seeks clear terms so any violation can be enforced by law enforcement and the court.",
-      "id": "iss4"
+      "id": "iss1"
+    },
+    {
+      "issue": "Firearms prohibition and surrender during the order",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 4110",
+      "sub_questions": [
+        "Should the order prohibit the defendant from possessing firearms?",
+        "What surrender and verification terms are appropriate?"
+      ],
+      "strength": "moderate",
+      "client_position": "Asks the court to prohibit firearm possession and order surrender for the duration of the order.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Entitlement to relief on a protection from abuse complaint",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 4110",
+      "sub_questions": [
+        "Does the alleged conduct constitute abuse under the statute?",
+        "Which forms of relief (no contact, stay-away, residence, parental rights) are appropriate?"
+      ],
+      "strength": "moderate",
+      "client_position": "Seeks no contact and exclusive use of the residence based on the pattern of conduct and the most recent incident.",
+      "id": "iss3"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
       "expert": {
-        "name": "Beatrice S. Danforth",
+        "name": "Wesley B. Fairbanks",
         "field": "Domestic violence dynamics",
         "credentials": "LCSW",
         "retained_by": "plaintiff"
@@ -297,10 +273,10 @@
   ],
   "evidence": [
     {
-      "title": "Police incident report",
-      "type": "public_record",
+      "title": "Witness statement affidavit",
+      "type": "affidavit",
       "party": "plaintiff",
-      "description": "Report documenting law-enforcement response to a reported incident.",
+      "description": "Sworn statement from a witness corroborating the plaintiff's account.",
       "id": "ev1"
     },
     {
@@ -316,27 +292,6 @@
       "party": "plaintiff",
       "description": "Screenshots of messages from the defendant relevant to the no-contact request.",
       "id": "ev3"
-    },
-    {
-      "title": "Photographs of injuries and property damage",
-      "type": "photo",
-      "party": "plaintiff",
-      "description": "Dated photographs the plaintiff offers to corroborate the reported incidents.",
-      "id": "ev4"
-    },
-    {
-      "title": "Witness statement affidavit",
-      "type": "affidavit",
-      "party": "plaintiff",
-      "description": "Sworn statement from a witness corroborating the plaintiff's account.",
-      "id": "ev5"
-    },
-    {
-      "title": "Emergency department medical record",
-      "type": "medical_record",
-      "party": "plaintiff",
-      "description": "Record from an ER visit relevant to a reported incident.",
-      "id": "ev6"
     }
   ],
   "facts": {

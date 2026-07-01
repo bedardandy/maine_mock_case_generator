@@ -9,21 +9,22 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-490487",
+    "matter_id": "MMC-2025-846702",
     "practice_area": "civil",
     "title": "Small Claims of Grace C. Roe v. Maria Q. Fairbanks",
     "jurisdiction": {
       "state": "ME",
       "county": "Sagadahoc",
       "court_location": "Bath",
-      "court_type": "District Court"
+      "court_type": "District Court",
+      "court_address": "96 Federal Street, Bath, ME 04050"
     },
     "case_type": "small_claims",
     "filing_date": "2025-11-17",
     "status": "pre_filing",
     "summary": "Grace C. Roe, the sole proprietor of a freelance web-design practice, brings a small claims action in Sagadahoc County District Court against a former customer, Maria Q. Fairbanks, to collect the unpaid balance arising from unpaid invoice for completed services; the claim is within the $6,000 Maine small claims limit.",
     "event_date": "2025-05-27",
-    "docket_number": "SAG-SC-2025-199"
+    "docket_number": "SAG-SC-2025-164"
   },
   "parties": {
     "plaintiff": {
@@ -125,39 +126,39 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Desmond S. Noe",
+      "name": "Riverbend Studios Co.",
+      "type": "business_entity",
+      "role": "Collections agency",
+      "relevance": "The plaintiff consulted this agency about recovering the unpaid balance before deciding to file in small claims court.",
+      "contact": {
+        "phone": "(207) 555-0174",
+        "city": "Auburn",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Marcus H. Moe",
       "type": "witness",
       "role": "Employee who performed the work",
       "relationship": "Plaintiff's employee",
       "relevance": "Performed the work for the defendant and can testify that the services were completed as agreed.",
       "contact": {
-        "phone": "(207) 555-0187",
-        "city": "Lewiston",
+        "phone": "(207) 555-0110",
+        "city": "Farmington",
         "state": "ME",
-        "email": "desmond.noe@example.net"
-      }
-    },
-    {
-      "id": "tp2",
-      "name": "Lighthouse Studios Corp.",
-      "type": "business_entity",
-      "role": "Collections agency",
-      "relevance": "The plaintiff consulted this agency about recovering the unpaid balance before deciding to file in small claims court.",
-      "contact": {
-        "phone": "(207) 555-0131",
-        "city": "Orono",
-        "state": "ME"
+        "email": "marcus.moe@example.org"
       }
     },
     {
       "id": "tp3",
-      "name": "Lighthouse Trust Company",
+      "name": "Downeast Federal Savings",
       "type": "financial_institution",
       "role": "Bank where the check was drawn",
       "relevance": "The bank on which the defendant's returned check was drawn; can confirm the check was dishonored for insufficient funds.",
       "contact": {
-        "phone": "(207) 555-0138",
-        "city": "Lewiston",
+        "phone": "(207) 555-0136",
+        "city": "Yarmouth",
         "state": "ME"
       }
     }
@@ -220,42 +221,6 @@
   },
   "issues": [
     {
-      "issue": "Entitlement to post-judgment interest and costs",
-      "category": "civil",
-      "governing_law": "14 M.R.S. § 1602-C",
-      "sub_questions": [
-        "Is the plaintiff entitled to post-judgment interest on the award?",
-        "Are the filing fee and service costs recoverable?"
-      ],
-      "strength": "moderate",
-      "client_position": "The plaintiff is entitled to post-judgment interest and to recover allowable court costs.",
-      "id": "iss1"
-    },
-    {
-      "issue": "Small claims jurisdiction and the $6,000 monetary limit",
-      "category": "civil",
-      "governing_law": "14 M.R.S. § 7482",
-      "sub_questions": [
-        "Is the total amount in controversy at or below the $6,000 small claims limit?",
-        "Should any claimed interest or costs be counted toward that limit?"
-      ],
-      "strength": "strong",
-      "client_position": "The unpaid balance is within the $6,000 limit, so the District Court small claims docket has jurisdiction.",
-      "id": "iss2"
-    },
-    {
-      "issue": "Compliance with the Maine Rules of Small Claims Procedure",
-      "category": "civil",
-      "governing_law": "Maine Rules of Small Claims Procedure",
-      "sub_questions": [
-        "Is the Statement of Claim complete and properly served?",
-        "Is the defendant a proper party amenable to service in the county?"
-      ],
-      "strength": "strong",
-      "client_position": "The plaintiff will file a complete Statement of Claim and effect proper service under the rules.",
-      "id": "iss3"
-    },
-    {
       "issue": "Account stated for the unpaid invoice",
       "category": "civil",
       "governing_law": "Account stated (Maine common law)",
@@ -265,14 +230,38 @@
       ],
       "strength": "moderate",
       "client_position": "The invoice was rendered, partially paid, and never disputed, establishing an account stated.",
-      "id": "iss4"
+      "id": "iss1"
+    },
+    {
+      "issue": "Breach of the agreement to pay for the work",
+      "category": "civil",
+      "governing_law": "Breach of contract (Maine common law)",
+      "sub_questions": [
+        "Did the parties form an enforceable agreement on price and scope?",
+        "Did the plaintiff perform and the defendant fail to pay?"
+      ],
+      "strength": "moderate",
+      "client_position": "The plaintiff performed the agreed work and the defendant breached by failing to pay the balance.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Statute of limitations for a contract claim",
+      "category": "civil",
+      "governing_law": "14 M.R.S. § 752",
+      "sub_questions": [
+        "Did the claim accrue within the six-year limitations period?",
+        "Does the recent completion date keep the action timely?"
+      ],
+      "strength": "strong",
+      "client_position": "The debt arose in 2025, well within the six-year limitations period, so the action is timely.",
+      "id": "iss3"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
       "expert": {
-        "name": "Nadia S. Loe",
+        "name": "Malik W. Poe",
         "field": "Accounting / damages",
         "credentials": "CPA",
         "retained_by": "plaintiff"
@@ -284,10 +273,10 @@
   ],
   "evidence": [
     {
-      "title": "Written contract / signed work order",
-      "type": "contract",
+      "title": "Account / payment ledger",
+      "type": "financial_record",
       "party": "plaintiff",
-      "description": "The written agreement or work order describing the agreed scope and price of the work.",
+      "description": "The business ledger showing the charge, the $573 partial payment, and the outstanding balance.",
       "id": "ev1"
     },
     {
@@ -298,55 +287,38 @@
       "id": "ev2"
     },
     {
-      "title": "Account / payment ledger",
-      "type": "financial_record",
-      "party": "plaintiff",
-      "description": "The business ledger showing the charge, the $573 partial payment, and the outstanding balance.",
-      "id": "ev3"
-    },
-    {
-      "title": "Unpaid invoice",
-      "type": "financial_record",
-      "party": "plaintiff",
-      "description": "The invoice billed to the defendant for $3427 that remains unpaid.",
-      "id": "ev4"
-    },
-    {
       "title": "Demand letter",
       "type": "correspondence",
       "party": "plaintiff",
       "description": "The written demand for payment sent to the defendant on 2025-12-28.",
-      "id": "ev5"
+      "id": "ev3"
     },
     {
       "title": "Email and text exchanges acknowledging the debt",
       "type": "correspondence",
       "party": "plaintiff",
       "description": "Messages in which the defendant discusses the work and acknowledges owing for it.",
-      "id": "ev6"
+      "id": "ev4"
+    },
+    {
+      "title": "Unpaid invoice",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "The invoice billed to the defendant for $3427 that remains unpaid.",
+      "id": "ev5"
     }
   ],
   "financials": {
     "currency": "USD",
     "amounts": [
       {
-        "label": "Court filing fee",
-        "amount": 110,
-        "basis": "Small claims filing fee paid to the District Court."
-      },
-      {
         "label": "Invoice amount billed",
-        "amount": 1432,
+        "amount": 4783,
         "basis": "Total charged to the defendant for the work."
       },
       {
-        "label": "Claimed pre-judgment interest",
-        "amount": 31,
-        "basis": "Interest claimed on the overdue balance, if allowed."
-      },
-      {
         "label": "Amount already paid by defendant",
-        "amount": 748,
+        "amount": 713,
         "basis": "Partial payment received before the customer stopped paying."
       }
     ]
@@ -360,6 +332,8 @@
     "demand_letter_date": "2025-12-28",
     "written_contract": true,
     "interest_claimed": true,
-    "contract_status": "based on a written work order the customer signed"
+    "contract_status": "based on a written work order the customer signed",
+    "demand_recipient": "Maria Q. Fairbanks",
+    "response_deadline_days": 21
   }
 }

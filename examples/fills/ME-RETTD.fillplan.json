@@ -498,9 +498,19 @@
       "property_type": "residential condominium",
       "adjusted_assessed_value": 258061,
       "special_circumstances_explanation": "Partial-interest transfer between family members",
+      "financing": "seller financing",
+      "transfer_tax_exemption": false,
+      "record_return_to": "the Grantee at the property address",
+      "earnest_money": 6614,
+      "has_source_of_title": true,
+      "source_grantor": "Albert R. and Mary J. Stearns",
+      "source_deed_date": "1990-09-03",
+      "registry": "Sagadahoc County",
+      "source_book": 5970,
+      "source_page": 211,
       "deed_type": "quitclaim deed with covenant",
-      "financing": "conventional mortgage",
-      "transfer_tax_exemption": true
+      "covenant_type": "quitclaim_covenant",
+      "grantor_capacity": "individual"
     }
   }
 }

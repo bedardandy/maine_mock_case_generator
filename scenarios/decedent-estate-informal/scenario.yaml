@@ -28,15 +28,44 @@ parties:
 
 facts:
   date_of_death: {date_between: ["2025-06-01", "2026-03-31"]}
-  will_exists: {pick: [true, false]}
-  will_date: {date_between: ["2010-01-01", "2024-12-31"]}
   decedent_domicile_county: "{county}"
   relationship_to_decedent: {pick: ["surviving spouse", "adult son", "adult daughter", "sibling", "nephew"]}
   approximate_estate_value: {int_between: [45000, 850000]}
   real_property: {pick: [true, false]}
   num_heirs: {int_between: [1, 5]}
   bond_required: {pick: [true, false]}
-  probate_type: {pick: ["informal probate", "informal appointment"]}
+
+# Testacy drives the whole proceeding: an informal PROBATE of a will presupposes a
+# will (18-C M.R.S. § 3-301 et seq.); an informal APPOINTMENT in intestacy has no
+# will and therefore no will date. Rolling will_exists independently of will_date
+# produced "no will, dated 2014" contradictions. testacy is the ground-truth
+# discriminator the affidavit / PR-deed templates were guessing.
+variants:
+  - weight: 3
+    testacy: testate
+    will_exists: true
+    will_date: {date_between: ["2010-01-01", "2024-12-31"]}
+    probate_type: "informal probate"
+    proceeding_type: informal
+  - weight: 2
+    testacy: intestate
+    will_exists: false
+    will_date: null
+    probate_type: "informal appointment"
+    proceeding_type: informal
+  # EDGE CASE (plausible, uncommon): informal probate is NOT available, forcing a
+  # formal proceeding. Decision point: a minor/incapacitated heir, an objection or
+  # a competing will, a missing/lost original, or a demand for formal proceedings
+  # all require a formal petition adjudicated by the court (18-C M.R.S. § 3-401 et
+  # seq.) rather than the registrar's informal track (§ 3-301). The PR's authority
+  # and any heirship affidavit must reflect the formal posture.
+  - weight: 1
+    testacy: testate
+    will_exists: true
+    will_date: {date_between: ["2010-01-01", "2024-12-31"]}
+    probate_type: "formal testacy proceeding"
+    proceeding_type: formal
+    formal_reason: {pick: ["a minor heir requires a guardian ad litem", "an interested person demanded formal proceedings under 18-C M.R.S. § 3-401", "the original will cannot be located and a copy is offered", "a competing later will has surfaced"]}
 
 third_parties:
   count: {min: 2, max: 4}
@@ -134,3 +163,93 @@ financials:
     - {label: "Bank and brokerage accounts", amount: {int_between: [10000, 300000]}, basis: "Date-of-death balances of the decedent's cash and investment accounts."}
     - {label: "Vehicle and personal property", amount: {int_between: [3000, 40000]}, basis: "Estimated value of the decedent's vehicle and tangible personal property."}
     - {label: "Outstanding debts and claims", amount: {int_between: [2000, 60000]}, basis: "Funeral expenses, final medical bills, and other creditor claims presented against the estate."}
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING -- confounding SECONDARY issues gated to the chosen
+# testacy / proceeding variant so each only attaches where it is coherent.
+# Grounded in 18-C M.R.S.; AI-assembled
+# research, NOT legal advice (see DISCLAIMER.md). Correct rule stated inline.
+confounders:
+  count: {weights: [60, 27, 10, 3]} # ~60% of matters stay clean
+  pool:
+    # intestate spouse-share formula (intestate matters only)
+    - id: intestate-spouse-share-blended-family
+      weight: 3
+      requires: {testacy: intestate}
+      confidence: "well-settled (§ 2-102 four-scenario formula unambiguous); the blended-family branch is the trap"
+      source: "18-C M.R.S. § 2-101; § 2-102; § 2-103"
+      facts:
+        surviving_spouse: true
+        surviving_parent: false
+        all_descendants_joint: false
+        full_vs_partial_intestacy: full
+      issue:
+        issue: "Surviving spouse's intestate share where a descendant is not the spouse's child"
+        category: probate
+        governing_law: "18-C M.R.S. § 2-102; § 2-103"
+        sub_questions:
+          - "Which § 2-102 branch applies -- 100% (no descendants or parents), first $300,000 plus 3/4 (a parent but no descendants), first $100,000 plus 1/2 (the spouse has non-joint children), or a flat 1/2 (a surviving descendant is not the spouse's descendant)?"
+          - "OVERBROAD-RISK / correct rule: do NOT hardcode 'spouse takes everything' -- the blended-family branch gives the spouse only one-half; § 2-102 dollar thresholds are inflation-adjusted under § 1-108."
+        strength: moderate
+        notes: "The § 2-102 spouse share turns on blended-family status, not on marriage alone; balance passes per capita at each generation under § 2-103."
+    # informal pulled to formal / supervised (informal matters only)
+    - id: pulled-to-formal-or-supervised
+      weight: 3
+      requires: {proceeding_type: informal}
+      confidence: "well-settled (three administration tracks are clear under §§ 3-301 / 3-401 / 3-501)"
+      source: "18-C M.R.S. § 3-301; § 3-401; § 3-501"
+      facts:
+        beneficiary_disputes: true
+        creditor_disputes: {pick: [true, false]}
+        appointment_contested: true
+        supervised_requested: true
+        administration_track: supervised
+      issue:
+        issue: "Whether the informal track is still available or the estate must proceed formally / under supervised administration"
+        category: probate
+        governing_law: "18-C M.R.S. § 3-301; § 3-401; § 3-501"
+        sub_questions:
+          - "Does a beneficiary or creditor dispute (or a demand for formal proceedings) defeat informal probate under § 3-301 and require a formal petition under § 3-401?"
+          - "Is supervised administration under § 3-501 warranted, so that distributions need court approval?"
+          - "OVERBROAD-RISK / correct rule: do NOT default to informal where a contest or conflict exists -- an informal appointment is ex parte and cannot resolve contested devises, so proceeding informally would have the personal representative act without authority."
+        strength: moderate
+        notes: "An informal estate can be pulled to formal or supervised by an interested person's petition."
+    # omitted spouse / after-born child + elective share (testate matters only)
+    - id: omitted-spouse-or-child-and-election
+      weight: 2
+      requires: {testacy: testate}
+      confidence: "§ 2-301 / § 2-302 High; augmented-estate elective-share formula Medium (multi-step §§ 2-203 to 2-210)"
+      source: "18-C M.R.S. § 2-202; § 2-211; § 2-301; § 2-302"
+      facts:
+        postmarital_will: true
+        will_made_in_contemplation_of_marriage: false
+        outside_provision_for_spouse: false
+        num_after_born_children: {int_between: [0, 2]}
+        omission_intentional: false
+      issue:
+        issue: "Omitted spouse / omitted after-born child and a possible elective-share claim"
+        category: probate
+        governing_law: "18-C M.R.S. § 2-301; § 2-302; § 2-202; § 2-211"
+        sub_questions:
+          - "Was the will executed before the marriage, so an omitted spouse takes an intestate share under § 2-301 unless the will was made in contemplation of the marriage or made other provision?"
+          - "Does an after-born or after-adopted child take an intestate share under § 2-302 unless the omission was intentional or other provision was made?"
+          - "OVERBROAD-RISK / correct rule: the elective share is NOT a flat one-third -- under § 2-202 it is 50% of the marital-property portion of the augmented estate, scaling with marriage length (§§ 2-203 ff.), and the § 2-211 deadline is the LATER of 9 months after death or 6 months after probate."
+        strength: moderate
+        notes: "Use the MUPC augmented-estate share and the dual § 2-211 deadline, not the pre-2019 flat one-third / single 9-month rule."
+    # creditor nonclaim timing (any matter)
+    - id: creditor-nonclaim-timing
+      weight: 3
+      confidence: "well-settled (§ 3-803 timing unambiguous)"
+      source: "18-C M.R.S. § 3-803; § 3-801; § 3-1201"
+      facts:
+        notice_published: {pick: [true, false]}
+        notice_first_publication_date: {date_between: ["2025-07-01", "2026-02-01"]}
+        claim_filed_date: {date_between: ["2025-11-01", "2026-06-01"]}
+      issue:
+        issue: "Whether a presented creditor claim is barred by the nonclaim period"
+        category: probate
+        governing_law: "18-C M.R.S. § 3-803"
+        sub_questions:
+          - "Is the claim barred because it was presented after the EARLIER of 9 months after death or 4 months after first published § 3-801 notice (liens and insurance excepted)?"
+          - "OVERBROAD-RISK / correct rule: if no § 3-801 notice was ever published the 4-month clock never starts, but the 9-month-after-death hard bar still runs; a § 3-1201 small-estate affidavit (net personalty at or below the inflation-adjusted threshold) bypasses publication so its 4-month clock likewise never begins."
+        strength: moderate
+        notes: "Run the § 3-803 'earlier of' clock; do not assume a 4-month bar where no notice was published."

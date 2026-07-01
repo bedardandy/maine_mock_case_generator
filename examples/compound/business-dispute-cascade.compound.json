@@ -91,17 +91,21 @@
         "generator": "deterministic-engine",
         "generator_version": "0.1.0",
         "scenario_id": "business-formation-scorp",
-        "seed": 7001
+        "seed": 7001,
+        "confounders": [
+          "scorp-entity-type-confusion"
+        ]
       },
       "matter": {
-        "matter_id": "MMC-2026-560900",
+        "matter_id": "MMC-2026-237139",
         "practice_area": "business",
         "title": "Formation of Evergreen Analytics LLC and S-Corporation Election by Nadia P. Loe",
         "jurisdiction": {
           "state": "ME",
           "county": "Kennebec",
           "court_location": "Augusta",
-          "court_type": "Maine Secretary of State / IRS (filing offices)"
+          "court_type": "Maine Secretary of State / IRS (filing offices)",
+          "court_address": "121 State Street, Augusta, ME 04089"
         },
         "case_type": "entity_formation",
         "filing_date": "2026-04-30",
@@ -205,27 +209,51 @@
       "third_parties": [
         {
           "id": "tp1",
-          "name": "Diego T. Ashford",
+          "name": "Eleanor T. Roe",
           "type": "witness",
-          "role": "Co-founder and shareholder",
-          "relationship": "Fellow shareholder of the corporation",
-          "relevance": "A second shareholder whose eligibility affects the S-corporation election and who must consent on Form 2553.",
+          "role": "Accountant",
+          "relationship": "Company's CPA",
+          "relevance": "Advises on the S-election, reasonable compensation, payroll setup, and prepares the corporation's federal and Maine tax filings.",
           "contact": {
-            "phone": "(207) 555-0151",
-            "city": "Augusta",
+            "phone": "(207) 555-0198",
+            "city": "Waterville",
             "state": "ME",
-            "email": "diego.ashford@example.net"
+            "email": "eleanor.roe@example.net"
           }
         },
         {
           "id": "tp2",
+          "name": "Maine Secretary of State",
+          "type": "government_agency",
+          "role": "State filing office",
+          "relevance": "Receives and approves the Articles of Incorporation under the Maine Business Corporation Act.",
+          "contact": {
+            "phone": "(207) 555-0163",
+            "city": "Bangor",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp3",
+          "name": "Granite State Credit Union",
+          "type": "financial_institution",
+          "role": "Business bank",
+          "relevance": "Holds the corporation's operating account, which is opened using the new EIN once issued.",
+          "contact": {
+            "phone": "(207) 555-0138",
+            "city": "Bangor",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp4",
           "name": "Internal Revenue Service",
           "type": "government_agency",
           "role": "Federal tax authority",
           "relevance": "Issues the EIN on Form SS-4 and processes the Form 2553 S-corporation election.",
           "contact": {
-            "phone": "(207) 555-0198",
-            "city": "Waterville",
+            "phone": "(207) 555-0158",
+            "city": "Farmington",
             "state": "ME"
           }
         }
@@ -283,21 +311,21 @@
           "Blowing the S-election deadline and losing pass-through treatment for the first year."
         ],
         "constraints": {
-          "budget": "Limited; prefers to handle routine filings in-house with counsel reviewing the elections.",
+          "budget": "Modest startup budget; wants the formation and elections done right the first time.",
           "timeline": "Needs the EIN and Form 2553 filed in time for the election to be effective on the incorporation date."
         }
       },
       "issues": [
         {
-          "issue": "Maine corporate registration and employer withholding obligations",
+          "issue": "Pass-through treatment and owner fringe-benefit rules",
           "category": "business",
-          "governing_law": "13-C M.R.S. (formation); 36 M.R.S. § 5102 et seq. and § 5250 (income tax and withholding)",
+          "governing_law": "IRC § 1366 and § 1372",
           "sub_questions": [
-            "Are the Articles of Incorporation compliant with the Maine Business Corporation Act?",
-            "When must the corporation register for and begin Maine income-tax withholding on wages?"
+            "How do items of income, loss, and deduction pass through to the shareholders?",
+            "Which fringe benefits are limited for more-than-2% shareholder-employees?"
           ],
-          "strength": "strong",
-          "client_position": "The corporation will file compliant Articles and register with Maine Revenue Services for corporate income tax and employer withholding before the first payroll.",
+          "strength": "moderate",
+          "client_position": "The founder seeks full pass-through treatment and to structure any owner fringe benefits in light of the 2% shareholder-employee rules.",
           "id": "iss1"
         },
         {
@@ -313,6 +341,30 @@
           "id": "iss2"
         },
         {
+          "issue": "Maine corporate registration and employer withholding obligations",
+          "category": "business",
+          "governing_law": "13-C M.R.S. (formation); 36 M.R.S. § 5102 et seq. and § 5250 (income tax and withholding)",
+          "sub_questions": [
+            "Are the Articles of Incorporation compliant with the Maine Business Corporation Act?",
+            "When must the corporation register for and begin Maine income-tax withholding on wages?"
+          ],
+          "strength": "strong",
+          "client_position": "The corporation will file compliant Articles and register with Maine Revenue Services for corporate income tax and employer withholding before the first payroll.",
+          "id": "iss3"
+        },
+        {
+          "issue": "Eligibility of the corporation and its shareholders to elect S status",
+          "category": "business",
+          "governing_law": "IRC § 1361",
+          "sub_questions": [
+            "Are all shareholders eligible (individuals, estates, or qualifying trusts) and within the 100-shareholder limit?",
+            "Does the corporation have only one class of stock as required?"
+          ],
+          "strength": "strong",
+          "client_position": "The corporation has eligible individual shareholders and a single class of stock, so it qualifies as a small business corporation.",
+          "id": "iss4"
+        },
+        {
           "issue": "Obtaining an Employer Identification Number on Form SS-4",
           "category": "business",
           "governing_law": "IRC § 6109; Form SS-4 instructions",
@@ -322,68 +374,71 @@
           ],
           "strength": "strong",
           "client_position": "Nadia P. Loe is the responsible party and will apply for the EIN reporting the corporation's principal activity of retail of specialty goods.",
-          "id": "iss3"
-        }
-      ],
-      "expert_opinions": [
+          "id": "iss5"
+        },
         {
-          "id": "exp1",
-          "expert": {
-            "name": "Olivia R. Noe",
-            "field": "Business valuation",
-            "credentials": "CVA",
-            "retained_by": "applicant"
-          },
-          "topic": "Valuation support for owner compensation and initial capitalization",
-          "opinion": "The planned owner salary falls within a defensible range for the services rendered and the corporation's projected operations.",
-          "basis": "Market compensation data, the business plan, and the initial capitalization."
+          "issue": "An 'S corporation' is a federal tax election, not a Maine entity type",
+          "category": "business",
+          "governing_law": "13-C M.R.S. § 101 et seq.; I.R.C. § 1361; 36 M.R.S. § 5102(1-A)",
+          "sub_questions": [
+            "Is the client treating 'S-corp' as an entity type? It is not: an S corporation is an ordinary 13-C M.R.S. corporation that has made a federal Subchapter S election under I.R.C. § 1361, which Maine recognizes only for income-tax conformity (36 M.R.S. § 5102(1-A)).",
+            "Is the entity therefore governed by the CORRECT instruments — bylaws and a shareholder agreement under 13-C M.R.S. — and not a 31 M.R.S. LLC operating agreement?"
+          ],
+          "strength": "strong",
+          "client_position": "The founder calls the company an 'S-corp,' but the engagement must treat it as a 13-C corporation that will make a federal S election.",
+          "notes": "Overbroad-risk: S-corp eligibility limits (the 100-shareholder cap, single-class-of-stock rule, and eligible-shareholder rules) are FEDERAL under I.R.C. § 1361(b) — do not attribute them to Maine statute. [confounder:scorp-entity-type-confusion; High — entity taxonomy well-settled; the client's mislabel is fact-specific]",
+          "id": "iss6"
         }
       ],
       "evidence": [
         {
-          "title": "IRS Form 2553 S-election",
+          "title": "IRS Form SS-4 application",
           "type": "document",
-          "party": "company",
-          "description": "The Election by a Small Business Corporation, with shareholder consents, electing S status effective 2026-03-16.",
+          "party": "applicant",
+          "description": "The Application for Employer Identification Number identifying Nadia P. Loe as the responsible party.",
           "id": "ev1"
-        },
-        {
-          "title": "Shareholder agreement",
-          "type": "contract",
-          "party": "company",
-          "description": "The agreement among the shareholders covering ownership, transfer restrictions, and the S-election.",
-          "id": "ev2"
         },
         {
           "title": "Initial capitalization / cap table",
           "type": "financial_record",
           "party": "company",
           "description": "The cap table showing the 3 shareholder(s) and their initial capital contributions.",
+          "id": "ev2"
+        },
+        {
+          "title": "IRS Form 2553 S-election",
+          "type": "document",
+          "party": "company",
+          "description": "The Election by a Small Business Corporation, with shareholder consents, electing S status effective 2026-03-16.",
           "id": "ev3"
+        },
+        {
+          "title": "Shareholder agreement",
+          "type": "contract",
+          "party": "company",
+          "description": "The agreement among the shareholders covering ownership, transfer restrictions, and the S-election.",
+          "id": "ev4"
+        },
+        {
+          "title": "Articles of Incorporation filed with the Maine Secretary of State",
+          "type": "public_record",
+          "party": "company",
+          "description": "The filed Articles establishing Evergreen Analytics LLC as a Maine corporation.",
+          "id": "ev5"
         }
       ],
       "financials": {
         "currency": "USD",
         "amounts": [
           {
-            "label": "Expected first-year revenue",
-            "amount": 178920,
-            "basis": "Projected gross receipts for the corporation's first tax year."
-          },
-          {
-            "label": "Planned owner reasonable compensation",
-            "amount": 78221,
-            "basis": "Annual W-2 wages planned for the owner-employee."
-          },
-          {
             "label": "Estimated first-year payroll",
-            "amount": 7279,
+            "amount": 3627,
             "basis": "Total projected wages for all employees in the first year."
           },
           {
-            "label": "Initial capital contributed",
-            "amount": 101850,
-            "basis": "Total cash and property contributed by the shareholders at formation."
+            "label": "Expected first-year revenue",
+            "amount": 664251,
+            "basis": "Projected gross receipts for the corporation's first tax year."
           }
         ]
       },
@@ -405,12 +460,17 @@
         "principal_activity": "retail of specialty goods",
         "expected_first_year_revenue": 162577,
         "responsible_party_name": "Nadia P. Loe",
-        "reasonable_compensation": 39970
+        "reasonable_compensation": 39970,
+        "entity_mislabeled_as_scorp_type": true,
+        "governing_act": "13-C M.R.S. (Maine Business Corporation Act)",
+        "internal_governance_instrument": "bylaws and a shareholder agreement",
+        "llc_operating_agreement_applies": false,
+        "s_corp_is_federal_tax_election": true
       },
       "related_matters": [
         {
           "universe_id": "UNIV-business-dispute-cascade-0007",
-          "matter_id": "MMC-2025-462859",
+          "matter_id": "MMC-2025-748380",
           "scenario_id": "complex-civil-litigation",
           "relationship": "precedes",
           "description": "The company and its S-election set up the entity later sued by its investors."
@@ -428,21 +488,22 @@
         "seed": 7002
       },
       "matter": {
-        "matter_id": "MMC-2025-462859",
+        "matter_id": "MMC-2025-748380",
         "practice_area": "civil",
         "title": "Fairbanks et al. v. Evergreen Analytics LLC et al.",
         "jurisdiction": {
           "state": "ME",
           "county": "Cumberland",
           "court_location": "Portland",
-          "court_type": "Superior Court"
+          "court_type": "Superior Court",
+          "court_address": "127 State Street, Portland, ME 04019"
         },
         "case_type": "civil",
         "filing_date": "2025-01-14",
         "status": "active",
         "summary": "Felix B. Fairbanks and Rosa B. Ellsworth invested in a purchase of LLC membership interests of Evergreen Analytics LLC and now sue the company, its CEO Nadia P. Loe, and (by third-party complaint) its outside auditor, alleging the offering misrepresented undisclosed contingent liabilities.",
         "event_date": "2022-11-18",
-        "docket_number": "CUM-CV-2025-528",
+        "docket_number": "CUM-CV-2025-740",
         "universe_id": "UNIV-business-dispute-cascade-0007"
       },
       "parties": {
@@ -569,62 +630,37 @@
       "third_parties": [
         {
           "id": "tp1",
-          "name": "Lighthouse Trust Company",
-          "type": "financial_institution",
-          "role": "Escrow agent",
-          "relevance": "Held the investment proceeds at closing; records trace the use of funds.",
-          "contact": {
-            "phone": "(207) 555-0169",
-            "city": "Lewiston",
-            "state": "ME"
-          }
-        },
-        {
-          "id": "tp2",
-          "name": "Northstar Outfitters Inc.",
-          "type": "business_entity",
-          "role": "Placement agent",
-          "relevance": "Marketed the securities to the plaintiffs.",
-          "contact": {
-            "phone": "(207) 555-0168",
-            "city": "Bangor",
-            "state": "ME"
-          }
-        },
-        {
-          "id": "tp3",
-          "name": "Omar Q. Doe",
-          "type": "witness",
-          "role": "Former board member",
-          "relevance": "Attended the board meetings where the projections were approved.",
-          "contact": {
-            "phone": "(207) 555-0152",
-            "city": "Bangor",
-            "state": "ME",
-            "email": "omar.doe@example.com"
-          }
-        },
-        {
-          "id": "tp4",
-          "name": "Rosa Q. Fairbanks",
+          "name": "Nadia W. Danforth",
           "type": "expert",
           "role": "Industry analyst",
           "relevance": "Covered the company and can speak to market expectations.",
           "contact": {
-            "phone": "(207) 555-0159",
-            "city": "Falmouth",
+            "phone": "(207) 555-0170",
+            "city": "Bangor",
             "state": "ME",
-            "email": "rosa.fairbanks@example.net"
+            "email": "nadia.danforth@example.net"
           }
         },
         {
-          "id": "tp5",
+          "id": "tp2",
           "name": "Maine Office of Securities",
           "type": "government_agency",
           "role": "State securities regulator",
           "relevance": "Opened a parallel inquiry into the offering.",
           "contact": {
-            "phone": "(207) 555-0135",
+            "phone": "(207) 555-0158",
+            "city": "Camden",
+            "state": "ME"
+          }
+        },
+        {
+          "id": "tp3",
+          "name": "Riverbend Outfitters LLC",
+          "type": "business_entity",
+          "role": "Placement agent",
+          "relevance": "Marketed the securities to the plaintiffs.",
+          "contact": {
+            "phone": "(207) 555-0184",
             "city": "Falmouth",
             "state": "ME"
           }
@@ -682,16 +718,16 @@
           "A walk-away that leaves the misrepresentation unaddressed."
         ],
         "constraints": {
-          "budget": "Substantial but monitored; the plaintiffs want staged budgets per phase.",
+          "budget": "Funded through trial, but settlement is preferred if value is fair.",
           "timeline": "Wants the case trial-ready within roughly eighteen months of filing."
         }
       },
       "issues": [
         {
-          "issue": "Whether any claims are time-barred",
-          "category": "procedure",
-          "governing_law": "14 M.R.S. § 752",
-          "strength": "weak",
+          "issue": "Whether the offering materials contained actionable misrepresentations",
+          "category": "securities",
+          "governing_law": "Common law fraud; 5 M.R.S. § 207",
+          "strength": "moderate",
           "id": "iss1"
         },
         {
@@ -720,7 +756,7 @@
         {
           "id": "exp1",
           "expert": {
-            "name": "John G. Ashford",
+            "name": "Diego J. Larkspur",
             "field": "Forensic accounting",
             "credentials": "CPA, CFF",
             "retained_by": "plaintiff"
@@ -732,94 +768,104 @@
         {
           "id": "exp2",
           "expert": {
-            "name": "Jane A. Calloway",
-            "field": "Business valuation",
-            "credentials": "ASA",
+            "name": "Beatrice K. Kingsley",
+            "field": "Auditing standards",
+            "credentials": "CPA",
+            "retained_by": "third_party_defendant"
+          },
+          "topic": "Compliance with generally accepted auditing standards",
+          "opinion": "The audit conformed to professional standards given the information available.",
+          "basis": "Audit file and GAAS checklist."
+        },
+        {
+          "id": "exp3",
+          "expert": {
+            "name": "Maria G. Roe",
+            "field": "Damages economics",
+            "credentials": "Ph.D.",
             "retained_by": "plaintiff"
           },
-          "topic": "But-for value of the investment",
-          "opinion": "The securities were worth materially less than the price paid at closing.",
-          "basis": "Market and income approaches applied to corrected financials."
+          "topic": "Out-of-pocket and benefit-of-the-bargain damages",
+          "opinion": "Plaintiffs' recoverable loss approximates the amount in controversy.",
+          "basis": "Event study and cash-flow modeling."
+        },
+        {
+          "id": "exp4",
+          "expert": {
+            "name": "John G. Ashford",
+            "field": "Corporate governance",
+            "credentials": "J.D., Ph.D.",
+            "retained_by": "defendant"
+          },
+          "topic": "Application of the business judgment rule",
+          "opinion": "The CEO's decisions fell within a reasonable range of business judgment.",
+          "basis": "Board minutes and contemporaneous records."
         }
       ],
       "evidence": [
-        {
-          "title": "Whistleblower memorandum",
-          "type": "document",
-          "party": "plaintiff",
-          "description": "The former VP of Finance's internal memo flagging the issue.",
-          "id": "ev1"
-        },
         {
           "title": "Email thread on revenue recognition",
           "type": "correspondence",
           "party": "defendant",
           "description": "Internal emails discussing the accounting treatment.",
-          "id": "ev2"
-        },
-        {
-          "title": "Private offering memorandum",
-          "type": "document",
-          "party": "plaintiff",
-          "description": "The offering deck and PPM relied upon by the plaintiffs.",
-          "id": "ev3"
-        },
-        {
-          "title": "Escrow account statements",
-          "type": "financial_record",
-          "party": "plaintiff",
-          "description": "Records tracing the use of the investment proceeds.",
-          "id": "ev4"
-        },
-        {
-          "title": "Plaintiffs' expert report",
-          "type": "affidavit",
-          "party": "plaintiff",
-          "description": "Forensic accounting and damages report.",
-          "id": "ev5"
-        },
-        {
-          "title": "Board meeting minutes",
-          "type": "document",
-          "party": "defendant",
-          "description": "Minutes approving the projections and offering.",
-          "id": "ev6"
+          "id": "ev1"
         },
         {
           "title": "Securities purchase agreement",
           "type": "contract",
           "party": "plaintiff",
           "description": "The executed agreement governing the investment.",
-          "id": "ev7"
+          "id": "ev2"
+        },
+        {
+          "title": "Board meeting minutes",
+          "type": "document",
+          "party": "defendant",
+          "description": "Minutes approving the projections and offering.",
+          "id": "ev3"
+        },
+        {
+          "title": "Plaintiffs' expert report",
+          "type": "affidavit",
+          "party": "plaintiff",
+          "description": "Forensic accounting and damages report.",
+          "id": "ev4"
+        },
+        {
+          "title": "Audited financial statements",
+          "type": "financial_record",
+          "party": "third_party_defendant",
+          "description": "The audited statements at the center of the dispute.",
+          "id": "ev5"
         }
       ],
       "financials": {
         "currency": "USD",
         "amounts": [
           {
-            "label": "Compensatory damages sought",
-            "amount": 7859167,
-            "basis": "Out-of-pocket and benefit-of-the-bargain loss."
-          },
-          {
-            "label": "Estimated plaintiff-side fees and costs through trial",
-            "amount": 1387054,
-            "basis": "Litigation budget."
-          },
-          {
-            "label": "Plaintiffs' investment at risk",
-            "amount": 429008,
-            "basis": "Capital committed at closing."
-          },
-          {
             "label": "Expert witness fees",
-            "amount": 265994,
+            "amount": 130715,
             "basis": "Retained experts."
           },
           {
+            "label": "Estimated plaintiff-side fees and costs through trial",
+            "amount": 715085,
+            "basis": "Litigation budget."
+          },
+          {
             "label": "Punitive damages sought",
-            "amount": 597857,
+            "amount": 2270856,
             "basis": "Alleged knowing misrepresentation."
+          },
+          {
+            "label": "Compensatory damages sought",
+            "amount": 2958139,
+            "basis": "Out-of-pocket and benefit-of-the-bargain loss."
+          },
+          {
+            "label": "Plaintiffs' investment at risk",
+            "amount": 1108118,
+            "basis": "Capital committed at closing."
           }
         ]
       },
@@ -917,9 +963,9 @@
         ],
         "affirmative_defenses": [
           {
-            "defense": "Statute of frauds",
+            "defense": "Failure to state a claim",
             "by": "Evergreen Analytics LLC",
-            "basis": "Any oral representations are unenforceable."
+            "basis": "The complaint does not plead fraud with particularity. M.R. Civ. P. 9(b)."
           },
           {
             "defense": "Business judgment rule",
@@ -927,9 +973,19 @@
             "basis": "The challenged decisions were informed, good-faith business judgments."
           },
           {
-            "defense": "Failure to state a claim",
+            "defense": "Statute of frauds",
             "by": "Evergreen Analytics LLC",
-            "basis": "The complaint does not plead fraud with particularity. M.R. Civ. P. 9(b)."
+            "basis": "Any oral representations are unenforceable."
+          },
+          {
+            "defense": "Waiver and estoppel",
+            "by": "Evergreen Analytics LLC",
+            "basis": "The plaintiffs ratified the transaction by accepting later disclosures."
+          },
+          {
+            "defense": "Statute of limitations",
+            "by": "Evergreen Analytics LLC",
+            "basis": "Claims accrued more than six years before filing. 14 M.R.S. § 752."
           }
         ],
         "counterclaims": [
@@ -966,130 +1022,179 @@
         ],
         "discovery": [
           {
-            "type": "request_for_production",
+            "type": "interrogatories",
             "propounding_party": "Felix B. Fairbanks",
-            "responding_party": "Northstar Builders LLC",
-            "served_date": "2025-05-09",
-            "status": "compelled",
-            "description": "Requests for the audit workpapers."
+            "responding_party": "Evergreen Analytics LLC",
+            "served_date": "2025-03-27",
+            "status": "responded",
+            "description": "First set of interrogatories on the offering and accounting."
           },
           {
             "type": "deposition",
             "propounding_party": "Felix B. Fairbanks",
             "responding_party": "Nadia P. Loe",
-            "served_date": "2025-06-30",
+            "served_date": "2025-06-20",
             "status": "outstanding",
             "description": "Deposition of the CEO."
-          },
-          {
-            "type": "deposition",
-            "propounding_party": "Evergreen Analytics LLC",
-            "responding_party": "Felix B. Fairbanks",
-            "served_date": "2025-06-02",
-            "status": "served",
-            "description": "Deposition of the lead plaintiff."
           },
           {
             "type": "expert_disclosure",
             "propounding_party": "Felix B. Fairbanks",
             "responding_party": "Evergreen Analytics LLC",
-            "served_date": "2025-09-05",
+            "served_date": "2025-08-09",
             "status": "served",
             "description": "Plaintiffs' expert designations and reports."
           },
           {
-            "type": "request_for_production",
+            "type": "request_for_admission",
+            "propounding_party": "Evergreen Analytics LLC",
+            "responding_party": "Felix B. Fairbanks",
+            "served_date": "2025-05-25",
+            "status": "responded",
+            "description": "Admissions on diligence and reliance."
+          },
+          {
+            "type": "subpoena",
             "propounding_party": "Felix B. Fairbanks",
-            "responding_party": "Evergreen Analytics LLC",
-            "served_date": "2025-04-10",
-            "status": "objected",
-            "description": "Requests for financial records, board materials, and emails."
+            "responding_party": "the escrow agent",
+            "served_date": "2025-05-21",
+            "status": "served",
+            "description": "Subpoena for escrow account records."
           }
         ],
         "motions": [
           {
-            "title": "Motion for partial summary judgment",
-            "type": "dispositive",
-            "movant": "Evergreen Analytics LLC",
-            "filed_date": "2025-10-28",
-            "status": "under_advisement",
-            "relief": "Judgment on the negligent-misrepresentation count."
-          },
-          {
-            "title": "Motion to amend to add a punitive damages claim",
-            "type": "pleading",
-            "movant": "Felix B. Fairbanks",
-            "filed_date": "2025-09-07",
-            "status": "opposed",
-            "relief": "Leave to add a punitive damages demand."
-          },
-          {
             "title": "Motion in limine to exclude the damages expert",
             "type": "evidentiary",
             "movant": "Evergreen Analytics LLC",
-            "filed_date": "2026-02-04",
+            "filed_date": "2026-03-08",
             "status": "filed",
             "relief": "Exclusion of the plaintiffs' damages model."
+          },
+          {
+            "title": "Motion for partial summary judgment",
+            "type": "dispositive",
+            "movant": "Evergreen Analytics LLC",
+            "filed_date": "2025-11-03",
+            "status": "under_advisement",
+            "relief": "Judgment on the negligent-misrepresentation count."
           },
           {
             "title": "Motion to dismiss for failure to state a claim",
             "type": "dispositive",
             "movant": "Evergreen Analytics LLC",
-            "filed_date": "2025-03-15",
+            "filed_date": "2025-02-28",
             "status": "denied",
             "relief": "Dismissal of the fraud and UTPA counts."
-          },
-          {
-            "title": "Motion for a protective order",
-            "type": "discovery",
-            "movant": "Evergreen Analytics LLC",
-            "filed_date": "2025-05-19",
-            "status": "granted_in_part",
-            "relief": "Protection of trade-secret financial information."
           }
         ],
         "docket": [
           {
-            "date": "2025-01-12",
+            "date": "2025-01-14",
+            "entry": "Complaint filed and served on the defendants.",
+            "party": "us"
+          },
+          {
+            "date": "2025-01-20",
             "entry": "Complaint and demand for jury trial filed.",
             "party": "Felix B. Fairbanks"
           },
           {
-            "date": "2025-02-15",
+            "date": "2025-02-07",
+            "entry": "Defendants served their Answer asserting affirmative defenses and a Counterclaim for breach of contract and tortious interference.",
+            "party": "opposing"
+          },
+          {
+            "date": "2025-02-12",
             "entry": "Defendants' answer, counterclaims, and cross-claim filed.",
             "party": "Evergreen Analytics LLC"
           },
           {
-            "date": "2025-02-24",
+            "date": "2025-02-26",
             "entry": "Third-party complaint against the auditor filed.",
             "party": "Evergreen Analytics LLC"
           },
           {
-            "date": "2025-03-15",
+            "date": "2025-03-07",
+            "entry": "Defendants filed a Motion to Dismiss Count III (negligent misrepresentation) under M.R. Civ. P. 12(b)(6).",
+            "party": "opposing"
+          },
+          {
+            "date": "2025-03-12",
             "entry": "Scheduling order entered; discovery deadline set.",
             "party": "the court"
           },
           {
-            "date": "2025-04-07",
+            "date": "2025-04-02",
+            "entry": "Client reports the defendants are liquidating the disputed inventory and moving sale proceeds offshore, threatening to defeat any judgment.",
+            "party": "client"
+          },
+          {
+            "date": "2025-04-14",
             "entry": "Order denying the motion to dismiss.",
             "party": "the court"
           },
           {
-            "date": "2025-06-06",
+            "date": "2025-06-14",
             "entry": "Order compelling production of the audit workpapers.",
             "party": "the court"
           },
           {
-            "date": "2025-09-20",
+            "date": "2025-09-07",
             "entry": "Plaintiffs' expert reports served; discovery continues.",
             "party": "Felix B. Fairbanks"
           }
         ],
         "trial": {
           "jury": true,
-          "estimated_days": 9,
-          "scheduled_date": "2026-09-13"
-        }
+          "estimated_days": 11,
+          "scheduled_date": "2026-09-27"
+        },
+        "procedure": [
+          {
+            "date": "2025-01-14",
+            "day": 0,
+            "actor": "us",
+            "event": "Complaint filed and served on the defendants.",
+            "produces": [
+              "litigation__pleading"
+            ]
+          },
+          {
+            "date": "2025-02-07",
+            "day": 24,
+            "actor": "opposing",
+            "event": "Defendants served their Answer asserting affirmative defenses and a Counterclaim for breach of contract and tortious interference.",
+            "produces": [
+              "litigation__reply"
+            ],
+            "response_deadline": "2025-02-28",
+            "deadline_rule": "M.R. Civ. P. 7(a) / 12(a) — reply to a counterclaim within 21 days of service."
+          },
+          {
+            "date": "2025-03-07",
+            "day": 52,
+            "actor": "opposing",
+            "event": "Defendants filed a Motion to Dismiss Count III (negligent misrepresentation) under M.R. Civ. P. 12(b)(6).",
+            "produces": [
+              "litigation__opposition"
+            ],
+            "response_deadline": "2025-03-28",
+            "deadline_rule": "M.R. Civ. P. 7(b)(1)(A) — opposition to a motion within 21 days."
+          },
+          {
+            "date": "2025-04-02",
+            "day": 78,
+            "actor": "client",
+            "event": "Client reports the defendants are liquidating the disputed inventory and moving sale proceeds offshore, threatening to defeat any judgment.",
+            "produces": [
+              "litigation__emergency_motion"
+            ],
+            "response_deadline": "2025-04-02",
+            "deadline_rule": "M.R. Civ. P. 65 — motion for a temporary restraining order / preliminary injunction; attachment under M.R. Civ. P. 4A/4B.",
+            "urgent": true
+          }
+        ]
       },
       "facts": {
         "company_name": "Evergreen Analytics LLC",
@@ -1101,12 +1206,14 @@
         "amount_in_controversy": 1921386,
         "demand_made": true,
         "class_action": true,
-        "auditor_role": "issued the audited financial statements relied upon in the offering"
+        "auditor_role": "issued the audited financial statements relied upon in the offering",
+        "relief_requested": "rescission, disgorgement, and compensatory damages",
+        "governmental_codefendant": false
       },
       "related_matters": [
         {
           "universe_id": "UNIV-business-dispute-cascade-0007",
-          "matter_id": "MMC-2026-560900",
+          "matter_id": "MMC-2026-237139",
           "scenario_id": "business-formation-scorp",
           "relationship": "arises_from",
           "description": "The investors sue the very company formed in the formation matter, along with its founder and auditor."

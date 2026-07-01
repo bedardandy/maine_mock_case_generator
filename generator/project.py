@@ -10,6 +10,9 @@ _CANONICAL_PARTY_FIELDS = (
     "full_name", "first_name", "middle_name", "last_name",
     "address", "city", "state", "zip", "phone", "email",
     "date_of_birth", "signature", "bar_number",
+    # entity identity / firm — a represented attorney carries its firm in
+    # organization_name; dropping it lost firm_name downstream.
+    "organization_name", "entity_type", "entity_kind", "title",
 )
 
 # "client" is intentionally not projected as a party because it aliases another
@@ -51,6 +54,8 @@ def project_to_canonical(matter: dict) -> dict:
         canonical_matter["court_location"] = jurisdiction["court_location"]
     if jurisdiction.get("court_type"):
         canonical_matter["court_type"] = jurisdiction["court_type"]
+    if jurisdiction.get("court_address"):
+        canonical_matter["court_address"] = jurisdiction["court_address"]
     if matter_meta.get("case_type"):
         canonical_matter["case_type"] = matter_meta["case_type"]
     if matter_meta.get("filing_date"):
@@ -59,6 +64,12 @@ def project_to_canonical(matter: dict) -> dict:
         canonical_matter["event_date"] = matter_meta["event_date"]
 
     src_parties = matter.get("parties", {})
+    # The represented attorney's firm (organization_name) is the firm_name slot
+    # used by transmittals/pleadings; surface it directly (self-represented matters
+    # have no attorney, so the slot is correctly absent).
+    attorney = src_parties.get("attorney") or {}
+    if attorney.get("organization_name"):
+        canonical_matter["firm_name"] = attorney["organization_name"]
     canonical_parties: dict = {}
     for key, party in src_parties.items():
         if key in _SKIP_ROLES:
@@ -89,5 +100,18 @@ def project_to_canonical(matter: dict) -> dict:
 
     if matter.get("facts"):
         case["facts"] = dict(matter["facts"])
+
+    # Litigation history — posture, docket, and the per-event response obligations
+    # — is the seam that lets a downstream drafter produce a RESPONSIVE document
+    # (an opposition to the motion just served, a reply to a counterclaim, an
+    # emergency injunction motion after a mid-case incident) rather than only the
+    # originating pleading. Carried through verbatim for context.
+    lit = matter.get("litigation") or {}
+    proj_lit = {k: lit[k] for k in
+                ("posture", "docket", "procedure", "motions", "counterclaims",
+                 "causes_of_action", "affirmative_defenses")
+                if lit.get(k)}
+    if proj_lit:
+        case["litigation"] = proj_lit
 
     return case

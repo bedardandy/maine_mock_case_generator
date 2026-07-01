@@ -1,12 +1,14 @@
 {
   "matter": {
-    "case_id": "MMC-2025-846702",
+    "case_id": "MMC-2025-914983",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Maine Registry of Deeds / Maine Revenue Services",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "real_estate_transfer",
     "filing_date": "2025-11-08",
-    "event_date": "2026-03-17"
+    "event_date": "2026-03-17",
+    "firm_name": "Hawthorne Legal Group"
   },
   "parties": {
     "transferor": {
@@ -20,7 +22,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "transferee": {
       "full_name": "Maria Q. Fairbanks",
@@ -33,7 +36,8 @@
       "zip": "04071",
       "phone": "(207) 555-0154",
       "email": "maria.fairbanks@example.com",
-      "date_of_birth": "1965-03-05"
+      "date_of_birth": "1965-03-05",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Ingrid B. Kingsley",
@@ -47,7 +51,9 @@
       "phone": "(207) 555-0128",
       "email": "ingrid.kingsley@example.com",
       "date_of_birth": "1966-03-10",
-      "bar_number": "7867"
+      "bar_number": "7867",
+      "organization_name": "Hawthorne Legal Group",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -62,6 +68,7 @@
     "phone": "(207) 555-0154",
     "email": "maria.fairbanks@example.com",
     "date_of_birth": "1965-03-05",
+    "entity_type": "person",
     "signature": "Maria Q. Fairbanks"
   },
   "facts": {
@@ -74,8 +81,18 @@
     "property_type": "residential condominium",
     "adjusted_assessed_value": 258061,
     "special_circumstances_explanation": "Partial-interest transfer between family members",
+    "financing": "seller financing",
+    "transfer_tax_exemption": false,
+    "record_return_to": "the Grantee at the property address",
+    "earnest_money": 6614,
+    "has_source_of_title": true,
+    "source_grantor": "Albert R. and Mary J. Stearns",
+    "source_deed_date": "1990-09-03",
+    "registry": "Sagadahoc County",
+    "source_book": 5970,
+    "source_page": 211,
     "deed_type": "quitclaim deed with covenant",
-    "financing": "conventional mortgage",
-    "transfer_tax_exemption": true
+    "covenant_type": "quitclaim_covenant",
+    "grantor_capacity": "individual"
   }
 }

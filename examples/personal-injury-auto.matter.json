@@ -6,24 +6,28 @@
     "generator": "deterministic-engine",
     "generator_version": "0.1.0",
     "scenario_id": "personal-injury-auto",
-    "seed": 7
+    "seed": 7,
+    "confounders": [
+      "liens-subrogation-mainecare-wc"
+    ]
   },
   "matter": {
-    "matter_id": "MMC-2025-479146",
+    "matter_id": "MMC-2025-702326",
     "practice_area": "civil",
     "title": "Olivia B. Ellsworth v. Maria Q. Fairbanks",
     "jurisdiction": {
       "state": "ME",
       "county": "Sagadahoc",
       "court_location": "Bath",
-      "court_type": "Superior Court"
+      "court_type": "Superior Court",
+      "court_address": "96 Federal Street, Bath, ME 04050"
     },
     "case_type": "personal_injury",
     "filing_date": "2025-10-01",
     "status": "active",
     "summary": "Olivia B. Ellsworth was injured in a rear-end collision at Interstate 295 northbound near Exit 7 and sues the at-fault driver Maria Q. Fairbanks (and the driver's employer Coastal Outfitters LLC) for negligence, claiming a fractured wrist and ribs and roughly $211745 in medical bills.",
     "event_date": "2024-05-30",
-    "docket_number": "SAG-CV-2025-406"
+    "docket_number": "SAG-CV-2025-407"
   },
   "parties": {
     "plaintiff": {
@@ -132,37 +136,63 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Northstar Partners Corp.",
-      "type": "insurer",
-      "role": "Defendant's liability insurer",
-      "relevance": "Carries the at-fault driver's liability policy and controls the defense and any settlement within limits.",
+      "name": "Samuel Q. Inglewood",
+      "type": "healthcare_provider",
+      "role": "Treating physician",
+      "relevance": "Treated the plaintiff's injuries and can testify to diagnosis, causation, and prognosis.",
       "contact": {
-        "phone": "(207) 555-0193",
-        "city": "Falmouth",
-        "state": "ME"
+        "phone": "(207) 555-0121",
+        "city": "Gorham",
+        "state": "ME",
+        "email": "samuel.inglewood@example.org"
       }
     },
     {
       "id": "tp2",
-      "name": "Riverbend Builders Corp.",
-      "type": "business_entity",
-      "role": "Tow and storage company",
-      "relevance": "Towed the plaintiff's vehicle and holds the post-collision inspection and storage records.",
+      "name": "John W. Poe",
+      "type": "witness",
+      "role": "Investigating police officer",
+      "relevance": "Responded to the scene and authored the official crash report and diagram.",
       "contact": {
-        "phone": "(207) 555-0119",
-        "city": "Camden",
-        "state": "ME"
+        "phone": "(207) 555-0173",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "john.poe@example.net"
       }
     },
     {
       "id": "tp3",
-      "name": "Summit Studios Corp.",
+      "name": "Cobblestone Partners Co.",
+      "type": "business_entity",
+      "role": "Tow and storage company",
+      "relevance": "Towed the plaintiff's vehicle and holds the post-collision inspection and storage records.",
+      "contact": {
+        "phone": "(207) 555-0108",
+        "city": "Augusta",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp4",
+      "name": "Summit Analytics Corp.",
+      "type": "insurer",
+      "role": "Defendant's liability insurer",
+      "relevance": "Carries the at-fault driver's liability policy and controls the defense and any settlement within limits.",
+      "contact": {
+        "phone": "(207) 555-0182",
+        "city": "Bath",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp5",
+      "name": "Riverbend Studios LLC",
       "type": "insurer",
       "role": "Plaintiff's auto insurer",
       "relevance": "Carries the plaintiff's policy, including uninsured/underinsured motorist coverage, and paid medical-payments benefits.",
       "contact": {
-        "phone": "(207) 555-0188",
-        "city": "Belfast",
+        "phone": "(207) 555-0159",
+        "city": "Yarmouth",
         "state": "ME"
       }
     }
@@ -215,7 +245,7 @@
       "Defeating the comparative-fault defense.",
       "Documenting the full economic and non-economic loss."
     ],
-    "risk_tolerance": "high",
+    "risk_tolerance": "moderate",
     "desired_outcomes": [
       "A judgment or settlement compensating the plaintiff's full damages.",
       "A liability finding (or strong settlement posture) unreduced by comparative fault."
@@ -230,15 +260,26 @@
   },
   "issues": [
     {
-      "issue": "Whether the action was timely filed within the limitations period",
-      "category": "procedure",
-      "governing_law": "14 M.R.S. § 752",
+      "issue": "Whether the plaintiff's comparative fault reduces or bars recovery",
+      "category": "tort",
+      "governing_law": "14 M.R.S. § 156",
       "sub_questions": [
-        "When did the cause of action accrue?",
-        "Was suit filed within six years?"
+        "Did the plaintiff exercise reasonable care?",
+        "If fault is shared, what is each party's percentage?"
       ],
-      "strength": "strong",
+      "strength": "moderate",
+      "client_position": "The plaintiff bears no fault and any reduction is unwarranted.",
       "id": "iss1"
+    },
+    {
+      "issue": "Entitlement to punitive damages for the conduct alleged",
+      "category": "remedies",
+      "governing_law": "14 M.R.S. § 1604-A",
+      "sub_questions": [
+        "Does the evidence show malice or reckless indifference?"
+      ],
+      "strength": "weak",
+      "id": "iss2"
     },
     {
       "issue": "Whether the employer is vicariously liable for the driver's conduct",
@@ -250,38 +291,61 @@
       ],
       "strength": "moderate",
       "client_position": "The employer is liable for its driver's negligence committed on the job.",
-      "id": "iss2"
+      "id": "iss3"
     },
     {
-      "issue": "Whether the defendant negligently caused the collision",
-      "category": "tort",
-      "governing_law": "Common law negligence (duty, breach, causation, damages)",
+      "issue": "Availability of uninsured/underinsured motorist coverage",
+      "category": "insurance",
+      "governing_law": "24-A M.R.S. § 2902",
       "sub_questions": [
-        "Did the defendant breach the duty of reasonable care?",
-        "Was the breach the proximate cause of the plaintiff's injuries?"
+        "Do the at-fault driver's limits fall short of the plaintiff's damages?",
+        "What UM/UIM benefits are available to the plaintiff?"
       ],
-      "strength": "strong",
-      "client_position": "The defendant's negligent operation caused the rear-end collision and all resulting harm.",
-      "id": "iss3"
+      "strength": "moderate",
+      "id": "iss4"
+    },
+    {
+      "issue": "Liens and subrogation — MaineCare and workers'-comp claims against the recovery",
+      "category": "insurance",
+      "governing_law": "22 M.R.S. § 14 (MaineCare); 39-A M.R.S. § 107 (workers' comp)",
+      "sub_questions": [
+        "MaineCare's § 14 lien is NOT reduced for a pro-rata share of attorney fees, and requires written notice before settlement and at least 10 days before filing — has that been done, and how does the no-fee-reduction rule change the net to the plaintiff?",
+        "A workers'-comp lien under 39-A M.R.S. § 107 creates a de facto three-party settlement, and its 30-day written-demand subrogation clock can force a premature suit."
+      ],
+      "strength": "moderate",
+      "notes": "Overbroad-risk: the WC lien is NOT simply total benefits paid — the employer bears proportionate litigation costs, which reduces it. Private health-insurer subrogation is policy-language dependent and UNVERIFIED here. [confounder:liens-subrogation-mainecare-wc; VERIFIED — 22 M.R.S. § 14 MaineCare no-fee-reduction lien; 39-A M.R.S. § 107 WC lien; private health-insurer subrogation UNVERIFIED]",
+      "id": "iss5"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
       "expert": {
-        "name": "Diego M. Ellsworth",
-        "field": "Vocational and economic loss",
-        "credentials": "Ph.D., CRC",
+        "name": "Grace J. Jessup",
+        "field": "Accident reconstruction",
+        "credentials": "P.E., ACTAR",
         "retained_by": "plaintiff"
       },
-      "topic": "Past and future lost earnings and earning capacity",
-      "opinion": "The injuries reduced the plaintiff's earning capacity, yielding a quantifiable economic loss.",
-      "basis": "Wage records, vocational assessment, and life-expectancy tables."
+      "topic": "Cause and mechanics of the collision",
+      "opinion": "The physical evidence shows the defendant's vehicle caused the impact; the plaintiff could not have avoided it.",
+      "basis": "Crash report, scene measurements, vehicle damage, and event-data-recorder download."
     },
     {
       "id": "exp2",
       "expert": {
-        "name": "Jane M. Greenhill",
+        "name": "Olivia W. Fairbanks",
+        "field": "Treating physician / medical causation",
+        "credentials": "M.D.",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Diagnosis, causation, and prognosis of the injuries",
+      "opinion": "The plaintiff's fractured wrist and ribs was caused by the collision and will require ongoing care.",
+      "basis": "Examination, imaging, and the course of treatment."
+    },
+    {
+      "id": "exp3",
+      "expert": {
+        "name": "Eleanor M. Fairbanks",
         "field": "Biomechanical engineering",
         "credentials": "Ph.D., P.E.",
         "retained_by": "defendant"
@@ -293,17 +357,17 @@
   ],
   "evidence": [
     {
-      "title": "Scene and vehicle photographs",
-      "type": "photo",
-      "party": "plaintiff",
-      "description": "Photographs of the vehicles, damage, debris field, and roadway.",
-      "id": "ev1"
-    },
-    {
       "title": "Wage-loss documentation",
       "type": "financial_record",
       "party": "plaintiff",
       "description": "Employer letter and pay records substantiating lost earnings.",
+      "id": "ev1"
+    },
+    {
+      "title": "Scene and vehicle photographs",
+      "type": "photo",
+      "party": "plaintiff",
+      "description": "Photographs of the vehicles, damage, debris field, and roadway.",
       "id": "ev2"
     },
     {
@@ -314,17 +378,17 @@
       "id": "ev3"
     },
     {
-      "title": "Defendant's cell-phone records",
-      "type": "document",
-      "party": "defendant",
-      "description": "Call and text logs around the time of the collision relevant to distraction.",
+      "title": "911 call transcript",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "Transcript and audio of the emergency call reporting the collision.",
       "id": "ev4"
     },
     {
-      "title": "Medical records and itemized bills",
-      "type": "medical_record",
+      "title": "Plaintiff's expert reports",
+      "type": "affidavit",
       "party": "plaintiff",
-      "description": "Treatment records and billing for the plaintiff's injuries.",
+      "description": "Reconstruction, medical-causation, and economic-loss reports.",
       "id": "ev5"
     },
     {
@@ -333,35 +397,44 @@
       "party": "plaintiff",
       "description": "Itemized estimate or total-loss valuation for the plaintiff's vehicle.",
       "id": "ev6"
+    },
+    {
+      "title": "Medical records and itemized bills",
+      "type": "medical_record",
+      "party": "plaintiff",
+      "description": "Treatment records and billing for the plaintiff's injuries.",
+      "id": "ev7"
+    },
+    {
+      "title": "Defendant's cell-phone records",
+      "type": "document",
+      "party": "defendant",
+      "description": "Call and text logs around the time of the collision relevant to distraction.",
+      "id": "ev8"
     }
   ],
   "financials": {
     "currency": "USD",
     "amounts": [
       {
-        "label": "Lost wages",
-        "amount": 23805,
-        "basis": "Documented time missed from work."
-      },
-      {
-        "label": "Estimated future medical and care",
-        "amount": 245503,
-        "basis": "Life-care and treatment projections."
-      },
-      {
         "label": "Pain-and-suffering demand",
-        "amount": 446154,
+        "amount": 29292,
         "basis": "Non-economic loss demand."
       },
       {
-        "label": "Defendant's policy limits",
-        "amount": 626129,
-        "basis": "Available liability coverage."
+        "label": "Lost wages",
+        "amount": 21094,
+        "basis": "Documented time missed from work."
       },
       {
-        "label": "Medical specials to date",
-        "amount": 80833,
-        "basis": "Itemized past medical bills."
+        "label": "Property damage",
+        "amount": 30456,
+        "basis": "Vehicle repair estimate or total-loss value."
+      },
+      {
+        "label": "Defendant's policy limits",
+        "amount": 610559,
+        "basis": "Available liability coverage."
       }
     ]
   },
@@ -416,9 +489,9 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "Statute of limitations",
+        "defense": "Lack of causation",
         "by": "Maria Q. Fairbanks",
-        "basis": "The action was not commenced within the limitations period. 14 M.R.S. § 752."
+        "basis": "The claimed injuries are pre-existing or degenerative and were not caused by the collision."
       },
       {
         "defense": "Sudden emergency",
@@ -426,9 +499,14 @@
         "basis": "The defendant faced an unforeseen emergency not of the defendant's making."
       },
       {
-        "defense": "Lack of causation",
+        "defense": "Comparative negligence",
         "by": "Maria Q. Fairbanks",
-        "basis": "The claimed injuries are pre-existing or degenerative and were not caused by the collision."
+        "basis": "The plaintiff's own negligence caused or contributed to the collision. 14 M.R.S. § 156."
+      },
+      {
+        "defense": "Statute of limitations",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The action was not commenced within the limitations period. 14 M.R.S. § 752."
       }
     ],
     "counterclaims": [
@@ -442,114 +520,174 @@
     ],
     "discovery": [
       {
-        "type": "deposition",
+        "type": "subpoena",
         "propounding_party": "Olivia B. Ellsworth",
-        "responding_party": "the treating physician",
-        "served_date": "2025-07-10",
-        "status": "outstanding",
-        "description": "Deposition of the treating physician on causation."
+        "responding_party": "the defendant's liability insurer",
+        "served_date": "2025-05-04",
+        "status": "served",
+        "description": "Subpoena for the policy, declarations, and claim file."
       },
       {
         "type": "request_for_admission",
         "propounding_party": "Olivia B. Ellsworth",
         "responding_party": "Maria Q. Fairbanks",
-        "served_date": "2025-05-05",
+        "served_date": "2025-05-16",
         "status": "responded",
         "description": "Admissions on fault, right-of-way, and authenticity of the crash report."
       },
       {
-        "type": "request_for_production",
+        "type": "deposition",
         "propounding_party": "Olivia B. Ellsworth",
         "responding_party": "Maria Q. Fairbanks",
-        "served_date": "2025-04-08",
-        "status": "objected",
-        "description": "Requests for the defendant's phone records, vehicle data, and employment file."
+        "served_date": "2025-06-21",
+        "status": "outstanding",
+        "description": "Deposition of the at-fault driver."
       },
       {
         "type": "independent_examination",
         "propounding_party": "Maria Q. Fairbanks",
         "responding_party": "Olivia B. Ellsworth",
-        "served_date": "2025-08-26",
+        "served_date": "2025-08-17",
         "status": "served",
         "description": "Defense medical examination of the plaintiff."
       },
       {
-        "type": "interrogatories",
+        "type": "deposition",
         "propounding_party": "Olivia B. Ellsworth",
-        "responding_party": "Maria Q. Fairbanks",
-        "served_date": "2025-04-08",
-        "status": "responded",
-        "description": "First set of interrogatories on the collision, speed, and insurance."
+        "responding_party": "the treating physician",
+        "served_date": "2025-07-06",
+        "status": "outstanding",
+        "description": "Deposition of the treating physician on causation."
       }
     ],
     "motions": [
       {
-        "title": "Motion to bifurcate liability and damages",
-        "type": "trial",
+        "title": "Motion to compel the independent medical examination",
+        "type": "discovery",
         "movant": "Maria Q. Fairbanks",
-        "filed_date": "2026-03-19",
-        "status": "opposed",
-        "relief": "Separate trials on liability and damages."
+        "filed_date": "2025-08-11",
+        "status": "granted",
+        "relief": "An order compelling the plaintiff to attend a defense medical examination."
       },
       {
         "title": "Motion in limine to exclude the accident reconstruction",
         "type": "evidentiary",
         "movant": "Maria Q. Fairbanks",
-        "filed_date": "2026-01-15",
+        "filed_date": "2026-01-22",
         "status": "filed",
         "relief": "Exclusion of the plaintiff's reconstruction expert testimony."
       },
       {
-        "title": "Motion to compel the defendant's phone records",
-        "type": "discovery",
-        "movant": "Olivia B. Ellsworth",
-        "filed_date": "2025-05-24",
-        "status": "granted_in_part",
-        "relief": "An order compelling production of the defendant's call and text logs."
+        "title": "Motion to bifurcate liability and damages",
+        "type": "trial",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-03-22",
+        "status": "opposed",
+        "relief": "Separate trials on liability and damages."
       }
     ],
     "docket": [
       {
-        "date": "2025-02-07",
+        "date": "2025-02-10",
         "entry": "Complaint and demand for jury trial filed.",
         "party": "Olivia B. Ellsworth"
       },
       {
-        "date": "2025-03-09",
+        "date": "2025-03-01",
         "entry": "Defendants' answer and affirmative defenses filed.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-03-25",
+        "date": "2025-03-21",
         "entry": "Scheduling order entered; discovery deadline set.",
         "party": "the court"
       },
       {
-        "date": "2025-06-25",
+        "date": "2025-06-15",
         "entry": "Order compelling production of the defendant's phone records.",
         "party": "the court"
       },
       {
-        "date": "2025-09-03",
+        "date": "2025-08-17",
+        "entry": "Pre-suit demand letter sent to the defendant's liability insurer.",
+        "party": "us"
+      },
+      {
+        "date": "2025-09-10",
         "entry": "Defense medical examination completed; expert disclosures exchanged.",
         "party": "Maria Q. Fairbanks"
       },
       {
-        "date": "2025-11-21",
+        "date": "2025-10-01",
+        "entry": "Complaint for negligence filed and served after the demand went unmet.",
+        "party": "us"
+      },
+      {
+        "date": "2025-10-23",
+        "entry": "Defendant served an Answer pleading comparative negligence (14 M.R.S. § 156) and failure to mitigate; no counterclaim.",
+        "party": "opposing"
+      },
+      {
+        "date": "2025-11-24",
         "entry": "Partial summary judgment on liability taken under advisement.",
         "party": "the court"
       },
       {
-        "date": "2026-02-08",
+        "date": "2026-01-19",
+        "entry": "Defendant moved in limine to exclude the plaintiff's treating physician's causation opinion.",
+        "party": "opposing"
+      },
+      {
+        "date": "2026-02-09",
         "entry": "Mediation held; case continues toward trial.",
         "party": "the court"
       }
     ],
     "trial": {
-      "jury": false,
-      "estimated_days": 10,
-      "scheduled_date": "2026-08-11"
-    }
+      "jury": true,
+      "estimated_days": 9,
+      "scheduled_date": "2026-10-05"
+    },
+    "procedure": [
+      {
+        "date": "2025-08-17",
+        "day": -45,
+        "actor": "us",
+        "event": "Pre-suit demand letter sent to the defendant's liability insurer.",
+        "produces": [
+          "general__demand_letter"
+        ]
+      },
+      {
+        "date": "2025-10-01",
+        "day": 0,
+        "actor": "us",
+        "event": "Complaint for negligence filed and served after the demand went unmet.",
+        "produces": [
+          "litigation__pleading"
+        ]
+      },
+      {
+        "date": "2025-10-23",
+        "day": 22,
+        "actor": "opposing",
+        "event": "Defendant served an Answer pleading comparative negligence (14 M.R.S. § 156) and failure to mitigate; no counterclaim.",
+        "produces": [
+          "litigation__discovery_letter"
+        ]
+      },
+      {
+        "date": "2026-01-19",
+        "day": 110,
+        "actor": "opposing",
+        "event": "Defendant moved in limine to exclude the plaintiff's treating physician's causation opinion.",
+        "produces": [
+          "litigation__opposition"
+        ],
+        "response_deadline": "2026-02-09",
+        "deadline_rule": "M.R. Civ. P. 7(b)(1)(A) — opposition within 21 days; M.R. Evid. 702/703 causation foundation."
+      }
+    ]
   },
   "facts": {
     "collision_date": "2024-05-30",
@@ -562,6 +700,12 @@
     "lost_wages": 43175,
     "property_damage": 33513,
     "policy_limits": 664006,
-    "comparative_fault_alleged": false
+    "defendant_coverage": "underinsured",
+    "comparative_fault_alleged": false,
+    "demand_recipient": "the defendant",
+    "response_deadline_days": 14,
+    "plaintiff_mainecare_recipient": true,
+    "plaintiff_on_workers_comp": true,
+    "lien_must_clear_before_disbursement": true
   }
 }

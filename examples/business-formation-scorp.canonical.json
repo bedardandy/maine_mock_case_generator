@@ -1,12 +1,14 @@
 {
   "matter": {
-    "case_id": "MMC-2025-620528",
+    "case_id": "MMC-2025-657549",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Maine Secretary of State / IRS (filing offices)",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "entity_formation",
     "filing_date": "2025-12-09",
-    "event_date": "2025-12-19"
+    "event_date": "2025-12-19",
+    "firm_name": "Greenhill Law Offices"
   },
   "parties": {
     "applicant": {
@@ -20,7 +22,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "company": {
       "full_name": "Summit Outfitters Co.",
@@ -28,7 +31,9 @@
       "city": "Falmouth",
       "state": "ME",
       "zip": "04071",
-      "phone": "(207) 555-0154"
+      "phone": "(207) 555-0154",
+      "organization_name": "Summit Outfitters Co.",
+      "entity_type": "organization"
     },
     "attorney": {
       "full_name": "John D. Kingsley",
@@ -42,7 +47,9 @@
       "phone": "(207) 555-0174",
       "email": "john.kingsley@example.org",
       "date_of_birth": "1998-04-24",
-      "bar_number": "3181"
+      "bar_number": "3181",
+      "organization_name": "Greenhill Law Offices",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -57,6 +64,7 @@
     "phone": "(207) 555-0174",
     "email": "grace.roe@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Grace C. Roe"
   },
   "facts": {

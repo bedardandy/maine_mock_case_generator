@@ -41,6 +41,114 @@ facts:
   repair_cost_estimate: {int_between: [45000, 650000]}
   mechanic_lien_filed: {pick: [true, false]}
   warranty_period: {pick: ["a one-year builder warranty", "a written 10-year structural warranty", "no express warranty"]}
+  # Mechanic's-lien facts (feed real_estate__lien_claim): the recorded parcel
+  # description, the registry of record, and the unpaid contract balance the lien
+  # secures under 10 M.R.S. § 3251 et seq.
+  legal_description: {pick: ["A certain lot or parcel of land with the buildings thereon situated on the easterly side of Old County Road, being Lot 7 as shown on a plan recorded in the registry", "The land and improvements at the subject premises, being the same parcel conveyed by warranty deed, together with all buildings thereon", "A parcel of land with a single-family dwelling, bounded and described in the deed of record, with all improvements and fixtures"]}
+  registry: "{county} County Registry of Deeds"
+  unpaid_amount: {int_between: [8000, 240000]}
+  # Whether a public entity (e.g., municipal stormwater/road grading that contributed
+  # to the water intrusion) is a potential defendant — the discriminator the
+  # MTCA-notice confounder gates on. Rare and coherent; most projects are purely private.
+  public_entity_involved: {pick: [false, false, false, false, true]}
+
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues layered on the primary
+# construction/defect claims. Most matters draw ZERO. Each entry injects coherent
+# ground-truth facts + a spotted issue + (where apt) an affirmative defense, with
+# its Maine grounding and a confidence flag. AI-assembled research, NOT legal
+# advice (see DISCLAIMER.md). Overbroad-application risk is stated inline so the
+# oracle is the CORRECT Maine rule, not a naive over-claim.
+confounders:
+  count: {weights: [60, 26, 11, 3]} # ~60% of matters stay clean
+  pool:
+    # express conditions precedent require STRICT compliance.
+    - id: condition-precedent-notice-cure
+      weight: 3
+      excludes: {warranty_period: "no express warranty"}
+      confidence: "High strict-compliance rule (Coggins/Pelletier); Medium on waiver (fact-intensive)"
+      source: "Maine common law — express conditions require strict compliance, constructive conditions only substantial performance: Associated Builders, Inc. v. Coggins, 1999 ME 12; Pelletier v. Dwyer, 334 A.2d 867 (Me. 1975)"
+      facts:
+        cure_notice_clause_present: true
+        owner_gave_written_cure_notice: {pick: [true, false]}
+        time_of_essence: {pick: [true, false]}
+        condition_vs_covenant_question: true
+      issue:
+        issue: "Condition precedent — whether the owner satisfied an express notice-and-opportunity-to-cure clause before suing"
+        category: construction
+        governing_law: "Maine common law (Associated Builders, Inc. v. Coggins, 1999 ME 12; Pelletier v. Dwyer, 334 A.2d 867 (Me. 1975))"
+        sub_questions:
+          - "If the contract makes written notice and an opportunity to cure an express condition, strict compliance is required — did the owner give the required notice, or does an unsatisfied condition bar the claim?"
+          - "Is the clause a true condition ('if and only if') or merely a covenant ('the party shall'), and was any time-of-the-essence term triggered?"
+        strength: moderate
+        notes: "Overbroad-risk: substantial performance does NOT excuse non-satisfaction of an express condition; but conditions can be waived by conduct despite a written-waiver clause, so a missed cure notice is not automatically fatal."
+      defense:
+        defense: "Failure of a condition precedent (notice and opportunity to cure)"
+        by: "{defendant_full_name}"
+        basis: "The owner failed to give the written notice and opportunity to cure that the contract makes an express condition precedent to suit. NOTE: this bites only if the clause is a true condition, strictly construed; if it is a covenant, substantial performance governs and waiver by conduct may apply."
+    # liquidated damages vs unenforceable penalty (per-diem delay clause).
+    - id: liquidated-damages-penalty
+      weight: 2
+      excludes: {warranty_period: "no express warranty"}
+      confidence: "High on the test; Medium for the common-law services branch (limited appellate law beyond Farrago)"
+      source: "11 M.R.S. § 2-718(1) (goods LD valid only if reasonable; an unreasonably large term is void as a penalty); common-law two-part test for a services/construction contract (Sisters of Charity Health System, Inc. v. Farrago, 2011 ME 62)"
+      facts:
+        liquidated_damages_clause: true
+        per_diem_delay_fee: true
+        ld_daily_amount: {int_between: [150, 1500]}
+        ld_reasonable_at_formation: {pick: [true, false]}
+      issue:
+        issue: "Liquidated damages — whether the per-diem delay clause is a reasonable estimate or an unenforceable penalty"
+        category: construction
+        governing_law: "11 M.R.S. § 2-718(1) (goods); common law (Sisters of Charity Health System, Inc. v. Farrago, 2011 ME 62)"
+        sub_questions:
+          - "A construction contract is services-predominant, so the per-diem delay clause is tested under the common-law Farrago two-part rule (harm hard to estimate at formation + a reasonable approximation), not § 2-718's goods test."
+          - "If the clause is an unreasonably large penalty it is void — and the delay claim reverts to proof of actual damages."
+        strength: moderate
+        notes: "Overbroad-risk: do NOT treat any pre-set damages figure as valid without the reasonableness test (it would enforce a penalty courts void); per-diem late fees are high-risk penalty candidates tested at BOTH formation and breach."
+    # goods-vs-services predominant-purpose routing fork.
+    - id: predominant-purpose-goods-vs-services
+      weight: 2
+      confidence: "Medium — test settled, application fact-intensive (Smith / Dehahn)"
+      source: "11 M.R.S. § 2-201 (UCC statute of frauds, goods ≥ $500); predominant-purpose test (Smith v. Urethane Installations, Inc., 492 A.2d 1266 (Me. 1985); Dehahn v. Innes, 356 A.2d 711 (Me. 1976)); goods → UCC Art. 2 (implied warranties, 4-year SoL 11 M.R.S. § 2-725) vs services → common law (6-year 14 M.R.S. § 752; repose § 752-A)"
+      facts:
+        predominant_purpose_question: true
+        prefab_or_modular_components: {pick: [true, false]}
+        predominant_purpose: {pick: [services, goods]}
+      issue:
+        issue: "Predominant purpose — does the UCC or the common law govern this construction contract"
+        category: construction
+        governing_law: "11 M.R.S. § 2-201; Smith v. Urethane Installations, Inc., 492 A.2d 1266 (Me. 1985); Dehahn v. Innes, 356 A.2d 711 (Me. 1976)"
+        sub_questions:
+          - "If the deal is predominantly the sale of goods (prefabricated/modular components, a materials-supply package), UCC Article 2 brings implied warranties (§ 2-314/§ 2-315), the § 2-201 writing requirement, and a 4-year limitations period (11 M.R.S. § 2-725)."
+          - "If it is predominantly construction services, the common law governs — the implied warranty of workmanlike construction and the 6-year period (14 M.R.S. § 752), subject to the design/construction statute of repose (§ 752-A)."
+        strength: moderate
+        notes: "Overbroad-risk: routing any contract that involves physical materials to a goods template wrongly imports UCC warranties and the shorter 4-year clock into a service-dominant build; the test is fact-specific, not a materials checkbox."
+    # SoL/notice when a public entity is a potential defendant.
+    - id: public-entity-mtca-notice
+      weight: 2
+      requires: {public_entity_involved: true}
+      confidence: "VERIFIED — 14 M.R.S. § 8107 365-day notice, § 8105 $400K cap, § 8104-A exceptions; 23 M.R.S. § 3655 UNVERIFIED"
+      source: "14 M.R.S. § 8107 (365-day pre-suit notice of claim against a governmental entity); § 8105 ($400,000 per-occurrence cap); § 8104-A (four immunity exceptions); 23 M.R.S. § 3655 (highway/road-defect special notice — UNVERIFIED section detail)"
+      facts:
+        public_entity_codefendant: true
+        municipal_drainage_or_grading_contributed: true
+        mtca_notice_days: 365
+        mtca_damages_cap: 400000
+        immunity_exception_fits: {pick: [true, false]}
+      issue:
+        issue: "Governmental defendant — the 365-day MTCA notice and the $400,000 cap, not the ordinary construction clock"
+        category: procedure
+        governing_law: "14 M.R.S. § 8107 (365-day notice); § 8105 ($400,000 cap); § 8104-A (immunity exceptions)"
+        sub_questions:
+          - "Where a municipality's defective drainage or grading contributed to the water intrusion, a 365-day written notice of claim under 14 M.R.S. § 8107 is a hard pre-suit condition against the public entity — separate from the design/construction repose period."
+          - "The $400,000 per-occurrence cap (§ 8105) applies regardless of repair cost, and an immunity exception must be affirmatively pleaded under § 8104-A."
+        strength: moderate
+        notes: "Overbroad-risk: MTCA notice is 365 DAYS (14 M.R.S. § 8107), not 180; the $400,000 cap is per occurrence, not per claimant; and immunity is the default UNLESS one of the four § 8104-A categories fits. A 23 M.R.S. § 3655 highway/road-defect special notice (UNVERIFIED) may add a further deadline if a public way is implicated."
+      defense:
+        defense: "Governmental immunity / untimely MTCA notice"
+        by: "the municipal co-defendant"
+        basis: "Any claim against the public entity is barred absent a timely 365-day notice of claim (14 M.R.S. § 8107) and a § 8104-A immunity exception, and is in any event capped at $400,000 (§ 8105). NOTE: immunity is the default; the four § 8104-A exceptions are narrow and must be pleaded."
 
 third_parties:
   count: {min: 3, max: 5}

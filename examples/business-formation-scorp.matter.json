@@ -9,14 +9,15 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-620528",
+    "matter_id": "MMC-2025-657549",
     "practice_area": "business",
     "title": "Formation of Summit Outfitters Co. and S-Corporation Election by Grace C. Roe",
     "jurisdiction": {
       "state": "ME",
       "county": "Sagadahoc",
       "court_location": "Bath",
-      "court_type": "Maine Secretary of State / IRS (filing offices)"
+      "court_type": "Maine Secretary of State / IRS (filing offices)",
+      "court_address": "96 Federal Street, Bath, ME 04050"
     },
     "case_type": "entity_formation",
     "filing_date": "2025-12-09",
@@ -119,54 +120,40 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Internal Revenue Service",
-      "type": "government_agency",
-      "role": "Federal tax authority",
-      "relevance": "Issues the EIN on Form SS-4 and processes the Form 2553 S-corporation election.",
-      "contact": {
-        "phone": "(207) 555-0174",
-        "city": "Auburn",
-        "state": "ME"
-      }
-    },
-    {
-      "id": "tp2",
-      "name": "Casco Bay Savings",
-      "type": "financial_institution",
-      "role": "Business bank",
-      "relevance": "Holds the corporation's operating account, which is opened using the new EIN once issued.",
-      "contact": {
-        "phone": "(207) 555-0123",
-        "city": "Orono",
-        "state": "ME"
-      }
-    },
-    {
-      "id": "tp3",
-      "name": "Rosa T. Birchwood",
+      "name": "Theodore H. Birchwood",
       "type": "witness",
       "role": "Accountant",
       "relationship": "Company's CPA",
       "relevance": "Advises on the S-election, reasonable compensation, payroll setup, and prepares the corporation's federal and Maine tax filings.",
       "contact": {
-        "phone": "(207) 555-0163",
-        "city": "Bath",
+        "phone": "(207) 555-0123",
+        "city": "Orono",
         "state": "ME",
-        "email": "rosa.birchwood@example.net"
+        "email": "theodore.birchwood@example.net"
       }
     },
     {
-      "id": "tp4",
-      "name": "Maria T. Coe",
-      "type": "witness",
-      "role": "Co-founder and shareholder",
-      "relationship": "Fellow shareholder of the corporation",
-      "relevance": "A second shareholder whose eligibility affects the S-corporation election and who must consent on Form 2553.",
+      "id": "tp2",
+      "name": "Granite State Credit Union",
+      "type": "financial_institution",
+      "role": "Business bank",
+      "relevance": "Holds the corporation's operating account, which is opened using the new EIN once issued.",
       "contact": {
-        "phone": "(207) 555-0153",
-        "city": "Lewiston",
-        "state": "ME",
-        "email": "maria.coe@example.org"
+        "phone": "(207) 555-0167",
+        "city": "Bath",
+        "state": "ME"
+      }
+    },
+    {
+      "id": "tp3",
+      "name": "Internal Revenue Service",
+      "type": "government_agency",
+      "role": "Federal tax authority",
+      "relevance": "Issues the EIN on Form SS-4 and processes the Form 2553 S-corporation election.",
+      "contact": {
+        "phone": "(207) 555-0177",
+        "city": "Farmington",
+        "state": "ME"
       }
     }
   ],
@@ -223,22 +210,46 @@
       "Blowing the S-election deadline and losing pass-through treatment for the first year."
     ],
     "constraints": {
-      "budget": "Limited; prefers to handle routine filings in-house with counsel reviewing the elections.",
+      "budget": "Modest startup budget; wants the formation and elections done right the first time.",
       "timeline": "Needs the EIN and Form 2553 filed in time for the election to be effective on the incorporation date."
     }
   },
   "issues": [
     {
-      "issue": "Pass-through treatment and owner fringe-benefit rules",
+      "issue": "Making a timely and valid S-corporation election on Form 2553",
       "category": "business",
-      "governing_law": "IRC § 1366 and § 1372",
+      "governing_law": "IRC § 1362",
       "sub_questions": [
-        "How do items of income, loss, and deduction pass through to the shareholders?",
-        "Which fringe benefits are limited for more-than-2% shareholder-employees?"
+        "Will Form 2553 be filed within 2 months and 15 days of the effective date?",
+        "Have all shareholders consented to the election?"
       ],
       "strength": "moderate",
-      "client_position": "The founder seeks full pass-through treatment and to structure any owner fringe benefits in light of the 2% shareholder-employee rules.",
+      "client_position": "The founder intends to file Form 2553 within the statutory window with all shareholder consents so the election is effective on 2025-12-19.",
       "id": "iss1"
+    },
+    {
+      "issue": "Obtaining an Employer Identification Number on Form SS-4",
+      "category": "business",
+      "governing_law": "IRC § 6109; Form SS-4 instructions",
+      "sub_questions": [
+        "Who is the responsible party for the EIN application?",
+        "What entity classification and principal activity should be reported?"
+      ],
+      "strength": "strong",
+      "client_position": "Grace C. Roe is the responsible party and will apply for the EIN reporting the corporation's principal activity of software development.",
+      "id": "iss2"
+    },
+    {
+      "issue": "Maine corporate registration and employer withholding obligations",
+      "category": "business",
+      "governing_law": "13-C M.R.S. (formation); 36 M.R.S. § 5102 et seq. and § 5250 (income tax and withholding)",
+      "sub_questions": [
+        "Are the Articles of Incorporation compliant with the Maine Business Corporation Act?",
+        "When must the corporation register for and begin Maine income-tax withholding on wages?"
+      ],
+      "strength": "strong",
+      "client_position": "The corporation will file compliant Articles and register with Maine Revenue Services for corporate income tax and employer withholding before the first payroll.",
+      "id": "iss3"
     },
     {
       "issue": "Eligibility of the corporation and its shareholders to elect S status",
@@ -250,26 +261,26 @@
       ],
       "strength": "strong",
       "client_position": "The corporation has eligible individual shareholders and a single class of stock, so it qualifies as a small business corporation.",
-      "id": "iss2"
-    },
-    {
-      "issue": "Reasonable compensation for the S-corporation owner-employee",
-      "category": "business",
-      "governing_law": "Reasonable compensation doctrine (IRS guidance; Rev. Rul. 74-44)",
-      "sub_questions": [
-        "Is the planned $61995 owner salary reasonable for the services performed?",
-        "How should wages and distributions be allocated to withstand reclassification?"
-      ],
-      "strength": "moderate",
-      "client_position": "Planned owner compensation of approximately $61995 reflects the value of services and is intended to satisfy the reasonable-compensation standard.",
-      "id": "iss3"
+      "id": "iss4"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
       "expert": {
-        "name": "Desmond R. Hawthorne",
+        "name": "Nadia S. Danforth",
+        "field": "Tax / S-corporation planning",
+        "credentials": "CPA",
+        "retained_by": "applicant"
+      },
+      "topic": "S-election timing, reasonable compensation, and payroll setup",
+      "opinion": "The corporation qualifies for the S-election, and the planned owner compensation and payroll structure are consistent with IRS guidance.",
+      "basis": "Review of the cap table, projected revenue, and comparable owner-compensation data."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Rosa C. Greenhill",
         "field": "Business valuation",
         "credentials": "CVA",
         "retained_by": "applicant"
@@ -281,24 +292,24 @@
   ],
   "evidence": [
     {
-      "title": "Initial capitalization / cap table",
-      "type": "financial_record",
-      "party": "company",
-      "description": "The cap table showing the 2 shareholder(s) and their initial capital contributions.",
+      "title": "IRS Form SS-4 application",
+      "type": "document",
+      "party": "applicant",
+      "description": "The Application for Employer Identification Number identifying Grace C. Roe as the responsible party.",
       "id": "ev1"
+    },
+    {
+      "title": "IRS Form 2553 S-election",
+      "type": "document",
+      "party": "company",
+      "description": "The Election by a Small Business Corporation, with shareholder consents, electing S status effective 2025-12-19.",
+      "id": "ev2"
     },
     {
       "title": "Articles of Incorporation filed with the Maine Secretary of State",
       "type": "public_record",
       "party": "company",
       "description": "The filed Articles establishing Summit Outfitters Co. as a Maine corporation.",
-      "id": "ev2"
-    },
-    {
-      "title": "IRS Form SS-4 application",
-      "type": "document",
-      "party": "applicant",
-      "description": "The Application for Employer Identification Number identifying Grace C. Roe as the responsible party.",
       "id": "ev3"
     }
   ],
@@ -306,19 +317,14 @@
     "currency": "USD",
     "amounts": [
       {
-        "label": "Expected first-year revenue",
-        "amount": 686020,
-        "basis": "Projected gross receipts for the corporation's first tax year."
+        "label": "Planned owner reasonable compensation",
+        "amount": 110752,
+        "basis": "Annual W-2 wages planned for the owner-employee."
       },
       {
         "label": "Estimated first-year payroll",
         "amount": 178582,
         "basis": "Total projected wages for all employees in the first year."
-      },
-      {
-        "label": "Initial capital contributed",
-        "amount": 121822,
-        "basis": "Total cash and property contributed by the shareholders at formation."
       }
     ]
   },

@@ -1,17 +1,19 @@
 [
   {
     "universe_id": "UNIV-business-dispute-cascade-0007",
-    "matter_id": "MMC-2026-560900",
+    "matter_id": "MMC-2026-237139",
     "scenario_id": "business-formation-scorp",
     "canonical": {
       "matter": {
-        "case_id": "MMC-2026-560900",
+        "case_id": "MMC-2026-237139",
         "court_county": "Kennebec",
         "court_location": "Augusta",
         "court_type": "Maine Secretary of State / IRS (filing offices)",
+        "court_address": "121 State Street, Augusta, ME 04089",
         "case_type": "entity_formation",
         "filing_date": "2026-04-30",
-        "event_date": "2026-03-16"
+        "event_date": "2026-03-16",
+        "firm_name": "Hawthorne Legal Group"
       },
       "parties": {
         "applicant": {
@@ -25,7 +27,8 @@
           "zip": "04069",
           "phone": "(207) 555-0112",
           "email": "nadia.loe@example.org",
-          "date_of_birth": "1964-01-30"
+          "date_of_birth": "1964-01-30",
+          "entity_type": "person"
         },
         "company": {
           "full_name": "Evergreen Analytics LLC",
@@ -33,7 +36,9 @@
           "city": "Falmouth",
           "state": "ME",
           "zip": "04031",
-          "phone": "(207) 555-0111"
+          "phone": "(207) 555-0111",
+          "organization_name": "Evergreen Analytics LLC",
+          "entity_type": "organization"
         },
         "attorney": {
           "full_name": "Nadia E. Danforth",
@@ -47,7 +52,9 @@
           "phone": "(207) 555-0124",
           "email": "nadia.danforth@example.net",
           "date_of_birth": "1970-04-29",
-          "bar_number": "5753"
+          "bar_number": "5753",
+          "organization_name": "Hawthorne Legal Group",
+          "entity_type": "person"
         }
       },
       "party": {
@@ -62,6 +69,7 @@
         "phone": "(207) 555-0112",
         "email": "nadia.loe@example.org",
         "date_of_birth": "1964-01-30",
+        "entity_type": "person",
         "signature": "Nadia P. Loe"
       },
       "facts": {
@@ -82,24 +90,31 @@
         "principal_activity": "retail of specialty goods",
         "expected_first_year_revenue": 162577,
         "responsible_party_name": "Nadia P. Loe",
-        "reasonable_compensation": 39970
+        "reasonable_compensation": 39970,
+        "entity_mislabeled_as_scorp_type": true,
+        "governing_act": "13-C M.R.S. (Maine Business Corporation Act)",
+        "internal_governance_instrument": "bylaws and a shareholder agreement",
+        "llc_operating_agreement_applies": false,
+        "s_corp_is_federal_tax_election": true
       }
     }
   },
   {
     "universe_id": "UNIV-business-dispute-cascade-0007",
-    "matter_id": "MMC-2025-462859",
+    "matter_id": "MMC-2025-748380",
     "scenario_id": "complex-civil-litigation",
     "canonical": {
       "matter": {
-        "docket_number": "CUM-CV-2025-528",
-        "case_id": "MMC-2025-462859",
+        "docket_number": "CUM-CV-2025-740",
+        "case_id": "MMC-2025-748380",
         "court_county": "Cumberland",
         "court_location": "Portland",
         "court_type": "Superior Court",
+        "court_address": "127 State Street, Portland, ME 04019",
         "case_type": "civil",
         "filing_date": "2025-01-14",
-        "event_date": "2022-11-18"
+        "event_date": "2022-11-18",
+        "firm_name": "Kingsley & Associates"
       },
       "parties": {
         "plaintiff": {
@@ -113,7 +128,8 @@
           "zip": "04029",
           "phone": "(207) 555-0180",
           "email": "felix.fairbanks@example.net",
-          "date_of_birth": "1964-02-01"
+          "date_of_birth": "1964-02-01",
+          "entity_type": "person"
         },
         "plaintiff_2": {
           "full_name": "Rosa B. Ellsworth",
@@ -126,7 +142,8 @@
           "zip": "04038",
           "phone": "(207) 555-0153",
           "email": "rosa.ellsworth@example.com",
-          "date_of_birth": "1967-03-02"
+          "date_of_birth": "1967-03-02",
+          "entity_type": "person"
         },
         "defendant": {
           "full_name": "Evergreen Analytics LLC",
@@ -134,7 +151,9 @@
           "city": "Falmouth",
           "state": "ME",
           "zip": "04031",
-          "phone": "(207) 555-0111"
+          "phone": "(207) 555-0111",
+          "organization_name": "Evergreen Analytics LLC",
+          "entity_type": "organization"
         },
         "defendant_2": {
           "full_name": "Nadia P. Loe",
@@ -147,7 +166,8 @@
           "zip": "04069",
           "phone": "(207) 555-0112",
           "email": "nadia.loe@example.org",
-          "date_of_birth": "1964-01-30"
+          "date_of_birth": "1964-01-30",
+          "entity_type": "person"
         },
         "third_party_defendant": {
           "full_name": "Northstar Builders LLC",
@@ -155,7 +175,9 @@
           "city": "Bangor",
           "state": "ME",
           "zip": "04048",
-          "phone": "(207) 555-0112"
+          "phone": "(207) 555-0112",
+          "organization_name": "Northstar Builders LLC",
+          "entity_type": "organization"
         },
         "attorney": {
           "full_name": "Malik K. Kingsley",
@@ -169,7 +191,9 @@
           "phone": "(207) 555-0135",
           "email": "malik.kingsley@example.com",
           "date_of_birth": "1981-12-22",
-          "bar_number": "6473"
+          "bar_number": "6473",
+          "organization_name": "Kingsley & Associates",
+          "entity_type": "person"
         }
       },
       "party": {
@@ -184,6 +208,7 @@
         "phone": "(207) 555-0180",
         "email": "felix.fairbanks@example.net",
         "date_of_birth": "1964-02-01",
+        "entity_type": "person",
         "signature": "Felix B. Fairbanks"
       },
       "facts": {
@@ -196,7 +221,273 @@
         "amount_in_controversy": 1921386,
         "demand_made": true,
         "class_action": true,
-        "auditor_role": "issued the audited financial statements relied upon in the offering"
+        "auditor_role": "issued the audited financial statements relied upon in the offering",
+        "relief_requested": "rescission, disgorgement, and compensatory damages",
+        "governmental_codefendant": false
+      },
+      "litigation": {
+        "posture": "discovery",
+        "docket": [
+          {
+            "date": "2025-01-14",
+            "entry": "Complaint filed and served on the defendants.",
+            "party": "us"
+          },
+          {
+            "date": "2025-01-20",
+            "entry": "Complaint and demand for jury trial filed.",
+            "party": "Felix B. Fairbanks"
+          },
+          {
+            "date": "2025-02-07",
+            "entry": "Defendants served their Answer asserting affirmative defenses and a Counterclaim for breach of contract and tortious interference.",
+            "party": "opposing"
+          },
+          {
+            "date": "2025-02-12",
+            "entry": "Defendants' answer, counterclaims, and cross-claim filed.",
+            "party": "Evergreen Analytics LLC"
+          },
+          {
+            "date": "2025-02-26",
+            "entry": "Third-party complaint against the auditor filed.",
+            "party": "Evergreen Analytics LLC"
+          },
+          {
+            "date": "2025-03-07",
+            "entry": "Defendants filed a Motion to Dismiss Count III (negligent misrepresentation) under M.R. Civ. P. 12(b)(6).",
+            "party": "opposing"
+          },
+          {
+            "date": "2025-03-12",
+            "entry": "Scheduling order entered; discovery deadline set.",
+            "party": "the court"
+          },
+          {
+            "date": "2025-04-02",
+            "entry": "Client reports the defendants are liquidating the disputed inventory and moving sale proceeds offshore, threatening to defeat any judgment.",
+            "party": "client"
+          },
+          {
+            "date": "2025-04-14",
+            "entry": "Order denying the motion to dismiss.",
+            "party": "the court"
+          },
+          {
+            "date": "2025-06-14",
+            "entry": "Order compelling production of the audit workpapers.",
+            "party": "the court"
+          },
+          {
+            "date": "2025-09-07",
+            "entry": "Plaintiffs' expert reports served; discovery continues.",
+            "party": "Felix B. Fairbanks"
+          }
+        ],
+        "procedure": [
+          {
+            "date": "2025-01-14",
+            "day": 0,
+            "actor": "us",
+            "event": "Complaint filed and served on the defendants.",
+            "produces": [
+              "litigation__pleading"
+            ]
+          },
+          {
+            "date": "2025-02-07",
+            "day": 24,
+            "actor": "opposing",
+            "event": "Defendants served their Answer asserting affirmative defenses and a Counterclaim for breach of contract and tortious interference.",
+            "produces": [
+              "litigation__reply"
+            ],
+            "response_deadline": "2025-02-28",
+            "deadline_rule": "M.R. Civ. P. 7(a) / 12(a) — reply to a counterclaim within 21 days of service."
+          },
+          {
+            "date": "2025-03-07",
+            "day": 52,
+            "actor": "opposing",
+            "event": "Defendants filed a Motion to Dismiss Count III (negligent misrepresentation) under M.R. Civ. P. 12(b)(6).",
+            "produces": [
+              "litigation__opposition"
+            ],
+            "response_deadline": "2025-03-28",
+            "deadline_rule": "M.R. Civ. P. 7(b)(1)(A) — opposition to a motion within 21 days."
+          },
+          {
+            "date": "2025-04-02",
+            "day": 78,
+            "actor": "client",
+            "event": "Client reports the defendants are liquidating the disputed inventory and moving sale proceeds offshore, threatening to defeat any judgment.",
+            "produces": [
+              "litigation__emergency_motion"
+            ],
+            "response_deadline": "2025-04-02",
+            "deadline_rule": "M.R. Civ. P. 65 — motion for a temporary restraining order / preliminary injunction; attachment under M.R. Civ. P. 4A/4B.",
+            "urgent": true
+          }
+        ],
+        "motions": [
+          {
+            "title": "Motion in limine to exclude the damages expert",
+            "type": "evidentiary",
+            "movant": "Evergreen Analytics LLC",
+            "filed_date": "2026-03-08",
+            "status": "filed",
+            "relief": "Exclusion of the plaintiffs' damages model."
+          },
+          {
+            "title": "Motion for partial summary judgment",
+            "type": "dispositive",
+            "movant": "Evergreen Analytics LLC",
+            "filed_date": "2025-11-03",
+            "status": "under_advisement",
+            "relief": "Judgment on the negligent-misrepresentation count."
+          },
+          {
+            "title": "Motion to dismiss for failure to state a claim",
+            "type": "dispositive",
+            "movant": "Evergreen Analytics LLC",
+            "filed_date": "2025-02-28",
+            "status": "denied",
+            "relief": "Dismissal of the fraud and UTPA counts."
+          }
+        ],
+        "counterclaims": [
+          {
+            "count": 1,
+            "claim": "Breach of the non-disclosure agreement",
+            "by": "Evergreen Analytics LLC",
+            "against": "Felix B. Fairbanks",
+            "relief": "Damages and injunctive relief for disclosure of confidential information."
+          },
+          {
+            "count": 2,
+            "claim": "Defamation",
+            "by": "Nadia P. Loe",
+            "against": "Felix B. Fairbanks",
+            "relief": "Damages for allegedly false public statements about the company."
+          }
+        ],
+        "causes_of_action": [
+          {
+            "count": 1,
+            "claim": "Breach of contract",
+            "by": "Felix B. Fairbanks",
+            "against": "Evergreen Analytics LLC",
+            "governing_law": "14 M.R.S. § 752; common law",
+            "elements": [
+              "A valid contract",
+              "Performance by the plaintiffs",
+              "Breach by the defendant",
+              "Resulting damages"
+            ],
+            "relief_sought": "Compensatory damages of approximately $1921386",
+            "strength": "strong"
+          },
+          {
+            "count": 2,
+            "claim": "Breach of fiduciary duty",
+            "by": "Felix B. Fairbanks",
+            "against": "Nadia P. Loe",
+            "governing_law": "13-C M.R.S. § 831; common law",
+            "elements": [
+              "A fiduciary relationship",
+              "Breach of the duty of loyalty or care",
+              "Causation",
+              "Damages"
+            ],
+            "relief_sought": "Disgorgement and compensatory damages",
+            "strength": "moderate"
+          },
+          {
+            "count": 3,
+            "claim": "Fraudulent misrepresentation",
+            "by": "Felix B. Fairbanks",
+            "against": "Nadia P. Loe",
+            "governing_law": "Common law fraud",
+            "elements": [
+              "A material misrepresentation of fact",
+              "Knowledge of falsity (scienter)",
+              "Justifiable reliance",
+              "Damages"
+            ],
+            "relief_sought": "Compensatory and punitive damages",
+            "strength": "moderate"
+          },
+          {
+            "count": 4,
+            "claim": "Negligent misrepresentation",
+            "by": "Felix B. Fairbanks",
+            "against": "Evergreen Analytics LLC",
+            "governing_law": "Restatement (Second) of Torts § 552",
+            "elements": [
+              "A false statement in the course of business",
+              "Failure to exercise reasonable care",
+              "Justifiable reliance",
+              "Pecuniary loss"
+            ],
+            "relief_sought": "Compensatory damages",
+            "strength": "moderate"
+          },
+          {
+            "count": 5,
+            "claim": "Violation of the Maine Unfair Trade Practices Act",
+            "by": "Felix B. Fairbanks",
+            "against": "Evergreen Analytics LLC",
+            "governing_law": "5 M.R.S. § 207",
+            "elements": [
+              "An unfair or deceptive act",
+              "In the conduct of trade or commerce",
+              "Loss of money or property"
+            ],
+            "relief_sought": "Actual damages, attorney fees, and costs",
+            "strength": "weak"
+          },
+          {
+            "count": 6,
+            "claim": "Unjust enrichment",
+            "by": "Felix B. Fairbanks",
+            "against": "Evergreen Analytics LLC",
+            "governing_law": "Common law",
+            "elements": [
+              "A benefit conferred",
+              "Appreciation of the benefit",
+              "Inequitable retention"
+            ],
+            "relief_sought": "Restitution",
+            "strength": "weak"
+          }
+        ],
+        "affirmative_defenses": [
+          {
+            "defense": "Failure to state a claim",
+            "by": "Evergreen Analytics LLC",
+            "basis": "The complaint does not plead fraud with particularity. M.R. Civ. P. 9(b)."
+          },
+          {
+            "defense": "Business judgment rule",
+            "by": "Nadia P. Loe",
+            "basis": "The challenged decisions were informed, good-faith business judgments."
+          },
+          {
+            "defense": "Statute of frauds",
+            "by": "Evergreen Analytics LLC",
+            "basis": "Any oral representations are unenforceable."
+          },
+          {
+            "defense": "Waiver and estoppel",
+            "by": "Evergreen Analytics LLC",
+            "basis": "The plaintiffs ratified the transaction by accepting later disclosures."
+          },
+          {
+            "defense": "Statute of limitations",
+            "by": "Evergreen Analytics LLC",
+            "basis": "Claims accrued more than six years before filing. 14 M.R.S. § 752."
+          }
+        ]
       }
     }
   }

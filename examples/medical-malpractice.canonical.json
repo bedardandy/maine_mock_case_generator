@@ -1,13 +1,15 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-174",
-    "case_id": "MMC-2025-738539",
+    "docket_number": "SAG-CV-2025-268",
+    "case_id": "MMC-2025-538433",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "medical_malpractice",
     "filing_date": "2025-04-19",
-    "event_date": "2023-03-04"
+    "event_date": "2023-03-04",
+    "firm_name": "Greenhill Law Offices"
   },
   "parties": {
     "plaintiff": {
@@ -21,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Maria Q. Fairbanks",
@@ -34,7 +37,8 @@
       "zip": "04071",
       "phone": "(207) 555-0154",
       "email": "maria.fairbanks@example.com",
-      "date_of_birth": "1965-03-05"
+      "date_of_birth": "1965-03-05",
+      "entity_type": "person"
     },
     "defendant_2": {
       "full_name": "Coastal Outfitters LLC",
@@ -42,7 +46,9 @@
       "city": "Gorham",
       "state": "ME",
       "zip": "04038",
-      "phone": "(207) 555-0153"
+      "phone": "(207) 555-0153",
+      "organization_name": "Coastal Outfitters LLC",
+      "entity_type": "organization"
     },
     "third_party_defendant": {
       "full_name": "Olivia D. Jessup",
@@ -55,7 +61,8 @@
       "zip": "04014",
       "phone": "(207) 555-0174",
       "email": "olivia.jessup@example.net",
-      "date_of_birth": "1961-04-07"
+      "date_of_birth": "1961-04-07",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Samuel C. Jessup",
@@ -69,7 +76,9 @@
       "phone": "(207) 555-0187",
       "email": "samuel.jessup@example.net",
       "date_of_birth": "1974-06-10",
-      "bar_number": "8424"
+      "bar_number": "8424",
+      "organization_name": "Greenhill Law Offices",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -84,6 +93,7 @@
     "phone": "(207) 555-0174",
     "email": "grace.roe@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Grace C. Roe"
   },
   "facts": {
@@ -96,6 +106,176 @@
     "standard_of_care_breached": true,
     "informed_consent_issue": false,
     "statute_of_limitations_concern": false,
-    "economic_damages": 1267698
+    "economic_damages": 1267698,
+    "general_752_sol_applies": false,
+    "medmal_specific_sol_applies": true,
+    "verify_medmal_sol_period": true,
+    "accrual_question": "discovery of a foreign object"
+  },
+  "litigation": {
+    "posture": "discovery",
+    "docket": [
+      {
+        "date": "2024-08-26",
+        "entry": "Notice of claim served, initiating the mandatory prelitigation screening panel process.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2024-11-04",
+        "entry": "Prelitigation screening panel convened; chair appointed and submissions ordered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-02-07",
+        "entry": "Complaint and demand for jury trial filed after the screening-panel process.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-03-03",
+        "entry": "Answers, cross-claim, and third-party complaint against the consulting provider filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-04-07",
+        "entry": "Scheduling order entered; discovery and expert deadlines set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-07-15",
+        "entry": "Order compelling production of the credentialing file.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-11-25",
+        "entry": "Expert disclosures exchanged; discovery continues toward trial.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to bifurcate liability and damages",
+        "type": "trial",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-03-26",
+        "status": "filed",
+        "relief": "Separate trials on liability and damages."
+      },
+      {
+        "title": "Motion regarding the admissibility of the screening-panel findings",
+        "type": "evidentiary",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-02-09",
+        "status": "filed",
+        "relief": "An order on whether and how the prelitigation screening panel findings are admissible. 24 M.R.S. § 2853."
+      },
+      {
+        "title": "Motion to compel the credentialing file",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-06-04",
+        "status": "granted",
+        "relief": "An order compelling production of the defendant physician's credentialing and privileging file."
+      },
+      {
+        "title": "Motion for partial summary judgment on informed consent",
+        "type": "dispositive",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2025-10-31",
+        "status": "under_advisement",
+        "relief": "Judgment that the informed-consent claim fails as a matter of law."
+      },
+      {
+        "title": "Motion in limine to exclude a plaintiff expert",
+        "type": "evidentiary",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-03-13",
+        "status": "opposed",
+        "relief": "Exclusion of an unreliable expert opinion under Daubert and M.R.E. 702."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Professional negligence (departure from the standard of care)",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "Professional negligence; 24 M.R.S. § 2902; expert testimony required",
+        "elements": [
+          "A physician-patient relationship and a duty to meet the standard of care",
+          "A breach of the applicable standard of care",
+          "Proximate causation",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages for past and future medical care, lost earning capacity, and pain and suffering",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Vicarious liability and corporate negligence",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "Respondeat superior; corporate/credentialing negligence",
+        "elements": [
+          "An agency or employment relationship with the providers",
+          "Negligence within the scope of that relationship",
+          "Independent negligence in credentialing, supervision, or retention",
+          "Resulting damages"
+        ],
+        "relief_sought": "Compensatory damages against the hospital and health system",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Negligence of the consulting provider",
+        "by": "Grace C. Roe",
+        "against": "Olivia D. Jessup",
+        "governing_law": "Professional negligence; expert testimony required",
+        "elements": [
+          "A duty to meet the standard of care",
+          "A breach of that standard by the consulting provider",
+          "Proximate causation",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages against the consulting provider",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Lack of informed consent",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "Informed consent; the duty to disclose material risks and alternatives",
+        "elements": [
+          "A duty to disclose material risks and alternatives",
+          "Failure to disclose",
+          "A reasonable patient would have declined the treatment",
+          "Resulting injury"
+        ],
+        "relief_sought": "Compensatory damages for the consequences of the undisclosed risk",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Care met the standard of care",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The treatment conformed to the accepted standard of care for the specialty."
+      },
+      {
+        "defense": "Statute of limitations",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The action was not commenced within the three-year limitations period. 24 M.R.S. § 2902."
+      },
+      {
+        "defense": "Known risk or complication",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The injury was a recognized risk or complication of the procedure, not the result of negligence."
+      },
+      {
+        "defense": "Statute of limitations (med-mal-specific period)",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The action was not commenced within the med-mal-specific limitations period of 24 M.R.S. ch. 21; the general 14 M.R.S. § 752 6-year period does not apply. NOTE: the exact period and accrual rule should be verified against current statute."
+      }
+    ]
   }
 }

@@ -23,7 +23,7 @@
     {
       "field_id": "docket_no",
       "fact_key": "matter.docket_number",
-      "value": "CUM-FM-2026-624",
+      "value": "CUM-FM-2026-268",
       "filled": true
     },
     {
@@ -596,14 +596,16 @@
   "profile": "canonical",
   "case": {
     "matter": {
-      "docket_number": "CUM-FM-2026-624",
-      "case_id": "MMC-2026-223800",
+      "docket_number": "CUM-FM-2026-268",
+      "case_id": "MMC-2026-538433",
       "court_county": "Cumberland",
       "court_location": "Portland",
       "court_type": "District Court",
+      "court_address": "127 State Street, Portland, ME 04019",
       "case_type": "family_matters",
       "filing_date": "2026-02-13",
-      "event_date": "2025-04-20"
+      "event_date": "2025-04-20",
+      "firm_name": "Ellsworth Advocates PC"
     },
     "parties": {
       "plaintiff": {
@@ -617,7 +619,8 @@
         "zip": "04047",
         "phone": "(207) 555-0174",
         "email": "olivia.ellsworth@example.com",
-        "date_of_birth": "1969-04-20"
+        "date_of_birth": "1969-04-20",
+        "entity_type": "person"
       },
       "defendant": {
         "full_name": "Maria Q. Fairbanks",
@@ -630,28 +633,32 @@
         "zip": "04071",
         "phone": "(207) 555-0154",
         "email": "maria.fairbanks@example.com",
-        "date_of_birth": "1965-03-05"
+        "date_of_birth": "1965-03-05",
+        "entity_type": "person"
       },
       "child_1": {
         "full_name": "Ingrid B. Kingsley",
         "first_name": "Ingrid",
         "middle_name": "B",
         "last_name": "Kingsley",
-        "date_of_birth": "2013-01-26"
+        "date_of_birth": "2013-01-26",
+        "entity_type": "person"
       },
       "child_2": {
         "full_name": "Marcus W. Roe",
         "first_name": "Marcus",
         "middle_name": "W",
         "last_name": "Roe",
-        "date_of_birth": "2021-05-29"
+        "date_of_birth": "2021-05-29",
+        "entity_type": "person"
       },
       "child_3": {
         "full_name": "Omar W. Loe",
         "first_name": "Omar",
         "middle_name": "W",
         "last_name": "Loe",
-        "date_of_birth": "2022-10-20"
+        "date_of_birth": "2022-10-20",
+        "entity_type": "person"
       },
       "attorney": {
         "full_name": "Diego F. Jessup",
@@ -665,7 +672,9 @@
         "phone": "(207) 555-0112",
         "email": "diego.jessup@example.net",
         "date_of_birth": "1956-02-02",
-        "bar_number": "1976"
+        "bar_number": "1976",
+        "organization_name": "Ellsworth Advocates PC",
+        "entity_type": "person"
       }
     },
     "party": {
@@ -680,11 +689,13 @@
       "phone": "(207) 555-0174",
       "email": "olivia.ellsworth@example.com",
       "date_of_birth": "1969-04-20",
+      "entity_type": "person",
       "signature": "Olivia B. Ellsworth"
     },
     "facts": {
       "marriage_date": "2010-08-15",
-      "marriage_city": "Camden",
+      "marriage_place": "Camden, Maine",
+      "marriage_city": "Bangor",
       "marriage_county": "Penobscot",
       "marriage_state": "Maine",
       "separation_date": "2025-04-20",
@@ -710,6 +721,59 @@
       "mortgages_balance": 150962,
       "loans_balance": 19954,
       "other_assets_value": 4797
+    },
+    "litigation": {
+      "docket": [
+        {
+          "date": "2026-02-13",
+          "entry": "Complaint for divorce filed with an interim relief request.",
+          "party": "us"
+        },
+        {
+          "date": "2026-03-06",
+          "entry": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+          "party": "opposing"
+        },
+        {
+          "date": "2026-03-23",
+          "entry": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+          "party": "client"
+        }
+      ],
+      "procedure": [
+        {
+          "date": "2026-02-13",
+          "day": 0,
+          "actor": "us",
+          "event": "Complaint for divorce filed with an interim relief request.",
+          "produces": [
+            "family_law__divorce_complaint"
+          ]
+        },
+        {
+          "date": "2026-03-06",
+          "day": 21,
+          "actor": "opposing",
+          "event": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+          "produces": [
+            "family_law__pleading"
+          ],
+          "response_deadline": "2026-03-26",
+          "deadline_rule": "M.R. Civ. P. 80(c) — response to the counterclaim for divorce."
+        },
+        {
+          "date": "2026-03-23",
+          "day": 38,
+          "actor": "client",
+          "event": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+          "produces": [
+            "family_law__motion"
+          ],
+          "response_deadline": "2026-03-23",
+          "deadline_rule": "19-A M.R.S. § 904 / M.R. Civ. P. 65 — emergency motion for interim parental rights and to freeze marital assets pending hearing.",
+          "urgent": true
+        }
+      ]
     }
   }
 }

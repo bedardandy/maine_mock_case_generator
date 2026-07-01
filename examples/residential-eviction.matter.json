@@ -6,24 +6,28 @@
     "generator": "deterministic-engine",
     "generator_version": "0.1.0",
     "scenario_id": "residential-eviction",
-    "seed": 7
+    "seed": 7,
+    "confounders": [
+      "waiver-by-noncollection"
+    ]
   },
   "matter": {
-    "matter_id": "MMC-2025-202163",
+    "matter_id": "MMC-2025-846702",
     "practice_area": "civil",
     "title": "Grace C. Roe v. Maria Q. Fairbanks (eviction)",
     "jurisdiction": {
       "state": "ME",
       "county": "Sagadahoc",
       "court_location": "Bath",
-      "court_type": "District Court"
+      "court_type": "District Court",
+      "court_address": "96 Federal Street, Bath, ME 04050"
     },
     "case_type": "forcible_entry_detainer",
     "filing_date": "2025-12-09",
     "status": "pre_filing",
-    "summary": "Grace C. Roe seeks to evict Maria Q. Fairbanks from 22 Tidewater Lane, Apt 3, Augusta based on termination of a tenancy at will, having served a 7-day notice to quit for nonpayment of rent on 2026-02-26.",
-    "event_date": "2026-02-26",
-    "docket_number": "SAG-FED-2025-660"
+    "summary": "Grace C. Roe seeks to evict Maria Q. Fairbanks from 22 Tidewater Lane, Apt 3, Augusta based on nonpayment of rent, having served a 7-day notice to quit for nonpayment of rent on 2026-02-21.",
+    "event_date": "2026-02-21",
+    "docket_number": "SAG-FED-2025-164"
   },
   "parties": {
     "plaintiff": {
@@ -94,11 +98,11 @@
     }
   },
   "fact_pattern": {
-    "summary": "Grace C. Roe seeks to evict Maria Q. Fairbanks from 22 Tidewater Lane, Apt 3, Augusta based on termination of a tenancy at will, having served a 7-day notice to quit for nonpayment of rent on 2026-02-26.",
-    "narrative": "Grace C. Roe rents the residential unit at 22 Tidewater Lane, Apt 3 in Augusta, Maine to Maria Q. Fairbanks under a month-to-month tenancy at will at $2097 per month. The tenant is approximately 6 month(s) behind, owing about $3911.\n\nThe landlord served a 7-day notice to quit for nonpayment of rent on 2026-02-26. The notice period has expired and the tenant remains in possession, so the landlord now brings a Forcible Entry and Detainer action seeking a judgment for possession (and, where allowed, unpaid rent).\n\nThe case proceeds as summary process in the District Court. The tenant may raise defenses such as breach of the implied warranty of habitability or improper notice, which the court must resolve before issuing a writ of possession.",
+    "summary": "Grace C. Roe seeks to evict Maria Q. Fairbanks from 22 Tidewater Lane, Apt 3, Augusta based on nonpayment of rent, having served a 7-day notice to quit for nonpayment of rent on 2026-02-21.",
+    "narrative": "Grace C. Roe rents the residential unit at 22 Tidewater Lane, Apt 3 in Augusta, Maine to Maria Q. Fairbanks under an expired lease continuing month-to-month at $1581 per month. The tenant is approximately 5 month(s) behind, owing about $7905.\n\nThe landlord served a 7-day notice to quit for nonpayment of rent on 2026-02-21. The notice period has expired and the tenant remains in possession, so the landlord now brings a Forcible Entry and Detainer action seeking a judgment for possession (and, where allowed, unpaid rent).\n\nThe case proceeds as summary process in the District Court. The tenant may raise defenses such as breach of the implied warranty of habitability or improper notice, which the court must resolve before issuing a writ of possession.",
     "undisputed_facts": [
       "Maria Q. Fairbanks occupies the unit at 22 Tidewater Lane, Apt 3, Augusta.",
-      "A 7-day notice to quit for nonpayment of rent was served on 2026-02-26."
+      "A 7-day notice to quit for nonpayment of rent was served on 2026-02-21."
     ],
     "disputed_facts": [
       "The exact amount of rent owed and any setoff for conditions.",
@@ -109,52 +113,51 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Lighthouse Outfitters Corp.",
+      "name": "Cobblestone Partners Co.",
       "type": "business_entity",
       "role": "Property management company",
       "relevance": "Manages the building and documented the nonpayment.",
       "contact": {
-        "phone": "(207) 555-0159",
-        "city": "Auburn",
+        "phone": "(207) 555-0146",
+        "city": "Windham",
         "state": "ME"
       }
     },
     {
       "id": "tp2",
-      "name": "Marcus H. Moe",
-      "type": "witness",
-      "role": "Process server / sheriff's deputy",
-      "relevance": "Serves the summons and any writ of possession.",
+      "name": "Local code enforcement office",
+      "type": "government_agency",
+      "role": "Code authority",
+      "relevance": "Relevant if the tenant raises a warranty-of-habitability defense.",
       "contact": {
-        "phone": "(207) 555-0110",
-        "city": "Farmington",
-        "state": "ME",
-        "email": "marcus.moe@example.org"
+        "phone": "(207) 555-0199",
+        "city": "Waterville",
+        "state": "ME"
       }
     },
     {
       "id": "tp3",
+      "name": "Wesley R. Calloway",
+      "type": "witness",
+      "role": "Neighboring tenant",
+      "relevance": "Can testify to disturbances or occupancy.",
+      "contact": {
+        "phone": "(207) 555-0136",
+        "city": "Yarmouth",
+        "state": "ME",
+        "email": "wesley.calloway@example.org"
+      }
+    },
+    {
+      "id": "tp4",
       "name": "Regional housing authority",
       "type": "government_agency",
       "role": "Section 8 administrator",
       "relevance": "Administers the tenant's housing voucher, if any.",
       "contact": {
-        "phone": "(207) 555-0193",
-        "city": "Falmouth",
+        "phone": "(207) 555-0121",
+        "city": "Gorham",
         "state": "ME"
-      }
-    },
-    {
-      "id": "tp4",
-      "name": "Carmen F. Fairbanks",
-      "type": "witness",
-      "role": "Neighboring tenant",
-      "relevance": "Can testify to disturbances or occupancy.",
-      "contact": {
-        "phone": "(207) 555-0196",
-        "city": "Belfast",
-        "state": "ME",
-        "email": "carmen.fairbanks@example.com"
       }
     }
   ],
@@ -166,17 +169,17 @@
       {
         "topic": "Tenancy",
         "question": "What is the rental arrangement?",
-        "answer": "a month-to-month tenancy at will at $2097 a month for the unit at 22 Tidewater Lane, Apt 3."
+        "answer": "an expired lease continuing month-to-month at $1581 a month for the unit at 22 Tidewater Lane, Apt 3."
       },
       {
         "topic": "Default",
         "question": "What is the problem?",
-        "answer": "The tenant is about 6 months behind, owing roughly $3911. The basis is termination of a tenancy at will."
+        "answer": "The tenant is about 5 months behind, owing roughly $7905. The basis is nonpayment of rent."
       },
       {
         "topic": "Notice",
         "question": "What notice did you give?",
-        "answer": "I served a 7-day notice to quit for nonpayment of rent on 2026-02-26, and the period has run."
+        "answer": "I served a 7-day notice to quit for nonpayment of rent on 2026-02-21, and the period has run."
       },
       {
         "topic": "Defenses",
@@ -214,6 +217,17 @@
   },
   "issues": [
     {
+      "issue": "Sufficiency of the notice to quit",
+      "category": "landlord_tenant",
+      "governing_law": "14 M.R.S. § 6002",
+      "sub_questions": [
+        "Was the correct 7-day or 30-day notice used and properly served?"
+      ],
+      "strength": "moderate",
+      "client_position": "Contends the notice was proper in form and timing.",
+      "id": "iss1"
+    },
+    {
       "issue": "Implied warranty of habitability as a defense",
       "category": "landlord_tenant",
       "governing_law": "14 M.R.S. § 6021",
@@ -222,17 +236,6 @@
         "Is a rent setoff warranted?"
       ],
       "strength": "moderate",
-      "id": "iss1"
-    },
-    {
-      "issue": "Grounds for forcible entry and detainer",
-      "category": "landlord_tenant",
-      "governing_law": "14 M.R.S. § 6001",
-      "sub_questions": [
-        "Is there a valid statutory ground for eviction?",
-        "Is there any claim of retaliation?"
-      ],
-      "strength": "strong",
       "id": "iss2"
     },
     {
@@ -244,61 +247,72 @@
       ],
       "strength": "strong",
       "id": "iss3"
+    },
+    {
+      "issue": "Grounds for forcible entry and detainer",
+      "category": "landlord_tenant",
+      "governing_law": "14 M.R.S. § 6001",
+      "sub_questions": [
+        "Is there a valid statutory ground for eviction?",
+        "Is there any claim of retaliation?"
+      ],
+      "strength": "strong",
+      "id": "iss4"
+    },
+    {
+      "issue": "Whether long non-collection of rent waived or modified the rent obligation, undercutting the stated arrears",
+      "category": "landlord_tenant",
+      "governing_law": "Common-law waiver / estoppel / implied modification (not an FED statute)",
+      "sub_questions": [
+        "Did years of neither charging nor collecting rent signal the parties treated rent as not owed?",
+        "If so, is the arrears figure in the 7-day notice overstated, making the notice defective?"
+      ],
+      "strength": "weak",
+      "notes": "[confounder:waiver-by-noncollection; fact-specific / NOT codified — common-law waiver-estoppel that courts often reject]",
+      "id": "iss5"
     }
   ],
   "evidence": [
+    {
+      "title": "Rent ledger",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "Payment history showing the arrearage.",
+      "id": "ev1"
+    },
     {
       "title": "Photographs of the premises",
       "type": "photo",
       "party": "defendant",
       "description": "Relevant to any habitability defense.",
-      "id": "ev1"
+      "id": "ev2"
     },
     {
       "title": "Tenant communications",
       "type": "correspondence",
       "party": "plaintiff",
       "description": "Messages about rent and conditions.",
-      "id": "ev2"
-    },
-    {
-      "title": "Written lease or rental agreement",
-      "type": "contract",
-      "party": "plaintiff",
-      "description": "Governs the tenancy and rent.",
       "id": "ev3"
-    },
-    {
-      "title": "Rent ledger",
-      "type": "financial_record",
-      "party": "plaintiff",
-      "description": "Payment history showing the arrearage.",
-      "id": "ev4"
     },
     {
       "title": "Notice to quit with proof of service",
       "type": "public_record",
       "party": "plaintiff",
       "description": "The served notice that starts the clock.",
-      "id": "ev5"
+      "id": "ev4"
     }
   ],
   "financials": {
     "currency": "USD",
     "amounts": [
       {
-        "label": "Estimated unit carrying cost per month",
-        "amount": 2097,
-        "basis": "Mortgage, taxes, and utilities."
-      },
-      {
         "label": "Monthly rent",
-        "amount": 2386,
+        "amount": 1920,
         "basis": "Lease."
       },
       {
         "label": "Total rent owed",
-        "amount": 6022,
+        "amount": 12370,
         "basis": "Rent ledger."
       }
     ]
@@ -317,29 +331,33 @@
     ],
     "affirmative_defenses": [
       {
-        "defense": "Defective or untimely notice",
+        "defense": "Breach of the implied warranty of habitability",
         "by": "Maria Q. Fairbanks",
-        "basis": "The notice to quit did not comply with 14 M.R.S. § 6002."
+        "basis": "Alleged uninhabitable conditions justifying a rent setoff. 14 M.R.S. § 6021."
       },
       {
-        "defense": "Retaliatory eviction",
+        "defense": "Waiver / estoppel / modification of the rent obligation",
         "by": "Maria Q. Fairbanks",
-        "basis": "Eviction allegedly in response to a complaint. 14 M.R.S. § 6001."
+        "basis": "The landlord neither charged nor collected rent for about 27 months. NOTE (overbroad-risk): mere delay or non-collection is NOT enough — waiver, estoppel, accord, or implied modification needs proof of an agreement, intentional relinquishment, or detrimental reliance; the argument frequently fails, and acceptance of rent does NOT auto-waive a Maine 30-day no-cause notice (14 M.R.S. § 6002)."
       }
     ]
   },
   "facts": {
     "premises_address": "22 Tidewater Lane, Apt 3",
     "premises_city": "Augusta",
-    "tenancy_type": "a month-to-month tenancy at will",
-    "monthly_rent": 2097,
-    "months_in_arrears": 6,
-    "total_rent_owed": 3911,
+    "monthly_rent": 1581,
+    "notice_to_quit_date": "2026-02-21",
+    "other_attachment": "Rent ledger attached",
+    "quit_ground": "nonpayment",
+    "eviction_basis": "nonpayment of rent",
     "notice_type": "7-day notice to quit for nonpayment of rent",
-    "notice_to_quit_date": "2026-02-26",
-    "eviction_basis": "termination of a tenancy at will",
-    "other_eviction_basis": "Unauthorized occupants in the unit",
-    "other_attachment": "",
-    "section8_tenancy": false
+    "tenancy_type": "an expired lease continuing month-to-month",
+    "months_in_arrears": 5,
+    "total_rent_owed": 7905,
+    "other_eviction_basis": "",
+    "section8_tenancy": false,
+    "months_no_rent_collected": 27,
+    "landlord_sent_invoices": false,
+    "tenant_claims_waiver": true
   }
 }

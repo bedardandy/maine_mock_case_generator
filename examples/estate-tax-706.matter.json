@@ -9,14 +9,15 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2026-202163",
+    "matter_id": "MMC-2026-846702",
     "practice_area": "tax",
     "title": "Estate of Olivia B. Ellsworth: federal estate tax return (Form 706) and Maine estate tax return (706ME), with Theodore B. Kingsley as executor",
     "jurisdiction": {
       "state": "ME",
       "county": "Sagadahoc",
       "court_location": "Bath",
-      "court_type": "Probate Court / IRS / Maine Revenue Services"
+      "court_type": "Probate Court / IRS / Maine Revenue Services",
+      "court_address": "96 Federal Street, Bath, ME 04050"
     },
     "case_type": "estate_tax",
     "filing_date": "2026-05-31",
@@ -118,52 +119,28 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Internal Revenue Service",
-      "type": "government_agency",
-      "role": "Federal taxing authority",
-      "relevance": "Reviews and may audit the Form 706 federal estate tax return and the Form 1041 fiduciary income tax return filed for the estate.",
+      "name": "Evergreen Partners Co.",
+      "type": "insurer",
+      "role": "Life insurance company",
+      "relevance": "Pays the life insurance proceeds includible in the gross estate under IRC § 2042 and furnishes the Form 712 statement supporting the reported value.",
       "contact": {
-        "phone": "(207) 555-0179",
-        "city": "Camden",
+        "phone": "(207) 555-0199",
+        "city": "Bath",
         "state": "ME"
       }
     },
     {
       "id": "tp2",
-      "name": "Lillian R. Kingsley",
+      "name": "Diego F. Boe",
       "type": "beneficiary",
       "role": "Surviving spouse and beneficiary",
       "relationship": "Surviving spouse",
       "relevance": "Property passing to the surviving spouse qualifies for the unlimited marital deduction under IRC § 2056 and drives whether a portability (DSUE) election is worthwhile.",
       "contact": {
-        "phone": "(207) 555-0146",
-        "city": "Windham",
+        "phone": "(207) 555-0189",
+        "city": "Falmouth",
         "state": "ME",
-        "email": "lillian.kingsley@example.com"
-      }
-    },
-    {
-      "id": "tp3",
-      "name": "Summit Holdings Co.",
-      "type": "insurer",
-      "role": "Life insurance company",
-      "relevance": "Pays the life insurance proceeds includible in the gross estate under IRC § 2042 and furnishes the Form 712 statement supporting the reported value.",
-      "contact": {
-        "phone": "(207) 555-0143",
-        "city": "Waterville",
-        "state": "ME"
-      }
-    },
-    {
-      "id": "tp4",
-      "name": "Maine Revenue Services",
-      "type": "government_agency",
-      "role": "State taxing authority",
-      "relevance": "Administers the Maine estate tax under 36 M.R.S. § 4062 et seq. and receives the Form 706ME and Form 1041ME returns for the estate.",
-      "contact": {
-        "phone": "(207) 555-0109",
-        "city": "Camden",
-        "state": "ME"
+        "email": "diego.boe@example.org"
       }
     }
   ],
@@ -240,16 +217,28 @@
       "id": "iss1"
     },
     {
-      "issue": "Maine estate tax and the Maine exclusion amount",
+      "issue": "Applicable exclusion and portability of the DSUE amount",
       "category": "tax",
-      "governing_law": "36 M.R.S. § 4062 et seq.",
+      "governing_law": "IRC § 2010(c)",
       "sub_questions": [
-        "Does the estate exceed the Maine exclusion amount so that a Form 706ME is required?",
-        "How is the Maine taxable estate computed for a Maine-domiciled decedent?"
+        "What is the decedent's remaining applicable exclusion after prior taxable gifts?",
+        "Should the executor elect portability to transfer the unused exclusion (DSUE) to the surviving spouse?"
       ],
       "strength": "moderate",
-      "client_position": "Acknowledges that the Maine estate exceeds the Maine exclusion and will file a Form 706ME computing the Maine estate tax.",
+      "client_position": "Intends to elect portability under IRC § 2010(c) where it preserves valuable unused exclusion for the surviving spouse.",
       "id": "iss2"
+    },
+    {
+      "issue": "Form 706 filing requirement and the nine-month due date",
+      "category": "tax",
+      "governing_law": "IRC § 6018; IRC § 6075",
+      "sub_questions": [
+        "Is a Form 706 required because the gross estate exceeds the filing threshold?",
+        "Is the return timely filed within nine months of death or a properly extended date?"
+      ],
+      "strength": "strong",
+      "client_position": "Recognizes a Form 706 is required under IRC § 6018 and will file by the nine-month due date of 2026-07-10 under IRC § 6075 or a valid extension.",
+      "id": "iss3"
     },
     {
       "issue": "Composition and valuation of the gross estate",
@@ -261,7 +250,7 @@
       ],
       "strength": "moderate",
       "client_position": "Contends the gross estate of roughly $8563055 should be reported at defensible, appraisal-supported date-of-death values.",
-      "id": "iss3"
+      "id": "iss4"
     },
     {
       "issue": "Deductibility of debts, funeral, and administration expenses",
@@ -273,12 +262,36 @@
       ],
       "strength": "strong",
       "client_position": "Seeks to deduct roughly $402524 in valid debts, funeral, and administration expenses under IRC § 2053.",
-      "id": "iss4"
+      "id": "iss5"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
+      "expert": {
+        "name": "Olivia Q. Hawthorne",
+        "field": "Real estate appraisal",
+        "credentials": "MAI",
+        "retained_by": "personal_representative"
+      },
+      "topic": "Date-of-death value of the decedent's real property",
+      "opinion": "The decedent's real property had a fair market value as of the date of death within the appraised range used on the Form 706.",
+      "basis": "Inspection of the property and analysis of comparable sales in the county."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "John W. Poe",
+        "field": "Closely-held business valuation",
+        "credentials": "ASA",
+        "retained_by": "personal_representative"
+      },
+      "topic": "Date-of-death fair market value of the decedent's closely-held business interest",
+      "opinion": "The closely-held business interest had a fair market value as of the date of death within the appraised range, after appropriate discounts for lack of marketability and control.",
+      "basis": "Review of the company's financial statements, comparable transactions, and applicable valuation discounts."
+    },
+    {
+      "id": "exp3",
       "expert": {
         "name": "Rosa L. Calloway",
         "field": "Estate and fiduciary tax",

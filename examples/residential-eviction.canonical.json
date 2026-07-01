@@ -1,13 +1,15 @@
 {
   "matter": {
-    "docket_number": "SAG-FED-2025-660",
-    "case_id": "MMC-2025-202163",
+    "docket_number": "SAG-FED-2025-164",
+    "case_id": "MMC-2025-846702",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "District Court",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "forcible_entry_detainer",
     "filing_date": "2025-12-09",
-    "event_date": "2026-02-26"
+    "event_date": "2026-02-21",
+    "firm_name": "Hawthorne Legal Group"
   },
   "parties": {
     "plaintiff": {
@@ -21,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Maria Q. Fairbanks",
@@ -34,7 +37,8 @@
       "zip": "04071",
       "phone": "(207) 555-0154",
       "email": "maria.fairbanks@example.com",
-      "date_of_birth": "1965-03-05"
+      "date_of_birth": "1965-03-05",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Ingrid B. Kingsley",
@@ -48,7 +52,9 @@
       "phone": "(207) 555-0128",
       "email": "ingrid.kingsley@example.com",
       "date_of_birth": "1966-03-10",
-      "bar_number": "7867"
+      "bar_number": "7867",
+      "organization_name": "Hawthorne Legal Group",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -63,20 +69,50 @@
     "phone": "(207) 555-0174",
     "email": "grace.roe@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Grace C. Roe"
   },
   "facts": {
     "premises_address": "22 Tidewater Lane, Apt 3",
     "premises_city": "Augusta",
-    "tenancy_type": "a month-to-month tenancy at will",
-    "monthly_rent": 2097,
-    "months_in_arrears": 6,
-    "total_rent_owed": 3911,
+    "monthly_rent": 1581,
+    "notice_to_quit_date": "2026-02-21",
+    "other_attachment": "Rent ledger attached",
+    "quit_ground": "nonpayment",
+    "eviction_basis": "nonpayment of rent",
     "notice_type": "7-day notice to quit for nonpayment of rent",
-    "notice_to_quit_date": "2026-02-26",
-    "eviction_basis": "termination of a tenancy at will",
-    "other_eviction_basis": "Unauthorized occupants in the unit",
-    "other_attachment": "",
-    "section8_tenancy": false
+    "tenancy_type": "an expired lease continuing month-to-month",
+    "months_in_arrears": 5,
+    "total_rent_owed": 7905,
+    "other_eviction_basis": "",
+    "section8_tenancy": false,
+    "months_no_rent_collected": 27,
+    "landlord_sent_invoices": false,
+    "tenant_claims_waiver": true
+  },
+  "litigation": {
+    "posture": "pleadings",
+    "motions": [
+      {
+        "title": "Request for issuance of writ of possession",
+        "type": "post_judgment",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-12-09",
+        "status": "filed",
+        "relief": "A writ directing the tenant's removal if the judgment is not satisfied."
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Breach of the implied warranty of habitability",
+        "by": "Maria Q. Fairbanks",
+        "basis": "Alleged uninhabitable conditions justifying a rent setoff. 14 M.R.S. § 6021."
+      },
+      {
+        "defense": "Waiver / estoppel / modification of the rent obligation",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The landlord neither charged nor collected rent for about 27 months. NOTE (overbroad-risk): mere delay or non-collection is NOT enough — waiver, estoppel, accord, or implied modification needs proof of an agreement, intentional relinquishment, or detrimental reliance; the argument frequently fails, and acceptance of rent does NOT auto-waive a Maine 30-day no-cause notice (14 M.R.S. § 6002)."
+      }
+    ]
   }
 }

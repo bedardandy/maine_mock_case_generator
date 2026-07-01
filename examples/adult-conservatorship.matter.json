@@ -9,20 +9,21 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-691783",
+    "matter_id": "MMC-2025-429407",
     "practice_area": "probate",
     "title": "Petition for Guardianship and/or Conservatorship of Maria Q. Fairbanks",
     "jurisdiction": {
       "state": "ME",
       "county": "Sagadahoc",
       "court_location": "Bath",
-      "court_type": "Probate Court"
+      "court_type": "Probate Court",
+      "court_address": "96 Federal Street, Bath, ME 04050"
     },
     "case_type": "conservatorship",
     "filing_date": "2025-11-08",
     "status": "pre_filing",
     "summary": "Grace C. Roe petitions the Bath Probate Court for appointment as guardian and/or conservator of Maria Q. Fairbanks, the petitioner's mother, who is alleged to be incapacitated by a serious developmental disability, and asks the court for both guardianship and conservatorship limited to the authority the respondent's situation actually requires.",
-    "docket_number": "SAG-GC-2025-161"
+    "docket_number": "SAG-GC-2025-576"
   },
   "parties": {
     "petitioner": {
@@ -115,29 +116,28 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Rosa M. Greenhill",
-      "type": "witness",
-      "role": "Court visitor / guardian ad litem",
-      "relevance": "Appointed to meet with the respondent, investigate the petition, and report to the court on the respondent's circumstances and wishes.",
-      "contact": {
-        "phone": "(207) 555-0138",
-        "city": "Windham",
-        "state": "ME",
-        "email": "rosa.greenhill@example.com"
-      }
-    },
-    {
-      "id": "tp2",
-      "name": "Maria K. Kingsley",
+      "name": "Beatrice C. Boe",
       "type": "family_member",
       "role": "Adult sibling of the petitioner",
       "relationship": "Another adult child of the respondent",
       "relevance": "An interested family member entitled to notice who may support or object to the petition or the choice of fiduciary.",
       "contact": {
-        "phone": "(207) 555-0167",
-        "city": "Bath",
+        "phone": "(207) 555-0173",
+        "city": "Belfast",
         "state": "ME",
-        "email": "maria.kingsley@example.net"
+        "email": "beatrice.boe@example.net"
+      }
+    },
+    {
+      "id": "tp2",
+      "name": "Downeast Federal Savings",
+      "type": "financial_institution",
+      "role": "Bank holding the respondent's accounts",
+      "relevance": "Holds the respondent's deposit and investment accounts that any conservatorship would be charged with protecting.",
+      "contact": {
+        "phone": "(207) 555-0136",
+        "city": "Yarmouth",
+        "state": "ME"
       }
     },
     {
@@ -147,32 +147,33 @@
       "role": "Adult Protective Services",
       "relevance": "State agency that may hold information about the respondent's safety and well-being and is an interested party in protective proceedings.",
       "contact": {
-        "phone": "(207) 555-0109",
-        "city": "Camden",
+        "phone": "(207) 555-0153",
+        "city": "Lewiston",
         "state": "ME"
       }
     },
     {
       "id": "tp4",
-      "name": "Cobblestone Builders Co.",
+      "name": "Wesley B. Fairbanks",
       "type": "healthcare_provider",
-      "role": "Long-term care facility",
-      "relevance": "Facility where the respondent may reside and that can speak to day-to-day care needs and supervision.",
+      "role": "Respondent's primary physician",
+      "relevance": "Treats the respondent and can speak to the nature and extent of the alleged incapacity and the level of care required.",
       "contact": {
-        "phone": "(207) 555-0153",
-        "city": "Falmouth",
-        "state": "ME"
+        "phone": "(207) 555-0185",
+        "city": "Lewiston",
+        "state": "ME",
+        "email": "wesley.fairbanks@example.net"
       }
     },
     {
       "id": "tp5",
-      "name": "Lighthouse Trust Company",
-      "type": "financial_institution",
-      "role": "Bank holding the respondent's accounts",
-      "relevance": "Holds the respondent's deposit and investment accounts that any conservatorship would be charged with protecting.",
+      "name": "Cobblestone Partners Co.",
+      "type": "healthcare_provider",
+      "role": "Long-term care facility",
+      "relevance": "Facility where the respondent may reside and that can speak to day-to-day care needs and supervision.",
       "contact": {
-        "phone": "(207) 555-0173",
-        "city": "Lewiston",
+        "phone": "(207) 555-0108",
+        "city": "Augusta",
         "state": "ME"
       }
     }
@@ -236,35 +237,11 @@
       "Any arrangement that compromises the respondent's safety or strips away more independence than necessary."
     ],
     "constraints": {
-      "budget": "Modest; the petitioner is willing to retain an evaluator and a care manager but wants costs kept reasonable.",
+      "budget": "Limited; the petitioner wants an efficient, low-conflict path to the authority needed.",
       "timeline": "Wants protective authority in place promptly so the respondent's care and finances are not left unmanaged."
     }
   },
   "issues": [
-    {
-      "issue": "Least restrictive alternative and supported decision-making",
-      "category": "probate",
-      "governing_law": "18-C M.R.S. § 5-301-A",
-      "sub_questions": [
-        "Would a less restrictive alternative adequately meet the respondent's needs?",
-        "How is the requested authority limited to the least restrictive means?"
-      ],
-      "strength": "moderate",
-      "client_position": "The petitioner has considered less restrictive options and seeks only the authority that the respondent's needs actually require.",
-      "id": "iss1"
-    },
-    {
-      "issue": "Notice and the respondent's due-process rights",
-      "category": "probate",
-      "governing_law": "18-C M.R.S. § 5-305",
-      "sub_questions": [
-        "Has the respondent been informed of the right to counsel and the right to be present?",
-        "Have all interested persons received the notice the statute requires?"
-      ],
-      "strength": "strong",
-      "client_position": "The respondent's rights to counsel and to be present will be honored, and all interested persons will be given proper notice before any hearing.",
-      "id": "iss2"
-    },
     {
       "issue": "Powers and duties of the guardian or conservator and the role of an existing power of attorney",
       "category": "probate",
@@ -275,19 +252,7 @@
       ],
       "strength": "moderate",
       "client_position": "The petitioner seeks defined, limited powers and will account to the court, recognizing any existing power of attorney that already serves the respondent.",
-      "id": "iss3"
-    },
-    {
-      "issue": "Statutory basis for appointing a guardian of an incapacitated adult",
-      "category": "probate",
-      "governing_law": "18-C M.R.S. § 5-301 and § 5-301-A",
-      "sub_questions": [
-        "Is the respondent an incapacitated adult within the meaning of the statute?",
-        "Do the facts support appointment of the petitioner as guardian of the person?"
-      ],
-      "strength": "moderate",
-      "client_position": "The respondent's condition warrants a guardian, and the petitioner is an appropriate person to serve, limited to the authority required.",
-      "id": "iss4"
+      "id": "iss1"
     },
     {
       "issue": "The clear-and-convincing-evidence standard and required findings",
@@ -299,14 +264,26 @@
       ],
       "strength": "moderate",
       "client_position": "The medical evaluation and supporting evidence establish the statutory grounds by clear and convincing evidence.",
-      "id": "iss5"
+      "id": "iss2"
+    },
+    {
+      "issue": "Least restrictive alternative and supported decision-making",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 5-301-A",
+      "sub_questions": [
+        "Would a less restrictive alternative adequately meet the respondent's needs?",
+        "How is the requested authority limited to the least restrictive means?"
+      ],
+      "strength": "moderate",
+      "client_position": "The petitioner has considered less restrictive options and seeks only the authority that the respondent's needs actually require.",
+      "id": "iss3"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
       "expert": {
-        "name": "John R. Birchwood",
+        "name": "Jane M. Greenhill",
         "field": "Geriatric care management",
         "credentials": "RN, CMC",
         "retained_by": "petitioner"
@@ -318,7 +295,7 @@
     {
       "id": "exp2",
       "expert": {
-        "name": "Diego M. Ellsworth",
+        "name": "Henry D. Larkspur",
         "field": "Geriatric medicine / neuropsychology",
         "credentials": "M.D.",
         "retained_by": "court"
@@ -330,48 +307,64 @@
   ],
   "evidence": [
     {
-      "title": "Existing power of attorney or advance directive",
-      "type": "document",
-      "party": "respondent",
-      "description": "Any durable power of attorney, health care directive, or similar instrument the respondent previously executed.",
-      "id": "ev1"
-    },
-    {
-      "title": "Financial inventory of the respondent's assets",
-      "type": "financial_record",
+      "title": "Physician's capacity evaluation and affidavit",
+      "type": "medical_record",
       "party": "petitioner",
-      "description": "Itemized inventory of the respondent's accounts, property, income, and benefits to be protected.",
-      "id": "ev2"
+      "description": "Sworn medical evaluation of the respondent's capacity and functional limitations supporting the petition.",
+      "id": "ev1"
     },
     {
       "title": "Petition and proposed care plan",
       "type": "document",
       "party": "petitioner",
       "description": "The petition for appointment together with a proposed plan for the respondent's care and supervision.",
+      "id": "ev2"
+    },
+    {
+      "title": "Financial inventory of the respondent's assets",
+      "type": "financial_record",
+      "party": "petitioner",
+      "description": "Itemized inventory of the respondent's accounts, property, income, and benefits to be protected.",
       "id": "ev3"
+    },
+    {
+      "title": "Letters from family members",
+      "type": "correspondence",
+      "party": "petitioner",
+      "description": "Statements from family describing the respondent's needs and views on the proposed appointment.",
+      "id": "ev4"
+    },
+    {
+      "title": "Existing power of attorney or advance directive",
+      "type": "document",
+      "party": "respondent",
+      "description": "Any durable power of attorney, health care directive, or similar instrument the respondent previously executed.",
+      "id": "ev5"
+    },
+    {
+      "title": "Bank statements",
+      "type": "financial_record",
+      "party": "petitioner",
+      "description": "Recent statements for the respondent's deposit and investment accounts.",
+      "id": "ev6"
     }
   ],
   "financials": {
     "currency": "USD",
     "amounts": [
       {
-        "label": "Value of the respondent's estate to be protected",
-        "amount": 627788,
-        "basis": "Estimated total value of the respondent's accounts and property."
-      },
-      {
-        "label": "Respondent's monthly income and benefits",
-        "amount": 2259,
-        "basis": "Monthly income from pensions, Social Security, and other benefits."
-      },
-      {
         "label": "Existing debts",
-        "amount": 16227,
+        "amount": 29437,
         "basis": "Outstanding debts and obligations of the respondent."
       },
       {
+        "label": "Value of the respondent's estate to be protected",
+        "amount": 867309,
+        "basis": "Estimated total value of the respondent's accounts and property."
+      },
+      {
         "label": "Estimated monthly care costs",
-        "amount": 8019,
+        "amount": 10502,
         "basis": "Estimated monthly cost of the respondent's care and supervision."
       }
     ]
@@ -386,6 +379,11 @@
     "monthly_income": 4250,
     "existing_poa": true,
     "care_setting": "lives with the petitioner",
-    "physician_evaluation_obtained": true
+    "physician_evaluation_obtained": true,
+    "agent_address": "42 Ocean Avenue, Portland, ME 04103",
+    "successor_agent_name": "Daniel R. Pelletier",
+    "successor_agent_address": "301 Elm Street, Waterville, ME 04901",
+    "poa_effectiveness": "springing",
+    "effectiveness_recital": "effective upon the principal's incapacity as certified by a licensed physician (18-C M.R.S. § 5-909(1))"
   }
 }

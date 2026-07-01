@@ -9,21 +9,22 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2026-709851",
+    "matter_id": "MMC-2026-769949",
     "practice_area": "probate",
     "title": "Insolvent estate of Olivia B. Ellsworth",
     "jurisdiction": {
       "state": "ME",
       "county": "Sagadahoc",
       "court_location": "Bath",
-      "court_type": "Probate Court"
+      "court_type": "Probate Court",
+      "court_address": "96 Federal Street, Bath, ME 04050"
     },
     "case_type": "decedent_estate",
     "filing_date": "2026-05-01",
     "status": "active",
     "summary": "Theodore B. Kingsley administers the insolvent estate of Olivia B. Ellsworth, whose allowed claims of roughly $379749 far exceed probate assets of about $55959, requiring the court to apply the statutory order of priority among competing creditors and allowances.",
     "event_date": "2025-06-22",
-    "docket_number": "SAG-PE-2026-684"
+    "docket_number": "SAG-PE-2026-292"
   },
   "parties": {
     "decedent": {
@@ -104,22 +105,22 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Pine Tree Community Bank",
-      "type": "financial_institution",
-      "role": "Mortgage lender (secured creditor)",
-      "relevance": "Holds a secured claim against the decedent's real property.",
+      "name": "Evergreen Partners Co.",
+      "type": "creditor",
+      "role": "Hospital / medical creditor",
+      "relevance": "Asserts a large unsecured claim for end-of-life care.",
       "contact": {
-        "phone": "(207) 555-0179",
-        "city": "Camden",
+        "phone": "(207) 555-0199",
+        "city": "Bath",
         "state": "ME"
       }
     },
     {
       "id": "tp2",
-      "name": "Lighthouse Partners Corp.",
-      "type": "creditor",
-      "role": "Credit card issuer",
-      "relevance": "Files an unsecured claim that competes with other creditors.",
+      "name": "Maine Revenue Services",
+      "type": "government_agency",
+      "role": "Taxing authority",
+      "relevance": "Asserts a priority claim for unpaid taxes.",
       "contact": {
         "phone": "(207) 555-0138",
         "city": "Windham",
@@ -128,39 +129,28 @@
     },
     {
       "id": "tp3",
-      "name": "Evergreen Logistics Corp.",
-      "type": "creditor",
-      "role": "Hospital / medical creditor",
-      "relevance": "Asserts a large unsecured claim for end-of-life care.",
+      "name": "Marcus K. Poe",
+      "type": "beneficiary",
+      "role": "Residuary devisee",
+      "relevance": "Stands to receive nothing if the estate remains insolvent.",
       "contact": {
         "phone": "(207) 555-0167",
         "city": "Bath",
-        "state": "ME"
+        "state": "ME",
+        "email": "marcus.poe@example.net"
       }
     },
     {
       "id": "tp4",
-      "name": "Maine Revenue Services",
-      "type": "government_agency",
-      "role": "Taxing authority",
-      "relevance": "Asserts a priority claim for unpaid taxes.",
-      "contact": {
-        "phone": "(207) 555-0177",
-        "city": "Farmington",
-        "state": "ME"
-      }
-    },
-    {
-      "id": "tp5",
-      "name": "Henry E. Calloway",
+      "name": "Maria T. Coe",
       "type": "beneficiary",
       "role": "Surviving spouse claiming allowances",
       "relevance": "Claims the homestead, exempt-property, and family allowances ahead of general creditors.",
       "contact": {
-        "phone": "(207) 555-0162",
-        "city": "Falmouth",
+        "phone": "(207) 555-0153",
+        "city": "Lewiston",
         "state": "ME",
-        "email": "henry.calloway@example.net"
+        "email": "maria.coe@example.org"
       }
     }
   ],
@@ -222,13 +212,15 @@
   },
   "issues": [
     {
-      "issue": "Abatement of devises where the estate is insolvent",
+      "issue": "Order of priority for payment of claims against an insolvent estate",
       "category": "probate",
-      "governing_law": "18-C M.R.S. § 3-902",
+      "governing_law": "18-C M.R.S. § 3-805",
       "sub_questions": [
-        "In what order do devises abate to satisfy claims and allowances?"
+        "Which claims are priority claims (costs of administration, funeral, taxes)?",
+        "How are unsecured claims prorated when assets are insufficient?"
       ],
-      "strength": "moderate",
+      "strength": "strong",
+      "client_position": "Seeks court approval to pay claims strictly in statutory order.",
       "id": "iss1"
     },
     {
@@ -242,11 +234,11 @@
       "id": "iss2"
     },
     {
-      "issue": "Personal representative liability for improper distribution",
+      "issue": "Abatement of devises where the estate is insolvent",
       "category": "probate",
-      "governing_law": "18-C M.R.S. § 3-807; § 3-703",
+      "governing_law": "18-C M.R.S. § 3-902",
       "sub_questions": [
-        "What protects the PR who follows the statutory order and gives proper notice?"
+        "In what order do devises abate to satisfy claims and allowances?"
       ],
       "strength": "moderate",
       "id": "iss3"
@@ -262,25 +254,13 @@
       "strength": "strong",
       "client_position": "Contends the allowances are paid ahead of general creditors.",
       "id": "iss4"
-    },
-    {
-      "issue": "Order of priority for payment of claims against an insolvent estate",
-      "category": "probate",
-      "governing_law": "18-C M.R.S. § 3-805",
-      "sub_questions": [
-        "Which claims are priority claims (costs of administration, funeral, taxes)?",
-        "How are unsecured claims prorated when assets are insufficient?"
-      ],
-      "strength": "strong",
-      "client_position": "Seeks court approval to pay claims strictly in statutory order.",
-      "id": "iss5"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
       "expert": {
-        "name": "Maria S. Ashford",
+        "name": "Desmond R. Hawthorne",
         "field": "Estate accounting",
         "credentials": "CPA",
         "retained_by": "personal_representative"
@@ -288,33 +268,21 @@
       "topic": "Classification and proration of claims",
       "opinion": "After priority claims and allowances, unsecured creditors recover only a fraction of their claims.",
       "basis": "Inventory, claims register, and a proposed distribution schedule."
-    },
-    {
-      "id": "exp2",
-      "expert": {
-        "name": "Beatrice B. Poe",
-        "field": "Real estate appraisal",
-        "credentials": "MAI",
-        "retained_by": "personal_representative"
-      },
-      "topic": "Date-of-death value of the real property",
-      "opinion": "The encumbered real property has limited equity available to unsecured creditors.",
-      "basis": "Appraisal and the mortgage payoff."
     }
   ],
   "evidence": [
     {
-      "title": "Notice to creditors and proof of publication",
+      "title": "Certified death certificate",
       "type": "public_record",
       "party": "personal_representative",
-      "description": "Triggers the deadline for filing claims.",
+      "description": "Establishes the date of death and opens the non-claim period.",
       "id": "ev1"
     },
     {
-      "title": "Funeral and administration expense invoices",
+      "title": "Register of creditor claims",
       "type": "financial_record",
       "party": "personal_representative",
-      "description": "Priority expenses of administration.",
+      "description": "All filed claims with amounts and classifications.",
       "id": "ev2"
     },
     {
@@ -323,20 +291,6 @@
       "party": "personal_representative",
       "description": "Documents the secured claim against the real property.",
       "id": "ev3"
-    },
-    {
-      "title": "Inventory and appraisal showing a deficit",
-      "type": "financial_record",
-      "party": "personal_representative",
-      "description": "Lists assets well below total claims.",
-      "id": "ev4"
-    },
-    {
-      "title": "Register of creditor claims",
-      "type": "financial_record",
-      "party": "personal_representative",
-      "description": "All filed claims with amounts and classifications.",
-      "id": "ev5"
     }
   ],
   "financials": {
@@ -344,28 +298,23 @@
     "amounts": [
       {
         "label": "Total probate assets",
-        "amount": 82709,
+        "amount": 55302,
         "basis": "Inventory and appraisal."
       },
       {
+        "label": "Secured claims",
+        "amount": 141132,
+        "basis": "Mortgage and liens."
+      },
+      {
         "label": "Funeral and administration expenses (priority)",
-        "amount": 10931,
+        "amount": 20370,
         "basis": "Invoices."
       },
       {
         "label": "Total asserted claims",
-        "amount": 274403,
+        "amount": 171829,
         "basis": "Register of creditor claims."
-      },
-      {
-        "label": "Family and homestead allowances claimed",
-        "amount": 19418,
-        "basis": "Statutory allowances."
-      },
-      {
-        "label": "Secured claims",
-        "amount": 73905,
-        "basis": "Mortgage and liens."
       }
     ]
   },

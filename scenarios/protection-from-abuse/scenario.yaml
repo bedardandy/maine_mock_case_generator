@@ -94,11 +94,11 @@ objectives:
 issues:
   count: {min: 3, max: 5}
   pool:
-    - {issue: "Entitlement to relief on a protection from abuse complaint", category: family, governing_law: "19-A M.R.S. § 4007", sub_questions: ["Does the alleged conduct constitute abuse under the statute?", "Which forms of relief (no contact, stay-away, residence, parental rights) are appropriate?"], strength: moderate, client_position: "Seeks {requested_relief_lower} based on the pattern of conduct and the most recent incident."}
-    - {issue: "Availability of a temporary order pending hearing", category: family, governing_law: "19-A M.R.S. § 4006", sub_questions: ["Do the facts show an immediate and present danger of abuse?", "What temporary terms should issue before the full hearing?"], strength: moderate, client_position: "Requests temporary relief given the recency of the most recent incident."}
-    - {issue: "Standing and commencement of the protection action", category: family, governing_law: "19-A M.R.S. § 4005", sub_questions: ["Does the plaintiff's relationship to the defendant qualify under the statute?", "Is venue in {county} County proper?"], strength: strong, client_position: "Qualifies to file as a {relationship} and brings the action in the proper county."}
-    - {issue: "Firearms prohibition and surrender during the order", category: family, governing_law: "19-A M.R.S. § 4007(1)(A-1)", sub_questions: ["Should the order prohibit the defendant from possessing firearms?", "What surrender and verification terms are appropriate?"], strength: moderate, client_position: "Asks the court to prohibit firearm possession and order surrender for the duration of the order."}
-    - {issue: "Enforcement and consequences of any violation", category: family, governing_law: "19-A M.R.S. § 4011", sub_questions: ["What conduct would violate the order?", "What enforcement mechanisms and penalties apply to a violation?"], strength: strong, client_position: "Seeks clear terms so any violation can be enforced by law enforcement and the court."}
+    - {issue: "Entitlement to relief on a protection from abuse complaint", category: family, governing_law: "19-A M.R.S. § 4110", sub_questions: ["Does the alleged conduct constitute abuse under the statute?", "Which forms of relief (no contact, stay-away, residence, parental rights) are appropriate?"], strength: moderate, client_position: "Seeks {requested_relief_lower} based on the pattern of conduct and the most recent incident."}
+    - {issue: "Availability of a temporary order pending hearing", category: family, governing_law: "19-A M.R.S. § 4108", sub_questions: ["Do the facts show an immediate and present danger of abuse?", "What temporary terms should issue before the full hearing?"], strength: moderate, client_position: "Requests temporary relief given the recency of the most recent incident."}
+    - {issue: "Standing and commencement of the protection action", category: family, governing_law: "19-A M.R.S. §§ 4103, 4104", sub_questions: ["Does the plaintiff's relationship to the defendant qualify under the statute?", "Is venue in {county} County proper?"], strength: strong, client_position: "Qualifies to file as a {relationship} and brings the action in the proper county."}
+    - {issue: "Firearms prohibition and surrender during the order", category: family, governing_law: "19-A M.R.S. § 4110", sub_questions: ["Should the order prohibit the defendant from possessing firearms?", "What surrender and verification terms are appropriate?"], strength: moderate, client_position: "Asks the court to prohibit firearm possession and order surrender for the duration of the order."}
+    - {issue: "Enforcement and consequences of any violation", category: family, governing_law: "19-A M.R.S. § 4113", sub_questions: ["What conduct would violate the order?", "What enforcement mechanisms and penalties apply to a violation?"], strength: strong, client_position: "Seeks clear terms so any violation can be enforced by law enforcement and the court."}
 
 experts:
   count: {min: 0, max: 1}
@@ -114,3 +114,88 @@ evidence:
     - {title: "Emergency department medical record", type: medical_record, party: plaintiff, description: "Record from an ER visit relevant to a reported incident."}
     - {title: "Witness statement affidavit", type: affidavit, party: plaintiff, description: "Sworn statement from a witness corroborating the plaintiff's account."}
     - {title: "Prior protection order", type: public_record, party: plaintiff, description: "Copy of any prior protection order involving the parties, if one exists."}
+
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues within the protection-from-
+# abuse matter. Most matters draw ZERO. Each confounder injects coherent facts +
+# a spotted issue with its Maine grounding and a confidence flag; AI-assembled
+# research verified against legislature.maine.gov, NOT legal advice (see
+# DISCLAIMER.md). The PFA chapter was RENUMBERED — every cite below uses the
+# CURRENT 19-A ch.103 §§ 4101-4116 (the pre-2021 ch.101 §§ 4001-4014 are wrong).
+# Overbroad-risk is stated inline so the oracle is the CORRECT rule.
+confounders:
+  count: {weights: [60, 26, 11, 3]} # ~60% of matters stay clean
+  pool:
+    # pleading under the current PFA chapter + the § 4110 relief menu
+    - id: pfa-current-chapter-and-relief-menu
+      weight: 5
+      confidence: "High — well-settled; the ch.101 -> ch.103 renumber (PL 2021 c.647) is a citation-error trap"
+      source: "19-A M.R.S. ch.103 §§ 4101-4116 (renumbered from pre-2021 ch.101 §§ 4001-4014 by PL 2021 c.647); § 4102 (abuse / family or household member); § 4108 (ex parte temporary; hearing within 21 days); § 4110 (relief)"
+      facts:
+        pfa_chapter: "19-A ch.103 §§ 4101-4116 (renumbered from the pre-2021 ch.101 §§ 4001-4014)"
+        ex_parte_temporary_requested: true
+        hearing_within_days: 21
+        relief_basis: {pick: ["no contact", "stay-away", "exclusive use of the residence"]}
+      issue:
+        issue: "Pleading under the current PFA chapter and the § 4110 relief menu"
+        category: family
+        governing_law: "19-A M.R.S. ch.103 §§ 4101-4116; § 4102; § 4108; § 4110"
+        sub_questions:
+          - "Does the conduct meet the § 4102 definition of abuse between family or household members (or the qualifying dating relationship)?"
+          - "Which § 4110 relief is sought, and is an ex parte temporary order under § 4108 warranted with the hearing set within 21 days?"
+        strength: moderate
+        notes: "Overbroad-risk: cite the CURRENT ch.103 §§ 4101-4116 — the superseded ch.101 §§ 4001 et seq. are WRONG after PL 2021 c.647; § 4110 relief is menu-based and granted on the findings, not automatic."
+    # PFA temporary parental rights are interim, not a final § 1653 order
+    - id: pfa-temporary-custody-not-final-order
+      weight: 3
+      requires: {requested_relief: "no contact, stay-away, and temporary parental rights"}
+      confidence: "High — § 4110 temporary parental rights are interim relief distinct from a final § 1653 determination"
+      source: "19-A M.R.S. § 4110 (temporary relief including parental rights); cf. § 1653 (parental rights and responsibilities)"
+      facts:
+        temporary_parental_rights_requested: true
+        pfa_temp_custody_is_interim: true
+        final_parental_rights_track_separate: true
+      issue:
+        issue: "PFA temporary parental rights are interim relief, not a final parental-rights determination"
+        category: family
+        governing_law: "19-A M.R.S. § 4110; cf. § 1653"
+        sub_questions:
+          - "Does the requested temporary custody fall within § 4110, which can grant it independent of the parental-rights chapter?"
+          - "Is a separate § 1653 parental-rights action needed for a final, durable order?"
+        strength: moderate
+        notes: "Overbroad-risk: § 4110 temporary custody is INTERIM and does not substitute for a final § 1653 parental-rights order; conflating the two over-claims the PFA's effect. DV-flagged matters route to the PFA petition track, not blended into a divorce judgment."
+    # firearm prohibition / surrender (gated to firearms present)
+    - id: pfa-firearm-surrender
+      weight: 3
+      requires: {firearms_present: true}
+      confidence: "High — firearm prohibition/surrender is express § 4110 relief; the federal possession bar attaches to qualifying orders"
+      source: "19-A M.R.S. § 4110 (firearm prohibition and surrender); 18 U.S.C. § 922(g)(8) (federal possession bar for qualifying orders)"
+      facts:
+        firearm_surrender_requested: true
+        firearm_surrender_verification: true
+      issue:
+        issue: "Firearm prohibition and surrender under the protection order"
+        category: family
+        governing_law: "19-A M.R.S. § 4110; 18 U.S.C. § 922(g)(8)"
+        sub_questions:
+          - "Should the order prohibit firearm possession and direct surrender, with verification terms, given firearms are present?"
+          - "Does the order meet the predicate for the federal § 922(g)(8) possession bar (notice and hearing)?"
+        strength: moderate
+        notes: "Overbroad-risk: surrender/verification terms fit where firearms are present, but the federal § 922(g)(8) bar attaches only to an order entered after notice and hearing meeting the statutory predicate — track the predicate, do not assume it."
+    # mutual orders are disfavored (§ 4101)
+    - id: pfa-mutual-order-disfavored
+      weight: 2
+      confidence: "High — § 4101 states mutual orders undermine the purposes of the chapter"
+      source: "19-A M.R.S. § 4101 (mutual orders undermine the purposes of the chapter)"
+      facts:
+        respondent_seeks_counter_order: true
+        mutual_pfa_requested: true
+      issue:
+        issue: "A mutual PFA order is disfavored absent independent pleading and findings"
+        category: family
+        governing_law: "19-A M.R.S. § 4101"
+        sub_questions:
+          - "Has the respondent separately pleaded and proven abuse, or is this an attempt at a mutual order on a single petition?"
+          - "Are the separate findings required for any cross-order present?"
+        strength: moderate
+        notes: "Overbroad-risk: § 4101 disfavors mutual orders — a court should not enter one absent each party separately pleading and proving abuse and making the required findings; a mutual order dilutes enforcement."

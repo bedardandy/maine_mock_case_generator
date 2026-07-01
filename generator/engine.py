@@ -27,6 +27,143 @@ def _random_recent_date(rng: random.Random) -> str:
     return (start + timedelta(days=rng.randint(0, 380))).isoformat()
 
 
+def _pick_variant(variants: list[dict], rng: random.Random) -> dict:
+    """Weighted, deterministic choice of one coherent fact-bundle."""
+    weights = [max(0.0, float(v.get("weight", 1))) for v in variants]
+    total = sum(weights) or float(len(variants))
+    threshold = rng.random() * total
+    upto = 0.0
+    for variant, weight in zip(variants, weights):
+        upto += weight or 1.0
+        if threshold <= upto:
+            return variant
+    return variants[-1]
+
+
+def _merge_variant(variant: dict, facts: dict, ctx: dict, rng: random.Random) -> None:
+    """Resolve a chosen variant key-by-key, merging into facts and ctx so later
+    keys (e.g. a derived amount) may reference earlier ones in the same bundle.
+    Keys whose value resolves to None are omitted entirely (e.g. will_date in an
+    intestate variant) so the matter stays internally consistent."""
+    for key, spec in variant.items():
+        if key in ("weight", "_label"):
+            continue
+        value = dsl.resolve(spec, ctx, rng)
+        if value is None:
+            # An absent fact (e.g. will_date in an intestate estate) is dropped
+            # from facts and bound to "" in ctx so any narrative/timeline/evidence
+            # reference renders empty instead of leaking a {placeholder}; an
+            # empty-string date is also filtered out of the timeline downstream.
+            facts.pop(key, None)
+            ctx[key] = ""
+            ctx[f"{key}_lower"] = ""
+            continue
+        facts[key] = value
+        if isinstance(value, (str, int, float)):
+            ctx[key] = value
+        if isinstance(value, str):
+            ctx[f"{key}_lower"] = value.lower()
+
+
+def _confounder_applies(conf: dict, ctx: dict) -> bool:
+    """Gate a confounder to the matters it is legally coherent with. ``requires`` is
+    a dict of {fact: value-or-[values]} that must ALL match the current ctx; ``excludes``
+    is the inverse. A confounder with neither gate applies to any matter in the scenario.
+    (e.g. a waiver-by-non-collection confounder ``requires: {quit_ground: nonpayment}``
+    because there is no rent to waive in a no-cause at-will termination.)"""
+    def _match(spec, present) -> bool:
+        wanted = spec if isinstance(spec, list) else [spec]
+        return present in wanted
+    for fact, spec in (conf.get("requires") or {}).items():
+        if not _match(spec, ctx.get(fact)):
+            return False
+    for fact, spec in (conf.get("excludes") or {}).items():
+        if _match(spec, ctx.get(fact)):
+            return False
+    return True
+
+
+def _weighted_sample(pool: list[dict], k: int, rng: random.Random) -> list[dict]:
+    """Deterministic weighted sample of up to k items without replacement. A heavier
+    ``weight`` (default 1) is more likely to be drawn, so common frictions surface more
+    often than rare ones while staying reproducible from the seed."""
+    items = list(pool)
+    out: list[dict] = []
+    while items and len(out) < k:
+        weights = [max(0.0, float(it.get("weight", 1))) for it in items]
+        total = sum(weights)
+        if total <= 0:
+            out.append(items.pop(0))
+            continue
+        threshold = rng.random() * total
+        upto = 0.0
+        for i, weight in enumerate(weights):
+            upto += weight
+            if threshold <= upto:
+                out.append(items.pop(i))
+                break
+        else:
+            out.append(items.pop())
+    return out
+
+
+def _confounder_count(count_spec, n_pool: int, rng: random.Random) -> int:
+    """How many confounders fire. Besides the {min,max} form, ``count`` accepts a
+    ``{weights: [w0, w1, w2, ...]}`` distribution over the integers 0,1,2,... so a
+    scenario can keep MOST matters clean (e.g. ``{weights: [60, 25, 10, 5]}`` draws
+    0 confounders 60% of the time) — the plausible-but-not-common friction the suite
+    wants. Result is always clamped to the gated pool size."""
+    if isinstance(count_spec, dict) and "weights" in count_spec:
+        weights = [max(0.0, float(w)) for w in count_spec["weights"]]
+        total = sum(weights) or float(len(weights))
+        threshold = rng.random() * total
+        upto = 0.0
+        for i, weight in enumerate(weights):
+            upto += weight or 1.0
+            if threshold <= upto:
+                return min(i, n_pool)
+        return min(len(weights) - 1, n_pool)
+    if count_spec is not None:
+        return max(0, min(dsl.resolve_count(count_spec, rng), n_pool))
+    return n_pool
+
+
+def _apply_confounders(scenario: dict, facts: dict, ctx: dict,
+                       rng: random.Random) -> tuple[list, list]:
+    """Legal-issue tiering: layer 0..N independently-sampled *confounding* secondary
+    issues on top of the matter's primary issue. Each confounder is a coherent bundle:
+    it merges its own ``facts`` (creating a genuine decision point in the canonical
+    fact set), and contributes a spotted ``issue`` and an optional affirmative
+    ``defense``, each carrying its grounding (governing_law / source / confidence).
+    Confounders are uncommon by design (``count`` is typically ``{min: 0, ...}``) so
+    most matters stay clean and the friction is the plausible-but-not-common exception
+    that an issue-spotting / form-routing pipeline must still get right."""
+    spec = scenario.get("confounders")
+    if not spec:
+        return [], []
+    pool = [c for c in spec.get("pool", []) if _confounder_applies(c, ctx)]
+    if not pool:
+        return [], []
+    count = _confounder_count(spec.get("count"), len(pool), rng)
+    chosen = _weighted_sample(pool, count, rng)
+    issues, defenses, fired = [], [], []
+    for conf in chosen:
+        _merge_variant(conf.get("facts") or {}, facts, ctx, rng)
+        cid = conf.get("id", "?")
+        conf_note = conf.get("confidence", "")
+        if conf.get("issue"):
+            issue = dsl.resolve(conf["issue"], ctx, rng)
+            stamp = f"confounder:{cid}" + (f"; {conf_note}" if conf_note else "")
+            issue["notes"] = (issue.get("notes", "") + f" [{stamp}]").strip()
+            issues.append(issue)
+        if conf.get("defense"):
+            defenses.append(dsl.resolve(conf["defense"], ctx, rng))
+        fired.append(cid)
+    if fired:
+        ctx["_confounders"] = fired
+    return issues, defenses
+
+
 def _ctx_for_party(ctx: dict, key: str, party: dict) -> None:
     ctx[f"{key}_full_name"] = party.get("full_name", "")
     ctx[f"{key}_first"] = party.get("first_name", "")
@@ -99,7 +236,9 @@ def _build_parties(scenario: dict, ctx: dict, rng: random.Random, pools: Pools,
             party = copy.deepcopy(overrides[key])
             party.setdefault("role", role.get("label", ""))
         elif role.get("entity") == "organization":
-            party = build_organization(pools, name=role.get("name", ""), role=role.get("label", ""))
+            party = build_organization(pools, name=role.get("name", ""),
+                                       role=role.get("label", ""),
+                                       kind=role.get("entity_kind", ""))
         else:
             party = build_person(
                 pools,
@@ -175,6 +314,51 @@ def _assemble_fact_pattern(scenario: dict, ctx: dict, rng: random.Random) -> dic
         timeline.sort(key=lambda e: e["date"])
         fact_pattern["timeline"] = timeline
     return fact_pattern
+
+
+def _add_days(iso: str, days: int) -> str:
+    return (date.fromisoformat(iso) + timedelta(days=int(days))).isoformat()
+
+
+def _assemble_procedure(scenario: dict, ctx: dict, rng: random.Random,
+                        filing_date: str) -> dict:
+    """Turn a scenario ``procedure:`` block — an ordered stream of case events —
+    into a litigation docket plus a structured response obligation per event.
+
+    Each event is ``{day, actor, event, produces, deadline_days, deadline_rule,
+    urgent}``. ``day`` is days from the filing date; ``actor`` is who acted
+    (us | opposing | court | client); ``produces`` lists the responsive template
+    ids the event requires us to draft; ``deadline_days``/``deadline_rule`` carry
+    the response clock (e.g. M.R. Civ. P. 7 reply within 21 days). This is what
+    lets a matter be handed off as a bundle — an inbound filing or a mid-case
+    incident paired with the document it forces us to produce."""
+    spec = scenario.get("procedure")
+    if not spec:
+        return {}
+    events = dsl.resolve(spec, ctx, rng)
+    docket, procedure = [], []
+    for ev in events:
+        if not isinstance(ev, dict):
+            continue
+        when = _add_days(filing_date, ev.get("day", 0))
+        actor = ev.get("actor", "court")
+        entry = ev.get("event", "")
+        docket.append({"date": when, "entry": entry, "party": actor})
+        item = {"date": when, "day": int(ev.get("day", 0)), "actor": actor,
+                "event": entry}
+        if ev.get("produces"):
+            item["produces"] = ev["produces"] if isinstance(ev["produces"], list) \
+                else [ev["produces"]]
+        if ev.get("deadline_days") is not None:
+            item["response_deadline"] = _add_days(when, ev["deadline_days"])
+        if ev.get("deadline_rule"):
+            item["deadline_rule"] = ev["deadline_rule"]
+        if ev.get("urgent"):
+            item["urgent"] = True
+        procedure.append(item)
+    docket.sort(key=lambda e: e["date"])
+    procedure.sort(key=lambda e: e["date"])
+    return {"docket": docket, "procedure": procedure}
 
 
 def _assemble_issues(scenario: dict, ctx: dict, rng: random.Random) -> list:
@@ -278,6 +462,21 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
         if isinstance(value, str):
             ctx[f"{key}_lower"] = value.lower()
 
+    # Coherent variant bundle: pick one correlated set of facts and merge it so
+    # discriminating facts (notice_type<->quit_ground, will_exists<->testacy, ...)
+    # can never contradict each other. The downstream fillers then have a single
+    # consistent ground truth instead of an independently-rolled contradiction.
+    variants = scenario.get("variants")
+    if variants:
+        _merge_variant(_pick_variant(variants, rng), facts, ctx, rng)
+
+    # Legal-issue tiering: optionally layer confounding secondary issues that inject
+    # their own coherent facts (a standing/real-party-in-interest defect, a waiver by
+    # long non-collection of rent, an unusual-dwelling property-classification question,
+    # ...). Sampled AFTER the variant so a confounder may gate on (requires/excludes)
+    # and reference the chosen bundle.
+    conf_issues, conf_defenses = _apply_confounders(scenario, facts, ctx, rng)
+
     # event_date may reference a resolved fact (e.g. date_of_death)
     event_date = dsl.resolve(dates_spec["event_date"], ctx, rng) if dates_spec.get("event_date") else None
     if event_date:
@@ -295,6 +494,7 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
             "county": county,
             "court_location": court_location,
             "court_type": court_type,
+            "court_address": pools.courthouse_address(court_location),
         },
         "case_type": scenario.get("case_type", ""),
         "filing_date": filing_date,
@@ -321,6 +521,9 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
         "parties": parties,
         "fact_pattern": fact_pattern,
     }
+    if ctx.get("_confounders"):
+        # record which confounding secondary issues fired, for RSI introspection
+        out["provenance"]["confounders"] = ctx["_confounders"]
 
     third_parties = _build_third_parties(scenario, ctx, rng, pools)
     if third_parties:
@@ -338,7 +541,9 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
     if scenario.get("objectives"):
         out["client_objectives"] = dsl.resolve(scenario["objectives"], ctx, rng)
 
-    issues = _assemble_issues(scenario, ctx, rng)
+    issues = _assemble_issues(scenario, ctx, rng) + conf_issues
+    for idx, issue in enumerate(issues, start=1):
+        issue.setdefault("id", f"iss{idx}")
     if issues:
         out["issues"] = issues
 
@@ -354,8 +559,23 @@ def generate_matter(scenario_id: str, seed: int = 0, overrides: dict | None = No
     if financials:
         out["financials"] = financials
 
+    lit: dict = {}
     if scenario.get("litigation"):
-        out["litigation"] = dsl.resolve(scenario["litigation"], ctx, rng)
+        lit.update(dsl.resolve(scenario["litigation"], ctx, rng))
+    proc = _assemble_procedure(scenario, ctx, rng, filing_date)
+    if proc:
+        # the event-stream docket augments any declared docket; procedure is new
+        lit["docket"] = sorted((lit.get("docket") or []) + proc["docket"],
+                               key=lambda e: e.get("date", ""))
+        lit["procedure"] = proc["procedure"]
+        # posture follows the latest event unless the scenario pins one explicitly
+        if not lit.get("posture") and scenario.get("posture"):
+            lit["posture"] = scenario["posture"]
+    if conf_defenses:
+        # confounder-contributed affirmative defenses augment any the scenario declared
+        lit["affirmative_defenses"] = list(lit.get("affirmative_defenses") or []) + conf_defenses
+    if lit:
+        out["litigation"] = lit
 
     if facts:
         out["facts"] = facts

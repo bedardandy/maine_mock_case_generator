@@ -30,7 +30,7 @@
     {
       "field_id": "location_town",
       "fact_key": "matter.docket_number",
-      "value": "SAG-FM-2025-695",
+      "value": "SAG-FM-2025-754",
       "filled": true
     },
     {
@@ -357,11 +357,12 @@
   "profile": "canonical",
   "case": {
     "matter": {
-      "docket_number": "SAG-FM-2025-695",
-      "case_id": "MMC-2025-208061",
+      "docket_number": "SAG-FM-2025-754",
+      "case_id": "MMC-2025-698951",
       "court_county": "Sagadahoc",
       "court_location": "Bath",
       "court_type": "District Court",
+      "court_address": "96 Federal Street, Bath, ME 04050",
       "case_type": "parental_rights",
       "filing_date": "2025-11-08",
       "event_date": "2025-05-29"
@@ -378,7 +379,8 @@
         "zip": "04047",
         "phone": "(207) 555-0174",
         "email": "grace.roe@example.com",
-        "date_of_birth": "1969-04-20"
+        "date_of_birth": "1969-04-20",
+        "entity_type": "person"
       },
       "defendant": {
         "full_name": "Maria Q. Fairbanks",
@@ -391,14 +393,16 @@
         "zip": "04071",
         "phone": "(207) 555-0154",
         "email": "maria.fairbanks@example.com",
-        "date_of_birth": "1965-03-05"
+        "date_of_birth": "1965-03-05",
+        "entity_type": "person"
       },
       "child_1": {
         "full_name": "Rosa P. Kingsley",
         "first_name": "Rosa",
         "middle_name": "P",
         "last_name": "Kingsley",
-        "date_of_birth": "2024-04-23"
+        "date_of_birth": "2024-04-23",
+        "entity_type": "person"
       }
     },
     "party": {
@@ -413,6 +417,7 @@
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
       "date_of_birth": "1969-04-20",
+      "entity_type": "person",
       "signature": "Grace C. Roe"
     },
     "facts": {

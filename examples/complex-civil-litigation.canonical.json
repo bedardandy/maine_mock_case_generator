@@ -1,13 +1,15 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-268",
-    "case_id": "MMC-2025-538433",
+    "docket_number": "SAG-CV-2025-140",
+    "case_id": "MMC-2025-542182",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "civil",
     "filing_date": "2025-01-19",
-    "event_date": "2023-06-03"
+    "event_date": "2023-06-03",
+    "firm_name": "Ellsworth Advocates PC"
   },
   "parties": {
     "plaintiff": {
@@ -21,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "plaintiff_2": {
       "full_name": "Maria Q. Fairbanks",
@@ -34,7 +37,8 @@
       "zip": "04071",
       "phone": "(207) 555-0154",
       "email": "maria.fairbanks@example.com",
-      "date_of_birth": "1965-03-05"
+      "date_of_birth": "1965-03-05",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Coastal Outfitters LLC",
@@ -42,7 +46,9 @@
       "city": "Gorham",
       "state": "ME",
       "zip": "04038",
-      "phone": "(207) 555-0153"
+      "phone": "(207) 555-0153",
+      "organization_name": "Coastal Outfitters LLC",
+      "entity_type": "organization"
     },
     "defendant_2": {
       "full_name": "Olivia D. Jessup",
@@ -55,7 +61,8 @@
       "zip": "04014",
       "phone": "(207) 555-0174",
       "email": "olivia.jessup@example.net",
-      "date_of_birth": "1961-04-07"
+      "date_of_birth": "1961-04-07",
+      "entity_type": "person"
     },
     "third_party_defendant": {
       "full_name": "Summit Logistics LLC",
@@ -63,7 +70,9 @@
       "city": "Belfast",
       "state": "ME",
       "zip": "04088",
-      "phone": "(207) 555-0168"
+      "phone": "(207) 555-0168",
+      "organization_name": "Summit Logistics LLC",
+      "entity_type": "organization"
     },
     "attorney": {
       "full_name": "Omar R. Calloway",
@@ -77,7 +86,9 @@
       "phone": "(207) 555-0131",
       "email": "omar.calloway@example.com",
       "date_of_birth": "1957-05-05",
-      "bar_number": "5919"
+      "bar_number": "5919",
+      "organization_name": "Ellsworth Advocates PC",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -92,6 +103,7 @@
     "phone": "(207) 555-0174",
     "email": "grace.roe@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Grace C. Roe"
   },
   "facts": {
@@ -104,6 +116,265 @@
     "amount_in_controversy": 1628106,
     "demand_made": true,
     "class_action": true,
-    "auditor_role": "issued the audited financial statements relied upon in the offering"
+    "auditor_role": "issued the audited financial statements relied upon in the offering",
+    "relief_requested": "rescission, disgorgement, and compensatory damages",
+    "governmental_codefendant": false,
+    "accrual_theory": "the date the misstatement was discovered",
+    "discovery_rule_invoked": true,
+    "general_tort_sol_years": 6
+  },
+  "litigation": {
+    "posture": "discovery",
+    "docket": [
+      {
+        "date": "2025-01-19",
+        "entry": "Complaint and demand for jury trial filed.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-01-19",
+        "entry": "Complaint filed and served on the defendants.",
+        "party": "us"
+      },
+      {
+        "date": "2025-02-05",
+        "entry": "Defendants' answer, counterclaims, and cross-claim filed.",
+        "party": "Coastal Outfitters LLC"
+      },
+      {
+        "date": "2025-02-12",
+        "entry": "Defendants served their Answer asserting affirmative defenses and a Counterclaim for breach of contract and tortious interference.",
+        "party": "opposing"
+      },
+      {
+        "date": "2025-02-21",
+        "entry": "Third-party complaint against the auditor filed.",
+        "party": "Coastal Outfitters LLC"
+      },
+      {
+        "date": "2025-03-08",
+        "entry": "Scheduling order entered; discovery deadline set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-03-12",
+        "entry": "Defendants filed a Motion to Dismiss Count III (negligent misrepresentation) under M.R. Civ. P. 12(b)(6).",
+        "party": "opposing"
+      },
+      {
+        "date": "2025-04-07",
+        "entry": "Client reports the defendants are liquidating the disputed inventory and moving sale proceeds offshore, threatening to defeat any judgment.",
+        "party": "client"
+      },
+      {
+        "date": "2025-04-10",
+        "entry": "Order denying the motion to dismiss.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-06-07",
+        "entry": "Order compelling production of the audit workpapers.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-05",
+        "entry": "Plaintiffs' expert reports served; discovery continues.",
+        "party": "Grace C. Roe"
+      }
+    ],
+    "procedure": [
+      {
+        "date": "2025-01-19",
+        "day": 0,
+        "actor": "us",
+        "event": "Complaint filed and served on the defendants.",
+        "produces": [
+          "litigation__pleading"
+        ]
+      },
+      {
+        "date": "2025-02-12",
+        "day": 24,
+        "actor": "opposing",
+        "event": "Defendants served their Answer asserting affirmative defenses and a Counterclaim for breach of contract and tortious interference.",
+        "produces": [
+          "litigation__reply"
+        ],
+        "response_deadline": "2025-03-05",
+        "deadline_rule": "M.R. Civ. P. 7(a) / 12(a) — reply to a counterclaim within 21 days of service."
+      },
+      {
+        "date": "2025-03-12",
+        "day": 52,
+        "actor": "opposing",
+        "event": "Defendants filed a Motion to Dismiss Count III (negligent misrepresentation) under M.R. Civ. P. 12(b)(6).",
+        "produces": [
+          "litigation__opposition"
+        ],
+        "response_deadline": "2025-04-02",
+        "deadline_rule": "M.R. Civ. P. 7(b)(1)(A) — opposition to a motion within 21 days."
+      },
+      {
+        "date": "2025-04-07",
+        "day": 78,
+        "actor": "client",
+        "event": "Client reports the defendants are liquidating the disputed inventory and moving sale proceeds offshore, threatening to defeat any judgment.",
+        "produces": [
+          "litigation__emergency_motion"
+        ],
+        "response_deadline": "2025-04-07",
+        "deadline_rule": "M.R. Civ. P. 65 — motion for a temporary restraining order / preliminary injunction; attachment under M.R. Civ. P. 4A/4B.",
+        "urgent": true
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to dismiss for failure to state a claim",
+        "type": "dispositive",
+        "movant": "Coastal Outfitters LLC",
+        "filed_date": "2025-03-04",
+        "status": "denied",
+        "relief": "Dismissal of the fraud and UTPA counts."
+      },
+      {
+        "title": "Motion in limine to exclude the damages expert",
+        "type": "evidentiary",
+        "movant": "Coastal Outfitters LLC",
+        "filed_date": "2026-02-07",
+        "status": "filed",
+        "relief": "Exclusion of the plaintiffs' damages model."
+      },
+      {
+        "title": "Motion to compel production of audit workpapers",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-05-24",
+        "status": "granted",
+        "relief": "An order compelling the auditor's workpapers."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Breach of the non-disclosure agreement",
+        "by": "Coastal Outfitters LLC",
+        "against": "Grace C. Roe",
+        "relief": "Damages and injunctive relief for disclosure of confidential information."
+      },
+      {
+        "count": 2,
+        "claim": "Defamation",
+        "by": "Olivia D. Jessup",
+        "against": "Grace C. Roe",
+        "relief": "Damages for allegedly false public statements about the company."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Breach of contract",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "14 M.R.S. § 752; common law",
+        "elements": [
+          "A valid contract",
+          "Performance by the plaintiffs",
+          "Breach by the defendant",
+          "Resulting damages"
+        ],
+        "relief_sought": "Compensatory damages of approximately $1628106",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Breach of fiduciary duty",
+        "by": "Grace C. Roe",
+        "against": "Olivia D. Jessup",
+        "governing_law": "13-C M.R.S. § 831; common law",
+        "elements": [
+          "A fiduciary relationship",
+          "Breach of the duty of loyalty or care",
+          "Causation",
+          "Damages"
+        ],
+        "relief_sought": "Disgorgement and compensatory damages",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Fraudulent misrepresentation",
+        "by": "Grace C. Roe",
+        "against": "Olivia D. Jessup",
+        "governing_law": "Common law fraud",
+        "elements": [
+          "A material misrepresentation of fact",
+          "Knowledge of falsity (scienter)",
+          "Justifiable reliance",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory and punitive damages",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Negligent misrepresentation",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "Restatement (Second) of Torts § 552",
+        "elements": [
+          "A false statement in the course of business",
+          "Failure to exercise reasonable care",
+          "Justifiable reliance",
+          "Pecuniary loss"
+        ],
+        "relief_sought": "Compensatory damages",
+        "strength": "moderate"
+      },
+      {
+        "count": 5,
+        "claim": "Violation of the Maine Unfair Trade Practices Act",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "5 M.R.S. § 207",
+        "elements": [
+          "An unfair or deceptive act",
+          "In the conduct of trade or commerce",
+          "Loss of money or property"
+        ],
+        "relief_sought": "Actual damages, attorney fees, and costs",
+        "strength": "weak"
+      },
+      {
+        "count": 6,
+        "claim": "Unjust enrichment",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "Common law",
+        "elements": [
+          "A benefit conferred",
+          "Appreciation of the benefit",
+          "Inequitable retention"
+        ],
+        "relief_sought": "Restitution",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Business judgment rule",
+        "by": "Olivia D. Jessup",
+        "basis": "The challenged decisions were informed, good-faith business judgments."
+      },
+      {
+        "defense": "Statute of frauds",
+        "by": "Coastal Outfitters LLC",
+        "basis": "Any oral representations are unenforceable."
+      },
+      {
+        "defense": "Statute of limitations",
+        "by": "Coastal Outfitters LLC",
+        "basis": "Claims accrued more than six years before filing. 14 M.R.S. § 752."
+      }
+    ]
   }
 }

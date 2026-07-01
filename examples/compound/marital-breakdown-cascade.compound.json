@@ -106,21 +106,22 @@
         "seed": 7001
       },
       "matter": {
-        "matter_id": "MMC-2025-365540",
+        "matter_id": "MMC-2025-655684",
         "practice_area": "family",
         "title": "Divorce of Nadia P. Loe and Priya C. Roe",
         "jurisdiction": {
           "state": "ME",
           "county": "Cumberland",
           "court_location": "Portland",
-          "court_type": "District Court"
+          "court_type": "District Court",
+          "court_address": "127 State Street, Portland, ME 04019"
         },
         "case_type": "family_matters",
         "filing_date": "2025-10-31",
         "status": "pre_filing",
         "summary": "Nadia P. Loe petitions to divorce Priya C. Roe in Cumberland County District Court, citing irreconcilable marital differences, and asks the court to resolve parental rights for two minor child(ren), child support, and division of marital property.",
-        "event_date": "2025-03-19",
-        "docket_number": "CUM-FM-2025-642",
+        "event_date": "2025-07-31",
+        "docket_number": "CUM-FM-2025-512",
         "universe_id": "UNIV-marital-breakdown-cascade-0007"
       },
       "parties": {
@@ -223,11 +224,11 @@
       },
       "fact_pattern": {
         "summary": "Nadia P. Loe petitions to divorce Priya C. Roe in Cumberland County District Court, citing irreconcilable marital differences, and asks the court to resolve parental rights for two minor child(ren), child support, and division of marital property.",
-        "narrative": "Nadia P. Loe and Priya C. Roe were married on 2009-04-30 in Bar Harbor, Maine. The parties have two minor child(ren) together: Samuel B. Boe and Omar W. Loe. After several years of growing conflict and a period of unsuccessful counseling, the parties separated on 2025-03-19.\n\nSince separation, the children have lived primarily with Nadia P. Loe, while the other parent has exercised weekend contact. The parties jointly own or rent a jointly owned single-family home and share several financial accounts. They disagree about a long-term parenting schedule and about how to divide retirement savings accumulated during the marriage.\n\nNadia has resided in Cumberland County, Maine for approximately 52 months, satisfying the residency requirement to file. Nadia now seeks a divorce on the ground of irreconcilable marital differences, a workable parental rights and responsibilities order, child support consistent with the Maine guidelines, and an equitable division of marital property and debt.",
+        "narrative": "Nadia P. Loe and Priya C. Roe were married on 2009-04-30 in Brunswick, Maine. The parties have two minor child(ren) together: Samuel B. Boe and Omar W. Loe. After several years of growing conflict and a period of unsuccessful counseling, the parties separated on 2025-07-31.\n\nSince separation, the children have lived primarily with Nadia P. Loe, while the other parent has exercised weekend contact. The parties jointly own or rent a jointly owned single-family home and share several financial accounts. They disagree about a long-term parenting schedule and about how to divide retirement savings accumulated during the marriage.\n\nNadia has resided in Cumberland County, Maine for approximately 52 months, satisfying the residency requirement to file. Nadia now seeks a divorce on the ground of irreconcilable marital differences, a workable parental rights and responsibilities order, child support consistent with the Maine guidelines, and an equitable division of marital property and debt.",
         "undisputed_facts": [
-          "The parties were married on 2009-04-30 in Bar Harbor, Maine.",
+          "The parties were married on 2009-04-30 in Brunswick, Maine.",
           "The parties have two minor child(ren) of the marriage.",
-          "The parties separated on 2025-03-19 and have lived apart since."
+          "The parties separated on 2025-07-31 and have lived apart since."
         ],
         "disputed_facts": [
           "The long-term allocation of parental rights and responsibilities and the primary residence of the children.",
@@ -237,10 +238,10 @@
         "timeline": [
           {
             "date": "2009-04-30",
-            "event": "Nadia and Priya married in Bar Harbor, Maine."
+            "event": "Nadia and Priya married in Brunswick, Maine."
           },
           {
-            "date": "2025-03-19",
+            "date": "2025-07-31",
             "event": "The parties separated."
           },
           {
@@ -252,27 +253,40 @@
       "third_parties": [
         {
           "id": "tp1",
-          "name": "John H. Inglewood",
-          "type": "healthcare_provider",
-          "role": "Family counselor",
-          "relevance": "Saw the parties for marriage counseling before separation.",
-          "contact": {
-            "phone": "(207) 555-0136",
-            "city": "Belfast",
-            "state": "ME",
-            "email": "john.inglewood@example.net"
-          }
-        },
-        {
-          "id": "tp2",
           "name": "Casco Bay Savings",
           "type": "financial_institution",
           "role": "Joint account holder bank",
           "relevance": "Holds the marital checking, savings, and mortgage accounts.",
           "contact": {
-            "phone": "(207) 555-0155",
-            "city": "Augusta",
+            "phone": "(207) 555-0136",
+            "city": "Belfast",
             "state": "ME"
+          }
+        },
+        {
+          "id": "tp2",
+          "name": "Desmond Q. Noe",
+          "type": "guardian_ad_litem",
+          "role": "Guardian ad litem",
+          "relevance": "May be appointed to represent the best interests of the minor children.",
+          "contact": {
+            "phone": "(207) 555-0197",
+            "city": "Gorham",
+            "state": "ME",
+            "email": "desmond.noe@example.net"
+          }
+        },
+        {
+          "id": "tp3",
+          "name": "Lillian P. Coe",
+          "type": "healthcare_provider",
+          "role": "Family counselor",
+          "relevance": "Saw the parties for marriage counseling before separation.",
+          "contact": {
+            "phone": "(207) 555-0167",
+            "city": "Yarmouth",
+            "state": "ME",
+            "email": "lillian.coe@example.net"
           }
         }
       ],
@@ -334,13 +348,14 @@
       },
       "issues": [
         {
-          "issue": "Entitlement to and amount of spousal support",
+          "issue": "Division of marital property and debt",
           "category": "family",
-          "governing_law": "19-A M.R.S. § 951-A",
+          "governing_law": "19-A M.R.S. § 953",
           "sub_questions": [
-            "Is spousal support appropriate given the marriage length and incomes?"
+            "Which assets are marital versus non-marital?",
+            "How should retirement accounts and home equity be divided?"
           ],
-          "strength": "weak",
+          "strength": "moderate",
           "id": "iss1"
         },
         {
@@ -356,29 +371,6 @@
           "id": "iss2"
         },
         {
-          "issue": "Child support under the Maine guidelines",
-          "category": "family",
-          "governing_law": "19-A M.R.S. § 2006",
-          "sub_questions": [
-            "What are each party's gross incomes?",
-            "Who pays for health insurance and child care?"
-          ],
-          "strength": "strong",
-          "client_position": "Seeks guideline child support based on accurate income figures.",
-          "id": "iss3"
-        },
-        {
-          "issue": "Division of marital property and debt",
-          "category": "family",
-          "governing_law": "19-A M.R.S. § 953",
-          "sub_questions": [
-            "Which assets are marital versus non-marital?",
-            "How should retirement accounts and home equity be divided?"
-          ],
-          "strength": "moderate",
-          "id": "iss4"
-        },
-        {
           "issue": "Responsibility for attorney fees",
           "category": "family",
           "governing_law": "19-A M.R.S. § 105",
@@ -386,70 +378,65 @@
             "Is a fee contribution warranted by the parties' relative resources?"
           ],
           "strength": "weak",
-          "id": "iss5"
+          "id": "iss3"
         }
       ],
       "expert_opinions": [
         {
           "id": "exp1",
           "expert": {
-            "name": "Desmond D. Moe",
-            "field": "Vocational assessment",
-            "credentials": "MBA, CVA",
-            "retained_by": "defendant"
+            "name": "Eleanor T. Hawthorne",
+            "field": "Forensic accounting",
+            "credentials": "CPA",
+            "retained_by": "plaintiff"
           },
-          "topic": "Earning capacity",
-          "opinion": "The lower-earning spouse can return to full-time work within a year.",
-          "basis": "Work history and labor-market data."
-        },
-        {
-          "id": "exp2",
-          "expert": {
-            "name": "Nadia M. Doe",
-            "field": "Child custody / parenting evaluation",
-            "credentials": "Ph.D.",
-            "retained_by": "court"
-          },
-          "topic": "Best interests and parenting capacity",
-          "opinion": "Both parents are fit; a primary-residence-with-shared-contact schedule best serves the children's stability.",
-          "basis": "Clinical interviews, home visits, and collateral contacts."
+          "topic": "Tracing and valuation of marital accounts",
+          "opinion": "Retirement contributions during the marriage are marital and total a divisible balance.",
+          "basis": "Account statements and contribution histories."
         }
       ],
       "evidence": [
         {
-          "title": "Recent pay stubs",
-          "type": "financial_record",
+          "title": "Text message log",
+          "type": "correspondence",
           "party": "plaintiff",
-          "description": "Three months of pay stubs for income verification.",
+          "description": "Co-parenting communications relevant to the schedule dispute.",
           "id": "ev1"
-        },
-        {
-          "title": "Retirement account statements",
-          "type": "financial_record",
-          "party": "defendant",
-          "description": "Quarterly statements for both parties' retirement accounts.",
-          "id": "ev2"
-        },
-        {
-          "title": "Deed to the marital home",
-          "type": "public_record",
-          "party": "plaintiff",
-          "description": "Recorded deed showing joint ownership.",
-          "id": "ev3"
-        },
-        {
-          "title": "Children's school records",
-          "type": "document",
-          "party": "plaintiff",
-          "description": "Enrollment and report cards showing the children's stable schooling.",
-          "id": "ev4"
         },
         {
           "title": "Marriage certificate",
           "type": "public_record",
           "party": "plaintiff",
           "description": "Certified copy establishing the date and place of marriage.",
+          "id": "ev2"
+        },
+        {
+          "title": "Plaintiff's financial statement (FM-050)",
+          "type": "financial_record",
+          "party": "plaintiff",
+          "description": "Court financial statement of income, expenses, assets, and debts.",
+          "id": "ev3"
+        },
+        {
+          "title": "Retirement account statements",
+          "type": "financial_record",
+          "party": "defendant",
+          "description": "Quarterly statements for both parties' retirement accounts.",
+          "id": "ev4"
+        },
+        {
+          "title": "Children's school records",
+          "type": "document",
+          "party": "plaintiff",
+          "description": "Enrollment and report cards showing the children's stable schooling.",
           "id": "ev5"
+        },
+        {
+          "title": "Recent pay stubs",
+          "type": "financial_record",
+          "party": "plaintiff",
+          "description": "Three months of pay stubs for income verification.",
+          "id": "ev6"
         }
       ],
       "financials": {
@@ -457,22 +444,86 @@
         "amounts": [
           {
             "label": "Joint credit card debt",
-            "amount": 2453,
+            "amount": 25957,
             "basis": "Combined balances."
           },
           {
-            "label": "Estimated marital home equity",
-            "amount": 311054,
-            "basis": "Estimated fair market value less mortgage."
+            "label": "Plaintiff retirement account balance",
+            "amount": 85381,
+            "basis": "Most recent statement."
+          },
+          {
+            "label": "Plaintiff annual gross income",
+            "amount": 75095,
+            "basis": "W-2 wages."
+          },
+          {
+            "label": "Defendant retirement account balance",
+            "amount": 135328,
+            "basis": "Most recent statement."
+          }
+        ]
+      },
+      "litigation": {
+        "docket": [
+          {
+            "date": "2025-10-31",
+            "entry": "Complaint for divorce filed with an interim relief request.",
+            "party": "us"
+          },
+          {
+            "date": "2025-11-21",
+            "entry": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+            "party": "opposing"
+          },
+          {
+            "date": "2025-12-08",
+            "entry": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+            "party": "client"
+          }
+        ],
+        "procedure": [
+          {
+            "date": "2025-10-31",
+            "day": 0,
+            "actor": "us",
+            "event": "Complaint for divorce filed with an interim relief request.",
+            "produces": [
+              "family_law__divorce_complaint"
+            ]
+          },
+          {
+            "date": "2025-11-21",
+            "day": 21,
+            "actor": "opposing",
+            "event": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+            "produces": [
+              "family_law__pleading"
+            ],
+            "response_deadline": "2025-12-11",
+            "deadline_rule": "M.R. Civ. P. 80(c) — response to the counterclaim for divorce."
+          },
+          {
+            "date": "2025-12-08",
+            "day": 38,
+            "actor": "client",
+            "event": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+            "produces": [
+              "family_law__motion"
+            ],
+            "response_deadline": "2025-12-08",
+            "deadline_rule": "19-A M.R.S. § 904 / M.R. Civ. P. 65 — emergency motion for interim parental rights and to freeze marital assets pending hearing.",
+            "urgent": true
           }
         ]
       },
       "facts": {
         "marriage_date": "2009-04-30",
-        "marriage_city": "Bar Harbor",
-        "marriage_county": "Sagadahoc",
+        "marriage_place": "Bar Harbor, Maine",
+        "marriage_city": "Brunswick",
+        "marriage_county": "Hancock",
         "marriage_state": "Maine",
-        "separation_date": "2025-03-19",
+        "separation_date": "2025-07-31",
         "grounds": "Irreconcilable marital differences",
         "residency_months": 52,
         "spousal_support_requested": true,
@@ -499,14 +550,14 @@
       "related_matters": [
         {
           "universe_id": "UNIV-marital-breakdown-cascade-0007",
-          "matter_id": "MMC-2026-877762",
+          "matter_id": "MMC-2026-748380",
           "scenario_id": "protection-from-abuse",
           "relationship": "relates_to",
           "description": "The protection order concerns the same spouses and affects custody decided here."
         },
         {
           "universe_id": "UNIV-marital-breakdown-cascade-0007",
-          "matter_id": "MMC-2026-771146",
+          "matter_id": "MMC-2026-355133",
           "scenario_id": "business-formation-scorp",
           "relationship": "values",
           "description": "The marital business is an asset that must be valued and divided in the divorce."
@@ -521,24 +572,28 @@
         "generator": "deterministic-engine",
         "generator_version": "0.1.0",
         "scenario_id": "protection-from-abuse",
-        "seed": 7002
+        "seed": 7002,
+        "confounders": [
+          "pfa-current-chapter-and-relief-menu"
+        ]
       },
       "matter": {
-        "matter_id": "MMC-2026-877762",
+        "matter_id": "MMC-2026-748380",
         "practice_area": "family",
         "title": "Protection From Abuse: Nadia P. Loe v. Priya C. Roe",
         "jurisdiction": {
           "state": "ME",
           "county": "Cumberland",
           "court_location": "Portland",
-          "court_type": "District Court"
+          "court_type": "District Court",
+          "court_address": "127 State Street, Portland, ME 04019"
         },
         "case_type": "protection_from_abuse",
         "filing_date": "2026-05-24",
         "status": "pre_filing",
         "summary": "Nadia P. Loe petitions the Portland District Court for a protection from abuse order against Priya C. Roe, a dating partner, seeking no contact and stay-away order following a course of conduct that includes a most recent incident on 2026-04-06 at the plaintiff's workplace.",
         "event_date": "2026-04-06",
-        "docket_number": "CUM-PA-2026-454",
+        "docket_number": "CUM-PA-2026-740",
         "universe_id": "UNIV-marital-breakdown-cascade-0007"
       },
       "parties": {
@@ -665,28 +720,14 @@
       "third_parties": [
         {
           "id": "tp1",
-          "name": "Ingrid Q. Moe",
-          "type": "neighbor",
-          "role": "Neighbor who witnessed an incident",
-          "relevance": "Personally observed an incident and can corroborate the plaintiff's account.",
+          "name": "Mooselook Cafe Group",
+          "type": "employer",
+          "role": "Plaintiff's employer",
+          "relevance": "Aware of a workplace incident and relevant to a workplace stay-away provision.",
           "contact": {
-            "phone": "(207) 555-0186",
+            "phone": "(207) 555-0142",
             "city": "Auburn",
-            "state": "ME",
-            "email": "ingrid.moe@example.org"
-          }
-        },
-        {
-          "id": "tp2",
-          "name": "Felix J. Jessup",
-          "type": "healthcare_provider",
-          "role": "Domestic-violence advocate",
-          "relevance": "Assists the plaintiff with safety planning and connecting to community resources.",
-          "contact": {
-            "phone": "(207) 555-0148",
-            "city": "Bath",
-            "state": "ME",
-            "email": "felix.jessup@example.org"
+            "state": "ME"
           }
         }
       ],
@@ -749,63 +790,113 @@
       },
       "issues": [
         {
-          "issue": "Firearms prohibition and surrender during the order",
-          "category": "family",
-          "governing_law": "19-A M.R.S. § 4007(1)(A-1)",
-          "sub_questions": [
-            "Should the order prohibit the defendant from possessing firearms?",
-            "What surrender and verification terms are appropriate?"
-          ],
-          "strength": "moderate",
-          "client_position": "Asks the court to prohibit firearm possession and order surrender for the duration of the order.",
-          "id": "iss1"
-        },
-        {
           "issue": "Enforcement and consequences of any violation",
           "category": "family",
-          "governing_law": "19-A M.R.S. § 4011",
+          "governing_law": "19-A M.R.S. § 4113",
           "sub_questions": [
             "What conduct would violate the order?",
             "What enforcement mechanisms and penalties apply to a violation?"
           ],
           "strength": "strong",
           "client_position": "Seeks clear terms so any violation can be enforced by law enforcement and the court.",
+          "id": "iss1"
+        },
+        {
+          "issue": "Standing and commencement of the protection action",
+          "category": "family",
+          "governing_law": "19-A M.R.S. §§ 4103, 4104",
+          "sub_questions": [
+            "Does the plaintiff's relationship to the defendant qualify under the statute?",
+            "Is venue in Cumberland County proper?"
+          ],
+          "strength": "strong",
+          "client_position": "Qualifies to file as a dating partner and brings the action in the proper county.",
           "id": "iss2"
+        },
+        {
+          "issue": "Availability of a temporary order pending hearing",
+          "category": "family",
+          "governing_law": "19-A M.R.S. § 4108",
+          "sub_questions": [
+            "Do the facts show an immediate and present danger of abuse?",
+            "What temporary terms should issue before the full hearing?"
+          ],
+          "strength": "moderate",
+          "client_position": "Requests temporary relief given the recency of the most recent incident.",
+          "id": "iss3"
         },
         {
           "issue": "Entitlement to relief on a protection from abuse complaint",
           "category": "family",
-          "governing_law": "19-A M.R.S. § 4007",
+          "governing_law": "19-A M.R.S. § 4110",
           "sub_questions": [
             "Does the alleged conduct constitute abuse under the statute?",
             "Which forms of relief (no contact, stay-away, residence, parental rights) are appropriate?"
           ],
           "strength": "moderate",
           "client_position": "Seeks no contact and stay-away order based on the pattern of conduct and the most recent incident.",
-          "id": "iss3"
+          "id": "iss4"
+        },
+        {
+          "issue": "Firearms prohibition and surrender during the order",
+          "category": "family",
+          "governing_law": "19-A M.R.S. § 4110",
+          "sub_questions": [
+            "Should the order prohibit the defendant from possessing firearms?",
+            "What surrender and verification terms are appropriate?"
+          ],
+          "strength": "moderate",
+          "client_position": "Asks the court to prohibit firearm possession and order surrender for the duration of the order.",
+          "id": "iss5"
+        },
+        {
+          "issue": "Pleading under the current PFA chapter and the § 4110 relief menu",
+          "category": "family",
+          "governing_law": "19-A M.R.S. ch.103 §§ 4101-4116; § 4102; § 4108; § 4110",
+          "sub_questions": [
+            "Does the conduct meet the § 4102 definition of abuse between family or household members (or the qualifying dating relationship)?",
+            "Which § 4110 relief is sought, and is an ex parte temporary order under § 4108 warranted with the hearing set within 21 days?"
+          ],
+          "strength": "moderate",
+          "notes": "Overbroad-risk: cite the CURRENT ch.103 §§ 4101-4116 — the superseded ch.101 §§ 4001 et seq. are WRONG after PL 2021 c.647; § 4110 relief is menu-based and granted on the findings, not automatic. [confounder:pfa-current-chapter-and-relief-menu; High — well-settled; the ch.101 -> ch.103 renumber (PL 2021 c.647) is a citation-error trap]",
+          "id": "iss6"
         }
       ],
       "evidence": [
+        {
+          "title": "Emergency department medical record",
+          "type": "medical_record",
+          "party": "plaintiff",
+          "description": "Record from an ER visit relevant to a reported incident.",
+          "id": "ev1"
+        },
+        {
+          "title": "Police incident report",
+          "type": "public_record",
+          "party": "plaintiff",
+          "description": "Report documenting law-enforcement response to a reported incident.",
+          "id": "ev2"
+        },
+        {
+          "title": "Prior protection order",
+          "type": "public_record",
+          "party": "plaintiff",
+          "description": "Copy of any prior protection order involving the parties, if one exists.",
+          "id": "ev3"
+        },
         {
           "title": "Photographs of injuries and property damage",
           "type": "photo",
           "party": "plaintiff",
           "description": "Dated photographs the plaintiff offers to corroborate the reported incidents.",
-          "id": "ev1"
+          "id": "ev4"
         },
         {
           "title": "Witness statement affidavit",
           "type": "affidavit",
           "party": "plaintiff",
           "description": "Sworn statement from a witness corroborating the plaintiff's account.",
-          "id": "ev2"
-        },
-        {
-          "title": "Emergency department medical record",
-          "type": "medical_record",
-          "party": "plaintiff",
-          "description": "Record from an ER visit relevant to a reported incident.",
-          "id": "ev3"
+          "id": "ev5"
         }
       ],
       "facts": {
@@ -815,12 +906,16 @@
         "prior_incidents": 7,
         "firearms_present": false,
         "requested_relief": "no contact and stay-away order",
-        "police_called": true
+        "police_called": true,
+        "pfa_chapter": "19-A ch.103 §§ 4101-4116 (renumbered from the pre-2021 ch.101 §§ 4001-4014)",
+        "ex_parte_temporary_requested": true,
+        "hearing_within_days": 21,
+        "relief_basis": "no contact"
       },
       "related_matters": [
         {
           "universe_id": "UNIV-marital-breakdown-cascade-0007",
-          "matter_id": "MMC-2025-365540",
+          "matter_id": "MMC-2025-655684",
           "scenario_id": "family-divorce-cumberland",
           "relationship": "relates_to",
           "description": "Arises between the same spouses; a protective order can shape the parenting schedule in the divorce."
@@ -835,17 +930,21 @@
         "generator": "deterministic-engine",
         "generator_version": "0.1.0",
         "scenario_id": "business-formation-scorp",
-        "seed": 7003
+        "seed": 7003,
+        "confounders": [
+          "scorp-entity-type-confusion"
+        ]
       },
       "matter": {
-        "matter_id": "MMC-2026-771146",
+        "matter_id": "MMC-2026-355133",
         "practice_area": "business",
         "title": "Formation of Evergreen Studios LLC and S-Corporation Election by Priya C. Roe",
         "jurisdiction": {
           "state": "ME",
           "county": "Kennebec",
           "court_location": "Augusta",
-          "court_type": "Maine Secretary of State / IRS (filing offices)"
+          "court_type": "Maine Secretary of State / IRS (filing offices)",
+          "court_address": "121 State Street, Augusta, ME 04089"
         },
         "case_type": "entity_formation",
         "filing_date": "2026-04-27",
@@ -949,12 +1048,12 @@
       "third_parties": [
         {
           "id": "tp1",
-          "name": "Evergreen Analytics Co.",
-          "type": "business_entity",
-          "role": "Registered agent for the corporation",
-          "relevance": "Serves as the corporation's registered agent for service of process and official Maine Secretary of State correspondence.",
+          "name": "Pine Tree Community Bank",
+          "type": "financial_institution",
+          "role": "Business bank",
+          "relevance": "Holds the corporation's operating account, which is opened using the new EIN once issued.",
           "contact": {
-            "phone": "(207) 555-0147",
+            "phone": "(207) 555-0114",
             "city": "Gorham",
             "state": "ME"
           }
@@ -1091,6 +1190,19 @@
           "strength": "strong",
           "client_position": "Priya C. Roe is the responsible party and will apply for the EIN reporting the corporation's principal activity of software development.",
           "id": "iss5"
+        },
+        {
+          "issue": "An 'S corporation' is a federal tax election, not a Maine entity type",
+          "category": "business",
+          "governing_law": "13-C M.R.S. § 101 et seq.; I.R.C. § 1361; 36 M.R.S. § 5102(1-A)",
+          "sub_questions": [
+            "Is the client treating 'S-corp' as an entity type? It is not: an S corporation is an ordinary 13-C M.R.S. corporation that has made a federal Subchapter S election under I.R.C. § 1361, which Maine recognizes only for income-tax conformity (36 M.R.S. § 5102(1-A)).",
+            "Is the entity therefore governed by the CORRECT instruments — bylaws and a shareholder agreement under 13-C M.R.S. — and not a 31 M.R.S. LLC operating agreement?"
+          ],
+          "strength": "strong",
+          "client_position": "The founder calls the company an 'S-corp,' but the engagement must treat it as a 13-C corporation that will make a federal S election.",
+          "notes": "Overbroad-risk: S-corp eligibility limits (the 100-shareholder cap, single-class-of-stock rule, and eligible-shareholder rules) are FEDERAL under I.R.C. § 1361(b) — do not attribute them to Maine statute. [confounder:scorp-entity-type-confusion; High — entity taxonomy well-settled; the client's mislabel is fact-specific]",
+          "id": "iss6"
         }
       ],
       "expert_opinions": [
@@ -1175,12 +1287,17 @@
         "principal_activity": "software development",
         "expected_first_year_revenue": 105512,
         "responsible_party_name": "Priya C. Roe",
-        "reasonable_compensation": 43327
+        "reasonable_compensation": 43327,
+        "entity_mislabeled_as_scorp_type": true,
+        "governing_act": "13-C M.R.S. (Maine Business Corporation Act)",
+        "internal_governance_instrument": "bylaws and a shareholder agreement",
+        "llc_operating_agreement_applies": false,
+        "s_corp_is_federal_tax_election": true
       },
       "related_matters": [
         {
           "universe_id": "UNIV-marital-breakdown-cascade-0007",
-          "matter_id": "MMC-2025-365540",
+          "matter_id": "MMC-2025-655684",
           "scenario_id": "family-divorce-cumberland",
           "relationship": "marital_asset_of",
           "description": "The business is a marital asset whose value is contested in the divorce."

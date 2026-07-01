@@ -1,13 +1,15 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-161",
-    "case_id": "MMC-2025-691783",
+    "docket_number": "SAG-CV-2025-310",
+    "case_id": "MMC-2025-749078",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "arbitration",
     "filing_date": "2025-08-17",
-    "event_date": "2026-01-18"
+    "event_date": "2026-01-18",
+    "firm_name": "Ellsworth Advocates PC"
   },
   "parties": {
     "petitioner": {
@@ -16,7 +18,9 @@
       "city": "Yarmouth",
       "state": "ME",
       "zip": "04047",
-      "phone": "(207) 555-0174"
+      "phone": "(207) 555-0174",
+      "organization_name": "Riverbend Analytics LLC",
+      "entity_type": "organization"
     },
     "respondent": {
       "full_name": "Coastal Provisions LLC",
@@ -24,7 +28,9 @@
       "city": "Camden",
       "state": "ME",
       "zip": "04009",
-      "phone": "(207) 555-0130"
+      "phone": "(207) 555-0130",
+      "organization_name": "Coastal Provisions LLC",
+      "entity_type": "organization"
     },
     "other_party": {
       "full_name": "Maria Q. Jessup",
@@ -37,7 +43,8 @@
       "zip": "04029",
       "phone": "(207) 555-0180",
       "email": "maria.jessup@example.net",
-      "date_of_birth": "1964-02-01"
+      "date_of_birth": "1964-02-01",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Rosa B. Ellsworth",
@@ -51,7 +58,9 @@
       "phone": "(207) 555-0153",
       "email": "rosa.ellsworth@example.com",
       "date_of_birth": "1967-03-02",
-      "bar_number": "6054"
+      "bar_number": "6054",
+      "organization_name": "Ellsworth Advocates PC",
+      "entity_type": "person"
     },
     "plaintiff": {
       "full_name": "Riverbend Analytics LLC",
@@ -59,7 +68,9 @@
       "city": "Yarmouth",
       "state": "ME",
       "zip": "04047",
-      "phone": "(207) 555-0174"
+      "phone": "(207) 555-0174",
+      "organization_name": "Riverbend Analytics LLC",
+      "entity_type": "organization"
     },
     "defendant": {
       "full_name": "Coastal Provisions LLC",
@@ -67,7 +78,9 @@
       "city": "Camden",
       "state": "ME",
       "zip": "04009",
-      "phone": "(207) 555-0130"
+      "phone": "(207) 555-0130",
+      "organization_name": "Coastal Provisions LLC",
+      "entity_type": "organization"
     }
   },
   "party": {
@@ -77,6 +90,8 @@
     "state": "ME",
     "zip": "04047",
     "phone": "(207) 555-0174",
+    "organization_name": "Riverbend Analytics LLC",
+    "entity_type": "organization",
     "signature": "Riverbend Analytics LLC"
   },
   "facts": {
@@ -89,5 +104,116 @@
     "vacatur_ground": "the panel refused to hear material evidence",
     "attorney_fees_in_award": true,
     "included_punitive_or_consequential": true
+  },
+  "litigation": {
+    "posture": "motion_practice",
+    "docket": [
+      {
+        "date": "2025-06-05",
+        "entry": "Arbitration award issued and served on the parties.",
+        "party": "Maria Q. Jessup"
+      },
+      {
+        "date": "2025-07-24",
+        "entry": "Application and motion to confirm the award filed.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-08-12",
+        "entry": "Cross-motion to vacate the award filed.",
+        "party": "Coastal Provisions LLC"
+      },
+      {
+        "date": "2025-09-22",
+        "entry": "Briefing on the cross-applications completed.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-11-14",
+        "entry": "Hearing / oral argument on the cross-motions held.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to seal the arbitration record",
+        "type": "procedural",
+        "movant": "Coastal Provisions LLC",
+        "filed_date": "2025-07-15",
+        "status": "granted_in_part",
+        "relief": "An order sealing confidential portions of the arbitration record filed with the court."
+      },
+      {
+        "title": "Motion to confirm the arbitration award",
+        "type": "dispositive",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-10-04",
+        "status": "filed",
+        "relief": "An order confirming the award under 14 M.R.S. § 5937."
+      },
+      {
+        "title": "Cross-motion to vacate the arbitration award",
+        "type": "dispositive",
+        "movant": "Coastal Provisions LLC",
+        "filed_date": "2025-11-09",
+        "status": "opposed",
+        "relief": "An order vacating the award under 14 M.R.S. § 5938."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Application to confirm the arbitration award and for entry of judgment",
+        "by": "Riverbend Analytics LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "14 M.R.S. § 5937 and § 5941",
+        "elements": [
+          "A valid arbitration agreement and a final award",
+          "A timely application to confirm",
+          "No basis to vacate, modify, or correct the award"
+        ],
+        "relief_sought": "An order confirming the award and entering judgment for the award amount plus post-award interest",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Application, in the alternative, to modify or correct the award",
+        "by": "Riverbend Analytics LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "14 M.R.S. § 5939",
+        "elements": [
+          "An evident miscalculation, a description error, or an imperfection in form",
+          "A correction that does not affect the merits of the controversy"
+        ],
+        "relief_sought": "Correction or modification of the award and confirmation as modified",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Respondent's cross-application to vacate the award",
+        "by": "Coastal Provisions LLC",
+        "against": "Riverbend Analytics LLC",
+        "governing_law": "14 M.R.S. § 5938",
+        "elements": [
+          "An exclusive statutory ground such as corruption, fraud, or undue means",
+          "Evident partiality or corruption of an arbitrator",
+          "The arbitrators exceeding their powers, or a refusal to hear material evidence"
+        ],
+        "relief_sought": "An order vacating the award and denying confirmation",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "The dispute was not arbitrable",
+        "by": "Coastal Provisions LLC",
+        "basis": "No valid agreement to arbitrate this dispute existed, so there was no arbitral authority. 14 M.R.S. § 5928."
+      },
+      {
+        "defense": "Evident partiality / failure to disclose",
+        "by": "Coastal Provisions LLC",
+        "basis": "An arbitrator failed to disclose a conflict, showing evident partiality. 14 M.R.S. § 5938(1)(B)."
+      }
+    ]
   }
 }

@@ -9,21 +9,22 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-914983",
+    "matter_id": "MMC-2025-575198",
     "practice_area": "real_estate",
     "title": "Riverbend Analytics LLC v. Coastal Provisions LLC et al.",
     "jurisdiction": {
       "state": "ME",
       "county": "Sagadahoc",
       "court_location": "Bath",
-      "court_type": "Superior Court"
+      "court_type": "Superior Court",
+      "court_address": "96 Federal Street, Bath, ME 04050"
     },
     "case_type": "condominium",
     "filing_date": "2025-05-17",
     "status": "active",
     "summary": "Riverbend Analytics LLC, the unit owners' association for Granite Wharf Condominiums (a phased 110-unit community), sues the declarant Coastal Provisions LLC and its general contractor Summit Outfitters LLC over roof and building-envelope leaks in the common elements, and forecloses an assessment lien against delinquent unit owner Ingrid B. Kingsley.",
     "event_date": "2023-12-30",
-    "docket_number": "SAG-CV-2025-421"
+    "docket_number": "SAG-CV-2025-470"
   },
   "parties": {
     "plaintiff": {
@@ -133,49 +134,48 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Municipal Building Department",
-      "type": "government_agency",
-      "role": "Local code authority",
-      "relevance": "Issued the building permits and certificates of occupancy and holds inspection records.",
+      "name": "Lighthouse Trust Company",
+      "type": "financial_institution",
+      "role": "Declarant's construction lender",
+      "relevance": "Financed construction of the condominium and holds related records.",
       "contact": {
-        "phone": "(207) 555-0131",
-        "city": "Orono",
+        "phone": "(207) 555-0138",
+        "city": "Lewiston",
         "state": "ME"
       }
     },
     {
       "id": "tp2",
-      "name": "Northstar Partners Corp.",
-      "type": "insurer",
-      "role": "Developer's liability insurer",
-      "relevance": "May owe a defense and indemnity to the declarant and contractor for the defect claims.",
+      "name": "Downeast Federal Savings",
+      "type": "financial_institution",
+      "role": "Delinquent unit owner's mortgage lender",
+      "relevance": "Holds a recorded mortgage on the delinquent unit and has priority interests affected by the lien foreclosure.",
       "contact": {
-        "phone": "(207) 555-0193",
-        "city": "Falmouth",
+        "phone": "(207) 555-0136",
+        "city": "Yarmouth",
         "state": "ME"
       }
     },
     {
       "id": "tp3",
-      "name": "Carmen F. Fairbanks",
-      "type": "expert",
-      "role": "Association's building-envelope consultant",
-      "relevance": "Investigated the common-element defects and prepared the envelope and moisture reports.",
+      "name": "Municipal Building Department",
+      "type": "government_agency",
+      "role": "Local code authority",
+      "relevance": "Issued the building permits and certificates of occupancy and holds inspection records.",
       "contact": {
-        "phone": "(207) 555-0196",
-        "city": "Belfast",
-        "state": "ME",
-        "email": "carmen.fairbanks@example.com"
+        "phone": "(207) 555-0153",
+        "city": "Lewiston",
+        "state": "ME"
       }
     },
     {
       "id": "tp4",
-      "name": "Pine Tree Community Bank",
-      "type": "financial_institution",
-      "role": "Declarant's construction lender",
-      "relevance": "Financed construction of the condominium and holds related records.",
+      "name": "Lighthouse Outfitters LLC",
+      "type": "business_entity",
+      "role": "Condominium property management company",
+      "relevance": "Manages the common elements and maintains the association's books, ledgers, and reserve accounts.",
       "contact": {
-        "phone": "(207) 555-0197",
+        "phone": "(207) 555-0185",
         "city": "Lewiston",
         "state": "ME"
       }
@@ -652,6 +652,11 @@
     "reserve_shortfall": 689078,
     "unpaid_assessments": 32995,
     "warranty_claim": true,
-    "arbitration_clause_in_declaration": false
+    "arbitration_clause_in_declaration": false,
+    "legal_description": "Unit 3B and Parking Space P-12 of the condominium as described in the recorded Declaration",
+    "registry": "Sagadahoc County Registry of Deeds",
+    "unpaid_amount": 65527,
+    "decl_book": 7996,
+    "decl_page": 473
   }
 }

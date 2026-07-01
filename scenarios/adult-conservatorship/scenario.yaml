@@ -36,6 +36,23 @@ facts:
   existing_poa: {pick: [true, false]}
   care_setting: {pick: ["lives at home with supports", "resides in a long-term care facility", "lives with the petitioner"]}
   physician_evaluation_obtained: {pick: [true, false]}
+  # Power-of-attorney designation facts (feed estate_planning__poa): the named
+  # agent's mailing address and a successor agent who serves if the first cannot.
+  agent_address: {pick: ["42 Ocean Avenue, Portland, ME 04103", "115 Western Avenue, Augusta, ME 04330", "7 Birch Lane, Brunswick, ME 04011", "230 Main Street, Bangor, ME 04401"]}
+  successor_agent_name: {pick: ["Margaret E. Whitcomb", "Daniel R. Pelletier", "Susan A. Caldwell", "Thomas J. Gagnon"]}
+  successor_agent_address: {pick: ["18 Spruce Street, Camden, ME 04843", "64 Pleasant Street, Bath, ME 04530", "9 Highland Road, Falmouth, ME 04105", "301 Elm Street, Waterville, ME 04901"]}
+
+# The power-of-attorney effectiveness decision point. A durable POA may take effect
+# immediately on execution, or be "springing"effective only upon the principal's
+# later incapacity, which must be certified by a licensed physician (18-C M.R.S.
+# § 5-909(1)). The effectiveness flag and its recital must agree, so they are bundled.
+variants:
+  - weight: 2
+    poa_effectiveness: immediate
+    effectiveness_recital: "effective immediately upon execution"
+  - weight: 1
+    poa_effectiveness: springing
+    effectiveness_recital: "effective upon the principal's incapacity as certified by a licensed physician (18-C M.R.S. § 5-909(1))"
 
 third_parties:
   count: {min: 3, max: 5}
@@ -131,3 +148,51 @@ financials:
     - {label: "Respondent's monthly income and benefits", amount: {int_between: [1200, 7000]}, basis: "Monthly income from pensions, Social Security, and other benefits."}
     - {label: "Estimated monthly care costs", amount: {int_between: [1500, 12000]}, basis: "Estimated monthly cost of the respondent's care and supervision."}
     - {label: "Existing debts", amount: {int_between: [0, 45000]}, basis: "Outstanding debts and obligations of the respondent."}
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING -- confounding SECONDARY issues for an adult protective
+# proceeding. The..07 catalog is decedent-estate-focused; only
+# (capacity + undue influence) maps coherently onto a LIVING respondent, via the
+# respondent's recent testamentary and inter vivos acts. Both entries below are
+# grounded in. Grounded in 18-C M.R.S. / In re Estate of Lewis per
+# ; AI-assembled research, NOT legal advice (see DISCLAIMER.md).
+confounders:
+  count: {weights: [60, 27, 10, 3]} # ~60% of matters stay clean
+  pool:
+    # testamentary capacity of a will executed during alleged incapacity
+    - id: recent-will-capacity-and-undue-influence
+      weight: 3
+      confidence: "well-settled (§ 3-407 burden; In re Estate of Lewis, 2001 ME 74)"
+      source: "18-C M.R.S. § 3-407; § 2-501; In re Estate of Lewis, 2001 ME 74"
+      facts:
+        respondent_made_recent_will: true
+        confidential_relationship: true
+        beneficiary_drafted_will: {pick: [true, false]}
+        capacity_at_execution: false
+      issue:
+        issue: "Validity of a will the respondent executed during the period of alleged incapacity"
+        category: probate
+        governing_law: "18-C M.R.S. § 2-501; § 3-407; In re Estate of Lewis, 2001 ME 74"
+        sub_questions:
+          - "Did the respondent have testamentary capacity under § 2-501 (knows the natural objects of bounty, the nature of the estate, and the nature of the act) when the recent will was signed?"
+          - "OVERBROAD-RISK / correct rule: testamentary capacity is a DIFFERENT, lower standard than the § 5-301 'incapacitated adult' finding, and a dementia diagnosis alone does not defeat it if a lucid interval existed; in any later will contest a confidential relationship raises only an INFERENCE of undue influence (In re Estate of Lewis), not the inter vivos presumption."
+        strength: moderate
+        notes: "A § 5-301 incapacity finding does not automatically void a will the respondent executed; testamentary capacity is judged separately under § 2-501."
+    # inter vivos undue influence / recovery of an improvident transfer
+    - id: improvident-transfer-undue-influence
+      weight: 3
+      requires: {petition_type: ["conservatorship of the estate", "both guardianship and conservatorship"]}
+      confidence: "well-settled (33 M.R.S. §§ 1021-1025, the Improvident Transfers of Title Act, creates a rebuttable presumption of undue influence for an elderly dependent person's transfer for less than full consideration in a confidential or fiduciary relationship)"
+      source: "33 M.R.S. §§ 1021-1025 (Improvident Transfers of Title Act); cf. In re Estate of Lewis, 2001 ME 74 (common-law undue influence, supplementary)"
+      facts:
+        confidential_relationship: true
+        recent_large_transfer: true
+        transfer_to_caregiver_or_agent: true
+      issue:
+        issue: "Recovery of an improvident lifetime transfer procured by undue influence"
+        category: probate
+        governing_law: "33 M.R.S. §§ 1021-1025 (Improvident Transfers of Title Act); cf. In re Estate of Lewis, 2001 ME 74"
+        sub_questions:
+          - "Should the conservator investigate and seek to recover a recent large lifetime transfer the respondent made to a caregiver or agent under a confidential or fiduciary relationship?"
+          - "OVERBROAD-RISK / correct rule: a lifetime transfer is governed by the Improvident Transfers of Title Act (33 M.R.S. §§ 1021-1025) -- where an elderly dependent person transfers property for less than full consideration to a person in a confidential or fiduciary relationship, a rebuttable presumption of undue influence arises (rebuttable by proof of independent counsel); do NOT analyze a lifetime gift under the will-contest rule of In re Estate of Lewis (where a confidential relationship is only an INFERENCE), which is at most a supplementary common-law theory here."
+        strength: moderate
+        notes: "Analyze the lifetime transfer under the Improvident Transfers of Title Act (33 M.R.S. §§ 1021-1025), not the will-contest undue-influence inference; common-law undue influence (In re Estate of Lewis) is a supplementary theory only. A conservator has standing to pursue the respondent's property claims."

@@ -5,9 +5,11 @@
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "District Court (Unified Criminal Docket)",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "criminal",
     "filing_date": "2025-10-09",
-    "event_date": "2025-10-10"
+    "event_date": "2025-10-10",
+    "firm_name": "Birchwood & Calloway LLP"
   },
   "parties": {
     "plaintiff": {
@@ -16,7 +18,9 @@
       "city": "Brunswick",
       "state": "ME",
       "zip": "04010",
-      "phone": "(207) 555-0168"
+      "phone": "(207) 555-0168",
+      "organization_name": "State of Maine",
+      "entity_type": "organization"
     },
     "defendant": {
       "full_name": "Samuel B. Danforth",
@@ -29,7 +33,8 @@
       "zip": "04005",
       "phone": "(207) 555-0111",
       "email": "samuel.danforth@example.org",
-      "date_of_birth": "1975-02-05"
+      "date_of_birth": "1975-02-05",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Maria Q. Jessup",
@@ -43,7 +48,9 @@
       "phone": "(207) 555-0180",
       "email": "maria.jessup@example.net",
       "date_of_birth": "1964-02-01",
-      "bar_number": "7499"
+      "bar_number": "7499",
+      "organization_name": "Birchwood & Calloway LLP",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -58,6 +65,7 @@
     "phone": "(207) 555-0111",
     "email": "samuel.danforth@example.org",
     "date_of_birth": "1975-02-05",
+    "entity_type": "person",
     "signature": "Samuel B. Danforth"
   },
   "facts": {
@@ -71,5 +79,106 @@
     "accident_involved": true,
     "license_suspended": false,
     "plea": "not guilty"
+  },
+  "litigation": {
+    "posture": "pretrial",
+    "docket": [
+      {
+        "date": "2025-09-08",
+        "entry": "Complaint and charging instrument filed.",
+        "party": "State of Maine"
+      },
+      {
+        "date": "2025-09-16",
+        "entry": "Initial appearance; bail and conditions of release set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-10-01",
+        "entry": "Arraignment; plea of not guilty entered.",
+        "party": "Samuel B. Danforth"
+      },
+      {
+        "date": "2025-10-27",
+        "entry": "Discovery served and exchanged under Rule 16.",
+        "party": "Samuel B. Danforth"
+      },
+      {
+        "date": "2025-11-27",
+        "entry": "Motion to suppress filed and set for hearing.",
+        "party": "Samuel B. Danforth"
+      },
+      {
+        "date": "2026-01-27",
+        "entry": "Dispositional conference held.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to suppress evidence from the stop",
+        "type": "suppression",
+        "movant": "Samuel B. Danforth",
+        "filed_date": "2025-10-18",
+        "status": "filed",
+        "relief": "Suppression of all evidence obtained after an unlawful stop."
+      },
+      {
+        "title": "Motion to suppress the breath test",
+        "type": "suppression",
+        "movant": "Samuel B. Danforth",
+        "filed_date": "2025-11-14",
+        "status": "opposed",
+        "relief": "Exclusion of the chemical test result for lack of foundation."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Operating Under the Influence",
+        "by": "State of Maine",
+        "against": "Samuel B. Danforth",
+        "governing_law": "29-A M.R.S. § 2411",
+        "elements": [
+          "Operating a motor vehicle",
+          "On a public way",
+          "While under the influence of intoxicants or with a prohibited alcohol level",
+          "In this State"
+        ],
+        "relief_sought": "Conviction; fine and license suspension",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Failure to submit to a chemical test (implied consent)",
+        "by": "State of Maine",
+        "against": "Samuel B. Danforth",
+        "governing_law": "29-A M.R.S. § 2521",
+        "elements": [
+          "Lawful request for a chemical test",
+          "Adequate implied-consent advisory",
+          "Failure or refusal to submit"
+        ],
+        "relief_sought": "Enhanced penalties and administrative suspension",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Unlawful stop",
+        "by": "Samuel B. Danforth",
+        "basis": "The stop lacked reasonable suspicion. U.S. Const. amend. IV."
+      },
+      {
+        "defense": "Rising-BAC defense",
+        "by": "Samuel B. Danforth",
+        "basis": "Alcohol was still being absorbed, so the test overstates the alcohol level at the time of operation."
+      },
+      {
+        "defense": "Lack of probable cause to arrest",
+        "by": "Samuel B. Danforth",
+        "basis": "The officer arrested without probable cause to believe the defendant was operating under the influence."
+      }
+    ]
   }
 }

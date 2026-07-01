@@ -1,18 +1,20 @@
 [
   {
     "universe_id": "UNIV-marital-breakdown-cascade-0007",
-    "matter_id": "MMC-2025-365540",
+    "matter_id": "MMC-2025-655684",
     "scenario_id": "family-divorce-cumberland",
     "canonical": {
       "matter": {
-        "docket_number": "CUM-FM-2025-642",
-        "case_id": "MMC-2025-365540",
+        "docket_number": "CUM-FM-2025-512",
+        "case_id": "MMC-2025-655684",
         "court_county": "Cumberland",
         "court_location": "Portland",
         "court_type": "District Court",
+        "court_address": "127 State Street, Portland, ME 04019",
         "case_type": "family_matters",
         "filing_date": "2025-10-31",
-        "event_date": "2025-03-19"
+        "event_date": "2025-07-31",
+        "firm_name": "Hawthorne Legal Group"
       },
       "parties": {
         "plaintiff": {
@@ -26,7 +28,8 @@
           "zip": "04069",
           "phone": "(207) 555-0112",
           "email": "nadia.loe@example.org",
-          "date_of_birth": "1964-01-30"
+          "date_of_birth": "1964-01-30",
+          "entity_type": "person"
         },
         "defendant": {
           "full_name": "Priya C. Roe",
@@ -39,7 +42,8 @@
           "zip": "04031",
           "phone": "(207) 555-0111",
           "email": "priya.roe@example.net",
-          "date_of_birth": "1974-01-31"
+          "date_of_birth": "1974-01-31",
+          "entity_type": "person"
         },
         "child_1": {
           "full_name": "Samuel B. Boe",
@@ -52,7 +56,8 @@
           "zip": "04007",
           "phone": "(207) 555-0128",
           "email": "samuel.boe@example.com",
-          "date_of_birth": "2021-05-29"
+          "date_of_birth": "2021-05-29",
+          "entity_type": "person"
         },
         "child_2": {
           "full_name": "Omar W. Loe",
@@ -65,7 +70,8 @@
           "zip": "04072",
           "phone": "(207) 555-0187",
           "email": "omar.loe@example.com",
-          "date_of_birth": "2022-10-25"
+          "date_of_birth": "2022-10-25",
+          "entity_type": "person"
         },
         "attorney": {
           "full_name": "Beatrice M. Calloway",
@@ -79,7 +85,9 @@
           "phone": "(207) 555-0147",
           "email": "beatrice.calloway@example.net",
           "date_of_birth": "1994-07-02",
-          "bar_number": "9018"
+          "bar_number": "9018",
+          "organization_name": "Hawthorne Legal Group",
+          "entity_type": "person"
         }
       },
       "party": {
@@ -94,14 +102,16 @@
         "phone": "(207) 555-0112",
         "email": "nadia.loe@example.org",
         "date_of_birth": "1964-01-30",
+        "entity_type": "person",
         "signature": "Nadia P. Loe"
       },
       "facts": {
         "marriage_date": "2009-04-30",
-        "marriage_city": "Bar Harbor",
-        "marriage_county": "Sagadahoc",
+        "marriage_place": "Bar Harbor, Maine",
+        "marriage_city": "Brunswick",
+        "marriage_county": "Hancock",
         "marriage_state": "Maine",
-        "separation_date": "2025-03-19",
+        "separation_date": "2025-07-31",
         "grounds": "Irreconcilable marital differences",
         "residency_months": 52,
         "spousal_support_requested": true,
@@ -124,23 +134,78 @@
         "mortgages_balance": 68569,
         "loans_balance": 18470,
         "other_assets_value": 19665
+      },
+      "litigation": {
+        "docket": [
+          {
+            "date": "2025-10-31",
+            "entry": "Complaint for divorce filed with an interim relief request.",
+            "party": "us"
+          },
+          {
+            "date": "2025-11-21",
+            "entry": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+            "party": "opposing"
+          },
+          {
+            "date": "2025-12-08",
+            "entry": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+            "party": "client"
+          }
+        ],
+        "procedure": [
+          {
+            "date": "2025-10-31",
+            "day": 0,
+            "actor": "us",
+            "event": "Complaint for divorce filed with an interim relief request.",
+            "produces": [
+              "family_law__divorce_complaint"
+            ]
+          },
+          {
+            "date": "2025-11-21",
+            "day": 21,
+            "actor": "opposing",
+            "event": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+            "produces": [
+              "family_law__pleading"
+            ],
+            "response_deadline": "2025-12-11",
+            "deadline_rule": "M.R. Civ. P. 80(c) — response to the counterclaim for divorce."
+          },
+          {
+            "date": "2025-12-08",
+            "day": 38,
+            "actor": "client",
+            "event": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+            "produces": [
+              "family_law__motion"
+            ],
+            "response_deadline": "2025-12-08",
+            "deadline_rule": "19-A M.R.S. § 904 / M.R. Civ. P. 65 — emergency motion for interim parental rights and to freeze marital assets pending hearing.",
+            "urgent": true
+          }
+        ]
       }
     }
   },
   {
     "universe_id": "UNIV-marital-breakdown-cascade-0007",
-    "matter_id": "MMC-2026-877762",
+    "matter_id": "MMC-2026-748380",
     "scenario_id": "protection-from-abuse",
     "canonical": {
       "matter": {
-        "docket_number": "CUM-PA-2026-454",
-        "case_id": "MMC-2026-877762",
+        "docket_number": "CUM-PA-2026-740",
+        "case_id": "MMC-2026-748380",
         "court_county": "Cumberland",
         "court_location": "Portland",
         "court_type": "District Court",
+        "court_address": "127 State Street, Portland, ME 04019",
         "case_type": "protection_from_abuse",
         "filing_date": "2026-05-24",
-        "event_date": "2026-04-06"
+        "event_date": "2026-04-06",
+        "firm_name": "Kingsley & Associates"
       },
       "parties": {
         "plaintiff": {
@@ -154,7 +219,8 @@
           "zip": "04069",
           "phone": "(207) 555-0112",
           "email": "nadia.loe@example.org",
-          "date_of_birth": "1964-01-30"
+          "date_of_birth": "1964-01-30",
+          "entity_type": "person"
         },
         "defendant": {
           "full_name": "Priya C. Roe",
@@ -167,7 +233,8 @@
           "zip": "04031",
           "phone": "(207) 555-0111",
           "email": "priya.roe@example.net",
-          "date_of_birth": "1974-01-31"
+          "date_of_birth": "1974-01-31",
+          "entity_type": "person"
         },
         "child_1": {
           "full_name": "Samuel B. Boe",
@@ -180,7 +247,8 @@
           "zip": "04007",
           "phone": "(207) 555-0128",
           "email": "samuel.boe@example.com",
-          "date_of_birth": "2021-05-29"
+          "date_of_birth": "2021-05-29",
+          "entity_type": "person"
         },
         "child_2": {
           "full_name": "Omar W. Loe",
@@ -193,7 +261,8 @@
           "zip": "04072",
           "phone": "(207) 555-0187",
           "email": "omar.loe@example.com",
-          "date_of_birth": "2022-10-25"
+          "date_of_birth": "2022-10-25",
+          "entity_type": "person"
         },
         "attorney": {
           "full_name": "Jane K. Poe",
@@ -207,7 +276,9 @@
           "phone": "(207) 555-0135",
           "email": "jane.poe@example.com",
           "date_of_birth": "1981-12-22",
-          "bar_number": "6473"
+          "bar_number": "6473",
+          "organization_name": "Kingsley & Associates",
+          "entity_type": "person"
         }
       },
       "party": {
@@ -222,6 +293,7 @@
         "phone": "(207) 555-0112",
         "email": "nadia.loe@example.org",
         "date_of_birth": "1964-01-30",
+        "entity_type": "person",
         "signature": "Nadia P. Loe"
       },
       "facts": {
@@ -231,23 +303,29 @@
         "prior_incidents": 7,
         "firearms_present": false,
         "requested_relief": "no contact and stay-away order",
-        "police_called": true
+        "police_called": true,
+        "pfa_chapter": "19-A ch.103 §§ 4101-4116 (renumbered from the pre-2021 ch.101 §§ 4001-4014)",
+        "ex_parte_temporary_requested": true,
+        "hearing_within_days": 21,
+        "relief_basis": "no contact"
       }
     }
   },
   {
     "universe_id": "UNIV-marital-breakdown-cascade-0007",
-    "matter_id": "MMC-2026-771146",
+    "matter_id": "MMC-2026-355133",
     "scenario_id": "business-formation-scorp",
     "canonical": {
       "matter": {
-        "case_id": "MMC-2026-771146",
+        "case_id": "MMC-2026-355133",
         "court_county": "Kennebec",
         "court_location": "Augusta",
         "court_type": "Maine Secretary of State / IRS (filing offices)",
+        "court_address": "121 State Street, Augusta, ME 04089",
         "case_type": "entity_formation",
         "filing_date": "2026-04-27",
-        "event_date": "2026-02-19"
+        "event_date": "2026-02-19",
+        "firm_name": "Birchwood & Calloway LLP"
       },
       "parties": {
         "applicant": {
@@ -261,7 +339,8 @@
           "zip": "04031",
           "phone": "(207) 555-0111",
           "email": "priya.roe@example.net",
-          "date_of_birth": "1974-01-31"
+          "date_of_birth": "1974-01-31",
+          "entity_type": "person"
         },
         "company": {
           "full_name": "Evergreen Studios LLC",
@@ -269,7 +348,9 @@
           "city": "Falmouth",
           "state": "ME",
           "zip": "04073",
-          "phone": "(207) 555-0107"
+          "phone": "(207) 555-0107",
+          "organization_name": "Evergreen Studios LLC",
+          "entity_type": "organization"
         },
         "attorney": {
           "full_name": "Wesley J. Poe",
@@ -283,7 +364,9 @@
           "phone": "(207) 555-0175",
           "email": "wesley.poe@example.com",
           "date_of_birth": "1980-11-18",
-          "bar_number": "5106"
+          "bar_number": "5106",
+          "organization_name": "Birchwood & Calloway LLP",
+          "entity_type": "person"
         }
       },
       "party": {
@@ -298,6 +381,7 @@
         "phone": "(207) 555-0111",
         "email": "priya.roe@example.net",
         "date_of_birth": "1974-01-31",
+        "entity_type": "person",
         "signature": "Priya C. Roe"
       },
       "facts": {
@@ -318,7 +402,12 @@
         "principal_activity": "software development",
         "expected_first_year_revenue": 105512,
         "responsible_party_name": "Priya C. Roe",
-        "reasonable_compensation": 43327
+        "reasonable_compensation": 43327,
+        "entity_mislabeled_as_scorp_type": true,
+        "governing_act": "13-C M.R.S. (Maine Business Corporation Act)",
+        "internal_governance_instrument": "bylaws and a shareholder agreement",
+        "llc_operating_agreement_applies": false,
+        "s_corp_is_federal_tax_election": true
       }
     }
   }

@@ -9,21 +9,22 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2025-650708",
+    "matter_id": "MMC-2025-460160",
     "practice_area": "probate",
     "title": "Estate of Grace C. Roe: Will Contest (Roe v. Roe)",
     "jurisdiction": {
       "state": "ME",
       "county": "Sagadahoc",
       "court_location": "Bath",
-      "court_type": "Probate Court"
+      "court_type": "Probate Court",
+      "court_address": "96 Federal Street, Bath, ME 04050"
     },
     "case_type": "will_contest",
     "filing_date": "2025-06-17",
     "status": "active",
     "summary": "Rosa T. Roe, a disinherited adult child of Grace C. Roe, brings a formal testacy proceeding in Sagadahoc County Probate Court to deny probate of a will dated 2024-01-19 that left nearly the entire estate to a late-life romantic companion, alleging the testator lacked testamentary capacity, was subject to undue influence, and that the will was not properly executed.",
     "event_date": "2025-09-20",
-    "docket_number": "SAG-PE-2025-606"
+    "docket_number": "SAG-PE-2025-846"
   },
   "parties": {
     "decedent": {
@@ -154,35 +155,37 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Pine Tree Community Bank",
-      "type": "financial_institution",
-      "role": "Bank or financial advisor for the estate accounts",
-      "relevance": "Holds or managed the decedent's accounts and estate assets whose records show the favored beneficiary's involvement.",
+      "name": "Carmen F. Fairbanks",
+      "type": "witness",
+      "role": "Attesting witness to the contested will",
+      "relevance": "Signed the will as an attesting witness and can speak to whether the testator signed in the witnesses' presence.",
       "contact": {
-        "phone": "(207) 555-0165",
-        "city": "Lewiston",
-        "state": "ME"
+        "phone": "(207) 555-0196",
+        "city": "Belfast",
+        "state": "ME",
+        "email": "carmen.fairbanks@example.com"
       }
     },
     {
       "id": "tp2",
-      "name": "Wesley B. Fairbanks",
-      "type": "witness",
-      "role": "Second attesting witness to the contested will",
-      "relevance": "The other attesting witness, relevant to whether the execution requirements of 18-C M.R.S. § 2-502 were satisfied.",
+      "name": "Malik W. Poe",
+      "type": "family_member",
+      "role": "Another sibling and heir of the decedent",
+      "relationship": "Sibling of the contestant and child of the decedent",
+      "relevance": "An interested heir who supports denying probate of the contested will.",
       "contact": {
-        "phone": "(207) 555-0185",
+        "phone": "(207) 555-0173",
         "city": "Lewiston",
         "state": "ME",
-        "email": "wesley.fairbanks@example.net"
+        "email": "malik.poe@example.net"
       }
     },
     {
       "id": "tp3",
       "name": "Theodore S. Larkspur",
-      "type": "witness",
-      "role": "Attesting witness to the contested will",
-      "relevance": "Signed the will as an attesting witness and can speak to whether the testator signed in the witnesses' presence.",
+      "type": "healthcare_provider",
+      "role": "Decedent's treating physician",
+      "relevance": "Treated the decedent around the time the contested will was signed and can speak to the decedent's cognition and testamentary capacity.",
       "contact": {
         "phone": "(207) 555-0174",
         "city": "Falmouth",
@@ -192,15 +195,14 @@
     },
     {
       "id": "tp4",
-      "name": "Wesley B. Poe",
-      "type": "healthcare_provider",
-      "role": "Decedent's treating physician",
-      "relevance": "Treated the decedent around the time the contested will was signed and can speak to the decedent's cognition and testamentary capacity.",
+      "name": "Downeast Federal Savings",
+      "type": "financial_institution",
+      "role": "Bank or financial advisor for the estate accounts",
+      "relevance": "Holds or managed the decedent's accounts and estate assets whose records show the favored beneficiary's involvement.",
       "contact": {
-        "phone": "(207) 555-0193",
-        "city": "Bath",
-        "state": "ME",
-        "email": "wesley.poe@example.net"
+        "phone": "(207) 555-0189",
+        "city": "Brunswick",
+        "state": "ME"
       }
     }
   ],
@@ -267,27 +269,27 @@
   },
   "issues": [
     {
-      "issue": "Due execution of the contested will",
+      "issue": "Effect of a self-proved will and the absence of a self-proving affidavit",
       "category": "probate",
-      "governing_law": "18-C M.R.S. § 2-502",
+      "governing_law": "18-C M.R.S. § 2-504",
       "sub_questions": [
-        "Was the will signed by the testator and attested by at least two competent witnesses?",
-        "Did the witnesses witness the signing or the testator's acknowledgment as the statute requires?"
+        "Was the will accompanied by a valid self-proving affidavit?",
+        "If not, must the proponent prove execution through the attesting witnesses?"
       ],
       "strength": "moderate",
-      "client_position": "The will was not executed in conformity with the statute, so it cannot be admitted to probate.",
+      "client_position": "The will is not self-proved, so the proponent must prove its execution through live testimony that the irregularities undermine.",
       "id": "iss1"
     },
     {
-      "issue": "Lack of testamentary capacity at the time the will was signed",
+      "issue": "Whether a prior will controls or the estate passes by intestacy",
       "category": "probate",
-      "governing_law": "18-C M.R.S. § 2-501",
+      "governing_law": "18-C M.R.S. § 2-507; 18-C M.R.S. § 3-401 et seq.",
       "sub_questions": [
-        "Did the testator understand the nature of the act, the property, and the natural objects of the testator's bounty?",
-        "Does the medical and cognitive evidence around the signing show a lack of capacity?"
+        "Was the prior will validly executed and never revoked?",
+        "If the contested will is denied probate, does the prior will or intestacy govern?"
       ],
       "strength": "moderate",
-      "client_position": "The testator's cognitive condition left Rosa's parent without the capacity required to make a valid will.",
+      "client_position": "If the contested will fails, the decedent's earlier will should be admitted, or the estate should pass by intestacy.",
       "id": "iss2"
     },
     {
@@ -303,6 +305,18 @@
       "id": "iss3"
     },
     {
+      "issue": "Due execution of the contested will",
+      "category": "probate",
+      "governing_law": "18-C M.R.S. § 2-502",
+      "sub_questions": [
+        "Was the will signed by the testator and attested by at least two competent witnesses?",
+        "Did the witnesses witness the signing or the testator's acknowledgment as the statute requires?"
+      ],
+      "strength": "moderate",
+      "client_position": "The will was not executed in conformity with the statute, so it cannot be admitted to probate.",
+      "id": "iss4"
+    },
+    {
       "issue": "Order of formal probate and supervision of the administration",
       "category": "probate",
       "governing_law": "18-C M.R.S. § 3-401 et seq.",
@@ -312,30 +326,18 @@
       ],
       "strength": "moderate",
       "client_position": "The court should resolve testacy formally and supervise the administration to safeguard the estate.",
-      "id": "iss4"
-    },
-    {
-      "issue": "Whether a prior will controls or the estate passes by intestacy",
-      "category": "probate",
-      "governing_law": "18-C M.R.S. § 2-507; 18-C M.R.S. § 3-401 et seq.",
-      "sub_questions": [
-        "Was the prior will validly executed and never revoked?",
-        "If the contested will is denied probate, does the prior will or intestacy govern?"
-      ],
-      "strength": "moderate",
-      "client_position": "If the contested will fails, the decedent's earlier will should be admitted, or the estate should pass by intestacy.",
       "id": "iss5"
     },
     {
-      "issue": "Effect of a self-proved will and the absence of a self-proving affidavit",
+      "issue": "Undue influence by the favored beneficiary",
       "category": "probate",
-      "governing_law": "18-C M.R.S. § 2-504",
+      "governing_law": "18-C M.R.S. § 3-407; common law undue influence",
       "sub_questions": [
-        "Was the will accompanied by a valid self-proving affidavit?",
-        "If not, must the proponent prove execution through the attesting witnesses?"
+        "Was there a confidential relationship coupled with suspicious circumstances?",
+        "Did the beneficiary's influence overcome the testator's free will?"
       ],
       "strength": "moderate",
-      "client_position": "The will is not self-proved, so the proponent must prove its execution through live testimony that the irregularities undermine.",
+      "client_position": "The favored beneficiary used a confidential relationship and the decedent's isolation to procure a will serving the beneficiary's own interests.",
       "id": "iss6"
     }
   ],
@@ -343,7 +345,19 @@
     {
       "id": "exp1",
       "expert": {
-        "name": "Diego H. Loe",
+        "name": "Theodore D. Moe",
+        "field": "Forensic document examination",
+        "credentials": "D-ABFDE",
+        "retained_by": "plaintiff"
+      },
+      "topic": "The signature on and execution of the contested will",
+      "opinion": "The signature and execution of the contested will present irregularities inconsistent with a routine, properly witnessed signing.",
+      "basis": "Examination of the original instrument, exemplar signatures, and the execution circumstances."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Wesley G. Roe",
         "field": "Geriatric psychiatry / neuropsychology",
         "credentials": "M.D.",
         "retained_by": "plaintiff"
@@ -353,9 +367,9 @@
       "basis": "Review of the contemporaneous medical and cognitive records and the surrounding circumstances."
     },
     {
-      "id": "exp2",
+      "id": "exp3",
       "expert": {
-        "name": "Grace S. Ellsworth",
+        "name": "Diego H. Loe",
         "field": "Estate-planning standard of care",
         "credentials": "J.D.",
         "retained_by": "defendant"
@@ -367,32 +381,53 @@
   ],
   "evidence": [
     {
-      "title": "The decedent's prior will",
-      "type": "document",
-      "party": "plaintiff",
-      "description": "The earlier will the contestant says should control if the contested will is denied probate.",
-      "id": "ev1"
-    },
-    {
       "title": "The drafting attorney's file and notes",
       "type": "document",
       "party": "defendant",
       "description": "The drafting file, intake notes, and execution records for the contested will.",
+      "id": "ev1"
+    },
+    {
+      "title": "Correspondence showing isolation or control",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "Letters, messages, and notes reflecting the beneficiary's control over contact with the decedent.",
       "id": "ev2"
+    },
+    {
+      "title": "The contested will and any self-proving affidavit",
+      "type": "document",
+      "party": "defendant",
+      "description": "The will dated 2024-01-19 offered for probate, together with any self-proving affidavit.",
+      "id": "ev3"
+    },
+    {
+      "title": "The decedent's prior will",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "The earlier will the contestant says should control if the contested will is denied probate.",
+      "id": "ev4"
     },
     {
       "title": "The decedent's financial records showing the beneficiary's involvement",
       "type": "financial_record",
       "party": "plaintiff",
       "description": "Account and asset records reflecting the favored beneficiary's access to and control of the decedent's finances.",
-      "id": "ev3"
+      "id": "ev5"
     },
     {
       "title": "The decedent's medical and cognitive records around the signing",
       "type": "medical_record",
       "party": "plaintiff",
       "description": "Records and evaluations bearing on the decedent's capacity around the time the contested will was executed.",
-      "id": "ev4"
+      "id": "ev6"
+    },
+    {
+      "title": "Affidavits from the attesting witnesses",
+      "type": "affidavit",
+      "party": "defendant",
+      "description": "Sworn statements from the witnesses about the circumstances of the will's execution.",
+      "id": "ev7"
     }
   ],
   "financials": {

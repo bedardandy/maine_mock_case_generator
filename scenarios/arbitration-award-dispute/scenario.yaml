@@ -173,3 +173,82 @@ litigation:
     jury: false
     estimated_days: {int_between: [1, 2]}
     scheduled_date: {date_between: ["2026-08-01", "2027-02-01"]}
+
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues layered on the primary
+# confirm-vs-vacate posture. Only issues that genuinely fit a RECORD-BASED,
+# deferential confirm/vacate review are included; most matters draw ZERO. Each
+# entry injects coherent ground-truth facts + a spotted issue carrying its Maine
+# grounding + a confidence flag, with the overbroad caveat inline (issue.notes).
+# No affirmative defenses are added (the scenario already pleads the § 5938
+# vacatur grounds, and these confounders are petitioner-side or neutral). Sources
+# are AI-assembled research, NOT legal advice (see DISCLAIMER.md).
+confounders:
+  count: {weights: [60, 26, 11, 3]} # ~60% of matters stay clean
+  pool:
+    # a contractual condition precedent to arbitration (e.g., mediate
+    # first / a notice step) is an express condition, but may be waived by
+    # participating in the arbitration without objection.
+    - id: condition-precedent-to-arbitration
+      weight: 4
+      confidence: "High on the strict-compliance rule; Medium on waiver (fact-intensive)"
+      source: "Associated Builders, Inc. v. Coggins, 1999 ME 12 (express conditions; waiver of forfeiture by conduct); Pelletier v. Dwyer, 334 A.2d 867 (Me. 1975); 14 M.R.S. § 5938(1)(C) and § 5928 (arbitrability)"
+      facts:
+        pre_arbitration_condition: {pick: ["mediation required before arbitration", "a contractual notice/demand step", "none apparent on the record"]}
+        condition_satisfied: {pick: [true, false]}
+        waiver_by_participation: {pick: [true, false]}
+      issue:
+        issue: "Whether a contractual condition precedent to arbitration was satisfied or waived by participation"
+        category: arbitration
+        governing_law: "14 M.R.S. § 5938(1)(C); § 5928; Associated Builders, Inc. v. Coggins, 1999 ME 12"
+        sub_questions:
+          - "Did the parties satisfy any express condition precedent to arbitrating (e.g., a mediate-first or notice step), which as an express condition requires strict compliance, or did a party waive it by participating in the arbitration without objection (Coggins)?"
+          - "If unsatisfied and not waived, does that support a narrow § 5938(1)(C) 'exceeded powers' / § 5928 arbitrability challenge, or is it foreclosed because the court does not reweigh the merits?"
+        strength: moderate
+        client_position: "The petitioner contends any pre-arbitration condition was satisfied or waived by the respondent's full participation, so it provides no ground to disturb the award."
+        notes: "Overbroad-risk: applying substantial-performance to an EXPRESS condition wrongly excuses non-satisfaction; conversely, participation without objection commonly waives the condition — and § 5938 grounds are exclusive, so this rarely defeats confirmation."
+    # a vacatur ground (undisclosed conflict / refused evidence) may be
+    # WAIVED if the party knew and proceeded without objecting.
+    - id: waiver-of-vacatur-ground-by-nonobjection
+      weight: 3
+      requires:
+        vacatur_ground:
+          - "evident partiality of an arbitrator who failed to disclose a conflict"
+          - "the panel refused to hear material evidence"
+      confidence: "Medium (waiver-by-conduct applied by analogy; fact-specific) — EXPERIMENTAL as to statutory vacatur grounds"
+      source: "Associated Builders, Inc. v. Coggins, 1999 ME 12 (objection/condition waived by conduct); 14 M.R.S. § 5938 (exclusive vacatur grounds)"
+      facts:
+        knew_of_defect_during_arbitration: {pick: [true, false]}
+        objected_on_the_record: {pick: [true, false]}
+        waiver_by_participation: {pick: [true, false]}
+      issue:
+        issue: "Whether the respondent waived its vacatur ground by failing to object during the arbitration"
+        category: arbitration
+        governing_law: "14 M.R.S. § 5938; Associated Builders, Inc. v. Coggins, 1999 ME 12"
+        sub_questions:
+          - "Did the respondent know of the alleged conflict or evidentiary ruling during the arbitration yet proceed without objecting, so that the objection was waived by conduct?"
+          - "Does any preserved objection actually meet an exclusive § 5938 ground, given the deferential standard of review?"
+        strength: weak
+        client_position: "The petitioner contends the respondent sat on any objection and waived it, leaving no § 5938 ground to vacate."
+        notes: "Overbroad-risk: waiver of a STATUTORY vacatur ground is itself fact-specific and the § 5938 grounds are exclusive; treat this as a preservation argument, not an independent basis to confirm."
+    # authority of the entity's signatory to bind it to the arbitration
+    # agreement (feeds the § 5928 arbitrability question).
+    - id: authority-to-bind-entity-to-arbitrate
+      weight: 3
+      confidence: "High — statutory binding-authority defaults clear"
+      source: "13-C M.R.S. § 841, § 842 (corporate signing authority); 31 M.R.S. § 1541 (LLC binding authority); 14 M.R.S. § 5928 (arbitrability)"
+      facts:
+        signatory_authority_disputed: {pick: [true, false]}
+        signatory_title: {pick: [President, "Vice President", Manager, Employee]}
+        has_authority_evidence: {pick: [true, false]}
+        ratified_by_participation: {pick: [true, false]}
+      issue:
+        issue: "Whether the signatory had authority to bind the entity to the arbitration agreement"
+        category: arbitration
+        governing_law: "13-C M.R.S. § 841, § 842; 31 M.R.S. § 1541; 14 M.R.S. § 5928"
+        sub_questions:
+          - "Did the person who signed the underlying contract have authority to bind the entity — a corporate officer under 13-C M.R.S. § 841/§ 842 or a member/manager under 31 M.R.S. § 1541 — so that a valid arbitration agreement exists for § 5928 purposes?"
+          - "If authority is doubtful, did the entity ratify the agreement (or waive the objection) by participating in the arbitration without challenge?"
+        strength: moderate
+        client_position: "The petitioner contends the agreement was signed with authority (or ratified by participation), so it validly bound the respondent to arbitrate."
+        notes: "Overbroad-risk: actual vs. apparent authority vs. ratification are common-law overlays; § 842's third-party-reliance rule does not eliminate apparent-authority analysis, and arbitrating the merits without objection can ratify or waive a no-authority argument."

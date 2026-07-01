@@ -1,13 +1,15 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-354",
-    "case_id": "MMC-2025-414328",
+    "docket_number": "SAG-CV-2025-898",
+    "case_id": "MMC-2025-832948",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "employment",
     "filing_date": "2025-05-17",
-    "event_date": "2024-09-14"
+    "event_date": "2024-09-14",
+    "firm_name": "Greenhill Law Offices"
   },
   "parties": {
     "plaintiff": {
@@ -21,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Summit Outfitters Co.",
@@ -29,7 +32,9 @@
       "city": "Falmouth",
       "state": "ME",
       "zip": "04071",
-      "phone": "(207) 555-0154"
+      "phone": "(207) 555-0154",
+      "organization_name": "Summit Outfitters Co.",
+      "entity_type": "organization"
     },
     "defendant_2": {
       "full_name": "John D. Kingsley",
@@ -42,7 +47,8 @@
       "zip": "04074",
       "phone": "(207) 555-0174",
       "email": "john.kingsley@example.org",
-      "date_of_birth": "1998-04-24"
+      "date_of_birth": "1998-04-24",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Felix K. Loe",
@@ -56,7 +62,9 @@
       "phone": "(207) 555-0139",
       "email": "felix.loe@example.net",
       "date_of_birth": "1958-04-03",
-      "bar_number": "4078"
+      "bar_number": "4078",
+      "organization_name": "Greenhill Law Offices",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -71,6 +79,7 @@
     "phone": "(207) 555-0174",
     "email": "grace.roe@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Grace C. Roe"
   },
   "facts": {
@@ -83,6 +92,163 @@
     "right_to_sue_issued": true,
     "annual_salary": 103027,
     "replacement_younger_or_outside_class": false,
-    "performance_reviews": "mixed"
+    "performance_reviews": "mixed",
+    "fee_arrangement": "contingent",
+    "contingent_percentage": 33
+  },
+  "litigation": {
+    "posture": "discovery",
+    "docket": [
+      {
+        "date": "2025-03-06",
+        "entry": "Complaint filed following the Maine Human Rights Commission right-to-sue letter.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-03-30",
+        "entry": "Answer and counterclaim filed.",
+        "party": "Summit Outfitters Co."
+      },
+      {
+        "date": "2025-04-19",
+        "entry": "Scheduling order entered; discovery deadline set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-07-01",
+        "entry": "Order on the parties' discovery disputes regarding comparator data.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-09-20",
+        "entry": "Discovery closes; expert disclosures exchanged.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-12-10",
+        "entry": "Summary judgment briefing completed and taken under advisement.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for partial summary judgment on retaliation",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-10-01",
+        "status": "opposed",
+        "relief": "Judgment that the adverse action followed the protected activity."
+      },
+      {
+        "title": "Motion to compel comparator data",
+        "type": "discovery",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-06-05",
+        "status": "granted",
+        "relief": "An order compelling production of comparator and replacement records."
+      },
+      {
+        "title": "Motion in limine to exclude me-too evidence",
+        "type": "evidentiary",
+        "movant": "Summit Outfitters Co.",
+        "filed_date": "2026-02-10",
+        "status": "filed",
+        "relief": "Exclusion of other employees' discrimination testimony."
+      },
+      {
+        "title": "Motion for summary judgment",
+        "type": "dispositive",
+        "movant": "Summit Outfitters Co.",
+        "filed_date": "2025-11-04",
+        "status": "under_advisement",
+        "relief": "Judgment that the plaintiff cannot show pretext or causation."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Breach of confidentiality agreement",
+        "by": "Summit Outfitters Co.",
+        "against": "Grace C. Roe",
+        "relief": "Damages and injunctive relief for the disclosure of confidential company information."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Employment discrimination under the Maine Human Rights Act",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "5 M.R.S. § 4572",
+        "elements": [
+          "Membership in a protected class",
+          "Qualification for the position",
+          "An adverse employment action",
+          "Circumstances giving rise to an inference of discrimination"
+        ],
+        "relief_sought": "Back pay, front pay, compensatory damages, a civil penalty, and attorney fees",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Retaliation under the Maine Human Rights Act",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "5 M.R.S. § 4633",
+        "elements": [
+          "Protected activity opposing discrimination",
+          "A materially adverse action",
+          "A causal connection between the two"
+        ],
+        "relief_sought": "Back pay, front pay, compensatory damages, and attorney fees",
+        "strength": "strong"
+      },
+      {
+        "count": 3,
+        "claim": "Employment discrimination under Title VII",
+        "by": "Grace C. Roe",
+        "against": "Summit Outfitters Co.",
+        "governing_law": "42 U.S.C. § 2000e-2",
+        "elements": [
+          "An adverse employment action",
+          "Based on a protected characteristic",
+          "Exhaustion of administrative remedies",
+          "A timely charge and right-to-sue letter"
+        ],
+        "relief_sought": "Back pay, front pay, compensatory damages, and attorney fees",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Aiding and abetting unlawful discrimination",
+        "by": "Grace C. Roe",
+        "against": "John D. Kingsley",
+        "governing_law": "Maine Human Rights Act, 5 M.R.S. § 4633(2)",
+        "elements": [
+          "Unlawful discrimination by the employer",
+          "The supervisor aided or abetted that discrimination",
+          "Resulting harm to the plaintiff"
+        ],
+        "relief_sought": "Individual liability for compensatory damages",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Failure to mitigate damages",
+        "by": "Summit Outfitters Co.",
+        "basis": "The plaintiff did not exercise reasonable diligence to seek comparable substitute employment."
+      },
+      {
+        "defense": "Same-decision (Mt. Healthy) defense",
+        "by": "Summit Outfitters Co.",
+        "basis": "The employer would have made the same decision regardless of any protected activity or characteristic."
+      },
+      {
+        "defense": "After-acquired evidence",
+        "by": "Summit Outfitters Co.",
+        "basis": "Evidence discovered after the action would have independently justified the termination, limiting back pay."
+      }
+    ]
   }
 }

@@ -284,9 +284,11 @@
       "court_county": "Sagadahoc",
       "court_location": "Bath",
       "court_type": "Probate Court",
+      "court_address": "96 Federal Street, Bath, ME 04050",
       "case_type": "decedent_estate",
       "filing_date": "2026-05-31",
-      "event_date": "2025-09-22"
+      "event_date": "2025-09-22",
+      "firm_name": "Birchwood & Calloway LLP"
     },
     "parties": {
       "decedent": {
@@ -294,7 +296,8 @@
         "first_name": "Olivia",
         "middle_name": "B",
         "last_name": "Ellsworth",
-        "date_of_birth": "1997-10-02"
+        "date_of_birth": "1997-10-02",
+        "entity_type": "person"
       },
       "personal_representative": {
         "full_name": "Theodore B. Kingsley",
@@ -307,7 +310,8 @@
         "zip": "04005",
         "phone": "(207) 555-0111",
         "email": "theodore.kingsley@example.org",
-        "date_of_birth": "1975-02-05"
+        "date_of_birth": "1975-02-05",
+        "entity_type": "person"
       },
       "attorney": {
         "full_name": "Maria Q. Jessup",
@@ -321,14 +325,17 @@
         "phone": "(207) 555-0180",
         "email": "maria.jessup@example.net",
         "date_of_birth": "1964-02-01",
-        "bar_number": "7499"
+        "bar_number": "7499",
+        "organization_name": "Birchwood & Calloway LLP",
+        "entity_type": "person"
       },
       "plaintiff": {
         "full_name": "Olivia B. Ellsworth",
         "first_name": "Olivia",
         "middle_name": "B",
         "last_name": "Ellsworth",
-        "date_of_birth": "1997-10-02"
+        "date_of_birth": "1997-10-02",
+        "entity_type": "person"
       }
     },
     "party": {
@@ -343,19 +350,22 @@
       "phone": "(207) 555-0111",
       "email": "theodore.kingsley@example.org",
       "date_of_birth": "1975-02-05",
+      "entity_type": "person",
       "signature": "Theodore B. Kingsley"
     },
     "facts": {
       "date_of_death": "2025-09-22",
-      "will_exists": true,
-      "will_date": "2022-06-27",
       "decedent_domicile_county": "Sagadahoc",
-      "relationship_to_decedent": "adult son",
-      "approximate_estate_value": 348677,
-      "real_property": false,
-      "num_heirs": 2,
-      "bond_required": true,
-      "probate_type": "informal appointment"
+      "relationship_to_decedent": "surviving spouse",
+      "approximate_estate_value": 628705,
+      "real_property": true,
+      "num_heirs": 3,
+      "bond_required": false,
+      "testacy": "testate",
+      "will_exists": true,
+      "will_date": "2012-08-22",
+      "probate_type": "informal probate",
+      "proceeding_type": "informal"
     }
   }
 }

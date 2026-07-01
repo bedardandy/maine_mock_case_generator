@@ -1,13 +1,15 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-421",
-    "case_id": "MMC-2025-914983",
+    "docket_number": "SAG-CV-2025-470",
+    "case_id": "MMC-2025-575198",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "condominium",
     "filing_date": "2025-05-17",
-    "event_date": "2023-12-30"
+    "event_date": "2023-12-30",
+    "firm_name": "Greenhill Law Offices"
   },
   "parties": {
     "plaintiff": {
@@ -16,7 +18,9 @@
       "city": "Yarmouth",
       "state": "ME",
       "zip": "04047",
-      "phone": "(207) 555-0174"
+      "phone": "(207) 555-0174",
+      "organization_name": "Riverbend Analytics LLC",
+      "entity_type": "organization"
     },
     "defendant": {
       "full_name": "Coastal Provisions LLC",
@@ -24,7 +28,9 @@
       "city": "Camden",
       "state": "ME",
       "zip": "04009",
-      "phone": "(207) 555-0130"
+      "phone": "(207) 555-0130",
+      "organization_name": "Coastal Provisions LLC",
+      "entity_type": "organization"
     },
     "defendant_2": {
       "full_name": "Summit Outfitters LLC",
@@ -32,7 +38,9 @@
       "city": "Yarmouth",
       "state": "ME",
       "zip": "04029",
-      "phone": "(207) 555-0180"
+      "phone": "(207) 555-0180",
+      "organization_name": "Summit Outfitters LLC",
+      "entity_type": "organization"
     },
     "other_party": {
       "full_name": "Ingrid B. Kingsley",
@@ -45,7 +53,8 @@
       "zip": "04007",
       "phone": "(207) 555-0128",
       "email": "ingrid.kingsley@example.com",
-      "date_of_birth": "1966-03-10"
+      "date_of_birth": "1966-03-10",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Omar W. Loe",
@@ -59,7 +68,9 @@
       "phone": "(207) 555-0187",
       "email": "omar.loe@example.com",
       "date_of_birth": "1995-10-25",
-      "bar_number": "4078"
+      "bar_number": "4078",
+      "organization_name": "Greenhill Law Offices",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -69,6 +80,8 @@
     "state": "ME",
     "zip": "04047",
     "phone": "(207) 555-0174",
+    "organization_name": "Riverbend Analytics LLC",
+    "entity_type": "organization",
     "signature": "Riverbend Analytics LLC"
   },
   "facts": {
@@ -81,6 +94,170 @@
     "reserve_shortfall": 689078,
     "unpaid_assessments": 32995,
     "warranty_claim": true,
-    "arbitration_clause_in_declaration": false
+    "arbitration_clause_in_declaration": false,
+    "legal_description": "Unit 3B and Parking Space P-12 of the condominium as described in the recorded Declaration",
+    "registry": "Sagadahoc County Registry of Deeds",
+    "unpaid_amount": 65527,
+    "decl_book": 7996,
+    "decl_page": 473
+  },
+  "litigation": {
+    "posture": "discovery",
+    "docket": [
+      {
+        "date": "2025-03-01",
+        "entry": "Complaint filed asserting common-element defect claims and foreclosure of the assessment lien.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-03-24",
+        "entry": "Defendants' answers and the declarant's cross-claim against the general contractor filed.",
+        "party": "Coastal Provisions LLC"
+      },
+      {
+        "date": "2025-04-28",
+        "entry": "Scheduling order entered; discovery and expert-disclosure deadlines set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-05-21",
+        "entry": "Order on the motion to compel arbitration entered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-07-20",
+        "entry": "Independent building inspection and testing of the common elements conducted.",
+        "party": "Coastal Provisions LLC"
+      },
+      {
+        "date": "2025-09-19",
+        "entry": "Association's expert reports on the defects and reserves served.",
+        "party": "Riverbend Analytics LLC"
+      },
+      {
+        "date": "2025-10-25",
+        "entry": "Order on the motion for summary judgment on the assessment lien entered.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to compel arbitration",
+        "type": "dispositive",
+        "movant": "Coastal Provisions LLC",
+        "filed_date": "2025-03-26",
+        "status": "opposed",
+        "relief": "An order compelling arbitration under the arbitration clause in the declaration, if any."
+      },
+      {
+        "title": "Motion to appoint a receiver for reserves",
+        "type": "provisional",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-06-17",
+        "status": "denied",
+        "relief": "Appointment of a receiver to safeguard and administer the association's reserve funds."
+      },
+      {
+        "title": "Motion for representative treatment",
+        "type": "pleading",
+        "movant": "Riverbend Analytics LLC",
+        "filed_date": "2025-05-19",
+        "status": "granted",
+        "relief": "Confirmation that the association may litigate the common-element claims in a representative capacity."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Breach of declarant warranties against structural defects",
+        "by": "Riverbend Analytics LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "33 M.R.S. § 1604-113 and § 1604-114",
+        "elements": [
+          "A declarant subject to the implied and express warranties",
+          "Structural defects in the common elements",
+          "No valid disclaimer of the warranties",
+          "Resulting damage to the unit owners"
+        ],
+        "relief_sought": "Damages to repair the common elements, plus litigation expenses and attorney fees",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Negligence",
+        "by": "Riverbend Analytics LLC",
+        "against": "Summit Outfitters LLC",
+        "governing_law": "Common law; 33 M.R.S. § 1603-111",
+        "elements": [
+          "A duty of reasonable care in construction",
+          "Breach of that duty",
+          "Causation",
+          "Damage to the common elements"
+        ],
+        "relief_sought": "Compensatory damages for the cost of repair",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Breach of fiduciary duty by the declarant-controlled board",
+        "by": "Riverbend Analytics LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "33 M.R.S. § 1603-103; common law",
+        "elements": [
+          "A fiduciary duty owed by the declarant-appointed board",
+          "Breach during the declarant-control period",
+          "Causation",
+          "Damages, including underfunded reserves"
+        ],
+        "relief_sought": "Damages for the reserve shortfall and related losses",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Breach of contract",
+        "by": "Riverbend Analytics LLC",
+        "against": "Coastal Provisions LLC",
+        "governing_law": "Common law",
+        "elements": [
+          "A valid contract with the declarant",
+          "Performance by the association",
+          "Breach by the declarant",
+          "Resulting damages"
+        ],
+        "relief_sought": "Compensatory damages and attorney fees",
+        "strength": "moderate"
+      },
+      {
+        "count": 5,
+        "claim": "Foreclosure of the assessment lien",
+        "by": "Riverbend Analytics LLC",
+        "against": "Ingrid B. Kingsley",
+        "governing_law": "33 M.R.S. § 1603-116",
+        "elements": [
+          "A perfected assessment lien",
+          "Assessments levied and unpaid",
+          "The foreclosure is within the six-year enforcement limit"
+        ],
+        "relief_sought": "Judgment of foreclosure for the unpaid assessments, interest, and reasonable attorney fees",
+        "strength": "strong"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Failure to fund reserves",
+        "by": "Coastal Provisions LLC",
+        "basis": "The association's own failure to fund reserves and maintain the common elements caused or aggravated the claimed damage."
+      },
+      {
+        "defense": "Valid disclaimer of warranty",
+        "by": "Coastal Provisions LLC",
+        "basis": "Any implied warranties against structural defects were conspicuously and validly disclaimed in the declaration and sale documents. 33 M.R.S. § 1604-115."
+      },
+      {
+        "defense": "Lien time-barred or assessments improperly levied",
+        "by": "Ingrid B. Kingsley",
+        "basis": "The assessment lien is unenforceable as time-barred or the underlying assessments were improperly levied. 33 M.R.S. § 1603-116."
+      }
+    ]
   }
 }

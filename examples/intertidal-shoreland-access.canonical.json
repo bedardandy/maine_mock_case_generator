@@ -5,9 +5,11 @@
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "real_property",
     "filing_date": "2025-07-17",
-    "event_date": "2025-05-15"
+    "event_date": "2025-05-15",
+    "firm_name": "Ellsworth Advocates PC"
   },
   "parties": {
     "plaintiff": {
@@ -21,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Maria Q. Fairbanks",
@@ -34,7 +37,8 @@
       "zip": "04071",
       "phone": "(207) 555-0154",
       "email": "maria.fairbanks@example.com",
-      "date_of_birth": "1965-03-05"
+      "date_of_birth": "1965-03-05",
+      "entity_type": "person"
     },
     "defendant_2": {
       "full_name": "Ingrid B. Kingsley",
@@ -47,7 +51,8 @@
       "zip": "04007",
       "phone": "(207) 555-0128",
       "email": "ingrid.kingsley@example.com",
-      "date_of_birth": "1966-03-10"
+      "date_of_birth": "1966-03-10",
+      "entity_type": "person"
     },
     "other_party": {
       "full_name": "Town of Semaphore Cove",
@@ -55,7 +60,9 @@
       "city": "Yarmouth",
       "state": "ME",
       "zip": "04074",
-      "phone": "(207) 555-0139"
+      "phone": "(207) 555-0139",
+      "organization_name": "Town of Semaphore Cove",
+      "entity_type": "organization"
     },
     "attorney": {
       "full_name": "Felix D. Moe",
@@ -69,7 +76,9 @@
       "phone": "(207) 555-0112",
       "email": "felix.moe@example.net",
       "date_of_birth": "1956-02-02",
-      "bar_number": "1976"
+      "bar_number": "1976",
+      "organization_name": "Ellsworth Advocates PC",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -84,6 +93,7 @@
     "phone": "(207) 555-0174",
     "email": "grace.roe@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Grace C. Roe"
   },
   "facts": {
@@ -96,5 +106,141 @@
     "signage_posted": false,
     "prior_confrontation": false,
     "conservation_interest": "an abutting land trust parcel"
+  },
+  "litigation": {
+    "posture": "pleadings",
+    "docket": [
+      {
+        "date": "2025-05-14",
+        "entry": "Complaint to quiet title and for declaratory and injunctive relief filed.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-06-09",
+        "entry": "Answer and counterclaim asserting public and prescriptive rights filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-07-17",
+        "entry": "Answer of the abutting owner on the claimed access filed.",
+        "party": "Ingrid B. Kingsley"
+      },
+      {
+        "date": "2025-08-27",
+        "entry": "Order on the motion for a preliminary injunction entered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-10-13",
+        "entry": "Scheduling order entered and the Town appears on the public's rights.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-11-25",
+        "entry": "Hearing held on summary judgment as to title to the flats.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for a preliminary injunction",
+        "type": "procedural",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-06-04",
+        "status": "granted_in_part",
+        "relief": "A preliminary injunction limiting the disputed use of the flats pending judgment."
+      },
+      {
+        "title": "Motion for summary judgment on title",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-09-14",
+        "status": "opposed",
+        "relief": "Summary judgment that the plaintiff owns the flats to the low-water mark under the colonial ordinance."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Declaration of a public or prescriptive right to use the flats",
+        "by": "Maria Q. Fairbanks",
+        "against": "Grace C. Roe",
+        "relief": "A declaration that the defendants and the public hold a fishing/fowling/navigation, prescriptive, or customary right to use the intertidal flats."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Declaratory judgment that the plaintiff owns the flats to the low-water mark and the disputed use exceeds the public easement",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks, Ingrid B. Kingsley, and the Town of Semaphore Cove",
+        "governing_law": "Bell v. Town of Wells; the colonial ordinance; 14 M.R.S. § 5951 et seq.",
+        "elements": [
+          "Ownership of the upland and the flats to the low-water mark under the colonial ordinance",
+          "A public easement limited to fishing, fowling, and navigation",
+          "The disputed use exceeds that reserved easement",
+          "An actual controversy ripe for declaration"
+        ],
+        "relief_sought": "A declaration that the plaintiff owns the flats to the low-water mark and that the disputed use exceeds the public easement",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Trespass to the intertidal land",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "Common law trespass",
+        "elements": [
+          "The plaintiff owns the flats to the low-water mark",
+          "The defendant intruded on the privately owned flats",
+          "The intrusion is not privileged by fishing, fowling, or navigation",
+          "Resulting injury to the plaintiff's possession"
+        ],
+        "relief_sought": "Damages and an order ending the trespass to the intertidal flats",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Quiet title against the abutter's claimed access",
+        "by": "Grace C. Roe",
+        "against": "Ingrid B. Kingsley",
+        "governing_law": "14 M.R.S. § 6651",
+        "elements": [
+          "The plaintiff owns the flats to the low-water mark",
+          "The abutter asserts an adverse claim of access over the flats",
+          "The adverse claim is without basis in the record title",
+          "Title should be quieted against the claim"
+        ],
+        "relief_sought": "A judgment quieting title against the abutter's claimed right of access over the flats",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Injunction barring the disputed use",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "14 M.R.S. § 6051",
+        "elements": [
+          "The plaintiff owns the flats and the use exceeds the public easement",
+          "The continuing use causes irreparable harm",
+          "The balance of harms favors the plaintiff",
+          "There is no adequate remedy at law"
+        ],
+        "relief_sought": "An order enjoining the disputed use of the flats to the extent it exceeds the public easement",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "The plaintiff's title does not reach the flats",
+        "by": "Ingrid B. Kingsley",
+        "basis": "The chain of title does not convey the intertidal flats to the low-water mark to the plaintiff under the colonial ordinance."
+      },
+      {
+        "defense": "Prescriptive or customary public right",
+        "by": "Maria Q. Fairbanks",
+        "basis": "Decades of open and continuous public use of the flats establish a prescriptive easement or a customary public right. 14 M.R.S. § 812."
+      }
+    ]
   }
 }

@@ -5,9 +5,11 @@
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "administrative_appeal_80b",
     "filing_date": "2026-05-01",
-    "event_date": "2026-01-11"
+    "event_date": "2026-01-11",
+    "firm_name": "Ellsworth Advocates PC"
   },
   "parties": {
     "petitioner": {
@@ -21,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "olivia.ellsworth@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "respondent": {
       "full_name": "Town of Harborwick",
@@ -29,7 +32,9 @@
       "city": "Camden",
       "state": "ME",
       "zip": "04009",
-      "phone": "(207) 555-0130"
+      "phone": "(207) 555-0130",
+      "organization_name": "Town of Harborwick",
+      "entity_type": "organization"
     },
     "other_party": {
       "full_name": "Maria Q. Jessup",
@@ -42,7 +47,8 @@
       "zip": "04029",
       "phone": "(207) 555-0180",
       "email": "maria.jessup@example.net",
-      "date_of_birth": "1964-02-01"
+      "date_of_birth": "1964-02-01",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Rosa B. Ellsworth",
@@ -56,7 +62,9 @@
       "phone": "(207) 555-0153",
       "email": "rosa.ellsworth@example.com",
       "date_of_birth": "1967-03-02",
-      "bar_number": "6054"
+      "bar_number": "6054",
+      "organization_name": "Ellsworth Advocates PC",
+      "entity_type": "person"
     },
     "plaintiff": {
       "full_name": "Olivia B. Ellsworth",
@@ -69,7 +77,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "olivia.ellsworth@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Town of Harborwick",
@@ -77,7 +86,9 @@
       "city": "Camden",
       "state": "ME",
       "zip": "04009",
-      "phone": "(207) 555-0130"
+      "phone": "(207) 555-0130",
+      "organization_name": "Town of Harborwick",
+      "entity_type": "organization"
     }
   },
   "party": {
@@ -92,6 +103,7 @@
     "phone": "(207) 555-0174",
     "email": "olivia.ellsworth@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Olivia B. Ellsworth"
   },
   "facts": {
@@ -104,5 +116,149 @@
     "standing_basis": "abutter across a private way",
     "ordinance_section": "Land Use Ordinance § 7.4",
     "harm_alleged": "groundwater impacts"
+  },
+  "litigation": {
+    "posture": "pretrial",
+    "docket": [
+      {
+        "date": "2025-09-05",
+        "entry": "Notice of appeal filed under M.R. Civ. P. 80B.",
+        "party": "Olivia B. Ellsworth"
+      },
+      {
+        "date": "2025-10-03",
+        "entry": "Administrative record certified and filed by the municipality.",
+        "party": "Town of Harborwick"
+      },
+      {
+        "date": "2025-11-10",
+        "entry": "Petitioner's brief filed.",
+        "party": "Olivia B. Ellsworth"
+      },
+      {
+        "date": "2025-12-19",
+        "entry": "Respondent's and party-in-interest's briefs filed.",
+        "party": "Town of Harborwick"
+      },
+      {
+        "date": "2026-02-03",
+        "entry": "Reply brief filed and the appeal taken under advisement on the briefs.",
+        "party": "Olivia B. Ellsworth"
+      },
+      {
+        "date": "2026-03-15",
+        "entry": "Oral argument scheduled before the Superior Court.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to stay the permit pending appeal",
+        "type": "procedural",
+        "movant": "Olivia B. Ellsworth",
+        "filed_date": "2026-03-08",
+        "status": "denied",
+        "relief": "A stay halting work under the permit while the appeal is pending."
+      },
+      {
+        "title": "Motion to supplement the record",
+        "type": "procedural",
+        "movant": "Olivia B. Ellsworth",
+        "filed_date": "2026-04-29",
+        "status": "under_advisement",
+        "relief": "Leave to add omitted materials to the certified record."
+      },
+      {
+        "title": "Motion for a trial of the facts under M.R. Civ. P. 80B(d)",
+        "type": "procedural",
+        "movant": "Olivia B. Ellsworth",
+        "filed_date": "2025-12-21",
+        "status": "opposed",
+        "relief": "Leave to take evidence beyond the record on a disputed factual issue."
+      },
+      {
+        "title": "Motion to specify and assemble the record",
+        "type": "procedural",
+        "movant": "Olivia B. Ellsworth",
+        "filed_date": "2025-11-13",
+        "status": "granted",
+        "relief": "An order directing the municipality to assemble and certify the complete administrative record."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Error of law in applying the ordinance",
+        "by": "Olivia B. Ellsworth",
+        "against": "Town of Harborwick",
+        "governing_law": "M.R. Civ. P. 80B; Land Use Ordinance § 7.4",
+        "elements": [
+          "A final municipal land-use decision",
+          "Misinterpretation or misapplication of the governing ordinance",
+          "Reviewed by the court as a question of law"
+        ],
+        "relief_sought": "Reversal or vacatur of the board's decision",
+        "strength": "moderate"
+      },
+      {
+        "count": 2,
+        "claim": "Decision unsupported by substantial evidence in the record",
+        "by": "Olivia B. Ellsworth",
+        "against": "Town of Harborwick",
+        "governing_law": "M.R. Civ. P. 80B (substantial-evidence review)",
+        "elements": [
+          "A board decision resting on findings of fact",
+          "The absence of substantial evidence in the record to support those findings",
+          "Prejudice to the petitioner"
+        ],
+        "relief_sought": "Reversal of the decision as unsupported by the record",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Abuse of discretion and inadequate findings of fact",
+        "by": "Olivia B. Ellsworth",
+        "against": "Town of Harborwick",
+        "governing_law": "M.R. Civ. P. 80B; 30-A M.R.S. § 4353",
+        "elements": [
+          "A duty to make adequate findings",
+          "Conclusory or inadequate findings that preclude meaningful review",
+          "An exercise of discretion outside the bounds permitted by the ordinance"
+        ],
+        "relief_sought": "Remand for adequate findings or reversal",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Procedural error or bias depriving the petitioner of a fair hearing",
+        "by": "Olivia B. Ellsworth",
+        "against": "Town of Harborwick",
+        "governing_law": "30-A M.R.S. § 2691; due-process principles",
+        "elements": [
+          "A right to a fair and impartial hearing",
+          "A disqualifying conflict, bias, or procedural defect",
+          "Resulting prejudice to the petitioner"
+        ],
+        "relief_sought": "Vacatur and remand for a new hearing before an impartial board",
+        "strength": "weak"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Decision supported by substantial evidence",
+        "by": "Town of Harborwick",
+        "basis": "The board's findings rest on substantial evidence in the certified record and are entitled to deference."
+      },
+      {
+        "defense": "Lack of standing",
+        "by": "Town of Harborwick",
+        "basis": "The petitioner suffered no particularized injury distinct from the general public. Adelman v. Town of Baldwin, 2000 ME 91."
+      },
+      {
+        "defense": "Untimely appeal",
+        "by": "Maria Q. Jessup",
+        "basis": "The notice of appeal was not filed within the 45-day deadline. 30-A M.R.S. § 2691(3)(G); M.R. Civ. P. 80B."
+      }
+    ]
   }
 }

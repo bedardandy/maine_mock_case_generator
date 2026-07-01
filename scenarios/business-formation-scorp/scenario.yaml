@@ -142,3 +142,97 @@ financials:
     - {label: "Initial capital contributed", amount: {int_between: [5000, 150000]}, basis: "Total cash and property contributed by the shareholders at formation."}
     - {label: "Planned owner reasonable compensation", amount: {int_between: [35000, 120000]}, basis: "Annual W-2 wages planned for the owner-employee."}
     - {label: "Estimated first-year payroll", amount: {int_between: [0, 250000]}, basis: "Total projected wages for all employees in the first year."}
+
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues layered on the primary
+# S-corp formation. Most engagements draw ZERO (the weights keep a clean matter
+# the common case). Each entry injects coherent ground-truth facts + a spotted
+# issue and carries its Maine grounding + a confidence flag; the
+# overbroad-application risk is carried inline in issue.notes so the oracle is
+# the CORRECT Maine rule, not a naive over-claim. This is a TRANSACTIONAL matter
+# (no litigation posture), so confounders spot issues only — no affirmative
+# defenses. Sources are AI-assembled research, NOT legal advice (see
+# DISCLAIMER.md); verify against legislature.maine.gov.
+confounders:
+  count: {weights: [60, 26, 11, 3]} # ~60% of formations stay clean
+  pool:
+    # the S-corp trap: client labels the entity "S-corp" as if it were
+    # a state-law entity type. It is NOT. Encode the CORRECT rule.
+    - id: scorp-entity-type-confusion
+      weight: 5
+      confidence: "High — entity taxonomy well-settled; the client's mislabel is fact-specific"
+      source: "13-C M.R.S. § 101 et seq. (Maine Business Corporation Act); 31 M.R.S. §§ 1501-1680 (Maine Revised Uniform LLC Act); I.R.C. § 1361 (Subchapter S); 36 M.R.S. § 5102(1-A)"
+      facts:
+        entity_mislabeled_as_scorp_type: true
+        governing_act: "13-C M.R.S. (Maine Business Corporation Act)"
+        internal_governance_instrument: "bylaws and a shareholder agreement"
+        llc_operating_agreement_applies: false
+        s_corp_is_federal_tax_election: true
+      issue:
+        issue: "An 'S corporation' is a federal tax election, not a Maine entity type"
+        category: business
+        governing_law: "13-C M.R.S. § 101 et seq.; I.R.C. § 1361; 36 M.R.S. § 5102(1-A)"
+        sub_questions:
+          - "Is the client treating 'S-corp' as an entity type? It is not: an S corporation is an ordinary 13-C M.R.S. corporation that has made a federal Subchapter S election under I.R.C. § 1361, which Maine recognizes only for income-tax conformity (36 M.R.S. § 5102(1-A))."
+          - "Is the entity therefore governed by the CORRECT instruments — bylaws and a shareholder agreement under 13-C M.R.S. — and not a 31 M.R.S. LLC operating agreement?"
+        strength: strong
+        client_position: "The founder calls the company an 'S-corp,' but the engagement must treat it as a 13-C corporation that will make a federal S election."
+        notes: "Overbroad-risk: S-corp eligibility limits (the 100-shareholder cap, single-class-of-stock rule, and eligible-shareholder rules) are FEDERAL under I.R.C. § 1361(b) — do not attribute them to Maine statute."
+    # applied as the corp-vs-LLC instrument fork: a corporation's internal
+    # governance is bylaws + shareholder agreement (13-C), NOT an LLC operating
+    # agreement (31 M.R.S. § 1521/§ 1556 are the WRONG source here).
+    - id: governance-instrument-bylaws-not-operating-agreement
+      weight: 4
+      confidence: "High for the LLC defaults; applied here as the corp-vs-LLC instrument fork"
+      source: "13-C M.R.S. § 101 et seq. (Maine Business Corporation Act — bylaws, board action, shareholder agreements); contrast 31 M.R.S. § 1521 and § 1556 (LLC operating-agreement defaults that do NOT govern a corporation)"
+      facts:
+        shareholder_agreement_planned: {pick: [true, false]}
+        bylaws_adopted: {pick: [true, false]}
+        wrong_instrument_risk: "an LLC operating agreement was suggested for a corporation"
+      issue:
+        issue: "Governance instrument: corporate bylaws and shareholder agreement, not an LLC operating agreement"
+        category: business
+        governing_law: "13-C M.R.S. § 101 et seq.; contrast 31 M.R.S. § 1521, § 1556"
+        sub_questions:
+          - "Because the entity is a corporation, its internal governance comes from bylaws, board action, and a shareholder agreement under 13-C M.R.S. — the LLC default rules of 31 M.R.S. § 1521 (implied covenant; permissible fiduciary-duty modifications) and § 1556 (member voting; unanimous consent for extraordinary acts) do not apply."
+          - "Has a shareholder agreement been planned to address transfer restrictions and to protect the S election (barring ineligible shareholders or a second class of stock)?"
+        strength: moderate
+        notes: "Overbroad-risk: the 31 M.R.S. § 1521/§ 1556 LLC defaults are the WRONG source for a corporation; do not import LLC operating-agreement concepts into a 13-C entity."
+    # authority of the signer to bind the new corporation.
+    - id: signing-authority-corporate-officer
+      weight: 4
+      confidence: "High that § 842 gives the president apparent authority for contracts in the ordinary course of the business the corporation conducts; signing authority for formation, banking, and EIN filings is document- and fact-specific (bylaws, incorporator/organizational action, board resolution, incumbency certificate), not a § 842 default"
+      source: "13-C M.R.S. § 841 (officers created by bylaws/board; one person may hold multiple offices); § 842 (president's apparent authority for contracts in the ordinary course of the business the corporation conducts; board delegation by resolution)"
+      facts:
+        signatory_title: {pick: [President, Treasurer, Incorporator]}
+        has_board_resolution: {pick: [true, false]}
+        incumbency_certificate_available: {pick: [true, false]}
+        transaction_in_ordinary_course: true
+      issue:
+        issue: "Authority of the signatory to bind the corporation: ordinary-course corporate contracts versus the document-specific authority needed for formation, banking, and EIN filings"
+        category: business
+        governing_law: "13-C M.R.S. § 841; § 842"
+        sub_questions:
+          - "Were officers validly created by the bylaws or the board (§ 841), and does the signer's authority for the transaction come from the bylaws, incorporator/organizational action, or a specific board resolution?"
+          - "May a third party (e.g., the bank) rely on the president's § 842 apparent authority ONLY for a contract in the ordinary course of the business the corporation already conducts — so that formation, banking-resolution, and EIN signing authority must rest on specific authorization (a board/organizational resolution or incumbency certificate), not a § 842 default?"
+        strength: moderate
+        notes: "Overbroad-risk: § 842 confers apparent authority only for ordinary-course contracts of the business the corporation conducts, plus authority set by bylaws/board — it does NOT by default cover formation, banking, or EIN filings, which are document- and fact-specific (bylaws, incorporator/organizational action, board resolution); actual vs. apparent authority vs. ratification are common-law overlays."
+    # foreign qualification if this Maine corp transacts business in
+    # another state (each state has its own analog of 13-C § 1501/§ 1502).
+    - id: foreign-qualification-other-states
+      weight: 3
+      confidence: "High — a Maine corporation's existence is governed by 13-C M.R.S., but whether it must qualify in another state is governed by that destination state's foreign-corporation statute; whether activity = 'transacting business' there is fact-intensive"
+      source: "13-C M.R.S. § 101 et seq. (governs the Maine corporation's existence); the destination state's foreign-corporation statute (whether the Maine corporation must qualify there); cf. 13-C M.R.S. § 1501-§ 1502 as the Maine INBOUND analogue (a FOREIGN entity transacting business IN Maine needs a certificate of authority; a non-qualified entity cannot maintain suit, $500/yr penalty, but its acts remain valid)"
+      facts:
+        plans_to_transact_in_another_state: {pick: [true, false]}
+        out_of_state_activity: {pick: ["continuous out-of-state sales", "employs workers in another state", "owns real property in another state", "an isolated out-of-state transaction"]}
+        foreign_certificate_of_authority_needed: {pick: [true, false]}
+      issue:
+        issue: "Foreign qualification if the Maine corporation transacts business in another state"
+        category: business
+        governing_law: "13-C M.R.S. § 101 et seq. (Maine corporation's existence); the destination state's foreign-corporation statute (whether it must qualify there); cf. 13-C M.R.S. § 1501-§ 1502 (Maine inbound analogue)"
+        sub_questions:
+          - "The Maine corporation's existence is governed by 13-C M.R.S.; if it will transact business in another state, whether it must obtain a certificate of authority there is governed by THAT state's foreign-corporation statute, not Maine's — Maine's own inbound rule (13-C M.R.S. § 1501-§ 1502, for foreign entities transacting business IN Maine) is only an illustrative analogue of the regime each sister state has."
+          - "Does the planned activity fall within a safe-harbor (isolated transactions, owning a subsidiary), or is it continuous business that triggers qualification under the destination state's law?"
+        strength: moderate
+        notes: "Overbroad-risk: do NOT cite 13-C M.R.S. § 1501-§ 1502 as the rule for whether a Maine corporation must qualify in another state — those sections govern FOREIGN corporations transacting business IN Maine; out-of-state qualification is governed by the destination state's statute, and whether a specific activity is 'transacting business' there is fact-intensive."

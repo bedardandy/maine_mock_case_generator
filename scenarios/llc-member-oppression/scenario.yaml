@@ -28,9 +28,14 @@ parties:
     - {key: plaintiff, label: "Plaintiff minority member"}
     - {key: defendant, label: "Defendant majority/managing member"}
     - {key: defendant_2, label: "Defendant co-manager member"}
-    - {key: company, entity: organization, label: "The LLC (nominal defendant)"}
+    - {key: company, entity: organization, entity_kind: llc, label: "The LLC (nominal defendant)"}
 
 facts:
+  # The nominal defendant is a Maine LLC (31 M.R.S.), so its name must carry an
+  # "LLC" suffix and the entity_kind discriminator must say so — otherwise the
+  # operating-agreement template was being handed a "... Corp." and flagging the
+  # corporation/LLC mismatch.
+  entity_kind: llc
   business_type: {pick: ["a craft brewery and taproom", "a coastal property-management company", "a software consultancy", "a family restaurant group", "a marine services company", "a cannabis cultivation business"]}
   plaintiff_ownership: {pick: ["a 25% membership interest", "a one-third interest", "a 40% minority interest", "a 20% interest"]}
   company_value: {int_between: [700000, 12000000]}
@@ -189,3 +194,79 @@ litigation:
     jury: {pick: [true, false]}
     estimated_days: {int_between: [4, 10]}
     scheduled_date: {date_between: ["2026-07-01", "2027-03-01"]}
+
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues layered on the primary LLC
+# freeze-out. The matter pins entity_kind=llc, so every confounder requires it
+# (and stays coherent with the LLC regime). Most matters draw ZERO. Each entry
+# injects coherent ground-truth facts + a spotted issue and carries its Maine
+# grounding + a confidence flag; the overbroad caveat is carried inline in
+# issue.notes so the oracle is the CORRECT Maine LLC rule. No duplicate
+# affirmative defenses are added (the scenario already pleads them). Sources are
+# AI-assembled research, NOT legal advice (see DISCLAIMER.md).
+confounders:
+  count: {weights: [60, 26, 11, 3]} # ~60% of matters stay clean
+  pool:
+    # the oppression trap: the LLC statute has NO "oppressive" ground.
+    # Encode the CORRECT rule and the derivative-vs-direct posture fork.
+    - id: oppression-standard-and-derivative-direct-posture
+      weight: 5
+      requires: {entity_kind: llc}
+      confidence: "Medium — statutory grounds settled; derivative/direct and close-LLC fiduciary scope UNSETTLED in Maine"
+      source: "31 M.R.S. § 1595 (judicial dissolution: 'not reasonably practicable' to carry on, or illegal/fraudulent management — NO 'oppressive' ground); 31 M.R.S. § 1631 et seq. (derivative actions); Northeast Harbor Golf Club, Inc. v. Harris, 661 A.2d 1146 (Me. 1995), on remand 1999 ME 38; contrast 13-C M.R.S. § 1430(2)(B) (the corporate 'oppressive' standard)"
+      facts:
+        suit_posture: {pick: [derivative, direct, both]}
+        llc_dissolution_ground: "not reasonably practicable to carry on the LLC, or illegal/fraudulent management (31 M.R.S. § 1595)"
+        oppression_is_a_corporate_standard: true
+        derivative_demand_made: {pick: [true, false]}
+      issue:
+        issue: "Wrong-standard / wrong-posture: the LLC dissolution ground is not 'oppression,' and the diversion claim may be derivative, not direct"
+        category: business
+        governing_law: "31 M.R.S. § 1595; § 1631 et seq.; contrast 13-C M.R.S. § 1430(2)(B)"
+        sub_questions:
+          - "The LLC judicial-dissolution ground in 31 M.R.S. § 1595 reaches conduct that is 'illegal or fraudulent' or makes it 'not reasonably practicable to carry on,' but NOT 'oppression' — does the freeze-out fit the LLC statute's actual language rather than the corporate § 1430 'oppressive' standard?"
+          - "Is the diversion-of-opportunities claim derivative (injury to the LLC, requiring the 31 M.R.S. § 1631 et seq. prerequisites) rather than direct (injury to the member)? Maine has not settled when a close-LLC member may sue directly."
+        strength: moderate
+        client_position: "The freeze-out and diversion support relief under 31 M.R.S. § 1595 and a derivative claim, framed to the LLC statute rather than the corporate oppression standard."
+        notes: "Overbroad-risk: do NOT import the corporate 'oppressive' standard (13-C M.R.S. § 1430) into the LLC analysis — § 1595 only reaches 'illegal or fraudulent' management or impracticability; mischaracterizing a derivative claim as direct can defeat standing."
+    # dissolution / winding-up mechanics, incl. the administrative-
+    # dissolution complication (continues only for winding up).
+    - id: dissolution-and-winding-up-mechanics
+      weight: 4
+      requires: {entity_kind: llc}
+      confidence: "High — dissolution routes well-settled; 'impracticability' is construed case-by-case"
+      source: "31 M.R.S. § 1595 (events of dissolution / judicial dissolution); § 1591 (administrative dissolution for failure to file annual report / maintain agent); § 1592 (continues only for winding up); § 1597 (winding-up authority); §§ 1599-1600 (post-dissolution claims bar)"
+      facts:
+        administrative_dissolution_risk: {pick: [true, false]}
+        annual_report_lapsed: {pick: [true, false]}
+        winding_up_agent_only: {pick: [true, false]}
+        dissolution_remedy_sought: {pick: [judicial-dissolution, court-ordered-buyout, receivership]}
+      issue:
+        issue: "Dissolution and winding-up mechanics, including any administrative dissolution"
+        category: business
+        governing_law: "31 M.R.S. § 1595; § 1591; § 1592; § 1597; §§ 1599-1600"
+        sub_questions:
+          - "Has the LLC been (or risks being) administratively dissolved under § 1591 for a lapsed annual report or registered agent, so that under § 1592 it may act only as a winding-up agent (§ 1597) and not carry on ordinary business?"
+          - "If dissolution is ordered, are the post-dissolution claims-bar procedures (§§ 1599-1600) and the winding-up authority (§ 1597) accounted for, and is a buyout or receivership the better remedy than dissolution under § 1595?"
+        strength: moderate
+        notes: "Overbroad-risk: 'not reasonably practicable' (§ 1595) is construed case-by-case and is not synonymous with economic loss or simple deadlock; administrative dissolution is distinct from voluntary or judicial dissolution."
+    # binding authority of a member/manager under the LLC default rules.
+    - id: member-manager-binding-authority
+      weight: 3
+      requires: {entity_kind: llc}
+      confidence: "High — statutory binding-authority defaults clear"
+      source: "31 M.R.S. § 1541 (binding authority of members/managers absent a filed statement); § 1542 (statement of authority may expand or restrict)"
+      facts:
+        statement_of_authority_filed: {pick: [true, false]}
+        manager_managed: {pick: [true, false]}
+        member_signing_authority_disputed: true
+        disputed_binding_transaction: "a transfer or contract said to bind the LLC to the majority's side entity"
+      issue:
+        issue: "Whether a member or manager had authority to bind the LLC to the disputed transactions"
+        category: business
+        governing_law: "31 M.R.S. § 1541; § 1542"
+        sub_questions:
+          - "Absent a filed § 1542 statement of authority, who had default binding authority under § 1541 (turning on whether the LLC is member- or manager-managed), and did the transfers to the side entity exceed it?"
+          - "Did any filed § 1542 statement expand or restrict that authority in a way that bears on the diversion claim?"
+        strength: moderate
+        notes: "Overbroad-risk: actual vs. apparent authority vs. ratification are common-law overlays; the § 1541 default does not eliminate apparent-authority analysis, and manager-managed status is achieved through the operating agreement, not a statutory checkbox."

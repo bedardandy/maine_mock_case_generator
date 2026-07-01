@@ -76,10 +76,15 @@ class Pools:
         }
 
     # -- organizations -----------------------------------------------------
-    def org_name(self) -> str:
+    _FORCED_SUFFIX = {"llc": "LLC", "corp": "Inc.", "corporation": "Inc.",
+                      "inc": "Inc.", "lp": "LP", "llp": "LLP", "pllc": "PLLC",
+                      "pa": "P.A.", "trust": "Trust"}
+
+    def org_name(self, kind: str = "") -> str:
         a = self.rng.choice(self.data["business_words_a"])
         b = self.rng.choice(self.data["business_words_b"])
-        suffix = self.rng.choice(self.data["business_suffixes"])
+        forced = self._FORCED_SUFFIX.get(kind.lower()) if kind else None
+        suffix = forced or self.rng.choice(self.data["business_suffixes"])
         return f"{a} {b} {suffix}"
 
     def bank(self) -> str:
@@ -107,6 +112,22 @@ class Pools:
     def court_location(self, county: str) -> str:
         return self.data["court_locations_by_county"].get(county, "Portland")
 
+    _COURT_STREETS = ["Court Street", "Federal Street", "Main Street",
+                      "State Street", "County Way"]
+
+    def courthouse_address(self, town: str) -> str:
+        """A synthetic but plausible one-line courthouse street address. Real
+        Maine court TOWNS drive routing; the street/number/zip are fictional (no
+        real building implied). Seeded by the town so a given courthouse always
+        has the same address AND the shared matter rng stream is never perturbed
+        (purely additive — existing per-seed facts/goldens are unchanged)."""
+        import random as _random
+        rng = _random.Random(f"courthouse::{town}")
+        number = rng.randint(2, 480)
+        street = rng.choice(self._COURT_STREETS)
+        zip_code = f"{self.data['zip_prefix']}{rng.randint(1, 99):02d}"
+        return f"{number} {street}, {town}, ME {zip_code}"
+
 
 def build_person(pools: Pools, role: str = "", with_contact: bool = True,
                  with_dob: bool = True, child: bool = False) -> dict:
@@ -126,12 +147,17 @@ def build_person(pools: Pools, role: str = "", with_contact: bool = True,
     return party
 
 
-def build_organization(pools: Pools, name: str = "", role: str = "") -> dict:
-    """Assemble a full party object for a fictional organization."""
+def build_organization(pools: Pools, name: str = "", role: str = "",
+                       kind: str = "") -> dict:
+    """Assemble a full party object for a fictional organization. ``kind`` (llc,
+    corp, lp, ...) forces a matching legal suffix so the entity name agrees with
+    the instrument being drafted (an LLC matter never names a '... Corp.')."""
     org = {
         "entity_type": "organization",
-        "organization_name": name or pools.org_name(),
+        "organization_name": name or pools.org_name(kind),
     }
+    if kind:
+        org["entity_kind"] = kind.lower()
     org["full_name"] = org["organization_name"]
     if role:
         org["role"] = role

@@ -1,13 +1,15 @@
 {
   "matter": {
-    "docket_number": "SAG-RE-2025-470",
-    "case_id": "MMC-2025-575198",
+    "docket_number": "SAG-RE-2025-406",
+    "case_id": "MMC-2025-479146",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "real_property",
     "filing_date": "2025-06-17",
-    "event_date": "2024-05-31"
+    "event_date": "2024-05-31",
+    "firm_name": "Ellsworth Advocates PC"
   },
   "parties": {
     "plaintiff": {
@@ -21,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Maria Q. Fairbanks",
@@ -34,7 +37,8 @@
       "zip": "04071",
       "phone": "(207) 555-0154",
       "email": "maria.fairbanks@example.com",
-      "date_of_birth": "1965-03-05"
+      "date_of_birth": "1965-03-05",
+      "entity_type": "person"
     },
     "defendant_2": {
       "full_name": "Coastal Outfitters LLC",
@@ -42,7 +46,9 @@
       "city": "Gorham",
       "state": "ME",
       "zip": "04038",
-      "phone": "(207) 555-0153"
+      "phone": "(207) 555-0153",
+      "organization_name": "Coastal Outfitters LLC",
+      "entity_type": "organization"
     },
     "attorney": {
       "full_name": "Olivia D. Jessup",
@@ -56,7 +62,9 @@
       "phone": "(207) 555-0174",
       "email": "olivia.jessup@example.net",
       "date_of_birth": "1961-04-07",
-      "bar_number": "2596"
+      "bar_number": "2596",
+      "organization_name": "Ellsworth Advocates PC",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -71,6 +79,7 @@
     "phone": "(207) 555-0174",
     "email": "grace.roe@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Grace C. Roe"
   },
   "facts": {
@@ -83,6 +92,165 @@
     "boundary_disputed": false,
     "survey_exists": false,
     "buffer_or_shoreland": "ordinary woodlot, no shoreland issue",
-    "restoration_cost": 159501
+    "restoration_cost": 159501,
+    "demand_recipient": "Maria Q. Fairbanks",
+    "response_deadline_days": 21
+  },
+  "litigation": {
+    "posture": "pleadings",
+    "docket": [
+      {
+        "date": "2025-04-05",
+        "entry": "Complaint for timber trespass and to quiet title filed.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-05-25",
+        "entry": "Answers of the neighbor and the logging contractor filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-06-23",
+        "entry": "Counterclaim for declaratory judgment on the boundary filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-08-10",
+        "entry": "Scheduling order entered; discovery and survey deadlines set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-10-13",
+        "entry": "Hearing on partial summary judgment and the boundary held.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-12-14",
+        "entry": "Expert reports on stumpage value and the boundary served.",
+        "party": "Grace C. Roe"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion in limine on valuation",
+        "type": "evidentiary",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2025-12-12",
+        "status": "filed",
+        "relief": "Exclusion of the plaintiff's restoration-cost valuation."
+      },
+      {
+        "title": "Motion for partial summary judgment on liability",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-09-10",
+        "status": "filed",
+        "relief": "Judgment that the unauthorized cutting establishes timber-trespass liability."
+      },
+      {
+        "title": "Motion to determine the boundary",
+        "type": "procedural",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-09-15",
+        "status": "under_advisement",
+        "relief": "A determination of the true boundary between the parcels."
+      },
+      {
+        "title": "Motion for the enhanced-damages multiplier",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-11-03",
+        "status": "opposed",
+        "relief": "An order applying the double or treble damages multiplier under 14 M.R.S. § 7552."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Declaratory judgment that the boundary favors the neighbor",
+        "by": "Maria Q. Fairbanks",
+        "against": "Grace C. Roe",
+        "relief": "A declaration that the true boundary lies so that the cut trees stood on the defendant's land."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Timber trespass with enhanced damages under 14 M.R.S. § 7552",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks and Coastal Outfitters LLC",
+        "governing_law": "14 M.R.S. § 7552",
+        "elements": [
+          "The plaintiff owned the trees",
+          "The defendants cut or caused the cutting without permission",
+          "The owner may recover the value of the trees plus double damages",
+          "Up to treble damages apply where the cutting was intentional or knowing"
+        ],
+        "relief_sought": "The value of the trees plus double damages, and up to treble damages for intentional or knowing cutting",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Common-law trespass to land",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "Common law trespass",
+        "elements": [
+          "The plaintiff owned or possessed the land",
+          "The defendant intentionally entered the land",
+          "The entry was without permission",
+          "Resulting injury to the land"
+        ],
+        "relief_sought": "Damages for the unauthorized entry and disturbance of the land",
+        "strength": "strong"
+      },
+      {
+        "count": 3,
+        "claim": "Conversion of the cut timber",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC and the sawmill",
+        "governing_law": "Common law conversion",
+        "elements": [
+          "The plaintiff owned the severed timber",
+          "The defendants exercised dominion over it",
+          "The exercise of dominion was wrongful",
+          "Resulting damages equal to the value of the timber"
+        ],
+        "relief_sought": "Damages equal to the value of the converted logs",
+        "strength": "moderate"
+      },
+      {
+        "count": 4,
+        "claim": "Quiet title and determination of the boundary",
+        "by": "Grace C. Roe",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "14 M.R.S. § 6651",
+        "elements": [
+          "The plaintiff holds record title to the parcel",
+          "An actual controversy exists over the boundary line",
+          "The deeds and monuments fix the true line",
+          "A judgment is needed to settle title and the boundary"
+        ],
+        "relief_sought": "A judgment quieting title and declaring the true boundary between the parcels",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "The trees were on the defendant's land",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The cut trees stood on Fairbanks's side of the true boundary, so no trespass occurred. 14 M.R.S. § 6651."
+      },
+      {
+        "defense": "Comparative responsibility",
+        "by": "Maria Q. Fairbanks",
+        "basis": "Any damages should be reduced by the plaintiff's own failure to mark or maintain the boundary. 14 M.R.S. § 156."
+      },
+      {
+        "defense": "Good-faith reliance on a flagged line",
+        "by": "Coastal Outfitters LLC",
+        "basis": "The contractor reasonably and in good faith cut to a boundary line that had been flagged, negating any intentional or knowing cutting."
+      }
+    ]
   }
 }

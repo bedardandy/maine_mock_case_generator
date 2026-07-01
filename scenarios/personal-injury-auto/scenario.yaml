@@ -40,7 +40,133 @@ facts:
   lost_wages: {int_between: [2000, 90000]}
   property_damage: {int_between: [3000, 45000]}
   policy_limits: {int_between: [50000, 1000000]}
+  # Coverage-adequacy posture of the at-fault driver — the ground-truth discriminator the
+  # UM/UIM and uninsured-defendant confounders gate on (mutually exclusive).
+  defendant_coverage: {pick: [adequate, adequate, adequate, underinsured, uninsured]}
   comparative_fault_alleged: {pick: [true, false]}
+  # Pre-suit demand facts (feed general__demand_letter): who the demand is addressed
+  # to and the deadline the recipient is given to respond.
+  demand_recipient: {pick: ["the defendant's liability insurer", "the defendant"]}
+  response_deadline_days: {pick: [14, 21, 30]}
+
+# -------------------------------------------------------------------------
+# LEGAL-ISSUE TIERING — confounding SECONDARY issues layered on the primary
+# negligence claim. Most matters draw ZERO (the weights keep a clean matter the
+# common case); any one exotic issue is rare. Each entry injects coherent
+# ground-truth facts + a spotted issue + (where apt) an affirmative defense, and
+# carries its Maine grounding + a confidence flag. Citations come from the
+# project's grounded research seed (verified against legislature.maine.gov where
+# marked; UNVERIFIED items flagged inline). AI-assembled research, NOT legal
+# advice (see DISCLAIMER.md). Overbroad-application risk is stated inline so the
+# oracle is the CORRECT Maine rule, not a naive over-claim.
+confounders:
+  count: {weights: [60, 26, 11, 3]} # ~60% of matters stay clean
+  pool:
+    # Statute of limitations: theory selection is dispositive.
+    - id: sol-theory-wrongful-death-overlay
+      weight: 3
+      confidence: "VERIFIED periods (14 M.R.S. § 752 6-yr; 18-C M.R.S. § 2-807 3-yr WD); which theory governs is the dispositive fork"
+      source: "14 M.R.S. § 752 (6-year general civil limitations); 18-C M.R.S. § 2-807 (wrongful death — 3 years, 6 if by homicide); 23 M.R.S. § 3655 (highway/road-defect special notice — UNVERIFIED section detail)"
+      facts:
+        occupant_death: true
+        companion_wrongful_death_claim: true
+        general_tort_sol_years: 6
+        wrongful_death_sol_years: 3
+        sol_theory_question: true
+      issue:
+        issue: "Statute of limitations — which theory's clock governs the companion wrongful-death claim"
+        category: procedure
+        governing_law: "14 M.R.S. § 752 (6-year general tort); 18-C M.R.S. § 2-807 (wrongful death, 3 years)"
+        sub_questions:
+          - "The injured plaintiff's own negligence claim runs 6 years under 14 M.R.S. § 752 — but a deceased occupant's estate claim is governed by 18-C M.R.S. § 2-807'§ 3-year period; which controls each claimant?"
+          - "Has a personal representative been appointed so any wrongful-death claim can be brought before its shorter clock expires?"
+        strength: moderate
+        notes: "Overbroad-risk: do NOT assume § 752'§ 6 years covers every claim arising from the collision — a wrongful-death overlay carries its own shorter 3-year period and bars earlier than the PI claim. A 23 M.R.S. § 3655 highway/road-defect special notice (UNVERIFIED) may add a separate, earlier deadline if a road defect contributed."
+      defense:
+        defense: "Statute of limitations (wrongful-death period)"
+        by: "{defendant_full_name}"
+        basis: "Any wrongful-death claim is time-barred under 18-C M.R.S. § 2-807'§ 3-year period even if the injured plaintiff's own claim remains timely under 14 M.R.S. § 752. NOTE: the two clocks run independently; the general 6-year period does not rescue a late death claim."
+    # Comparative negligence and the 50% bar.
+    - id: comparative-negligence-50-bar
+      weight: 4
+      requires: {comparative_fault_alleged: true}
+      confidence: "VERIFIED core — 14 M.R.S. § 156 50% bar + 'dollars and cents' reduction; Cushman/Crocker PARTIALLY VERIFIED"
+      source: "14 M.R.S. § 156 (modified comparative negligence; a claimant 'found by the jury to be equally at fault' (50%+) may not recover; damages reduced 'by dollars and cents, and not by percentage'); Cushman v. Perkins, 245 A.2d 846 (Me. 1968) and Crocker v. Coombs, 328 A.2d 389 (Me. 1974) — PARTIALLY VERIFIED"
+      facts:
+        plaintiff_fault_pct_alleged: {int_between: [40, 55]}
+        fifty_percent_bar_in_play: true
+        fault_disputed: true
+      issue:
+        issue: "Comparative negligence — whether the plaintiff's share reaches the 50% recovery bar"
+        category: tort
+        governing_law: "14 M.R.S. § 156"
+        sub_questions:
+          - "The defense alleges the plaintiff is roughly {plaintiff_fault_pct_alleged}% at fault — at or above 50% the claim is barred entirely; below 50% recovery is merely reduced."
+          - "Maine reduces the award 'by dollars and cents, and not by percentage' (14 M.R.S. § 156); how does that change the demand posture near the threshold?"
+        strength: moderate
+        notes: "Overbroad-risk: the 50% bar turns on the jury's allocation, not the pleading; and in a multi-defendant case the plaintiff's share is NOT simply additive with co-defendants' shares — allocation needs jury-instruction scaffolding not captured by one field."
+      defense:
+        defense: "Comparative negligence / 50% bar"
+        by: "{defendant_full_name}"
+        basis: "The plaintiff's own negligence equals or exceeds the defendant's, barring recovery, or at least reducing it. 14 M.R.S. § 156. NOTE: an 'equally at fault' (50%) finding is a complete bar; below that, damages are reduced 'by dollars and cents.'"
+    # UM/UIM mandatory equal-limits coverage and the written-rejection trap.
+    - id: uim-equal-limits-medpay
+      weight: 3
+      requires: {defendant_coverage: underinsured}
+      confidence: "VERIFIED — 24-A M.R.S. § 2902 mandatory equal-limits UM/UIM; 29-A M.R.S. § 1605 minimums"
+      source: "24-A M.R.S. § 2902 (every auto liability policy must carry UM/UIM in amounts equal to the liability limits unless the insured signed a written rejection; floor is the § 1605 minimums); 29-A M.R.S. § 1605 ($50,000/person, $100,000/accident BI; $25,000 property; $2,000 med-pay)"
+      facts:
+        defendant_underinsured: true
+        plaintiff_rejected_equal_uim_limits: {pick: [true, false]}
+        med_pay_coverage: 2000
+        uim_gap_question: true
+      issue:
+        issue: "Underinsured-motorist coverage — the gap between the defendant's limits and the plaintiff's damages"
+        category: insurance
+        governing_law: "24-A M.R.S. § 2902; 29-A M.R.S. § 1605"
+        sub_questions:
+          - "The at-fault driver's liability limits fall below the plaintiff's damages — what UIM benefit fills the gap under 24-A M.R.S. § 2902?"
+          - "Did the plaintiff sign a written rejection of equal UM/UIM limits, capping first-party recovery at the § 1605 floor rather than the policy's liability limits?"
+        strength: moderate
+        notes: "Overbroad-risk: do NOT default to 'equal limits' — a valid written rejection under 24-A M.R.S. § 2902 drops the UM/UIM ceiling to the statutory minimum. Med-pay ($2,000 floor) is separate first-party no-fault coverage and may create a reimbursement obligation."
+    # Uninsured defendant; mandatory financial responsibility.
+    - id: uninsured-defendant-um
+      weight: 2
+      requires: {defendant_coverage: uninsured}
+      confidence: "VERIFIED — 29-A M.R.S. § 1601/§ 1611/§ 1605 financial-responsibility scheme"
+      source: "29-A M.R.S. § 1601 (owner/operator must maintain § 1605 financial responsibility; violation is a traffic infraction with suspension until proof filed); § 1611 (insurance/bond/self-insurance); § 1605 (minimum amounts); 24-A M.R.S. § 2902 (UM coverage)"
+      facts:
+        defendant_insured: false
+        defendant_registration_valid: false
+        policy_limits: 0
+        recovery_via_plaintiff_um: true
+      issue:
+        issue: "Uninsured defendant — recovery shifts to the plaintiff's own UM coverage"
+        category: insurance
+        governing_law: "29-A M.R.S. § 1601; § 1611; 24-A M.R.S. § 2902"
+        sub_questions:
+          - "The at-fault driver carried no § 1605 financial responsibility — does direct recovery depend on attachable assets, or does the plaintiff's uninsured-motorist coverage (24-A M.R.S. § 2902) become the primary vehicle?"
+          - "Any settlement must identify who actually pays — the defendant or the UM carrier."
+        strength: moderate
+        notes: "Overbroad-risk: do NOT conflate 'the defendant lacked coverage' with 'the insurer denied a valid policy' — the latter requires a coverage declaratory action, not a UM claim. A demand on an uninsured, asset-less defendant is hollow."
+    # Liens and subrogation that must be cleared before disbursement.
+    - id: liens-subrogation-mainecare-wc
+      weight: 3
+      confidence: "VERIFIED — 22 M.R.S. § 14 MaineCare no-fee-reduction lien; 39-A M.R.S. § 107 WC lien; private health-insurer subrogation UNVERIFIED"
+      source: "22 M.R.S. § 14 (MaineCare subrogation/lien; NOT reduced for a pro-rata share of attorney fees; written notice to the Department before settlement and ≥ 10 days before filing; no disbursement without satisfying/releasing the lien); 39-A M.R.S. § 107 (workers'-comp employer/insurer lien; 30-day-demand subrogation; employer bears proportionate litigation costs); private health-insurer subrogation — UNVERIFIED (policy-language dependent)"
+      facts:
+        plaintiff_mainecare_recipient: {pick: [true, false]}
+        plaintiff_on_workers_comp: {pick: [true, false]}
+        lien_must_clear_before_disbursement: true
+      issue:
+        issue: "Liens and subrogation — MaineCare and workers'-comp claims against the recovery"
+        category: insurance
+        governing_law: "22 M.R.S. § 14 (MaineCare); 39-A M.R.S. § 107 (workers' comp)"
+        sub_questions:
+          - "MaineCare's § 14 lien is NOT reduced for a pro-rata share of attorney fees, and requires written notice before settlement and at least 10 days before filing — has that been done, and how does the no-fee-reduction rule change the net to the plaintiff?"
+          - "A workers'-comp lien under 39-A M.R.S. § 107 creates a de facto three-party settlement, and its 30-day written-demand subrogation clock can force a premature suit."
+        strength: moderate
+        notes: "Overbroad-risk: the WC lien is NOT simply total benefits paid — the employer bears proportionate litigation costs, which reduces it. Private health-insurer subrogation is policy-language dependent and UNVERIFIED here."
 
 third_parties:
   count: {min: 3, max: 5}
@@ -192,3 +318,27 @@ litigation:
     jury: {pick: [true, false]}
     estimated_days: {int_between: [4, 12]}
     scheduled_date: {date_between: ["2026-05-01", "2026-11-01"]}
+
+# Chronological case events handed off as bundles (see complex-civil-litigation
+# for the field contract). A negligence suit where the answer raises comparative
+# fault and the defense moves to exclude the treating physician. day = days from
+# filing_date; the pre-suit demand is day -45.
+procedure:
+  - day: -45
+    actor: us
+    event: "Pre-suit demand letter sent to the defendant's liability insurer."
+    produces: [general__demand_letter]
+  - day: 0
+    actor: us
+    event: "Complaint for negligence filed and served after the demand went unmet."
+    produces: [litigation__pleading]
+  - day: 22
+    actor: opposing
+    event: "Defendant served an Answer pleading comparative negligence (14 M.R.S. § 156) and failure to mitigate; no counterclaim."
+    produces: [litigation__discovery_letter]
+  - day: 110
+    actor: opposing
+    event: "Defendant moved in limine to exclude the plaintiff's treating physician's causation opinion."
+    produces: [litigation__opposition]
+    deadline_days: 21
+    deadline_rule: "M.R. Civ. P. 7(b)(1)(A) — opposition within 21 days; M.R. Evid. 702/703 causation foundation."

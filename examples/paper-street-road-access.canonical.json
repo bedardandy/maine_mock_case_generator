@@ -1,13 +1,15 @@
 {
   "matter": {
-    "docket_number": "SAG-RE-2025-284",
-    "case_id": "MMC-2025-932967",
+    "docket_number": "SAG-RE-2025-898",
+    "case_id": "MMC-2025-832948",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "real_property",
     "filing_date": "2025-07-17",
-    "event_date": "1949-06-15"
+    "event_date": "1949-06-15",
+    "firm_name": "Ellsworth Advocates PC"
   },
   "parties": {
     "plaintiff": {
@@ -21,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Maria Q. Fairbanks",
@@ -34,7 +37,8 @@
       "zip": "04071",
       "phone": "(207) 555-0154",
       "email": "maria.fairbanks@example.com",
-      "date_of_birth": "1965-03-05"
+      "date_of_birth": "1965-03-05",
+      "entity_type": "person"
     },
     "defendant_2": {
       "full_name": "Coastal Outfitters LLC",
@@ -42,7 +46,9 @@
       "city": "Gorham",
       "state": "ME",
       "zip": "04038",
-      "phone": "(207) 555-0153"
+      "phone": "(207) 555-0153",
+      "organization_name": "Coastal Outfitters LLC",
+      "entity_type": "organization"
     },
     "other_party": {
       "full_name": "Town of Mooselook",
@@ -50,7 +56,9 @@
       "city": "Yarmouth",
       "state": "ME",
       "zip": "04074",
-      "phone": "(207) 555-0139"
+      "phone": "(207) 555-0139",
+      "organization_name": "Town of Mooselook",
+      "entity_type": "organization"
     },
     "attorney": {
       "full_name": "Felix D. Moe",
@@ -64,7 +72,9 @@
       "phone": "(207) 555-0112",
       "email": "felix.moe@example.net",
       "date_of_birth": "1956-02-02",
-      "bar_number": "1976"
+      "bar_number": "1976",
+      "organization_name": "Ellsworth Advocates PC",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -79,6 +89,7 @@
     "phone": "(207) 555-0174",
     "email": "grace.roe@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Grace C. Roe"
   },
   "facts": {
@@ -90,7 +101,152 @@
     "actual_access_road": "a seasonal private road",
     "annual_maintenance_cost": 33699,
     "defendant_unpaid_share": 6524,
-    "developer_back_lot": "a rear parcel the developer plans to build on",
+    "cost_sharing_basis": "a share proportionate to each owner's actual use of the way",
+    "developer_back_lot": "a landlocked back lot the developer wants to subdivide",
     "developer_access_theory": "that the recorded plan grants all lot owners rights in the paper street"
+  },
+  "litigation": {
+    "posture": "pleadings",
+    "docket": [
+      {
+        "date": "2025-05-09",
+        "entry": "Complaint to quiet title and for declaratory and injunctive relief filed.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-06-18",
+        "entry": "Answer and counterclaim asserting an easement filed by the developer.",
+        "party": "Coastal Outfitters LLC"
+      },
+      {
+        "date": "2025-07-27",
+        "entry": "Answer of the defendant neighbor on the assessment filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-08-23",
+        "entry": "Order on the motion for a preliminary injunction entered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-10-23",
+        "entry": "Scheduling order entered and the Town appears on the way's status.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-11-23",
+        "entry": "Hearing held on summary judgment as to vacation of the way.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for summary judgment on the vacation of the way",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-09-26",
+        "status": "opposed",
+        "relief": "Summary judgment that the paper street is deemed vacated and the developer has no easement."
+      },
+      {
+        "title": "Motion to appoint a referee on the assessment",
+        "type": "procedural",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-11-24",
+        "status": "under_advisement",
+        "relief": "Appointment of a referee to determine the fair and equitable share owed."
+      },
+      {
+        "title": "Motion for a preliminary injunction",
+        "type": "procedural",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-07-18",
+        "status": "granted_in_part",
+        "relief": "A preliminary injunction barring road construction over the paper street pending judgment."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Easement over the paper street to the back lot",
+        "by": "Coastal Outfitters LLC",
+        "against": "Grace C. Roe",
+        "relief": "A declaration that the developer holds an easement over the paper street sufficient to access and develop the back lot."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Declaratory judgment that the paper street is deemed vacated and the developer has no easement",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC and the Town of Mooselook",
+        "governing_law": "23 M.R.S. § 3032; 23 M.R.S. § 3033; 14 M.R.S. § 5951 et seq.",
+        "elements": [
+          "A pre-1987 platted way never accepted by the municipality",
+          "Vacation by operation of the Paper Streets Law",
+          "No surviving private easement in the developer",
+          "An actual controversy ripe for declaration"
+        ],
+        "relief_sought": "A declaration that the paper street is deemed vacated and that the developer holds no easement over it",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Quiet title",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "14 M.R.S. § 6651",
+        "elements": [
+          "The plaintiff and the association have an interest in the access ways",
+          "The developer asserts an adverse claim of easement over the paper street",
+          "The adverse claim is without basis in the record title",
+          "Title should be quieted against the claim"
+        ],
+        "relief_sought": "A judgment quieting title against the developer's claimed easement over the paper street",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Collection of the unpaid road-maintenance assessment with attorney fees",
+        "by": "Grace C. Roe and the Lakeview Heights Road Association",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "23 M.R.S. § 3101",
+        "elements": [
+          "The defendant's lot is served by and benefits from the private way",
+          "A fair and equitable proportionate share was assessed",
+          "The defendant has failed to pay his share",
+          "The association may recover the share and attorney fees by civil action"
+        ],
+        "relief_sought": "Judgment for the unpaid proportionate share of maintenance, plus attorney fees and costs",
+        "strength": "strong"
+      },
+      {
+        "count": 4,
+        "claim": "Injunction barring the developer from opening the paper street",
+        "by": "Grace C. Roe",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "14 M.R.S. § 6051",
+        "elements": [
+          "The paper street is vacated and the developer has no easement",
+          "Opening the way would cause irreparable harm to the lot owners",
+          "The balance of harms favors the plaintiff",
+          "There is no adequate remedy at law"
+        ],
+        "relief_sought": "An order enjoining the developer from constructing or opening a road over the paper street",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Laches and acquiescence",
+        "by": "Coastal Outfitters LLC",
+        "basis": "The plaintiff and the association acquiesced in the platted way and delayed unreasonably in challenging access."
+      },
+      {
+        "defense": "Easement by implication or necessity",
+        "by": "Coastal Outfitters LLC",
+        "basis": "The back lot takes an easement over the paper street by implication from the subdivision plan or by necessity for access."
+      }
+    ]
   }
 }

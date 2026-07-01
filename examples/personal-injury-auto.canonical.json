@@ -1,13 +1,15 @@
 {
   "matter": {
-    "docket_number": "SAG-CV-2025-406",
-    "case_id": "MMC-2025-479146",
+    "docket_number": "SAG-CV-2025-407",
+    "case_id": "MMC-2025-702326",
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "personal_injury",
     "filing_date": "2025-10-01",
-    "event_date": "2024-05-30"
+    "event_date": "2024-05-30",
+    "firm_name": "Ellsworth Advocates PC"
   },
   "parties": {
     "plaintiff": {
@@ -21,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "olivia.ellsworth@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Maria Q. Fairbanks",
@@ -34,7 +37,8 @@
       "zip": "04071",
       "phone": "(207) 555-0154",
       "email": "maria.fairbanks@example.com",
-      "date_of_birth": "1965-03-05"
+      "date_of_birth": "1965-03-05",
+      "entity_type": "person"
     },
     "defendant_2": {
       "full_name": "Coastal Outfitters LLC",
@@ -42,7 +46,9 @@
       "city": "Gorham",
       "state": "ME",
       "zip": "04038",
-      "phone": "(207) 555-0153"
+      "phone": "(207) 555-0153",
+      "organization_name": "Coastal Outfitters LLC",
+      "entity_type": "organization"
     },
     "attorney": {
       "full_name": "Olivia D. Jessup",
@@ -56,7 +62,9 @@
       "phone": "(207) 555-0174",
       "email": "olivia.jessup@example.net",
       "date_of_birth": "1961-04-07",
-      "bar_number": "2596"
+      "bar_number": "2596",
+      "organization_name": "Ellsworth Advocates PC",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -71,6 +79,7 @@
     "phone": "(207) 555-0174",
     "email": "olivia.ellsworth@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Olivia B. Ellsworth"
   },
   "facts": {
@@ -84,6 +93,216 @@
     "lost_wages": 43175,
     "property_damage": 33513,
     "policy_limits": 664006,
-    "comparative_fault_alleged": false
+    "defendant_coverage": "underinsured",
+    "comparative_fault_alleged": false,
+    "demand_recipient": "the defendant",
+    "response_deadline_days": 14,
+    "plaintiff_mainecare_recipient": true,
+    "plaintiff_on_workers_comp": true,
+    "lien_must_clear_before_disbursement": true
+  },
+  "litigation": {
+    "posture": "discovery",
+    "docket": [
+      {
+        "date": "2025-02-10",
+        "entry": "Complaint and demand for jury trial filed.",
+        "party": "Olivia B. Ellsworth"
+      },
+      {
+        "date": "2025-03-01",
+        "entry": "Defendants' answer and affirmative defenses filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-03-21",
+        "entry": "Scheduling order entered; discovery deadline set.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-06-15",
+        "entry": "Order compelling production of the defendant's phone records.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-08-17",
+        "entry": "Pre-suit demand letter sent to the defendant's liability insurer.",
+        "party": "us"
+      },
+      {
+        "date": "2025-09-10",
+        "entry": "Defense medical examination completed; expert disclosures exchanged.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-10-01",
+        "entry": "Complaint for negligence filed and served after the demand went unmet.",
+        "party": "us"
+      },
+      {
+        "date": "2025-10-23",
+        "entry": "Defendant served an Answer pleading comparative negligence (14 M.R.S. § 156) and failure to mitigate; no counterclaim.",
+        "party": "opposing"
+      },
+      {
+        "date": "2025-11-24",
+        "entry": "Partial summary judgment on liability taken under advisement.",
+        "party": "the court"
+      },
+      {
+        "date": "2026-01-19",
+        "entry": "Defendant moved in limine to exclude the plaintiff's treating physician's causation opinion.",
+        "party": "opposing"
+      },
+      {
+        "date": "2026-02-09",
+        "entry": "Mediation held; case continues toward trial.",
+        "party": "the court"
+      }
+    ],
+    "procedure": [
+      {
+        "date": "2025-08-17",
+        "day": -45,
+        "actor": "us",
+        "event": "Pre-suit demand letter sent to the defendant's liability insurer.",
+        "produces": [
+          "general__demand_letter"
+        ]
+      },
+      {
+        "date": "2025-10-01",
+        "day": 0,
+        "actor": "us",
+        "event": "Complaint for negligence filed and served after the demand went unmet.",
+        "produces": [
+          "litigation__pleading"
+        ]
+      },
+      {
+        "date": "2025-10-23",
+        "day": 22,
+        "actor": "opposing",
+        "event": "Defendant served an Answer pleading comparative negligence (14 M.R.S. § 156) and failure to mitigate; no counterclaim.",
+        "produces": [
+          "litigation__discovery_letter"
+        ]
+      },
+      {
+        "date": "2026-01-19",
+        "day": 110,
+        "actor": "opposing",
+        "event": "Defendant moved in limine to exclude the plaintiff's treating physician's causation opinion.",
+        "produces": [
+          "litigation__opposition"
+        ],
+        "response_deadline": "2026-02-09",
+        "deadline_rule": "M.R. Civ. P. 7(b)(1)(A) — opposition within 21 days; M.R. Evid. 702/703 causation foundation."
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion to compel the independent medical examination",
+        "type": "discovery",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2025-08-11",
+        "status": "granted",
+        "relief": "An order compelling the plaintiff to attend a defense medical examination."
+      },
+      {
+        "title": "Motion in limine to exclude the accident reconstruction",
+        "type": "evidentiary",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-01-22",
+        "status": "filed",
+        "relief": "Exclusion of the plaintiff's reconstruction expert testimony."
+      },
+      {
+        "title": "Motion to bifurcate liability and damages",
+        "type": "trial",
+        "movant": "Maria Q. Fairbanks",
+        "filed_date": "2026-03-22",
+        "status": "opposed",
+        "relief": "Separate trials on liability and damages."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Negligence (property damage)",
+        "by": "Maria Q. Fairbanks",
+        "against": "Olivia B. Ellsworth",
+        "relief": "Damages for the defendant's own vehicle repair costs allegedly caused by the plaintiff."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Negligence",
+        "by": "Olivia B. Ellsworth",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "Common law negligence; 14 M.R.S. § 156",
+        "elements": [
+          "A duty of reasonable care",
+          "Breach of that duty",
+          "Proximate causation",
+          "Damages"
+        ],
+        "relief_sought": "Compensatory damages for medical expenses, lost wages, and pain and suffering",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Vicarious liability and negligent entrustment",
+        "by": "Olivia B. Ellsworth",
+        "against": "Coastal Outfitters LLC",
+        "governing_law": "Respondeat superior; common law",
+        "elements": [
+          "An employment or agency relationship",
+          "Conduct within the scope of employment",
+          "Negligent entrustment or supervision",
+          "Resulting damages"
+        ],
+        "relief_sought": "Compensatory damages against the employer",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Negligence per se",
+        "by": "Olivia B. Ellsworth",
+        "against": "Maria Q. Fairbanks",
+        "governing_law": "29-A M.R.S. (rules of the road)",
+        "elements": [
+          "Violation of a safety statute",
+          "Plaintiff within the protected class",
+          "Harm of the type the statute guards against",
+          "Causation"
+        ],
+        "relief_sought": "Compensatory damages",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Lack of causation",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The claimed injuries are pre-existing or degenerative and were not caused by the collision."
+      },
+      {
+        "defense": "Sudden emergency",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The defendant faced an unforeseen emergency not of the defendant's making."
+      },
+      {
+        "defense": "Comparative negligence",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The plaintiff's own negligence caused or contributed to the collision. 14 M.R.S. § 156."
+      },
+      {
+        "defense": "Statute of limitations",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The action was not commenced within the limitations period. 14 M.R.S. § 752."
+      }
+    ]
   }
 }

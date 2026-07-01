@@ -9,21 +9,22 @@
     "seed": 7
   },
   "matter": {
-    "matter_id": "MMC-2026-223800",
+    "matter_id": "MMC-2026-538433",
     "practice_area": "family",
     "title": "Divorce of Olivia B. Ellsworth and Maria Q. Fairbanks",
     "jurisdiction": {
       "state": "ME",
       "county": "Cumberland",
       "court_location": "Portland",
-      "court_type": "District Court"
+      "court_type": "District Court",
+      "court_address": "127 State Street, Portland, ME 04019"
     },
     "case_type": "family_matters",
     "filing_date": "2026-02-13",
     "status": "pre_filing",
     "summary": "Olivia B. Ellsworth petitions to divorce Maria Q. Fairbanks in Cumberland County District Court, citing irreconcilable marital differences, and asks the court to resolve parental rights for three minor child(ren), child support, and division of marital property.",
     "event_date": "2025-04-20",
-    "docket_number": "CUM-FM-2026-624"
+    "docket_number": "CUM-FM-2026-268"
   },
   "parties": {
     "plaintiff": {
@@ -122,9 +123,9 @@
   },
   "fact_pattern": {
     "summary": "Olivia B. Ellsworth petitions to divorce Maria Q. Fairbanks in Cumberland County District Court, citing irreconcilable marital differences, and asks the court to resolve parental rights for three minor child(ren), child support, and division of marital property.",
-    "narrative": "Olivia B. Ellsworth and Maria Q. Fairbanks were married on 2010-08-15 in Camden, Maine. The parties have three minor child(ren) together: Ingrid B. Kingsley, Marcus W. Roe and Omar W. Loe. After several years of growing conflict and a period of unsuccessful counseling, the parties separated on 2025-04-20.\n\nSince separation, the children have lived primarily with Maria Q. Fairbanks, while the other parent has exercised weekend contact. The parties jointly own or rent a jointly owned condominium and share several financial accounts. They disagree about a long-term parenting schedule and about how to divide retirement savings accumulated during the marriage.\n\nOlivia has resided in Cumberland County, Maine for approximately 36 months, satisfying the residency requirement to file. Olivia now seeks a divorce on the ground of irreconcilable marital differences, a workable parental rights and responsibilities order, child support consistent with the Maine guidelines, and an equitable division of marital property and debt.",
+    "narrative": "Olivia B. Ellsworth and Maria Q. Fairbanks were married on 2010-08-15 in Bangor, Maine. The parties have three minor child(ren) together: Ingrid B. Kingsley, Marcus W. Roe and Omar W. Loe. After several years of growing conflict and a period of unsuccessful counseling, the parties separated on 2025-04-20.\n\nSince separation, the children have lived primarily with Maria Q. Fairbanks, while the other parent has exercised weekend contact. The parties jointly own or rent a jointly owned condominium and share several financial accounts. They disagree about a long-term parenting schedule and about how to divide retirement savings accumulated during the marriage.\n\nOlivia has resided in Cumberland County, Maine for approximately 36 months, satisfying the residency requirement to file. Olivia now seeks a divorce on the ground of irreconcilable marital differences, a workable parental rights and responsibilities order, child support consistent with the Maine guidelines, and an equitable division of marital property and debt.",
     "undisputed_facts": [
-      "The parties were married on 2010-08-15 in Camden, Maine.",
+      "The parties were married on 2010-08-15 in Bangor, Maine.",
       "The parties have three minor child(ren) of the marriage.",
       "The parties separated on 2025-04-20 and have lived apart since."
     ],
@@ -136,7 +137,7 @@
     "timeline": [
       {
         "date": "2010-08-15",
-        "event": "Olivia and Maria married in Camden, Maine."
+        "event": "Olivia and Maria married in Bangor, Maine."
       },
       {
         "date": "2025-04-20",
@@ -151,26 +152,28 @@
   "third_parties": [
     {
       "id": "tp1",
-      "name": "Acadia Print Works",
+      "name": "Katahdin Outfitters Inc.",
       "type": "employer",
       "role": "Plaintiff's employer",
       "relevance": "Source of income and benefits relevant to support calculations.",
       "contact": {
-        "phone": "(207) 555-0162",
-        "city": "Falmouth",
+        "phone": "(207) 555-0105",
+        "city": "Lewiston",
         "state": "ME"
       }
     },
     {
       "id": "tp2",
-      "name": "Lighthouse Trust Company",
-      "type": "financial_institution",
-      "role": "Joint account holder bank",
-      "relevance": "Holds the marital checking, savings, and mortgage accounts.",
+      "name": "Beatrice S. Danforth",
+      "type": "family_member",
+      "role": "Plaintiff's mother",
+      "relationship": "Maternal grandmother",
+      "relevance": "Provides child care and may testify to parenting history.",
       "contact": {
-        "phone": "(207) 555-0173",
-        "city": "Lewiston",
-        "state": "ME"
+        "phone": "(207) 555-0174",
+        "city": "Falmouth",
+        "state": "ME",
+        "email": "beatrice.danforth@example.org"
       }
     }
   ],
@@ -226,11 +229,22 @@
       "Any arrangement that destabilizes the children's schooling."
     ],
     "constraints": {
-      "budget": "Moderate; willing to mediate but will litigate parenting if needed.",
+      "budget": "Limited; prefers settlement over a prolonged trial.",
       "timeline": "Wants temporary orders before the next school year."
     }
   },
   "issues": [
+    {
+      "issue": "Division of marital property and debt",
+      "category": "family",
+      "governing_law": "19-A M.R.S. § 953",
+      "sub_questions": [
+        "Which assets are marital versus non-marital?",
+        "How should retirement accounts and home equity be divided?"
+      ],
+      "strength": "moderate",
+      "id": "iss1"
+    },
     {
       "issue": "Entitlement to and amount of spousal support",
       "category": "family",
@@ -239,29 +253,7 @@
         "Is spousal support appropriate given the marriage length and incomes?"
       ],
       "strength": "weak",
-      "id": "iss1"
-    },
-    {
-      "issue": "Allocation of parental rights and responsibilities for the minor children",
-      "category": "family",
-      "governing_law": "19-A M.R.S. § 1653",
-      "sub_questions": [
-        "Should parental rights be shared, allocated, or sole?",
-        "What primary residence and contact schedule serves the children's best interests?"
-      ],
-      "strength": "moderate",
-      "client_position": "Seeks shared parental rights with primary residence with Maria Q. Fairbanks.",
       "id": "iss2"
-    },
-    {
-      "issue": "Responsibility for attorney fees",
-      "category": "family",
-      "governing_law": "19-A M.R.S. § 105",
-      "sub_questions": [
-        "Is a fee contribution warranted by the parties' relative resources?"
-      ],
-      "strength": "weak",
-      "id": "iss3"
     },
     {
       "issue": "Child support under the Maine guidelines",
@@ -273,25 +265,26 @@
       ],
       "strength": "strong",
       "client_position": "Seeks guideline child support based on accurate income figures.",
-      "id": "iss4"
-    },
-    {
-      "issue": "Division of marital property and debt",
-      "category": "family",
-      "governing_law": "19-A M.R.S. § 953",
-      "sub_questions": [
-        "Which assets are marital versus non-marital?",
-        "How should retirement accounts and home equity be divided?"
-      ],
-      "strength": "moderate",
-      "id": "iss5"
+      "id": "iss3"
     }
   ],
   "expert_opinions": [
     {
       "id": "exp1",
       "expert": {
-        "name": "John R. Birchwood",
+        "name": "Jane M. Greenhill",
+        "field": "Forensic accounting",
+        "credentials": "CPA",
+        "retained_by": "plaintiff"
+      },
+      "topic": "Tracing and valuation of marital accounts",
+      "opinion": "Retirement contributions during the marriage are marital and total a divisible balance.",
+      "basis": "Account statements and contribution histories."
+    },
+    {
+      "id": "exp2",
+      "expert": {
+        "name": "Henry D. Larkspur",
         "field": "Vocational assessment",
         "credentials": "MBA, CVA",
         "retained_by": "defendant"
@@ -299,71 +292,129 @@
       "topic": "Earning capacity",
       "opinion": "The lower-earning spouse can return to full-time work within a year.",
       "basis": "Work history and labor-market data."
-    },
-    {
-      "id": "exp2",
-      "expert": {
-        "name": "Diego M. Ellsworth",
-        "field": "Child custody / parenting evaluation",
-        "credentials": "Ph.D.",
-        "retained_by": "court"
-      },
-      "topic": "Best interests and parenting capacity",
-      "opinion": "Both parents are fit; a primary-residence-with-shared-contact schedule best serves the children's stability.",
-      "basis": "Clinical interviews, home visits, and collateral contacts."
     }
   ],
   "evidence": [
     {
-      "title": "Retirement account statements",
-      "type": "financial_record",
-      "party": "defendant",
-      "description": "Quarterly statements for both parties' retirement accounts.",
-      "id": "ev1"
-    },
-    {
-      "title": "Recent pay stubs",
-      "type": "financial_record",
+      "title": "Marriage certificate",
+      "type": "public_record",
       "party": "plaintiff",
-      "description": "Three months of pay stubs for income verification.",
-      "id": "ev2"
+      "description": "Certified copy establishing the date and place of marriage.",
+      "id": "ev1"
     },
     {
       "title": "Plaintiff's financial statement (FM-050)",
       "type": "financial_record",
       "party": "plaintiff",
       "description": "Court financial statement of income, expenses, assets, and debts.",
+      "id": "ev2"
+    },
+    {
+      "title": "Recent pay stubs",
+      "type": "financial_record",
+      "party": "plaintiff",
+      "description": "Three months of pay stubs for income verification.",
       "id": "ev3"
+    },
+    {
+      "title": "Children's school records",
+      "type": "document",
+      "party": "plaintiff",
+      "description": "Enrollment and report cards showing the children's stable schooling.",
+      "id": "ev4"
+    },
+    {
+      "title": "Deed to the marital home",
+      "type": "public_record",
+      "party": "plaintiff",
+      "description": "Recorded deed showing joint ownership.",
+      "id": "ev5"
+    },
+    {
+      "title": "Text message log",
+      "type": "correspondence",
+      "party": "plaintiff",
+      "description": "Co-parenting communications relevant to the schedule dispute.",
+      "id": "ev6"
     }
   ],
   "financials": {
     "currency": "USD",
     "amounts": [
       {
-        "label": "Estimated marital home equity",
-        "amount": 210697,
-        "basis": "Estimated fair market value less mortgage."
-      },
-      {
         "label": "Joint credit card debt",
-        "amount": 6238,
+        "amount": 7451,
         "basis": "Combined balances."
       },
       {
         "label": "Plaintiff annual gross income",
-        "amount": 70455,
+        "amount": 96875,
         "basis": "W-2 wages."
       },
       {
-        "label": "Defendant retirement account balance",
-        "amount": 119306,
-        "basis": "Most recent statement."
+        "label": "Estimated marital home equity",
+        "amount": 270577,
+        "basis": "Estimated fair market value less mortgage."
+      }
+    ]
+  },
+  "litigation": {
+    "docket": [
+      {
+        "date": "2026-02-13",
+        "entry": "Complaint for divorce filed with an interim relief request.",
+        "party": "us"
+      },
+      {
+        "date": "2026-03-06",
+        "entry": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+        "party": "opposing"
+      },
+      {
+        "date": "2026-03-23",
+        "entry": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+        "party": "client"
+      }
+    ],
+    "procedure": [
+      {
+        "date": "2026-02-13",
+        "day": 0,
+        "actor": "us",
+        "event": "Complaint for divorce filed with an interim relief request.",
+        "produces": [
+          "family_law__divorce_complaint"
+        ]
+      },
+      {
+        "date": "2026-03-06",
+        "day": 21,
+        "actor": "opposing",
+        "event": "Defendant served an Answer and a counterclaim seeking primary residence of the children.",
+        "produces": [
+          "family_law__pleading"
+        ],
+        "response_deadline": "2026-03-26",
+        "deadline_rule": "M.R. Civ. P. 80(c) — response to the counterclaim for divorce."
+      },
+      {
+        "date": "2026-03-23",
+        "day": 38,
+        "actor": "client",
+        "event": "Client reports the defendant removed the children from school, withdrew the joint savings, and will not disclose where the children are staying.",
+        "produces": [
+          "family_law__motion"
+        ],
+        "response_deadline": "2026-03-23",
+        "deadline_rule": "19-A M.R.S. § 904 / M.R. Civ. P. 65 — emergency motion for interim parental rights and to freeze marital assets pending hearing.",
+        "urgent": true
       }
     ]
   },
   "facts": {
     "marriage_date": "2010-08-15",
-    "marriage_city": "Camden",
+    "marriage_place": "Camden, Maine",
+    "marriage_city": "Bangor",
     "marriage_county": "Penobscot",
     "marriage_state": "Maine",
     "separation_date": "2025-04-20",

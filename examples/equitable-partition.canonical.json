@@ -5,9 +5,11 @@
     "court_county": "Sagadahoc",
     "court_location": "Bath",
     "court_type": "Superior Court",
+    "court_address": "96 Federal Street, Bath, ME 04050",
     "case_type": "partition",
     "filing_date": "2025-06-17",
-    "event_date": "2020-09-05"
+    "event_date": "2020-09-05",
+    "firm_name": "Greenhill Law Offices"
   },
   "parties": {
     "plaintiff": {
@@ -21,7 +23,8 @@
       "zip": "04047",
       "phone": "(207) 555-0174",
       "email": "grace.roe@example.com",
-      "date_of_birth": "1969-04-20"
+      "date_of_birth": "1969-04-20",
+      "entity_type": "person"
     },
     "defendant": {
       "full_name": "Maria Q. Fairbanks",
@@ -34,7 +37,8 @@
       "zip": "04071",
       "phone": "(207) 555-0154",
       "email": "maria.fairbanks@example.com",
-      "date_of_birth": "1965-03-05"
+      "date_of_birth": "1965-03-05",
+      "entity_type": "person"
     },
     "defendant_2": {
       "full_name": "Ingrid B. Kingsley",
@@ -47,7 +51,8 @@
       "zip": "04007",
       "phone": "(207) 555-0128",
       "email": "ingrid.kingsley@example.com",
-      "date_of_birth": "1966-03-10"
+      "date_of_birth": "1966-03-10",
+      "entity_type": "person"
     },
     "defendant_3": {
       "full_name": "Omar W. Loe",
@@ -60,7 +65,8 @@
       "zip": "04072",
       "phone": "(207) 555-0187",
       "email": "omar.loe@example.com",
-      "date_of_birth": "1995-10-25"
+      "date_of_birth": "1995-10-25",
+      "entity_type": "person"
     },
     "attorney": {
       "full_name": "Ingrid M. Noe",
@@ -74,7 +80,9 @@
       "phone": "(207) 555-0107",
       "email": "ingrid.noe@example.net",
       "date_of_birth": "1988-09-11",
-      "bar_number": "8005"
+      "bar_number": "8005",
+      "organization_name": "Greenhill Law Offices",
+      "entity_type": "person"
     }
   },
   "party": {
@@ -89,6 +97,7 @@
     "phone": "(207) 555-0174",
     "email": "grace.roe@example.com",
     "date_of_birth": "1969-04-20",
+    "entity_type": "person",
     "signature": "Grace C. Roe"
   },
   "facts": {
@@ -102,5 +111,126 @@
     "improvements": "an undeveloped lot with a right-of-way",
     "access_issue": "the only access is over a disputed right-of-way / paper street",
     "contribution_dispute": true
+  },
+  "litigation": {
+    "posture": "pleadings",
+    "docket": [
+      {
+        "date": "2025-04-05",
+        "entry": "Complaint for partition filed.",
+        "party": "Grace C. Roe"
+      },
+      {
+        "date": "2025-05-25",
+        "entry": "Answers of the defendant co-tenants filed.",
+        "party": "Maria Q. Fairbanks"
+      },
+      {
+        "date": "2025-07-23",
+        "entry": "Order appointing referees to view the property entered.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-10-10",
+        "entry": "Referees' report on division versus sale filed.",
+        "party": "the court"
+      },
+      {
+        "date": "2025-12-13",
+        "entry": "Hearing held on partition by sale versus in kind.",
+        "party": "the court"
+      }
+    ],
+    "motions": [
+      {
+        "title": "Motion for partition by sale",
+        "type": "dispositive",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-10-13",
+        "status": "opposed",
+        "relief": "An order that the property be sold and the proceeds divided."
+      },
+      {
+        "title": "Motion to appoint referees / commissioners",
+        "type": "procedural",
+        "movant": "Grace C. Roe",
+        "filed_date": "2025-07-15",
+        "status": "filed",
+        "relief": "Appointment of referees to make or supervise the partition."
+      }
+    ],
+    "counterclaims": [
+      {
+        "count": 1,
+        "claim": "Accounting and contribution",
+        "by": "Maria Q. Fairbanks",
+        "against": "Grace C. Roe",
+        "relief": "A credit for taxes, insurance, and upkeep advanced and an offset for the plaintiff's use of the property."
+      }
+    ],
+    "causes_of_action": [
+      {
+        "count": 1,
+        "claim": "Partition of real estate",
+        "by": "Grace C. Roe",
+        "against": "the defendant co-tenants",
+        "governing_law": "14 M.R.S. § 6501; 14 M.R.S. § 6051(7)",
+        "elements": [
+          "The plaintiff holds an undivided interest as a tenant in common",
+          "The co-tenants cannot agree on a voluntary division or sale",
+          "Partition is appropriate, in kind or by sale",
+          "Referees should be appointed to carry out the partition"
+        ],
+        "relief_sought": "An order of partition, by sale if the property cannot fairly be divided in kind, and appointment of referees",
+        "strength": "strong"
+      },
+      {
+        "count": 2,
+        "claim": "Accounting and contribution among co-tenants",
+        "by": "Grace C. Roe",
+        "against": "the defendant co-tenants",
+        "governing_law": "14 M.R.S. § 6501; common law",
+        "elements": [
+          "A tenancy in common among the parties",
+          "Disproportionate payment of taxes, insurance, or upkeep",
+          "Or receipt of rents or exclusive use by a co-tenant",
+          "An equitable adjustment of the parties' shares"
+        ],
+        "relief_sought": "An accounting and a credit or charge adjusting each co-tenant's share of the proceeds",
+        "strength": "moderate"
+      },
+      {
+        "count": 3,
+        "claim": "Declaratory judgment as to the right-of-way",
+        "by": "Grace C. Roe",
+        "against": "the defendant co-tenants",
+        "governing_law": "14 M.R.S. § 5953",
+        "elements": [
+          "An actual controversy over access to the parcel",
+          "Uncertainty about the existence or scope of the right-of-way",
+          "The access question affects partition and value",
+          "A declaration will resolve the controversy"
+        ],
+        "relief_sought": "A declaration of the existence and scope of the right-of-way serving the parcel",
+        "strength": "moderate"
+      }
+    ],
+    "affirmative_defenses": [
+      {
+        "defense": "Set-off for exclusive use and accounting",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The plaintiff owes an accounting and offset for periods of exclusive use of the common property."
+      },
+      {
+        "defense": "The property can be fairly divided in kind",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The parcel can be partitioned in kind without great prejudice, so no sale is warranted. 14 M.R.S. § 6051(7)."
+      },
+      {
+        "defense": "Family agreement bars sale",
+        "by": "Maria Q. Fairbanks",
+        "basis": "The co-tenants agreed to keep the property in the family, which bars a forced sale."
+      }
+    ]
   }
 }
